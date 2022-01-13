@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MiniGram" Class="MiniGramDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-A846TAN;Initial Catalog=MiniGram;Integrated Security=True" SettingsObjectName="MiniGram.Properties.Settings" SettingsPropertyName="MiniGramConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TblCategories" Member="TblCategories">
+    <Type Name="TblCategory">
+      <Column Name="CATID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CATNAME" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Enabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TblCategory_TblProduct" Member="TblProducts" ThisKey="CATID" OtherKey="CATID" Type="TblProduct" />
+      <Association Name="TblCategory_TblSuppWithCat" Member="TblSuppWithCats" ThisKey="CATID" OtherKey="CATID" Type="TblSuppWithCat" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblConracts" Member="TblConracts">
+    <Type Name="TblConract">
+      <Column Name="CONTID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LengthByMonth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Enabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TblSupplier_TblConract" Member="TblSupplier" ThisKey="SID" OtherKey="SID" Type="TblSupplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblCustomerReceiptDetails" Member="TblCustomerReceiptDetails">
+    <Type Name="TblCustomerReceiptDetail">
+      <Column Name="CRID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PiecePrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="TblCustomerReceipt_TblCustomerReceiptDetail" Member="TblCustomerReceipt" ThisKey="CRID" OtherKey="CRID" Type="TblCustomerReceipt" IsForeignKey="true" />
+      <Association Name="TblProduct_TblCustomerReceiptDetail" Member="TblProduct" ThisKey="PID" OtherKey="PID" Type="TblProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblCustomerReceipts" Member="TblCustomerReceipts">
+    <Type Name="TblCustomerReceipt">
+      <Column Name="CRID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CRDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalQte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TblCustomerReceipt_TblCustomerReceiptDetail" Member="TblCustomerReceiptDetails" ThisKey="CRID" OtherKey="CRID" Type="TblCustomerReceiptDetail" />
+      <Association Name="TblCustomer_TblCustomerReceipt" Member="TblCustomer" ThisKey="CID" OtherKey="CID" Type="TblCustomer" IsForeignKey="true" />
+      <Association Name="TblUser_TblCustomerReceipt" Member="TblUser" ThisKey="UID" OtherKey="UID" Type="TblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblCustomers" Member="TblCustomers">
+    <Type Name="TblCustomer">
+      <Column Name="CID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Enabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TblCustomer_TblCustomerReceipt" Member="TblCustomerReceipts" ThisKey="CID" OtherKey="CID" Type="TblCustomerReceipt" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblProducts" Member="TblProducts">
+    <Type Name="TblProduct">
+      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CATID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalQte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Enabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TblProduct_TblCustomerReceiptDetail" Member="TblCustomerReceiptDetails" ThisKey="PID" OtherKey="PID" Type="TblCustomerReceiptDetail" />
+      <Association Name="TblProduct_TblSupplierReceiptDetail" Member="TblSupplierReceiptDetails" ThisKey="PID" OtherKey="PID" Type="TblSupplierReceiptDetail" />
+      <Association Name="TblCategory_TblProduct" Member="TblCategory" ThisKey="CATID" OtherKey="CATID" Type="TblCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblSupplierReceiptDetails" Member="TblSupplierReceiptDetails">
+    <Type Name="TblSupplierReceiptDetail">
+      <Column Name="SRID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PiecePrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="TblProduct_TblSupplierReceiptDetail" Member="TblProduct" ThisKey="PID" OtherKey="PID" Type="TblProduct" IsForeignKey="true" />
+      <Association Name="TblSupplierReceipt_TblSupplierReceiptDetail" Member="TblSupplierReceipt" ThisKey="SRID" OtherKey="SRID" Type="TblSupplierReceipt" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblSupplierReceipts" Member="TblSupplierReceipts">
+    <Type Name="TblSupplierReceipt">
+      <Column Name="SRID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SRDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalQte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TblSupplierReceipt_TblSupplierReceiptDetail" Member="TblSupplierReceiptDetails" ThisKey="SRID" OtherKey="SRID" Type="TblSupplierReceiptDetail" />
+      <Association Name="TblSupplier_TblSupplierReceipt" Member="TblSupplier" ThisKey="SID" OtherKey="SID" Type="TblSupplier" IsForeignKey="true" />
+      <Association Name="TblUser_TblSupplierReceipt" Member="TblUser" ThisKey="UID" OtherKey="UID" Type="TblUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblSuppliers" Member="TblSuppliers">
+    <Type Name="TblSupplier">
+      <Column Name="SID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SupplierName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Enabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TblSupplier_TblConract" Member="TblConracts" ThisKey="SID" OtherKey="SID" Type="TblConract" />
+      <Association Name="TblSupplier_TblSupplierReceipt" Member="TblSupplierReceipts" ThisKey="SID" OtherKey="SID" Type="TblSupplierReceipt" />
+      <Association Name="TblSupplier_TblSuppWithCat" Member="TblSuppWithCats" ThisKey="SID" OtherKey="SID" Type="TblSuppWithCat" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblSuppWithCat" Member="TblSuppWithCats">
+    <Type Name="TblSuppWithCat">
+      <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CATID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TblCategory_TblSuppWithCat" Member="TblCategory" ThisKey="CATID" OtherKey="CATID" Type="TblCategory" IsForeignKey="true" />
+      <Association Name="TblSupplier_TblSuppWithCat" Member="TblSupplier" ThisKey="SID" OtherKey="SID" Type="TblSupplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblUsers" Member="TblUsers">
+    <Type Name="TblUser">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Enabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TblUser_TblCustomerReceipt" Member="TblCustomerReceipts" ThisKey="UID" OtherKey="UID" Type="TblCustomerReceipt" />
+      <Association Name="TblUser_TblSupplierReceipt" Member="TblSupplierReceipts" ThisKey="UID" OtherKey="UID" Type="TblSupplierReceipt" />
+    </Type>
+  </Table>
+</Database>
