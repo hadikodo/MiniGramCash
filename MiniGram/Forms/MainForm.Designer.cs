@@ -32,6 +32,7 @@
             this.exit_btn = new System.Windows.Forms.Button();
             this.minimize_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.sett_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.logo_img = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -79,17 +80,40 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.sett_btn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.logo_img);
             this.panel1.Controls.Add(this.exit_btn);
             this.panel1.Controls.Add(this.minimize_btn);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1336, 88);
+            this.panel1.Size = new System.Drawing.Size(1336, 744);
             this.panel1.TabIndex = 2;
+            // 
+            // sett_btn
+            // 
+            this.sett_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sett_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.sett_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sett_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sett_btn.FlatAppearance.BorderSize = 0;
+            this.sett_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.sett_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.sett_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sett_btn.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sett_btn.ForeColor = System.Drawing.Color.White;
+            this.sett_btn.Image = global::MiniGram.Properties.Resources.small_sett;
+            this.sett_btn.Location = new System.Drawing.Point(1221, 7);
+            this.sett_btn.Name = "sett_btn";
+            this.sett_btn.Size = new System.Drawing.Size(30, 30);
+            this.sett_btn.TabIndex = 4;
+            this.sett_btn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.sett_btn.UseVisualStyleBackColor = false;
+            this.sett_btn.Click += new System.EventHandler(this.sett_btn_Click);
             // 
             // label1
             // 
@@ -140,6 +164,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox logo_img;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button sett_btn;
     }
 }
 
