@@ -51,11 +51,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(93, 17);
+            this.label1.Location = new System.Drawing.Point(93, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 65);
+            this.label1.Size = new System.Drawing.Size(246, 74);
             this.label1.TabIndex = 3;
             this.label1.Text = "Settings";
             // 
@@ -63,7 +63,7 @@
             // 
             this.logo_img.BackColor = System.Drawing.Color.Transparent;
             this.logo_img.Image = global::MiniGram.Properties.Resources.sett;
-            this.logo_img.Location = new System.Drawing.Point(12, 12);
+            this.logo_img.Location = new System.Drawing.Point(12, 11);
             this.logo_img.Name = "logo_img";
             this.logo_img.Size = new System.Drawing.Size(75, 75);
             this.logo_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

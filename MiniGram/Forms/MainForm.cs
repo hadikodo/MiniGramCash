@@ -33,5 +33,10 @@ namespace MiniGram
             SettingsForm sf = new SettingsForm();
             sf.ShowDialog();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
