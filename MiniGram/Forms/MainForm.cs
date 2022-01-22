@@ -38,5 +38,25 @@ namespace MiniGram
         {
 
         }
+
+        private void sfButton1_Click(object sender, EventArgs e)
+        {
+            menu_nav.ToggleDrawer();
+            menu_nav.Focus();
+        }
+
+        private void menu_nav_Closing(object sender, CancelEventArgs e)
+        {
+            menu_toggle_btn.BackColor = Color.White;
+            menu_toggle_btn.ForeColor = Color.FromArgb(0, 63, 63);
+            menu_toggle_btn.Update();
+        }
+
+        private void menu_nav_Opening(object sender, Syncfusion.Windows.Forms.Tools.NavigationDrawer.OpeningEventArgs e)
+        {
+            menu_toggle_btn.BackColor = Color.FromArgb(0, 63, 63);
+            menu_toggle_btn.ForeColor = Color.White;
+            menu_toggle_btn.Update();
+        }
     }
 }
