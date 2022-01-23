@@ -36,7 +36,7 @@ namespace MiniGram
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            dash_btn.Selected = true;
         }
 
         private void sfButton1_Click(object sender, EventArgs e)
@@ -49,6 +49,8 @@ namespace MiniGram
         {
             menu_toggle_btn.BackColor = Color.White;
             menu_toggle_btn.ForeColor = Color.FromArgb(0, 63, 63);
+            menu_toggle_btn.Text = "Menu ▶";
+            menu_toggle_btn.Width = 195;
             menu_toggle_btn.Update();
         }
 
@@ -56,7 +58,21 @@ namespace MiniGram
         {
             menu_toggle_btn.BackColor = Color.FromArgb(0, 63, 63);
             menu_toggle_btn.ForeColor = Color.White;
+            menu_toggle_btn.Text = "MiniGram  ◀";
+            menu_toggle_btn.Width = 318;
             menu_toggle_btn.Update();
+        }
+
+        private void menu_nav_ItemClicked(object sender, Syncfusion.Windows.Forms.Tools.MenuItemClickedEventArgs e)
+        {
+            if (dash_btn.Selected)
+            {
+                sale_btn.Selected = false;
+            }
+            else if (sale_btn.Selected)
+            {
+                dash_btn.Selected = false;
+            }
         }
     }
 }
