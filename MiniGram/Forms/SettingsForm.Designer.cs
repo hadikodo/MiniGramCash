@@ -51,11 +51,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(93, 12);
+            this.label1.Location = new System.Drawing.Point(93, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 74);
+            this.label1.Size = new System.Drawing.Size(268, 66);
             this.label1.TabIndex = 3;
             this.label1.Text = "Settings";
             // 
