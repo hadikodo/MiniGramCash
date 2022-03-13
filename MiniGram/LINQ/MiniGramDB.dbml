@@ -150,4 +150,21 @@
     <Parameter Name="add2" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_disableSupplierByID" Method="sp_disableSupplierByID">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_enableSupplierByID" Method="sp_enableSupplierByID">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.fc_checkSupplierEnabledByID" Method="fc_checkSupplierEnabledByID" IsComposable="true">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.fc_CheckLogin" Method="fc_CheckLogin" IsComposable="true">
+    <Parameter Name="user" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="pass" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Boolean" />
+  </Function>
 </Database>

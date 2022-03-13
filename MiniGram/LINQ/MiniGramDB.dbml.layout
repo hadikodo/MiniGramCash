@@ -89,7 +89,7 @@
         <classShapeMoniker Id="42622230-1530-4cff-8913-f9388658e6c0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.20599609375); (5.57291666666667 : 5.20599609375 : JumpStart); (5.73958333333333 : 5.20599609375 : JumpEnd); (6.04166666666667 : 5.20599609375 : JumpStart); (6.20833333333333 : 5.20599609375 : JumpEnd); (6.5 : 5.20599609375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 5.20599609375); (6.5 : 5.20599609375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MiniGramDBDataContext/TblCategory/TblCategory_TblProduct" />
       <nodes>
         <classShapeMoniker Id="7b07cb6a-7dd3-4a38-b30a-4d2e00c92d6c" />
@@ -117,7 +117,7 @@
         <classShapeMoniker Id="c6c673be-1e99-4b16-8705-ab5bcbfe88bf" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 8.15949625651042); (6.04166666666667 : 8.15949625651042 : JumpStart); (6.20833333333333 : 8.15949625651042 : JumpEnd); (6.5 : 8.15949625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 8.15949625651042); (6.5 : 8.15949625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MiniGramDBDataContext/TblSupplier/TblSupplier_TblSupplierReceipt" />
       <nodes>
         <classShapeMoniker Id="5032db8b-4f7d-4fcb-9e83-922847ebd6b1" />
@@ -138,7 +138,7 @@
         <classShapeMoniker Id="d73ac735-926f-455a-8b5e-8e67d519ad9a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.75 : 3); (4.75 : 2.39787725585937); (6.5 : 2.39787725585937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.75 : 3); (4.75 : 2.39787725585937); (6.04166666666667 : 2.39787725585937 : JumpStart); (6.20833333333333 : 2.39787725585937 : JumpEnd); (6.5 : 2.39787725585937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MiniGramDBDataContext/TblUser/TblUser_TblCustomerReceipt" />
       <nodes>
         <classShapeMoniker Id="ac1cc0c3-4a44-45c1-9660-83d2f520e4fa" />

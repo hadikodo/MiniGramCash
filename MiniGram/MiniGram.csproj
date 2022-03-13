@@ -150,10 +150,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>fr_local.resx</DependentUpon>
     </Compile>
-    <Compile Include="SuppliersUC.cs">
+    <Compile Include="Controls\SuppliersUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SuppliersUC.Designer.cs">
+    <Compile Include="Controls\SuppliersUC.Designer.cs">
       <DependentUpon>SuppliersUC.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\AddSupplierForm.resx">
@@ -170,7 +170,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>fr_local.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SuppliersUC.resx">
+    <EmbeddedResource Include="Controls\SuppliersUC.resx">
       <DependentUpon>SuppliersUC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="LINQ\MiniGramDB.dbml.layout">
@@ -269,6 +269,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\off.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

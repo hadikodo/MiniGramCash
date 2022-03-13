@@ -28,18 +28,41 @@ namespace MiniGram
                 return handleparam;
             }
         }
+        private void refreshData()
+        {
+            spselectAllSuppliersResultBindingSource.DataSource = cnx.sp_selectAllSuppliers();
+            dataGridView1.Refresh();
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!(bool)cnx.fc_checkSupplierEnabledByID(Int32.Parse(row.Cells[0].Value.ToString())))
+                {
+                    row.DefaultCellStyle.BackColor = Color.DarkGray;
+                }
+            }
+        }
 
         private void SuppliersUC_Load(object sender, EventArgs e)
         {
-          spselectAllSuppliersResultBindingSource.DataSource = cnx.sp_selectAllSuppliers();
+            refreshData();
         }
 
         private void addsupp_btn_Click(object sender, EventArgs e)
         {
             AddSupplierForm asf = new AddSupplierForm();
             asf.ShowDialog();
-            spselectAllSuppliersResultBindingSource.DataSource = cnx.sp_selectAllSuppliers();
-            dataGridView1.Refresh();
+            refreshData();
+        }
+
+        private void enable_btn_Click(object sender, EventArgs e)
+        {
+            cnx.sp_enableSupplierByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            refreshData();
+        }
+
+        private void disable_btn_Click(object sender, EventArgs e)
+        {
+            cnx.sp_disableSupplierByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            refreshData();
         }
     }
 }
