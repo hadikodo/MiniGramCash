@@ -132,4 +132,22 @@
       <Association Name="TblUser_TblSupplierReceipt" Member="TblSupplierReceipts" ThisKey="UID" OtherKey="UID" Type="TblSupplierReceipt" />
     </Type>
   </Table>
+  <Function Name="dbo.sp_selectAllSuppliers" Method="sp_selectAllSuppliers">
+    <ElementType Name="sp_selectAllSuppliersResult">
+      <Column Name="SID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SupplierName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_addNewSupplier" Method="sp_addNewSupplier">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="phone" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="add1" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="add2" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

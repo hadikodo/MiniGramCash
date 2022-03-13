@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            this.title_lbl = new System.Windows.Forms.Label();
             this.menu_toggle_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.panel55 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             this.customers_btn = new Syncfusion.WinForms.Controls.SfButton();
@@ -44,16 +45,16 @@
             this.sett_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.new_receipt_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.dashboard_btn = new Syncfusion.WinForms.Controls.SfButton();
-            this.gradientPanelExt1 = new Syncfusion.Windows.Forms.Tools.GradientPanelExt();
+            this.main_panel = new Syncfusion.Windows.Forms.Tools.GradientPanelExt();
             this.parentBarItem1 = new Syncfusion.Windows.Forms.Tools.XPMenus.ParentBarItem();
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
-            this.title_lbl = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gradientPanel1)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel55)).BeginInit();
             this.panel55.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gradientPanelExt1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.main_panel)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,11 +78,22 @@
             this.gradientPanel1.Controls.Add(this.title_lbl);
             this.gradientPanel1.Controls.Add(this.menu_toggle_btn);
             this.gradientPanel1.Controls.Add(this.panel55);
-            this.gradientPanel1.Controls.Add(this.gradientPanelExt1);
+            this.gradientPanel1.Controls.Add(this.main_panel);
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(1333, 744);
             this.gradientPanel1.TabIndex = 7;
+            // 
+            // title_lbl
+            // 
+            this.title_lbl.AutoSize = true;
+            this.title_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.title_lbl.Font = new System.Drawing.Font("Bookman Old Style", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.title_lbl.Location = new System.Drawing.Point(16, 87);
+            this.title_lbl.Name = "title_lbl";
+            this.title_lbl.Size = new System.Drawing.Size(0, 50);
+            this.title_lbl.TabIndex = 4;
             // 
             // menu_toggle_btn
             // 
@@ -112,6 +124,7 @@
             this.menu_toggle_btn.Style.PressedForeColor = System.Drawing.Color.White;
             this.menu_toggle_btn.TabIndex = 6;
             this.menu_toggle_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.menu_toggle_btn, "Show/Hide");
             this.menu_toggle_btn.UseVisualStyleBackColor = true;
             this.menu_toggle_btn.Click += new System.EventHandler(this.sfButton1_Click);
             // 
@@ -165,6 +178,7 @@
             this.customers_btn.Style.PressedForeColor = System.Drawing.Color.White;
             this.customers_btn.TabIndex = 18;
             this.customers_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.customers_btn, "Customers");
             this.customers_btn.UseVisualStyleBackColor = false;
             this.customers_btn.Click += new System.EventHandler(this.customers_btn_Click);
             // 
@@ -198,6 +212,7 @@
             this.suppliers_btn.Style.PressedForeColor = System.Drawing.Color.White;
             this.suppliers_btn.TabIndex = 17;
             this.suppliers_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.suppliers_btn, "Suppliers");
             this.suppliers_btn.UseVisualStyleBackColor = false;
             this.suppliers_btn.Click += new System.EventHandler(this.suppliers_btn_Click);
             // 
@@ -230,6 +245,7 @@
             this.products_btn.Style.PressedForeColor = System.Drawing.Color.White;
             this.products_btn.TabIndex = 16;
             this.products_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.products_btn, "Products");
             this.products_btn.UseVisualStyleBackColor = false;
             this.products_btn.Click += new System.EventHandler(this.products_btn_Click);
             // 
@@ -262,6 +278,7 @@
             this.contract_btn.Style.PressedForeColor = System.Drawing.Color.White;
             this.contract_btn.TabIndex = 15;
             this.contract_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.contract_btn, "Contracts");
             this.contract_btn.UseVisualStyleBackColor = false;
             this.contract_btn.Click += new System.EventHandler(this.contract_btn_Click);
             // 
@@ -294,6 +311,7 @@
             this.receipt_btn.Style.PressedForeColor = System.Drawing.Color.White;
             this.receipt_btn.TabIndex = 14;
             this.receipt_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.receipt_btn, "Receipts");
             this.receipt_btn.UseVisualStyleBackColor = false;
             this.receipt_btn.Click += new System.EventHandler(this.receipt_btn_Click);
             // 
@@ -327,6 +345,7 @@
             this.minimize_btn.Style.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.minimize_btn.TabIndex = 13;
             this.minimize_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.minimize_btn, "Minimize");
             this.minimize_btn.UseVisualStyleBackColor = false;
             this.minimize_btn.Click += new System.EventHandler(this.minimize_btn_Click);
             // 
@@ -360,6 +379,7 @@
             this.exit_btn.Style.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.exit_btn.TabIndex = 12;
             this.exit_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.exit_btn, "Logout");
             this.exit_btn.UseVisualStyleBackColor = false;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
@@ -393,6 +413,7 @@
             this.sett_btn.Style.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.sett_btn.TabIndex = 11;
             this.sett_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.sett_btn, "Settings");
             this.sett_btn.UseVisualStyleBackColor = false;
             this.sett_btn.Click += new System.EventHandler(this.sett_btn_Click);
             // 
@@ -425,6 +446,7 @@
             this.new_receipt_btn.Style.PressedForeColor = System.Drawing.Color.White;
             this.new_receipt_btn.TabIndex = 10;
             this.new_receipt_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.new_receipt_btn, "New Receipt");
             this.new_receipt_btn.UseVisualStyleBackColor = false;
             this.new_receipt_btn.Click += new System.EventHandler(this.new_receipt_btn_Click);
             // 
@@ -457,25 +479,29 @@
             this.dashboard_btn.Style.PressedForeColor = System.Drawing.Color.White;
             this.dashboard_btn.TabIndex = 9;
             this.dashboard_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.dashboard_btn, "Dashboard");
             this.dashboard_btn.UseVisualStyleBackColor = false;
             this.dashboard_btn.Click += new System.EventHandler(this.dashboard_btn_Click);
             // 
-            // gradientPanelExt1
+            // main_panel
             // 
-            this.gradientPanelExt1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.main_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gradientPanelExt1.BackColor = System.Drawing.Color.Transparent;
-            this.gradientPanelExt1.Border = new System.Windows.Forms.Padding(12);
-            this.gradientPanelExt1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gradientPanelExt1.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.gradientPanelExt1.InnerBorderThickness = 5F;
-            this.gradientPanelExt1.Location = new System.Drawing.Point(3, 133);
-            this.gradientPanelExt1.Name = "gradientPanelExt1";
-            this.gradientPanelExt1.Size = new System.Drawing.Size(1327, 608);
-            this.gradientPanelExt1.TabIndex = 7;
-            this.gradientPanelExt1.ThemeStyle.BorderThickness = 3;
-            this.gradientPanelExt1.ThemeStyle.CornerRadius = 10;
+            this.main_panel.BackColor = System.Drawing.Color.Transparent;
+            this.main_panel.Border = new System.Windows.Forms.Padding(5);
+            this.main_panel.BorderGap = 5;
+            this.main_panel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.main_panel.CornerRadius = 10;
+            this.main_panel.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.main_panel.InnerBorderThickness = 5F;
+            this.main_panel.Location = new System.Drawing.Point(3, 142);
+            this.main_panel.Name = "main_panel";
+            this.main_panel.Padding = new System.Windows.Forms.Padding(15);
+            this.main_panel.Size = new System.Drawing.Size(1327, 600);
+            this.main_panel.TabIndex = 7;
+            this.main_panel.ThemeStyle.BorderThickness = 3;
+            this.main_panel.ThemeStyle.CornerRadius = 10;
             // 
             // parentBarItem1
             // 
@@ -489,17 +515,6 @@
             // 
             this.animationTimer.Interval = 1;
             this.animationTimer.Tick += new System.EventHandler(this.animationTimer_Tick);
-            // 
-            // title_lbl
-            // 
-            this.title_lbl.AutoSize = true;
-            this.title_lbl.BackColor = System.Drawing.Color.Transparent;
-            this.title_lbl.Font = new System.Drawing.Font("Bookman Old Style", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.title_lbl.Location = new System.Drawing.Point(16, 87);
-            this.title_lbl.Name = "title_lbl";
-            this.title_lbl.Size = new System.Drawing.Size(0, 50);
-            this.title_lbl.TabIndex = 4;
             // 
             // MainForm
             // 
@@ -521,7 +536,7 @@
             this.gradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel55)).EndInit();
             this.panel55.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gradientPanelExt1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.main_panel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -531,7 +546,7 @@
         private Syncfusion.Windows.Forms.Tools.XPMenus.ParentBarItem parentBarItem1;
         private Syncfusion.WinForms.Controls.SfButton menu_toggle_btn;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel1;
-        private Syncfusion.Windows.Forms.Tools.GradientPanelExt gradientPanelExt1;
+        private Syncfusion.Windows.Forms.Tools.GradientPanelExt main_panel;
         private Syncfusion.Windows.Forms.Tools.GradientPanel panel55;
         private System.Windows.Forms.Timer animationTimer;
         private Syncfusion.WinForms.Controls.SfButton dashboard_btn;
@@ -545,6 +560,7 @@
         private Syncfusion.WinForms.Controls.SfButton suppliers_btn;
         private Syncfusion.WinForms.Controls.SfButton customers_btn;
         private System.Windows.Forms.Label title_lbl;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

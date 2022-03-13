@@ -19,6 +19,15 @@ namespace MiniGram
         {
             InitializeComponent();
         }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle |= 0x02000000;
+                return handleparam;
+            }
+        }
 
         private void exit_btn_Click(object sender, EventArgs e)
         {
@@ -64,7 +73,7 @@ namespace MiniGram
             }
             else
             {
-                if (panel55.Width < currentWidth)
+                if (panel55.Width <= currentWidth)
                 {
                     panel55.Width += 70;
                 }
@@ -128,6 +137,9 @@ namespace MiniGram
             refreshColors();
             suppliers_btn.BackColor = Color.White;
             title_lbl.Text = "Suppliers";
+            SuppliersUC suc  = new SuppliersUC();
+            main_panel.Controls.Add(suc);
+            suc.Dock = DockStyle.Fill;
         }
 
         private void customers_btn_Click(object sender, EventArgs e)
