@@ -529,6 +529,7 @@
             this.Name = "MainForm";
             this.Text = "MiniGram";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.MaximizedBoundsChanged += new System.EventHandler(this.MainForm_MaximizedBoundsChanged);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gradientPanel1)).EndInit();

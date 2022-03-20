@@ -167,4 +167,36 @@
     <Parameter Name="pass" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Boolean" />
   </Function>
+  <Function Name="dbo.sp_addNewCustomer" Method="sp_addNewCustomer">
+    <Parameter Name="first" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="middle" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="last" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="phone" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="add1" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="add2" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_disableCustomerByID" Method="sp_disableCustomerByID">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_enableCustomerByID" Method="sp_enableCustomerByID">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.fc_checkCustomerEnabledByID" Method="fc_checkCustomerEnabledByID" IsComposable="true">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.sp_selectAllCustomers" Method="sp_selectAllCustomers">
+    <ElementType Name="sp_selectAllCustomersResult">
+      <Column Name="CID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(62) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

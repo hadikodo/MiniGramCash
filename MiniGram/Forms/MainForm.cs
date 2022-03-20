@@ -1,4 +1,5 @@
-﻿using MiniGram.Forms;
+﻿using MiniGram.Controls;
+using MiniGram.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,15 +20,15 @@ namespace MiniGram
         {
             InitializeComponent();
         }
-        protected override CreateParams CreateParams
+       /* protected override CreateParams CreateParams
         {
             get
             {
                 CreateParams handleparam = base.CreateParams;
-                handleparam.ExStyle |= 0x02000000;
+                handleparam.ExStyle = 0x02000000;
                 return handleparam;
             }
-        }
+        }*/
 
         private void exit_btn_Click(object sender, EventArgs e)
         {
@@ -137,9 +138,11 @@ namespace MiniGram
             refreshColors();
             suppliers_btn.BackColor = Color.White;
             title_lbl.Text = "Suppliers";
+            main_panel.Controls.Clear();
             SuppliersUC suc  = new SuppliersUC();
             main_panel.Controls.Add(suc);
             suc.Dock = DockStyle.Fill;
+            suc.refreshData();
         }
 
         private void customers_btn_Click(object sender, EventArgs e)
@@ -147,6 +150,16 @@ namespace MiniGram
             refreshColors();
             customers_btn.BackColor = Color.White;
             title_lbl.Text = "Customers";
+            main_panel.Controls.Clear();
+            CustomersUC cuc = new CustomersUC();
+            main_panel.Controls.Add(cuc);
+            cuc.Dock = DockStyle.Fill;
+            cuc.refreshData();
+        }
+
+        private void MainForm_MaximizedBoundsChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -213,6 +213,40 @@ namespace MiniGram.LINQ
 		{
 			return ((System.Nullable<bool>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), user, pass).ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_addNewCustomer")]
+		public int sp_addNewCustomer([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string first, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string middle, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string last, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string add1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string add2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), first, middle, last, phone, email, add1, add2);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_disableCustomerByID")]
+		public int sp_disableCustomerByID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_enableCustomerByID")]
+		public int sp_enableCustomerByID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.fc_checkCustomerEnabledByID", IsComposable=true)]
+		public System.Nullable<bool> fc_checkCustomerEnabledByID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			return ((System.Nullable<bool>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_selectAllCustomers")]
+		public ISingleResult<sp_selectAllCustomersResult> sp_selectAllCustomers()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_selectAllCustomersResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblCategories")]
@@ -2471,6 +2505,122 @@ namespace MiniGram.LINQ
 				if ((this._SupplierName != value))
 				{
 					this._SupplierName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(20)")]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this._PhoneNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address1", DbType="NVarChar(100)")]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address2", DbType="NVarChar(100)")]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_selectAllCustomersResult
+	{
+		
+		private int _CID;
+		
+		private string _FullName;
+		
+		private string _PhoneNumber;
+		
+		private string _Email;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		public sp_selectAllCustomersResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CID", DbType="Int NOT NULL")]
+		public int CID
+		{
+			get
+			{
+				return this._CID;
+			}
+			set
+			{
+				if ((this._CID != value))
+				{
+					this._CID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullName", DbType="NVarChar(62) NOT NULL", CanBeNull=false)]
+		public string FullName
+		{
+			get
+			{
+				return this._FullName;
+			}
+			set
+			{
+				if ((this._FullName != value))
+				{
+					this._FullName = value;
 				}
 			}
 		}

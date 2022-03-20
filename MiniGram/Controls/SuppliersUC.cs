@@ -28,7 +28,7 @@ namespace MiniGram
                 return handleparam;
             }
         }
-        private void refreshData()
+        public void refreshData()
         {
             spselectAllSuppliersResultBindingSource.DataSource = cnx.sp_selectAllSuppliers();
             dataGridView1.Refresh();
@@ -43,7 +43,7 @@ namespace MiniGram
 
         private void SuppliersUC_Load(object sender, EventArgs e)
         {
-            refreshData();
+            //refreshData();
         }
 
         private void addsupp_btn_Click(object sender, EventArgs e)

@@ -138,14 +138,14 @@
         <classShapeMoniker Id="d73ac735-926f-455a-8b5e-8e67d519ad9a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.75 : 3); (4.75 : 2.39787725585937); (6.04166666666667 : 2.39787725585937 : JumpStart); (6.20833333333333 : 2.39787725585937 : JumpEnd); (6.5 : 2.39787725585937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.75 : 3); (4.75 : 2.39787725585937); (6.5 : 2.39787725585937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MiniGramDBDataContext/TblUser/TblUser_TblCustomerReceipt" />
       <nodes>
         <classShapeMoniker Id="ac1cc0c3-4a44-45c1-9660-83d2f520e4fa" />
         <classShapeMoniker Id="ae13fff5-e1e1-40ba-9c58-938b2263d515" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.65625 : 4.77089680989583); (5.65625 : 7.80174188476563); (6.04166666666667 : 7.80174188476563 : JumpStart); (6.20833333333333 : 7.80174188476563 : JumpEnd); (6.5 : 7.80174188476563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.65625 : 4.77089680989583); (5.65625 : 7.80174188476563); (6.5 : 7.80174188476563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MiniGramDBDataContext/TblUser/TblUser_TblSupplierReceipt" />
       <nodes>
         <classShapeMoniker Id="ac1cc0c3-4a44-45c1-9660-83d2f520e4fa" />

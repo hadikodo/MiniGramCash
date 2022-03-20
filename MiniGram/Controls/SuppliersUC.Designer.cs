@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -69,8 +69,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.936238F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.06376F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.797797F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.2022F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 768);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -78,9 +78,9 @@
             // 
             this.panel2.Controls.Add(this.tableLayoutPanel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 63);
+            this.panel2.Location = new System.Drawing.Point(3, 78);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1018, 702);
+            this.panel2.Size = new System.Drawing.Size(1018, 687);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -90,11 +90,12 @@
             this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 702F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1018, 702);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1018, 687);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // panel3
@@ -103,7 +104,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1012, 696);
+            this.panel3.Size = new System.Drawing.Size(1012, 681);
             this.panel3.TabIndex = 1;
             // 
             // dataGridView1
@@ -115,14 +116,14 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -133,32 +134,32 @@
             this.address1DataGridViewTextBoxColumn});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.DataSource = this.spselectAllSuppliersResultBindingSource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 10;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.RowTemplate.Height = 35;
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1012, 696);
+            this.dataGridView1.Size = new System.Drawing.Size(1012, 681);
             this.dataGridView1.TabIndex = 0;
             // 
             // sIDDataGridViewTextBoxColumn
@@ -206,26 +207,26 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1018, 54);
+            this.panel1.Size = new System.Drawing.Size(1018, 69);
             this.panel1.TabIndex = 2;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel2.Controls.Add(this.disable_btn, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.enable_btn, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.addsupp_btn, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1018, 54);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1018, 69);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // disable_btn
@@ -237,26 +238,31 @@
             this.disable_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.disable_btn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.disable_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.disable_btn.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.disable_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.disable_btn.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.disable_btn.ForeColor = System.Drawing.Color.White;
+            this.disable_btn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.disable_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.disable_btn.ImageMargin = new System.Windows.Forms.Padding(5);
+            this.disable_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.disable_btn.ImageSize = new System.Drawing.Size(55, 55);
-            this.disable_btn.Location = new System.Drawing.Point(180, 0);
-            this.disable_btn.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.disable_btn.Location = new System.Drawing.Point(210, 5);
+            this.disable_btn.Margin = new System.Windows.Forms.Padding(10, 5, 0, 0);
             this.disable_btn.Name = "disable_btn";
-            this.disable_btn.Size = new System.Drawing.Size(75, 54);
+            this.disable_btn.Size = new System.Drawing.Size(90, 64);
             this.disable_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.disable_btn.Style.FocusedBackColor = System.Drawing.Color.Transparent;
-            this.disable_btn.Style.FocusedForeColor = System.Drawing.Color.Transparent;
-            this.disable_btn.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.disable_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.disable_btn.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.disable_btn.Style.ForeColor = System.Drawing.Color.White;
             this.disable_btn.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.disable_btn.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.disable_btn.Style.HoverForeColor = System.Drawing.Color.White;
             this.disable_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
             this.disable_btn.Style.Image = global::MiniGram.Properties.Resources.off;
             this.disable_btn.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.disable_btn.Style.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.disable_btn.Style.PressedForeColor = System.Drawing.Color.White;
             this.disable_btn.TabIndex = 14;
+            this.disable_btn.Text = "Disable";
+            this.disable_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.disable_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.disable_btn.TextMargin = new System.Windows.Forms.Padding(0);
             this.disable_btn.ThemeName = "Office2016Colorful";
             this.toolTip1.SetToolTip(this.disable_btn, "Disable Selected Supplier");
             this.disable_btn.UseVisualStyleBackColor = false;
@@ -271,19 +277,20 @@
             this.enable_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.enable_btn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.enable_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.enable_btn.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enable_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.enable_btn.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enable_btn.ForeColor = System.Drawing.Color.White;
+            this.enable_btn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.enable_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.enable_btn.ImageMargin = new System.Windows.Forms.Padding(5);
-            this.enable_btn.ImageSize = new System.Drawing.Size(55, 55);
-            this.enable_btn.Location = new System.Drawing.Point(95, 0);
-            this.enable_btn.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.enable_btn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.enable_btn.ImageSize = new System.Drawing.Size(50, 50);
+            this.enable_btn.Location = new System.Drawing.Point(110, 5);
+            this.enable_btn.Margin = new System.Windows.Forms.Padding(10, 5, 0, 0);
             this.enable_btn.Name = "enable_btn";
-            this.enable_btn.Size = new System.Drawing.Size(75, 54);
+            this.enable_btn.Size = new System.Drawing.Size(90, 64);
             this.enable_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.enable_btn.Style.FocusedBackColor = System.Drawing.Color.Transparent;
             this.enable_btn.Style.FocusedForeColor = System.Drawing.Color.Transparent;
-            this.enable_btn.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.enable_btn.Style.ForeColor = System.Drawing.Color.White;
             this.enable_btn.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.enable_btn.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.enable_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
@@ -291,6 +298,10 @@
             this.enable_btn.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.enable_btn.Style.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.enable_btn.TabIndex = 13;
+            this.enable_btn.Text = "Enable";
+            this.enable_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.enable_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.enable_btn.TextMargin = new System.Windows.Forms.Padding(0);
             this.enable_btn.ThemeName = "Office2016Colorful";
             this.toolTip1.SetToolTip(this.enable_btn, "Enable Selected Supplier");
             this.enable_btn.UseVisualStyleBackColor = false;
@@ -305,26 +316,31 @@
             this.addsupp_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addsupp_btn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addsupp_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addsupp_btn.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addsupp_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.addsupp_btn.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addsupp_btn.ForeColor = System.Drawing.Color.White;
+            this.addsupp_btn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.addsupp_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.addsupp_btn.ImageMargin = new System.Windows.Forms.Padding(5);
-            this.addsupp_btn.ImageSize = new System.Drawing.Size(55, 55);
-            this.addsupp_btn.Location = new System.Drawing.Point(10, 0);
-            this.addsupp_btn.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.addsupp_btn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.addsupp_btn.ImageSize = new System.Drawing.Size(45, 45);
+            this.addsupp_btn.Location = new System.Drawing.Point(10, 5);
+            this.addsupp_btn.Margin = new System.Windows.Forms.Padding(10, 5, 0, 0);
             this.addsupp_btn.Name = "addsupp_btn";
-            this.addsupp_btn.Size = new System.Drawing.Size(75, 54);
+            this.addsupp_btn.Size = new System.Drawing.Size(90, 64);
             this.addsupp_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.addsupp_btn.Style.FocusedBackColor = System.Drawing.Color.Transparent;
-            this.addsupp_btn.Style.FocusedForeColor = System.Drawing.Color.Transparent;
-            this.addsupp_btn.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.addsupp_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.addsupp_btn.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.addsupp_btn.Style.ForeColor = System.Drawing.Color.White;
             this.addsupp_btn.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.addsupp_btn.Style.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.addsupp_btn.Style.HoverForeColor = System.Drawing.Color.White;
             this.addsupp_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
             this.addsupp_btn.Style.Image = global::MiniGram.Properties.Resources.add;
             this.addsupp_btn.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.addsupp_btn.Style.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.addsupp_btn.Style.PressedForeColor = System.Drawing.Color.White;
             this.addsupp_btn.TabIndex = 12;
+            this.addsupp_btn.Text = "Add";
+            this.addsupp_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.addsupp_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.addsupp_btn.TextMargin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.addsupp_btn.ThemeName = "Office2016Colorful";
             this.toolTip1.SetToolTip(this.addsupp_btn, "Add New Supplier");
             this.addsupp_btn.UseVisualStyleBackColor = false;

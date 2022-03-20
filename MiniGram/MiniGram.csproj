@@ -17,7 +17,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\DESKTOP-A846TAN\c%24\Publish\</PublishUrl>
+    <PublishUrl>\\DESKTOP-A846TAN\c%24\Publish\MiniGram\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -27,10 +27,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>1</ApplicationRevision>
+    <TargetCulture>en-US</TargetCulture>
+    <ProductName>MiniGram</ProductName>
+    <PublisherName>SuperTech Co.</PublisherName>
+    <MinimumRequiredVersion>1.0.0.7</MinimumRequiredVersion>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
+    <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -115,6 +118,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CustomersUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomersUC.Designer.cs">
+      <DependentUpon>CustomersUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddSupplierForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +165,9 @@
     <Compile Include="Controls\SuppliersUC.Designer.cs">
       <DependentUpon>SuppliersUC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\CustomersUC.resx">
+      <DependentUpon>CustomersUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddSupplierForm.resx">
       <DependentUpon>AddSupplierForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +208,7 @@
     </None>
     <None Include="MiniGram_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectAllCustomersResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectAllSuppliersResult.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
