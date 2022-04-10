@@ -148,13 +148,6 @@ namespace MiniGram.LINQ
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_select_item")]
-		public ISingleResult<sp_select_itemResult> sp_select_item([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string str)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), str);
-			return ((ISingleResult<sp_select_itemResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateItem")]
 		public int sp_UpdateItem([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qte, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string unit)
 		{
@@ -169,11 +162,46 @@ namespace MiniGram.LINQ
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_selectReceipts")]
+		public ISingleResult<sp_selectReceiptsResult> sp_selectReceipts([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string str)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), str);
+			return ((ISingleResult<sp_selectReceiptsResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_select_products")]
 		public ISingleResult<sp_select_productsResult> sp_select_products([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string str)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), str);
 			return ((ISingleResult<sp_select_productsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_select_item")]
+		public ISingleResult<sp_select_itemResult> sp_select_item([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string str)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), str);
+			return ((ISingleResult<sp_select_itemResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_insertNewReciptDetail")]
+		public int sp_insertNewReciptDetail([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> rid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qte, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> price, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> total)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), rid, pid, qte, price, total);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_insertNewRecipt")]
+		public int sp_insertNewRecipt([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> itemnb, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> total)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), itemnb, total);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getLastReceiptID")]
+		public ISingleResult<sp_getLastReceiptIDResult> sp_getLastReceiptID()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_getLastReceiptIDResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1019,22 +1047,18 @@ namespace MiniGram.LINQ
 		}
 	}
 	
-	public partial class sp_select_itemResult
+	public partial class sp_selectReceiptsResult
 	{
 		
 		private int _ID;
 		
-		private string _ItemName;
+		private System.Nullable<int> _NumberOfItem;
 		
-		private System.Nullable<int> _Quantity;
+		private System.Nullable<double> _TotalPrice;
 		
-		private string _Unit;
+		private System.Nullable<System.DateTime> _Date;
 		
-		private System.Nullable<System.DateTime> _AddedDate;
-		
-		private string _Status;
-		
-		public sp_select_itemResult()
+		public sp_selectReceiptsResult()
 		{
 		}
 		
@@ -1054,82 +1078,50 @@ namespace MiniGram.LINQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="NVarChar(100)")]
-		public string ItemName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOfItem", DbType="Int")]
+		public System.Nullable<int> NumberOfItem
 		{
 			get
 			{
-				return this._ItemName;
+				return this._NumberOfItem;
 			}
 			set
 			{
-				if ((this._ItemName != value))
+				if ((this._NumberOfItem != value))
 				{
-					this._ItemName = value;
+					this._NumberOfItem = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
-		public System.Nullable<int> Quantity
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalPrice", DbType="Float")]
+		public System.Nullable<double> TotalPrice
 		{
 			get
 			{
-				return this._Quantity;
+				return this._TotalPrice;
 			}
 			set
 			{
-				if ((this._Quantity != value))
+				if ((this._TotalPrice != value))
 				{
-					this._Quantity = value;
+					this._TotalPrice = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unit", DbType="NVarChar(20)")]
-		public string Unit
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
 		{
 			get
 			{
-				return this._Unit;
+				return this._Date;
 			}
 			set
 			{
-				if ((this._Unit != value))
+				if ((this._Date != value))
 				{
-					this._Unit = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> AddedDate
-		{
-			get
-			{
-				return this._AddedDate;
-			}
-			set
-			{
-				if ((this._AddedDate != value))
-				{
-					this._AddedDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
-		public string Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
+					this._Date = value;
 				}
 			}
 		}
@@ -1246,6 +1238,148 @@ namespace MiniGram.LINQ
 				if ((this._Status != value))
 				{
 					this._Status = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_select_itemResult
+	{
+		
+		private int _ID;
+		
+		private string _ItemName;
+		
+		private System.Nullable<int> _Quantity;
+		
+		private string _Unit;
+		
+		private System.Nullable<System.DateTime> _AddedDate;
+		
+		private string _Status;
+		
+		public sp_select_itemResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="NVarChar(100)")]
+		public string ItemName
+		{
+			get
+			{
+				return this._ItemName;
+			}
+			set
+			{
+				if ((this._ItemName != value))
+				{
+					this._ItemName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unit", DbType="NVarChar(20)")]
+		public string Unit
+		{
+			get
+			{
+				return this._Unit;
+			}
+			set
+			{
+				if ((this._Unit != value))
+				{
+					this._Unit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this._AddedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_getLastReceiptIDResult
+	{
+		
+		private System.Nullable<int> _MAX_RID;
+		
+		public sp_getLastReceiptIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAX_RID", DbType="Int")]
+		public System.Nullable<int> MAX_RID
+		{
+			get
+			{
+				return this._MAX_RID;
+			}
+			set
+			{
+				if ((this._MAX_RID != value))
+				{
+					this._MAX_RID = value;
 				}
 			}
 		}

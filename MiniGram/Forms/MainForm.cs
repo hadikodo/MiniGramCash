@@ -20,15 +20,15 @@ namespace MiniGram
         {
             InitializeComponent();
         }
-       /* protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams handleparam = base.CreateParams;
-                handleparam.ExStyle = 0x02000000;
-                return handleparam;
-            }
-        }*/
+        /* protected override CreateParams CreateParams
+         {
+             get
+             {
+                 CreateParams handleparam = base.CreateParams;
+                 handleparam.ExStyle = 0x02000000;
+                 return handleparam;
+             }
+         }*/
 
         private void exit_btn_Click(object sender, EventArgs e)
         {
@@ -49,8 +49,6 @@ namespace MiniGram
         private void MainForm_Load(object sender, EventArgs e)
         {
             currentWidth = panel55.Width;
-            dashboard_btn_Click(dashboard_btn, e);
-            
         }
 
         private void sfButton1_Click(object sender, EventArgs e)
@@ -89,20 +87,23 @@ namespace MiniGram
 
         private void refreshColors()
         {
-            dashboard_btn.BackColor = Color.FromArgb(0, 63, 63);
+            prices_btn.BackColor = Color.FromArgb(0, 63, 63);
             new_receipt_btn.BackColor = Color.FromArgb(0, 63, 63);
             receipt_btn.BackColor = Color.FromArgb(0, 63, 63);
-            contract_btn.BackColor = Color.FromArgb(0, 63, 63);
-            products_btn.BackColor = Color.FromArgb(0, 63, 63);
-            suppliers_btn.BackColor = Color.FromArgb(0, 63, 63);
-            customers_btn.BackColor = Color.FromArgb(0, 63, 63);
+            items_btn.BackColor = Color.FromArgb(0, 63, 63);
+            reports_btn.BackColor = Color.FromArgb(0, 63, 63);
         }
 
         private void dashboard_btn_Click(object sender, EventArgs e)
         {
             refreshColors();
-            dashboard_btn.BackColor = Color.White;
-            title_lbl.Text = "Dashboard";
+            prices_btn.BackColor = Color.White;
+            title_lbl.Text = "Products And Prices";
+            main_panel.Controls.Clear();
+            ProductsUC puc = new ProductsUC();
+            main_panel.Controls.Add(puc);
+            puc.refreshData();
+            puc.Dock = DockStyle.Fill;
         }
 
         private void new_receipt_btn_Click(object sender, EventArgs e)
@@ -110,6 +111,7 @@ namespace MiniGram
             refreshColors();
             new_receipt_btn.BackColor = Color.White;
             title_lbl.Text = "New Receipt";
+            main_panel.Controls.Clear();
         }
 
         private void receipt_btn_Click(object sender, EventArgs e)
@@ -117,49 +119,32 @@ namespace MiniGram
             refreshColors();
             receipt_btn.BackColor = Color.White;
             title_lbl.Text = "Receipts";
-        }
-
-        private void contract_btn_Click(object sender, EventArgs e)
-        {
-            refreshColors();
-            contract_btn.BackColor = Color.White;
-            title_lbl.Text = "Contracts";
+            main_panel.Controls.Clear();
         }
 
         private void products_btn_Click(object sender, EventArgs e)
         {
             refreshColors();
-            products_btn.BackColor = Color.White;
-            title_lbl.Text = "Products";
-        }
-
-        private void suppliers_btn_Click(object sender, EventArgs e)
-        {
-            refreshColors();
-            suppliers_btn.BackColor = Color.White;
-            title_lbl.Text = "Suppliers";
+            items_btn.BackColor = Color.White;
+            title_lbl.Text = "Stock";
             main_panel.Controls.Clear();
-            SuppliersUC suc  = new SuppliersUC();
-            main_panel.Controls.Add(suc);
-            suc.Dock = DockStyle.Fill;
-            suc.refreshData();
-        }
-
-        private void customers_btn_Click(object sender, EventArgs e)
-        {
-            refreshColors();
-            customers_btn.BackColor = Color.White;
-            title_lbl.Text = "Customers";
-            main_panel.Controls.Clear();
-            CustomersUC cuc = new CustomersUC();
-            main_panel.Controls.Add(cuc);
-            cuc.Dock = DockStyle.Fill;
-            cuc.refreshData();
+            ItemsUC iuc = new ItemsUC();
+            main_panel.Controls.Add(iuc);
+            iuc.refreshData();
+            iuc.Dock = DockStyle.Fill;
         }
 
         private void MainForm_MaximizedBoundsChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void reports_btn_Click(object sender, EventArgs e)
+        {
+            refreshColors();
+            reports_btn.BackColor = Color.White;
+            title_lbl.Text = "Reports";
+            main_panel.Controls.Clear();
         }
     }
 }

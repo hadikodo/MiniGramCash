@@ -122,6 +122,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Globals.cs" />
+    <Compile Include="Controls\BarcodeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BarcodeUC.Designer.cs">
+      <DependentUpon>BarcodeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\POSUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\POSUC.Designer.cs">
+      <DependentUpon>POSUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ProductsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
