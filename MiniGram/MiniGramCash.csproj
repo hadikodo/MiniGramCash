@@ -122,12 +122,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Globals.cs" />
-    <Compile Include="Controls\BarcodeUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\BarcodeUC.Designer.cs">
-      <DependentUpon>BarcodeUC.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\POSUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -199,6 +193,9 @@
     <Compile Include="Controls\ItemsUC.Designer.cs">
       <DependentUpon>ItemsUC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\POSUC.resx">
+      <DependentUpon>POSUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ProductsUC.resx">
       <DependentUpon>ProductsUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +250,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectAllCustomersResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectAllSuppliersResult.datasource" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectReceiptsResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_itemResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_productsResult.datasource" />
     <None Include="Properties\Settings.settings">
@@ -345,6 +343,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cashier.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

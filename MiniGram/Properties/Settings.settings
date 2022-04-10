@@ -19,8 +19,11 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DESKTOP-A846TAN;Initial Catalog=MiniGramCashDB;Integrated Security=True</Value>
     </Setting>
-    <Setting Name="dollarLBPPrice" Type="System.Int64" Scope="User">
+    <Setting Name="dollarLBPPrice" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20000</Value>
+    </Setting>
+    <Setting Name="isPOSType" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

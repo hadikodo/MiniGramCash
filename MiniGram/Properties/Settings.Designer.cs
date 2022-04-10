@@ -73,12 +73,24 @@ namespace MiniGram.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("20000")]
-        public long dollarLBPPrice {
+        public int dollarLBPPrice {
             get {
-                return ((long)(this["dollarLBPPrice"]));
+                return ((int)(this["dollarLBPPrice"]));
             }
             set {
                 this["dollarLBPPrice"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool isPOSType {
+            get {
+                return ((bool)(this["isPOSType"]));
+            }
+            set {
+                this["isPOSType"] = value;
             }
         }
     }
