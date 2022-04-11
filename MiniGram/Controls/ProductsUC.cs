@@ -53,7 +53,7 @@ namespace MiniGram.Controls
             dataGridView1.Refresh();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (!row.Cells[5].Value.ToString().Equals("Enabled"))
+                if (!row.Cells[6].Value.ToString().Equals("Enabled"))
                 {
                     row.DefaultCellStyle.BackColor = Color.DarkGray;
                 }
@@ -124,7 +124,7 @@ namespace MiniGram.Controls
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 7)
             {
                 EditProductForm epf = new EditProductForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
                 epf.ShowDialog();

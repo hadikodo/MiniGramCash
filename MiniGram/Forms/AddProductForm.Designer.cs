@@ -44,11 +44,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.productname_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.barcode_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             ((System.ComponentModel.ISupportInitialize)(this.logo_img)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.price_txt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantity_txt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productname_txt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcode_txt)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -100,6 +103,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.barcode_txt);
             this.panel1.Controls.Add(this.hasqte_combo);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.warning_lable);
@@ -123,7 +128,7 @@
             this.hasqte_combo.Items.AddRange(new object[] {
             "No",
             "Yes"});
-            this.hasqte_combo.Location = new System.Drawing.Point(328, 170);
+            this.hasqte_combo.Location = new System.Drawing.Point(328, 192);
             this.hasqte_combo.Name = "hasqte_combo";
             this.hasqte_combo.Size = new System.Drawing.Size(400, 36);
             this.hasqte_combo.TabIndex = 21;
@@ -135,7 +140,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label4.Location = new System.Drawing.Point(22, 174);
+            this.label4.Location = new System.Drawing.Point(22, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(251, 32);
             this.label4.TabIndex = 20;
@@ -179,7 +184,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label5.Location = new System.Drawing.Point(22, 320);
+            this.label5.Location = new System.Drawing.Point(22, 342);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(201, 32);
             this.label5.TabIndex = 14;
@@ -197,7 +202,7 @@
             this.price_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.price_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.price_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.price_txt.Location = new System.Drawing.Point(328, 319);
+            this.price_txt.Location = new System.Drawing.Point(328, 341);
             this.price_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.price_txt.MinimumSize = new System.Drawing.Size(34, 30);
             this.price_txt.Name = "price_txt";
@@ -220,7 +225,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label3.Location = new System.Drawing.Point(22, 239);
+            this.label3.Location = new System.Drawing.Point(22, 261);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(285, 32);
             this.label3.TabIndex = 10;
@@ -234,11 +239,11 @@
             this.quantity_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.quantity_txt.CanOverrideStyle = true;
             this.quantity_txt.CornerRadius = 5;
-            this.quantity_txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.quantity_txt.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.quantity_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.quantity_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantity_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.quantity_txt.Location = new System.Drawing.Point(328, 238);
+            this.quantity_txt.Location = new System.Drawing.Point(328, 260);
             this.quantity_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.quantity_txt.MinimumSize = new System.Drawing.Size(34, 30);
             this.quantity_txt.Name = "quantity_txt";
@@ -261,7 +266,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label2.Location = new System.Drawing.Point(22, 100);
+            this.label2.Location = new System.Drawing.Point(22, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(263, 32);
             this.label2.TabIndex = 8;
@@ -275,11 +280,11 @@
             this.productname_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.productname_txt.CanOverrideStyle = true;
             this.productname_txt.CornerRadius = 5;
-            this.productname_txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.productname_txt.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.productname_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.productname_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productname_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.productname_txt.Location = new System.Drawing.Point(328, 99);
+            this.productname_txt.Location = new System.Drawing.Point(328, 48);
             this.productname_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.productname_txt.MinimumSize = new System.Drawing.Size(34, 30);
             this.productname_txt.Name = "productname_txt";
@@ -298,6 +303,51 @@
             this.productname_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.toolTip1.SetToolTip(this.productname_txt, "The Name Of The New Product");
             this.productname_txt.UseBorderColorOnFocus = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.label6.Location = new System.Drawing.Point(22, 121);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(178, 32);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "⫸ Barcode :";
+            // 
+            // barcode_txt
+            // 
+            this.barcode_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.barcode_txt.BeforeTouchSize = new System.Drawing.Size(400, 40);
+            this.barcode_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.barcode_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.barcode_txt.CanOverrideStyle = true;
+            this.barcode_txt.CornerRadius = 5;
+            this.barcode_txt.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.barcode_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.barcode_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barcode_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.barcode_txt.Location = new System.Drawing.Point(328, 120);
+            this.barcode_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.barcode_txt.MinimumSize = new System.Drawing.Size(34, 30);
+            this.barcode_txt.Name = "barcode_txt";
+            this.barcode_txt.Size = new System.Drawing.Size(400, 40);
+            this.barcode_txt.TabIndex = 22;
+            this.barcode_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.barcode_txt.ThemeName = "Default";
+            this.barcode_txt.ThemeStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.barcode_txt.ThemeStyle.CornerRadius = 5;
+            this.barcode_txt.ThemeStyle.DisabledBackColor = System.Drawing.Color.Gray;
+            this.barcode_txt.ThemeStyle.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.barcode_txt.ThemeStyle.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.barcode_txt.ThemeStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.barcode_txt.ThemeStyle.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barcode_txt.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.barcode_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.toolTip1.SetToolTip(this.barcode_txt, "The Name Of The New Product");
+            this.barcode_txt.UseBorderColorOnFocus = true;
+            this.barcode_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.barcode_txt_KeyPress);
             // 
             // AddProductForm
             // 
@@ -321,6 +371,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.price_txt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantity_txt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productname_txt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcode_txt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,5 +394,7 @@
         private System.Windows.Forms.Label warning_lable;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox hasqte_combo;
+        private System.Windows.Forms.Label label6;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt barcode_txt;
     }
 }

@@ -36,7 +36,7 @@ namespace MiniGram.Forms
                     {
                         try
                         {
-                            cnx.sp_UpdateProduct(productID,productname_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false);
+                            cnx.sp_UpdateProduct(productID,productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false);
                         }
                         catch (Exception)
                         {
@@ -57,7 +57,7 @@ namespace MiniGram.Forms
                         {
                             try
                             {
-                                cnx.sp_UpdateProduct(productID,productname_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true);
+                                cnx.sp_UpdateProduct(productID,productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true);
                             }
                             catch (Exception)
                             {
@@ -84,6 +84,7 @@ namespace MiniGram.Forms
                           select p).ToList();
             if (product != null)
             {
+                barcode_txt.Text = product[0].BARCODE;
                 productname_txt.Text = product[0].PNAME;
                 hasqte_combo.SelectedIndex = Convert.ToInt32(product[0].HasQuantity);
                 quantity_txt.Text = product[0].QTE.ToString();

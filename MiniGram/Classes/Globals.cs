@@ -9,5 +9,7 @@ namespace MiniGram.Classes
     class Globals
     {
         public static bool isSearchVisible { get; set; }
+        public static int deleteNB { get; set; }
+        public static int qteChangeNB { get; set; }
     }
 }

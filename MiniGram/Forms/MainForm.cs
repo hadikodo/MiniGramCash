@@ -113,19 +113,10 @@ namespace MiniGram
             new_receipt_btn.BackColor = Color.White;
             title_lbl.Text = "New Receipt";
             main_panel.Controls.Clear();
-            if (Properties.Settings.Default.isPOSType)
-            {
-                POSUC posuc = new POSUC();
-                main_panel.Controls.Add(posuc);
-                posuc.refreshData("");
-                posuc.Dock = DockStyle.Fill;
-            }
-            else
-            {
-                BarcodeUC buc = new BarcodeUC();
-                main_panel.Controls.Add(buc);
-                buc.Dock = DockStyle.Fill;
-            }
+            POSUC posuc = new POSUC();
+            main_panel.Controls.Add(posuc);
+            posuc.refreshData("");
+            posuc.Dock = DockStyle.Fill;
         }
 
         private void receipt_btn_Click(object sender, EventArgs e)

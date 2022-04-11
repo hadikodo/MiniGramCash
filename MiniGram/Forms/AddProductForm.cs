@@ -46,6 +46,8 @@ namespace MiniGram.Forms
             }
             else
             {
+                if (string.IsNullOrEmpty(barcode_txt.Text))
+                    barcode_txt.Text = "0";
                 if (hasqte_combo.SelectedIndex == 0)
                 {
                     quantity_txt.Text = "0";
@@ -53,7 +55,7 @@ namespace MiniGram.Forms
                     {
                         try
                         {
-                            cnx.sp_addNewProduct(productname_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false);
+                            cnx.sp_addNewProduct(productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false);
                         }
                         catch (Exception)
                         {
@@ -74,7 +76,7 @@ namespace MiniGram.Forms
                         {
                             try
                             {
-                                cnx.sp_addNewProduct(productname_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true);
+                                cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true);
                             }
                             catch (Exception)
                             {
@@ -128,6 +130,20 @@ namespace MiniGram.Forms
             {
                 label3.Enabled = false;
                 quantity_txt.Enabled = false;
+            }
+        }
+
+        private void barcode_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = false;
             }
         }
     }

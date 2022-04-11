@@ -33,16 +33,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.search_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.search_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.disablecus_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.enablecus_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.addproduct_btn = new Syncfusion.WinForms.Controls.SfButton();
-            this.search_btn = new Syncfusion.WinForms.Controls.SfButton();
-            this.search_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +65,79 @@
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // search_txt
+            // 
+            this.search_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.search_txt.BeforeTouchSize = new System.Drawing.Size(34, 40);
+            this.search_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.search_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.search_txt.CanOverrideStyle = true;
+            this.search_txt.CornerRadius = 5;
+            this.search_txt.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.search_txt.Dock = System.Windows.Forms.DockStyle.Left;
+            this.search_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.search_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.search_txt.Location = new System.Drawing.Point(403, 3);
+            this.search_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.search_txt.MinimumSize = new System.Drawing.Size(34, 30);
+            this.search_txt.Name = "search_txt";
+            this.search_txt.Size = new System.Drawing.Size(34, 40);
+            this.search_txt.TabIndex = 16;
+            this.search_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.search_txt.ThemeName = "Default";
+            this.search_txt.ThemeStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.search_txt.ThemeStyle.CornerRadius = 5;
+            this.search_txt.ThemeStyle.DisabledBackColor = System.Drawing.Color.Gray;
+            this.search_txt.ThemeStyle.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.search_txt.ThemeStyle.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.search_txt.ThemeStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.search_txt.ThemeStyle.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_txt.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.search_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.toolTip1.SetToolTip(this.search_txt, "The Name Of The New Product");
+            this.search_txt.UseBorderColorOnFocus = true;
+            this.search_txt.TextChanged += new System.EventHandler(this.search_txt_TextChanged);
+            // 
+            // search_btn
+            // 
+            this.search_btn.AccessibleName = "Button";
+            this.search_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.search_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.search_btn.CanOverrideStyle = true;
+            this.search_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.search_btn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.search_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.search_btn.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_btn.ForeColor = System.Drawing.Color.White;
+            this.search_btn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.search_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.search_btn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.search_btn.ImageSize = new System.Drawing.Size(40, 40);
+            this.search_btn.Location = new System.Drawing.Point(310, 5);
+            this.search_btn.Margin = new System.Windows.Forms.Padding(10, 5, 0, 0);
+            this.search_btn.Name = "search_btn";
+            this.search_btn.Size = new System.Drawing.Size(90, 64);
+            this.search_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.search_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.search_btn.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.search_btn.Style.ForeColor = System.Drawing.Color.White;
+            this.search_btn.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.search_btn.Style.HoverForeColor = System.Drawing.Color.White;
+            this.search_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.search_btn.Style.Image = global::MiniGram.Properties.Resources.search;
+            this.search_btn.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.search_btn.Style.PressedForeColor = System.Drawing.Color.White;
+            this.search_btn.TabIndex = 15;
+            this.search_btn.Text = "Search";
+            this.search_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.search_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.search_btn.TextMargin = new System.Windows.Forms.Padding(0);
+            this.search_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.search_btn, "Disable Selected Customer");
+            this.search_btn.UseVisualStyleBackColor = true;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
             // disablecus_btn
             // 
@@ -182,79 +256,6 @@
             this.addproduct_btn.UseVisualStyleBackColor = true;
             this.addproduct_btn.Click += new System.EventHandler(this.addproduct_btn_Click);
             // 
-            // search_btn
-            // 
-            this.search_btn.AccessibleName = "Button";
-            this.search_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.search_btn.CanOverrideStyle = true;
-            this.search_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.search_btn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.search_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search_btn.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_btn.ForeColor = System.Drawing.Color.White;
-            this.search_btn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.search_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.search_btn.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.search_btn.ImageSize = new System.Drawing.Size(40, 40);
-            this.search_btn.Location = new System.Drawing.Point(310, 5);
-            this.search_btn.Margin = new System.Windows.Forms.Padding(10, 5, 0, 0);
-            this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(90, 64);
-            this.search_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_btn.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.search_btn.Style.ForeColor = System.Drawing.Color.White;
-            this.search_btn.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.search_btn.Style.HoverForeColor = System.Drawing.Color.White;
-            this.search_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
-            this.search_btn.Style.Image = global::MiniGram.Properties.Resources.search;
-            this.search_btn.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.search_btn.Style.PressedForeColor = System.Drawing.Color.White;
-            this.search_btn.TabIndex = 15;
-            this.search_btn.Text = "Search";
-            this.search_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.search_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.search_btn.TextMargin = new System.Windows.Forms.Padding(0);
-            this.search_btn.ThemeName = "Office2016Colorful";
-            this.toolTip1.SetToolTip(this.search_btn, "Disable Selected Customer");
-            this.search_btn.UseVisualStyleBackColor = true;
-            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
-            // 
-            // search_txt
-            // 
-            this.search_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.search_txt.BeforeTouchSize = new System.Drawing.Size(34, 40);
-            this.search_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.search_txt.CanOverrideStyle = true;
-            this.search_txt.CornerRadius = 5;
-            this.search_txt.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.search_txt.Dock = System.Windows.Forms.DockStyle.Left;
-            this.search_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.search_txt.Location = new System.Drawing.Point(403, 3);
-            this.search_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_txt.MinimumSize = new System.Drawing.Size(34, 30);
-            this.search_txt.Name = "search_txt";
-            this.search_txt.Size = new System.Drawing.Size(34, 40);
-            this.search_txt.TabIndex = 16;
-            this.search_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.search_txt.ThemeName = "Default";
-            this.search_txt.ThemeStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_txt.ThemeStyle.CornerRadius = 5;
-            this.search_txt.ThemeStyle.DisabledBackColor = System.Drawing.Color.Gray;
-            this.search_txt.ThemeStyle.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.search_txt.ThemeStyle.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.search_txt.ThemeStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.search_txt.ThemeStyle.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_txt.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.toolTip1.SetToolTip(this.search_txt, "The Name Of The New Product");
-            this.search_txt.UseBorderColorOnFocus = true;
-            this.search_txt.TextChanged += new System.EventHandler(this.search_txt_TextChanged);
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 5;
@@ -318,6 +319,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
+            this.barcodeDataGridViewTextBoxColumn,
             this.productNameDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
@@ -362,6 +364,13 @@
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // barcodeDataGridViewTextBoxColumn
+            // 
+            this.barcodeDataGridViewTextBoxColumn.DataPropertyName = "Barcode";
+            this.barcodeDataGridViewTextBoxColumn.HeaderText = "Barcode";
+            this.barcodeDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
+            this.barcodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // productNameDataGridViewTextBoxColumn
             // 
             this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
@@ -379,7 +388,7 @@
             // priceDataGridViewTextBoxColumn
             // 
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price $";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -503,13 +512,14 @@
         private Syncfusion.WinForms.Controls.SfButton search_btn;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt search_txt;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.BindingSource spselectproductsResultBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addedDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.BindingSource spselectproductsResultBindingSource;
     }
 }

@@ -33,15 +33,15 @@ namespace MiniGram.LINQ
     partial void InsertTBLITEM(TBLITEM instance);
     partial void UpdateTBLITEM(TBLITEM instance);
     partial void DeleteTBLITEM(TBLITEM instance);
-    partial void InsertTBLPRODUCT(TBLPRODUCT instance);
-    partial void UpdateTBLPRODUCT(TBLPRODUCT instance);
-    partial void DeleteTBLPRODUCT(TBLPRODUCT instance);
     partial void InsertTBLRECEIPT(TBLRECEIPT instance);
     partial void UpdateTBLRECEIPT(TBLRECEIPT instance);
     partial void DeleteTBLRECEIPT(TBLRECEIPT instance);
     partial void InsertTBLRECEIPTS_DETAIL(TBLRECEIPTS_DETAIL instance);
     partial void UpdateTBLRECEIPTS_DETAIL(TBLRECEIPTS_DETAIL instance);
     partial void DeleteTBLRECEIPTS_DETAIL(TBLRECEIPTS_DETAIL instance);
+    partial void InsertTBLPRODUCT(TBLPRODUCT instance);
+    partial void UpdateTBLPRODUCT(TBLPRODUCT instance);
+    partial void DeleteTBLPRODUCT(TBLPRODUCT instance);
     #endregion
 		
 		public MiniGramDBDataContext() : 
@@ -82,14 +82,6 @@ namespace MiniGram.LINQ
 			}
 		}
 		
-		public System.Data.Linq.Table<TBLPRODUCT> TBLPRODUCTs
-		{
-			get
-			{
-				return this.GetTable<TBLPRODUCT>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TBLRECEIPT> TBLRECEIPTs
 		{
 			get
@@ -106,17 +98,18 @@ namespace MiniGram.LINQ
 			}
 		}
 		
+		public System.Data.Linq.Table<TBLPRODUCT> TBLPRODUCTs
+		{
+			get
+			{
+				return this.GetTable<TBLPRODUCT>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_addNewItem")]
 		public int sp_addNewItem([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qte, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string unit)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, qte, unit);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_addNewProduct")]
-		public int sp_addNewProduct([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qte, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> price, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> hasQuantity)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, qte, price, hasQuantity);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -155,20 +148,6 @@ namespace MiniGram.LINQ
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateProduct")]
-		public int sp_UpdateProduct([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qte, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> price, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> hasQuantity)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, name, qte, price, hasQuantity);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_select_products")]
-		public ISingleResult<sp_select_productsResult> sp_select_products([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string str)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), str);
-			return ((ISingleResult<sp_select_productsResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_select_item")]
 		public ISingleResult<sp_select_itemResult> sp_select_item([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string str)
 		{
@@ -181,13 +160,6 @@ namespace MiniGram.LINQ
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<sp_getLastReceiptIDResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getProductsCount")]
-		public ISingleResult<sp_getProductsCountResult> sp_getProductsCount()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<sp_getProductsCountResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_insertNewRecipt")]
@@ -216,6 +188,34 @@ namespace MiniGram.LINQ
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), str);
 			return ((ISingleResult<sp_selectReceiptsDetailsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getProductsCount")]
+		public ISingleResult<sp_getProductsCountResult> sp_getProductsCount([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string str)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), str);
+			return ((ISingleResult<sp_getProductsCountResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_addNewProduct")]
+		public int sp_addNewProduct([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string barcode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qte, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> price, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> hasQuantity)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, barcode, qte, price, hasQuantity);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateProduct")]
+		public int sp_UpdateProduct([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string barcode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qte, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> price, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> hasQuantity)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, name, barcode, qte, price, hasQuantity);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_select_products")]
+		public ISingleResult<sp_select_productsResult> sp_select_products([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string str)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), str);
+			return ((ISingleResult<sp_select_productsResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getProductByName")]
@@ -408,240 +408,6 @@ namespace MiniGram.LINQ
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBLPRODUCTS")]
-	public partial class TBLPRODUCT : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _PID;
-		
-		private string _PNAME;
-		
-		private System.Nullable<int> _QTE;
-		
-		private System.Nullable<double> _PRICE;
-		
-		private System.Nullable<System.DateTime> _ADD_DATE;
-		
-		private System.Nullable<bool> _ENABLED;
-		
-		private System.Nullable<bool> _HasQuantity;
-		
-		private EntitySet<TBLRECEIPTS_DETAIL> _TBLRECEIPTS_DETAILs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPIDChanging(int value);
-    partial void OnPIDChanged();
-    partial void OnPNAMEChanging(string value);
-    partial void OnPNAMEChanged();
-    partial void OnQTEChanging(System.Nullable<int> value);
-    partial void OnQTEChanged();
-    partial void OnPRICEChanging(System.Nullable<double> value);
-    partial void OnPRICEChanged();
-    partial void OnADD_DATEChanging(System.Nullable<System.DateTime> value);
-    partial void OnADD_DATEChanged();
-    partial void OnENABLEDChanging(System.Nullable<bool> value);
-    partial void OnENABLEDChanged();
-    partial void OnHasQuantityChanging(System.Nullable<bool> value);
-    partial void OnHasQuantityChanged();
-    #endregion
-		
-		public TBLPRODUCT()
-		{
-			this._TBLRECEIPTS_DETAILs = new EntitySet<TBLRECEIPTS_DETAIL>(new Action<TBLRECEIPTS_DETAIL>(this.attach_TBLRECEIPTS_DETAILs), new Action<TBLRECEIPTS_DETAIL>(this.detach_TBLRECEIPTS_DETAILs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int PID
-		{
-			get
-			{
-				return this._PID;
-			}
-			set
-			{
-				if ((this._PID != value))
-				{
-					this.OnPIDChanging(value);
-					this.SendPropertyChanging();
-					this._PID = value;
-					this.SendPropertyChanged("PID");
-					this.OnPIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PNAME", DbType="NVarChar(100)")]
-		public string PNAME
-		{
-			get
-			{
-				return this._PNAME;
-			}
-			set
-			{
-				if ((this._PNAME != value))
-				{
-					this.OnPNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._PNAME = value;
-					this.SendPropertyChanged("PNAME");
-					this.OnPNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QTE", DbType="Int")]
-		public System.Nullable<int> QTE
-		{
-			get
-			{
-				return this._QTE;
-			}
-			set
-			{
-				if ((this._QTE != value))
-				{
-					this.OnQTEChanging(value);
-					this.SendPropertyChanging();
-					this._QTE = value;
-					this.SendPropertyChanged("QTE");
-					this.OnQTEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE", DbType="Float")]
-		public System.Nullable<double> PRICE
-		{
-			get
-			{
-				return this._PRICE;
-			}
-			set
-			{
-				if ((this._PRICE != value))
-				{
-					this.OnPRICEChanging(value);
-					this.SendPropertyChanging();
-					this._PRICE = value;
-					this.SendPropertyChanged("PRICE");
-					this.OnPRICEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ADD_DATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ADD_DATE
-		{
-			get
-			{
-				return this._ADD_DATE;
-			}
-			set
-			{
-				if ((this._ADD_DATE != value))
-				{
-					this.OnADD_DATEChanging(value);
-					this.SendPropertyChanging();
-					this._ADD_DATE = value;
-					this.SendPropertyChanged("ADD_DATE");
-					this.OnADD_DATEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ENABLED", DbType="Bit")]
-		public System.Nullable<bool> ENABLED
-		{
-			get
-			{
-				return this._ENABLED;
-			}
-			set
-			{
-				if ((this._ENABLED != value))
-				{
-					this.OnENABLEDChanging(value);
-					this.SendPropertyChanging();
-					this._ENABLED = value;
-					this.SendPropertyChanged("ENABLED");
-					this.OnENABLEDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasQuantity", DbType="Bit")]
-		public System.Nullable<bool> HasQuantity
-		{
-			get
-			{
-				return this._HasQuantity;
-			}
-			set
-			{
-				if ((this._HasQuantity != value))
-				{
-					this.OnHasQuantityChanging(value);
-					this.SendPropertyChanging();
-					this._HasQuantity = value;
-					this.SendPropertyChanged("HasQuantity");
-					this.OnHasQuantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLPRODUCT_TBLRECEIPTS_DETAIL", Storage="_TBLRECEIPTS_DETAILs", ThisKey="PID", OtherKey="PID")]
-		public EntitySet<TBLRECEIPTS_DETAIL> TBLRECEIPTS_DETAILs
-		{
-			get
-			{
-				return this._TBLRECEIPTS_DETAILs;
-			}
-			set
-			{
-				this._TBLRECEIPTS_DETAILs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TBLRECEIPTS_DETAILs(TBLRECEIPTS_DETAIL entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBLPRODUCT = this;
-		}
-		
-		private void detach_TBLRECEIPTS_DETAILs(TBLRECEIPTS_DETAIL entity)
-		{
-			this.SendPropertyChanging();
-			entity.TBLPRODUCT = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBLRECEIPTS")]
 	public partial class TBLRECEIPT : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -822,9 +588,9 @@ namespace MiniGram.LINQ
 		
 		private System.Nullable<double> _TOTAL_PRICE;
 		
-		private EntityRef<TBLPRODUCT> _TBLPRODUCT;
-		
 		private EntityRef<TBLRECEIPT> _TBLRECEIPT;
+		
+		private EntityRef<TBLPRODUCT> _TBLPRODUCT;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -846,8 +612,8 @@ namespace MiniGram.LINQ
 		
 		public TBLRECEIPTS_DETAIL()
 		{
-			this._TBLPRODUCT = default(EntityRef<TBLPRODUCT>);
 			this._TBLRECEIPT = default(EntityRef<TBLRECEIPT>);
+			this._TBLPRODUCT = default(EntityRef<TBLPRODUCT>);
 			OnCreated();
 		}
 		
@@ -979,40 +745,6 @@ namespace MiniGram.LINQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLPRODUCT_TBLRECEIPTS_DETAIL", Storage="_TBLPRODUCT", ThisKey="PID", OtherKey="PID", IsForeignKey=true)]
-		public TBLPRODUCT TBLPRODUCT
-		{
-			get
-			{
-				return this._TBLPRODUCT.Entity;
-			}
-			set
-			{
-				TBLPRODUCT previousValue = this._TBLPRODUCT.Entity;
-				if (((previousValue != value) 
-							|| (this._TBLPRODUCT.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBLPRODUCT.Entity = null;
-						previousValue.TBLRECEIPTS_DETAILs.Remove(this);
-					}
-					this._TBLPRODUCT.Entity = value;
-					if ((value != null))
-					{
-						value.TBLRECEIPTS_DETAILs.Add(this);
-						this._PID = value.PID;
-					}
-					else
-					{
-						this._PID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBLPRODUCT");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLRECEIPT_TBLRECEIPTS_DETAIL", Storage="_TBLRECEIPT", ThisKey="RID", OtherKey="RID", IsForeignKey=true)]
 		public TBLRECEIPT TBLRECEIPT
 		{
@@ -1047,6 +779,40 @@ namespace MiniGram.LINQ
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLPRODUCT_TBLRECEIPTS_DETAIL", Storage="_TBLPRODUCT", ThisKey="PID", OtherKey="PID", IsForeignKey=true)]
+		public TBLPRODUCT TBLPRODUCT
+		{
+			get
+			{
+				return this._TBLPRODUCT.Entity;
+			}
+			set
+			{
+				TBLPRODUCT previousValue = this._TBLPRODUCT.Entity;
+				if (((previousValue != value) 
+							|| (this._TBLPRODUCT.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBLPRODUCT.Entity = null;
+						previousValue.TBLRECEIPTS_DETAILs.Remove(this);
+					}
+					this._TBLPRODUCT.Entity = value;
+					if ((value != null))
+					{
+						value.TBLRECEIPTS_DETAILs.Add(this);
+						this._PID = value.PID;
+					}
+					else
+					{
+						this._PID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TBLPRODUCT");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1068,119 +834,261 @@ namespace MiniGram.LINQ
 		}
 	}
 	
-	public partial class sp_select_productsResult
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBLPRODUCTS")]
+	public partial class TBLPRODUCT : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private int _ID;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _ProductName;
+		private int _PID;
 		
-		private System.Nullable<int> _Quantity;
+		private string _PNAME;
 		
-		private System.Nullable<double> _Price;
+		private System.Nullable<int> _QTE;
 		
-		private System.Nullable<System.DateTime> _AddedDate;
+		private System.Nullable<double> _PRICE;
 		
-		private string _Status;
+		private System.Nullable<System.DateTime> _ADD_DATE;
 		
-		public sp_select_productsResult()
+		private System.Nullable<bool> _ENABLED;
+		
+		private System.Nullable<bool> _HasQuantity;
+		
+		private string _BARCODE;
+		
+		private EntitySet<TBLRECEIPTS_DETAIL> _TBLRECEIPTS_DETAILs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPIDChanging(int value);
+    partial void OnPIDChanged();
+    partial void OnPNAMEChanging(string value);
+    partial void OnPNAMEChanged();
+    partial void OnQTEChanging(System.Nullable<int> value);
+    partial void OnQTEChanged();
+    partial void OnPRICEChanging(System.Nullable<double> value);
+    partial void OnPRICEChanged();
+    partial void OnADD_DATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnADD_DATEChanged();
+    partial void OnENABLEDChanging(System.Nullable<bool> value);
+    partial void OnENABLEDChanged();
+    partial void OnHasQuantityChanging(System.Nullable<bool> value);
+    partial void OnHasQuantityChanged();
+    partial void OnBARCODEChanging(string value);
+    partial void OnBARCODEChanged();
+    #endregion
+		
+		public TBLPRODUCT()
 		{
+			this._TBLRECEIPTS_DETAILs = new EntitySet<TBLRECEIPTS_DETAIL>(new Action<TBLRECEIPTS_DETAIL>(this.attach_TBLRECEIPTS_DETAILs), new Action<TBLRECEIPTS_DETAIL>(this.detach_TBLRECEIPTS_DETAILs));
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
-		public int ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int PID
 		{
 			get
 			{
-				return this._ID;
+				return this._PID;
 			}
 			set
 			{
-				if ((this._ID != value))
+				if ((this._PID != value))
 				{
-					this._ID = value;
+					this.OnPIDChanging(value);
+					this.SendPropertyChanging();
+					this._PID = value;
+					this.SendPropertyChanged("PID");
+					this.OnPIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", DbType="NVarChar(100)")]
-		public string ProductName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PNAME", DbType="NVarChar(100)")]
+		public string PNAME
 		{
 			get
 			{
-				return this._ProductName;
+				return this._PNAME;
 			}
 			set
 			{
-				if ((this._ProductName != value))
+				if ((this._PNAME != value))
 				{
-					this._ProductName = value;
+					this.OnPNAMEChanging(value);
+					this.SendPropertyChanging();
+					this._PNAME = value;
+					this.SendPropertyChanged("PNAME");
+					this.OnPNAMEChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
-		public System.Nullable<int> Quantity
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QTE", DbType="Int")]
+		public System.Nullable<int> QTE
 		{
 			get
 			{
-				return this._Quantity;
+				return this._QTE;
 			}
 			set
 			{
-				if ((this._Quantity != value))
+				if ((this._QTE != value))
 				{
-					this._Quantity = value;
+					this.OnQTEChanging(value);
+					this.SendPropertyChanging();
+					this._QTE = value;
+					this.SendPropertyChanged("QTE");
+					this.OnQTEChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Float")]
-		public System.Nullable<double> Price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE", DbType="Float")]
+		public System.Nullable<double> PRICE
 		{
 			get
 			{
-				return this._Price;
+				return this._PRICE;
 			}
 			set
 			{
-				if ((this._Price != value))
+				if ((this._PRICE != value))
 				{
-					this._Price = value;
+					this.OnPRICEChanging(value);
+					this.SendPropertyChanging();
+					this._PRICE = value;
+					this.SendPropertyChanged("PRICE");
+					this.OnPRICEChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> AddedDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ADD_DATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ADD_DATE
 		{
 			get
 			{
-				return this._AddedDate;
+				return this._ADD_DATE;
 			}
 			set
 			{
-				if ((this._AddedDate != value))
+				if ((this._ADD_DATE != value))
 				{
-					this._AddedDate = value;
+					this.OnADD_DATEChanging(value);
+					this.SendPropertyChanging();
+					this._ADD_DATE = value;
+					this.SendPropertyChanged("ADD_DATE");
+					this.OnADD_DATEChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
-		public string Status
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ENABLED", DbType="Bit")]
+		public System.Nullable<bool> ENABLED
 		{
 			get
 			{
-				return this._Status;
+				return this._ENABLED;
 			}
 			set
 			{
-				if ((this._Status != value))
+				if ((this._ENABLED != value))
 				{
-					this._Status = value;
+					this.OnENABLEDChanging(value);
+					this.SendPropertyChanging();
+					this._ENABLED = value;
+					this.SendPropertyChanged("ENABLED");
+					this.OnENABLEDChanged();
 				}
 			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasQuantity", DbType="Bit")]
+		public System.Nullable<bool> HasQuantity
+		{
+			get
+			{
+				return this._HasQuantity;
+			}
+			set
+			{
+				if ((this._HasQuantity != value))
+				{
+					this.OnHasQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._HasQuantity = value;
+					this.SendPropertyChanged("HasQuantity");
+					this.OnHasQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BARCODE", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string BARCODE
+		{
+			get
+			{
+				return this._BARCODE;
+			}
+			set
+			{
+				if ((this._BARCODE != value))
+				{
+					this.OnBARCODEChanging(value);
+					this.SendPropertyChanging();
+					this._BARCODE = value;
+					this.SendPropertyChanged("BARCODE");
+					this.OnBARCODEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLPRODUCT_TBLRECEIPTS_DETAIL", Storage="_TBLRECEIPTS_DETAILs", ThisKey="PID", OtherKey="PID")]
+		public EntitySet<TBLRECEIPTS_DETAIL> TBLRECEIPTS_DETAILs
+		{
+			get
+			{
+				return this._TBLRECEIPTS_DETAILs;
+			}
+			set
+			{
+				this._TBLRECEIPTS_DETAILs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TBLRECEIPTS_DETAILs(TBLRECEIPTS_DETAIL entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBLPRODUCT = this;
+		}
+		
+		private void detach_TBLRECEIPTS_DETAILs(TBLRECEIPTS_DETAIL entity)
+		{
+			this.SendPropertyChanging();
+			entity.TBLPRODUCT = null;
 		}
 	}
 	
@@ -1321,32 +1229,6 @@ namespace MiniGram.LINQ
 				if ((this._MAX_RID != value))
 				{
 					this._MAX_RID = value;
-				}
-			}
-		}
-	}
-	
-	public partial class sp_getProductsCountResult
-	{
-		
-		private System.Nullable<int> _Product_Number;
-		
-		public sp_getProductsCountResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Number", DbType="Int")]
-		public System.Nullable<int> Product_Number
-		{
-			get
-			{
-				return this._Product_Number;
-			}
-			set
-			{
-				if ((this._Product_Number != value))
-				{
-					this._Product_Number = value;
 				}
 			}
 		}
@@ -1566,6 +1448,166 @@ namespace MiniGram.LINQ
 		}
 	}
 	
+	public partial class sp_getProductsCountResult
+	{
+		
+		private System.Nullable<int> _Product_Number;
+		
+		public sp_getProductsCountResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Number", DbType="Int")]
+		public System.Nullable<int> Product_Number
+		{
+			get
+			{
+				return this._Product_Number;
+			}
+			set
+			{
+				if ((this._Product_Number != value))
+				{
+					this._Product_Number = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_select_productsResult
+	{
+		
+		private int _ID;
+		
+		private string _Barcode;
+		
+		private string _ProductName;
+		
+		private System.Nullable<int> _Quantity;
+		
+		private System.Nullable<double> _Price;
+		
+		private System.Nullable<System.DateTime> _AddedDate;
+		
+		private string _Status;
+		
+		public sp_select_productsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Barcode", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Barcode
+		{
+			get
+			{
+				return this._Barcode;
+			}
+			set
+			{
+				if ((this._Barcode != value))
+				{
+					this._Barcode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", DbType="NVarChar(100)")]
+		public string ProductName
+		{
+			get
+			{
+				return this._ProductName;
+			}
+			set
+			{
+				if ((this._ProductName != value))
+				{
+					this._ProductName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Float")]
+		public System.Nullable<double> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this._AddedDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+	}
+	
 	public partial class sp_getProductByNameResult
 	{
 		
@@ -1582,6 +1624,8 @@ namespace MiniGram.LINQ
 		private System.Nullable<bool> _ENABLED;
 		
 		private System.Nullable<bool> _HasQuantity;
+		
+		private string _BARCODE;
 		
 		public sp_getProductByNameResult()
 		{
@@ -1695,6 +1739,22 @@ namespace MiniGram.LINQ
 				if ((this._HasQuantity != value))
 				{
 					this._HasQuantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BARCODE", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string BARCODE
+		{
+			get
+			{
+				return this._BARCODE;
+			}
+			set
+			{
+				if ((this._BARCODE != value))
+				{
+					this._BARCODE = value;
 				}
 			}
 		}
