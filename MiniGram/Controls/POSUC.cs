@@ -1,11 +1,13 @@
 ﻿using MiniGram.Classes;
 using MiniGram.Forms;
 using MiniGram.LINQ;
+using Syncfusion.Windows.Forms.Tools;
 using Syncfusion.WinForms.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,16 +36,72 @@ namespace MiniGram.Controls
             }
         }
 
+        private string generateNewBarcode()
+        {          
+            Random random = new Random();
+            int newBarcode = random.Next(1000000, 9999999);
+            var check = data.sp_getReceiptByBarcode(newBarcode.ToString()).ToList();
+            if (check.Count > 0)
+                return generateNewBarcode();
+            else
+                return newBarcode.ToString();
+
+        }
+
         private void checkout_btn_Click(object sender, EventArgs e)
         {
+            if(receipt_details.Rows.Count == 0)
+            {
+                MessageBox.Show("Please Enter At Least One Product!!");
+            }
+            else
+            {
+                string newBarcode = generateNewBarcode();
+                try
+                {
+                    data.sp_insertNewRecipt(newBarcode,Int32.Parse(tot_quantity.Text),double.Parse(tot_dollar.Text.Split(' ')[0]),Int32.Parse(tot_lbp.Text.Split(' ')[0]));
+                    foreach(DataGridViewRow row in receipt_details.Rows)
+                    {
+                        try
+                        {
+                            var product = data.sp_getProductByName(row.Cells[1].Value.ToString()).ToList();
+                            data.sp_insertNewReciptDetail(Int32.Parse(receipt_id.Text), product[0].PID, Int32.Parse(row.Cells[2].Value.ToString()),double.Parse(row.Cells[3].Value.ToString()),double.Parse(row.Cells[6].Value.ToString()),Int32.Parse(row.Cells[4].Value.ToString()),Int32.Parse(row.Cells[5].Value.ToString()));
+                        }
+                        catch(Exception ex)
+                        {
+                            data.sp_deleteReceiptByBarcode(newBarcode);
+                            data.sp_deleteReceiptDetailsByRID(Int32.Parse(receipt_id.Text));
+                        }
+                    }
+                    receipt_details.Rows.Clear();
+                    tot_lbp.Text = "0" + " LBP";
+                    tot_dollar.Text = "0" + " $";
+                    tot_quantity.Text = "0";
+                    try
+                    {
+                        NewReceiptNumber = Int32.Parse(data.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString())+1;
+                    }
+                    catch (Exception ex)
+                    {
+                        NewReceiptNumber = 1;
+                    }
+                    receipt_id.Text = NewReceiptNumber.ToString();
+                    search_txt.Text = "";
+                    ActiveControl = search_txt;
 
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("An Error Occured When Adding Receipt, Please Call Support !!");
+                }
+            }
         }
 
         private void POSUC_Load(object sender, EventArgs e)
         {
             try
             {
-                NewReceiptNumber = Int32.Parse(data.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString());
+                NewReceiptNumber = Int32.Parse(data.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString())+1;
             }catch(Exception ex)
             {
                 NewReceiptNumber = 1;
@@ -140,7 +198,7 @@ namespace MiniGram.Controls
             int pid = data.sp_getProductByName(pname).ToList()[0].PID;
             double dollar = data.sp_getProductByName(pname).ToList()[0].PRICE.Value;
             string barcode = data.sp_getProductByName(pname).ToList()[0].BARCODE;
-            int lbp = Convert.ToInt32(dollar) * Properties.Settings.Default.dollarLBPPrice;
+            int lbp = Int32.Parse((dollar * double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
             bool exist = false;
             foreach(DataGridViewRow row in receipt_details.Rows)
             {
@@ -148,7 +206,7 @@ namespace MiniGram.Controls
                 {
                     exist = true;
                     row.Cells[2].Value = Int32.Parse(row.Cells[2].Value.ToString()) + 1;
-                    row.Cells[5].Value = Int32.Parse(row.Cells[2].Value.ToString()) * lbp;
+                    row.Cells[5].Value = Int32.Parse((double.Parse(row.Cells[2].Value.ToString()) * double.Parse(lbp.ToString())).ToString());
                     row.Cells[6].Value = double.Parse(row.Cells[2].Value.ToString()) *dollar;
                     tot_quantity.Text = getTotalQTE();
                     tot_dollar.Text = getTotalDollar() + " $";
@@ -163,6 +221,7 @@ namespace MiniGram.Controls
                 tot_dollar.Text = getTotalDollar() + " $";
                 tot_lbp.Text = getTotalLBP() + " LBP";
             }
+            search_txt.Text = "";
             ActiveControl = search_txt;
         }
 
@@ -210,6 +269,73 @@ namespace MiniGram.Controls
         private void search_txt_TextChanged(object sender, EventArgs e)
         {
             refreshData(search_txt.Text);
+        }
+
+        private void add_btn_Click_1(object sender, EventArgs e)
+        {
+            /*try
+            {
+                string pname = search_txt.Text;
+                int pid = data.sp_getProductByName(pname).ToList()[0].PID;
+                double dollar = data.sp_getProductByName(pname).ToList()[0].PRICE.Value;
+                string barcode = data.sp_getProductByName(pname).ToList()[0].BARCODE;
+                int lbp = Convert.ToInt32(dollar) * Properties.Settings.Default.dollarLBPPrice;
+                bool exist = false;
+                foreach (DataGridViewRow row in receipt_details.Rows)
+                {
+                    if (row.Cells[1].Value.Equals(pname))
+                    {
+                        exist = true;
+                        row.Cells[2].Value = Int32.Parse(row.Cells[2].Value.ToString()) + 1;
+                        row.Cells[5].Value = Int32.Parse(row.Cells[2].Value.ToString()) * lbp;
+                        row.Cells[6].Value = double.Parse(row.Cells[2].Value.ToString()) * dollar;
+                        tot_quantity.Text = getTotalQTE();
+                        tot_dollar.Text = getTotalDollar() + " $";
+                        tot_lbp.Text = getTotalLBP() + " LBP";
+                        break;
+                    }
+                }
+                if (!exist)
+                {
+                    receipt_details.Rows.Add(barcode, data.sp_getProductByName(pname).ToList()[0].PNAME,1, dollar, lbp, lbp, dollar);
+                    tot_quantity.Text = getTotalQTE();
+                    tot_dollar.Text = getTotalDollar() + " $";
+                    tot_lbp.Text = getTotalLBP() + " LBP";
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Please Enter A Valid Barcode Or Name !!");                
+            }*/
+            (table.Controls[0] as SfButton).PerformClick();
+            search_txt.Text = "";
+            ActiveControl = search_txt;
+        }
+
+        private void keyboard_btn_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo ps = new ProcessStartInfo();
+            ps.FileName = ((Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\osk.exe"));
+            Process process = new Process();
+            process.StartInfo = ps;
+            process.Start();
+            ActiveControl = search_txt;
+        }
+
+        private void POSUC_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                add_btn_Click_1(add_btn, e);
+            }
+        }
+
+        private void search_txt_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                add_btn_Click_1(add_btn, e);
+            }
         }
     }
 }

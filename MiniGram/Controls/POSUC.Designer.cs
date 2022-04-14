@@ -36,12 +36,20 @@
             this.products_panel = new System.Windows.Forms.Panel();
             this.search_panel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.keyboard_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.delete_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.change_quantity_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.search_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.search_btn = new Syncfusion.WinForms.Controls.SfButton();
+            this.add_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.receipt_panel = new System.Windows.Forms.Panel();
             this.receipt_details = new System.Windows.Forms.DataGridView();
+            this.Barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DollarPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LBPPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalLBP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_panel = new System.Windows.Forms.Panel();
             this.tot_lbp = new System.Windows.Forms.Label();
             this.tot_dollar = new System.Windows.Forms.Label();
@@ -54,13 +62,6 @@
             this.checkout_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.spselectReceiptsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DollarPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LBPPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalLBP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.search_panel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -115,16 +116,18 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 5;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnCount = 6;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Controls.Add(this.delete_btn, 4, 0);
-            this.tableLayoutPanel2.Controls.Add(this.change_quantity_btn, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.keyboard_btn, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.delete_btn, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.change_quantity_btn, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.search_txt, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.search_btn, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.add_btn, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -132,6 +135,42 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1018, 74);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // keyboard_btn
+            // 
+            this.keyboard_btn.AccessibleName = "Button";
+            this.keyboard_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.keyboard_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.keyboard_btn.CanOverrideStyle = true;
+            this.keyboard_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.keyboard_btn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.keyboard_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keyboard_btn.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.keyboard_btn.ForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.keyboard_btn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.keyboard_btn.ImageSize = new System.Drawing.Size(60, 60);
+            this.keyboard_btn.Location = new System.Drawing.Point(417, 10);
+            this.keyboard_btn.Margin = new System.Windows.Forms.Padding(10);
+            this.keyboard_btn.Name = "keyboard_btn";
+            this.keyboard_btn.Size = new System.Drawing.Size(81, 54);
+            this.keyboard_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.keyboard_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.keyboard_btn.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.Style.ForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.keyboard_btn.Style.HoverForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.keyboard_btn.Style.Image = global::MiniGram.Properties.Resources.keyboard;
+            this.keyboard_btn.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.keyboard_btn.Style.PressedForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.TabIndex = 21;
+            this.keyboard_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.keyboard_btn.TextMargin = new System.Windows.Forms.Padding(0);
+            this.keyboard_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.keyboard_btn, "Open Touch Keyboard");
+            this.keyboard_btn.UseVisualStyleBackColor = true;
+            this.keyboard_btn.Click += new System.EventHandler(this.keyboard_btn_Click);
             // 
             // delete_btn
             // 
@@ -146,11 +185,11 @@
             this.delete_btn.ForeColor = System.Drawing.Color.White;
             this.delete_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.delete_btn.ImageMargin = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.delete_btn.ImageSize = new System.Drawing.Size(55, 55);
-            this.delete_btn.Location = new System.Drawing.Point(914, 0);
+            this.delete_btn.ImageSize = new System.Drawing.Size(60, 60);
+            this.delete_btn.Location = new System.Drawing.Point(913, 0);
             this.delete_btn.Margin = new System.Windows.Forms.Padding(0);
             this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(104, 74);
+            this.delete_btn.Size = new System.Drawing.Size(105, 74);
             this.delete_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.delete_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.delete_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -183,8 +222,8 @@
             this.change_quantity_btn.ForeColor = System.Drawing.Color.White;
             this.change_quantity_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.change_quantity_btn.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.change_quantity_btn.ImageSize = new System.Drawing.Size(55, 55);
-            this.change_quantity_btn.Location = new System.Drawing.Point(813, 0);
+            this.change_quantity_btn.ImageSize = new System.Drawing.Size(60, 60);
+            this.change_quantity_btn.Location = new System.Drawing.Point(812, 0);
             this.change_quantity_btn.Margin = new System.Windows.Forms.Padding(0);
             this.change_quantity_btn.Name = "change_quantity_btn";
             this.change_quantity_btn.Size = new System.Drawing.Size(101, 74);
@@ -210,7 +249,7 @@
             // search_txt
             // 
             this.search_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.search_txt.BeforeTouchSize = new System.Drawing.Size(400, 40);
+            this.search_txt.BeforeTouchSize = new System.Drawing.Size(387, 40);
             this.search_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.search_txt.CanOverrideStyle = true;
@@ -225,7 +264,7 @@
             this.search_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.MinimumSize = new System.Drawing.Size(34, 30);
             this.search_txt.Name = "search_txt";
-            this.search_txt.Size = new System.Drawing.Size(489, 40);
+            this.search_txt.Size = new System.Drawing.Size(387, 40);
             this.search_txt.TabIndex = 17;
             this.search_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.search_txt.ThemeName = "Default";
@@ -241,42 +280,44 @@
             this.toolTip1.SetToolTip(this.search_txt, "The Name Of The New Product");
             this.search_txt.UseBorderColorOnFocus = true;
             this.search_txt.TextChanged += new System.EventHandler(this.search_txt_TextChanged);
+            this.search_txt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.search_txt_KeyUp);
             // 
-            // search_btn
+            // add_btn
             // 
-            this.search_btn.AccessibleName = "Button";
-            this.search_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.search_btn.CanOverrideStyle = true;
-            this.search_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.search_btn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.search_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search_btn.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_btn.ForeColor = System.Drawing.Color.White;
-            this.search_btn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.search_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.search_btn.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.search_btn.ImageSize = new System.Drawing.Size(40, 40);
-            this.search_btn.Location = new System.Drawing.Point(519, 24);
-            this.search_btn.Margin = new System.Windows.Forms.Padding(10);
-            this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(81, 40);
-            this.search_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_btn.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.search_btn.Style.ForeColor = System.Drawing.Color.White;
-            this.search_btn.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.search_btn.Style.HoverForeColor = System.Drawing.Color.White;
-            this.search_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
-            this.search_btn.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.search_btn.Style.PressedForeColor = System.Drawing.Color.White;
-            this.search_btn.TabIndex = 18;
-            this.search_btn.Text = "Add";
-            this.search_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.search_btn.TextMargin = new System.Windows.Forms.Padding(0);
-            this.search_btn.ThemeName = "Office2016Colorful";
-            this.toolTip1.SetToolTip(this.search_btn, "Add Product To Receipt");
-            this.search_btn.UseVisualStyleBackColor = true;
+            this.add_btn.AccessibleName = "Button";
+            this.add_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.add_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.add_btn.CanOverrideStyle = true;
+            this.add_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.add_btn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_btn.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_btn.ForeColor = System.Drawing.Color.White;
+            this.add_btn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.add_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.add_btn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.add_btn.ImageSize = new System.Drawing.Size(40, 40);
+            this.add_btn.Location = new System.Drawing.Point(518, 10);
+            this.add_btn.Margin = new System.Windows.Forms.Padding(10);
+            this.add_btn.Name = "add_btn";
+            this.add_btn.Size = new System.Drawing.Size(81, 54);
+            this.add_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.add_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.add_btn.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.add_btn.Style.ForeColor = System.Drawing.Color.White;
+            this.add_btn.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.add_btn.Style.HoverForeColor = System.Drawing.Color.White;
+            this.add_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.add_btn.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.add_btn.Style.PressedForeColor = System.Drawing.Color.White;
+            this.add_btn.TabIndex = 18;
+            this.add_btn.Text = "Add";
+            this.add_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.add_btn.TextMargin = new System.Windows.Forms.Padding(0);
+            this.add_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.add_btn, "Add Product To Receipt");
+            this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click_1);
             // 
             // receipt_panel
             // 
@@ -343,6 +384,54 @@
             this.receipt_details.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.receipt_details.Size = new System.Drawing.Size(404, 406);
             this.receipt_details.TabIndex = 1;
+            // 
+            // Barcode
+            // 
+            this.Barcode.FillWeight = 40F;
+            this.Barcode.HeaderText = "Barcode";
+            this.Barcode.Name = "Barcode";
+            this.Barcode.ReadOnly = true;
+            // 
+            // PNAME
+            // 
+            this.PNAME.HeaderText = "Name";
+            this.PNAME.Name = "PNAME";
+            this.PNAME.ReadOnly = true;
+            // 
+            // QTE
+            // 
+            this.QTE.FillWeight = 30F;
+            this.QTE.HeaderText = "Items";
+            this.QTE.Name = "QTE";
+            this.QTE.ReadOnly = true;
+            // 
+            // DollarPrice
+            // 
+            this.DollarPrice.FillWeight = 30F;
+            this.DollarPrice.HeaderText = "Dollar";
+            this.DollarPrice.Name = "DollarPrice";
+            this.DollarPrice.ReadOnly = true;
+            // 
+            // LBPPrice
+            // 
+            this.LBPPrice.FillWeight = 30F;
+            this.LBPPrice.HeaderText = "LBP";
+            this.LBPPrice.Name = "LBPPrice";
+            this.LBPPrice.ReadOnly = true;
+            // 
+            // TotalLBP
+            // 
+            this.TotalLBP.FillWeight = 40F;
+            this.TotalLBP.HeaderText = "Tot. LBP";
+            this.TotalLBP.Name = "TotalLBP";
+            this.TotalLBP.ReadOnly = true;
+            // 
+            // TotalDollar
+            // 
+            this.TotalDollar.FillWeight = 30F;
+            this.TotalDollar.HeaderText = "Tot. $";
+            this.TotalDollar.Name = "TotalDollar";
+            this.TotalDollar.ReadOnly = true;
             // 
             // total_panel
             // 
@@ -502,54 +591,6 @@
             // 
             this.spselectReceiptsResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_selectReceiptsResult);
             // 
-            // Barcode
-            // 
-            this.Barcode.FillWeight = 40F;
-            this.Barcode.HeaderText = "Barcode";
-            this.Barcode.Name = "Barcode";
-            this.Barcode.ReadOnly = true;
-            // 
-            // PNAME
-            // 
-            this.PNAME.HeaderText = "Name";
-            this.PNAME.Name = "PNAME";
-            this.PNAME.ReadOnly = true;
-            // 
-            // QTE
-            // 
-            this.QTE.FillWeight = 30F;
-            this.QTE.HeaderText = "Items";
-            this.QTE.Name = "QTE";
-            this.QTE.ReadOnly = true;
-            // 
-            // DollarPrice
-            // 
-            this.DollarPrice.FillWeight = 30F;
-            this.DollarPrice.HeaderText = "Dollar";
-            this.DollarPrice.Name = "DollarPrice";
-            this.DollarPrice.ReadOnly = true;
-            // 
-            // LBPPrice
-            // 
-            this.LBPPrice.FillWeight = 30F;
-            this.LBPPrice.HeaderText = "LBP";
-            this.LBPPrice.Name = "LBPPrice";
-            this.LBPPrice.ReadOnly = true;
-            // 
-            // TotalLBP
-            // 
-            this.TotalLBP.FillWeight = 40F;
-            this.TotalLBP.HeaderText = "Tot. LBP";
-            this.TotalLBP.Name = "TotalLBP";
-            this.TotalLBP.ReadOnly = true;
-            // 
-            // TotalDollar
-            // 
-            this.TotalDollar.FillWeight = 30F;
-            this.TotalDollar.HeaderText = "Tot. $";
-            this.TotalDollar.Name = "TotalDollar";
-            this.TotalDollar.ReadOnly = true;
-            // 
             // POSUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,6 +600,7 @@
             this.Name = "POSUC";
             this.Size = new System.Drawing.Size(1024, 768);
             this.Load += new System.EventHandler(this.POSUC_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.POSUC_KeyUp);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.search_panel.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -594,7 +636,7 @@
         private System.Windows.Forms.Label receipt_id;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt search_txt;
-        private Syncfusion.WinForms.Controls.SfButton search_btn;
+        private Syncfusion.WinForms.Controls.SfButton add_btn;
         private Syncfusion.WinForms.Controls.SfButton change_quantity_btn;
         private Syncfusion.WinForms.Controls.SfButton delete_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Barcode;
@@ -604,5 +646,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LBPPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalLBP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalDollar;
+        private Syncfusion.WinForms.Controls.SfButton keyboard_btn;
     }
 }

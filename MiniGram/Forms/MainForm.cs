@@ -125,6 +125,10 @@ namespace MiniGram
             receipt_btn.BackColor = Color.White;
             title_lbl.Text = "Receipts";
             main_panel.Controls.Clear();
+            ReceiptsUC ruc = new ReceiptsUC();
+            main_panel.Controls.Add(ruc);
+            ruc.refreshData();
+            ruc.Dock = DockStyle.Fill;
         }
 
         private void products_btn_Click(object sender, EventArgs e)
