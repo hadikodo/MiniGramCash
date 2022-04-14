@@ -410,7 +410,7 @@
             // 
             this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Edit.HeaderText = "...";
+            this.Edit.HeaderText = "";
             this.Edit.Name = "Edit";
             this.Edit.ReadOnly = true;
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -512,6 +512,7 @@
         private Syncfusion.WinForms.Controls.SfButton search_btn;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt search_txt;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.BindingSource spselectproductsResultBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
@@ -520,6 +521,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn addedDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.BindingSource spselectproductsResultBindingSource;
     }
 }

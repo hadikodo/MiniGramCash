@@ -207,6 +207,12 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReceiptDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReceiptDetails.Designer.cs">
+      <DependentUpon>ReceiptDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +276,9 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReceiptDetails.resx">
+      <DependentUpon>ReceiptDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Languages\en_local.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>en_local.Designer.cs</LastGenOutput>
@@ -307,6 +316,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectAllCustomersResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectAllSuppliersResult.datasource" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectReceiptsDetailsResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectReceiptsResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_itemResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_productsResult.datasource" />
@@ -417,6 +427,7 @@
     <None Include="Resources\keyboard.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\description.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

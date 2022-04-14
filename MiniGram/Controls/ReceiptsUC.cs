@@ -1,4 +1,5 @@
 ﻿using MiniGram.Classes;
+using MiniGram.Forms;
 using MiniGram.LINQ;
 using System;
 using System.Collections.Generic;
@@ -66,6 +67,14 @@ namespace MiniGram.Controls
             if (e.ColumnIndex == 6)
             {
                 
+            }
+            if (e.ColumnIndex == 7)
+            {
+                ReceiptDetails rd = new ReceiptDetails(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                rd.refreshData();
+                rd.ShowDialog();
+                refreshData();
+                search_txt.Text = "";
             }
         }
 
