@@ -21,7 +21,7 @@ namespace MiniGram
         {
             InitializeComponent();
         }
-        /* protected override CreateParams CreateParams
+         protected override CreateParams CreateParams
          {
              get
              {
@@ -29,7 +29,7 @@ namespace MiniGram
                  handleparam.ExStyle = 0x02000000;
                  return handleparam;
              }
-         }*/
+         }
 
         private void exit_btn_Click(object sender, EventArgs e)
         {
@@ -50,6 +50,7 @@ namespace MiniGram
         private void MainForm_Load(object sender, EventArgs e)
         {
             currentWidth = panel55.Width;
+            new_receipt_btn_Click(new_receipt_btn, e);
         }
 
         private void sfButton1_Click(object sender, EventArgs e)

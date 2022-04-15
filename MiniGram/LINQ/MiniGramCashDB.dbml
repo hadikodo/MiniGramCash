@@ -186,6 +186,17 @@
       <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_getReceiptByID" Method="sp_getReceiptByID">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_getReceiptByIDResult">
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RITEM_NB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOTAL_AMOUNTDollar" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TOTAL_AMOUNTLBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RBARCODE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.sp_selectReceiptsDetails" Method="sp_selectReceiptsDetails">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <ElementType Name="sp_selectReceiptsDetailsResult">
@@ -197,17 +208,6 @@
       <Column Name="LBPPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TotalDolarPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="TotalLBPPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_getReceiptByID" Method="sp_getReceiptByID">
-    <Parameter Name="id" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_getReceiptByIDResult">
-      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="RITEM_NB" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TOTAL_AMOUNTDollar" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TOTAL_AMOUNTLBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="RBARCODE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

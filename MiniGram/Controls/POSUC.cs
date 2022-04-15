@@ -73,6 +73,9 @@ namespace MiniGram.Controls
                             data.sp_deleteReceiptDetailsByRID(Int32.Parse(receipt_id.Text));
                         }
                     }
+                    DirectReceiptReportViewer drrv = new DirectReceiptReportViewer();
+                    drrv.receiptID = NewReceiptNumber;
+                    drrv.ShowDialog();
                     receipt_details.Rows.Clear();
                     tot_lbp.Text = "0" + " LBP";
                     tot_dollar.Text = "0" + " $";
