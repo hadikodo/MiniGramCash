@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,7 +22,7 @@ namespace MiniGram
         {
             InitializeComponent();
         }
-         protected override CreateParams CreateParams
+         /*protected override CreateParams CreateParams
          {
              get
              {
@@ -29,7 +30,7 @@ namespace MiniGram
                  handleparam.ExStyle = 0x02000000;
                  return handleparam;
              }
-         }
+         }*/
 
         private void exit_btn_Click(object sender, EventArgs e)
         {
@@ -93,55 +94,76 @@ namespace MiniGram
             new_receipt_btn.BackColor = Color.FromArgb(0, 63, 63);
             receipt_btn.BackColor = Color.FromArgb(0, 63, 63);
             items_btn.BackColor = Color.FromArgb(0, 63, 63);
-            reports_btn.BackColor = Color.FromArgb(0, 63, 63);
+            //reports_btn.BackColor = Color.FromArgb(0, 63, 63);
         }
 
-        private void dashboard_btn_Click(object sender, EventArgs e)
+        private async void dashboard_btn_Click(object sender, EventArgs e)
         {
             refreshColors();
             prices_btn.BackColor = Color.White;
             title_lbl.Text = "Products And Prices";
             main_panel.Controls.Clear();
             ProductsUC puc = new ProductsUC();
-            main_panel.Controls.Add(puc);
-            puc.refreshData();
             puc.Dock = DockStyle.Fill;
+            await Task.Run(() =>
+            {
+                ProgressBarForm pbf = new ProgressBarForm(1);
+                pbf.ShowDialog();
+            });
+            puc.refreshData();
+            main_panel.Controls.Add(puc);
         }
 
-        private void new_receipt_btn_Click(object sender, EventArgs e)
+        private async void new_receipt_btn_Click(object sender, EventArgs e)
         {
             refreshColors();
             new_receipt_btn.BackColor = Color.White;
             title_lbl.Text = "New Receipt";
             main_panel.Controls.Clear();
             POSUC posuc = new POSUC();
-            main_panel.Controls.Add(posuc);
-            posuc.refreshData("");
             posuc.Dock = DockStyle.Fill;
+            await Task.Run(() =>
+            {
+                ProgressBarForm pbf = new ProgressBarForm(3);
+                pbf.ShowDialog();
+            });         
+            posuc.refreshData("");           
+            main_panel.Controls.Add(posuc);
         }
 
-        private void receipt_btn_Click(object sender, EventArgs e)
+        private async void receipt_btn_Click(object sender, EventArgs e)
         {
             refreshColors();
             receipt_btn.BackColor = Color.White;
             title_lbl.Text = "Receipts";
             main_panel.Controls.Clear();
             ReceiptsUC ruc = new ReceiptsUC();
-            main_panel.Controls.Add(ruc);
-            ruc.refreshData();
             ruc.Dock = DockStyle.Fill;
+            await Task.Run(() =>
+            {
+                ProgressBarForm pbf = new ProgressBarForm(1);
+                pbf.ShowDialog();
+            });
+            ruc.refreshData();
+            main_panel.Controls.Add(ruc);
         }
 
-        private void products_btn_Click(object sender, EventArgs e)
+        private async void products_btn_Click(object sender, EventArgs e)
         {
             refreshColors();
             items_btn.BackColor = Color.White;
             title_lbl.Text = "Stock";
             main_panel.Controls.Clear();
             ItemsUC iuc = new ItemsUC();
-            main_panel.Controls.Add(iuc);
-            iuc.refreshData();
             iuc.Dock = DockStyle.Fill;
+            await Task.Run(() =>
+            {
+                ProgressBarForm pbf = new ProgressBarForm(1);
+                pbf.ShowDialog();
+            });
+            iuc.refreshData();
+            main_panel.Controls.Add(iuc);
+
         }
 
         private void MainForm_MaximizedBoundsChanged(object sender, EventArgs e)
@@ -152,7 +174,7 @@ namespace MiniGram
         private void reports_btn_Click(object sender, EventArgs e)
         {
             refreshColors();
-            reports_btn.BackColor = Color.White;
+            //reports_btn.BackColor = Color.White;
             title_lbl.Text = "Reports";
             main_panel.Controls.Clear();
         }

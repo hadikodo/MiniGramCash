@@ -6,22 +6,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.53407cm</Width>
+              <Width>1.99789cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.39733cm</Width>
+              <Width>0.99344cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.6987cm</Width>
+              <Width>0.53294cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.05464cm</Width>
+              <Width>0.88887cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.74297cm</Width>
+              <Width>0.8947cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.98271cm</Width>
+              <Width>0.81694cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -40,7 +40,7 @@
                               <Value>Product Name</Value>
                               <Style>
                                 <FontFamily>Bookman Old Style</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>6pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -53,7 +53,6 @@
                       <rd:DefaultName>Textbox14</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -73,10 +72,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Quantity</Value>
+                              <Value>ITEMS</Value>
                               <Style>
                                 <FontFamily>Bookman Old Style</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>6pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -89,7 +88,6 @@
                       <rd:DefaultName>Textbox16</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -112,7 +110,7 @@
                               <Value>$</Value>
                               <Style>
                                 <FontFamily>Bookman Old Style</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>6pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -125,7 +123,6 @@
                       <rd:DefaultName>Textbox18</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -148,7 +145,7 @@
                               <Value>LBP</Value>
                               <Style>
                                 <FontFamily>Bookman Old Style</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>6pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -161,7 +158,6 @@
                       <rd:DefaultName>Textbox20</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -184,7 +180,7 @@
                               <Value>Total $</Value>
                               <Style>
                                 <FontFamily>Bookman Old Style</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>6pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -197,7 +193,6 @@
                       <rd:DefaultName>Textbox24</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -220,7 +215,7 @@
                               <Value>Total LBP</Value>
                               <Style>
                                 <FontFamily>Bookman Old Style</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>6pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -233,7 +228,6 @@
                       <rd:DefaultName>Textbox22</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -261,7 +255,7 @@
                               <Value>=Fields!ProductName.Value</Value>
                               <Style>
                                 <FontFamily>Bookman Old Style</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -273,7 +267,6 @@
                       <rd:DefaultName>ProductName</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -296,7 +289,7 @@
                               <Value>=Fields!Quantity.Value</Value>
                               <Style>
                                 <FontFamily>Bookman Old Style</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -308,7 +301,6 @@
                       <rd:DefaultName>Quantity</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -331,7 +323,7 @@
                               <Value>=Fields!DollarPrice.Value</Value>
                               <Style>
                                 <FontFamily>Bookman Old Style</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -343,7 +335,6 @@
                       <rd:DefaultName>DollarPrice</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -366,7 +357,7 @@
                               <Value>=Fields!LBPPrice.Value</Value>
                               <Style>
                                 <FontFamily>Bookman Old Style</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -378,7 +369,6 @@
                       <rd:DefaultName>LBPPrice</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -401,7 +391,7 @@
                               <Value>=Fields!TotalDolarPrice.Value</Value>
                               <Style>
                                 <FontFamily>Bookman Old Style</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -413,7 +403,6 @@
                       <rd:DefaultName>TotalDolarPrice</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -436,7 +425,7 @@
                               <Value>=Fields!TotalLBPPrice.Value</Value>
                               <Style>
                                 <FontFamily>Bookman Old Style</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -448,7 +437,6 @@
                       <rd:DefaultName>TotalLBPPrice</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -484,22 +472,25 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.66912cm</Top>
+        <Top>1.36074cm</Top>
+        <Left>0.20521cm</Left>
         <Height>1.2cm</Height>
-        <Width>7.41042cm</Width>
+        <Width>6.12478cm</Width>
         <Style>
           <Border>
+            <Color>White</Color>
             <Style>None</Style>
           </Border>
           <FontFamily>Bookman Old Style</FontFamily>
           <FontSize>8pt</FontSize>
+          <Color>White</Color>
         </Style>
       </Tablix>
       <Line Name="Line2">
-        <Top>2.17845cm</Top>
+        <Top>1.04956cm</Top>
         <Left>0.20521cm</Left>
         <Height>0cm</Height>
-        <Width>7cm</Width>
+        <Width>6.12479cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -518,7 +509,7 @@
                 <Value>Receipt</Value>
                 <Style>
                   <FontFamily>Bookman Old Style</FontFamily>
-                  <FontSize>20pt</FontSize>
+                  <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -529,10 +520,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.62352cm</Top>
-        <Left>1.47521cm</Left>
-        <Height>1.15562cm</Height>
-        <Width>4.85479cm</Width>
+        <Top>0.30602cm</Top>
+        <Left>0.20521cm</Left>
+        <Height>0.74354cm</Height>
+        <Width>6.12479cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -548,7 +539,7 @@
         <Top>0.31484cm</Top>
         <Left>0.20521cm</Left>
         <Height>0cm</Height>
-        <Width>7cm</Width>
+        <Width>6.12479cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -558,10 +549,10 @@
         </Style>
       </Line>
       <Line Name="Line4">
-        <Top>4.62602cm</Top>
+        <Top>4.94352cm</Top>
         <Left>0.20521cm</Left>
         <Height>0cm</Height>
-        <Width>7cm</Width>
+        <Width>6.12479cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -580,7 +571,6 @@
                 <Value>THANK YOU FOR CHOOSING US</Value>
                 <Style>
                   <FontFamily>Bookman Old Style</FontFamily>
-                  <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -591,10 +581,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>4.93429cm</Top>
+        <Top>5.25179cm</Top>
         <Left>0.20521cm</Left>
         <Height>0.75875cm</Height>
-        <Width>7cm</Width>
+        <Width>6.12479cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -616,7 +606,7 @@
                 <Value>=First(Fields!Barcode.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>Free 3 of 9 Extended</FontFamily>
-                  <FontSize>40pt</FontSize>
+                  <FontSize>30pt</FontSize>
                   <FontWeight>Light</FontWeight>
                 </Style>
               </TextRun>
@@ -629,8 +619,8 @@
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>5.86943cm</Top>
         <Left>0.20521cm</Left>
-        <Height>1.15562cm</Height>
-        <Width>7cm</Width>
+        <Height>0.99687cm</Height>
+        <Width>6.12479cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -642,18 +632,319 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Line Name="Line5">
+        <Top>2.70185cm</Top>
+        <Left>0.24594cm</Left>
+        <Height>0cm</Height>
+        <Width>6.12479cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>Dashed</Style>
+            <Width>2pt</Width>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total Items :</Value>
+                <Style>
+                  <FontFamily>Bookman Old Style</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.80768cm</Top>
+        <Left>0.24594cm</Left>
+        <Height>0.52062cm</Height>
+        <Width>2.27466cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=SUM(Fields!Quantity.Value)</Value>
+                <Style>
+                  <FontFamily>Bookman Old Style</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>2.80768cm</Top>
+        <Left>2.62098cm</Left>
+        <Height>0.52062cm</Height>
+        <Width>3.70902cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="$ " + Sum(Fields!TotalDolarPrice.Value).ToString()</Value>
+                <Style>
+                  <FontFamily>Bookman Old Style</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>3.84991cm</Top>
+        <Left>2.62098cm</Left>
+        <Height>0.45986cm</Height>
+        <Width>3.70902cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox8">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!TotalLBPPrice.Value).ToString() + " LBP"</Value>
+                <Style>
+                  <FontFamily>Bookman Old Style</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>3.3283cm</Top>
+        <Left>2.62098cm</Left>
+        <Height>0.5216cm</Height>
+        <Width>3.70902cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total LBP :</Value>
+                <Style>
+                  <FontFamily>Bookman Old Style</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>3.3283cm</Top>
+        <Left>0.20521cm</Left>
+        <Height>0.5216cm</Height>
+        <Width>2.27466cm</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox10">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total $ :</Value>
+                <Style>
+                  <FontFamily>Bookman Old Style</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>3.84991cm</Top>
+        <Left>0.20521cm</Left>
+        <Height>0.45986cm</Height>
+        <Width>2.27466cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Globals!ExecutionTime</Value>
+                <Style>
+                  <FontFamily>Bookman Old Style</FontFamily>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>4.29804cm</Top>
+        <Left>2.62098cm</Left>
+        <Height>0.45986cm</Height>
+        <Width>3.70902cm</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Receipt Date :</Value>
+                <Style>
+                  <FontFamily>Bookman Old Style</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>4.29804cm</Top>
+        <Left>0.20521cm</Left>
+        <Height>0.45986cm</Height>
+        <Width>2.41577cm</Width>
+        <ZIndex>15</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>7.52037cm</Height>
+    <Height>6.8663cm</Height>
     <Style />
   </Body>
-  <Width>7.41042cm</Width>
+  <Width>6.6475cm</Width>
   <Page>
-    <PageHeight>5cm</PageHeight>
-    <PageWidth>9cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <PageHeight>8.00001cm</PageHeight>
+    <PageWidth>4.99999cm</PageWidth>
+    <LeftMargin>1cm</LeftMargin>
+    <RightMargin>1cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

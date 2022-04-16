@@ -113,7 +113,7 @@ namespace MiniGram.Controls
             ActiveControl = search_txt;
         }
 
-        public void refreshData(string str)
+        public async void refreshData(string str)
         {
             products_panel.Controls.Clear();
             table =new TableLayoutPanel();

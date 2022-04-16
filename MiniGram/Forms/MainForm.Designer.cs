@@ -35,7 +35,6 @@
             this.title_lbl = new System.Windows.Forms.Label();
             this.menu_toggle_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.panel55 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            this.reports_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.items_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.receipt_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.minimize_btn = new Syncfusion.WinForms.Controls.SfButton();
@@ -132,7 +131,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.panel55.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.panel55.Controls.Add(this.reports_btn);
             this.panel55.Controls.Add(this.items_btn);
             this.panel55.Controls.Add(this.receipt_btn);
             this.panel55.Controls.Add(this.minimize_btn);
@@ -144,39 +142,6 @@
             this.panel55.Name = "panel55";
             this.panel55.Size = new System.Drawing.Size(1224, 75);
             this.panel55.TabIndex = 8;
-            // 
-            // reports_btn
-            // 
-            this.reports_btn.AccessibleName = "Button";
-            this.reports_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.reports_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.reports_btn.CanOverrideStyle = true;
-            this.reports_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.reports_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reports_btn.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reports_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.reports_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.reports_btn.ImageMargin = new System.Windows.Forms.Padding(5);
-            this.reports_btn.ImageSize = new System.Drawing.Size(55, 55);
-            this.reports_btn.Location = new System.Drawing.Point(300, 0);
-            this.reports_btn.Margin = new System.Windows.Forms.Padding(0);
-            this.reports_btn.Name = "reports_btn";
-            this.reports_btn.Size = new System.Drawing.Size(75, 75);
-            this.reports_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.reports_btn.Style.FocusedBackColor = System.Drawing.Color.Transparent;
-            this.reports_btn.Style.FocusedForeColor = System.Drawing.Color.Transparent;
-            this.reports_btn.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.reports_btn.Style.HoverBackColor = System.Drawing.Color.White;
-            this.reports_btn.Style.HoverForeColor = System.Drawing.Color.White;
-            this.reports_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
-            this.reports_btn.Style.Image = global::MiniGram.Properties.Resources.dashboard;
-            this.reports_btn.Style.PressedBackColor = System.Drawing.Color.White;
-            this.reports_btn.Style.PressedForeColor = System.Drawing.Color.White;
-            this.reports_btn.TabIndex = 17;
-            this.reports_btn.ThemeName = "Office2016Colorful";
-            this.toolTip1.SetToolTip(this.reports_btn, "Preview And Print Reports");
-            this.reports_btn.UseVisualStyleBackColor = false;
-            this.reports_btn.Click += new System.EventHandler(this.reports_btn_Click);
             // 
             // items_btn
             // 
@@ -488,7 +453,6 @@
         private Syncfusion.WinForms.Controls.SfButton items_btn;
         private System.Windows.Forms.Label title_lbl;
         private System.Windows.Forms.ToolTip toolTip1;
-        private Syncfusion.WinForms.Controls.SfButton reports_btn;
     }
 }
 

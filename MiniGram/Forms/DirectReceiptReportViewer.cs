@@ -1,4 +1,6 @@
-﻿using MiniGram.LINQ;
+﻿using Microsoft.Reporting.WinForms;
+using MiniGram.Classes;
+using MiniGram.LINQ;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +16,7 @@ namespace MiniGram.Forms
     public partial class DirectReceiptReportViewer : Form
     {
         private MiniGramDBDataContext data = new MiniGramDBDataContext();
-        public int receiptID;       
+        public int receiptID;
         public DirectReceiptReportViewer()
         {
             InitializeComponent();
@@ -24,7 +26,9 @@ namespace MiniGram.Forms
         {
             spselectReceiptsDetailsResultBindingSource.DataSource = data.sp_selectReceiptsDetails(receiptID);
             this.reportViewer1.RefreshReport();
-            //reportViewer1.LocalReport
+            DirectPrintClass dpc = new DirectPrintClass();
+            dpc.Run(reportViewer1.LocalReport);
+            this.Close();
         }
     }
 }

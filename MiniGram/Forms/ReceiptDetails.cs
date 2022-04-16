@@ -23,7 +23,9 @@ namespace MiniGram.Forms
 
         private void print_btn_Click(object sender, EventArgs e)
         {
-
+            DirectReceiptReportViewer drrv = new DirectReceiptReportViewer();
+            drrv.receiptID = receiptID;
+            drrv.Show();
         }
 
         private void ReceiptDetails_Load(object sender, EventArgs e)
