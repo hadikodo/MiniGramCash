@@ -35,13 +35,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceiptDetails));
             this.exit_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.logo_img = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.print_btn = new System.Windows.Forms.Button();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dollarPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +50,7 @@
             this.totalLBPPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spselectReceiptsDetailsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.print_btn = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalQte = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -196,25 +197,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(994, 449);
             this.dataGridView1.TabIndex = 2;
             // 
-            // print_btn
-            // 
-            this.print_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.print_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.print_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.print_btn.FlatAppearance.BorderSize = 0;
-            this.print_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.print_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.print_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.print_btn.Font = new System.Drawing.Font("Bookman Old Style", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.print_btn.ForeColor = System.Drawing.Color.White;
-            this.print_btn.Location = new System.Drawing.Point(837, 130);
-            this.print_btn.Name = "print_btn";
-            this.print_btn.Size = new System.Drawing.Size(154, 50);
-            this.print_btn.TabIndex = 14;
-            this.print_btn.Text = "Print";
-            this.print_btn.UseVisualStyleBackColor = false;
-            this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
-            // 
             // productNameDataGridViewTextBoxColumn
             // 
             this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
@@ -276,6 +258,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(994, 189);
             this.panel2.TabIndex = 3;
+            // 
+            // print_btn
+            // 
+            this.print_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.print_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.print_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.print_btn.FlatAppearance.BorderSize = 0;
+            this.print_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.print_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.print_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.print_btn.Font = new System.Drawing.Font("Bookman Old Style", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.print_btn.ForeColor = System.Drawing.Color.White;
+            this.print_btn.Location = new System.Drawing.Point(837, 130);
+            this.print_btn.Name = "print_btn";
+            this.print_btn.Size = new System.Drawing.Size(154, 50);
+            this.print_btn.TabIndex = 14;
+            this.print_btn.Text = "Print";
+            this.print_btn.UseVisualStyleBackColor = false;
+            this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
             // 
             // dataGridView2
             // 
@@ -388,6 +389,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logo_img);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReceiptDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReceiptDetails";

@@ -30,10 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DirectReceiptReportViewer));
             this.spselectReceiptsDetailsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.spselectReceiptsDetailsResultBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // spselectReceiptsDetailsResultBindingSource
+            // 
+            this.spselectReceiptsDetailsResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_selectReceiptsDetailsResult);
             // 
             // reportViewer1
             // 
@@ -48,16 +53,13 @@
             this.reportViewer1.Size = new System.Drawing.Size(800, 702);
             this.reportViewer1.TabIndex = 0;
             // 
-            // spselectReceiptsDetailsResultBindingSource
-            // 
-            this.spselectReceiptsDetailsResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_selectReceiptsDetailsResult);
-            // 
             // DirectReceiptReportViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 702);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DirectReceiptReportViewer";
             this.Text = "DirectReceiptReportViewer";
             this.Load += new System.EventHandler(this.DirectReceiptReportViewer_Load);
