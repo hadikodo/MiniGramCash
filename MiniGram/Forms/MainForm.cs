@@ -44,8 +44,11 @@ namespace MiniGram
 
         private void sett_btn_Click(object sender, EventArgs e)
         {
-            SettingsForm sf = new SettingsForm();
-            sf.ShowDialog();
+            new Thread(() =>
+            {
+                SettingsForm sf = new SettingsForm();
+                sf.ShowDialog();
+            }).Start();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -110,8 +113,8 @@ namespace MiniGram
                 ProgressBarForm pbf = new ProgressBarForm(1);
                 pbf.ShowDialog();
             });
-            puc.refreshData();
             main_panel.Controls.Add(puc);
+            puc.refreshData();
         }
 
         private async void new_receipt_btn_Click(object sender, EventArgs e)
@@ -126,8 +129,8 @@ namespace MiniGram
             {
                 ProgressBarForm pbf = new ProgressBarForm(3);
                 pbf.ShowDialog();
-            });         
-            posuc.refreshData("");           
+            });
+            posuc.refreshData("");
             main_panel.Controls.Add(posuc);
         }
 
@@ -144,8 +147,8 @@ namespace MiniGram
                 ProgressBarForm pbf = new ProgressBarForm(1);
                 pbf.ShowDialog();
             });
-            ruc.refreshData();
             main_panel.Controls.Add(ruc);
+            ruc.refreshData();            
         }
 
         private async void products_btn_Click(object sender, EventArgs e)
@@ -161,8 +164,9 @@ namespace MiniGram
                 ProgressBarForm pbf = new ProgressBarForm(1);
                 pbf.ShowDialog();
             });
-            iuc.refreshData();
             main_panel.Controls.Add(iuc);
+            iuc.refreshData();
+            
 
         }
 

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace MiniGram.Forms
     public partial class EditItemForm : Form
     {
         private int ItemID;
-        private MiniGramDBDataContext data = new MiniGramDBDataContext();
+        private MiniGramDBDataContext data = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString);
         public EditItemForm(int itemID)
         {
             InitializeComponent();
@@ -64,7 +65,7 @@ namespace MiniGram.Forms
             {
                 if (string.IsNullOrEmpty(unit_txt.Text))
                     unit_txt.Text = "-";
-                using (var cnx = new MiniGramDBDataContext())
+                using (var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
                 {
                     try
                     {
@@ -80,6 +81,16 @@ namespace MiniGram.Forms
                 }
 
             }
+        }
+
+        private void keyboard_btn_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo ps = new ProcessStartInfo();
+            ps.FileName = ((Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\osk.exe"));
+            Process process = new Process();
+            process.StartInfo = ps;
+            process.Start();
+            ActiveControl = itemname_txt;
         }
     }
 }

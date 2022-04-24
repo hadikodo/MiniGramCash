@@ -25,7 +25,7 @@ namespace MiniGram.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("SERVER")]
+        [global::System.Configuration.DefaultSettingValueAttribute("DESKTOP-A846TAN")]
         public string ServerName {
             get {
                 return ((string)(this["ServerName"]));
@@ -37,7 +37,8 @@ namespace MiniGram.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-A846TAN;Initial Catalog=MiniGram;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-A846TAN;Initial Catalog=MiniGramCashDB;Integrated Security=Tr" +
+            "ue")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
@@ -91,6 +92,90 @@ namespace MiniGram.Properties {
             }
             set {
                 this["isPOSType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Microsoft Print to PDF")]
+        public string printerName {
+            get {
+                return ((string)(this["printerName"]));
+            }
+            set {
+                this["printerName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool startup {
+            get {
+                return ((bool)(this["startup"]));
+            }
+            set {
+                this["startup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool firstTime {
+            get {
+                return ((bool)(this["firstTime"]));
+            }
+            set {
+                this["firstTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool somethingChanged {
+            get {
+                return ((bool)(this["somethingChanged"]));
+            }
+            set {
+                this["somethingChanged"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ServerSecurity {
+            get {
+                return ((bool)(this["ServerSecurity"]));
+            }
+            set {
+                this["ServerSecurity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("sa")]
+        public string Username {
+            get {
+                return ((string)(this["Username"]));
+            }
+            set {
+                this["Username"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("12345678")]
+        public string Password {
+            get {
+                return ((string)(this["Password"]));
+            }
+            set {
+                this["Password"] = value;
             }
         }
     }

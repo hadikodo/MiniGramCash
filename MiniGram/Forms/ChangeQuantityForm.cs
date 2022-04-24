@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -59,6 +60,16 @@ namespace MiniGram.Forms
         private void ChangeQuantityForm_Load(object sender, EventArgs e)
         {
             item_number.Text = itemNB.ToString();
+            ActiveControl = item_number;
+        }
+
+        private void keyboard_btn_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo ps = new ProcessStartInfo();
+            ps.FileName = ((Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\osk.exe"));
+            Process process = new Process();
+            process.StartInfo = ps;
+            process.Start();
             ActiveControl = item_number;
         }
     }

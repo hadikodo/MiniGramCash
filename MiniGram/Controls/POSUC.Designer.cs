@@ -249,7 +249,7 @@
             // search_txt
             // 
             this.search_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.search_txt.BeforeTouchSize = new System.Drawing.Size(387, 40);
+            this.search_txt.BeforeTouchSize = new System.Drawing.Size(34, 40);
             this.search_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.search_txt.CanOverrideStyle = true;
@@ -454,11 +454,11 @@
             // tot_lbp
             // 
             this.tot_lbp.BackColor = System.Drawing.Color.White;
-            this.tot_lbp.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tot_lbp.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_lbp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_lbp.Location = new System.Drawing.Point(234, 151);
+            this.tot_lbp.Location = new System.Drawing.Point(194, 102);
             this.tot_lbp.Name = "tot_lbp";
-            this.tot_lbp.Size = new System.Drawing.Size(160, 24);
+            this.tot_lbp.Size = new System.Drawing.Size(130, 20);
             this.tot_lbp.TabIndex = 30;
             this.tot_lbp.Text = "0 LBP";
             this.tot_lbp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -466,11 +466,11 @@
             // tot_dollar
             // 
             this.tot_dollar.BackColor = System.Drawing.Color.White;
-            this.tot_dollar.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tot_dollar.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_dollar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_dollar.Location = new System.Drawing.Point(234, 107);
+            this.tot_dollar.Location = new System.Drawing.Point(194, 73);
             this.tot_dollar.Name = "tot_dollar";
-            this.tot_dollar.Size = new System.Drawing.Size(160, 24);
+            this.tot_dollar.Size = new System.Drawing.Size(130, 20);
             this.tot_dollar.TabIndex = 29;
             this.tot_dollar.Text = "0 $";
             this.tot_dollar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -478,11 +478,11 @@
             // tot_quantity
             // 
             this.tot_quantity.BackColor = System.Drawing.Color.White;
-            this.tot_quantity.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tot_quantity.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_quantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_quantity.Location = new System.Drawing.Point(234, 62);
+            this.tot_quantity.Location = new System.Drawing.Point(194, 43);
             this.tot_quantity.Name = "tot_quantity";
-            this.tot_quantity.Size = new System.Drawing.Size(160, 24);
+            this.tot_quantity.Size = new System.Drawing.Size(130, 20);
             this.tot_quantity.TabIndex = 28;
             this.tot_quantity.Text = "0";
             this.tot_quantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -490,11 +490,11 @@
             // receipt_id
             // 
             this.receipt_id.BackColor = System.Drawing.Color.White;
-            this.receipt_id.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receipt_id.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receipt_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.receipt_id.Location = new System.Drawing.Point(234, 15);
+            this.receipt_id.Location = new System.Drawing.Point(194, 13);
             this.receipt_id.Name = "receipt_id";
-            this.receipt_id.Size = new System.Drawing.Size(160, 24);
+            this.receipt_id.Size = new System.Drawing.Size(130, 20);
             this.receipt_id.TabIndex = 27;
             this.receipt_id.Text = "0";
             this.receipt_id.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -503,11 +503,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(14, 15);
+            this.label3.Location = new System.Drawing.Point(14, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 24);
+            this.label3.Size = new System.Drawing.Size(110, 19);
             this.label3.TabIndex = 26;
             this.label3.Text = "Receipt ID : ";
             // 
@@ -515,11 +515,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(14, 62);
+            this.label2.Location = new System.Drawing.Point(14, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 24);
+            this.label2.Size = new System.Drawing.Size(145, 19);
             this.label2.TabIndex = 25;
             this.label2.Text = "Total Quantity : ";
             // 
@@ -527,11 +527,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 151);
+            this.label1.Location = new System.Drawing.Point(14, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 24);
+            this.label1.Size = new System.Drawing.Size(171, 19);
             this.label1.TabIndex = 24;
             this.label1.Text = "Total Price in LBP: ";
             // 
@@ -539,11 +539,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(14, 107);
+            this.label6.Location = new System.Drawing.Point(14, 74);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(201, 24);
+            this.label6.Size = new System.Drawing.Size(152, 19);
             this.label6.TabIndex = 23;
             this.label6.Text = "Total Price in $ : ";
             // 
@@ -560,11 +560,11 @@
             this.checkout_btn.ForeColor = System.Drawing.Color.White;
             this.checkout_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.checkout_btn.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.checkout_btn.ImageSize = new System.Drawing.Size(65, 65);
-            this.checkout_btn.Location = new System.Drawing.Point(0, 195);
+            this.checkout_btn.ImageSize = new System.Drawing.Size(55, 55);
+            this.checkout_btn.Location = new System.Drawing.Point(0, 210);
             this.checkout_btn.Margin = new System.Windows.Forms.Padding(0);
             this.checkout_btn.Name = "checkout_btn";
-            this.checkout_btn.Size = new System.Drawing.Size(404, 75);
+            this.checkout_btn.Size = new System.Drawing.Size(404, 60);
             this.checkout_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.checkout_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.checkout_btn.Style.FocusedForeColor = System.Drawing.Color.White;

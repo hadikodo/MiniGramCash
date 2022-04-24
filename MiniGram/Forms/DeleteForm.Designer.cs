@@ -33,6 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.delete_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.sfButton1 = new Syncfusion.WinForms.Controls.SfButton();
+            this.keyboard_btn = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.item_number)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,12 +154,47 @@
             this.sfButton1.UseVisualStyleBackColor = false;
             this.sfButton1.Click += new System.EventHandler(this.sfButton1_Click);
             // 
+            // keyboard_btn
+            // 
+            this.keyboard_btn.AccessibleName = "Button";
+            this.keyboard_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.keyboard_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.keyboard_btn.CanOverrideStyle = true;
+            this.keyboard_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.keyboard_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keyboard_btn.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.keyboard_btn.ForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.keyboard_btn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.keyboard_btn.ImageSize = new System.Drawing.Size(25, 25);
+            this.keyboard_btn.Location = new System.Drawing.Point(508, 7);
+            this.keyboard_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.keyboard_btn.Name = "keyboard_btn";
+            this.keyboard_btn.Size = new System.Drawing.Size(36, 41);
+            this.keyboard_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.keyboard_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.keyboard_btn.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.Style.ForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.keyboard_btn.Style.HoverForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.keyboard_btn.Style.Image = global::MiniGram.Properties.Resources.keyboard;
+            this.keyboard_btn.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.keyboard_btn.Style.PressedForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.TabIndex = 35;
+            this.keyboard_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.keyboard_btn.TextMargin = new System.Windows.Forms.Padding(0);
+            this.keyboard_btn.ThemeName = "Office2016Colorful";
+            this.keyboard_btn.UseVisualStyleBackColor = true;
+            this.keyboard_btn.Click += new System.EventHandler(this.keyboard_btn_Click);
+            // 
             // DeleteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(600, 300);
+            this.Controls.Add(this.keyboard_btn);
             this.Controls.Add(this.sfButton1);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.label3);
@@ -185,5 +221,6 @@
         private System.Windows.Forms.Label label3;
         private Syncfusion.WinForms.Controls.SfButton delete_btn;
         private Syncfusion.WinForms.Controls.SfButton sfButton1;
+        private Syncfusion.WinForms.Controls.SfButton keyboard_btn;
     }
 }

@@ -85,9 +85,10 @@ namespace MiniGram.Classes
             if (m_streams == null || m_streams.Count == 0)
                 throw new Exception("Error: no stream to print.");
             PrintDocument printDoc = new PrintDocument();
+            printDoc.PrinterSettings.PrinterName = Properties.Settings.Default.printerName;
             if (!printDoc.PrinterSettings.IsValid)
             {
-                throw new Exception("Error: cannot find the default printer.");
+                throw new Exception("Error: cannot find Printer : " + Properties.Settings.Default.printerName);
             }
             else
             {

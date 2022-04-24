@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace MiniGram.Controls
 {
     public partial class ReceiptsUC : UserControl
     {
-        private MiniGramDBDataContext cnx = new MiniGramDBDataContext();
+        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString);
         public ReceiptsUC()
         {
             InitializeComponent();
@@ -113,6 +114,16 @@ namespace MiniGram.Controls
         {
             spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts("");
             dataGridView1.Refresh();
+        }
+
+        private void keyboard_btn_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo ps = new ProcessStartInfo();
+            ps.FileName = ((Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\osk.exe"));
+            Process process = new Process();
+            process.StartInfo = ps;
+            process.Start();
+            search_btn_Click(search_btn, e);
         }
     }
 }

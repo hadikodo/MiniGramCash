@@ -14,7 +14,7 @@ namespace MiniGram.Forms
     public partial class ReceiptDetails : Form
     {
         private int receiptID;
-        private MiniGramDBDataContext cnx = new MiniGramDBDataContext();
+        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString);
         public ReceiptDetails(int id)
         {
             InitializeComponent();

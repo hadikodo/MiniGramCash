@@ -43,6 +43,7 @@
             this.exit_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.logo_img = new System.Windows.Forms.PictureBox();
+            this.keyboard_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.unit_txt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantity_txt)).BeginInit();
@@ -73,7 +74,6 @@
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -85,7 +85,6 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -128,7 +127,6 @@
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -140,7 +138,6 @@
             // 
             // warning_lable
             // 
-            this.warning_lable.AutoSize = true;
             this.warning_lable.BackColor = System.Drawing.Color.Transparent;
             this.warning_lable.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.warning_lable.ForeColor = System.Drawing.Color.Red;
@@ -171,7 +168,6 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -211,7 +207,6 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -295,12 +290,47 @@
             this.logo_img.TabIndex = 11;
             this.logo_img.TabStop = false;
             // 
+            // keyboard_btn
+            // 
+            this.keyboard_btn.AccessibleName = "Button";
+            this.keyboard_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.keyboard_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.keyboard_btn.CanOverrideStyle = true;
+            this.keyboard_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.keyboard_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keyboard_btn.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.keyboard_btn.ForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.keyboard_btn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.keyboard_btn.ImageSize = new System.Drawing.Size(25, 25);
+            this.keyboard_btn.Location = new System.Drawing.Point(710, 12);
+            this.keyboard_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.keyboard_btn.Name = "keyboard_btn";
+            this.keyboard_btn.Size = new System.Drawing.Size(30, 30);
+            this.keyboard_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.keyboard_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.keyboard_btn.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.Style.ForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.keyboard_btn.Style.HoverForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.keyboard_btn.Style.Image = global::MiniGram.Properties.Resources.keyboard;
+            this.keyboard_btn.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.keyboard_btn.Style.PressedForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.TabIndex = 24;
+            this.keyboard_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.keyboard_btn.TextMargin = new System.Windows.Forms.Padding(0);
+            this.keyboard_btn.ThemeName = "Office2016Colorful";
+            this.keyboard_btn.UseVisualStyleBackColor = true;
+            this.keyboard_btn.Click += new System.EventHandler(this.keyboard_btn_Click);
+            // 
             // EditItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.ClientSize = new System.Drawing.Size(793, 768);
+            this.Controls.Add(this.keyboard_btn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.exit_btn);
             this.Controls.Add(this.label1);
@@ -339,5 +369,6 @@
         private System.Windows.Forms.Button exit_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox logo_img;
+        private Syncfusion.WinForms.Controls.SfButton keyboard_btn;
     }
 }

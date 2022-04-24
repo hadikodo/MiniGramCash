@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -51,7 +52,7 @@ namespace MiniGram.Forms
                 if (hasqte_combo.SelectedIndex == 0)
                 {
                     quantity_txt.Text = "0";
-                    using (var cnx = new MiniGramDBDataContext())
+                    using (var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
                     {
                         try
                         {
@@ -72,7 +73,7 @@ namespace MiniGram.Forms
                         warning_lable.Visible=true;
                     else
                     {
-                        using (var cnx = new MiniGramDBDataContext())
+                        using (var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
                         {
                             try
                             {
@@ -145,6 +146,16 @@ namespace MiniGram.Forms
             {
                 e.Handled = false;
             }
+        }
+
+        private void keyboard_btn_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo ps = new ProcessStartInfo();
+            ps.FileName = ((Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\osk.exe"));
+            Process process = new Process();
+            process.StartInfo = ps;
+            process.Start();
+            ActiveControl = productname_txt;
         }
     }
 }

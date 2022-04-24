@@ -63,6 +63,26 @@ namespace MiniGram.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _checked {
+            get {
+                object obj = ResourceManager.GetObject("_checked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _unchecked {
+            get {
+                object obj = ResourceManager.GetObject("_unchecked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
@@ -151,11 +171,31 @@ namespace MiniGram.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] intro {
+            get {
+                object obj = ResourceManager.GetObject("intro", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap keyboard {
             get {
                 object obj = ResourceManager.GetObject("keyboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap local_network {
+            get {
+                object obj = ResourceManager.GetObject("local_network", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +216,16 @@ namespace MiniGram.Properties {
         internal static System.Drawing.Bitmap logout {
             get {
                 object obj = ResourceManager.GetObject("logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap marketing_strategy {
+            get {
+                object obj = ResourceManager.GetObject("marketing_strategy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

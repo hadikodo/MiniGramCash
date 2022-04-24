@@ -45,6 +45,7 @@
             this.exit_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.logo_img = new System.Windows.Forms.PictureBox();
+            this.keyboard_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barcode_txt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.price_txt)).BeginInit();
@@ -78,15 +79,16 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.label6.Location = new System.Drawing.Point(22, 127);
+            this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(178, 32);
             this.label6.TabIndex = 23;
             this.label6.Text = "⫸ Barcode :";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // barcode_txt
             // 
@@ -135,15 +137,16 @@
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.label4.Location = new System.Drawing.Point(22, 204);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(251, 32);
             this.label4.TabIndex = 20;
             this.label4.Text = "⫸ Has Quantity :";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // warning_lable
             // 
@@ -178,15 +181,16 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.label5.Location = new System.Drawing.Point(22, 341);
+            this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(201, 32);
             this.label5.TabIndex = 14;
             this.label5.Text = "⫸ Price in $ :";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // price_txt
             // 
@@ -218,15 +222,16 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.label3.Location = new System.Drawing.Point(22, 271);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(285, 32);
             this.label3.TabIndex = 10;
             this.label3.Text = "⫸ Initial Quantity :";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // quantity_txt
             // 
@@ -258,15 +263,16 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.label2.Location = new System.Drawing.Point(22, 57);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(263, 32);
             this.label2.TabIndex = 8;
             this.label2.Text = "⫸ Product Name :";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // productname_txt
             // 
@@ -341,12 +347,47 @@
             this.logo_img.TabIndex = 8;
             this.logo_img.TabStop = false;
             // 
+            // keyboard_btn
+            // 
+            this.keyboard_btn.AccessibleName = "Button";
+            this.keyboard_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.keyboard_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.keyboard_btn.CanOverrideStyle = true;
+            this.keyboard_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.keyboard_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keyboard_btn.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.keyboard_btn.ForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.keyboard_btn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.keyboard_btn.ImageSize = new System.Drawing.Size(25, 25);
+            this.keyboard_btn.Location = new System.Drawing.Point(710, 11);
+            this.keyboard_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.keyboard_btn.Name = "keyboard_btn";
+            this.keyboard_btn.Size = new System.Drawing.Size(30, 30);
+            this.keyboard_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.keyboard_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.keyboard_btn.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.Style.ForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.keyboard_btn.Style.HoverForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.keyboard_btn.Style.Image = global::MiniGram.Properties.Resources.keyboard;
+            this.keyboard_btn.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.keyboard_btn.Style.PressedForeColor = System.Drawing.Color.White;
+            this.keyboard_btn.TabIndex = 24;
+            this.keyboard_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.keyboard_btn.TextMargin = new System.Windows.Forms.Padding(0);
+            this.keyboard_btn.ThemeName = "Office2016Colorful";
+            this.keyboard_btn.UseVisualStyleBackColor = true;
+            this.keyboard_btn.Click += new System.EventHandler(this.keyboard_btn_Click);
+            // 
             // EditProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.ClientSize = new System.Drawing.Size(793, 768);
+            this.Controls.Add(this.keyboard_btn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.exit_btn);
             this.Controls.Add(this.label1);
@@ -389,5 +430,6 @@
         private System.Windows.Forms.PictureBox logo_img;
         private System.Windows.Forms.Label label6;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt barcode_txt;
+        private Syncfusion.WinForms.Controls.SfButton keyboard_btn;
     }
 }

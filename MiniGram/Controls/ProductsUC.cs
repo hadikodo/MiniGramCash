@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace MiniGram.Controls
 {
     public partial class ProductsUC : UserControl
     {
-        private MiniGramDBDataContext cnx = new MiniGramDBDataContext();
+        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString);
         public ProductsUC()
         {
             InitializeComponent();
@@ -48,8 +49,8 @@ namespace MiniGram.Controls
             refreshData();
         }
         public void refreshData()
-        {
-            spselectproductsResultBindingSource.DataSource = cnx.sp_select_products("");          
+        {          
+            spselectproductsResultBindingSource.DataSource = cnx.sp_select_products("");
             dataGridView1.Refresh();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
@@ -57,7 +58,7 @@ namespace MiniGram.Controls
                 {
                     row.DefaultCellStyle.BackColor = Color.DarkGray;
                 }
-            }
+            }           
         }
 
         private void addproduct_btn_Click(object sender, EventArgs e)
@@ -130,6 +131,16 @@ namespace MiniGram.Controls
                 epf.ShowDialog();
                 refreshData();
             }
+        }
+
+        private void keyboard_btn_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo ps = new ProcessStartInfo();
+            ps.FileName = ((Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\osk.exe"));
+            Process process = new Process();
+            process.StartInfo = ps;
+            process.Start();
+            search_btn_Click(search_btn, e);
         }
     }
 }

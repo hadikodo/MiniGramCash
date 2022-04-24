@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="ServerName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">SERVER</Value>
+      <Value Profile="(Default)">DESKTOP-A846TAN</Value>
     </Setting>
     <Setting Name="ConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=DESKTOP-A846TAN;Initial Catalog=MiniGram;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-A846TAN;Initial Catalog=MiniGramCashDB;Integrated Security=True</Value>
     </Setting>
     <Setting Name="Language" Type="System.String" Scope="User">
       <Value Profile="(Default)">en_local</Value>
@@ -24,6 +24,27 @@
     </Setting>
     <Setting Name="isPOSType" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="printerName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Microsoft Print to PDF</Value>
+    </Setting>
+    <Setting Name="startup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="firstTime" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="somethingChanged" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ServerSecurity" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Username" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sa</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">12345678</Value>
     </Setting>
   </Settings>
 </SettingsFile>
