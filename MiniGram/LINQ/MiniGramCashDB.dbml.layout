@@ -33,7 +33,7 @@
         <elementListCompartment Id="bc7b475c-8614-4fc6-bcd6-dc1804dde50a" absoluteBounds="0.76500000000000012, 1.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 2.10659912109375); (3.5 : 2.10659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 2.10659912109375); (2.82291666666667 : 2.10659912109375 : JumpStart); (2.98958333333333 : 2.10659912109375 : JumpEnd); (3.5 : 2.10659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MiniGramDBDataContext/TBLRECEIPT/TBLRECEIPT_TBLRECEIPTS_DETAIL" />
       <nodes>
         <classShapeMoniker Id="a3bf2193-346c-4b70-b27a-505790b11a60" />

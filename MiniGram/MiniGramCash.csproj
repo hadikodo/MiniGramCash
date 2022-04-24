@@ -9,7 +9,7 @@
     <ProjectGuid>{67B1D24D-A58D-49A9-8EF8-34FB8AAC0D0C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>MiniGram</RootNamespace>
-    <AssemblyName>MiniGram</AssemblyName>
+    <AssemblyName>MiniGram Cash System</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,7 +32,7 @@
     <ProductName>MiniGram Cash System</ProductName>
     <PublisherName>SuperTech Co.</PublisherName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -71,7 +71,10 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -350,7 +353,6 @@
       <LastGenOutput>MiniGramCashDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="MiniGram_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectAllCustomersResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectAllSuppliersResult.datasource" />
@@ -468,7 +470,6 @@
     <None Include="Resources\description.png" />
     <None Include="Resources\local-network.png" />
     <None Include="Resources\marketing-strategy.png" />
-    <None Include="Resources\intro.mp4" />
     <None Include="Resources\checked.png" />
     <None Include="Resources\unchecked.png" />
     <Content Include="SqlServerTypes\readme.htm" />
@@ -485,37 +486,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="AxAXVLC">
-      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>aximp</WrapperTool>
-      <Isolated>False</Isolated>
-    </COMReference>
-    <COMReference Include="AXVLC">
-      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\SQLite.3.13.0\build\net45\SQLite.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLite.3.13.0\build\net45\SQLite.props'))" />
-    <Error Condition="!Exists('..\packages\VideoLAN.LibVLC.Windows.3.0.16\build\VideoLAN.LibVLC.Windows.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VideoLAN.LibVLC.Windows.3.0.16\build\VideoLAN.LibVLC.Windows.targets'))" />
     <Error Condition="!Exists('..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.props'))" />
     <Error Condition="!Exists('..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.targets'))" />
-    <Error Condition="!Exists('..\packages\VideoLAN.LibVLC.UWP.3.3.2\build\VideoLAN.LibVLC.UWP.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VideoLAN.LibVLC.UWP.3.3.2\build\VideoLAN.LibVLC.UWP.targets'))" />
   </Target>
-  <Import Project="..\packages\VideoLAN.LibVLC.Windows.3.0.16\build\VideoLAN.LibVLC.Windows.targets" Condition="Exists('..\packages\VideoLAN.LibVLC.Windows.3.0.16\build\VideoLAN.LibVLC.Windows.targets')" />
   <Import Project="..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.targets')" />
-  <Import Project="..\packages\VideoLAN.LibVLC.UWP.3.3.2\build\VideoLAN.LibVLC.UWP.targets" Condition="Exists('..\packages\VideoLAN.LibVLC.UWP.3.3.2\build\VideoLAN.LibVLC.UWP.targets')" />
 </Project>
