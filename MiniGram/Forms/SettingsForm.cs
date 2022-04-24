@@ -16,6 +16,7 @@ namespace MiniGram.Forms
     {
         private GeneralSettingsUC gsuc = new GeneralSettingsUC();
         private ConnectionSettingsUC csuc = new ConnectionSettingsUC();
+        public bool isConnTest = false;
         public SettingsForm()
         {
             InitializeComponent();
@@ -32,12 +33,18 @@ namespace MiniGram.Forms
 
         private void exit_btn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if(isConnTest)
+                csuc.Save();
+            else
+                this.Close();
         }
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
-            general_btn_Click(general_btn, e);
+            if (isConnTest)
+                connection_btn_Click(connection_btn, e);
+            else
+                general_btn_Click(general_btn, e);
         }
 
         private void general_btn_Click(object sender, EventArgs e)
@@ -64,7 +71,7 @@ namespace MiniGram.Forms
             gsuc.Dock = DockStyle.Fill;
         }
 
-        private void connection_btn_Click(object sender, EventArgs e)
+        public void connection_btn_Click(object sender, EventArgs e)
         {
             refreshColors();
             connection_btn.Style.BackColor = Color.White;

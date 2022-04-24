@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,15 +23,15 @@ namespace MiniGram
         {
             InitializeComponent();
         }
-         /*protected override CreateParams CreateParams
-         {
-             get
-             {
-                 CreateParams handleparam = base.CreateParams;
-                 handleparam.ExStyle = 0x02000000;
-                 return handleparam;
-             }
-         }*/
+        /*protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle = 0x02000000;
+                return handleparam;
+            }
+        }*/
 
         private void exit_btn_Click(object sender, EventArgs e)
         {
@@ -99,6 +100,25 @@ namespace MiniGram
             items_btn.BackColor = Color.FromArgb(0, 63, 63);
             //reports_btn.BackColor = Color.FromArgb(0, 63, 63);
         }
+        public bool testConnection(string ConnString)
+        {
+            try
+            {
+                string cnn = ConnString;
+                SqlConnectionStringBuilder conn = new SqlConnectionStringBuilder(cnn);
+                conn.ConnectTimeout = 1;
+                cnn = conn.ToString();
+                using (SqlConnection cn = new SqlConnection(cnn))
+                {
+                    cn.Open();
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return true;
+        }
 
         private async void dashboard_btn_Click(object sender, EventArgs e)
         {
@@ -112,6 +132,14 @@ namespace MiniGram
             {
                 ProgressBarForm pbf = new ProgressBarForm(1);
                 pbf.ShowDialog();
+                if (!testConnection(Properties.Settings.Default.ConnectionString))
+                {
+                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                    SettingsForm sf = new SettingsForm();
+                    sf.isConnTest = true;
+                    sf.ShowDialog();
+                    dashboard_btn_Click(sender, e);
+                }
             });
             main_panel.Controls.Add(puc);
             puc.refreshData();
@@ -129,6 +157,14 @@ namespace MiniGram
             {
                 ProgressBarForm pbf = new ProgressBarForm(3);
                 pbf.ShowDialog();
+                if (!testConnection(Properties.Settings.Default.ConnectionString))
+                {
+                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                    SettingsForm sf = new SettingsForm();
+                    sf.isConnTest = true;
+                    sf.ShowDialog();
+                    dashboard_btn_Click(sender, e);
+                }
             });
             posuc.refreshData("");
             main_panel.Controls.Add(posuc);
@@ -146,9 +182,17 @@ namespace MiniGram
             {
                 ProgressBarForm pbf = new ProgressBarForm(1);
                 pbf.ShowDialog();
+                if (!testConnection(Properties.Settings.Default.ConnectionString))
+                {
+                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                    SettingsForm sf = new SettingsForm();
+                    sf.isConnTest = true;
+                    sf.ShowDialog();
+                    dashboard_btn_Click(sender, e);
+                }
             });
             main_panel.Controls.Add(ruc);
-            ruc.refreshData();            
+            ruc.refreshData();
         }
 
         private async void products_btn_Click(object sender, EventArgs e)
@@ -163,10 +207,18 @@ namespace MiniGram
             {
                 ProgressBarForm pbf = new ProgressBarForm(1);
                 pbf.ShowDialog();
+                if (!testConnection(Properties.Settings.Default.ConnectionString))
+                {
+                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                    SettingsForm sf = new SettingsForm();
+                    sf.isConnTest = true;
+                    sf.ShowDialog();
+                    dashboard_btn_Click(sender, e);
+                }
             });
             main_panel.Controls.Add(iuc);
             iuc.refreshData();
-            
+
 
         }
 

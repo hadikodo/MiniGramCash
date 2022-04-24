@@ -43,13 +43,20 @@ namespace MiniGram.Controls
             Properties.Settings.Default.Save();
         }
 
-        private bool testConnection(string ConnString)
+        public bool testConnection(string ConnString)
         {
             try
             {
-                var conn = new SqlConnection(ConnString);
+                string cnn = ConnString;
+                SqlConnectionStringBuilder conn = new SqlConnectionStringBuilder(cnn);
+                conn.ConnectTimeout = 1;
+                cnn = conn.ToString();
+                using (SqlConnection cn = new SqlConnection(cnn))
+                {
+                    cn.Open();
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
