@@ -18,21 +18,8 @@
       <Column Name="QTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="TOTAL_PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL" Member="TBLPRODUCT" ThisKey="PID" OtherKey="PID" Type="TBLPRODUCT" IsForeignKey="true" />
       <Association Name="TBLRECEIPT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPT" ThisKey="RID" OtherKey="RID" Type="TBLRECEIPT" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TBLPRODUCTS" Member="TBLPRODUCTs">
-    <Type Name="TBLPRODUCT">
-      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="QTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="ADD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="HasQuantity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="BARCODE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPTS_DETAILs" ThisKey="PID" OtherKey="PID" Type="TBLRECEIPTS_DETAIL" />
+      <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL" Member="TBLPRODUCT" ThisKey="PID" OtherKey="PID" Type="TBLPRODUCT" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TBLRECEIPTS" Member="TBLRECEIPTs">
@@ -46,18 +33,36 @@
       <Association Name="TBLRECEIPT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPTS_DETAILs" ThisKey="RID" OtherKey="RID" Type="TBLRECEIPTS_DETAIL" />
     </Type>
   </Table>
+  <Table Name="dbo.TBLSUPPLIERS" Member="TBLSUPPLIERs">
+    <Type Name="TBLSUPPLIER">
+      <Column Name="SID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SPHONE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SEMAIL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ADD_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TBLSUPPLIER_TBLPRODUCT" Member="TBLPRODUCTs" ThisKey="SID" OtherKey="SID" Type="TBLPRODUCT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBLPRODUCTS" Member="TBLPRODUCTs">
+    <Type Name="TBLPRODUCT">
+      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="QTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HasQuantity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BARCODE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPTS_DETAILs" ThisKey="PID" OtherKey="PID" Type="TBLRECEIPTS_DETAIL" />
+      <Association Name="TBLSUPPLIER_TBLPRODUCT" Member="TBLSUPPLIER" ThisKey="SID" OtherKey="SID" Type="TBLSUPPLIER" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.sp_addNewItem" Method="sp_addNewItem">
     <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="qte" Type="System.Int32" DbType="Int" />
     <Parameter Name="unit" Type="System.String" DbType="NVarChar(20)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_addNewProduct" Method="sp_addNewProduct">
-    <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="barcode" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="qte" Type="System.Int32" DbType="Int" />
-    <Parameter Name="price" Type="System.Double" DbType="Float" />
-    <Parameter Name="hasQuantity" Type="System.Boolean" DbType="Bit" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_disableItemByID" Method="sp_disableItemByID">
@@ -79,19 +84,6 @@
   <Function Name="dbo.sp_getLastReceiptID" Method="sp_getLastReceiptID">
     <ElementType Name="sp_getLastReceiptIDResult">
       <Column Name="MAX_RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_getProductByName" Method="sp_getProductByName">
-    <Parameter Name="name" Type="System.String" DbType="NVarChar(MAX)" />
-    <ElementType Name="sp_getProductByNameResult">
-      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="QTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="ADD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="HasQuantity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="BARCODE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
   <Function Name="dbo.sp_getProductsCount" Method="sp_getProductsCount">
@@ -139,32 +131,11 @@
       <Column Name="Status" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_select_products" Method="sp_select_products">
-    <Parameter Name="str" Type="System.String" DbType="NVarChar(MAX)" />
-    <ElementType Name="sp_select_productsResult">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Barcode" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Price" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Status" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.sp_UpdateItem" Method="sp_UpdateItem">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="qte" Type="System.Int32" DbType="Int" />
     <Parameter Name="unit" Type="System.String" DbType="NVarChar(20)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_UpdateProduct" Method="sp_UpdateProduct">
-    <Parameter Name="id" Type="System.Int32" DbType="Int" />
-    <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="barcode" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="qte" Type="System.Int32" DbType="Int" />
-    <Parameter Name="price" Type="System.Double" DbType="Float" />
-    <Parameter Name="hasQuantity" Type="System.Boolean" DbType="Bit" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_deleteReceiptByBarcode" Method="sp_deleteReceiptByBarcode">
@@ -197,12 +168,99 @@
       <Column Name="RBARCODE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_UpdateProductQuantity" Method="sp_UpdateProductQuantity">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="qte" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateProduct" Method="sp_UpdateProduct">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="barcode" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="qte" Type="System.Int32" DbType="Int" />
+    <Parameter Name="price" Type="System.Double" DbType="Float" />
+    <Parameter Name="hasQuantity" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="sid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_select_suppliers" Method="sp_select_suppliers">
+    <Parameter Name="str" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="sp_select_suppliersResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SupplierName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_UpdateSupplier" Method="sp_UpdateSupplier">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="phone" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_enableSupplierByID" Method="sp_enableSupplierByID">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_disableSupplierByID" Method="sp_disableSupplierByID">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_addNewSupplier" Method="sp_addNewSupplier">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="phone" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_addNewProduct" Method="sp_addNewProduct">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="barcode" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="qte" Type="System.Int32" DbType="Int" />
+    <Parameter Name="price" Type="System.Double" DbType="Float" />
+    <Parameter Name="hasQuantity" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="sid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_getSIDBySNAME" Method="sp_getSIDBySNAME">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="sp_getSIDBySNAMEResult">
+      <Column Name="SID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getSupplierByID" Method="sp_getSupplierByID">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_getSupplierByIDResult">
+      <Column Name="SID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SPHONE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SEMAIL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ADD_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_select_products" Method="sp_select_products">
+    <Parameter Name="str" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="sp_select_productsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Barcode" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SupplierName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AddedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.sp_selectReceiptsDetails" Method="sp_selectReceiptsDetails">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <ElementType Name="sp_selectReceiptsDetailsResult">
       <Column Name="Barcode" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SupplierName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DollarPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="LBPPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -210,9 +268,29 @@
       <Column Name="TotalLBPPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_UpdateProductQuantity" Method="sp_UpdateProductQuantity">
-    <Parameter Name="id" Type="System.Int32" DbType="Int" />
-    <Parameter Name="qte" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
+  <Function Name="dbo.sp_getSupplierByNAME" Method="sp_getSupplierByNAME">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="sp_getSupplierByNAMEResult">
+      <Column Name="SID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SPHONE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SEMAIL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ADD_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getProductByName" Method="sp_getProductByName">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="sp_getProductByNameResult">
+      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="QTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HasQuantity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BARCODE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

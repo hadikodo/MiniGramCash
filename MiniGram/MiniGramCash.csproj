@@ -57,6 +57,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
@@ -185,11 +186,11 @@
     <Compile Include="Controls\ReceiptsUC.Designer.cs">
       <DependentUpon>ReceiptsUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddItemForm.cs">
+    <Compile Include="Forms\AddSuppForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddItemForm.Designer.cs">
-      <DependentUpon>AddItemForm.cs</DependentUpon>
+    <Compile Include="Forms\AddSuppForm.Designer.cs">
+      <DependentUpon>AddSuppForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddProductForm.cs">
       <SubType>Form</SubType>
@@ -215,11 +216,11 @@
     <Compile Include="Forms\DirectReceiptReportViewer.Designer.cs">
       <DependentUpon>DirectReceiptReportViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EditItemForm.cs">
+    <Compile Include="Forms\EditSupplierForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditItemForm.Designer.cs">
-      <DependentUpon>EditItemForm.cs</DependentUpon>
+    <Compile Include="Forms\EditSupplierForm.Designer.cs">
+      <DependentUpon>EditSupplierForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EditProductForm.cs">
       <SubType>Form</SubType>
@@ -268,11 +269,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>fr_local.resx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ItemsUC.cs">
+    <Compile Include="Controls\SupplierUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ItemsUC.Designer.cs">
-      <DependentUpon>ItemsUC.cs</DependentUpon>
+    <Compile Include="Controls\SupplierUC.Designer.cs">
+      <DependentUpon>SupplierUC.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Controls\ConnectionSettingsUC.resx">
@@ -290,8 +291,8 @@
     <EmbeddedResource Include="Controls\ReceiptsUC.resx">
       <DependentUpon>ReceiptsUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddItemForm.resx">
-      <DependentUpon>AddItemForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddSuppForm.resx">
+      <DependentUpon>AddSuppForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddProductForm.resx">
       <DependentUpon>AddProductForm.cs</DependentUpon>
@@ -305,8 +306,8 @@
     <EmbeddedResource Include="Forms\DirectReceiptReportViewer.resx">
       <DependentUpon>DirectReceiptReportViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditItemForm.resx">
-      <DependentUpon>EditItemForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditSupplierForm.resx">
+      <DependentUpon>EditSupplierForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditProductForm.resx">
       <DependentUpon>EditProductForm.cs</DependentUpon>
@@ -328,8 +329,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>fr_local.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ItemsUC.resx">
-      <DependentUpon>ItemsUC.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\SupplierUC.resx">
+      <DependentUpon>SupplierUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\DirectReceiptReport.rdlc" />
     <None Include="LINQ\MiniGramCashDB.dbml.layout">
@@ -360,6 +361,7 @@
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectReceiptsResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_itemResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_productsResult.datasource" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_suppliersResult.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -35,7 +35,7 @@
             this.title_lbl = new System.Windows.Forms.Label();
             this.menu_toggle_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.panel55 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            this.items_btn = new Syncfusion.WinForms.Controls.SfButton();
+            this.suppliers_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.receipt_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.minimize_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.exit_btn = new Syncfusion.WinForms.Controls.SfButton();
@@ -131,7 +131,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.panel55.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.panel55.Controls.Add(this.items_btn);
+            this.panel55.Controls.Add(this.suppliers_btn);
             this.panel55.Controls.Add(this.receipt_btn);
             this.panel55.Controls.Add(this.minimize_btn);
             this.panel55.Controls.Add(this.exit_btn);
@@ -143,38 +143,38 @@
             this.panel55.Size = new System.Drawing.Size(1224, 75);
             this.panel55.TabIndex = 8;
             // 
-            // items_btn
+            // suppliers_btn
             // 
-            this.items_btn.AccessibleName = "Button";
-            this.items_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.items_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.items_btn.CanOverrideStyle = true;
-            this.items_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.items_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.items_btn.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.items_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.items_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.items_btn.ImageMargin = new System.Windows.Forms.Padding(5);
-            this.items_btn.ImageSize = new System.Drawing.Size(55, 55);
-            this.items_btn.Location = new System.Drawing.Point(150, 0);
-            this.items_btn.Margin = new System.Windows.Forms.Padding(0);
-            this.items_btn.Name = "items_btn";
-            this.items_btn.Size = new System.Drawing.Size(75, 75);
-            this.items_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.items_btn.Style.FocusedBackColor = System.Drawing.Color.Transparent;
-            this.items_btn.Style.FocusedForeColor = System.Drawing.Color.Transparent;
-            this.items_btn.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.items_btn.Style.HoverBackColor = System.Drawing.Color.White;
-            this.items_btn.Style.HoverForeColor = System.Drawing.Color.White;
-            this.items_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
-            this.items_btn.Style.Image = global::MiniGram.Properties.Resources.stand;
-            this.items_btn.Style.PressedBackColor = System.Drawing.Color.White;
-            this.items_btn.Style.PressedForeColor = System.Drawing.Color.White;
-            this.items_btn.TabIndex = 16;
-            this.items_btn.ThemeName = "Office2016Colorful";
-            this.toolTip1.SetToolTip(this.items_btn, "Stock And Items");
-            this.items_btn.UseVisualStyleBackColor = false;
-            this.items_btn.Click += new System.EventHandler(this.products_btn_Click);
+            this.suppliers_btn.AccessibleName = "Button";
+            this.suppliers_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.suppliers_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.suppliers_btn.CanOverrideStyle = true;
+            this.suppliers_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.suppliers_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.suppliers_btn.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suppliers_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.suppliers_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.suppliers_btn.ImageMargin = new System.Windows.Forms.Padding(5);
+            this.suppliers_btn.ImageSize = new System.Drawing.Size(55, 55);
+            this.suppliers_btn.Location = new System.Drawing.Point(150, 0);
+            this.suppliers_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.suppliers_btn.Name = "suppliers_btn";
+            this.suppliers_btn.Size = new System.Drawing.Size(75, 75);
+            this.suppliers_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.suppliers_btn.Style.FocusedBackColor = System.Drawing.Color.Transparent;
+            this.suppliers_btn.Style.FocusedForeColor = System.Drawing.Color.Transparent;
+            this.suppliers_btn.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.suppliers_btn.Style.HoverBackColor = System.Drawing.Color.White;
+            this.suppliers_btn.Style.HoverForeColor = System.Drawing.Color.White;
+            this.suppliers_btn.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.suppliers_btn.Style.Image = global::MiniGram.Properties.Resources.stand;
+            this.suppliers_btn.Style.PressedBackColor = System.Drawing.Color.White;
+            this.suppliers_btn.Style.PressedForeColor = System.Drawing.Color.White;
+            this.suppliers_btn.TabIndex = 16;
+            this.suppliers_btn.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.suppliers_btn, "Suppliers");
+            this.suppliers_btn.UseVisualStyleBackColor = false;
+            this.suppliers_btn.Click += new System.EventHandler(this.suppliers_btn_Click);
             // 
             // receipt_btn
             // 
@@ -375,7 +375,7 @@
             this.prices_btn.ThemeName = "Office2016Colorful";
             this.toolTip1.SetToolTip(this.prices_btn, "Manage The Prices");
             this.prices_btn.UseVisualStyleBackColor = false;
-            this.prices_btn.Click += new System.EventHandler(this.dashboard_btn_Click);
+            this.prices_btn.Click += new System.EventHandler(this.products_prices_btn_Click);
             // 
             // main_panel
             // 
@@ -450,7 +450,7 @@
         private Syncfusion.WinForms.Controls.SfButton exit_btn;
         private Syncfusion.WinForms.Controls.SfButton minimize_btn;
         private Syncfusion.WinForms.Controls.SfButton receipt_btn;
-        private Syncfusion.WinForms.Controls.SfButton items_btn;
+        private Syncfusion.WinForms.Controls.SfButton suppliers_btn;
         private System.Windows.Forms.Label title_lbl;
         private System.Windows.Forms.ToolTip toolTip1;
     }

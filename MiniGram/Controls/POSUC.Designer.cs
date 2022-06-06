@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.products_panel = new System.Windows.Forms.Panel();
             this.search_panel = new System.Windows.Forms.Panel();
@@ -43,13 +43,6 @@
             this.add_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.receipt_panel = new System.Windows.Forms.Panel();
             this.receipt_details = new System.Windows.Forms.DataGridView();
-            this.Barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DollarPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LBPPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalLBP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_panel = new System.Windows.Forms.Panel();
             this.tot_lbp = new System.Windows.Forms.Label();
             this.tot_dollar = new System.Windows.Forms.Label();
@@ -62,6 +55,15 @@
             this.checkout_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.spselectReceiptsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DollarPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LBPPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalLBP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.search_panel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -70,13 +72,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.receipt_details)).BeginInit();
             this.total_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spselectReceiptsResultBindingSource)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.products_panel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.search_panel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.receipt_panel, 1, 1);
@@ -100,7 +103,7 @@
             this.products_panel.Location = new System.Drawing.Point(3, 83);
             this.products_panel.Name = "products_panel";
             this.tableLayoutPanel1.SetRowSpan(this.products_panel, 2);
-            this.products_panel.Size = new System.Drawing.Size(608, 682);
+            this.products_panel.Size = new System.Drawing.Size(506, 682);
             this.products_panel.TabIndex = 0;
             // 
             // search_panel
@@ -117,10 +120,10 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 6;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.Controls.Add(this.keyboard_btn, 1, 0);
@@ -150,7 +153,7 @@
             this.keyboard_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.keyboard_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.keyboard_btn.ImageSize = new System.Drawing.Size(60, 60);
-            this.keyboard_btn.Location = new System.Drawing.Point(417, 10);
+            this.keyboard_btn.Location = new System.Drawing.Point(315, 10);
             this.keyboard_btn.Margin = new System.Windows.Forms.Padding(10);
             this.keyboard_btn.Name = "keyboard_btn";
             this.keyboard_btn.Size = new System.Drawing.Size(81, 54);
@@ -249,7 +252,7 @@
             // search_txt
             // 
             this.search_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.search_txt.BeforeTouchSize = new System.Drawing.Size(34, 40);
+            this.search_txt.BeforeTouchSize = new System.Drawing.Size(285, 40);
             this.search_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.search_txt.CanOverrideStyle = true;
@@ -264,7 +267,7 @@
             this.search_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.MinimumSize = new System.Drawing.Size(34, 30);
             this.search_txt.Name = "search_txt";
-            this.search_txt.Size = new System.Drawing.Size(387, 40);
+            this.search_txt.Size = new System.Drawing.Size(285, 40);
             this.search_txt.TabIndex = 17;
             this.search_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.search_txt.ThemeName = "Default";
@@ -297,7 +300,7 @@
             this.add_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.add_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.add_btn.ImageSize = new System.Drawing.Size(40, 40);
-            this.add_btn.Location = new System.Drawing.Point(518, 10);
+            this.add_btn.Location = new System.Drawing.Point(416, 10);
             this.add_btn.Margin = new System.Windows.Forms.Padding(10);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(81, 54);
@@ -324,9 +327,9 @@
             this.receipt_panel.BackColor = System.Drawing.Color.White;
             this.receipt_panel.Controls.Add(this.receipt_details);
             this.receipt_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.receipt_panel.Location = new System.Drawing.Point(617, 83);
+            this.receipt_panel.Location = new System.Drawing.Point(515, 83);
             this.receipt_panel.Name = "receipt_panel";
-            this.receipt_panel.Size = new System.Drawing.Size(404, 406);
+            this.receipt_panel.Size = new System.Drawing.Size(506, 406);
             this.receipt_panel.TabIndex = 2;
             // 
             // receipt_details
@@ -337,33 +340,34 @@
             this.receipt_details.AllowUserToResizeRows = false;
             this.receipt_details.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.receipt_details.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.receipt_details.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.receipt_details.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.receipt_details.ColumnHeadersHeight = 40;
             this.receipt_details.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.receipt_details.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Barcode,
             this.PNAME,
+            this.SupplierName,
             this.QTE,
             this.DollarPrice,
             this.LBPPrice,
             this.TotalLBP,
             this.TotalDollar});
             this.receipt_details.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.receipt_details.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.receipt_details.DefaultCellStyle = dataGridViewCellStyle2;
             this.receipt_details.Dock = System.Windows.Forms.DockStyle.Fill;
             this.receipt_details.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.receipt_details.Location = new System.Drawing.Point(0, 0);
@@ -371,181 +375,154 @@
             this.receipt_details.Name = "receipt_details";
             this.receipt_details.ReadOnly = true;
             this.receipt_details.RowHeadersWidth = 10;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.receipt_details.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.receipt_details.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.receipt_details.RowTemplate.Height = 35;
             this.receipt_details.RowTemplate.ReadOnly = true;
             this.receipt_details.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.receipt_details.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.receipt_details.Size = new System.Drawing.Size(404, 406);
+            this.receipt_details.Size = new System.Drawing.Size(506, 406);
             this.receipt_details.TabIndex = 1;
-            // 
-            // Barcode
-            // 
-            this.Barcode.FillWeight = 40F;
-            this.Barcode.HeaderText = "Barcode";
-            this.Barcode.Name = "Barcode";
-            this.Barcode.ReadOnly = true;
-            // 
-            // PNAME
-            // 
-            this.PNAME.HeaderText = "Name";
-            this.PNAME.Name = "PNAME";
-            this.PNAME.ReadOnly = true;
-            // 
-            // QTE
-            // 
-            this.QTE.FillWeight = 30F;
-            this.QTE.HeaderText = "Items";
-            this.QTE.Name = "QTE";
-            this.QTE.ReadOnly = true;
-            // 
-            // DollarPrice
-            // 
-            this.DollarPrice.FillWeight = 30F;
-            this.DollarPrice.HeaderText = "Dollar";
-            this.DollarPrice.Name = "DollarPrice";
-            this.DollarPrice.ReadOnly = true;
-            // 
-            // LBPPrice
-            // 
-            this.LBPPrice.FillWeight = 30F;
-            this.LBPPrice.HeaderText = "LBP";
-            this.LBPPrice.Name = "LBPPrice";
-            this.LBPPrice.ReadOnly = true;
-            // 
-            // TotalLBP
-            // 
-            this.TotalLBP.FillWeight = 40F;
-            this.TotalLBP.HeaderText = "Tot. LBP";
-            this.TotalLBP.Name = "TotalLBP";
-            this.TotalLBP.ReadOnly = true;
-            // 
-            // TotalDollar
-            // 
-            this.TotalDollar.FillWeight = 30F;
-            this.TotalDollar.HeaderText = "Tot. $";
-            this.TotalDollar.Name = "TotalDollar";
-            this.TotalDollar.ReadOnly = true;
             // 
             // total_panel
             // 
             this.total_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.total_panel.Controls.Add(this.tot_lbp);
-            this.total_panel.Controls.Add(this.tot_dollar);
-            this.total_panel.Controls.Add(this.tot_quantity);
-            this.total_panel.Controls.Add(this.receipt_id);
-            this.total_panel.Controls.Add(this.label3);
-            this.total_panel.Controls.Add(this.label2);
-            this.total_panel.Controls.Add(this.label1);
-            this.total_panel.Controls.Add(this.label6);
+            this.total_panel.Controls.Add(this.tableLayoutPanel3);
             this.total_panel.Controls.Add(this.checkout_btn);
             this.total_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.total_panel.Location = new System.Drawing.Point(617, 495);
+            this.total_panel.Location = new System.Drawing.Point(515, 495);
             this.total_panel.Name = "total_panel";
-            this.total_panel.Size = new System.Drawing.Size(404, 270);
+            this.total_panel.Size = new System.Drawing.Size(506, 270);
             this.total_panel.TabIndex = 3;
             // 
             // tot_lbp
             // 
             this.tot_lbp.BackColor = System.Drawing.Color.White;
-            this.tot_lbp.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tot_lbp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tot_lbp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tot_lbp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tot_lbp.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_lbp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_lbp.Location = new System.Drawing.Point(194, 102);
+            this.tot_lbp.Location = new System.Drawing.Point(256, 153);
             this.tot_lbp.Name = "tot_lbp";
-            this.tot_lbp.Size = new System.Drawing.Size(130, 20);
+            this.tot_lbp.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.tot_lbp.Size = new System.Drawing.Size(247, 52);
             this.tot_lbp.TabIndex = 30;
             this.tot_lbp.Text = "0 LBP";
-            this.tot_lbp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tot_lbp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tot_dollar
             // 
             this.tot_dollar.BackColor = System.Drawing.Color.White;
-            this.tot_dollar.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tot_dollar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tot_dollar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tot_dollar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tot_dollar.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_dollar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_dollar.Location = new System.Drawing.Point(194, 73);
+            this.tot_dollar.Location = new System.Drawing.Point(256, 102);
             this.tot_dollar.Name = "tot_dollar";
-            this.tot_dollar.Size = new System.Drawing.Size(130, 20);
+            this.tot_dollar.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.tot_dollar.Size = new System.Drawing.Size(247, 51);
             this.tot_dollar.TabIndex = 29;
             this.tot_dollar.Text = "0 $";
-            this.tot_dollar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tot_dollar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tot_quantity
             // 
             this.tot_quantity.BackColor = System.Drawing.Color.White;
-            this.tot_quantity.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tot_quantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tot_quantity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tot_quantity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tot_quantity.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_quantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_quantity.Location = new System.Drawing.Point(194, 43);
+            this.tot_quantity.Location = new System.Drawing.Point(256, 51);
             this.tot_quantity.Name = "tot_quantity";
-            this.tot_quantity.Size = new System.Drawing.Size(130, 20);
+            this.tot_quantity.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.tot_quantity.Size = new System.Drawing.Size(247, 51);
             this.tot_quantity.TabIndex = 28;
             this.tot_quantity.Text = "0";
-            this.tot_quantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tot_quantity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // receipt_id
             // 
             this.receipt_id.BackColor = System.Drawing.Color.White;
-            this.receipt_id.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receipt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.receipt_id.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.receipt_id.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.receipt_id.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receipt_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.receipt_id.Location = new System.Drawing.Point(194, 13);
+            this.receipt_id.Location = new System.Drawing.Point(256, 0);
             this.receipt_id.Name = "receipt_id";
-            this.receipt_id.Size = new System.Drawing.Size(130, 20);
+            this.receipt_id.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.receipt_id.Size = new System.Drawing.Size(247, 51);
             this.receipt_id.TabIndex = 27;
             this.receipt_id.Text = "0";
-            this.receipt_id.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.receipt_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(14, 13);
+            this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 19);
+            this.label3.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.label3.Size = new System.Drawing.Size(247, 51);
             this.label3.TabIndex = 26;
             this.label3.Text = "Receipt ID : ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(14, 44);
+            this.label2.Location = new System.Drawing.Point(3, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 19);
+            this.label2.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.label2.Size = new System.Drawing.Size(247, 51);
             this.label2.TabIndex = 25;
             this.label2.Text = "Total Quantity : ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 102);
+            this.label1.Location = new System.Drawing.Point(3, 153);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 19);
+            this.label1.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.label1.Size = new System.Drawing.Size(247, 52);
             this.label1.TabIndex = 24;
             this.label1.Text = "Total Price in LBP: ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(14, 74);
+            this.label6.Location = new System.Drawing.Point(3, 102);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(152, 19);
+            this.label6.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.label6.Size = new System.Drawing.Size(247, 51);
             this.label6.TabIndex = 23;
             this.label6.Text = "Total Price in $ : ";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // checkout_btn
             // 
@@ -561,10 +538,10 @@
             this.checkout_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.checkout_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.checkout_btn.ImageSize = new System.Drawing.Size(55, 55);
-            this.checkout_btn.Location = new System.Drawing.Point(0, 210);
+            this.checkout_btn.Location = new System.Drawing.Point(0, 205);
             this.checkout_btn.Margin = new System.Windows.Forms.Padding(0);
             this.checkout_btn.Name = "checkout_btn";
-            this.checkout_btn.Size = new System.Drawing.Size(404, 60);
+            this.checkout_btn.Size = new System.Drawing.Size(506, 65);
             this.checkout_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.checkout_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.checkout_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -591,6 +568,94 @@
             // 
             this.spselectReceiptsResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_selectReceiptsResult);
             // 
+            // Barcode
+            // 
+            this.Barcode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Barcode.FillWeight = 10F;
+            this.Barcode.HeaderText = "Barcode";
+            this.Barcode.Name = "Barcode";
+            this.Barcode.ReadOnly = true;
+            // 
+            // PNAME
+            // 
+            this.PNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PNAME.FillWeight = 20F;
+            this.PNAME.HeaderText = "Name";
+            this.PNAME.Name = "PNAME";
+            this.PNAME.ReadOnly = true;
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SupplierName.FillWeight = 20F;
+            this.SupplierName.HeaderText = "Supplier Name";
+            this.SupplierName.Name = "SupplierName";
+            this.SupplierName.ReadOnly = true;
+            // 
+            // QTE
+            // 
+            this.QTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.QTE.FillWeight = 10F;
+            this.QTE.HeaderText = "Items";
+            this.QTE.Name = "QTE";
+            this.QTE.ReadOnly = true;
+            // 
+            // DollarPrice
+            // 
+            this.DollarPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DollarPrice.FillWeight = 10F;
+            this.DollarPrice.HeaderText = "Dollar";
+            this.DollarPrice.Name = "DollarPrice";
+            this.DollarPrice.ReadOnly = true;
+            // 
+            // LBPPrice
+            // 
+            this.LBPPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.LBPPrice.FillWeight = 10F;
+            this.LBPPrice.HeaderText = "LBP";
+            this.LBPPrice.Name = "LBPPrice";
+            this.LBPPrice.ReadOnly = true;
+            // 
+            // TotalLBP
+            // 
+            this.TotalLBP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TotalLBP.FillWeight = 10F;
+            this.TotalLBP.HeaderText = "Tot. LBP";
+            this.TotalLBP.Name = "TotalLBP";
+            this.TotalLBP.ReadOnly = true;
+            // 
+            // TotalDollar
+            // 
+            this.TotalDollar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TotalDollar.FillWeight = 10F;
+            this.TotalDollar.HeaderText = "Tot. $";
+            this.TotalDollar.Name = "TotalDollar";
+            this.TotalDollar.ReadOnly = true;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.receipt_id, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tot_quantity, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tot_dollar, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.tot_lbp, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(506, 205);
+            this.tableLayoutPanel3.TabIndex = 31;
+            // 
             // POSUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -609,8 +674,9 @@
             this.receipt_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.receipt_details)).EndInit();
             this.total_panel.ResumeLayout(false);
-            this.total_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spselectReceiptsResultBindingSource)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -618,7 +684,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel products_panel;
         private System.Windows.Forms.Panel search_panel;
         private System.Windows.Forms.Panel receipt_panel;
         private System.Windows.Forms.Panel total_panel;
@@ -635,17 +700,20 @@
         private System.Windows.Forms.Label tot_quantity;
         private System.Windows.Forms.Label receipt_id;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt search_txt;
         private Syncfusion.WinForms.Controls.SfButton add_btn;
         private Syncfusion.WinForms.Controls.SfButton change_quantity_btn;
         private Syncfusion.WinForms.Controls.SfButton delete_btn;
+        private Syncfusion.WinForms.Controls.SfButton keyboard_btn;
+        public Syncfusion.Windows.Forms.Tools.TextBoxExt search_txt;
+        public System.Windows.Forms.Panel products_panel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Barcode;
         private System.Windows.Forms.DataGridViewTextBoxColumn PNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
         private System.Windows.Forms.DataGridViewTextBoxColumn QTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn DollarPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn LBPPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalLBP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalDollar;
-        private Syncfusion.WinForms.Controls.SfButton keyboard_btn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }

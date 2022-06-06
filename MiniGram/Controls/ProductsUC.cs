@@ -54,7 +54,7 @@ namespace MiniGram.Controls
             dataGridView1.Refresh();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (!row.Cells[6].Value.ToString().Equals("Enabled"))
+                if (!row.Cells[7].Value.ToString().Equals("Enabled"))
                 {
                     row.DefaultCellStyle.BackColor = Color.DarkGray;
                 }
@@ -125,7 +125,7 @@ namespace MiniGram.Controls
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 8)
             {
                 EditProductForm epf = new EditProductForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
                 epf.ShowDialog();
@@ -140,7 +140,7 @@ namespace MiniGram.Controls
             Process process = new Process();
             process.StartInfo = ps;
             process.Start();
-            search_btn_Click(search_btn, e);
+            search_btn_Click(sender, e);
         }
     }
 }

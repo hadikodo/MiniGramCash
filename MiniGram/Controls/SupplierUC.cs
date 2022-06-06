@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace MiniGram
 {
-    public partial class ItemsUC : UserControl
+    public partial class SupplierUC : UserControl
     {
         private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString);
-        public ItemsUC()
+        public SupplierUC()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace MiniGram
         }
         public void refreshData()
         {
-            spselectitemResultBindingSource.DataSource = cnx.sp_select_item("");
+            spselectsuppliersResultBindingSource.DataSource = cnx.sp_select_suppliers("");
             dataGridView1.Refresh();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
@@ -51,20 +51,20 @@ namespace MiniGram
 
         private void addsupp_btn_Click(object sender, EventArgs e)
         {
-            AddItemForm aif = new AddItemForm();
+            AddSuppForm aif = new AddSuppForm();
             aif.ShowDialog();
             refreshData();
         }
 
         private void enable_btn_Click(object sender, EventArgs e)
         {
-            cnx.sp_enableItemByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            cnx.sp_enableSupplierByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
             refreshData();
         }
 
         private void disable_btn_Click(object sender, EventArgs e)
         {
-            cnx.sp_disableItemByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            cnx.sp_disableSupplierByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
             refreshData();
         }
 
@@ -115,7 +115,7 @@ namespace MiniGram
         {
             try
             {
-                spselectitemResultBindingSource.DataSource = cnx.sp_select_item(search_txt.Text);
+                spselectsuppliersResultBindingSource.DataSource = cnx.sp_select_suppliers(search_txt.Text);
                 dataGridView1.Refresh();
             }
             catch (Exception ex)
@@ -128,7 +128,7 @@ namespace MiniGram
         {
             if (e.ColumnIndex == 6)
             {
-                EditItemForm eif = new EditItemForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                EditSupplierForm eif = new EditSupplierForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
                 eif.ShowDialog();
                 refreshData();
             }

@@ -1,6 +1,6 @@
 ﻿namespace MiniGram.Forms
 {
-    partial class EditItemForm
+    partial class EditSupplierForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditItemForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditSupplierForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.unit_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.phone_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.label4 = new System.Windows.Forms.Label();
             this.warning_lable = new System.Windows.Forms.Label();
             this.save_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.quantity_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.email_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.label2 = new System.Windows.Forms.Label();
-            this.itemname_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.suppname_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.exit_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.logo_img = new System.Windows.Forms.PictureBox();
             this.keyboard_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.unit_txt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quantity_txt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemname_txt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phone_txt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.email_txt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppname_txt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_img)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,14 +59,14 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.unit_txt);
+            this.panel1.Controls.Add(this.phone_txt);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.warning_lable);
             this.panel1.Controls.Add(this.save_btn);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.quantity_txt);
+            this.panel1.Controls.Add(this.email_txt);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.itemname_txt);
+            this.panel1.Controls.Add(this.suppname_txt);
             this.panel1.Location = new System.Drawing.Point(12, 93);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(769, 663);
@@ -77,7 +77,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label7.Location = new System.Drawing.Point(57, 44);
+            this.label7.Location = new System.Drawing.Point(24, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(125, 22);
             this.label7.TabIndex = 23;
@@ -88,42 +88,42 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label6.Location = new System.Drawing.Point(55, 13);
+            this.label6.Location = new System.Drawing.Point(22, 17);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 22);
             this.label6.TabIndex = 22;
             this.label6.Text = "⫸ : Required";
             // 
-            // unit_txt
+            // phone_txt
             // 
-            this.unit_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.unit_txt.BeforeTouchSize = new System.Drawing.Size(400, 40);
-            this.unit_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.unit_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.unit_txt.CanOverrideStyle = true;
-            this.unit_txt.CornerRadius = 5;
-            this.unit_txt.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.unit_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.unit_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unit_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.unit_txt.Location = new System.Drawing.Point(328, 205);
-            this.unit_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.unit_txt.MinimumSize = new System.Drawing.Size(34, 30);
-            this.unit_txt.Name = "unit_txt";
-            this.unit_txt.Size = new System.Drawing.Size(400, 40);
-            this.unit_txt.TabIndex = 1;
-            this.unit_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.unit_txt.ThemeName = "Default";
-            this.unit_txt.ThemeStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.unit_txt.ThemeStyle.CornerRadius = 5;
-            this.unit_txt.ThemeStyle.DisabledBackColor = System.Drawing.Color.Gray;
-            this.unit_txt.ThemeStyle.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.unit_txt.ThemeStyle.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.unit_txt.ThemeStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.unit_txt.ThemeStyle.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unit_txt.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.unit_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.unit_txt.UseBorderColorOnFocus = true;
+            this.phone_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.phone_txt.BeforeTouchSize = new System.Drawing.Size(400, 40);
+            this.phone_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.phone_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.phone_txt.CanOverrideStyle = true;
+            this.phone_txt.CornerRadius = 5;
+            this.phone_txt.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.phone_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.phone_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phone_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.phone_txt.Location = new System.Drawing.Point(328, 205);
+            this.phone_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.phone_txt.MinimumSize = new System.Drawing.Size(34, 30);
+            this.phone_txt.Name = "phone_txt";
+            this.phone_txt.Size = new System.Drawing.Size(400, 40);
+            this.phone_txt.TabIndex = 1;
+            this.phone_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.phone_txt.ThemeName = "Default";
+            this.phone_txt.ThemeStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.phone_txt.ThemeStyle.CornerRadius = 5;
+            this.phone_txt.ThemeStyle.DisabledBackColor = System.Drawing.Color.Gray;
+            this.phone_txt.ThemeStyle.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.phone_txt.ThemeStyle.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.phone_txt.ThemeStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.phone_txt.ThemeStyle.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phone_txt.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.phone_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.phone_txt.UseBorderColorOnFocus = true;
             // 
             // label4
             // 
@@ -132,9 +132,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.label4.Location = new System.Drawing.Point(22, 206);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 32);
+            this.label4.Size = new System.Drawing.Size(285, 32);
             this.label4.TabIndex = 20;
-            this.label4.Text = "▷ Unit :";
+            this.label4.Text = "⫸ Phone Number :";
             // 
             // warning_lable
             // 
@@ -175,77 +175,77 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(285, 32);
             this.label3.TabIndex = 10;
-            this.label3.Text = "⫸ Initial Quantity :";
+            this.label3.Text = "▷ Email Address :";
             // 
-            // quantity_txt
+            // email_txt
             // 
-            this.quantity_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.quantity_txt.BeforeTouchSize = new System.Drawing.Size(400, 40);
-            this.quantity_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.quantity_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.quantity_txt.CanOverrideStyle = true;
-            this.quantity_txt.CornerRadius = 5;
-            this.quantity_txt.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.quantity_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.quantity_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantity_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.quantity_txt.Location = new System.Drawing.Point(328, 278);
-            this.quantity_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.quantity_txt.MinimumSize = new System.Drawing.Size(34, 30);
-            this.quantity_txt.Name = "quantity_txt";
-            this.quantity_txt.Size = new System.Drawing.Size(400, 40);
-            this.quantity_txt.TabIndex = 2;
-            this.quantity_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.quantity_txt.ThemeName = "Default";
-            this.quantity_txt.ThemeStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.quantity_txt.ThemeStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.quantity_txt.ThemeStyle.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantity_txt.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.quantity_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.quantity_txt.UseBorderColorOnFocus = true;
-            this.quantity_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.quantity_txt_KeyPress);
+            this.email_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.email_txt.BeforeTouchSize = new System.Drawing.Size(400, 40);
+            this.email_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.email_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.email_txt.CanOverrideStyle = true;
+            this.email_txt.CornerRadius = 5;
+            this.email_txt.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.email_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.email_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.email_txt.Location = new System.Drawing.Point(328, 278);
+            this.email_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.email_txt.MinimumSize = new System.Drawing.Size(34, 30);
+            this.email_txt.Name = "email_txt";
+            this.email_txt.Size = new System.Drawing.Size(400, 40);
+            this.email_txt.TabIndex = 2;
+            this.email_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.email_txt.ThemeName = "Default";
+            this.email_txt.ThemeStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.email_txt.ThemeStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.email_txt.ThemeStyle.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_txt.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.email_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.email_txt.UseBorderColorOnFocus = true;
+            this.email_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.quantity_txt_KeyPress);
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label2.Location = new System.Drawing.Point(22, 132);
+            this.label2.Location = new System.Drawing.Point(22, 135);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(219, 32);
+            this.label2.Size = new System.Drawing.Size(285, 32);
             this.label2.TabIndex = 8;
-            this.label2.Text = "⫸ Item Name :";
+            this.label2.Text = "⫸ Supplier Name :";
             // 
-            // itemname_txt
+            // suppname_txt
             // 
-            this.itemname_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.itemname_txt.BeforeTouchSize = new System.Drawing.Size(400, 40);
-            this.itemname_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.itemname_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.itemname_txt.CanOverrideStyle = true;
-            this.itemname_txt.CornerRadius = 5;
-            this.itemname_txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.itemname_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.itemname_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemname_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.itemname_txt.Location = new System.Drawing.Point(328, 131);
-            this.itemname_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.itemname_txt.MinimumSize = new System.Drawing.Size(34, 30);
-            this.itemname_txt.Name = "itemname_txt";
-            this.itemname_txt.Size = new System.Drawing.Size(400, 40);
-            this.itemname_txt.TabIndex = 0;
-            this.itemname_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.itemname_txt.ThemeName = "Default";
-            this.itemname_txt.ThemeStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.itemname_txt.ThemeStyle.CornerRadius = 5;
-            this.itemname_txt.ThemeStyle.DisabledBackColor = System.Drawing.Color.Gray;
-            this.itemname_txt.ThemeStyle.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.itemname_txt.ThemeStyle.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.itemname_txt.ThemeStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.itemname_txt.ThemeStyle.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemname_txt.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.itemname_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.itemname_txt.UseBorderColorOnFocus = true;
+            this.suppname_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.suppname_txt.BeforeTouchSize = new System.Drawing.Size(400, 40);
+            this.suppname_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.suppname_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.suppname_txt.CanOverrideStyle = true;
+            this.suppname_txt.CornerRadius = 5;
+            this.suppname_txt.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.suppname_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.suppname_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suppname_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.suppname_txt.Location = new System.Drawing.Point(328, 131);
+            this.suppname_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.suppname_txt.MinimumSize = new System.Drawing.Size(34, 30);
+            this.suppname_txt.Name = "suppname_txt";
+            this.suppname_txt.Size = new System.Drawing.Size(400, 40);
+            this.suppname_txt.TabIndex = 0;
+            this.suppname_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.suppname_txt.ThemeName = "Default";
+            this.suppname_txt.ThemeStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.suppname_txt.ThemeStyle.CornerRadius = 5;
+            this.suppname_txt.ThemeStyle.DisabledBackColor = System.Drawing.Color.Gray;
+            this.suppname_txt.ThemeStyle.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.suppname_txt.ThemeStyle.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.suppname_txt.ThemeStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.suppname_txt.ThemeStyle.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suppname_txt.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.suppname_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.suppname_txt.UseBorderColorOnFocus = true;
             // 
             // exit_btn
             // 
@@ -275,9 +275,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(93, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(387, 66);
+            this.label1.Size = new System.Drawing.Size(496, 66);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Update Item";
+            this.label1.Text = "Update Supplier";
             // 
             // logo_img
             // 
@@ -324,7 +324,7 @@
             this.keyboard_btn.UseVisualStyleBackColor = true;
             this.keyboard_btn.Click += new System.EventHandler(this.keyboard_btn_Click);
             // 
-            // EditItemForm
+            // EditSupplierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -337,16 +337,16 @@
             this.Controls.Add(this.logo_img);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "EditItemForm";
+            this.Name = "EditSupplierForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditItemForm";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.EditItemForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.unit_txt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quantity_txt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemname_txt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phone_txt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.email_txt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppname_txt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -358,14 +358,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt unit_txt;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt phone_txt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label warning_lable;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.Label label3;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt quantity_txt;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt email_txt;
         private System.Windows.Forms.Label label2;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt itemname_txt;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt suppname_txt;
         private System.Windows.Forms.Button exit_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox logo_img;

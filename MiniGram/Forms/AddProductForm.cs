@@ -37,6 +37,15 @@ namespace MiniGram.Forms
         {
             warning_lable.Visible = false;
             hasqte_combo.SelectedIndex = 0;
+            using(var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
+            {
+                var suppList = cnx.sp_select_suppliers("").ToList();
+                foreach(var supp in suppList)
+                {
+                    supp_cbox.Items.Add(supp.SupplierName);
+                }
+            }
+            //supp_cbox.SelectedIndex = 0;
         }
 
         private void add_btn_Click(object sender, EventArgs e)
@@ -56,7 +65,8 @@ namespace MiniGram.Forms
                     {
                         try
                         {
-                            cnx.sp_addNewProduct(productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false);
+                            int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedText).ToList()[0].SID;
+                            cnx.sp_addNewProduct(productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false,sid);
                         }
                         catch (Exception)
                         {
@@ -77,7 +87,8 @@ namespace MiniGram.Forms
                         {
                             try
                             {
-                                cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true);
+                                int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedText).ToList()[0].SID;
+                                cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true,sid);
                             }
                             catch (Exception)
                             {

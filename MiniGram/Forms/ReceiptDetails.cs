@@ -38,7 +38,7 @@ namespace MiniGram.Forms
             spselectReceiptsDetailsResultBindingSource.DataSource = cnx.sp_selectReceiptsDetails(receiptID);
             dataGridView1.Refresh();
             var receipt = cnx.sp_getReceiptByID(receiptID).ToList()[0];
-            dataGridView2.Rows.Add(receipt.RBARCODE, receipt.RITEM_NB, "", "", receipt.TOTAL_AMOUNTDollar, receipt.TOTAL_AMOUNTLBP);
+            dataGridView2.Rows.Add(receipt.RBARCODE, receipt.RITEM_NB, "", receipt.TOTAL_AMOUNTDollar, receipt.TOTAL_AMOUNTLBP);
         }
 
         private void exit_btn_Click(object sender, EventArgs e)

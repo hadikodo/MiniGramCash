@@ -37,7 +37,8 @@ namespace MiniGram.Forms
                     {
                         try
                         {
-                            cnx.sp_UpdateProduct(productID,productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false);
+                            int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedText).ToList()[0].SID;
+                            cnx.sp_UpdateProduct(productID,productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false,sid);
                         }
                         catch (Exception)
                         {
@@ -58,7 +59,8 @@ namespace MiniGram.Forms
                         {
                             try
                             {
-                                cnx.sp_UpdateProduct(productID,productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true);
+                                int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedText).ToList()[0].SID;
+                                cnx.sp_UpdateProduct(productID,productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true,sid);
                             }
                             catch (Exception)
                             {
@@ -80,16 +82,32 @@ namespace MiniGram.Forms
         private void EditProductForm_Load(object sender, EventArgs e)
         {
             warning_lable.Visible = false;
-            var product = (from p in cnx.TBLPRODUCTs
-                          where p.PID == productID
-                          select p).ToList();
-            if (product != null)
+            using (var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
             {
-                barcode_txt.Text = product[0].BARCODE;
-                productname_txt.Text = product[0].PNAME;
-                hasqte_combo.SelectedIndex = Convert.ToInt32(product[0].HasQuantity);
-                quantity_txt.Text = product[0].QTE.ToString();
-                price_txt.Text = product[0].PRICE.ToString();
+                var suppList = cnx.sp_select_suppliers("").ToList();
+                foreach (var supp in suppList)
+                {
+                    supp_cbox.Items.Add(supp.SupplierName);
+                }
+
+                var product = (from p in cnx.TBLPRODUCTs
+                               where p.PID == productID
+                               select p).ToList();
+                if (product != null)
+                {
+                    barcode_txt.Text = product[0].BARCODE;
+                    productname_txt.Text = product[0].PNAME;
+                    hasqte_combo.SelectedIndex = Convert.ToInt32(product[0].HasQuantity);
+                    quantity_txt.Text = product[0].QTE.ToString();
+                    price_txt.Text = product[0].PRICE.ToString();
+                    try
+                    {
+                        supp_cbox.SelectedIndex = supp_cbox.Items.IndexOf(cnx.sp_getSupplierByID(product[0].SID).ToList()[0].SNAME);
+                    }catch (Exception ex)
+                    {
+
+                    }
+                }
             }
         }
 

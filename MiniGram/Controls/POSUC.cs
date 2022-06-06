@@ -67,7 +67,7 @@ namespace MiniGram.Controls
                             var product = data.sp_getProductByName(row.Cells[1].Value.ToString()).ToList();
                             if (product[0].HasQuantity == true)
                             {
-                                if (Int32.Parse(product[0].QTE.ToString()) < Int32.Parse(row.Cells[2].Value.ToString()))
+                                if (Int32.Parse(product[0].QTE.ToString()) < Int32.Parse(row.Cells[3].Value.ToString()))
                                 {
                                     MessageBox.Show("You Have " + product[0].QTE + " Of Product Name : " + product[0].PNAME + "\nPlease Check Your Products !!");
                                     data.sp_deleteReceiptByBarcode(newBarcode);
@@ -76,26 +76,32 @@ namespace MiniGram.Controls
                                     ActiveControl = search_txt;
                                     return;
                                 }
-                                else if ((Int32.Parse(product[0].QTE.ToString()) == Int32.Parse(row.Cells[2].Value.ToString())))
+                                else if ((Int32.Parse(product[0].QTE.ToString()) == Int32.Parse(row.Cells[3].Value.ToString())))
                                 {
                                     data.sp_UpdateProductQuantity(product[0].PID, 0);
-                                    data.sp_insertNewReciptDetail(Int32.Parse(receipt_id.Text), product[0].PID, Int32.Parse(row.Cells[2].Value.ToString()), double.Parse(row.Cells[3].Value.ToString()), double.Parse(row.Cells[6].Value.ToString()), Int32.Parse(row.Cells[4].Value.ToString()), Int32.Parse(row.Cells[5].Value.ToString()));
+                                    data.sp_insertNewReciptDetail(Int32.Parse(receipt_id.Text), product[0].PID, Int32.Parse(row.Cells[3].Value.ToString()), double.Parse(row.Cells[4].Value.ToString()), double.Parse(row.Cells[7].Value.ToString()), Int32.Parse(row.Cells[5].Value.ToString()), Int32.Parse(row.Cells[6].Value.ToString()));
                                 }
                                 else
                                 {
-                                    data.sp_UpdateProductQuantity(product[0].PID, product[0].QTE - Int32.Parse(row.Cells[2].Value.ToString()));
-                                    data.sp_insertNewReciptDetail(Int32.Parse(receipt_id.Text), product[0].PID, Int32.Parse(row.Cells[2].Value.ToString()), double.Parse(row.Cells[3].Value.ToString()), double.Parse(row.Cells[6].Value.ToString()), Int32.Parse(row.Cells[4].Value.ToString()), Int32.Parse(row.Cells[5].Value.ToString()));
+                                    data.sp_UpdateProductQuantity(product[0].PID, product[0].QTE - Int32.Parse(row.Cells[3].Value.ToString()));
+                                    data.sp_insertNewReciptDetail(Int32.Parse(receipt_id.Text), product[0].PID, Int32.Parse(row.Cells[3].Value.ToString()), double.Parse(row.Cells[4].Value.ToString()), double.Parse(row.Cells[7].Value.ToString()), Int32.Parse(row.Cells[5].Value.ToString()), Int32.Parse(row.Cells[6].Value.ToString()));
                                 }
                             }
                             else
                             {
-                                data.sp_insertNewReciptDetail(Int32.Parse(receipt_id.Text), product[0].PID, Int32.Parse(row.Cells[2].Value.ToString()), double.Parse(row.Cells[3].Value.ToString()), double.Parse(row.Cells[6].Value.ToString()), Int32.Parse(row.Cells[4].Value.ToString()), Int32.Parse(row.Cells[5].Value.ToString()));
+                                data.sp_insertNewReciptDetail(NewReceiptNumber, product[0].PID, Int32.Parse(row.Cells[3].Value.ToString()), double.Parse(row.Cells[4].Value.ToString()), double.Parse(row.Cells[7].Value.ToString()), Int32.Parse(row.Cells[5].Value.ToString()), Int32.Parse(row.Cells[6].Value.ToString()));
                             }
                         }
                         catch(Exception ex)
                         {
                             data.sp_deleteReceiptByBarcode(newBarcode);
                             data.sp_deleteReceiptDetailsByRID(Int32.Parse(receipt_id.Text));
+                            MessageBox.Show("An Error Occured When Adding Receipt, Please Call Support !!");
+                            receipt_details.Rows.Clear();
+                            receipt_id.Text = NewReceiptNumber.ToString();
+                            search_txt.Text = "";
+                            ActiveControl = search_txt;
+                            return;
                         }
                     }
                     DirectReceiptReportViewer drrv = new DirectReceiptReportViewer();
@@ -126,7 +132,7 @@ namespace MiniGram.Controls
         }
 
         private void POSUC_Load(object sender, EventArgs e)
-        {
+        {           
             try
             {
                 NewReceiptNumber = Int32.Parse(data.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString())+1;
@@ -135,16 +141,16 @@ namespace MiniGram.Controls
                 NewReceiptNumber = 1;
             }
             receipt_id.Text = NewReceiptNumber.ToString();
-            ActiveControl = search_txt;
+            ActiveControl = search_txt;          
         }
 
-        public async void refreshData(string str)
+        public void refreshData(string str)
         {
             products_panel.Controls.Clear();
             table =new TableLayoutPanel();
             products_panel.Controls.Add(table);
             table.Dock = DockStyle.Fill;
-            table.ColumnCount = 3;
+            table.ColumnCount = 1;
             table.RowCount = (Int32.Parse(data.sp_getProductsCount(str).ToList()[0].Product_Number.ToString()) / table.ColumnCount) + 1;
             products_panel.AutoScrollMinSize = new Size(0, (table.RowCount + 1) * 100);
             int i = 0,j = 0,c = 0,p = Int32.Parse(data.sp_getProductsCount(str).ToList()[0].Product_Number.ToString());
@@ -169,7 +175,7 @@ namespace MiniGram.Controls
                             button.Font = new Font("Bookman Old Style", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                             button.ForeColor = Color.White;
                             button.Name = "product" + i.ToString() + j.ToString();
-                            button.Size = new Size(products_panel.Width/3, 75);
+                            button.Size = new Size(products_panel.Width, 75);
                             button.Style.BackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
                             button.Style.FocusedBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
                             button.Style.FocusedForeColor = Color.White;
@@ -182,11 +188,12 @@ namespace MiniGram.Controls
                             button.TextImageRelation = TextImageRelation.Overlay;
                             button.TextMargin = new Padding(0, 10, 0, 0);
                             button.ThemeName = "Office2016Colorful";
-                            button.Margin = new Padding(25, 25, 25, 25);
-                            toolTip1.SetToolTip(button, products[c].ProductName);
+                            button.Margin = new Padding(0, 10, 0, 10);
+                            button.Padding = new Padding(100, 0, 0, 0);
+                            toolTip1.SetToolTip(button, products[c].ProductName+"  |  "+ products[c].SupplierName);
                             button.UseVisualStyleBackColor = false;
-                            button.Text = products[c].ProductName;
-                            button.TextAlign = ContentAlignment.MiddleCenter;
+                            button.Text = products[c].ProductName + "  |  " + products[c].SupplierName;
+                            button.TextAlign = ContentAlignment.MiddleLeft;
                             button.Click += new EventHandler(add_btn_Click);
                             table.Controls.Add(button, j, i);
                         }
@@ -204,7 +211,7 @@ namespace MiniGram.Controls
             double totalDollar = 0;
             foreach(DataGridViewRow row in receipt_details.Rows)
             {
-                totalDollar += double.Parse(row.Cells[6].Value.ToString());
+                totalDollar += double.Parse(row.Cells[7].Value.ToString());
             }
             return totalDollar.ToString();
         }
@@ -213,7 +220,7 @@ namespace MiniGram.Controls
             int totalLBP = 0;
             foreach (DataGridViewRow row in receipt_details.Rows)
             {
-                totalLBP += Int32.Parse(row.Cells[5].Value.ToString());
+                totalLBP += Int32.Parse(row.Cells[6].Value.ToString());
             }
             return totalLBP.ToString();
         }
@@ -222,17 +229,18 @@ namespace MiniGram.Controls
             int QTE = 0;
             foreach (DataGridViewRow row in receipt_details.Rows)
             {
-                QTE += Int32.Parse(row.Cells[2].Value.ToString());
+                QTE += Int32.Parse(row.Cells[3].Value.ToString());
             }
             return QTE.ToString();
         }
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            string pname = (sender as SfButton).Text;
+            string pname = (sender as SfButton).Text.Split('|')[0].Trim();
             int pid = data.sp_getProductByName(pname).ToList()[0].PID;
             double dollar = data.sp_getProductByName(pname).ToList()[0].PRICE.Value;
             string barcode = data.sp_getProductByName(pname).ToList()[0].BARCODE;
+            string supplier = data.sp_getSupplierByID(data.sp_getProductByName(pname).ToList()[0].SID.Value).ToList()[0].SNAME;
             int lbp = Int32.Parse((dollar * double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
             bool exist = false;
             foreach(DataGridViewRow row in receipt_details.Rows)
@@ -240,9 +248,10 @@ namespace MiniGram.Controls
                 if (row.Cells[1].Value.Equals(pname))
                 {
                     exist = true;
-                    row.Cells[2].Value = Int32.Parse(row.Cells[2].Value.ToString()) + 1;
-                    row.Cells[5].Value = Int32.Parse((double.Parse(row.Cells[2].Value.ToString()) * double.Parse(lbp.ToString())).ToString());
-                    row.Cells[6].Value = double.Parse(row.Cells[2].Value.ToString()) *dollar;
+                    row.Cells[2].Value = supplier;
+                    row.Cells[3].Value = Int32.Parse(row.Cells[3].Value.ToString()) + 1;
+                    row.Cells[6].Value = Int32.Parse((double.Parse(row.Cells[3].Value.ToString()) * double.Parse(lbp.ToString())).ToString());
+                    row.Cells[7].Value = double.Parse(row.Cells[3].Value.ToString()) *dollar;
                     tot_quantity.Text = getTotalQTE();
                     tot_dollar.Text = getTotalDollar() + " $";
                     tot_lbp.Text = getTotalLBP() + " LBP";
@@ -251,7 +260,7 @@ namespace MiniGram.Controls
             }
             if (!exist)
             {
-                receipt_details.Rows.Add(barcode,pname, 1, dollar, lbp, lbp, dollar);
+                receipt_details.Rows.Add(barcode,pname,supplier, 1, dollar, lbp, lbp, dollar);
                 tot_quantity.Text = getTotalQTE();
                 tot_dollar.Text = getTotalDollar() + " $";
                 tot_lbp.Text = getTotalLBP() + " LBP";
@@ -268,16 +277,16 @@ namespace MiniGram.Controls
             }
             else
             {
-                double dollar = double.Parse(receipt_details.SelectedRows[0].Cells[3].Value.ToString());
+                double dollar = double.Parse(receipt_details.SelectedRows[0].Cells[4].Value.ToString());
                 int lbp = Convert.ToInt32(dollar) * Properties.Settings.Default.dollarLBPPrice;
                 Globals.deleteNB = 0;
-                ChangeQuantityForm cqf = new ChangeQuantityForm(Int32.Parse(receipt_details.SelectedRows[0].Cells[2].Value.ToString()));
+                ChangeQuantityForm cqf = new ChangeQuantityForm(Int32.Parse(receipt_details.SelectedRows[0].Cells[3].Value.ToString()));
                 cqf.ShowDialog();
                 if (Globals.deleteNB > 0)
                 {
-                    receipt_details.SelectedRows[0].Cells[2].Value = Globals.deleteNB;
-                    receipt_details.SelectedRows[0].Cells[5].Value = Globals.deleteNB * lbp;
-                    receipt_details.SelectedRows[0].Cells[6].Value = double.Parse(Globals.deleteNB.ToString()) * dollar;
+                    receipt_details.SelectedRows[0].Cells[3].Value = Globals.deleteNB;
+                    receipt_details.SelectedRows[0].Cells[6].Value = Globals.deleteNB * lbp;
+                    receipt_details.SelectedRows[0].Cells[7].Value = double.Parse(Globals.deleteNB.ToString()) * dollar;
                     tot_quantity.Text = getTotalQTE();
                     tot_dollar.Text = getTotalDollar() + " $";
                     tot_lbp.Text = getTotalLBP() + " LBP";
@@ -295,17 +304,17 @@ namespace MiniGram.Controls
             else
             {
                 Globals.deleteNB = 0;
-                DeleteForm df = new DeleteForm(Int32.Parse(receipt_details.SelectedRows[0].Cells[2].Value.ToString()));
+                DeleteForm df = new DeleteForm(Int32.Parse(receipt_details.SelectedRows[0].Cells[3].Value.ToString()));
                 df.ShowDialog();
                 if (Globals.deleteNB != 0)
                 {
-                    if (Globals.deleteNB == Int32.Parse(receipt_details.SelectedRows[0].Cells[2].Value.ToString()))
+                    if (Globals.deleteNB == Int32.Parse(receipt_details.SelectedRows[0].Cells[3].Value.ToString()))
                         receipt_details.Rows.RemoveAt(receipt_details.SelectedRows[0].Index);
                     else
                     {
-                        receipt_details.SelectedRows[0].Cells[2].Value = (Int32.Parse(receipt_details.SelectedRows[0].Cells[2].Value.ToString()) - Globals.deleteNB).ToString();
-                        receipt_details.SelectedRows[0].Cells[6].Value = (double.Parse(receipt_details.SelectedRows[0].Cells[2].Value.ToString()) * double.Parse(receipt_details.SelectedRows[0].Cells[3].Value.ToString())).ToString();
-                        receipt_details.SelectedRows[0].Cells[5].Value = (Int32.Parse(receipt_details.SelectedRows[0].Cells[2].Value.ToString()) * Int32.Parse(receipt_details.SelectedRows[0].Cells[4].Value.ToString())).ToString();
+                        receipt_details.SelectedRows[0].Cells[3].Value = (Int32.Parse(receipt_details.SelectedRows[0].Cells[3].Value.ToString()) - Globals.deleteNB).ToString();
+                        receipt_details.SelectedRows[0].Cells[7].Value = (double.Parse(receipt_details.SelectedRows[0].Cells[3].Value.ToString()) * double.Parse(receipt_details.SelectedRows[0].Cells[4].Value.ToString())).ToString();
+                        receipt_details.SelectedRows[0].Cells[6].Value = (Int32.Parse(receipt_details.SelectedRows[0].Cells[3].Value.ToString()) * Int32.Parse(receipt_details.SelectedRows[0].Cells[5].Value.ToString())).ToString();
                     }
                     tot_quantity.Text = getTotalQTE();
                     tot_dollar.Text = getTotalDollar() + " $";

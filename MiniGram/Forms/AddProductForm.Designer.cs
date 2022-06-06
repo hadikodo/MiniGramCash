@@ -48,6 +48,8 @@
             this.productname_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.keyboard_btn = new Syncfusion.WinForms.Controls.SfButton();
+            this.supp_cbox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo_img)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barcode_txt)).BeginInit();
@@ -105,6 +107,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.supp_cbox);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.barcode_txt);
             this.panel1.Controls.Add(this.hasqte_combo);
@@ -174,10 +178,11 @@
             this.hasqte_combo.Items.AddRange(new object[] {
             "No",
             "Yes"});
-            this.hasqte_combo.Location = new System.Drawing.Point(328, 192);
+            this.hasqte_combo.Location = new System.Drawing.Point(328, 248);
             this.hasqte_combo.Name = "hasqte_combo";
             this.hasqte_combo.Size = new System.Drawing.Size(400, 36);
             this.hasqte_combo.TabIndex = 21;
+            this.toolTip1.SetToolTip(this.hasqte_combo, "Select If This Product Has Quantity Or Not.");
             this.hasqte_combo.SelectedIndexChanged += new System.EventHandler(this.hasqte_combo_SelectedIndexChanged);
             // 
             // label4
@@ -185,7 +190,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label4.Location = new System.Drawing.Point(22, 196);
+            this.label4.Location = new System.Drawing.Point(22, 252);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(251, 32);
             this.label4.TabIndex = 20;
@@ -196,7 +201,7 @@
             this.warning_lable.BackColor = System.Drawing.Color.Transparent;
             this.warning_lable.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.warning_lable.ForeColor = System.Drawing.Color.Red;
-            this.warning_lable.Location = new System.Drawing.Point(53, 424);
+            this.warning_lable.Location = new System.Drawing.Point(66, 468);
             this.warning_lable.Name = "warning_lable";
             this.warning_lable.Size = new System.Drawing.Size(662, 32);
             this.warning_lable.TabIndex = 19;
@@ -213,7 +218,7 @@
             this.add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_btn.Font = new System.Drawing.Font("Bookman Old Style", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_btn.ForeColor = System.Drawing.Color.White;
-            this.add_btn.Location = new System.Drawing.Point(298, 487);
+            this.add_btn.Location = new System.Drawing.Point(302, 529);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(150, 120);
             this.add_btn.TabIndex = 8;
@@ -227,7 +232,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label5.Location = new System.Drawing.Point(22, 342);
+            this.label5.Location = new System.Drawing.Point(22, 387);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(201, 32);
             this.label5.TabIndex = 14;
@@ -241,11 +246,11 @@
             this.price_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.price_txt.CanOverrideStyle = true;
             this.price_txt.CornerRadius = 5;
-            this.price_txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.price_txt.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.price_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.price_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.price_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.price_txt.Location = new System.Drawing.Point(328, 341);
+            this.price_txt.Location = new System.Drawing.Point(328, 386);
             this.price_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.price_txt.MinimumSize = new System.Drawing.Size(34, 30);
             this.price_txt.Name = "price_txt";
@@ -267,7 +272,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label3.Location = new System.Drawing.Point(22, 261);
+            this.label3.Location = new System.Drawing.Point(22, 317);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(285, 32);
             this.label3.TabIndex = 10;
@@ -285,7 +290,7 @@
             this.quantity_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.quantity_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantity_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.quantity_txt.Location = new System.Drawing.Point(328, 260);
+            this.quantity_txt.Location = new System.Drawing.Point(328, 316);
             this.quantity_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.quantity_txt.MinimumSize = new System.Drawing.Size(34, 30);
             this.quantity_txt.Name = "quantity_txt";
@@ -379,6 +384,28 @@
             this.keyboard_btn.UseVisualStyleBackColor = true;
             this.keyboard_btn.Click += new System.EventHandler(this.keyboard_btn_Click);
             // 
+            // supp_cbox
+            // 
+            this.supp_cbox.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.supp_cbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.supp_cbox.FormattingEnabled = true;
+            this.supp_cbox.Location = new System.Drawing.Point(328, 186);
+            this.supp_cbox.Name = "supp_cbox";
+            this.supp_cbox.Size = new System.Drawing.Size(400, 36);
+            this.supp_cbox.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.supp_cbox, "Select Supplier Name.");
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.label7.Location = new System.Drawing.Point(22, 190);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(251, 32);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "⫸ Supplier :";
+            // 
             // AddProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,5 +456,7 @@
         private System.Windows.Forms.Label label6;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt barcode_txt;
         private Syncfusion.WinForms.Controls.SfButton keyboard_btn;
+        private System.Windows.Forms.ComboBox supp_cbox;
+        private System.Windows.Forms.Label label7;
     }
 }

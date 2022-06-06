@@ -12,28 +12,28 @@ using System.Windows.Forms;
 
 namespace MiniGram.Forms
 {
-    public partial class AddItemForm : Form
+    public partial class AddSuppForm : Form
     {
-        public AddItemForm()
+        public AddSuppForm()
         {
             InitializeComponent();
         }
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(itemname_txt.Text) || string.IsNullOrEmpty(quantity_txt.Text))
+            if (string.IsNullOrEmpty(suppname_txt.Text) || string.IsNullOrEmpty(phone_txt.Text))
             {
                 warning_lable.Visible = true;
             }
             else
             {
-                if (string.IsNullOrEmpty(unit_txt.Text))
-                    unit_txt.Text = "-";
+                if (string.IsNullOrEmpty(email_txt.Text))
+                    email_txt.Text = "-";
                 using (var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
                 {
                     try
                     {
-                        cnx.sp_addNewItem(itemname_txt.Text, Int32.Parse(quantity_txt.Text), unit_txt.Text);
+                        cnx.sp_addNewSupplier(suppname_txt.Text, phone_txt.Text, email_txt.Text);
                     }
                     catch (Exception)
                     {
@@ -64,7 +64,7 @@ namespace MiniGram.Forms
             Process process = new Process();
             process.StartInfo = ps;
             process.Start();
-            ActiveControl = itemname_txt;
+            ActiveControl = suppname_txt;
         }
     }
 }

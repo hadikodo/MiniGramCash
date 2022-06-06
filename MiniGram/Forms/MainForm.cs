@@ -23,15 +23,6 @@ namespace MiniGram
         {
             InitializeComponent();
         }
-        /*protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams handleparam = base.CreateParams;
-                handleparam.ExStyle = 0x02000000;
-                return handleparam;
-            }
-        }*/
 
         private void exit_btn_Click(object sender, EventArgs e)
         {
@@ -97,8 +88,7 @@ namespace MiniGram
             prices_btn.BackColor = Color.FromArgb(0, 63, 63);
             new_receipt_btn.BackColor = Color.FromArgb(0, 63, 63);
             receipt_btn.BackColor = Color.FromArgb(0, 63, 63);
-            items_btn.BackColor = Color.FromArgb(0, 63, 63);
-            //reports_btn.BackColor = Color.FromArgb(0, 63, 63);
+            suppliers_btn.BackColor = Color.FromArgb(0, 63, 63);
         }
         public bool testConnection(string ConnString)
         {
@@ -120,14 +110,15 @@ namespace MiniGram
             return true;
         }
 
-        private async void dashboard_btn_Click(object sender, EventArgs e)
+        private async void new_receipt_btn_Click(object sender, EventArgs e)
         {
             refreshColors();
-            prices_btn.BackColor = Color.White;
-            title_lbl.Text = "Products And Prices";
+            new_receipt_btn.BackColor = Color.White;
+            title_lbl.Text = "New Receipt";
             main_panel.Controls.Clear();
-            ProductsUC puc = new ProductsUC();
-            puc.Dock = DockStyle.Fill;
+            POSUC posuc = new POSUC();
+            posuc.Dock = DockStyle.Fill;
+            main_panel.Controls.Add(posuc);
             await Task.Run(() =>
             {
                 ProgressBarForm pbf = new ProgressBarForm(1);
@@ -138,36 +129,11 @@ namespace MiniGram
                     SettingsForm sf = new SettingsForm();
                     sf.isConnTest = true;
                     sf.ShowDialog();
-                    dashboard_btn_Click(sender, e);
-                }
-            });
-            main_panel.Controls.Add(puc);
-            puc.refreshData();
-        }
-
-        private async void new_receipt_btn_Click(object sender, EventArgs e)
-        {
-            refreshColors();
-            new_receipt_btn.BackColor = Color.White;
-            title_lbl.Text = "New Receipt";
-            main_panel.Controls.Clear();
-            POSUC posuc = new POSUC();
-            posuc.Dock = DockStyle.Fill;
-            await Task.Run(() =>
-            {
-                ProgressBarForm pbf = new ProgressBarForm(3);
-                pbf.ShowDialog();
-                if (!testConnection(Properties.Settings.Default.ConnectionString))
-                {
-                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
-                    SettingsForm sf = new SettingsForm();
-                    sf.isConnTest = true;
-                    sf.ShowDialog();
-                    dashboard_btn_Click(sender, e);
+                    new_receipt_btn_Click(sender, e);
                 }
             });
             posuc.refreshData("");
-            main_panel.Controls.Add(posuc);
+
         }
 
         private async void receipt_btn_Click(object sender, EventArgs e)
@@ -188,20 +154,49 @@ namespace MiniGram
                     SettingsForm sf = new SettingsForm();
                     sf.isConnTest = true;
                     sf.ShowDialog();
-                    dashboard_btn_Click(sender, e);
+                    receipt_btn_Click(sender, e);
                 }
             });
             main_panel.Controls.Add(ruc);
             ruc.refreshData();
         }
+        private void MainForm_MaximizedBoundsChanged(object sender, EventArgs e)
+        {
 
-        private async void products_btn_Click(object sender, EventArgs e)
+        }
+
+        private async void products_prices_btn_Click(object sender, EventArgs e)
         {
             refreshColors();
-            items_btn.BackColor = Color.White;
-            title_lbl.Text = "Stock";
+            prices_btn.BackColor = Color.White;
+            title_lbl.Text = "Products And Prices";
             main_panel.Controls.Clear();
-            ItemsUC iuc = new ItemsUC();
+            ProductsUC puc = new ProductsUC();
+            puc.Dock = DockStyle.Fill;
+            await Task.Run(() =>
+            {
+                ProgressBarForm pbf = new ProgressBarForm(1);
+                pbf.ShowDialog();
+                if (!testConnection(Properties.Settings.Default.ConnectionString))
+                {
+                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                    SettingsForm sf = new SettingsForm();
+                    sf.isConnTest = true;
+                    sf.ShowDialog();
+                    products_prices_btn_Click(sender, e);
+                }
+            });
+            main_panel.Controls.Add(puc);
+            puc.refreshData();
+        }
+
+        private async void suppliers_btn_Click(object sender, EventArgs e)
+        {
+            refreshColors();
+            suppliers_btn.BackColor = Color.White;
+            title_lbl.Text = "Suppliers";
+            main_panel.Controls.Clear();
+            SupplierUC iuc = new SupplierUC();
             iuc.Dock = DockStyle.Fill;
             await Task.Run(() =>
             {
@@ -213,26 +208,11 @@ namespace MiniGram
                     SettingsForm sf = new SettingsForm();
                     sf.isConnTest = true;
                     sf.ShowDialog();
-                    dashboard_btn_Click(sender, e);
+                    suppliers_btn_Click(sender, e);
                 }
             });
             main_panel.Controls.Add(iuc);
             iuc.refreshData();
-
-
-        }
-
-        private void MainForm_MaximizedBoundsChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void reports_btn_Click(object sender, EventArgs e)
-        {
-            refreshColors();
-            //reports_btn.BackColor = Color.White;
-            title_lbl.Text = "Reports";
-            main_panel.Controls.Clear();
         }
     }
 }

@@ -12,27 +12,27 @@ using System.Windows.Forms;
 
 namespace MiniGram.Forms
 {
-    public partial class EditItemForm : Form
+    public partial class EditSupplierForm : Form
     {
-        private int ItemID;
+        private int SupplierID;
         private MiniGramDBDataContext data = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString);
-        public EditItemForm(int itemID)
+        public EditSupplierForm(int SID)
         {
             InitializeComponent();
-            ItemID = itemID;
+            SupplierID = SID;
         }
 
         private void EditItemForm_Load(object sender, EventArgs e)
         {
             warning_lable.Visible = false;
-            var item = (from i in data.TBLITEMs
-                           where i.IID == ItemID
-                           select i).ToList();
-            if (item != null)
+            var supp = (from i in data.TBLSUPPLIERs
+                        where i.SID == SupplierID
+                        select i).ToList();
+            if (supp != null)
             {
-                itemname_txt.Text = item[0].INAME;
-                quantity_txt.Text = item[0].QTE.ToString();
-                unit_txt.Text = item[0].UNIT.ToString();
+                suppname_txt.Text = supp[0].SNAME;
+                email_txt.Text = supp[0].SEMAIL;
+                phone_txt.Text = supp[0].SPHONE;
             }
         }
 
@@ -57,19 +57,19 @@ namespace MiniGram.Forms
 
         private void save_btn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(itemname_txt.Text) || string.IsNullOrEmpty(quantity_txt.Text))
+            if (string.IsNullOrEmpty(suppname_txt.Text) || string.IsNullOrEmpty(phone_txt.Text))
             {
                 warning_lable.Visible = true;
             }
             else
             {
-                if (string.IsNullOrEmpty(unit_txt.Text))
-                    unit_txt.Text = "-";
+                if (string.IsNullOrEmpty(email_txt.Text))
+                    email_txt.Text = "-";
                 using (var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
                 {
                     try
                     {
-                        cnx.sp_UpdateItem(ItemID,itemname_txt.Text, Int32.Parse(quantity_txt.Text), unit_txt.Text);
+                        cnx.sp_UpdateSupplier(SupplierID,suppname_txt.Text,phone_txt.Text, email_txt.Text);
                     }
                     catch (Exception)
                     {
@@ -90,7 +90,7 @@ namespace MiniGram.Forms
             Process process = new Process();
             process.StartInfo = ps;
             process.Start();
-            ActiveControl = itemname_txt;
+            ActiveControl = suppname_txt;
         }
     }
 }
