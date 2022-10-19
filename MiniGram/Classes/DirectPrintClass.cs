@@ -42,12 +42,12 @@ namespace MiniGram.Classes
             string deviceInfo =
               @"<DeviceInfo>
                 <OutputFormat>EMF</OutputFormat>
-                <PageWidth>3.2in</PageWidth>
-                <PageHeight>4in</PageHeight>
-                <MarginTop>0.25in</MarginTop>
-                <MarginLeft>0.25in</MarginLeft>
-                <MarginRight>0.25in</MarginRight>
-                <MarginBottom>0.25in</MarginBottom>
+                <PageWidth>8.25in</PageWidth>
+                <PageHeight>11.75in</PageHeight>
+                <MarginTop>0.0in</MarginTop>
+                <MarginLeft>0.0in</MarginLeft>
+                <MarginRight>0.0in</MarginRight>
+                <MarginBottom>0.0in</MarginBottom>
             </DeviceInfo>";
             Warning[] warnings;
             m_streams = new List<Stream>();

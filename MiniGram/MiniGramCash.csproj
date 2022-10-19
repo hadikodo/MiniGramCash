@@ -10,7 +10,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MiniGram</RootNamespace>
     <AssemblyName>MiniGram Cash System</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -32,7 +32,7 @@
     <ProductName>MiniGram Cash System</ProductName>
     <PublisherName>SuperTech Co.</PublisherName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -107,6 +107,7 @@
     <Reference Include="Syncfusion.Grid.Base, Version=19.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Grid.Windows, Version=19.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.GridCommon.WinForms, Version=19.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.SfInput.WinForms, Version=19.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.SfListView.WinForms, Version=19.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Shared.Base, Version=19.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Shared.Windows, Version=19.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -185,6 +186,12 @@
     </Compile>
     <Compile Include="Controls\ReceiptsUC.Designer.cs">
       <DependentUpon>ReceiptsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReportsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ReportsUC.Designer.cs">
+      <DependentUpon>ReportsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddSuppForm.cs">
       <SubType>Form</SubType>
@@ -290,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ReceiptsUC.resx">
       <DependentUpon>ReceiptsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReportsUC.resx">
+      <DependentUpon>ReportsUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddSuppForm.resx">
       <DependentUpon>AddSuppForm.cs</DependentUpon>

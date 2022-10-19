@@ -33,9 +33,6 @@ namespace MiniGram.LINQ
     partial void InsertTBLITEM(TBLITEM instance);
     partial void UpdateTBLITEM(TBLITEM instance);
     partial void DeleteTBLITEM(TBLITEM instance);
-    partial void InsertTBLRECEIPTS_DETAIL(TBLRECEIPTS_DETAIL instance);
-    partial void UpdateTBLRECEIPTS_DETAIL(TBLRECEIPTS_DETAIL instance);
-    partial void DeleteTBLRECEIPTS_DETAIL(TBLRECEIPTS_DETAIL instance);
     partial void InsertTBLRECEIPT(TBLRECEIPT instance);
     partial void UpdateTBLRECEIPT(TBLRECEIPT instance);
     partial void DeleteTBLRECEIPT(TBLRECEIPT instance);
@@ -45,6 +42,9 @@ namespace MiniGram.LINQ
     partial void InsertTBLPRODUCT(TBLPRODUCT instance);
     partial void UpdateTBLPRODUCT(TBLPRODUCT instance);
     partial void DeleteTBLPRODUCT(TBLPRODUCT instance);
+    partial void InsertTBLRECEIPTS_DETAIL(TBLRECEIPTS_DETAIL instance);
+    partial void UpdateTBLRECEIPTS_DETAIL(TBLRECEIPTS_DETAIL instance);
+    partial void DeleteTBLRECEIPTS_DETAIL(TBLRECEIPTS_DETAIL instance);
     #endregion
 		
 		public MiniGramDBDataContext() : 
@@ -85,14 +85,6 @@ namespace MiniGram.LINQ
 			}
 		}
 		
-		public System.Data.Linq.Table<TBLRECEIPTS_DETAIL> TBLRECEIPTS_DETAILs
-		{
-			get
-			{
-				return this.GetTable<TBLRECEIPTS_DETAIL>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TBLRECEIPT> TBLRECEIPTs
 		{
 			get
@@ -114,6 +106,14 @@ namespace MiniGram.LINQ
 			get
 			{
 				return this.GetTable<TBLPRODUCT>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TBLRECEIPTS_DETAIL> TBLRECEIPTS_DETAILs
+		{
+			get
+			{
+				return this.GetTable<TBLRECEIPTS_DETAIL>();
 			}
 		}
 		
@@ -485,270 +485,6 @@ namespace MiniGram.LINQ
 					this._ENABLED = value;
 					this.SendPropertyChanged("ENABLED");
 					this.OnENABLEDChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBLRECEIPTS_DETAILS")]
-	public partial class TBLRECEIPTS_DETAIL : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<int> _RID;
-		
-		private System.Nullable<int> _PID;
-		
-		private System.Nullable<int> _QTE;
-		
-		private System.Nullable<double> _PRICE;
-		
-		private System.Nullable<double> _TOTAL_PRICE;
-		
-		private EntityRef<TBLRECEIPT> _TBLRECEIPT;
-		
-		private EntityRef<TBLPRODUCT> _TBLPRODUCT;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnRIDChanging(System.Nullable<int> value);
-    partial void OnRIDChanged();
-    partial void OnPIDChanging(System.Nullable<int> value);
-    partial void OnPIDChanged();
-    partial void OnQTEChanging(System.Nullable<int> value);
-    partial void OnQTEChanged();
-    partial void OnPRICEChanging(System.Nullable<double> value);
-    partial void OnPRICEChanged();
-    partial void OnTOTAL_PRICEChanging(System.Nullable<double> value);
-    partial void OnTOTAL_PRICEChanged();
-    #endregion
-		
-		public TBLRECEIPTS_DETAIL()
-		{
-			this._TBLRECEIPT = default(EntityRef<TBLRECEIPT>);
-			this._TBLPRODUCT = default(EntityRef<TBLPRODUCT>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RID", DbType="Int")]
-		public System.Nullable<int> RID
-		{
-			get
-			{
-				return this._RID;
-			}
-			set
-			{
-				if ((this._RID != value))
-				{
-					if (this._TBLRECEIPT.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnRIDChanging(value);
-					this.SendPropertyChanging();
-					this._RID = value;
-					this.SendPropertyChanged("RID");
-					this.OnRIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PID", DbType="Int")]
-		public System.Nullable<int> PID
-		{
-			get
-			{
-				return this._PID;
-			}
-			set
-			{
-				if ((this._PID != value))
-				{
-					if (this._TBLPRODUCT.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPIDChanging(value);
-					this.SendPropertyChanging();
-					this._PID = value;
-					this.SendPropertyChanged("PID");
-					this.OnPIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QTE", DbType="Int")]
-		public System.Nullable<int> QTE
-		{
-			get
-			{
-				return this._QTE;
-			}
-			set
-			{
-				if ((this._QTE != value))
-				{
-					this.OnQTEChanging(value);
-					this.SendPropertyChanging();
-					this._QTE = value;
-					this.SendPropertyChanged("QTE");
-					this.OnQTEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE", DbType="Float")]
-		public System.Nullable<double> PRICE
-		{
-			get
-			{
-				return this._PRICE;
-			}
-			set
-			{
-				if ((this._PRICE != value))
-				{
-					this.OnPRICEChanging(value);
-					this.SendPropertyChanging();
-					this._PRICE = value;
-					this.SendPropertyChanged("PRICE");
-					this.OnPRICEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL_PRICE", DbType="Float")]
-		public System.Nullable<double> TOTAL_PRICE
-		{
-			get
-			{
-				return this._TOTAL_PRICE;
-			}
-			set
-			{
-				if ((this._TOTAL_PRICE != value))
-				{
-					this.OnTOTAL_PRICEChanging(value);
-					this.SendPropertyChanging();
-					this._TOTAL_PRICE = value;
-					this.SendPropertyChanged("TOTAL_PRICE");
-					this.OnTOTAL_PRICEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLRECEIPT_TBLRECEIPTS_DETAIL", Storage="_TBLRECEIPT", ThisKey="RID", OtherKey="RID", IsForeignKey=true)]
-		public TBLRECEIPT TBLRECEIPT
-		{
-			get
-			{
-				return this._TBLRECEIPT.Entity;
-			}
-			set
-			{
-				TBLRECEIPT previousValue = this._TBLRECEIPT.Entity;
-				if (((previousValue != value) 
-							|| (this._TBLRECEIPT.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBLRECEIPT.Entity = null;
-						previousValue.TBLRECEIPTS_DETAILs.Remove(this);
-					}
-					this._TBLRECEIPT.Entity = value;
-					if ((value != null))
-					{
-						value.TBLRECEIPTS_DETAILs.Add(this);
-						this._RID = value.RID;
-					}
-					else
-					{
-						this._RID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBLRECEIPT");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLPRODUCT_TBLRECEIPTS_DETAIL", Storage="_TBLPRODUCT", ThisKey="PID", OtherKey="PID", IsForeignKey=true)]
-		public TBLPRODUCT TBLPRODUCT
-		{
-			get
-			{
-				return this._TBLPRODUCT.Entity;
-			}
-			set
-			{
-				TBLPRODUCT previousValue = this._TBLPRODUCT.Entity;
-				if (((previousValue != value) 
-							|| (this._TBLPRODUCT.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBLPRODUCT.Entity = null;
-						previousValue.TBLRECEIPTS_DETAILs.Remove(this);
-					}
-					this._TBLPRODUCT.Entity = value;
-					if ((value != null))
-					{
-						value.TBLRECEIPTS_DETAILs.Add(this);
-						this._PID = value.PID;
-					}
-					else
-					{
-						this._PID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBLPRODUCT");
 				}
 			}
 		}
@@ -1514,6 +1250,318 @@ namespace MiniGram.LINQ
 		{
 			this.SendPropertyChanging();
 			entity.TBLPRODUCT = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBLRECEIPTS_DETAILS")]
+	public partial class TBLRECEIPTS_DETAIL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _RID;
+		
+		private System.Nullable<int> _PID;
+		
+		private System.Nullable<int> _QTE;
+		
+		private System.Nullable<double> _PRICE_Dollar;
+		
+		private System.Nullable<int> _PRICE_LBP;
+		
+		private System.Nullable<double> _TOTAL_PRICEDollar;
+		
+		private System.Nullable<int> _TOTAL_PRICELBP;
+		
+		private EntityRef<TBLPRODUCT> _TBLPRODUCT;
+		
+		private EntityRef<TBLRECEIPT> _TBLRECEIPT;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnRIDChanging(System.Nullable<int> value);
+    partial void OnRIDChanged();
+    partial void OnPIDChanging(System.Nullable<int> value);
+    partial void OnPIDChanged();
+    partial void OnQTEChanging(System.Nullable<int> value);
+    partial void OnQTEChanged();
+    partial void OnPRICE_DollarChanging(System.Nullable<double> value);
+    partial void OnPRICE_DollarChanged();
+    partial void OnPRICE_LBPChanging(System.Nullable<int> value);
+    partial void OnPRICE_LBPChanged();
+    partial void OnTOTAL_PRICEDollarChanging(System.Nullable<double> value);
+    partial void OnTOTAL_PRICEDollarChanged();
+    partial void OnTOTAL_PRICELBPChanging(System.Nullable<int> value);
+    partial void OnTOTAL_PRICELBPChanged();
+    #endregion
+		
+		public TBLRECEIPTS_DETAIL()
+		{
+			this._TBLPRODUCT = default(EntityRef<TBLPRODUCT>);
+			this._TBLRECEIPT = default(EntityRef<TBLRECEIPT>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RID", DbType="Int")]
+		public System.Nullable<int> RID
+		{
+			get
+			{
+				return this._RID;
+			}
+			set
+			{
+				if ((this._RID != value))
+				{
+					if (this._TBLRECEIPT.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRIDChanging(value);
+					this.SendPropertyChanging();
+					this._RID = value;
+					this.SendPropertyChanged("RID");
+					this.OnRIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PID", DbType="Int")]
+		public System.Nullable<int> PID
+		{
+			get
+			{
+				return this._PID;
+			}
+			set
+			{
+				if ((this._PID != value))
+				{
+					if (this._TBLPRODUCT.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPIDChanging(value);
+					this.SendPropertyChanging();
+					this._PID = value;
+					this.SendPropertyChanged("PID");
+					this.OnPIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QTE", DbType="Int")]
+		public System.Nullable<int> QTE
+		{
+			get
+			{
+				return this._QTE;
+			}
+			set
+			{
+				if ((this._QTE != value))
+				{
+					this.OnQTEChanging(value);
+					this.SendPropertyChanging();
+					this._QTE = value;
+					this.SendPropertyChanged("QTE");
+					this.OnQTEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE_Dollar", DbType="Float")]
+		public System.Nullable<double> PRICE_Dollar
+		{
+			get
+			{
+				return this._PRICE_Dollar;
+			}
+			set
+			{
+				if ((this._PRICE_Dollar != value))
+				{
+					this.OnPRICE_DollarChanging(value);
+					this.SendPropertyChanging();
+					this._PRICE_Dollar = value;
+					this.SendPropertyChanged("PRICE_Dollar");
+					this.OnPRICE_DollarChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE_LBP", DbType="Int")]
+		public System.Nullable<int> PRICE_LBP
+		{
+			get
+			{
+				return this._PRICE_LBP;
+			}
+			set
+			{
+				if ((this._PRICE_LBP != value))
+				{
+					this.OnPRICE_LBPChanging(value);
+					this.SendPropertyChanging();
+					this._PRICE_LBP = value;
+					this.SendPropertyChanged("PRICE_LBP");
+					this.OnPRICE_LBPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL_PRICEDollar", DbType="Float")]
+		public System.Nullable<double> TOTAL_PRICEDollar
+		{
+			get
+			{
+				return this._TOTAL_PRICEDollar;
+			}
+			set
+			{
+				if ((this._TOTAL_PRICEDollar != value))
+				{
+					this.OnTOTAL_PRICEDollarChanging(value);
+					this.SendPropertyChanging();
+					this._TOTAL_PRICEDollar = value;
+					this.SendPropertyChanged("TOTAL_PRICEDollar");
+					this.OnTOTAL_PRICEDollarChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL_PRICELBP", DbType="Int")]
+		public System.Nullable<int> TOTAL_PRICELBP
+		{
+			get
+			{
+				return this._TOTAL_PRICELBP;
+			}
+			set
+			{
+				if ((this._TOTAL_PRICELBP != value))
+				{
+					this.OnTOTAL_PRICELBPChanging(value);
+					this.SendPropertyChanging();
+					this._TOTAL_PRICELBP = value;
+					this.SendPropertyChanged("TOTAL_PRICELBP");
+					this.OnTOTAL_PRICELBPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLPRODUCT_TBLRECEIPTS_DETAIL", Storage="_TBLPRODUCT", ThisKey="PID", OtherKey="PID", IsForeignKey=true)]
+		public TBLPRODUCT TBLPRODUCT
+		{
+			get
+			{
+				return this._TBLPRODUCT.Entity;
+			}
+			set
+			{
+				TBLPRODUCT previousValue = this._TBLPRODUCT.Entity;
+				if (((previousValue != value) 
+							|| (this._TBLPRODUCT.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBLPRODUCT.Entity = null;
+						previousValue.TBLRECEIPTS_DETAILs.Remove(this);
+					}
+					this._TBLPRODUCT.Entity = value;
+					if ((value != null))
+					{
+						value.TBLRECEIPTS_DETAILs.Add(this);
+						this._PID = value.PID;
+					}
+					else
+					{
+						this._PID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TBLPRODUCT");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLRECEIPT_TBLRECEIPTS_DETAIL", Storage="_TBLRECEIPT", ThisKey="RID", OtherKey="RID", IsForeignKey=true)]
+		public TBLRECEIPT TBLRECEIPT
+		{
+			get
+			{
+				return this._TBLRECEIPT.Entity;
+			}
+			set
+			{
+				TBLRECEIPT previousValue = this._TBLRECEIPT.Entity;
+				if (((previousValue != value) 
+							|| (this._TBLRECEIPT.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBLRECEIPT.Entity = null;
+						previousValue.TBLRECEIPTS_DETAILs.Remove(this);
+					}
+					this._TBLRECEIPT.Entity = value;
+					if ((value != null))
+					{
+						value.TBLRECEIPTS_DETAILs.Add(this);
+						this._RID = value.RID;
+					}
+					else
+					{
+						this._RID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TBLRECEIPT");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	

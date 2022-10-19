@@ -66,7 +66,8 @@ namespace MiniGram.Forms
                 }
             }
             main_panel.Controls.Clear();
-            gsuc.GeneralSettingsUC_Load(gsuc, e);
+            //gsuc.GeneralSettingsUC_Load(gsuc, e);
+            gsuc.LoadData();
             main_panel.Controls.Add(gsuc);
             gsuc.Dock = DockStyle.Fill;
         }
@@ -90,7 +91,7 @@ namespace MiniGram.Forms
                 }
             }
             main_panel.Controls.Clear();
-            csuc.ConnectionSettingsUC_Load(csuc, e);
+            csuc.LoadData();
             main_panel.Controls.Add(csuc);
             csuc.Dock = DockStyle.Fill;
         }

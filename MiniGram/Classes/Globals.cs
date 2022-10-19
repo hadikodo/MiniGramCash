@@ -11,5 +11,7 @@ namespace MiniGram.Classes
         public static bool isSearchVisible { get; set; }
         public static int deleteNB { get; set; }
         public static int qteChangeNB { get; set; }
+        public static bool isReceiptOpen { get; set; }
+
     }
 }

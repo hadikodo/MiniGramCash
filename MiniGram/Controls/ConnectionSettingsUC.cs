@@ -18,29 +18,9 @@ namespace MiniGram.Controls
             InitializeComponent();
         }
 
-        public void ConnectionSettingsUC_Load(object sender, EventArgs e)
+        private void ConnectionSettingsUC_Load(object sender, EventArgs e)
         {
-            server_name.Text = Properties.Settings.Default.ServerName;
-            if (Properties.Settings.Default.ServerSecurity)
-            {
-                checkBoxAdv1.CheckState = CheckState.Checked;
-                username_txt.Visible = true;
-                password_txt.Visible = true;
-                label1.Visible = true;
-                label3.Visible = true;
-                username_txt.Text = Properties.Settings.Default.Username;
-                password_txt.Text = Properties.Settings.Default.Password;
-            }
-            else
-            {
-                checkBoxAdv1.CheckState = CheckState.Unchecked;
-                username_txt.Visible = false;
-                password_txt.Visible = false;
-                label1.Visible = false;
-                label3.Visible = false;
-            }
-            Properties.Settings.Default.somethingChanged = false;
-            Properties.Settings.Default.Save();
+
         }
 
         public bool testConnection(string ConnString)
@@ -61,6 +41,31 @@ namespace MiniGram.Controls
                 return false;
             }
             return true;
+        }
+
+        public void LoadData()
+        {
+            server_name.Text = Properties.Settings.Default.ServerName.ToString();
+            if (Properties.Settings.Default.ServerSecurity)
+            {
+                checkBoxAdv1.CheckState = CheckState.Checked;
+                username_txt.Visible = true;
+                password_txt.Visible = true;
+                label1.Visible = true;
+                label3.Visible = true;
+                username_txt.Text = Properties.Settings.Default.Username;
+                password_txt.Text = Properties.Settings.Default.Password;
+            }
+            else
+            {
+                checkBoxAdv1.CheckState = CheckState.Unchecked;
+                username_txt.Visible = false;
+                password_txt.Visible = false;
+                label1.Visible = false;
+                label3.Visible = false;
+            }
+            Properties.Settings.Default.somethingChanged = false;
+            Properties.Settings.Default.Save();
         }
 
         public void Save()

@@ -42,10 +42,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.spselectReceiptsDetailsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.print_btn = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +49,10 @@
             this.lBPPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDolarPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalLBPPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spselectReceiptsDetailsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.print_btn = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalQte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -198,6 +198,76 @@
             this.dataGridView1.Size = new System.Drawing.Size(994, 449);
             this.dataGridView1.TabIndex = 2;
             // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.FillWeight = 41.03215F;
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product Name";
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productNameDataGridViewTextBoxColumn.Width = 189;
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.SupplierName.DataPropertyName = "SupplierName";
+            this.SupplierName.FillWeight = 15F;
+            this.SupplierName.HeaderText = "Supplier Name";
+            this.SupplierName.Name = "SupplierName";
+            this.SupplierName.ReadOnly = true;
+            this.SupplierName.Width = 194;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.FillWeight = 16.41286F;
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.quantityDataGridViewTextBoxColumn.Width = 133;
+            // 
+            // dollarPriceDataGridViewTextBoxColumn
+            // 
+            this.dollarPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dollarPriceDataGridViewTextBoxColumn.DataPropertyName = "DollarPrice";
+            this.dollarPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
+            this.dollarPriceDataGridViewTextBoxColumn.HeaderText = "Price $";
+            this.dollarPriceDataGridViewTextBoxColumn.Name = "dollarPriceDataGridViewTextBoxColumn";
+            this.dollarPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dollarPriceDataGridViewTextBoxColumn.Width = 112;
+            // 
+            // lBPPriceDataGridViewTextBoxColumn
+            // 
+            this.lBPPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.lBPPriceDataGridViewTextBoxColumn.DataPropertyName = "LBPPrice";
+            this.lBPPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
+            this.lBPPriceDataGridViewTextBoxColumn.HeaderText = "Price LBP";
+            this.lBPPriceDataGridViewTextBoxColumn.Name = "lBPPriceDataGridViewTextBoxColumn";
+            this.lBPPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lBPPriceDataGridViewTextBoxColumn.Width = 141;
+            // 
+            // totalDolarPriceDataGridViewTextBoxColumn
+            // 
+            this.totalDolarPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.totalDolarPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalDolarPrice";
+            this.totalDolarPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
+            this.totalDolarPriceDataGridViewTextBoxColumn.HeaderText = "Total $";
+            this.totalDolarPriceDataGridViewTextBoxColumn.Name = "totalDolarPriceDataGridViewTextBoxColumn";
+            this.totalDolarPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.totalDolarPriceDataGridViewTextBoxColumn.Width = 113;
+            // 
+            // totalLBPPriceDataGridViewTextBoxColumn
+            // 
+            this.totalLBPPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.totalLBPPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalLBPPrice";
+            this.totalLBPPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
+            this.totalLBPPriceDataGridViewTextBoxColumn.HeaderText = "Total LBP";
+            this.totalLBPPriceDataGridViewTextBoxColumn.Name = "totalLBPPriceDataGridViewTextBoxColumn";
+            this.totalLBPPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.totalLBPPriceDataGridViewTextBoxColumn.Width = 142;
+            // 
             // spselectReceiptsDetailsResultBindingSource
             // 
             this.spselectReceiptsDetailsResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_selectReceiptsDetailsResult);
@@ -287,76 +357,6 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(994, 124);
             this.dataGridView2.TabIndex = 4;
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.FillWeight = 41.03215F;
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product Name";
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.productNameDataGridViewTextBoxColumn.Width = 189;
-            // 
-            // SupplierName
-            // 
-            this.SupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.SupplierName.DataPropertyName = "SupplierName";
-            this.SupplierName.FillWeight = 15F;
-            this.SupplierName.HeaderText = "Supplier Name";
-            this.SupplierName.Name = "SupplierName";
-            this.SupplierName.ReadOnly = true;
-            this.SupplierName.Width = 194;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.FillWeight = 16.41286F;
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.quantityDataGridViewTextBoxColumn.Width = 133;
-            // 
-            // dollarPriceDataGridViewTextBoxColumn
-            // 
-            this.dollarPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dollarPriceDataGridViewTextBoxColumn.DataPropertyName = "DollarPrice";
-            this.dollarPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
-            this.dollarPriceDataGridViewTextBoxColumn.HeaderText = "Price $";
-            this.dollarPriceDataGridViewTextBoxColumn.Name = "dollarPriceDataGridViewTextBoxColumn";
-            this.dollarPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dollarPriceDataGridViewTextBoxColumn.Width = 112;
-            // 
-            // lBPPriceDataGridViewTextBoxColumn
-            // 
-            this.lBPPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.lBPPriceDataGridViewTextBoxColumn.DataPropertyName = "LBPPrice";
-            this.lBPPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
-            this.lBPPriceDataGridViewTextBoxColumn.HeaderText = "Price LBP";
-            this.lBPPriceDataGridViewTextBoxColumn.Name = "lBPPriceDataGridViewTextBoxColumn";
-            this.lBPPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lBPPriceDataGridViewTextBoxColumn.Width = 141;
-            // 
-            // totalDolarPriceDataGridViewTextBoxColumn
-            // 
-            this.totalDolarPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.totalDolarPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalDolarPrice";
-            this.totalDolarPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
-            this.totalDolarPriceDataGridViewTextBoxColumn.HeaderText = "Total $";
-            this.totalDolarPriceDataGridViewTextBoxColumn.Name = "totalDolarPriceDataGridViewTextBoxColumn";
-            this.totalDolarPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.totalDolarPriceDataGridViewTextBoxColumn.Width = 113;
-            // 
-            // totalLBPPriceDataGridViewTextBoxColumn
-            // 
-            this.totalLBPPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.totalLBPPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalLBPPrice";
-            this.totalLBPPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
-            this.totalLBPPriceDataGridViewTextBoxColumn.HeaderText = "Total LBP";
-            this.totalLBPPriceDataGridViewTextBoxColumn.Name = "totalLBPPriceDataGridViewTextBoxColumn";
-            this.totalLBPPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.totalLBPPriceDataGridViewTextBoxColumn.Width = 142;
             // 
             // Barcode
             // 

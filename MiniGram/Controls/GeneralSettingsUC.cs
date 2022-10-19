@@ -25,9 +25,14 @@ namespace MiniGram.Controls
             Properties.Settings.Default.Save();
         }
 
-        public void GeneralSettingsUC_Load(object sender, EventArgs e)
+        private void GeneralSettingsUC_Load(object sender, EventArgs e)
         {
-            if(Properties.Settings.Default.startup)
+
+        }
+
+        public void LoadData()
+        {
+            if (Properties.Settings.Default.startup)
                 checkBoxAdv1.CheckState = CheckState.Checked;
             else
                 checkBoxAdv1.CheckState = CheckState.Unchecked;
