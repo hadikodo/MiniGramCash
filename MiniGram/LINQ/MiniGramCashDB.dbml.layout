@@ -20,37 +20,37 @@
         <elementListCompartment Id="0bd4a5e4-7d21-4123-8975-8e36960492da" absoluteBounds="7.64, 3.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="bd8874b9-6e23-4204-b9da-0bdd0afad11a" absoluteBounds="4.625, 4.375, 2, 2.5401025390625">
-      <DataClassMoniker Name="/MiniGramDBDataContext/TBLPRODUCT" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e9f1356e-ea4c-4571-bc7b-1e7b52916f23" absoluteBounds="4.6400000000000006, 4.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(7.625 : 4.60659912109375); (6.625 : 4.60659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/MiniGramDBDataContext/TBLSUPPLIER/TBLSUPPLIER_TBLPRODUCT" />
-      <nodes>
-        <classShapeMoniker Id="acd98547-7634-4cf5-b5fd-534887ac22f4" />
-        <classShapeMoniker Id="bd8874b9-6e23-4204-b9da-0bdd0afad11a" />
-      </nodes>
-    </associationConnector>
     <classShape Id="28fa3b0f-aa44-461f-8627-f3f5d252d16f" absoluteBounds="4.125, 1.25, 2, 2.3478011067708335">
       <DataClassMoniker Name="/MiniGramDBDataContext/TBLRECEIPTS_DETAIL" />
       <nestedChildShapes>
         <elementListCompartment Id="e3bc9fbc-c2f9-4f30-865c-be7508ee6dfe" absoluteBounds="4.14, 1.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.375 : 4.375); (5.375 : 3.59780110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/MiniGramDBDataContext/TBLPRODUCT/TBLPRODUCT_TBLRECEIPTS_DETAIL" />
-      <nodes>
-        <classShapeMoniker Id="bd8874b9-6e23-4204-b9da-0bdd0afad11a" />
-        <classShapeMoniker Id="28fa3b0f-aa44-461f-8627-f3f5d252d16f" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.35659912109375); (4.125 : 2.35659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.35659912109375); (4.125 : 2.35659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MiniGramDBDataContext/TBLRECEIPT/TBLRECEIPT_TBLRECEIPTS_DETAIL" />
       <nodes>
         <classShapeMoniker Id="a3bf2193-346c-4b70-b27a-505790b11a60" />
         <classShapeMoniker Id="28fa3b0f-aa44-461f-8627-f3f5d252d16f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1423f93f-ea40-41da-bb6c-c72f5305127e" absoluteBounds="5.25, 4.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/MiniGramDBDataContext/TBLPRODUCT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="927c83d0-d81e-491f-bda1-bdd598372507" absoluteBounds="5.265, 5.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.6875 : 4.75); (5.6875 : 3.59780110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MiniGramDBDataContext/TBLPRODUCT/TBLPRODUCT_TBLRECEIPTS_DETAIL" />
+      <nodes>
+        <classShapeMoniker Id="1423f93f-ea40-41da-bb6c-c72f5305127e" />
+        <classShapeMoniker Id="28fa3b0f-aa44-461f-8627-f3f5d252d16f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.625 : 3.8124995); (6.500002 : 3.8124995); (6.500002 : 4.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MiniGramDBDataContext/TBLSUPPLIER/TBLSUPPLIER_TBLPRODUCT" />
+      <nodes>
+        <classShapeMoniker Id="acd98547-7634-4cf5-b5fd-534887ac22f4" />
+        <classShapeMoniker Id="1423f93f-ea40-41da-bb6c-c72f5305127e" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

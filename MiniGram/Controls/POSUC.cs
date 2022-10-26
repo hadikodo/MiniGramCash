@@ -42,15 +42,8 @@ namespace MiniGram.Controls
             }
             receipt_id.Text = NewReceiptNumber.ToString();
             ActiveControl = search_txt;
-            Init();
         }
 
-        private void Init()
-        {
-            products_panel.Controls.Clear();
-            table = new TableLayoutPanel();
-            products_panel.Controls.Add(table);
-        }
 
         void test(TableLayoutPanel table)
         {
@@ -58,6 +51,9 @@ namespace MiniGram.Controls
         }
         public void refreshData(string str)
         {
+            products_panel.Controls.Clear();
+            table = new TableLayoutPanel();
+            products_panel.Controls.Add(table);
             table.Dock = DockStyle.Fill;
             products_panel.Padding = new Padding(20, 20, 10, 20);
             table.ColumnCount = 1;

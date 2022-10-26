@@ -32,6 +32,20 @@
       <Association Name="TBLSUPPLIER_TBLPRODUCT" Member="TBLPRODUCTs" ThisKey="SID" OtherKey="SID" Type="TBLPRODUCT" />
     </Type>
   </Table>
+  <Table Name="dbo.TBLRECEIPTS_DETAILS" Member="TBLRECEIPTS_DETAILs">
+    <Type Name="TBLRECEIPTS_DETAIL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRICE_Dollar" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PRICE_LBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOTAL_PRICEDollar" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TOTAL_PRICELBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TBLRECEIPT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPT" ThisKey="RID" OtherKey="RID" Type="TBLRECEIPT" IsForeignKey="true" />
+      <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL" Member="TBLPRODUCT" ThisKey="PID" OtherKey="PID" Type="TBLPRODUCT" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.TBLPRODUCTS" Member="TBLPRODUCTs">
     <Type Name="TBLPRODUCT">
       <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -43,22 +57,9 @@
       <Column Name="HasQuantity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="BARCODE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HasExpiredDate" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPTS_DETAILs" ThisKey="PID" OtherKey="PID" Type="TBLRECEIPTS_DETAIL" />
       <Association Name="TBLSUPPLIER_TBLPRODUCT" Member="TBLSUPPLIER" ThisKey="SID" OtherKey="SID" Type="TBLSUPPLIER" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TBLRECEIPTS_DETAILS" Member="TBLRECEIPTS_DETAILs">
-    <Type Name="TBLRECEIPTS_DETAIL">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="QTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PRICE_Dollar" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="PRICE_LBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TOTAL_PRICEDollar" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TOTAL_PRICELBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL" Member="TBLPRODUCT" ThisKey="PID" OtherKey="PID" Type="TBLPRODUCT" IsForeignKey="true" />
-      <Association Name="TBLRECEIPT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPT" ThisKey="RID" OtherKey="RID" Type="TBLRECEIPT" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.sp_addNewItem" Method="sp_addNewItem">
@@ -175,16 +176,6 @@
     <Parameter Name="qte" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_UpdateProduct" Method="sp_UpdateProduct">
-    <Parameter Name="id" Type="System.Int32" DbType="Int" />
-    <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="barcode" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="qte" Type="System.Int32" DbType="Int" />
-    <Parameter Name="price" Type="System.Double" DbType="Float" />
-    <Parameter Name="hasQuantity" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="sid" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.sp_select_suppliers" Method="sp_select_suppliers">
     <Parameter Name="str" Type="System.String" DbType="NVarChar(MAX)" />
     <ElementType Name="sp_select_suppliersResult">
@@ -215,15 +206,6 @@
     <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="phone" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="email" Type="System.String" DbType="NVarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_addNewProduct" Method="sp_addNewProduct">
-    <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="barcode" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="qte" Type="System.Int32" DbType="Int" />
-    <Parameter Name="price" Type="System.Double" DbType="Float" />
-    <Parameter Name="hasQuantity" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="sid" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_getSIDBySNAME" Method="sp_getSIDBySNAME">
@@ -294,5 +276,26 @@
       <Column Name="BARCODE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.sp_UpdateProduct" Method="sp_UpdateProduct">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="barcode" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="qte" Type="System.Int32" DbType="Int" />
+    <Parameter Name="price" Type="System.Double" DbType="Float" />
+    <Parameter Name="hasQuantity" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="sid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="hasExpiredDate" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_addNewProduct" Method="sp_addNewProduct">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="barcode" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="qte" Type="System.Int32" DbType="Int" />
+    <Parameter Name="price" Type="System.Double" DbType="Float" />
+    <Parameter Name="hasQuantity" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="sid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="hasExpiredDate" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

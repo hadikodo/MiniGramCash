@@ -37,7 +37,9 @@ namespace MiniGram.Forms
         private void AddSupplierForm_Load(object sender, EventArgs e)
         {
             warning_lable.Visible = false;
-            hasqte_combo.SelectedIndex = 0;
+            checkBoxAdv2.Checked = false;
+            checkBoxAdv1.Checked = false;
+
             using(var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
                 var suppList = cnx.sp_select_suppliers("").ToList();
@@ -59,7 +61,7 @@ namespace MiniGram.Forms
             {
                 if (string.IsNullOrEmpty(barcode_txt.Text))
                     barcode_txt.Text = "0";
-                if (hasqte_combo.SelectedIndex == 0)
+                if (!checkBoxAdv2.Checked)
                 {
                     quantity_txt.Text = "0";
                     using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
@@ -67,7 +69,7 @@ namespace MiniGram.Forms
                         try
                         {
                             int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
-                            cnx.sp_addNewProduct(productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false,sid);
+                            cnx.sp_addNewProduct(productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false,sid, checkBoxAdv1.Checked);
                         }
                         catch (Exception)
                         {
@@ -78,7 +80,7 @@ namespace MiniGram.Forms
                         this.Close();
                     }
                 }
-                else if(hasqte_combo.SelectedIndex == 1)
+                else
                 {
                     if(string.IsNullOrEmpty(quantity_txt.Text))
                         warning_lable.Visible=true;
@@ -89,7 +91,7 @@ namespace MiniGram.Forms
                             try
                             {
                                 int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
-                                cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true,sid);
+                                cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true,sid, checkBoxAdv1.Checked);
                             }
                             catch (Exception)
                             {
@@ -132,20 +134,6 @@ namespace MiniGram.Forms
             }
         }
 
-        private void hasqte_combo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (hasqte_combo.SelectedIndex == 1)
-            {
-                label3.Enabled = true;
-                quantity_txt.Enabled = true;
-            }
-            else if (hasqte_combo.SelectedIndex == 0)
-            {
-                label3.Enabled = false;
-                quantity_txt.Enabled = false;
-            }
-        }
-
         private void barcode_txt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -168,6 +156,35 @@ namespace MiniGram.Forms
             process.StartInfo = ps;
             process.Start();
             ActiveControl = productname_txt;
+        }
+
+        private void checkBoxAdv1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAdv1.Checked)
+            {
+                btnExpiredDate.Enabled = true;
+            }
+            else
+            {
+                btnExpiredDate.Enabled = false;
+            }
+        }
+
+        private void checkBoxAdv2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAdv2.Checked)
+            {
+                quantity_txt.Enabled = true;
+            }
+            else
+            {
+                quantity_txt.Enabled = false;
+            }
+        }
+
+        private void btnExpiredDate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

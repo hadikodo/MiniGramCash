@@ -71,7 +71,7 @@
             // search_txt
             // 
             this.search_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.search_txt.BeforeTouchSize = new System.Drawing.Size(34, 40);
+            this.search_txt.BeforeTouchSize = new System.Drawing.Size(400, 40);
             this.search_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.search_txt.CanOverrideStyle = true;

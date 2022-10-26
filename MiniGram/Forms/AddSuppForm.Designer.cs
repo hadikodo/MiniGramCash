@@ -201,7 +201,7 @@
             this.add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_btn.Font = new System.Drawing.Font("Bookman Old Style", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_btn.ForeColor = System.Drawing.Color.White;
-            this.add_btn.Location = new System.Drawing.Point(298, 487);
+            this.add_btn.Location = new System.Drawing.Point(309, 487);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(150, 120);
             this.add_btn.TabIndex = 4;

@@ -31,15 +31,15 @@ namespace MiniGram.Forms
             }
             else
             {
-                if (hasqte_combo.SelectedIndex == 0)
+                if (!checkBoxAdv2.Checked)
                 {
                     quantity_txt.Text = "0";
                     using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
                     {
                         try
                         {
-                            int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedText).ToList()[0].SID;
-                            cnx.sp_UpdateProduct(productID, productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false, sid);
+                            int sid =  cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
+                            cnx.sp_UpdateProduct(productID, productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false, sid, checkBoxAdv1.Checked);
                         }
                         catch (Exception)
                         {
@@ -51,8 +51,7 @@ namespace MiniGram.Forms
                     }
                 }
                 else
-                {
-
+                {   
                     if (quantity_txt.Text == "")
                     {
                         warning_lable.Visible = true;
@@ -64,7 +63,7 @@ namespace MiniGram.Forms
                             try
                             {
                                 int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
-                                cnx.sp_UpdateProduct(productID, productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true, sid);
+                                cnx.sp_UpdateProduct(productID, productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true, sid, checkBoxAdv1.Checked);
                                 MessageBox.Show("Product Update Successfully.");
                             }
                             catch (Exception)
@@ -102,8 +101,10 @@ namespace MiniGram.Forms
                 {
                     barcode_txt.Text = product[0].BARCODE;
                     productname_txt.Text = product[0].PNAME;
-                    hasqte_combo.SelectedIndex = Convert.ToInt32(product[0].HasQuantity);
+                    checkBoxAdv2.Checked = (bool)product[0].HasQuantity;
+                    checkBoxAdv1.Checked = product[0].HasExpiredDate == 1;
                     quantity_txt.Text = product[0].QTE.ToString();
+                    quantity_txt.Enabled = (bool)product[0].HasQuantity;
                     price_txt.Text = product[0].PRICE.ToString();
                     try
                     {
@@ -147,16 +148,7 @@ namespace MiniGram.Forms
 
         private void hasqte_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (hasqte_combo.SelectedIndex == 1)
-            {
-                label3.Enabled = true;
-                quantity_txt.Enabled = true;
-            }
-            else if (hasqte_combo.SelectedIndex == 0)
-            {
-                label3.Enabled = false;
-                quantity_txt.Enabled = false;
-            }
+
         }
 
         private void keyboard_btn_Click(object sender, EventArgs e)
@@ -167,6 +159,35 @@ namespace MiniGram.Forms
             process.StartInfo = ps;
             process.Start();
             ActiveControl = productname_txt;
+        }
+
+        private void checkBoxAdv1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAdv1.Checked)
+            {
+                btnExpiredDate.Enabled = true;
+            }
+            else
+            {
+                btnExpiredDate.Enabled = false;
+            }
+        }
+
+        private void checkBoxAdv2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAdv2.Checked)
+            {
+                quantity_txt.Enabled = true;
+            }
+            else
+            {
+                quantity_txt.Enabled = false;
+            }
+        }
+
+        private void btnExpiredDate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
