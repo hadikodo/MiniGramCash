@@ -18,7 +18,7 @@ namespace MiniGram.Controls
 {
     public partial class POSUC : UserControl
     {
-        private MiniGramDBDataContext data = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString);
+        private MiniGramDBDataContext data;
         private TableLayoutPanel table;
         private int NewReceiptNumber;
         private string selectedProductName = "";
@@ -27,6 +27,61 @@ namespace MiniGram.Controls
             InitializeComponent();
 
         }
+
+
+        private void POSUC_Load(object sender, EventArgs e)
+        {
+            data = new MiniGramDBDataContext(Globals.ConnectionString);
+            try
+            {
+                NewReceiptNumber = Int32.Parse(data.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString()) + 1;
+            }
+            catch (Exception ex)
+            {
+                NewReceiptNumber = 1;
+            }
+            receipt_id.Text = NewReceiptNumber.ToString();
+            ActiveControl = search_txt;
+            Init();
+        }
+
+        private void Init()
+        {
+            products_panel.Controls.Clear();
+            table = new TableLayoutPanel();
+            products_panel.Controls.Add(table);
+        }
+
+        void test(TableLayoutPanel table)
+        {
+
+        }
+        public void refreshData(string str)
+        {
+            table.Dock = DockStyle.Fill;
+            products_panel.Padding = new Padding(20, 20, 10, 20);
+            table.ColumnCount = 1;
+            table.RowCount = (Int32.Parse(data.sp_getProductsCount(str).ToList()[0].Product_Number.ToString()) / table.ColumnCount) + 1;
+            products_panel.AutoScrollMinSize = new Size(0, (table.RowCount + 1) * 100);
+            int i = 0, j = 0, c = 0, p = Int32.Parse(data.sp_getProductsCount(str).ToList()[0].Product_Number.ToString());
+            while (i < table.RowCount)
+            {
+                while (j < table.ColumnCount)
+                {
+                    if (c < p)
+                    {
+                        AddNewButton(i, j, c, p, str);
+                    }
+                    c++;
+                    j++;
+                }
+                i++;
+                j = 0;
+            }
+            ActiveControl = search_txt;
+            Globals.isLoadingFinish = true;
+        }
+
         protected override CreateParams CreateParams
         {
             get
@@ -38,7 +93,7 @@ namespace MiniGram.Controls
         }
 
         private string generateNewBarcode()
-        {          
+        {
             Random random = new Random();
             int newBarcode = random.Next(1000000, 9999999);
             var check = data.sp_getReceiptByBarcode(newBarcode.ToString()).ToList();
@@ -51,7 +106,7 @@ namespace MiniGram.Controls
 
         private void checkout_btn_Click(object sender, EventArgs e)
         {
-            if(receipt_details.Rows.Count == 0)
+            if (receipt_details.Rows.Count == 0)
             {
                 MessageBox.Show("Please Enter At Least One Product!!");
             }
@@ -66,6 +121,7 @@ namespace MiniGram.Controls
                     newReceipt.RITEM_NB = Int32.Parse(tot_quantity.Text);
                     newReceipt.TOTAL_AMOUNTDollar = double.Parse(tot_dollar.Text.Split(' ')[0]);
                     newReceipt.TOTAL_AMOUNTLBP = Int32.Parse(tot_lbp.Text.Split(' ')[0]);
+                    newReceipt.RDATE = DateTime.Now;
                     data.TBLRECEIPTs.InsertOnSubmit(newReceipt);
                     data.SubmitChanges();
 
@@ -73,7 +129,7 @@ namespace MiniGram.Controls
                     {
                         try
                         {
-                            var product = data.sp_getProductByName(row.Cells[1].Value.ToString()).ToList();                             
+                            var product = data.sp_getProductByName(row.Cells[1].Value.ToString()).ToList();
                             if (product[0].HasQuantity == true)
                             {
                                 if (Int32.Parse(product[0].QTE.ToString()) < Int32.Parse(row.Cells[3].Value.ToString()))
@@ -88,9 +144,9 @@ namespace MiniGram.Controls
                                 else if ((Int32.Parse(product[0].QTE.ToString()) == Int32.Parse(row.Cells[3].Value.ToString())))
                                 {
                                     //data.sp_UpdateProductQuantity(product[0].PID, 0);
-                                    TBLPRODUCT prod = (from aj in  data.TBLPRODUCTs
-                                               where aj.PID == product[0].PID
-                                               select aj).Single();
+                                    TBLPRODUCT prod = (from aj in data.TBLPRODUCTs
+                                                       where aj.PID == product[0].PID
+                                                       select aj).Single();
                                     prod.QTE = 0;
                                     //data.sp_insertNewReciptDetail(Int32.Parse(receipt_id.Text), product[0].PID, Int32.Parse(row.Cells[3].Value.ToString()), double.Parse(row.Cells[4].Value.ToString()), double.Parse(row.Cells[7].Value.ToString()), Int32.Parse(row.Cells[5].Value.ToString()), Int32.Parse(row.Cells[6].Value.ToString()));
                                     var newReceiptDetails = new TBLRECEIPTS_DETAIL();
@@ -137,7 +193,7 @@ namespace MiniGram.Controls
                                 data.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
                             }
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             //data.sp_deleteReceiptByBarcode(newBarcode);
                             //data.sp_deleteReceiptDetailsByRID(Int32.Parse(receipt_id.Text));
@@ -160,7 +216,7 @@ namespace MiniGram.Controls
                     tot_quantity.Text = "0";
                     try
                     {
-                        NewReceiptNumber = Int32.Parse(data.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString())+1;
+                        NewReceiptNumber = Int32.Parse(data.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString()) + 1;
                     }
                     catch (Exception ex)
                     {
@@ -170,7 +226,7 @@ namespace MiniGram.Controls
                     search_txt.Text = "";
                     ActiveControl = search_txt;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Globals.isReceiptOpen = false;
                     MessageBox.Show("An Error Occured When Adding Receipt, Please Call Support !!");
@@ -179,87 +235,55 @@ namespace MiniGram.Controls
             Globals.isReceiptOpen = false;
         }
 
-        private void POSUC_Load(object sender, EventArgs e)
-        {           
-            try
+
+
+        private void AddNewButton(int i, int j, int c, int p, string str)
+        {
+            var products = (from pr in data.sp_select_products(str)
+                            where pr.Status.Equals("Enabled")
+                            select pr).ToList();
+            if (products.Count != 0)
             {
-                NewReceiptNumber = Int32.Parse(data.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString())+1;
-            }catch(Exception ex)
-            {
-                NewReceiptNumber = 1;
+                SfButton button = new SfButton();
+                button.AccessibleName = "Button";
+                button.BackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+                button.BackgroundImageLayout = ImageLayout.Zoom;
+                button.CanOverrideStyle = true;
+                button.Cursor = Cursors.Hand;
+                button.FlatStyle = FlatStyle.Flat;
+                button.Font = new Font("Bookman Old Style", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                button.ForeColor = Color.White;
+                button.Name = "product" + i.ToString() + j.ToString();
+                button.Size = new Size(products_panel.Width, 75);
+                button.Style.BackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+                button.Style.FocusedBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+                button.Style.FocusedForeColor = Color.White;
+                button.Style.ForeColor = Color.White;
+                button.Style.HoverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+                button.Style.HoverForeColor = Color.White;
+                button.Style.HoverImageForeColor = Color.Empty;
+                button.Style.PressedBackColor = Color.White;
+                button.Dock = DockStyle.Fill;
+                button.Style.PressedForeColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+                button.TextImageRelation = TextImageRelation.Overlay;
+                button.TextMargin = new Padding(0, 10, 0, 0);
+                button.ThemeName = "Office2016Colorful";
+                button.Margin = new Padding(8, 8, 8, 8);
+                button.Padding = new Padding(50, 0, 0, 0);
+                toolTip1.SetToolTip(button, products[c].ProductName + "  |  " + products[c].SupplierName);
+                button.UseVisualStyleBackColor = false;
+                button.Text = products[c].ProductName;
+                button.TextAlign = ContentAlignment.MiddleLeft;
+                button.Click += new EventHandler(add_btn_Click);
+                table.Controls.Add(button, j, i);
             }
-            receipt_id.Text = NewReceiptNumber.ToString();
-            ActiveControl = search_txt;          
         }
 
-        public void refreshData(string str)
-        {
-            products_panel.Controls.Clear();
-            table =new TableLayoutPanel();
-            products_panel.Controls.Add(table);
-            table.Dock = DockStyle.Fill;
-            products_panel.Padding = new Padding(20, 20, 10, 20);
-            table.ColumnCount = 1;
-            table.RowCount = (Int32.Parse(data.sp_getProductsCount(str).ToList()[0].Product_Number.ToString()) / table.ColumnCount) + 1;
-            products_panel.AutoScrollMinSize = new Size(0, (table.RowCount + 1) * 100);
-            int i = 0,j = 0,c = 0,p = Int32.Parse(data.sp_getProductsCount(str).ToList()[0].Product_Number.ToString());
-            while(i < table.RowCount)
-            {
-                while(j < table.ColumnCount)
-                {
-                    if (c < p)
-                    {
-                        var products = (from pr in data.sp_select_products(str)
-                                       where pr.Status.Equals("Enabled")
-                                       select pr).ToList();
-                        if (products.Count != 0)
-                        {
-                            SfButton button = new SfButton();
-                            button.AccessibleName = "Button";
-                            button.BackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-                            button.BackgroundImageLayout = ImageLayout.Zoom;
-                            button.CanOverrideStyle = true;
-                            button.Cursor = Cursors.Hand;
-                            button.FlatStyle = FlatStyle.Flat;
-                            button.Font = new Font("Bookman Old Style", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                            button.ForeColor = Color.White;
-                            button.Name = "product" + i.ToString() + j.ToString();
-                            button.Size = new Size(products_panel.Width, 75);
-                            button.Style.BackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-                            button.Style.FocusedBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-                            button.Style.FocusedForeColor = Color.White;
-                            button.Style.ForeColor = Color.White;
-                            button.Style.HoverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-                            button.Style.HoverForeColor = Color.White;
-                            button.Style.HoverImageForeColor = Color.Empty;
-                            button.Style.PressedBackColor = Color.White;
-                            button.Dock = DockStyle.Fill;
-                            button.Style.PressedForeColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-                            button.TextImageRelation = TextImageRelation.Overlay;
-                            button.TextMargin = new Padding(0, 10, 0, 0);
-                            button.ThemeName = "Office2016Colorful";
-                            button.Margin = new Padding(8, 8, 8, 8);
-                            button.Padding = new Padding(50, 0, 0, 0);
-                            toolTip1.SetToolTip(button, products[c].ProductName+"  |  "+ products[c].SupplierName);
-                            button.UseVisualStyleBackColor = false;
-                            button.Text = products[c].ProductName + "  |  " + products[c].SupplierName;
-                            button.TextAlign = ContentAlignment.MiddleLeft;
-                            button.Click += new EventHandler(add_btn_Click);
-                            table.Controls.Add(button, j, i);
-                        }
-                    }
-                    c++;
-                    j++;
-                }
-                i++;
-                j = 0;
-            }
-            ActiveControl = search_txt;
-        }
+
         private string getTotalDollar()
         {
             double totalDollar = 0;
-            foreach(DataGridViewRow row in receipt_details.Rows)
+            foreach (DataGridViewRow row in receipt_details.Rows)
             {
                 totalDollar += double.Parse(row.Cells[7].Value.ToString());
             }
@@ -321,9 +345,9 @@ namespace MiniGram.Controls
                 search_txt.Text = "";
                 ActiveControl = search_txt;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error!!","Error When Adding Items Please Contact Support!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error!!", "Error When Adding Items Please Contact Support!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -351,7 +375,7 @@ namespace MiniGram.Controls
                     tot_lbp.Text = getTotalLBP() + " LBP";
                 }
             }
-                ActiveControl = search_txt;
+            ActiveControl = search_txt;
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
@@ -441,6 +465,8 @@ namespace MiniGram.Controls
 
         private void POSUC_KeyUp(object sender, KeyEventArgs e)
         {
+            e.Handled = true;
+            e.SuppressKeyPress = true;
             if (e.KeyValue == 13)
             {
                 add_btn_Click_1(add_btn, e);

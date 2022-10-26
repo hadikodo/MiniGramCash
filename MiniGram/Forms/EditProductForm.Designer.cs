@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProductForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.supp_cbox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.barcode_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.hasqte_combo = new System.Windows.Forms.ComboBox();
@@ -46,8 +48,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.logo_img = new System.Windows.Forms.PictureBox();
             this.keyboard_btn = new Syncfusion.WinForms.Controls.SfButton();
-            this.supp_cbox = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barcode_txt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.price_txt)).BeginInit();
@@ -80,6 +80,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(769, 663);
             this.panel1.TabIndex = 11;
+            // 
+            // supp_cbox
+            // 
+            this.supp_cbox.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.supp_cbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.supp_cbox.FormattingEnabled = true;
+            this.supp_cbox.Location = new System.Drawing.Point(328, 189);
+            this.supp_cbox.Name = "supp_cbox";
+            this.supp_cbox.Size = new System.Drawing.Size(400, 36);
+            this.supp_cbox.TabIndex = 27;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.label7.Location = new System.Drawing.Point(22, 193);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(251, 32);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "⫸ Supplier :";
             // 
             // label6
             // 
@@ -158,11 +179,12 @@
             this.warning_lable.BackColor = System.Drawing.Color.Transparent;
             this.warning_lable.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.warning_lable.ForeColor = System.Drawing.Color.Red;
-            this.warning_lable.Location = new System.Drawing.Point(66, 465);
+            this.warning_lable.Location = new System.Drawing.Point(53, 463);
             this.warning_lable.Name = "warning_lable";
             this.warning_lable.Size = new System.Drawing.Size(662, 32);
             this.warning_lable.TabIndex = 19;
             this.warning_lable.Text = "⚠ Some Required Information Is Incorrect ⚠";
+            this.warning_lable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // save_btn
             // 
@@ -175,7 +197,7 @@
             this.save_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.save_btn.Font = new System.Drawing.Font("Bookman Old Style", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.save_btn.ForeColor = System.Drawing.Color.White;
-            this.save_btn.Location = new System.Drawing.Point(301, 528);
+            this.save_btn.Location = new System.Drawing.Point(309, 528);
             this.save_btn.Name = "save_btn";
             this.save_btn.Size = new System.Drawing.Size(150, 120);
             this.save_btn.TabIndex = 8;
@@ -385,27 +407,6 @@
             this.keyboard_btn.UseVisualStyleBackColor = true;
             this.keyboard_btn.Click += new System.EventHandler(this.keyboard_btn_Click);
             // 
-            // supp_cbox
-            // 
-            this.supp_cbox.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supp_cbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.supp_cbox.FormattingEnabled = true;
-            this.supp_cbox.Location = new System.Drawing.Point(328, 189);
-            this.supp_cbox.Name = "supp_cbox";
-            this.supp_cbox.Size = new System.Drawing.Size(400, 36);
-            this.supp_cbox.TabIndex = 27;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label7.Location = new System.Drawing.Point(22, 193);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(251, 32);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "⫸ Supplier :";
-            // 
             // EditProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,7 +424,6 @@
             this.Name = "EditProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditProductForm";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.EditProductForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

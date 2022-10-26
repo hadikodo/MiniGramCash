@@ -1,4 +1,5 @@
-﻿using MiniGram.LINQ;
+﻿using MiniGram.Classes;
+using MiniGram.LINQ;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,7 @@ namespace MiniGram.Forms
             {
                 if (string.IsNullOrEmpty(email_txt.Text))
                     email_txt.Text = "-";
-                using (var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
+                using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
                 {
                     try
                     {

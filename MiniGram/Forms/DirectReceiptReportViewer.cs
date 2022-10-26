@@ -15,7 +15,7 @@ namespace MiniGram.Forms
 {
     public partial class DirectReceiptReportViewer : Form
     {
-        private MiniGramDBDataContext data = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString);
+        private MiniGramDBDataContext data = new MiniGramDBDataContext(Globals.ConnectionString);
         public int receiptID;
         public DirectReceiptReportViewer()
         {

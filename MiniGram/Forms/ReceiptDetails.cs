@@ -1,4 +1,5 @@
-﻿using MiniGram.LINQ;
+﻿using MiniGram.Classes;
+using MiniGram.LINQ;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace MiniGram.Forms
     public partial class ReceiptDetails : Form
     {
         private int receiptID;
-        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString);
+        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
         public ReceiptDetails(int id)
         {
             InitializeComponent();

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MiniGram.Controls;
+using MiniGram.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ namespace MiniGram.Classes
         public static int deleteNB { get; set; }
         public static int qteChangeNB { get; set; }
         public static bool isReceiptOpen { get; set; }
-
+        public static bool isLoadingFinish { get; set; }
+        public static string ConnectionString { get; set; }
     }
 }

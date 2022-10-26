@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MiniGram.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -80,7 +81,7 @@ namespace MiniGram.Controls
                     Properties.Settings.Default.Username = username_txt.Text;
                     Properties.Settings.Default.Password = password_txt.Text;
                     Properties.Settings.Default.ServerSecurity = true;
-                    Properties.Settings.Default.ConnectionString = conn;
+                    Globals.ConnectionString = conn;
                     Properties.Settings.Default.Save();
                 }
                 else
@@ -95,7 +96,7 @@ namespace MiniGram.Controls
                 {
                     Properties.Settings.Default.ServerName = server_name.Text;
                     Properties.Settings.Default.ServerSecurity = false;
-                    Properties.Settings.Default.ConnectionString = conn;
+                    Globals.ConnectionString = conn;
                     Properties.Settings.Default.Save();
                 }
                 else

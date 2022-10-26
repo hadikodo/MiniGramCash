@@ -16,7 +16,7 @@ namespace MiniGram.Controls
 {
     public partial class ProductsUC : UserControl
     {
-        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString);
+        
         public ProductsUC()
         {
             InitializeComponent();
@@ -39,26 +39,38 @@ namespace MiniGram.Controls
 
         private void enable_btn_Click(object sender, EventArgs e)
         {
-            cnx.sp_enableProductByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
-            refreshData();
+            using(MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+            {
+                cnx.sp_enableProductByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                refreshData();
+            }
+
         }
 
         private void disable_btn_Click(object sender, EventArgs e)
         {
-            cnx.sp_disableProductByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
-            refreshData();
+            using (MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+            {
+                cnx.sp_disableProductByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                refreshData();
+            }
+
         }
         public void refreshData()
-        {          
-            spselectproductsResultBindingSource.DataSource = cnx.sp_select_products("");
-            dataGridView1.Refresh();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+        {
+            using (MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                if (!row.Cells[7].Value.ToString().Equals("Enabled"))
+                spselectproductsResultBindingSource.DataSource = cnx.sp_select_products("");
+                dataGridView1.Refresh();
+                foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    row.DefaultCellStyle.BackColor = Color.DarkGray;
+                    if (!row.Cells[7].Value.ToString().Equals("Enabled"))
+                    {
+                        row.DefaultCellStyle.BackColor = Color.DarkGray;
+                    }
                 }
-            }           
+            }
+         
         }
 
         private void addproduct_btn_Click(object sender, EventArgs e)
@@ -113,14 +125,20 @@ namespace MiniGram.Controls
 
         private void search_txt_TextChanged(object sender, EventArgs e)
         {
-            try
+            using (MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                spselectproductsResultBindingSource.DataSource = cnx.sp_select_products(search_txt.Text);
-                dataGridView1.Refresh();
-            } catch (Exception ex)
-            {
+                try
+                {
+                    spselectproductsResultBindingSource.DataSource = cnx.sp_select_products(search_txt.Text);
+                    dataGridView1.Refresh();
+                }
+                catch (Exception ex)
+                {
+
+                }
 
             }
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -141,6 +159,13 @@ namespace MiniGram.Controls
             process.StartInfo = ps;
             process.Start();
             search_btn_Click(sender, e);
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditProductForm epf = new EditProductForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            epf.ShowDialog();
+            refreshData();
         }
     }
 }

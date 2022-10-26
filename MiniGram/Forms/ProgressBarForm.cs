@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MiniGram.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,13 @@ namespace MiniGram.Forms
             this.BackColor = Color.LimeGreen;
             this.TransparencyKey = Color.LimeGreen;
             second = s;
+        }
+        public ProgressBarForm()
+        {
+            InitializeComponent();
+            this.BackColor = Color.LimeGreen;
+            this.TransparencyKey = Color.LimeGreen;
+            second = 100;
         }
         protected override void OnPaintBackground(PaintEventArgs e)
         {

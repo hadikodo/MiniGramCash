@@ -1,4 +1,5 @@
-﻿using MiniGram.LINQ;
+﻿using MiniGram.Classes;
+using MiniGram.LINQ;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,7 +38,7 @@ namespace MiniGram.Forms
         {
             warning_lable.Visible = false;
             hasqte_combo.SelectedIndex = 0;
-            using(var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
+            using(var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
                 var suppList = cnx.sp_select_suppliers("").ToList();
                 foreach(var supp in suppList)
@@ -61,7 +62,7 @@ namespace MiniGram.Forms
                 if (hasqte_combo.SelectedIndex == 0)
                 {
                     quantity_txt.Text = "0";
-                    using (var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
+                    using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
                     {
                         try
                         {
@@ -83,11 +84,11 @@ namespace MiniGram.Forms
                         warning_lable.Visible=true;
                     else
                     {
-                        using (var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
+                        using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
                         {
                             try
                             {
-                                int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedText).ToList()[0].SID;
+                                int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
                                 cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true,sid);
                             }
                             catch (Exception)

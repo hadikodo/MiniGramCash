@@ -16,7 +16,7 @@ namespace MiniGram.Controls
 {
     public partial class ReceiptsUC : UserControl
     {
-        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString);
+        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
         public ReceiptsUC()
         {
             InitializeComponent();
@@ -124,6 +124,15 @@ namespace MiniGram.Controls
             process.StartInfo = ps;
             process.Start();
             search_btn_Click(search_btn, e);
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ReceiptDetails rd = new ReceiptDetails(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            rd.refreshData();
+            rd.ShowDialog();
+            refreshData();
+            search_txt.Text = "";
         }
     }
 }

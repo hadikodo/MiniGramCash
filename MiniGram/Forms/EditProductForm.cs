@@ -1,4 +1,5 @@
-﻿using MiniGram.LINQ;
+﻿using MiniGram.Classes;
+using MiniGram.LINQ;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,11 @@ namespace MiniGram.Forms
     public partial class EditProductForm : Form
     {
         private int productID;
-        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString);
+
         public EditProductForm(int PID)
         {
-            InitializeComponent();
             productID = PID;
+            InitializeComponent();
         }
 
         private void save_btn_Click(object sender, EventArgs e)
@@ -33,12 +34,12 @@ namespace MiniGram.Forms
                 if (hasqte_combo.SelectedIndex == 0)
                 {
                     quantity_txt.Text = "0";
-                    using (var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
+                    using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
                     {
                         try
                         {
                             int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedText).ToList()[0].SID;
-                            cnx.sp_UpdateProduct(productID,productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false,sid);
+                            cnx.sp_UpdateProduct(productID, productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false, sid);
                         }
                         catch (Exception)
                         {
@@ -49,24 +50,28 @@ namespace MiniGram.Forms
                         this.Close();
                     }
                 }
-                else if (hasqte_combo.SelectedIndex == 1)
+                else
                 {
-                    if (string.IsNullOrEmpty(quantity_txt.Text))
+
+                    if (quantity_txt.Text == "")
+                    {
                         warning_lable.Visible = true;
+                    }
                     else
                     {
-                        using (var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
+                        using (MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
                         {
                             try
                             {
-                                int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedText).ToList()[0].SID;
-                                cnx.sp_UpdateProduct(productID,productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true,sid);
+                                int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
+                                cnx.sp_UpdateProduct(productID, productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true, sid);
+                                MessageBox.Show("Product Update Successfully.");
                             }
                             catch (Exception)
                             {
                                 MessageBox.Show("Something Went Wrong, The Product Not Updated, Please Call The Support!!");
                             }
-                            MessageBox.Show("Product Update Successfully.");
+
                             this.Close();
                         }
                     }
@@ -82,7 +87,7 @@ namespace MiniGram.Forms
         private void EditProductForm_Load(object sender, EventArgs e)
         {
             warning_lable.Visible = false;
-            using (var cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
+            using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
                 var suppList = cnx.sp_select_suppliers("").ToList();
                 foreach (var supp in suppList)
@@ -103,7 +108,8 @@ namespace MiniGram.Forms
                     try
                     {
                         supp_cbox.SelectedIndex = supp_cbox.Items.IndexOf(cnx.sp_getSupplierByID(product[0].SID).ToList()[0].SNAME);
-                    }catch (Exception ex)
+                    }
+                    catch (Exception ex)
                     {
 
                     }

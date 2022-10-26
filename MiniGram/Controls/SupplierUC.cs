@@ -16,7 +16,7 @@ namespace MiniGram
 {
     public partial class SupplierUC : UserControl
     {
-        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString);
+        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
         public SupplierUC()
         {
             InitializeComponent();
@@ -142,6 +142,13 @@ namespace MiniGram
             process.StartInfo = ps;
             process.Start();
             search_btn_Click(search_btn, e);
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditSupplierForm eif = new EditSupplierForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            eif.ShowDialog();
+            refreshData();
         }
     }
 }
