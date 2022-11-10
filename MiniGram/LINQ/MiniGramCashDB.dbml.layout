@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MiniGramDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 8.5" name="MiniGramDB">
   <DataContextMoniker Name="/MiniGramDBDataContext" />
   <nestedChildShapes>
     <classShape Id="f1154128-9bd0-4a72-b79a-f5bf41a97051" absoluteBounds="1.5, 4.375, 2, 1.9631982421875005">
@@ -26,7 +26,7 @@
         <elementListCompartment Id="e3bc9fbc-c2f9-4f30-865c-be7508ee6dfe" absoluteBounds="4.14, 1.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 2.35659912109375); (4.125 : 2.35659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 2.35659912109375); (4.125 : 2.35659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/MiniGramDBDataContext/TBLRECEIPT/TBLRECEIPT_TBLRECEIPTS_DETAIL" />
       <nodes>
         <classShapeMoniker Id="a3bf2193-346c-4b70-b27a-505790b11a60" />
@@ -51,6 +51,19 @@
       <nodes>
         <classShapeMoniker Id="acd98547-7634-4cf5-b5fd-534887ac22f4" />
         <classShapeMoniker Id="1423f93f-ea40-41da-bb6c-c72f5305127e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="bf7c97e8-db46-4b88-8358-068f0ff03e9f" absoluteBounds="9.25, 6, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MiniGramDBDataContext/TblExpiredDate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="89db4b62-6c54-47f1-9196-0377934b6b99" absoluteBounds="9.265, 6.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.25 : 6.74120198567708); (9.25 : 6.74120198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MiniGramDBDataContext/TBLPRODUCT/TBLPRODUCT_TblExpiredDate" />
+      <nodes>
+        <classShapeMoniker Id="1423f93f-ea40-41da-bb6c-c72f5305127e" />
+        <classShapeMoniker Id="bf7c97e8-db46-4b88-8358-068f0ff03e9f" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

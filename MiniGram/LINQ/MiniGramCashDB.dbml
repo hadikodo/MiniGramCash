@@ -59,7 +59,17 @@
       <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="HasExpiredDate" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPTS_DETAILs" ThisKey="PID" OtherKey="PID" Type="TBLRECEIPTS_DETAIL" />
+      <Association Name="TBLPRODUCT_TblExpiredDate" Member="TblExpiredDates" ThisKey="PID" OtherKey="PID" Type="TblExpiredDate" />
       <Association Name="TBLSUPPLIER_TBLPRODUCT" Member="TBLSUPPLIER" ThisKey="SID" OtherKey="SID" Type="TBLSUPPLIER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblExpiredDates" Member="TblExpiredDates">
+    <Type Name="TblExpiredDate">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpiredDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBLPRODUCT_TblExpiredDate" Member="TBLPRODUCT" ThisKey="PID" OtherKey="PID" Type="TBLPRODUCT" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.sp_addNewItem" Method="sp_addNewItem">
