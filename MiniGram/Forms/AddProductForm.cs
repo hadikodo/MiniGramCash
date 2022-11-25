@@ -40,7 +40,7 @@ namespace MiniGram.Forms
             checkBoxAdv2.Checked = false;
             checkBoxAdv1.Checked = false;
 
-            using(var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+            using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
                 var suppList = cnx.sp_select_suppliers("").ToList();
                 foreach(var supp in suppList)
@@ -162,6 +162,7 @@ namespace MiniGram.Forms
         {
             if (checkBoxAdv1.Checked)
             {
+                checkBoxAdv2.Checked = false;
                 btnExpiredDate.Enabled = true;
             }
             else
@@ -174,6 +175,7 @@ namespace MiniGram.Forms
         {
             if (checkBoxAdv2.Checked)
             {
+                checkBoxAdv1.Checked = false;
                 quantity_txt.Enabled = true;
             }
             else
@@ -184,7 +186,83 @@ namespace MiniGram.Forms
 
         private void btnExpiredDate_Click(object sender, EventArgs e)
         {
-
+            if(MessageBox.Show("Do You Want To Save This Product??","Info",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (string.IsNullOrEmpty(productname_txt.Text) || string.IsNullOrEmpty(price_txt.Text))
+                {
+                    warning_lable.Visible = true;
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(barcode_txt.Text))
+                        barcode_txt.Text = "0";
+                    if (!checkBoxAdv2.Checked)
+                    {
+                        quantity_txt.Text = "0";
+                        using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+                        {
+                            if (!checkBoxAdv1.Checked)
+                            {
+                                try
+                                {
+                                    int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
+                                    cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false, sid, checkBoxAdv1.Checked);
+                                }
+                                catch (Exception)
+                                {
+                                    MessageBox.Show("Something Went Wrong, The New Product Not Added, Please Call The Support!!");
+                                    this.Close();
+                                }
+                            }
+                            else
+                            {
+                                int sid = 0;
+                                try
+                                {
+                                    sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
+                                    cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, 0, float.Parse(price_txt.Text), false, sid, checkBoxAdv1.Checked);
+                                }
+                                catch (Exception)
+                                {
+                                    MessageBox.Show("Something Went Wrong, The New Product Not Added, Please Call The Support!!");
+                                    this.Close();
+                                }
+                                ExpiredDateForm frm = new ExpiredDateForm(productname_txt.Text, Int32.Parse((from aj in cnx.TBLPRODUCTs where aj.BARCODE == barcode_txt.Text select aj.PID).Single().ToString()));
+                                frm.ShowDialog();
+                                int productID = Int32.Parse((from aj in cnx.TBLPRODUCTs where aj.BARCODE == barcode_txt.Text select aj.PID).Single().ToString());
+                                int TotalQuantity = (from aj in cnx.TBLEXPIREDDATEs where aj.PID == productID && aj.ExpiredDate > DateTime.Today  select aj.Qte).ToList().Sum(x => Convert.ToInt32(x));
+                                cnx.sp_UpdateProduct(productID, productname_txt.Text, barcode_txt.Text, TotalQuantity, float.Parse(price_txt.Text), false, sid, checkBoxAdv1.Checked);
+                                this.Close();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (string.IsNullOrEmpty(quantity_txt.Text))
+                            warning_lable.Visible = true;
+                        else
+                        {
+                            using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+                            {
+                                try
+                                {
+                                    int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
+                                    cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true, sid, checkBoxAdv1.Checked);
+                                }
+                                catch (Exception)
+                                {
+                                    MessageBox.Show("Something Went Wrong, The New Product Not Added, Please Call The Support!!");
+                                    this.Close();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

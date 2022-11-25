@@ -37,6 +37,14 @@ namespace MiniGram.Controls
             else
                 checkBoxAdv1.CheckState = CheckState.Unchecked;
 
+            Dictionary<int,string> ReceiptSize = new Dictionary<int,string>();
+            ReceiptSize.Add(1, "A4 ( 21 x 29.7 cm )");
+            ReceiptSize.Add(2, "70 mm");
+            cboxReceiptSize.DataSource = new BindingSource(ReceiptSize, null);
+            cboxReceiptSize.DisplayMember= "Value";
+            cboxReceiptSize.ValueMember= "Key";
+
+            cboxReceiptSize.SelectedValue = Properties.Settings.Default.ReceiptType;
             string strDefaultPrinter = Properties.Settings.Default.printerName;
             foreach (String strPrinter in PrinterSettings.InstalledPrinters)
             {
@@ -82,6 +90,7 @@ namespace MiniGram.Controls
                     }
                 }
             }
+            Properties.Settings.Default.ReceiptType = Int32.Parse(cboxReceiptSize.SelectedValue.ToString());
             Properties.Settings.Default.printerName = printer_drp.SelectedItem.ToString();
             Properties.Settings.Default.dollarLBPPrice = Int32.Parse(dollar_price.Text);
             Properties.Settings.Default.somethingChanged = false;

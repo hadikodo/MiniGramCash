@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MiniGramCashDB" Class="MiniGramDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-A846TAN;Initial Catalog=MiniGramCashDB;Integrated Security=True" SettingsObjectName="MiniGram.Properties.Settings" SettingsPropertyName="MiniGramCashDBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-M6L2KRQ;Initial Catalog=MiniGramCashDB;Integrated Security=True" SettingsObjectName="MiniGram.Properties.Settings" SettingsPropertyName="MiniGramCashDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.TBLITEMS" Member="TBLITEMs">
     <Type Name="TBLITEM">
       <Column Name="IID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -46,6 +46,16 @@
       <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL" Member="TBLPRODUCT" ThisKey="PID" OtherKey="PID" Type="TBLPRODUCT" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TBLEXPIREDDATES" Member="TBLEXPIREDDATEs">
+    <Type Name="TBLEXPIREDDATE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Qte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExpiredDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TBLPRODUCT_TBLEXPIREDDATE" Member="TBLPRODUCT" ThisKey="PID" OtherKey="PID" Type="TBLPRODUCT" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.TBLPRODUCTS" Member="TBLPRODUCTs">
     <Type Name="TBLPRODUCT">
       <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -59,17 +69,8 @@
       <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="HasExpiredDate" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPTS_DETAILs" ThisKey="PID" OtherKey="PID" Type="TBLRECEIPTS_DETAIL" />
-      <Association Name="TBLPRODUCT_TblExpiredDate" Member="TblExpiredDates" ThisKey="PID" OtherKey="PID" Type="TblExpiredDate" />
+      <Association Name="TBLPRODUCT_TBLEXPIREDDATE" Member="TBLEXPIREDDATEs" ThisKey="PID" OtherKey="PID" Type="TBLEXPIREDDATE" />
       <Association Name="TBLSUPPLIER_TBLPRODUCT" Member="TBLSUPPLIER" ThisKey="SID" OtherKey="SID" Type="TBLSUPPLIER" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TblExpiredDates" Member="TblExpiredDates">
-    <Type Name="TblExpiredDate">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ExpiredDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="TBLPRODUCT_TblExpiredDate" Member="TBLPRODUCT" ThisKey="PID" OtherKey="PID" Type="TBLPRODUCT" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.sp_addNewItem" Method="sp_addNewItem">
@@ -273,20 +274,6 @@
       <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_getProductByName" Method="sp_getProductByName">
-    <Parameter Name="name" Type="System.String" DbType="NVarChar(MAX)" />
-    <ElementType Name="sp_getProductByNameResult">
-      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="QTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="ADD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="HasQuantity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="BARCODE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.sp_UpdateProduct" Method="sp_UpdateProduct">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
@@ -306,6 +293,38 @@
     <Parameter Name="hasQuantity" Type="System.Boolean" DbType="Bit" />
     <Parameter Name="sid" Type="System.Int32" DbType="Int" />
     <Parameter Name="hasExpiredDate" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_getProductByName" Method="sp_getProductByName">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="sp_getProductByNameResult">
+      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="QTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ADD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HasQuantity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BARCODE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HasExpiredDate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getTotalOfExpiredDateQteByPID" Method="sp_getTotalOfExpiredDateQteByPID">
+    <Parameter Name="pid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_getTotalOfExpiredDateQteByPIDResult">
+      <Column Name="TotalQte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getTotalOfExpiredDateQteByPName" Method="sp_getTotalOfExpiredDateQteByPName">
+    <Parameter Name="pname" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="sp_getTotalOfExpiredDateQteByPNameResult">
+      <Column Name="TotalQte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_UpdateExpiredDateQte" Method="sp_UpdateExpiredDateQte">
+    <Parameter Name="expID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="qte" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

@@ -67,7 +67,7 @@ namespace MiniGram.Controls
         {
             if (e.ColumnIndex == 6)
             {
-                DirectReceiptReportViewer drrv = new DirectReceiptReportViewer();
+                DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType);
                 drrv.receiptID = Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
                 drrv.Show();
             }

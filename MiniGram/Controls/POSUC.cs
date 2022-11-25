@@ -175,9 +175,75 @@ namespace MiniGram.Controls
                                     data.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
                                 }
                             }
-                            else
+                            else if (product[0].HasExpiredDate == 1)
                             {
-                                //data.sp_insertNewReciptDetail(NewReceiptNumber, product[0].PID, Int32.Parse(row.Cells[3].Value.ToString()), double.Parse(row.Cells[4].Value.ToString()), double.Parse(row.Cells[7].Value.ToString()), Int32.Parse(row.Cells[5].Value.ToString()), Int32.Parse(row.Cells[6].Value.ToString()));
+
+                                List<TBLEXPIREDDATE> ExpiredDateList = (from aj in data.TBLEXPIREDDATEs where aj.PID == product[0].PID && aj.ExpiredDate > DateTime.Today select aj).ToList();
+                                int totalQuantity = (from aj in ExpiredDateList where aj.ExpiredDate > DateTime.Today select aj.Qte).Sum(x => Convert.ToInt32(x));
+                                if (totalQuantity < Int32.Parse(row.Cells[3].Value.ToString()))
+                                {
+                                    MessageBox.Show("You Have " + totalQuantity + " Of Product Name : " + product[0].PNAME + "\nPlease Check Your Products !!");
+                                    //data.sp_deleteReceiptByBarcode(newBarcode);
+                                    //data.sp_deleteReceiptDetailsByRID(Int32.Parse(receipt_id.Text));
+                                    search_txt.Text = "";
+                                    ActiveControl = search_txt;
+                                    return;
+                                }
+                                else if (totalQuantity == Int32.Parse(row.Cells[3].Value.ToString()))
+                                {
+                                    TBLEXPIREDDATE minExpDate = (from aj in ExpiredDateList orderby aj.ExpiredDate ascending select aj).First();
+                                    TBLPRODUCT prod = (from aj in data.TBLPRODUCTs
+                                                       where aj.PID == product[0].PID
+                                                       select aj).Single();
+                                    prod.QTE = 0;
+                                    data.TBLEXPIREDDATEs.DeleteOnSubmit(minExpDate);
+                                    var newReceiptDetails = new TBLRECEIPTS_DETAIL();
+                                    newReceiptDetails.RID = newReceipt.RID;
+                                    newReceiptDetails.PID = product[0].PID;
+                                    newReceiptDetails.QTE = Int32.Parse(row.Cells[3].Value.ToString());
+                                    newReceiptDetails.PRICE_Dollar = double.Parse(row.Cells[4].Value.ToString());
+                                    newReceiptDetails.TOTAL_PRICEDollar = double.Parse(row.Cells[7].Value.ToString());
+                                    newReceiptDetails.PRICE_LBP = Int32.Parse(row.Cells[5].Value.ToString());
+                                    newReceiptDetails.TOTAL_PRICELBP = Int32.Parse(row.Cells[6].Value.ToString());
+                                    data.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
+
+                                }
+                                else
+                                {
+                                    int tmpqte = Int32.Parse(row.Cells[3].Value.ToString());
+                                    while (tmpqte > 0)
+                                    {
+                                        TBLEXPIREDDATE minExpDate = (from aj in ExpiredDateList orderby aj.ExpiredDate ascending select aj).First();
+                                        if(tmpqte < minExpDate.Qte)
+                                        {
+                                            minExpDate.Qte = minExpDate.Qte - tmpqte;
+                                        }
+                                        else
+                                        {
+                                            minExpDate.Qte = 0;
+                                            ExpiredDateList.Remove(minExpDate);
+                                            data.TBLEXPIREDDATEs.DeleteOnSubmit(minExpDate);
+                                        }
+                                        tmpqte = tmpqte- minExpDate.Qte;
+                                    }
+                                    TBLPRODUCT prod = (from aj in data.TBLPRODUCTs
+                                                       where aj.PID == product[0].PID
+                                                       select aj).Single();
+                                    prod.QTE = (from aj in ExpiredDateList where aj.ExpiredDate > DateTime.Today select aj.Qte).Sum(x => Convert.ToInt32(x));
+                                    //data.sp_insertNewReciptDetail(Int32.Parse(receipt_id.Text), product[0].PID, Int32.Parse(row.Cells[3].Value.ToString()), double.Parse(row.Cells[4].Value.ToString()), double.Parse(row.Cells[7].Value.ToString()), Int32.Parse(row.Cells[5].Value.ToString()), Int32.Parse(row.Cells[6].Value.ToString()));
+                                    var newReceiptDetails = new TBLRECEIPTS_DETAIL();
+                                    newReceiptDetails.RID = newReceipt.RID;
+                                    newReceiptDetails.PID = product[0].PID;
+                                    newReceiptDetails.QTE = Int32.Parse(row.Cells[3].Value.ToString());
+                                    newReceiptDetails.PRICE_Dollar = double.Parse(row.Cells[4].Value.ToString());
+                                    newReceiptDetails.TOTAL_PRICEDollar = double.Parse(row.Cells[7].Value.ToString());
+                                    newReceiptDetails.PRICE_LBP = Int32.Parse(row.Cells[5].Value.ToString());
+                                    newReceiptDetails.TOTAL_PRICELBP = Int32.Parse(row.Cells[6].Value.ToString());
+                                    data.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
+                                }
+                            }
+                            else
+                            {                               
                                 var newReceiptDetails = new TBLRECEIPTS_DETAIL();
                                 newReceiptDetails.RID = newReceipt.RID;
                                 newReceiptDetails.PID = product[0].PID;
@@ -191,8 +257,6 @@ namespace MiniGram.Controls
                         }
                         catch (Exception ex)
                         {
-                            //data.sp_deleteReceiptByBarcode(newBarcode);
-                            //data.sp_deleteReceiptDetailsByRID(Int32.Parse(receipt_id.Text));
                             MessageBox.Show("An Error Occured When Adding Receipt, Please Call Support !!");
                             Globals.isReceiptOpen = false;
                             receipt_details.Rows.Clear();
@@ -203,7 +267,7 @@ namespace MiniGram.Controls
                         }
                     }
                     data.SubmitChanges();
-                    DirectReceiptReportViewer drrv = new DirectReceiptReportViewer();
+                    DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType);
                     drrv.receiptID = newReceipt.RID;
                     drrv.ShowDialog();
                     receipt_details.Rows.Clear();
@@ -229,6 +293,7 @@ namespace MiniGram.Controls
                 }
             }
             Globals.isReceiptOpen = false;
+            this.Show();
         }
 
 

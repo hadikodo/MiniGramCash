@@ -17,18 +17,31 @@ namespace MiniGram.Forms
     {
         private MiniGramDBDataContext data = new MiniGramDBDataContext(Globals.ConnectionString);
         public int receiptID;
-        public DirectReceiptReportViewer()
+        private int type;
+        public DirectReceiptReportViewer(int type)
         {
+            this.type = type;
             InitializeComponent();
         }
 
         private void DirectReceiptReportViewer_Load(object sender, EventArgs e)
         {
             spselectReceiptsDetailsResultBindingSource.DataSource = data.sp_selectReceiptsDetails(receiptID);
-            this.reportViewer1.RefreshReport();
-            DirectPrintClass dpc = new DirectPrintClass();
-            dpc.Run(reportViewer1.LocalReport);
+            if (type == 1)
+            {               
+                this.reportViewerA4.RefreshReport();
+                DirectPrintClass dpc = new DirectPrintClass();
+                dpc.Run(reportViewerA4.LocalReport);
+            }
+            else if (type == 2)
+            {
+                this.reportViewerMini.RefreshReport();
+                DirectPrintClassMini dpc = new DirectPrintClassMini();
+                dpc.Run(reportViewerMini.LocalReport);
+            }
+
             this.Close();
+
         }
     }
 }

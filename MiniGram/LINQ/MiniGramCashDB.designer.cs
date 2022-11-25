@@ -42,12 +42,12 @@ namespace MiniGram.LINQ
     partial void InsertTBLRECEIPTS_DETAIL(TBLRECEIPTS_DETAIL instance);
     partial void UpdateTBLRECEIPTS_DETAIL(TBLRECEIPTS_DETAIL instance);
     partial void DeleteTBLRECEIPTS_DETAIL(TBLRECEIPTS_DETAIL instance);
+    partial void InsertTBLEXPIREDDATE(TBLEXPIREDDATE instance);
+    partial void UpdateTBLEXPIREDDATE(TBLEXPIREDDATE instance);
+    partial void DeleteTBLEXPIREDDATE(TBLEXPIREDDATE instance);
     partial void InsertTBLPRODUCT(TBLPRODUCT instance);
     partial void UpdateTBLPRODUCT(TBLPRODUCT instance);
     partial void DeleteTBLPRODUCT(TBLPRODUCT instance);
-    partial void InsertTblExpiredDate(TblExpiredDate instance);
-    partial void UpdateTblExpiredDate(TblExpiredDate instance);
-    partial void DeleteTblExpiredDate(TblExpiredDate instance);
     #endregion
 		
 		public MiniGramDBDataContext() : 
@@ -112,19 +112,19 @@ namespace MiniGram.LINQ
 			}
 		}
 		
+		public System.Data.Linq.Table<TBLEXPIREDDATE> TBLEXPIREDDATEs
+		{
+			get
+			{
+				return this.GetTable<TBLEXPIREDDATE>();
+			}
+		}
+		
 		public System.Data.Linq.Table<TBLPRODUCT> TBLPRODUCTs
 		{
 			get
 			{
 				return this.GetTable<TBLPRODUCT>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TblExpiredDate> TblExpiredDates
-		{
-			get
-			{
-				return this.GetTable<TblExpiredDate>();
 			}
 		}
 		
@@ -317,13 +317,6 @@ namespace MiniGram.LINQ
 			return ((ISingleResult<sp_getSupplierByNAMEResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getProductByName")]
-		public ISingleResult<sp_getProductByNameResult> sp_getProductByName([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string name)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name);
-			return ((ISingleResult<sp_getProductByNameResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateProduct")]
 		public int sp_UpdateProduct([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string barcode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qte, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> price, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> hasQuantity, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> sid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> hasExpiredDate)
 		{
@@ -335,6 +328,34 @@ namespace MiniGram.LINQ
 		public int sp_addNewProduct([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string barcode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qte, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> price, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> hasQuantity, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> sid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> hasExpiredDate)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, barcode, qte, price, hasQuantity, sid, hasExpiredDate);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getProductByName")]
+		public ISingleResult<sp_getProductByNameResult> sp_getProductByName([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string name)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name);
+			return ((ISingleResult<sp_getProductByNameResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getTotalOfExpiredDateQteByPID")]
+		public ISingleResult<sp_getTotalOfExpiredDateQteByPIDResult> sp_getTotalOfExpiredDateQteByPID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pid)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pid);
+			return ((ISingleResult<sp_getTotalOfExpiredDateQteByPIDResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getTotalOfExpiredDateQteByPName")]
+		public ISingleResult<sp_getTotalOfExpiredDateQteByPNameResult> sp_getTotalOfExpiredDateQteByPName([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string pname)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pname);
+			return ((ISingleResult<sp_getTotalOfExpiredDateQteByPNameResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateExpiredDateQte")]
+		public int sp_UpdateExpiredDateQte([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> expID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qte)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), expID, qte);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -1253,6 +1274,205 @@ namespace MiniGram.LINQ
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBLEXPIREDDATES")]
+	public partial class TBLEXPIREDDATE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _PID;
+		
+		private int _Qte;
+		
+		private System.Nullable<System.DateTime> _ExpiredDate;
+		
+		private System.Nullable<System.DateTime> _dateCreated;
+		
+		private EntityRef<TBLPRODUCT> _TBLPRODUCT;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnPIDChanging(int value);
+    partial void OnPIDChanged();
+    partial void OnQteChanging(int value);
+    partial void OnQteChanged();
+    partial void OnExpiredDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnExpiredDateChanged();
+    partial void OndateCreatedChanging(System.Nullable<System.DateTime> value);
+    partial void OndateCreatedChanged();
+    #endregion
+		
+		public TBLEXPIREDDATE()
+		{
+			this._TBLPRODUCT = default(EntityRef<TBLPRODUCT>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PID", DbType="Int NOT NULL")]
+		public int PID
+		{
+			get
+			{
+				return this._PID;
+			}
+			set
+			{
+				if ((this._PID != value))
+				{
+					if (this._TBLPRODUCT.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPIDChanging(value);
+					this.SendPropertyChanging();
+					this._PID = value;
+					this.SendPropertyChanged("PID");
+					this.OnPIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qte", DbType="Int NOT NULL")]
+		public int Qte
+		{
+			get
+			{
+				return this._Qte;
+			}
+			set
+			{
+				if ((this._Qte != value))
+				{
+					this.OnQteChanging(value);
+					this.SendPropertyChanging();
+					this._Qte = value;
+					this.SendPropertyChanged("Qte");
+					this.OnQteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpiredDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ExpiredDate
+		{
+			get
+			{
+				return this._ExpiredDate;
+			}
+			set
+			{
+				if ((this._ExpiredDate != value))
+				{
+					this.OnExpiredDateChanging(value);
+					this.SendPropertyChanging();
+					this._ExpiredDate = value;
+					this.SendPropertyChanged("ExpiredDate");
+					this.OnExpiredDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateCreated", DbType="DateTime")]
+		public System.Nullable<System.DateTime> dateCreated
+		{
+			get
+			{
+				return this._dateCreated;
+			}
+			set
+			{
+				if ((this._dateCreated != value))
+				{
+					this.OndateCreatedChanging(value);
+					this.SendPropertyChanging();
+					this._dateCreated = value;
+					this.SendPropertyChanged("dateCreated");
+					this.OndateCreatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLPRODUCT_TBLEXPIREDDATE", Storage="_TBLPRODUCT", ThisKey="PID", OtherKey="PID", IsForeignKey=true)]
+		public TBLPRODUCT TBLPRODUCT
+		{
+			get
+			{
+				return this._TBLPRODUCT.Entity;
+			}
+			set
+			{
+				TBLPRODUCT previousValue = this._TBLPRODUCT.Entity;
+				if (((previousValue != value) 
+							|| (this._TBLPRODUCT.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TBLPRODUCT.Entity = null;
+						previousValue.TBLEXPIREDDATEs.Remove(this);
+					}
+					this._TBLPRODUCT.Entity = value;
+					if ((value != null))
+					{
+						value.TBLEXPIREDDATEs.Add(this);
+						this._PID = value.PID;
+					}
+					else
+					{
+						this._PID = default(int);
+					}
+					this.SendPropertyChanged("TBLPRODUCT");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBLPRODUCTS")]
 	public partial class TBLPRODUCT : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1281,7 +1501,7 @@ namespace MiniGram.LINQ
 		
 		private EntitySet<TBLRECEIPTS_DETAIL> _TBLRECEIPTS_DETAILs;
 		
-		private EntitySet<TblExpiredDate> _TblExpiredDates;
+		private EntitySet<TBLEXPIREDDATE> _TBLEXPIREDDATEs;
 		
 		private EntityRef<TBLSUPPLIER> _TBLSUPPLIER;
 		
@@ -1314,7 +1534,7 @@ namespace MiniGram.LINQ
 		public TBLPRODUCT()
 		{
 			this._TBLRECEIPTS_DETAILs = new EntitySet<TBLRECEIPTS_DETAIL>(new Action<TBLRECEIPTS_DETAIL>(this.attach_TBLRECEIPTS_DETAILs), new Action<TBLRECEIPTS_DETAIL>(this.detach_TBLRECEIPTS_DETAILs));
-			this._TblExpiredDates = new EntitySet<TblExpiredDate>(new Action<TblExpiredDate>(this.attach_TblExpiredDates), new Action<TblExpiredDate>(this.detach_TblExpiredDates));
+			this._TBLEXPIREDDATEs = new EntitySet<TBLEXPIREDDATE>(new Action<TBLEXPIREDDATE>(this.attach_TBLEXPIREDDATEs), new Action<TBLEXPIREDDATE>(this.detach_TBLEXPIREDDATEs));
 			this._TBLSUPPLIER = default(EntityRef<TBLSUPPLIER>);
 			OnCreated();
 		}
@@ -1536,16 +1756,16 @@ namespace MiniGram.LINQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLPRODUCT_TblExpiredDate", Storage="_TblExpiredDates", ThisKey="PID", OtherKey="PID")]
-		public EntitySet<TblExpiredDate> TblExpiredDates
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLPRODUCT_TBLEXPIREDDATE", Storage="_TBLEXPIREDDATEs", ThisKey="PID", OtherKey="PID")]
+		public EntitySet<TBLEXPIREDDATE> TBLEXPIREDDATEs
 		{
 			get
 			{
-				return this._TblExpiredDates;
+				return this._TBLEXPIREDDATEs;
 			}
 			set
 			{
-				this._TblExpiredDates.Assign(value);
+				this._TBLEXPIREDDATEs.Assign(value);
 			}
 		}
 		
@@ -1615,191 +1835,16 @@ namespace MiniGram.LINQ
 			entity.TBLPRODUCT = null;
 		}
 		
-		private void attach_TblExpiredDates(TblExpiredDate entity)
+		private void attach_TBLEXPIREDDATEs(TBLEXPIREDDATE entity)
 		{
 			this.SendPropertyChanging();
 			entity.TBLPRODUCT = this;
 		}
 		
-		private void detach_TblExpiredDates(TblExpiredDate entity)
+		private void detach_TBLEXPIREDDATEs(TBLEXPIREDDATE entity)
 		{
 			this.SendPropertyChanging();
 			entity.TBLPRODUCT = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblExpiredDates")]
-	public partial class TblExpiredDate : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<int> _PID;
-		
-		private System.Nullable<System.DateTime> _ExpiredDate;
-		
-		private System.Nullable<System.DateTime> _DateCreated;
-		
-		private EntityRef<TBLPRODUCT> _TBLPRODUCT;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnPIDChanging(System.Nullable<int> value);
-    partial void OnPIDChanged();
-    partial void OnExpiredDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnExpiredDateChanged();
-    partial void OnDateCreatedChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateCreatedChanged();
-    #endregion
-		
-		public TblExpiredDate()
-		{
-			this._TBLPRODUCT = default(EntityRef<TBLPRODUCT>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PID", DbType="Int")]
-		public System.Nullable<int> PID
-		{
-			get
-			{
-				return this._PID;
-			}
-			set
-			{
-				if ((this._PID != value))
-				{
-					if (this._TBLPRODUCT.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPIDChanging(value);
-					this.SendPropertyChanging();
-					this._PID = value;
-					this.SendPropertyChanged("PID");
-					this.OnPIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpiredDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ExpiredDate
-		{
-			get
-			{
-				return this._ExpiredDate;
-			}
-			set
-			{
-				if ((this._ExpiredDate != value))
-				{
-					this.OnExpiredDateChanging(value);
-					this.SendPropertyChanging();
-					this._ExpiredDate = value;
-					this.SendPropertyChanged("ExpiredDate");
-					this.OnExpiredDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateCreated", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateCreated
-		{
-			get
-			{
-				return this._DateCreated;
-			}
-			set
-			{
-				if ((this._DateCreated != value))
-				{
-					this.OnDateCreatedChanging(value);
-					this.SendPropertyChanging();
-					this._DateCreated = value;
-					this.SendPropertyChanged("DateCreated");
-					this.OnDateCreatedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLPRODUCT_TblExpiredDate", Storage="_TBLPRODUCT", ThisKey="PID", OtherKey="PID", IsForeignKey=true)]
-		public TBLPRODUCT TBLPRODUCT
-		{
-			get
-			{
-				return this._TBLPRODUCT.Entity;
-			}
-			set
-			{
-				TBLPRODUCT previousValue = this._TBLPRODUCT.Entity;
-				if (((previousValue != value) 
-							|| (this._TBLPRODUCT.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TBLPRODUCT.Entity = null;
-						previousValue.TblExpiredDates.Remove(this);
-					}
-					this._TBLPRODUCT.Entity = value;
-					if ((value != null))
-					{
-						value.TblExpiredDates.Add(this);
-						this._PID = value.PID;
-					}
-					else
-					{
-						this._PID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TBLPRODUCT");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -3036,6 +3081,8 @@ namespace MiniGram.LINQ
 		
 		private System.Nullable<int> _SID;
 		
+		private System.Nullable<int> _HasExpiredDate;
+		
 		public sp_getProductByNameResult()
 		{
 		}
@@ -3180,6 +3227,74 @@ namespace MiniGram.LINQ
 				if ((this._SID != value))
 				{
 					this._SID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasExpiredDate", DbType="Int")]
+		public System.Nullable<int> HasExpiredDate
+		{
+			get
+			{
+				return this._HasExpiredDate;
+			}
+			set
+			{
+				if ((this._HasExpiredDate != value))
+				{
+					this._HasExpiredDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_getTotalOfExpiredDateQteByPIDResult
+	{
+		
+		private System.Nullable<int> _TotalQte;
+		
+		public sp_getTotalOfExpiredDateQteByPIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalQte", DbType="Int")]
+		public System.Nullable<int> TotalQte
+		{
+			get
+			{
+				return this._TotalQte;
+			}
+			set
+			{
+				if ((this._TotalQte != value))
+				{
+					this._TotalQte = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_getTotalOfExpiredDateQteByPNameResult
+	{
+		
+		private System.Nullable<int> _TotalQte;
+		
+		public sp_getTotalOfExpiredDateQteByPNameResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalQte", DbType="Int")]
+		public System.Nullable<int> TotalQte
+		{
+			get
+			{
+				return this._TotalQte;
+			}
+			set
+			{
+				if ((this._TotalQte != value))
+				{
+					this._TotalQte = value;
 				}
 			}
 		}
