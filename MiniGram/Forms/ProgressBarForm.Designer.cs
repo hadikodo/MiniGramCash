@@ -88,7 +88,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProgressBarForm";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.ProgressBarForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.progressBarAdv1)).EndInit();
             this.ResumeLayout(false);

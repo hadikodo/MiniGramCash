@@ -1,6 +1,7 @@
 ﻿using MiniGram.Classes;
 using MiniGram.Forms;
 using MiniGram.LINQ;
+using Syncfusion.PMML;
 using Syncfusion.Windows.Forms.Tools;
 using Syncfusion.WinForms.Controls;
 using System;
@@ -22,8 +23,10 @@ namespace MiniGram.Controls
         private TableLayoutPanel table;
         private int NewReceiptNumber;
         private string selectedProductName = "";
-        public POSUC()
+        private TBLRECEIPT receipt;
+        public POSUC(TBLRECEIPT receipt)
         {
+            this.receipt = receipt;
             InitializeComponent();
 
         }
@@ -34,21 +37,74 @@ namespace MiniGram.Controls
             data = new MiniGramDBDataContext(Globals.ConnectionString);
             try
             {
-                NewReceiptNumber = Int32.Parse(data.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString()) + 1;
+                if (receipt == null)
+                    NewReceiptNumber = Int32.Parse(data.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString()) + 1;
+                else
+                {
+                    NewReceiptNumber = receipt.RID;
+                    getExistingReceipt();
+                }
             }
             catch (Exception ex)
             {
-                NewReceiptNumber = 1;
+                NewReceiptNumber = 0;
             }
             receipt_id.Text = NewReceiptNumber.ToString();
             ActiveControl = search_txt;
         }
-
-
-        void test(TableLayoutPanel table)
+        
+        private void getExistingReceipt()
         {
-
+            Globals.isReceiptOpen = true;
+            List<int> productListIDs = (from aj in data.TBLHOLDDETAILs where aj.RID == receipt.RID select Int32.Parse(aj.PID.ToString())).ToList();
+            List < TBLPRODUCT > productList = (from aj in data.TBLPRODUCTs where productListIDs.Contains(aj.PID) select aj).ToList();
+            foreach(TBLPRODUCT product in productList)
+            {
+                try
+                {
+                    var holdItem = (from aj in data.TBLHOLDDETAILs where aj.PID == product.PID && aj.RID == receipt.RID select aj).Single();
+                    string pname = product.PNAME;
+                    int pid = data.sp_getProductByName(pname).ToList()[0].PID;
+                    double dollar = data.sp_getProductByName(pname).ToList()[0].PRICE.Value;
+                    string barcode = data.sp_getProductByName(pname).ToList()[0].BARCODE;
+                    string supplier = data.sp_getSupplierByID(data.sp_getProductByName(pname).ToList()[0].SID.Value).ToList()[0].SNAME;
+                    int lbp = Int32.Parse((dollar * double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
+                    bool exist = false;
+                    for (int i = 0; i < holdItem.QTE; i++)
+                    {
+                        foreach (DataGridViewRow row in receipt_details.Rows)
+                        {
+                            if (row.Cells[1].Value.Equals(pname))
+                            {
+                                exist = true;
+                                row.Cells[2].Value = supplier;
+                                row.Cells[3].Value = Int32.Parse(row.Cells[3].Value.ToString()) + 1;
+                                row.Cells[6].Value = Int32.Parse((double.Parse(row.Cells[3].Value.ToString()) * double.Parse(lbp.ToString())).ToString());
+                                row.Cells[7].Value = double.Parse(row.Cells[3].Value.ToString()) * dollar;
+                                tot_quantity.Text = getTotalQTE();
+                                tot_dollar.Text = getTotalDollar() + " $";
+                                tot_lbp.Text = getTotalLBP() + " LBP";
+                                break;
+                            }
+                        }
+                        if (!exist)
+                        {
+                            receipt_details.Rows.Add(barcode, pname, supplier, 1, dollar, lbp, lbp, dollar);
+                            tot_quantity.Text = getTotalQTE();
+                            tot_dollar.Text = getTotalDollar() + " $";
+                            tot_lbp.Text = getTotalLBP() + " LBP";
+                        }
+                        search_txt.Text = "";
+                        ActiveControl = search_txt;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error When Adding Items Please Contact Support!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
+
         public void refreshData(string str)
         {
             products_panel.Controls.Clear();
@@ -90,14 +146,18 @@ namespace MiniGram.Controls
 
         private string generateNewBarcode()
         {
-            Random random = new Random();
-            int newBarcode = random.Next(1000000, 9999999);
-            var check = data.sp_getReceiptByBarcode(newBarcode.ToString()).ToList();
-            if (check.Count > 0)
-                return generateNewBarcode();
-            else
-                return newBarcode.ToString();
+            if (receipt == null)
+            {
 
+                Random random = new Random();
+                int newBarcode = random.Next(1000, 9999999);
+                var check = data.sp_getReceiptByBarcode(newBarcode.ToString()).ToList();
+                if (check.Count > 0)
+                    return generateNewBarcode();
+                else
+                    return newBarcode.ToString();
+            }
+            else return receipt.RBARCODE;
         }
 
         private void checkout_btn_Click(object sender, EventArgs e)
@@ -111,16 +171,27 @@ namespace MiniGram.Controls
                 string newBarcode = generateNewBarcode();
                 try
                 {
-                    //data.sp_insertNewRecipt(newBarcode,Int32.Parse(tot_quantity.Text),double.Parse(tot_dollar.Text.Split(' ')[0]),Int32.Parse(tot_lbp.Text.Split(' ')[0]));
                     var newReceipt = new TBLRECEIPT();
-                    newReceipt.RBARCODE = newBarcode;
-                    newReceipt.RITEM_NB = Int32.Parse(tot_quantity.Text);
-                    newReceipt.TOTAL_AMOUNTDollar = double.Parse(tot_dollar.Text.Split(' ')[0]);
-                    newReceipt.TOTAL_AMOUNTLBP = Int32.Parse(tot_lbp.Text.Split(' ')[0]);
-                    newReceipt.RDATE = DateTime.Now;
-                    data.TBLRECEIPTs.InsertOnSubmit(newReceipt);
+                    if (receipt == null)
+                    {
+                        newReceipt.RBARCODE = newBarcode;
+                        newReceipt.RITEM_NB = Int32.Parse(tot_quantity.Text);
+                        newReceipt.TOTAL_AMOUNTDollar = double.Parse(tot_dollar.Text.Split(' ')[0]);
+                        newReceipt.TOTAL_AMOUNTLBP = Int32.Parse(tot_lbp.Text.Split(' ')[0]);
+                        newReceipt.RDATE = DateTime.Now;
+                        data.TBLRECEIPTs.InsertOnSubmit(newReceipt);
+                    }
+                    else
+                    {
+                        var r = (from aj in data.TBLRECEIPTs where aj.RID == receipt.RID select aj).Single();
+                        r.RITEM_NB = Int32.Parse(tot_quantity.Text);
+                        r.TOTAL_AMOUNTDollar = double.Parse(tot_dollar.Text.Split(' ')[0]);
+                        r.TOTAL_AMOUNTLBP = Int32.Parse(tot_lbp.Text.Split(' ')[0]);
+                        r.RDATE = DateTime.Now;
+                        r.isHold= false;
+                        newReceipt = r;
+                    }
                     data.SubmitChanges();
-
                     foreach (DataGridViewRow row in receipt_details.Rows)
                     {
                         try
@@ -131,20 +202,16 @@ namespace MiniGram.Controls
                                 if (Int32.Parse(product[0].QTE.ToString()) < Int32.Parse(row.Cells[3].Value.ToString()))
                                 {
                                     MessageBox.Show("You Have " + product[0].QTE + " Of Product Name : " + product[0].PNAME + "\nPlease Check Your Products !!");
-                                    //data.sp_deleteReceiptByBarcode(newBarcode);
-                                    //data.sp_deleteReceiptDetailsByRID(Int32.Parse(receipt_id.Text));
                                     search_txt.Text = "";
                                     ActiveControl = search_txt;
                                     return;
                                 }
                                 else if ((Int32.Parse(product[0].QTE.ToString()) == Int32.Parse(row.Cells[3].Value.ToString())))
                                 {
-                                    //data.sp_UpdateProductQuantity(product[0].PID, 0);
                                     TBLPRODUCT prod = (from aj in data.TBLPRODUCTs
                                                        where aj.PID == product[0].PID
                                                        select aj).Single();
-                                    prod.QTE = 0;
-                                    //data.sp_insertNewReciptDetail(Int32.Parse(receipt_id.Text), product[0].PID, Int32.Parse(row.Cells[3].Value.ToString()), double.Parse(row.Cells[4].Value.ToString()), double.Parse(row.Cells[7].Value.ToString()), Int32.Parse(row.Cells[5].Value.ToString()), Int32.Parse(row.Cells[6].Value.ToString()));
+                                    prod.QTE = 0;                                   
                                     var newReceiptDetails = new TBLRECEIPTS_DETAIL();
                                     newReceiptDetails.RID = newReceipt.RID;
                                     newReceiptDetails.PID = product[0].PID;
@@ -162,8 +229,7 @@ namespace MiniGram.Controls
                                     TBLPRODUCT prod = (from aj in data.TBLPRODUCTs
                                                        where aj.PID == product[0].PID
                                                        select aj).Single();
-                                    prod.QTE = product[0].QTE - Int32.Parse(row.Cells[3].Value.ToString());
-                                    //data.sp_insertNewReciptDetail(Int32.Parse(receipt_id.Text), product[0].PID, Int32.Parse(row.Cells[3].Value.ToString()), double.Parse(row.Cells[4].Value.ToString()), double.Parse(row.Cells[7].Value.ToString()), Int32.Parse(row.Cells[5].Value.ToString()), Int32.Parse(row.Cells[6].Value.ToString()));
+                                    prod.QTE = product[0].QTE - Int32.Parse(row.Cells[3].Value.ToString());                                   
                                     var newReceiptDetails = new TBLRECEIPTS_DETAIL();
                                     newReceiptDetails.RID = newReceipt.RID;
                                     newReceiptDetails.PID = product[0].PID;
@@ -183,8 +249,6 @@ namespace MiniGram.Controls
                                 if (totalQuantity < Int32.Parse(row.Cells[3].Value.ToString()))
                                 {
                                     MessageBox.Show("You Have " + totalQuantity + " Of Product Name : " + product[0].PNAME + "\nPlease Check Your Products !!");
-                                    //data.sp_deleteReceiptByBarcode(newBarcode);
-                                    //data.sp_deleteReceiptDetailsByRID(Int32.Parse(receipt_id.Text));
                                     search_txt.Text = "";
                                     ActiveControl = search_txt;
                                     return;
@@ -217,20 +281,20 @@ namespace MiniGram.Controls
                                         if(tmpqte < minExpDate.Qte)
                                         {
                                             minExpDate.Qte = minExpDate.Qte - tmpqte;
+                                            tmpqte = tmpqte - minExpDate.Qte;
                                         }
                                         else
                                         {
+                                            tmpqte = tmpqte - minExpDate.Qte;
                                             minExpDate.Qte = 0;
                                             ExpiredDateList.Remove(minExpDate);
                                             data.TBLEXPIREDDATEs.DeleteOnSubmit(minExpDate);
                                         }
-                                        tmpqte = tmpqte- minExpDate.Qte;
                                     }
                                     TBLPRODUCT prod = (from aj in data.TBLPRODUCTs
                                                        where aj.PID == product[0].PID
                                                        select aj).Single();
                                     prod.QTE = (from aj in ExpiredDateList where aj.ExpiredDate > DateTime.Today select aj.Qte).Sum(x => Convert.ToInt32(x));
-                                    //data.sp_insertNewReciptDetail(Int32.Parse(receipt_id.Text), product[0].PID, Int32.Parse(row.Cells[3].Value.ToString()), double.Parse(row.Cells[4].Value.ToString()), double.Parse(row.Cells[7].Value.ToString()), Int32.Parse(row.Cells[5].Value.ToString()), Int32.Parse(row.Cells[6].Value.ToString()));
                                     var newReceiptDetails = new TBLRECEIPTS_DETAIL();
                                     newReceiptDetails.RID = newReceipt.RID;
                                     newReceiptDetails.PID = product[0].PID;
@@ -293,9 +357,18 @@ namespace MiniGram.Controls
                 }
             }
             Globals.isReceiptOpen = false;
+            receipt = null;
             this.Show();
         }
 
+        private void CleareReceipt()
+        {
+            POSUC_Load(null, null);
+            receipt_details.Rows.Clear();
+            tot_lbp.Text = "0" + " LBP";
+            tot_dollar.Text = "0" + " $";
+            tot_quantity.Text = "0";
+        }
 
 
         private void AddNewButton(int i, int j, int c, int p, string str)
@@ -408,7 +481,7 @@ namespace MiniGram.Controls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error!!", "Error When Adding Items Please Contact Support!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error When Adding Items Please Contact Support!!", "Error !!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -540,6 +613,91 @@ namespace MiniGram.Controls
             {
                 add_btn_Click_1(add_btn, e);
             }
+        }
+
+        private void btnNewReceipt_Click(object sender, EventArgs e)
+        {
+            if (Globals.isReceiptOpen)
+            {
+                var dialogResult = MessageBox.Show("Their Are an Existing Receipt Opened, Do You Want To Hold it ??", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Globals.isReceiptOpen = true;
+                } 
+                else if(dialogResult == DialogResult.No)
+                {
+                    Globals.isReceiptOpen = false;
+                    CleareReceipt();
+                }
+                else
+                {
+                    
+                }
+                
+            }
+            else
+            {
+                Globals.isReceiptOpen = true;
+                CleareReceipt();
+                refreshData("");
+            }
+        }
+
+        private void btnHold_Click(object sender, EventArgs e)
+        {
+            using(var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+            {
+                if (MessageBox.Show("Are You Sure You Want To Hold This Receipt ??", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    string newBarcode = generateNewBarcode();
+                    if (receipt == null)
+                        NewReceiptNumber = Int32.Parse(data.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString()) + 1;
+                    else
+                    {
+                        NewReceiptNumber = receipt.RID;
+                    }
+                    var newReceipt = new TBLRECEIPT();
+                    if (receipt == null)
+                    {
+                        newReceipt.RBARCODE = newBarcode;
+                        newReceipt.RITEM_NB = Int32.Parse(tot_quantity.Text);
+                        newReceipt.TOTAL_AMOUNTDollar = double.Parse(tot_dollar.Text.Split(' ')[0]);
+                        newReceipt.TOTAL_AMOUNTLBP = Int32.Parse(tot_lbp.Text.Split(' ')[0]);
+                        newReceipt.RDATE = DateTime.Now;
+                        newReceipt.isHold = true;
+                        cnx.TBLRECEIPTs.InsertOnSubmit(newReceipt);
+                        cnx.SubmitChanges();
+                    }
+                    else
+                    {
+                        var r = (from aj in cnx.TBLRECEIPTs where aj.RID == receipt.RID select aj).Single();
+                        r.RITEM_NB = Int32.Parse(tot_quantity.Text);
+                        r.TOTAL_AMOUNTDollar = double.Parse(tot_dollar.Text.Split(' ')[0]);
+                        r.TOTAL_AMOUNTLBP = Int32.Parse(tot_lbp.Text.Split(' ')[0]);
+                        r.isHold = true;
+                        newReceipt = r;
+                    }
+
+                    foreach (DataGridViewRow row in receipt_details.Rows)
+                    {
+                        var product = cnx.sp_getProductByName(row.Cells[1].Value.ToString()).ToList();
+                        var newHoldDetails = new TBLHOLDDETAIL();
+                        newHoldDetails.RID = newReceipt.RID;
+                        newHoldDetails.PID = product[0].PID;
+                        newHoldDetails.QTE = Int32.Parse(row.Cells[3].Value.ToString());
+                        newHoldDetails.PRICE_Dollar = double.Parse(row.Cells[4].Value.ToString());
+                        newHoldDetails.TOTAL_PRICEDollar = double.Parse(row.Cells[7].Value.ToString());
+                        newHoldDetails.PRICE_LBP = Int32.Parse(row.Cells[5].Value.ToString());
+                        newHoldDetails.TOTAL_PRICELBP = Int32.Parse(row.Cells[6].Value.ToString());
+                        cnx.TBLHOLDDETAILs.InsertOnSubmit(newHoldDetails);
+
+                    }
+                    cnx.SubmitChanges();
+                    CleareReceipt();
+                    Globals.isReceiptOpen= false;
+                }
+            }
+
         }
     }
 }

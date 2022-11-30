@@ -79,6 +79,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Infragistics4.Win.DataVisualization.Barcode.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.DataVisualization.Shared.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.Portable.Core.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Microsoft.Data.Sqlite, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Sqlite.Core.7.0.0\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
     </Reference>
@@ -455,18 +458,39 @@
   <ItemGroup>
     <Compile Include="Classes\DirectPrintClass.cs" />
     <Compile Include="Classes\DirectPrintClassMini.cs" />
+    <Compile Include="Classes\ElipseClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\Globals.cs" />
+    <Compile Include="Controls\AboutUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AboutUC.Designer.cs">
+      <DependentUpon>AboutUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ConnectionSettingsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\ConnectionSettingsUC.Designer.cs">
       <DependentUpon>ConnectionSettingsUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DashboardUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DashboardUC.Designer.cs">
+      <DependentUpon>DashboardUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\GeneralSettingsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\GeneralSettingsUC.Designer.cs">
       <DependentUpon>GeneralSettingsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HoldListUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HoldListUC.Designer.cs">
+      <DependentUpon>HoldListUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\POSUC.cs">
       <SubType>UserControl</SubType>
@@ -570,6 +594,12 @@
     <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StratScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StratScreenForm.Designer.cs">
+      <DependentUpon>StratScreenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LINQ\MiniGramCashDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -594,11 +624,17 @@
       <DependentUpon>SupplierUC.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Controls\AboutUC.resx">
+      <DependentUpon>AboutUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ConnectionSettingsUC.resx">
       <DependentUpon>ConnectionSettingsUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\GeneralSettingsUC.resx">
       <DependentUpon>GeneralSettingsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HoldListUC.resx">
+      <DependentUpon>HoldListUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\POSUC.resx">
       <DependentUpon>POSUC.cs</DependentUpon>
@@ -647,6 +683,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReceiptDetails.resx">
       <DependentUpon>ReceiptDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StratScreenForm.resx">
+      <DependentUpon>StratScreenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Languages\en_local.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -807,6 +846,11 @@
     <None Include="Resources\unchecked.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\information.png" />
+    <None Include="Resources\waiting-list.png" />
+    <None Include="Resources\list.png" />
+    <None Include="Resources\seo-report.png" />
+    <None Include="Resources\new-document.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

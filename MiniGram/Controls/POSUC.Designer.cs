@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.products_panel = new System.Windows.Forms.Panel();
             this.search_panel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnHold = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnNewReceipt = new Syncfusion.WinForms.Controls.SfButton();
             this.keyboard_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.delete_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.change_quantity_btn = new Syncfusion.WinForms.Controls.SfButton();
@@ -119,16 +121,20 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 6;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnCount = 8;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.31029F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.57168F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.571682F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.25212F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.575272F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.575609F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.571682F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.571682F));
+            this.tableLayoutPanel2.Controls.Add(this.btnHold, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnNewReceipt, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.keyboard_btn, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.delete_btn, 5, 0);
-            this.tableLayoutPanel2.Controls.Add(this.change_quantity_btn, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.delete_btn, 7, 0);
+            this.tableLayoutPanel2.Controls.Add(this.change_quantity_btn, 6, 0);
             this.tableLayoutPanel2.Controls.Add(this.search_txt, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.add_btn, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -138,6 +144,80 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1018, 74);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // btnHold
+            // 
+            this.btnHold.AccessibleName = "Button";
+            this.btnHold.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnHold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHold.CanOverrideStyle = true;
+            this.btnHold.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHold.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHold.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHold.ForeColor = System.Drawing.Color.White;
+            this.btnHold.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHold.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.btnHold.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnHold.Location = new System.Drawing.Point(755, 0);
+            this.btnHold.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHold.Name = "btnHold";
+            this.btnHold.Size = new System.Drawing.Size(87, 74);
+            this.btnHold.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnHold.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnHold.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnHold.Style.ForeColor = System.Drawing.Color.White;
+            this.btnHold.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.btnHold.Style.HoverForeColor = System.Drawing.Color.White;
+            this.btnHold.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.btnHold.Style.Image = global::MiniGram.Properties.Resources.list;
+            this.btnHold.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.btnHold.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnHold.TabIndex = 23;
+            this.btnHold.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHold.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.btnHold.TextMargin = new System.Windows.Forms.Padding(0);
+            this.btnHold.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.btnHold, "Hold This Receipt");
+            this.btnHold.UseVisualStyleBackColor = true;
+            this.btnHold.Click += new System.EventHandler(this.btnHold_Click);
+            // 
+            // btnNewReceipt
+            // 
+            this.btnNewReceipt.AccessibleName = "Button";
+            this.btnNewReceipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnNewReceipt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNewReceipt.CanOverrideStyle = true;
+            this.btnNewReceipt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewReceipt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNewReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewReceipt.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewReceipt.ForeColor = System.Drawing.Color.White;
+            this.btnNewReceipt.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNewReceipt.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.btnNewReceipt.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnNewReceipt.Location = new System.Drawing.Point(668, 0);
+            this.btnNewReceipt.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNewReceipt.Name = "btnNewReceipt";
+            this.btnNewReceipt.Size = new System.Drawing.Size(87, 74);
+            this.btnNewReceipt.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnNewReceipt.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnNewReceipt.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnNewReceipt.Style.ForeColor = System.Drawing.Color.White;
+            this.btnNewReceipt.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.btnNewReceipt.Style.HoverForeColor = System.Drawing.Color.White;
+            this.btnNewReceipt.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.btnNewReceipt.Style.Image = global::MiniGram.Properties.Resources.new_document;
+            this.btnNewReceipt.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.btnNewReceipt.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnNewReceipt.TabIndex = 22;
+            this.btnNewReceipt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNewReceipt.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.btnNewReceipt.TextMargin = new System.Windows.Forms.Padding(0);
+            this.btnNewReceipt.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.btnNewReceipt, "New Receipt");
+            this.btnNewReceipt.UseVisualStyleBackColor = true;
+            this.btnNewReceipt.Click += new System.EventHandler(this.btnNewReceipt_Click);
             // 
             // keyboard_btn
             // 
@@ -153,10 +233,10 @@
             this.keyboard_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.keyboard_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.keyboard_btn.ImageSize = new System.Drawing.Size(60, 60);
-            this.keyboard_btn.Location = new System.Drawing.Point(315, 10);
+            this.keyboard_btn.Location = new System.Drawing.Point(288, 10);
             this.keyboard_btn.Margin = new System.Windows.Forms.Padding(10);
             this.keyboard_btn.Name = "keyboard_btn";
-            this.keyboard_btn.Size = new System.Drawing.Size(81, 54);
+            this.keyboard_btn.Size = new System.Drawing.Size(67, 54);
             this.keyboard_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.keyboard_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.keyboard_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -189,10 +269,10 @@
             this.delete_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.delete_btn.ImageMargin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.delete_btn.ImageSize = new System.Drawing.Size(60, 60);
-            this.delete_btn.Location = new System.Drawing.Point(913, 0);
+            this.delete_btn.Location = new System.Drawing.Point(929, 0);
             this.delete_btn.Margin = new System.Windows.Forms.Padding(0);
             this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(105, 74);
+            this.delete_btn.Size = new System.Drawing.Size(89, 74);
             this.delete_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.delete_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.delete_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -226,10 +306,10 @@
             this.change_quantity_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.change_quantity_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.change_quantity_btn.ImageSize = new System.Drawing.Size(60, 60);
-            this.change_quantity_btn.Location = new System.Drawing.Point(812, 0);
+            this.change_quantity_btn.Location = new System.Drawing.Point(842, 0);
             this.change_quantity_btn.Margin = new System.Windows.Forms.Padding(0);
             this.change_quantity_btn.Name = "change_quantity_btn";
-            this.change_quantity_btn.Size = new System.Drawing.Size(101, 74);
+            this.change_quantity_btn.Size = new System.Drawing.Size(87, 74);
             this.change_quantity_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.change_quantity_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.change_quantity_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -252,7 +332,7 @@
             // search_txt
             // 
             this.search_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.search_txt.BeforeTouchSize = new System.Drawing.Size(285, 40);
+            this.search_txt.BeforeTouchSize = new System.Drawing.Size(258, 40);
             this.search_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.search_txt.CanOverrideStyle = true;
@@ -267,7 +347,7 @@
             this.search_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.MinimumSize = new System.Drawing.Size(34, 30);
             this.search_txt.Name = "search_txt";
-            this.search_txt.Size = new System.Drawing.Size(285, 40);
+            this.search_txt.Size = new System.Drawing.Size(258, 40);
             this.search_txt.TabIndex = 17;
             this.search_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.search_txt.ThemeName = "Default";
@@ -300,10 +380,10 @@
             this.add_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.add_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.add_btn.ImageSize = new System.Drawing.Size(40, 40);
-            this.add_btn.Location = new System.Drawing.Point(416, 10);
+            this.add_btn.Location = new System.Drawing.Point(375, 10);
             this.add_btn.Margin = new System.Windows.Forms.Padding(10);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(81, 54);
+            this.add_btn.Size = new System.Drawing.Size(67, 54);
             this.add_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.add_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.add_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -340,14 +420,14 @@
             this.receipt_details.AllowUserToResizeRows = false;
             this.receipt_details.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.receipt_details.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.receipt_details.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.receipt_details.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.receipt_details.ColumnHeadersHeight = 40;
             this.receipt_details.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.receipt_details.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -360,14 +440,14 @@
             this.TotalLBP,
             this.TotalDollar});
             this.receipt_details.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.receipt_details.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.receipt_details.DefaultCellStyle = dataGridViewCellStyle2;
             this.receipt_details.Dock = System.Windows.Forms.DockStyle.Fill;
             this.receipt_details.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.receipt_details.Location = new System.Drawing.Point(0, 0);
@@ -375,13 +455,13 @@
             this.receipt_details.Name = "receipt_details";
             this.receipt_details.ReadOnly = true;
             this.receipt_details.RowHeadersWidth = 10;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.receipt_details.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.receipt_details.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.receipt_details.RowTemplate.Height = 35;
             this.receipt_details.RowTemplate.ReadOnly = true;
             this.receipt_details.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -715,5 +795,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalLBP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalDollar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private Syncfusion.WinForms.Controls.SfButton btnNewReceipt;
+        private Syncfusion.WinForms.Controls.SfButton btnHold;
     }
 }

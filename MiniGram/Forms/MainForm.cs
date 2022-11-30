@@ -46,7 +46,14 @@ namespace MiniGram
         }
         private void exit_btn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (Globals.isReceiptOpen)
+            {
+                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
 
         private void minimize_btn_Click(object sender, EventArgs e)
@@ -78,7 +85,7 @@ namespace MiniGram
             //MessageBox.Show("Trial Version Will End In " + day + " Days\nPlease Purchase The Full Version.", "Warning!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             currentWidth = panel55.Width;
 
-            new_receipt_btn_Click(new_receipt_btn, e);
+            btnDashboard_Click(null, null);
             //}
         }
 
@@ -121,13 +128,16 @@ namespace MiniGram
             }
         }
 
-        private void refreshColors()
+        public void refreshColors()
         {
             prices_btn.BackColor = Color.FromArgb(0, 63, 63);
             new_receipt_btn.BackColor = Color.FromArgb(0, 63, 63);
             receipt_btn.BackColor = Color.FromArgb(0, 63, 63);
             suppliers_btn.BackColor = Color.FromArgb(0, 63, 63);
             btnReports.BackColor = Color.FromArgb(0, 63, 63);
+            btnAbout.BackColor = Color.FromArgb(0, 63, 63);
+            btnHoldList.BackColor = Color.FromArgb(0, 63, 63);
+            btnDashboard.BackColor = Color.FromArgb(0, 63, 63);
         }
         public bool testConnection(string ConnString)
         {
@@ -151,24 +161,31 @@ namespace MiniGram
 
         private void new_receipt_btn_Click(object sender, EventArgs e)
         {
-            RunLoadingThread();
-            refreshColors();
-            new_receipt_btn.BackColor = Color.White;
-            title_lbl.Text = "New Receipt";
-            main_panel.Controls.Clear();
-            POSUC posuc = new POSUC();
-            posuc.Dock = DockStyle.Fill;
-            main_panel.Controls.Add(posuc);
-
-            if (!testConnection(Globals.ConnectionString))
+            if (Globals.isReceiptOpen)
             {
-                MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
-                SettingsForm sf = new SettingsForm();
-                sf.isConnTest = true;
-                sf.ShowDialog();
-                new_receipt_btn_Click(sender, e);
+                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            posuc.refreshData("");
+            else
+            {
+                RunLoadingThread();
+                refreshColors();
+                new_receipt_btn.BackColor = Color.White;
+                title_lbl.Text = "New Receipt";
+                main_panel.Controls.Clear();
+                POSUC posuc = new POSUC(null);
+                posuc.Dock = DockStyle.Fill;
+                main_panel.Controls.Add(posuc);
+
+                if (!testConnection(Globals.ConnectionString))
+                {
+                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                    SettingsForm sf = new SettingsForm();
+                    sf.isConnTest = true;
+                    sf.ShowDialog();
+                    new_receipt_btn_Click(sender, e);
+                }
+                posuc.refreshData("");
+            }
         }
 
         private async void receipt_btn_Click(object sender, EventArgs e)
@@ -273,13 +290,88 @@ namespace MiniGram
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            refreshColors();
-            btnReports.BackColor = Color.White;
-            title_lbl.Text = "Reports";
-            main_panel.Controls.Clear();
-            ReportsUC ruc = new ReportsUC();
-            ruc.Dock = DockStyle.Fill;
-            main_panel.Controls.Add(ruc);
+            if (Globals.isReceiptOpen)
+            {
+                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                refreshColors();
+                btnReports.BackColor = Color.White;
+                title_lbl.Text = "Reports";
+                main_panel.Controls.Clear();
+                ReportsUC ruc = new ReportsUC();
+                ruc.Dock = DockStyle.Fill;
+                main_panel.Controls.Add(ruc);
+            }
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            if (Globals.isReceiptOpen)
+            {
+                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                refreshColors();
+                btnAbout.BackColor = Color.White;
+                title_lbl.Text = "About Us";
+                main_panel.Controls.Clear();
+                AboutUC auc = new AboutUC();
+                auc.Dock = DockStyle.Fill;
+                main_panel.Controls.Add(auc);
+            }
+        }
+
+        private async void btnHoldList_Click(object sender, EventArgs e)
+        {
+            if (Globals.isReceiptOpen)
+            {
+                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                refreshColors();
+                btnHoldList.BackColor = Color.White;
+                title_lbl.Text = "Receipt Waiting List";
+                main_panel.Controls.Clear();
+                HoldListUC huc = new HoldListUC();
+                huc.Dock = DockStyle.Fill;
+                await Task.Run(() =>
+                {
+                    ProgressBarForm pbf = new ProgressBarForm(1);
+                    pbf.ShowDialog();
+                    if (!testConnection(Globals.ConnectionString))
+                    {
+                        MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                        SettingsForm sf = new SettingsForm();
+                        sf.isConnTest = true;
+                        sf.ShowDialog();
+                        btnHoldList_Click(sender, e);
+                    }
+                });
+                main_panel.Controls.Add(huc);
+                huc.refreshData();
+            }
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            if (Globals.isReceiptOpen)
+            {
+                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                refreshColors();
+                btnDashboard.BackColor = Color.White;
+                title_lbl.Text = "Dashboard";
+                main_panel.Controls.Clear();
+                DashboardUC duc = new DashboardUC();
+                duc.Dock = DockStyle.Fill;
+                main_panel.Controls.Add(duc);
+            }
         }
     }
 }

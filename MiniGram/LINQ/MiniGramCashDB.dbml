@@ -10,17 +10,6 @@
       <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TBLRECEIPTS" Member="TBLRECEIPTs">
-    <Type Name="TBLRECEIPT">
-      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="RITEM_NB" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TOTAL_AMOUNTDollar" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TOTAL_AMOUNTLBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="RBARCODE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Association Name="TBLRECEIPT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPTS_DETAILs" ThisKey="RID" OtherKey="RID" Type="TBLRECEIPTS_DETAIL" />
-    </Type>
-  </Table>
   <Table Name="dbo.TBLSUPPLIERS" Member="TBLSUPPLIERs">
     <Type Name="TBLSUPPLIER">
       <Column Name="SID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -42,8 +31,8 @@
       <Column Name="PRICE_LBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TOTAL_PRICEDollar" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="TOTAL_PRICELBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TBLRECEIPT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPT" ThisKey="RID" OtherKey="RID" Type="TBLRECEIPT" IsForeignKey="true" />
       <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL" Member="TBLPRODUCT" ThisKey="PID" OtherKey="PID" Type="TBLPRODUCT" IsForeignKey="true" />
+      <Association Name="TBLRECEIPT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPT" ThisKey="RID" OtherKey="RID" Type="TBLRECEIPT" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TBLEXPIREDDATES" Member="TBLEXPIREDDATEs">
@@ -70,7 +59,35 @@
       <Column Name="HasExpiredDate" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPTS_DETAILs" ThisKey="PID" OtherKey="PID" Type="TBLRECEIPTS_DETAIL" />
       <Association Name="TBLPRODUCT_TBLEXPIREDDATE" Member="TBLEXPIREDDATEs" ThisKey="PID" OtherKey="PID" Type="TBLEXPIREDDATE" />
+      <Association Name="TBLPRODUCT_TBLHOLDDETAIL" Member="TBLHOLDDETAILs" ThisKey="PID" OtherKey="PID" Type="TBLHOLDDETAIL" />
       <Association Name="TBLSUPPLIER_TBLPRODUCT" Member="TBLSUPPLIER" ThisKey="SID" OtherKey="SID" Type="TBLSUPPLIER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBLRECEIPTS" Member="TBLRECEIPTs">
+    <Type Name="TBLRECEIPT">
+      <Column Name="RID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RITEM_NB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOTAL_AMOUNTDollar" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TOTAL_AMOUNTLBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RBARCODE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="isHold" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TBLRECEIPT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPTS_DETAILs" ThisKey="RID" OtherKey="RID" Type="TBLRECEIPTS_DETAIL" />
+      <Association Name="TBLRECEIPT_TBLHOLDDETAIL" Member="TBLHOLDDETAILs" ThisKey="RID" OtherKey="RID" Type="TBLHOLDDETAIL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBLHOLDDETAILS" Member="TBLHOLDDETAILs">
+    <Type Name="TBLHOLDDETAIL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRICE_Dollar" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PRICE_LBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOTAL_PRICEDollar" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TOTAL_PRICELBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TBLRECEIPT_TBLHOLDDETAIL" Member="TBLRECEIPT" ThisKey="RID" OtherKey="RID" Type="TBLRECEIPT" IsForeignKey="true" />
+      <Association Name="TBLPRODUCT_TBLHOLDDETAIL" Member="TBLPRODUCT" ThisKey="PID" OtherKey="PID" Type="TBLPRODUCT" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.sp_addNewItem" Method="sp_addNewItem">
@@ -159,17 +176,6 @@
   <Function Name="dbo.sp_deleteReceiptDetailsByRID" Method="sp_deleteReceiptDetailsByRID">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_selectReceipts" Method="sp_selectReceipts">
-    <Parameter Name="str" Type="System.String" DbType="NVarChar(MAX)" />
-    <ElementType Name="sp_selectReceiptsResult">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="BARCODE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="NumberOfItem" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TotalDolarPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TotalLBPPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </ElementType>
   </Function>
   <Function Name="dbo.sp_getReceiptByID" Method="sp_getReceiptByID">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
@@ -325,6 +331,22 @@
   <Function Name="dbo.sp_UpdateExpiredDateQte" Method="sp_UpdateExpiredDateQte">
     <Parameter Name="expID" Type="System.Int32" DbType="Int" />
     <Parameter Name="qte" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_selectReceipts" Method="sp_selectReceipts">
+    <Parameter Name="str" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="sp_selectReceiptsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BARCODE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NumberOfItem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalDolarPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TotalLBPPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isHold" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_deleteHoldReceiptDetailsByRID" Method="sp_deleteHoldReceiptDetailsByRID">
+    <Parameter Name="rid" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

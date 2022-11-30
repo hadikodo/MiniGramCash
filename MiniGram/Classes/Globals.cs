@@ -13,8 +13,9 @@ namespace MiniGram.Classes
         public static bool isSearchVisible { get; set; }
         public static int deleteNB { get; set; }
         public static int qteChangeNB { get; set; }
-        public static bool isReceiptOpen { get; set; }
+        public static bool isReceiptOpen { get; set; } = false;
         public static bool isLoadingFinish { get; set; }
         public static string ConnectionString { get; set; }
+        public static MainForm mainForm { get; set; } = new MainForm();
     }
 }

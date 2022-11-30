@@ -30,21 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bARCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberOfItemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDolarPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalLBPPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Print = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ShowMore = new System.Windows.Forms.DataGridViewButtonColumn();
             this.spselectReceiptsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -53,6 +46,14 @@
             this.search_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.search_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bARCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberOfItemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDolarPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalLBPPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Print = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ShowMore = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -77,6 +78,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1018, 687);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // tableLayoutPanel3
             // 
@@ -92,6 +94,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 687F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1018, 687);
             this.tableLayoutPanel3.TabIndex = 1;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // panel3
             // 
@@ -101,6 +104,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1012, 681);
             this.panel3.TabIndex = 1;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // dataGridView1
             // 
@@ -122,7 +126,7 @@
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
+            this.ID,
             this.bARCODEDataGridViewTextBoxColumn,
             this.numberOfItemDataGridViewTextBoxColumn,
             this.totalDolarPriceDataGridViewTextBoxColumn,
@@ -132,27 +136,27 @@
             this.ShowMore});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.DataSource = this.spselectReceiptsResultBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 10;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 35;
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -160,75 +164,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(1012, 681);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bARCODEDataGridViewTextBoxColumn
-            // 
-            this.bARCODEDataGridViewTextBoxColumn.DataPropertyName = "BARCODE";
-            this.bARCODEDataGridViewTextBoxColumn.HeaderText = "BARCODE";
-            this.bARCODEDataGridViewTextBoxColumn.Name = "bARCODEDataGridViewTextBoxColumn";
-            this.bARCODEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numberOfItemDataGridViewTextBoxColumn
-            // 
-            this.numberOfItemDataGridViewTextBoxColumn.DataPropertyName = "NumberOfItem";
-            this.numberOfItemDataGridViewTextBoxColumn.HeaderText = "NumberOfItem";
-            this.numberOfItemDataGridViewTextBoxColumn.Name = "numberOfItemDataGridViewTextBoxColumn";
-            this.numberOfItemDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // totalDolarPriceDataGridViewTextBoxColumn
-            // 
-            this.totalDolarPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalDolarPrice";
-            this.totalDolarPriceDataGridViewTextBoxColumn.HeaderText = "TotalDolarPrice";
-            this.totalDolarPriceDataGridViewTextBoxColumn.Name = "totalDolarPriceDataGridViewTextBoxColumn";
-            this.totalDolarPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // totalLBPPriceDataGridViewTextBoxColumn
-            // 
-            this.totalLBPPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalLBPPrice";
-            this.totalLBPPriceDataGridViewTextBoxColumn.HeaderText = "TotalLBPPrice";
-            this.totalLBPPriceDataGridViewTextBoxColumn.Name = "totalLBPPriceDataGridViewTextBoxColumn";
-            this.totalLBPPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Print
-            // 
-            this.Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Print.HeaderText = "";
-            this.Print.Name = "Print";
-            this.Print.ReadOnly = true;
-            this.Print.Text = "Print";
-            this.Print.ToolTipText = "Direct Print This Receipt.";
-            this.Print.UseColumnTextForButtonValue = true;
-            // 
-            // ShowMore
-            // 
-            this.ShowMore.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ShowMore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShowMore.HeaderText = "";
-            this.ShowMore.Name = "ShowMore";
-            this.ShowMore.ReadOnly = true;
-            this.ShowMore.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ShowMore.Text = "Show More";
-            this.ShowMore.ToolTipText = "Show More Information About The Receipt.";
-            this.ShowMore.UseColumnTextForButtonValue = true;
             // 
             // spselectReceiptsResultBindingSource
             // 
             this.spselectReceiptsResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_selectReceiptsResult);
+            this.spselectReceiptsResultBindingSource.CurrentChanged += new System.EventHandler(this.spselectReceiptsResultBindingSource_CurrentChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -244,6 +186,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.2022F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 768);
             this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // panel1
             // 
@@ -253,6 +196,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1018, 69);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -271,6 +215,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1018, 69);
             this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // keyboard_btn
             // 
@@ -381,6 +326,76 @@
             this.search_txt.UseBorderColorOnFocus = true;
             this.search_txt.TextChanged += new System.EventHandler(this.search_txt_TextChanged);
             // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // bARCODEDataGridViewTextBoxColumn
+            // 
+            this.bARCODEDataGridViewTextBoxColumn.DataPropertyName = "BARCODE";
+            this.bARCODEDataGridViewTextBoxColumn.HeaderText = "BARCODE";
+            this.bARCODEDataGridViewTextBoxColumn.Name = "bARCODEDataGridViewTextBoxColumn";
+            this.bARCODEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numberOfItemDataGridViewTextBoxColumn
+            // 
+            this.numberOfItemDataGridViewTextBoxColumn.DataPropertyName = "NumberOfItem";
+            this.numberOfItemDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.numberOfItemDataGridViewTextBoxColumn.Name = "numberOfItemDataGridViewTextBoxColumn";
+            this.numberOfItemDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalDolarPriceDataGridViewTextBoxColumn
+            // 
+            this.totalDolarPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalDolarPrice";
+            this.totalDolarPriceDataGridViewTextBoxColumn.HeaderText = "Total $";
+            this.totalDolarPriceDataGridViewTextBoxColumn.Name = "totalDolarPriceDataGridViewTextBoxColumn";
+            this.totalDolarPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalLBPPriceDataGridViewTextBoxColumn
+            // 
+            this.totalLBPPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalLBPPrice";
+            this.totalLBPPriceDataGridViewTextBoxColumn.HeaderText = "Total LBP";
+            this.totalLBPPriceDataGridViewTextBoxColumn.Name = "totalLBPPriceDataGridViewTextBoxColumn";
+            this.totalLBPPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Print
+            // 
+            this.Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Print.HeaderText = "";
+            this.Print.Name = "Print";
+            this.Print.ReadOnly = true;
+            this.Print.Text = "Print";
+            this.Print.ToolTipText = "Direct Print This Receipt.";
+            this.Print.UseColumnTextForButtonValue = true;
+            // 
+            // ShowMore
+            // 
+            this.ShowMore.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ShowMore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowMore.HeaderText = "";
+            this.ShowMore.Name = "ShowMore";
+            this.ShowMore.ReadOnly = true;
+            this.ShowMore.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ShowMore.Text = "Show More";
+            this.ShowMore.ToolTipText = "Show More Information About The Receipt.";
+            this.ShowMore.UseColumnTextForButtonValue = true;
+            // 
             // ReceiptsUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,7 +432,9 @@
         private Syncfusion.WinForms.Controls.SfButton search_btn;
         private System.Windows.Forms.ToolTip toolTip1;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt search_txt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource spselectReceiptsResultBindingSource;
+        private Syncfusion.WinForms.Controls.SfButton keyboard_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn bARCODEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberOfItemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDolarPriceDataGridViewTextBoxColumn;
@@ -425,7 +442,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Print;
         private System.Windows.Forms.DataGridViewButtonColumn ShowMore;
-        private System.Windows.Forms.BindingSource spselectReceiptsResultBindingSource;
-        private Syncfusion.WinForms.Controls.SfButton keyboard_btn;
     }
 }

@@ -32,9 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.title_lbl = new System.Windows.Forms.Label();
             this.menu_toggle_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.panel55 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            this.btnDashboard = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnHoldList = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnAbout = new Syncfusion.WinForms.Controls.SfButton();
             this.btnReports = new Syncfusion.WinForms.Controls.SfButton();
             this.suppliers_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.receipt_btn = new Syncfusion.WinForms.Controls.SfButton();
@@ -73,6 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gradientPanel1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.Controls.Add(this.title_lbl);
             this.gradientPanel1.Controls.Add(this.menu_toggle_btn);
             this.gradientPanel1.Controls.Add(this.panel55);
@@ -81,6 +86,17 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(1333, 744);
             this.gradientPanel1.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(575, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 38);
+            this.label1.TabIndex = 9;
             // 
             // title_lbl
             // 
@@ -132,6 +148,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.panel55.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.panel55.Controls.Add(this.btnDashboard);
+            this.panel55.Controls.Add(this.btnHoldList);
+            this.panel55.Controls.Add(this.btnAbout);
             this.panel55.Controls.Add(this.btnReports);
             this.panel55.Controls.Add(this.suppliers_btn);
             this.panel55.Controls.Add(this.receipt_btn);
@@ -144,6 +163,105 @@
             this.panel55.Name = "panel55";
             this.panel55.Size = new System.Drawing.Size(1224, 75);
             this.panel55.TabIndex = 8;
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.AccessibleName = "Button";
+            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDashboard.CanOverrideStyle = true;
+            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnDashboard.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDashboard.ImageMargin = new System.Windows.Forms.Padding(5);
+            this.btnDashboard.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 0);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(75, 75);
+            this.btnDashboard.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnDashboard.Style.FocusedBackColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.Style.FocusedForeColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnDashboard.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnDashboard.Style.HoverForeColor = System.Drawing.Color.White;
+            this.btnDashboard.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.btnDashboard.Style.Image = global::MiniGram.Properties.Resources.dashboard;
+            this.btnDashboard.Style.PressedBackColor = System.Drawing.Color.White;
+            this.btnDashboard.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnDashboard.TabIndex = 20;
+            this.btnDashboard.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.btnDashboard, "Dashboard");
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // btnHoldList
+            // 
+            this.btnHoldList.AccessibleName = "Button";
+            this.btnHoldList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnHoldList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHoldList.CanOverrideStyle = true;
+            this.btnHoldList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHoldList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoldList.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoldList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnHoldList.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHoldList.ImageMargin = new System.Windows.Forms.Padding(5);
+            this.btnHoldList.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnHoldList.Location = new System.Drawing.Point(150, 0);
+            this.btnHoldList.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHoldList.Name = "btnHoldList";
+            this.btnHoldList.Size = new System.Drawing.Size(75, 75);
+            this.btnHoldList.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnHoldList.Style.FocusedBackColor = System.Drawing.Color.Transparent;
+            this.btnHoldList.Style.FocusedForeColor = System.Drawing.Color.Transparent;
+            this.btnHoldList.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnHoldList.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnHoldList.Style.HoverForeColor = System.Drawing.Color.White;
+            this.btnHoldList.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.btnHoldList.Style.Image = global::MiniGram.Properties.Resources.waiting_list;
+            this.btnHoldList.Style.PressedBackColor = System.Drawing.Color.White;
+            this.btnHoldList.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnHoldList.TabIndex = 19;
+            this.btnHoldList.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.btnHoldList, "Receipts Waiting List");
+            this.btnHoldList.UseVisualStyleBackColor = false;
+            this.btnHoldList.Click += new System.EventHandler(this.btnHoldList_Click);
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.AccessibleName = "Button";
+            this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAbout.CanOverrideStyle = true;
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnAbout.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAbout.ImageMargin = new System.Windows.Forms.Padding(5);
+            this.btnAbout.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnAbout.Location = new System.Drawing.Point(525, 0);
+            this.btnAbout.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(75, 75);
+            this.btnAbout.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnAbout.Style.FocusedBackColor = System.Drawing.Color.Transparent;
+            this.btnAbout.Style.FocusedForeColor = System.Drawing.Color.Transparent;
+            this.btnAbout.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnAbout.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnAbout.Style.HoverForeColor = System.Drawing.Color.White;
+            this.btnAbout.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.btnAbout.Style.Image = global::MiniGram.Properties.Resources.information;
+            this.btnAbout.Style.PressedBackColor = System.Drawing.Color.White;
+            this.btnAbout.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnAbout.TabIndex = 18;
+            this.btnAbout.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.btnAbout, "About Us");
+            this.btnAbout.UseVisualStyleBackColor = false;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // btnReports
             // 
@@ -158,7 +276,7 @@
             this.btnReports.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnReports.ImageMargin = new System.Windows.Forms.Padding(5);
             this.btnReports.ImageSize = new System.Drawing.Size(55, 55);
-            this.btnReports.Location = new System.Drawing.Point(300, 0);
+            this.btnReports.Location = new System.Drawing.Point(450, 0);
             this.btnReports.Margin = new System.Windows.Forms.Padding(0);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(75, 75);
@@ -169,7 +287,7 @@
             this.btnReports.Style.HoverBackColor = System.Drawing.Color.White;
             this.btnReports.Style.HoverForeColor = System.Drawing.Color.White;
             this.btnReports.Style.HoverImageForeColor = System.Drawing.Color.Empty;
-            this.btnReports.Style.Image = global::MiniGram.Properties.Resources.dashboard;
+            this.btnReports.Style.Image = global::MiniGram.Properties.Resources.seo_report;
             this.btnReports.Style.PressedBackColor = System.Drawing.Color.White;
             this.btnReports.Style.PressedForeColor = System.Drawing.Color.White;
             this.btnReports.TabIndex = 17;
@@ -191,7 +309,7 @@
             this.suppliers_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.suppliers_btn.ImageMargin = new System.Windows.Forms.Padding(5);
             this.suppliers_btn.ImageSize = new System.Drawing.Size(65, 65);
-            this.suppliers_btn.Location = new System.Drawing.Point(150, 0);
+            this.suppliers_btn.Location = new System.Drawing.Point(300, 0);
             this.suppliers_btn.Margin = new System.Windows.Forms.Padding(0);
             this.suppliers_btn.Name = "suppliers_btn";
             this.suppliers_btn.Size = new System.Drawing.Size(75, 75);
@@ -224,7 +342,7 @@
             this.receipt_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.receipt_btn.ImageMargin = new System.Windows.Forms.Padding(5);
             this.receipt_btn.ImageSize = new System.Drawing.Size(55, 55);
-            this.receipt_btn.Location = new System.Drawing.Point(75, 0);
+            this.receipt_btn.Location = new System.Drawing.Point(225, 0);
             this.receipt_btn.Margin = new System.Windows.Forms.Padding(0);
             this.receipt_btn.Name = "receipt_btn";
             this.receipt_btn.Size = new System.Drawing.Size(75, 75);
@@ -359,7 +477,7 @@
             this.new_receipt_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.new_receipt_btn.ImageMargin = new System.Windows.Forms.Padding(5);
             this.new_receipt_btn.ImageSize = new System.Drawing.Size(55, 55);
-            this.new_receipt_btn.Location = new System.Drawing.Point(0, 0);
+            this.new_receipt_btn.Location = new System.Drawing.Point(75, 0);
             this.new_receipt_btn.Margin = new System.Windows.Forms.Padding(0);
             this.new_receipt_btn.Name = "new_receipt_btn";
             this.new_receipt_btn.Size = new System.Drawing.Size(75, 75);
@@ -392,7 +510,7 @@
             this.prices_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.prices_btn.ImageMargin = new System.Windows.Forms.Padding(5);
             this.prices_btn.ImageSize = new System.Drawing.Size(55, 55);
-            this.prices_btn.Location = new System.Drawing.Point(225, 0);
+            this.prices_btn.Location = new System.Drawing.Point(375, 0);
             this.prices_btn.Margin = new System.Windows.Forms.Padding(0);
             this.prices_btn.Name = "prices_btn";
             this.prices_btn.Size = new System.Drawing.Size(75, 75);
@@ -476,19 +594,23 @@
         private Syncfusion.Windows.Forms.Tools.XPMenus.ParentBarItem parentBarItem1;
         private Syncfusion.WinForms.Controls.SfButton menu_toggle_btn;
         private Syncfusion.Windows.Forms.Tools.GradientPanel gradientPanel1;
-        private Syncfusion.Windows.Forms.Tools.GradientPanelExt main_panel;
         private Syncfusion.Windows.Forms.Tools.GradientPanel panel55;
         private System.Windows.Forms.Timer animationTimer;
-        private Syncfusion.WinForms.Controls.SfButton prices_btn;
-        private Syncfusion.WinForms.Controls.SfButton new_receipt_btn;
         private Syncfusion.WinForms.Controls.SfButton sett_btn;
         private Syncfusion.WinForms.Controls.SfButton exit_btn;
         private Syncfusion.WinForms.Controls.SfButton minimize_btn;
-        private Syncfusion.WinForms.Controls.SfButton receipt_btn;
-        private Syncfusion.WinForms.Controls.SfButton suppliers_btn;
         private System.Windows.Forms.Label title_lbl;
         private System.Windows.Forms.ToolTip toolTip1;
-        private Syncfusion.WinForms.Controls.SfButton btnReports;
+        private System.Windows.Forms.Label label1;
+        public Syncfusion.Windows.Forms.Tools.GradientPanelExt main_panel;
+        public Syncfusion.WinForms.Controls.SfButton prices_btn;
+        public Syncfusion.WinForms.Controls.SfButton new_receipt_btn;
+        public Syncfusion.WinForms.Controls.SfButton receipt_btn;
+        public Syncfusion.WinForms.Controls.SfButton suppliers_btn;
+        public Syncfusion.WinForms.Controls.SfButton btnReports;
+        public Syncfusion.WinForms.Controls.SfButton btnAbout;
+        public Syncfusion.WinForms.Controls.SfButton btnHoldList;
+        public Syncfusion.WinForms.Controls.SfButton btnDashboard;
     }
 }
 

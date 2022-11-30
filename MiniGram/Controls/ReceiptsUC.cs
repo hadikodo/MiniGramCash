@@ -65,13 +65,13 @@ namespace MiniGram.Controls
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == Print.Index)
             {
                 DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType);
                 drrv.receiptID = Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
                 drrv.Show();
             }
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == ShowMore.Index)
             {
                 ReceiptDetails rd = new ReceiptDetails(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
                 rd.refreshData();
@@ -85,7 +85,7 @@ namespace MiniGram.Controls
         {
             try
             {
-                spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts(search_txt.Text);
+                spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts(search_txt.Text).Where((aj)=> !aj.isHold);
                 dataGridView1.Refresh();
             }
             catch (Exception ex)
@@ -112,7 +112,7 @@ namespace MiniGram.Controls
         }
         public void refreshData()
         {
-            spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts("");
+            spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts("").Where((aj) => !aj.isHold);
             dataGridView1.Refresh();
         }
 
@@ -133,6 +133,51 @@ namespace MiniGram.Controls
             rd.ShowDialog();
             refreshData();
             search_txt.Text = "";
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void spselectReceiptsResultBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
