@@ -16,5 +16,24 @@ namespace MiniGram.Controls
         {
             InitializeComponent();
         }
+
+        private void ultraLiveTileView1_TileClick(object sender, Infragistics.Win.UltraWinLiveTileView.TileClickEventArgs e)
+        {
+            if (e.Tile.Key == "btnFacebook" ) {
+                System.Diagnostics.Process.Start("http://www.facebook.com/SuperTechlb");
+            }
+            else if (e.Tile.Key == "btnWhatsapp")
+            {
+                System.Diagnostics.Process.Start("https://wa.me/96181656286?text=Hello");
+            }
+            else if (e.Tile.Key == "btnInstagram")
+            {
+                System.Diagnostics.Process.Start("https://www.instagram.com/supertechlb/");
+            }
+            else if (e.Tile.Key == "btnEmail")
+            {
+                System.Diagnostics.Process.Start("mailto:supertechlebanon@gmail.com");
+            }
+        }
     }
 }

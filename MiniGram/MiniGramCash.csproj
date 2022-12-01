@@ -86,6 +86,7 @@
     <Reference Include="Infragistics4.Win.Misc.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.Portable.Core.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Win.UltraWinChart.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinListView.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinLiveTileView.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
@@ -864,6 +865,11 @@
     <None Include="Resources\seo-report.png" />
     <None Include="Resources\new-document.png" />
     <None Include="Resources\New video_4.gif" />
+    <None Include="Resources\Official Logo.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\facebook.png" />
+    <None Include="Resources\whatsapp.png" />
+    <None Include="Resources\instagram.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
