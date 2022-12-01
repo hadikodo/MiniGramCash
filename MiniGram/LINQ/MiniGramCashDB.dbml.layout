@@ -72,14 +72,14 @@
         <elementListCompartment Id="acdac998-aedf-498f-a460-47f8d33b6647" absoluteBounds="1.6400000000000001, 5.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 3.65549967447917); (2.5 : 5.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.5 : 3.65549967447917); (2.5 : 5.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MiniGramDBDataContext/TBLRECEIPT/TBLRECEIPT_TBLHOLDDETAIL" />
       <nodes>
         <classShapeMoniker Id="21f418c9-2b5f-419f-bd2a-a8900c42de80" />
         <classShapeMoniker Id="ff86e721-0522-4a90-97d4-4536d1562786" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.75 : 6.67390055338542); (3.625 : 6.67390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.75 : 6.67390055338542); (3.625 : 6.67390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MiniGramDBDataContext/TBLPRODUCT/TBLPRODUCT_TBLHOLDDETAIL" />
       <nodes>
         <classShapeMoniker Id="2cfff63f-35f6-493c-8728-245c379b8826" />

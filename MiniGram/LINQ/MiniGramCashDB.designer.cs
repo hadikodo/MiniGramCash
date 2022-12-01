@@ -376,6 +376,20 @@ namespace MiniGram.LINQ
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), rid);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getBestItems")]
+		public ISingleResult<sp_getBestItemsResult> sp_getBestItems([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> date)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), date);
+			return ((ISingleResult<sp_getBestItemsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getBestSuppliers")]
+		public ISingleResult<sp_getBestSuppliersResult> sp_getBestSuppliers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> date)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), date);
+			return ((ISingleResult<sp_getBestSuppliersResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBLITEMS")]
@@ -3723,6 +3737,94 @@ namespace MiniGram.LINQ
 				if ((this._isHold != value))
 				{
 					this._isHold = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_getBestItemsResult
+	{
+		
+		private string _PNAME;
+		
+		private System.Nullable<double> _TOTAL;
+		
+		public sp_getBestItemsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PNAME", DbType="NVarChar(100)")]
+		public string PNAME
+		{
+			get
+			{
+				return this._PNAME;
+			}
+			set
+			{
+				if ((this._PNAME != value))
+				{
+					this._PNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL", DbType="Float")]
+		public System.Nullable<double> TOTAL
+		{
+			get
+			{
+				return this._TOTAL;
+			}
+			set
+			{
+				if ((this._TOTAL != value))
+				{
+					this._TOTAL = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_getBestSuppliersResult
+	{
+		
+		private string _SNAME;
+		
+		private System.Nullable<double> _TOTAL;
+		
+		public sp_getBestSuppliersResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SNAME", DbType="NVarChar(50)")]
+		public string SNAME
+		{
+			get
+			{
+				return this._SNAME;
+			}
+			set
+			{
+				if ((this._SNAME != value))
+				{
+					this._SNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL", DbType="Float")]
+		public System.Nullable<double> TOTAL
+		{
+			get
+			{
+				return this._TOTAL;
+			}
+			set
+			{
+				if ((this._TOTAL != value))
+				{
+					this._TOTAL = value;
 				}
 			}
 		}

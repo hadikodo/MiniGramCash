@@ -349,4 +349,18 @@
     <Parameter Name="rid" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_getBestItems" Method="sp_getBestItems">
+    <Parameter Name="date" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_getBestItemsResult">
+      <Column Name="PNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TOTAL" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getBestSuppliers" Method="sp_getBestSuppliers">
+    <Parameter Name="date" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_getBestSuppliersResult">
+      <Column Name="SNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TOTAL" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

@@ -37,7 +37,6 @@
             this.search_panel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnHold = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnNewReceipt = new Syncfusion.WinForms.Controls.SfButton();
             this.keyboard_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.delete_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.change_quantity_btn = new Syncfusion.WinForms.Controls.SfButton();
@@ -131,7 +130,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.571682F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.571682F));
             this.tableLayoutPanel2.Controls.Add(this.btnHold, 5, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnNewReceipt, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.keyboard_btn, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.delete_btn, 7, 0);
             this.tableLayoutPanel2.Controls.Add(this.change_quantity_btn, 6, 0);
@@ -181,43 +179,6 @@
             this.toolTip1.SetToolTip(this.btnHold, "Hold This Receipt");
             this.btnHold.UseVisualStyleBackColor = true;
             this.btnHold.Click += new System.EventHandler(this.btnHold_Click);
-            // 
-            // btnNewReceipt
-            // 
-            this.btnNewReceipt.AccessibleName = "Button";
-            this.btnNewReceipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnNewReceipt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNewReceipt.CanOverrideStyle = true;
-            this.btnNewReceipt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNewReceipt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNewReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewReceipt.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewReceipt.ForeColor = System.Drawing.Color.White;
-            this.btnNewReceipt.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNewReceipt.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.btnNewReceipt.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnNewReceipt.Location = new System.Drawing.Point(668, 0);
-            this.btnNewReceipt.Margin = new System.Windows.Forms.Padding(0);
-            this.btnNewReceipt.Name = "btnNewReceipt";
-            this.btnNewReceipt.Size = new System.Drawing.Size(87, 74);
-            this.btnNewReceipt.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnNewReceipt.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnNewReceipt.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnNewReceipt.Style.ForeColor = System.Drawing.Color.White;
-            this.btnNewReceipt.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.btnNewReceipt.Style.HoverForeColor = System.Drawing.Color.White;
-            this.btnNewReceipt.Style.HoverImageForeColor = System.Drawing.Color.Empty;
-            this.btnNewReceipt.Style.Image = global::MiniGram.Properties.Resources.new_document;
-            this.btnNewReceipt.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.btnNewReceipt.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnNewReceipt.TabIndex = 22;
-            this.btnNewReceipt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNewReceipt.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.btnNewReceipt.TextMargin = new System.Windows.Forms.Padding(0);
-            this.btnNewReceipt.ThemeName = "Office2016Colorful";
-            this.toolTip1.SetToolTip(this.btnNewReceipt, "New Receipt");
-            this.btnNewReceipt.UseVisualStyleBackColor = true;
-            this.btnNewReceipt.Click += new System.EventHandler(this.btnNewReceipt_Click);
             // 
             // keyboard_btn
             // 
@@ -795,7 +756,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalLBP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalDollar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private Syncfusion.WinForms.Controls.SfButton btnNewReceipt;
         private Syncfusion.WinForms.Controls.SfButton btnHold;
     }
 }

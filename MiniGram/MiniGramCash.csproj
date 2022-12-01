@@ -79,9 +79,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Infragistics4.Shared.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Win.DataVisualization.Barcode.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.DataVisualization.Shared.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.DataVisualization.UltraDataChart.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Misc.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.Portable.Core.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinChart.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinListView.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinLiveTileView.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Microsoft.Data.Sqlite, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Sqlite.Core.7.0.0\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
     </Reference>
@@ -434,6 +441,7 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -630,6 +638,9 @@
     <EmbeddedResource Include="Controls\ConnectionSettingsUC.resx">
       <DependentUpon>ConnectionSettingsUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DashboardUC.resx">
+      <DependentUpon>DashboardUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\GeneralSettingsUC.resx">
       <DependentUpon>GeneralSettingsUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -698,6 +709,7 @@
     <EmbeddedResource Include="Controls\SupplierUC.resx">
       <DependentUpon>SupplierUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Reports\DirectReceiptReport.rdlc" />
     <EmbeddedResource Include="Reports\DirectReceiptReportMini.rdlc" />
     <None Include="LINQ\MiniGramCashDB.dbml.layout">
