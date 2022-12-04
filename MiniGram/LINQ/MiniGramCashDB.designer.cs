@@ -390,6 +390,34 @@ namespace MiniGram.LINQ
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), date);
 			return ((ISingleResult<sp_getBestSuppliersResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getAllExpiredDateProducts")]
+		public ISingleResult<sp_getAllExpiredDateProductsResult> sp_getAllExpiredDateProducts()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_getAllExpiredDateProductsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getDailyCashByDate")]
+		public ISingleResult<sp_getDailyCashByDateResult> sp_getDailyCashByDate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fromDate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> toDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fromDate, toDate);
+			return ((ISingleResult<sp_getDailyCashByDateResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getSalesProductCountByDate")]
+		public ISingleResult<sp_getSalesProductCountByDateResult> sp_getSalesProductCountByDate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fromDate, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> toDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fromDate, toDate);
+			return ((ISingleResult<sp_getSalesProductCountByDateResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getProductList")]
+		public ISingleResult<sp_getProductListResult> sp_getProductList()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_getProductListResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TBLITEMS")]
@@ -3825,6 +3853,380 @@ namespace MiniGram.LINQ
 				if ((this._TOTAL != value))
 				{
 					this._TOTAL = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_getAllExpiredDateProductsResult
+	{
+		
+		private string _BARCODE;
+		
+		private string _PNAME;
+		
+		private string _SNAME;
+		
+		private int _Qte;
+		
+		private System.Nullable<System.DateTime> _ExpiredDate;
+		
+		public sp_getAllExpiredDateProductsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BARCODE", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string BARCODE
+		{
+			get
+			{
+				return this._BARCODE;
+			}
+			set
+			{
+				if ((this._BARCODE != value))
+				{
+					this._BARCODE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PNAME", DbType="NVarChar(100)")]
+		public string PNAME
+		{
+			get
+			{
+				return this._PNAME;
+			}
+			set
+			{
+				if ((this._PNAME != value))
+				{
+					this._PNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SNAME", DbType="NVarChar(50)")]
+		public string SNAME
+		{
+			get
+			{
+				return this._SNAME;
+			}
+			set
+			{
+				if ((this._SNAME != value))
+				{
+					this._SNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qte", DbType="Int NOT NULL")]
+		public int Qte
+		{
+			get
+			{
+				return this._Qte;
+			}
+			set
+			{
+				if ((this._Qte != value))
+				{
+					this._Qte = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpiredDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ExpiredDate
+		{
+			get
+			{
+				return this._ExpiredDate;
+			}
+			set
+			{
+				if ((this._ExpiredDate != value))
+				{
+					this._ExpiredDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_getDailyCashByDateResult
+	{
+		
+		private string _RBARCODE;
+		
+		private System.Nullable<int> _RITEM_NB;
+		
+		private System.Nullable<double> _TOTAL_AMOUNTDollar;
+		
+		private System.Nullable<int> _TOTAL_AMOUNTLBP;
+		
+		private System.Nullable<System.DateTime> _RDATE;
+		
+		public sp_getDailyCashByDateResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RBARCODE", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string RBARCODE
+		{
+			get
+			{
+				return this._RBARCODE;
+			}
+			set
+			{
+				if ((this._RBARCODE != value))
+				{
+					this._RBARCODE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RITEM_NB", DbType="Int")]
+		public System.Nullable<int> RITEM_NB
+		{
+			get
+			{
+				return this._RITEM_NB;
+			}
+			set
+			{
+				if ((this._RITEM_NB != value))
+				{
+					this._RITEM_NB = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL_AMOUNTDollar", DbType="Float")]
+		public System.Nullable<double> TOTAL_AMOUNTDollar
+		{
+			get
+			{
+				return this._TOTAL_AMOUNTDollar;
+			}
+			set
+			{
+				if ((this._TOTAL_AMOUNTDollar != value))
+				{
+					this._TOTAL_AMOUNTDollar = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL_AMOUNTLBP", DbType="Int")]
+		public System.Nullable<int> TOTAL_AMOUNTLBP
+		{
+			get
+			{
+				return this._TOTAL_AMOUNTLBP;
+			}
+			set
+			{
+				if ((this._TOTAL_AMOUNTLBP != value))
+				{
+					this._TOTAL_AMOUNTLBP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> RDATE
+		{
+			get
+			{
+				return this._RDATE;
+			}
+			set
+			{
+				if ((this._RDATE != value))
+				{
+					this._RDATE = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_getSalesProductCountByDateResult
+	{
+		
+		private string _BARCODE;
+		
+		private string _PNAME;
+		
+		private System.Nullable<int> _NUM;
+		
+		public sp_getSalesProductCountByDateResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BARCODE", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string BARCODE
+		{
+			get
+			{
+				return this._BARCODE;
+			}
+			set
+			{
+				if ((this._BARCODE != value))
+				{
+					this._BARCODE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PNAME", DbType="NVarChar(100)")]
+		public string PNAME
+		{
+			get
+			{
+				return this._PNAME;
+			}
+			set
+			{
+				if ((this._PNAME != value))
+				{
+					this._PNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM", DbType="Int")]
+		public System.Nullable<int> NUM
+		{
+			get
+			{
+				return this._NUM;
+			}
+			set
+			{
+				if ((this._NUM != value))
+				{
+					this._NUM = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_getProductListResult
+	{
+		
+		private string _BARCODE;
+		
+		private string _PNAME;
+		
+		private string _SNAME;
+		
+		private System.Nullable<double> _PRICE;
+		
+		private System.Nullable<bool> _HasQuantity;
+		
+		private System.Nullable<int> _HasExpiredDate;
+		
+		public sp_getProductListResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BARCODE", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string BARCODE
+		{
+			get
+			{
+				return this._BARCODE;
+			}
+			set
+			{
+				if ((this._BARCODE != value))
+				{
+					this._BARCODE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PNAME", DbType="NVarChar(100)")]
+		public string PNAME
+		{
+			get
+			{
+				return this._PNAME;
+			}
+			set
+			{
+				if ((this._PNAME != value))
+				{
+					this._PNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SNAME", DbType="NVarChar(50)")]
+		public string SNAME
+		{
+			get
+			{
+				return this._SNAME;
+			}
+			set
+			{
+				if ((this._SNAME != value))
+				{
+					this._SNAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE", DbType="Float")]
+		public System.Nullable<double> PRICE
+		{
+			get
+			{
+				return this._PRICE;
+			}
+			set
+			{
+				if ((this._PRICE != value))
+				{
+					this._PRICE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasQuantity", DbType="Bit")]
+		public System.Nullable<bool> HasQuantity
+		{
+			get
+			{
+				return this._HasQuantity;
+			}
+			set
+			{
+				if ((this._HasQuantity != value))
+				{
+					this._HasQuantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HasExpiredDate", DbType="Int")]
+		public System.Nullable<int> HasExpiredDate
+		{
+			get
+			{
+				return this._HasExpiredDate;
+			}
+			set
+			{
+				if ((this._HasExpiredDate != value))
+				{
+					this._HasExpiredDate = value;
 				}
 			}
 		}

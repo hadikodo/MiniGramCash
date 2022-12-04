@@ -363,4 +363,43 @@
       <Column Name="TOTAL" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_getAllExpiredDateProducts" Method="sp_getAllExpiredDateProducts">
+    <ElementType Name="sp_getAllExpiredDateProductsResult">
+      <Column Name="BARCODE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Qte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExpiredDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getDailyCashByDate" Method="sp_getDailyCashByDate">
+    <Parameter Name="fromDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="toDate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_getDailyCashByDateResult">
+      <Column Name="RBARCODE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="RITEM_NB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOTAL_AMOUNTDollar" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TOTAL_AMOUNTLBP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getSalesProductCountByDate" Method="sp_getSalesProductCountByDate">
+    <Parameter Name="fromDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="toDate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_getSalesProductCountByDateResult">
+      <Column Name="BARCODE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NUM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getProductList" Method="sp_getProductList">
+    <ElementType Name="sp_getProductListResult">
+      <Column Name="BARCODE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HasQuantity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HasExpiredDate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
