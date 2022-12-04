@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.spgetSalesProductCountByDateResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.spgetSalesProductCountByDateResultBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // spgetSalesProductCountByDateResultBindingSource
+            // 
+            this.spgetSalesProductCountByDateResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_getSalesProductCountByDateResult);
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.spgetSalesProductCountByDateResultBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.spgetSalesProductCountByDateResultBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "MiniGram.Reports.rptSalesProductCountByDate.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1024, 768);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // spgetSalesProductCountByDateResultBindingSource
-            // 
-            this.spgetSalesProductCountByDateResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_getSalesProductCountByDateResult);
             // 
             // ProductsCountOfSalesByDateUC
             // 
@@ -67,8 +67,7 @@
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource spgetSalesProductCountByDateResultBindingSource;
+        public Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

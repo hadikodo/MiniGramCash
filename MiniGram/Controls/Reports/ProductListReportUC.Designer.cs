@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.spgetProductListResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.spgetProductListResultBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // spgetProductListResultBindingSource
+            // 
+            this.spgetProductListResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_getProductListResult);
             // 
             // reportViewer1
             // 
@@ -49,10 +53,6 @@
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // spgetProductListResultBindingSource
-            // 
-            this.spgetProductListResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_getProductListResult);
-            // 
             // ProductListReportUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -67,8 +67,7 @@
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource spgetProductListResultBindingSource;
+        public Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

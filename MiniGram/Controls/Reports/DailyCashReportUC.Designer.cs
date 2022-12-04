@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.spgetDailyCashByDateResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.spgetDailyCashByDateResultBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // spgetDailyCashByDateResultBindingSource
+            // 
+            this.spgetDailyCashByDateResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_getDailyCashByDateResult);
             // 
             // reportViewer1
             // 
@@ -47,10 +51,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1024, 768);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // spgetDailyCashByDateResultBindingSource
-            // 
-            this.spgetDailyCashByDateResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_getDailyCashByDateResult);
             // 
             // DailyCashReportUC
             // 
@@ -67,8 +67,7 @@
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource spgetDailyCashByDateResultBindingSource;
+        public Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

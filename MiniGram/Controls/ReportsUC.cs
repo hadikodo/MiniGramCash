@@ -1,4 +1,6 @@
-﻿using MiniGram.Controls.Reports;
+﻿using Microsoft.Reporting.WinForms;
+using MiniGram.Classes;
+using MiniGram.Controls.Reports;
 using MiniGram.LINQ;
 using Syncfusion.Windows.Forms.Tools;
 using System;
@@ -17,6 +19,7 @@ namespace MiniGram.Controls
     {
 
         private Dictionary<int, string> ReportsDict; 
+        private LocalReport report = new LocalReport();
         public ReportsUC()
         {
             InitializeComponent();
@@ -72,6 +75,7 @@ namespace MiniGram.Controls
                 ProductsExpDateReportUC productsExpDateReportUC = new ProductsExpDateReportUC();
                 productsExpDateReportUC.Dock = DockStyle.Fill;
                 switchControl(productsExpDateReportUC);
+                report = productsExpDateReportUC.reportViewer1.LocalReport;
             }
             else if (cboxReportType.SelectedValue.Equals(2))
             {
@@ -82,6 +86,7 @@ namespace MiniGram.Controls
                 mainTable.ColumnStyles[1].Width = 250;
                 mainTable.ColumnStyles[2].SizeType = SizeType.Absolute;
                 mainTable.ColumnStyles[2].Width = 250;
+                report = dailyCashReport.reportViewer1.LocalReport;
             }
             else if (cboxReportType.SelectedValue.Equals(3))
             {
@@ -92,6 +97,7 @@ namespace MiniGram.Controls
                 mainTable.ColumnStyles[1].Width = 250;
                 mainTable.ColumnStyles[2].SizeType = SizeType.Absolute;
                 mainTable.ColumnStyles[2].Width = 250;
+                report = salesByDateUC.reportViewer1.LocalReport;
             }
             else if (cboxReportType.SelectedValue.Equals(4))
             {
@@ -117,6 +123,7 @@ namespace MiniGram.Controls
                 panelSupplier.Visible = true;
                 panelHasQte.Visible = true;
                 panelHasExpDate.Visible = true;
+                report = productList.reportViewer1.LocalReport;
             }
         }
 
@@ -148,6 +155,20 @@ namespace MiniGram.Controls
         private void txtSupplier_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DirectPrintClass dpc = new DirectPrintClass();
+                dpc.Run(report);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Can't Print This Report, Please Contact Support !!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }
