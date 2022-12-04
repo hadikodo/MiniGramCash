@@ -39,7 +39,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::MiniGram.Properties.Resources.New_video_4;
+            this.pictureBox1.Image = global::MiniGram.Properties.Resources.startScreenVideo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(640, 350);
@@ -49,7 +49,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 7000;
+            this.timer1.Interval = 4000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label1

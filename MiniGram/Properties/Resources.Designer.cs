@@ -293,16 +293,6 @@ namespace MiniGram.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap New_video_4 {
-            get {
-                object obj = ResourceManager.GetObject("New_video_4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap off {
             get {
                 object obj = ResourceManager.GetObject("off", resourceCulture);
@@ -446,6 +436,16 @@ namespace MiniGram.Properties {
         internal static System.Drawing.Bitmap stand {
             get {
                 object obj = ResourceManager.GetObject("stand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap startScreenVideo {
+            get {
+                object obj = ResourceManager.GetObject("startScreenVideo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
