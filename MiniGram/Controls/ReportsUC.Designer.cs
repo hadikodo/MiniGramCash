@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -43,6 +43,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mainTable = new System.Windows.Forms.TableLayoutPanel();
+            this.btnPrint = new Syncfusion.WinForms.Controls.SfButton();
             this.panelHasExpDate = new System.Windows.Forms.Panel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.chkHasExpDate = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
@@ -63,6 +64,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBarcode = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new Syncfusion.WinForms.Controls.SfButton();
             this.panelToDate = new System.Windows.Forms.Panel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.dtpTo = new Syncfusion.WinForms.Input.SfDateTimeEdit();
@@ -76,8 +78,6 @@
             this.cboxReportType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnPrint = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnRefresh = new Syncfusion.WinForms.Controls.SfButton();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -203,6 +203,40 @@
             this.mainTable.Size = new System.Drawing.Size(1594, 69);
             this.mainTable.TabIndex = 0;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.AccessibleName = "Button";
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPrint.CanOverrideStyle = true;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnPrint.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPrint.ImageMargin = new System.Windows.Forms.Padding(5);
+            this.btnPrint.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnPrint.Location = new System.Drawing.Point(1444, 0);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 69);
+            this.btnPrint.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnPrint.Style.FocusedBackColor = System.Drawing.Color.Transparent;
+            this.btnPrint.Style.FocusedForeColor = System.Drawing.Color.Transparent;
+            this.btnPrint.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnPrint.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.btnPrint.Style.HoverForeColor = System.Drawing.Color.White;
+            this.btnPrint.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.btnPrint.Style.Image = global::MiniGram.Properties.Resources.printer;
+            this.btnPrint.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.btnPrint.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnPrint.TabIndex = 25;
+            this.btnPrint.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.btnPrint, "Print Report");
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // panelHasExpDate
             // 
             this.panelHasExpDate.Controls.Add(this.tableLayoutPanel10);
@@ -235,18 +269,18 @@
             this.chkHasExpDate.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Flat;
             this.chkHasExpDate.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkHasExpDate.Checked = true;
-            appearance8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            appearance8.Cursor = System.Windows.Forms.Cursors.Hand;
-            appearance8.ForeColor = System.Drawing.Color.White;
-            this.chkHasExpDate.CheckedAppearance = appearance8;
+            appearance1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance1.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance1.ForeColor = System.Drawing.Color.White;
+            this.chkHasExpDate.CheckedAppearance = appearance1;
             this.chkHasExpDate.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.chkHasExpDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            appearance9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.chkHasExpDate.HotTrackingAppearance = appearance9;
-            appearance10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            appearance10.Cursor = System.Windows.Forms.Cursors.Hand;
-            appearance10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.chkHasExpDate.IndeterminateAppearance = appearance10;
+            appearance2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.chkHasExpDate.HotTrackingAppearance = appearance2;
+            appearance3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance3.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.chkHasExpDate.IndeterminateAppearance = appearance3;
             this.chkHasExpDate.Location = new System.Drawing.Point(3, 34);
             this.chkHasExpDate.Name = "chkHasExpDate";
             this.chkHasExpDate.Size = new System.Drawing.Size(138, 26);
@@ -296,34 +330,34 @@
             // 
             // chkHasQte
             // 
-            appearance11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            appearance11.Cursor = System.Windows.Forms.Cursors.Hand;
-            appearance11.FontData.SizeInPoints = 30F;
-            appearance11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.chkHasQte.Appearance = appearance11;
+            appearance4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance4.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance4.FontData.SizeInPoints = 30F;
+            appearance4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.chkHasQte.Appearance = appearance4;
             this.chkHasQte.AutoSize = true;
             this.chkHasQte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.chkHasQte.BackColorInternal = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.chkHasQte.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Flat;
             this.chkHasQte.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkHasQte.Checked = true;
-            appearance12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            appearance12.Cursor = System.Windows.Forms.Cursors.Hand;
-            appearance12.FontData.SizeInPoints = 15F;
-            appearance12.ForeColor = System.Drawing.Color.White;
-            this.chkHasQte.CheckedAppearance = appearance12;
+            appearance5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance5.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance5.FontData.SizeInPoints = 15F;
+            appearance5.ForeColor = System.Drawing.Color.White;
+            this.chkHasQte.CheckedAppearance = appearance5;
             this.chkHasQte.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.chkHasQte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkHasQte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chkHasQte.GlyphInfo = Infragistics.Win.UIElementDrawParams.StandardCheckBoxGlyphInfo;
-            appearance13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            appearance13.Cursor = System.Windows.Forms.Cursors.Hand;
-            appearance13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.chkHasQte.HotTrackingAppearance = appearance13;
-            appearance14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            appearance14.Cursor = System.Windows.Forms.Cursors.Hand;
-            appearance14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.chkHasQte.IndeterminateAppearance = appearance14;
+            appearance6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance6.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.chkHasQte.HotTrackingAppearance = appearance6;
+            appearance7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance7.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.chkHasQte.IndeterminateAppearance = appearance7;
             this.chkHasQte.Location = new System.Drawing.Point(3, 34);
             this.chkHasQte.Name = "chkHasQte";
             this.chkHasQte.Size = new System.Drawing.Size(138, 26);
@@ -497,6 +531,40 @@
             this.txtBarcode.TabIndex = 2;
             this.txtBarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.AccessibleName = "Button";
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRefresh.CanOverrideStyle = true;
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnRefresh.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRefresh.ImageMargin = new System.Windows.Forms.Padding(5);
+            this.btnRefresh.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnRefresh.Location = new System.Drawing.Point(1519, 0);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 69);
+            this.btnRefresh.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnRefresh.Style.FocusedBackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.Style.FocusedForeColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnRefresh.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.btnRefresh.Style.HoverForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.btnRefresh.Style.Image = global::MiniGram.Properties.Resources.refresh;
+            this.btnRefresh.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.btnRefresh.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnRefresh.TabIndex = 19;
+            this.btnRefresh.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.btnRefresh, "Refresh Data");
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // panelToDate
             // 
@@ -688,74 +756,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Report Type";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.AccessibleName = "Button";
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPrint.CanOverrideStyle = true;
-            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnPrint.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPrint.ImageMargin = new System.Windows.Forms.Padding(5);
-            this.btnPrint.ImageSize = new System.Drawing.Size(55, 55);
-            this.btnPrint.Location = new System.Drawing.Point(1444, 0);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 69);
-            this.btnPrint.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnPrint.Style.FocusedBackColor = System.Drawing.Color.Transparent;
-            this.btnPrint.Style.FocusedForeColor = System.Drawing.Color.Transparent;
-            this.btnPrint.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnPrint.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.btnPrint.Style.HoverForeColor = System.Drawing.Color.White;
-            this.btnPrint.Style.HoverImageForeColor = System.Drawing.Color.Empty;
-            this.btnPrint.Style.Image = global::MiniGram.Properties.Resources.printer;
-            this.btnPrint.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.btnPrint.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnPrint.TabIndex = 25;
-            this.btnPrint.ThemeName = "Office2016Colorful";
-            this.toolTip1.SetToolTip(this.btnPrint, "Refresh Data");
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.AccessibleName = "Button";
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRefresh.CanOverrideStyle = true;
-            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnRefresh.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRefresh.ImageMargin = new System.Windows.Forms.Padding(5);
-            this.btnRefresh.ImageSize = new System.Drawing.Size(55, 55);
-            this.btnRefresh.Location = new System.Drawing.Point(1519, 0);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 69);
-            this.btnRefresh.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnRefresh.Style.FocusedBackColor = System.Drawing.Color.Transparent;
-            this.btnRefresh.Style.FocusedForeColor = System.Drawing.Color.Transparent;
-            this.btnRefresh.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnRefresh.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.btnRefresh.Style.HoverForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Style.HoverImageForeColor = System.Drawing.Color.Empty;
-            this.btnRefresh.Style.Image = global::MiniGram.Properties.Resources.refresh;
-            this.btnRefresh.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.btnRefresh.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnRefresh.TabIndex = 19;
-            this.btnRefresh.ThemeName = "Office2016Colorful";
-            this.toolTip1.SetToolTip(this.btnRefresh, "Refresh Data");
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // ReportsUC
             // 
