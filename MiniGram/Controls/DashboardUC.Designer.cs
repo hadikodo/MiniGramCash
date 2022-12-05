@@ -29,32 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Infragistics.Win.Appearance appearance73 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance74 = new Infragistics.Win.Appearance();
-            Infragistics.UltraChart.Resources.Appearance.PaintElement paintElement9 = new Infragistics.UltraChart.Resources.Appearance.PaintElement();
-            Infragistics.UltraChart.Resources.Appearance.BarChartAppearance barChartAppearance9 = new Infragistics.UltraChart.Resources.Appearance.BarChartAppearance();
-            Infragistics.UltraChart.Resources.Appearance.ChartTextAppearance chartTextAppearance9 = new Infragistics.UltraChart.Resources.Appearance.ChartTextAppearance();
-            Infragistics.UltraChart.Resources.Appearance.GradientEffect gradientEffect9 = new Infragistics.UltraChart.Resources.Appearance.GradientEffect();
-            Infragistics.Win.Appearance appearance75 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance76 = new Infragistics.Win.Appearance();
-            Infragistics.UltraChart.Resources.Appearance.PaintElement paintElement10 = new Infragistics.UltraChart.Resources.Appearance.PaintElement();
-            Infragistics.UltraChart.Resources.Appearance.BarChartAppearance barChartAppearance10 = new Infragistics.UltraChart.Resources.Appearance.BarChartAppearance();
-            Infragistics.UltraChart.Resources.Appearance.ChartTextAppearance chartTextAppearance10 = new Infragistics.UltraChart.Resources.Appearance.ChartTextAppearance();
-            Infragistics.UltraChart.Resources.Appearance.GradientEffect gradientEffect10 = new Infragistics.UltraChart.Resources.Appearance.GradientEffect();
-            Infragistics.Win.Appearance appearance77 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance79 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance78 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance80 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance82 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance81 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance83 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance85 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance84 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance86 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance88 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance87 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance89 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance90 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+            Infragistics.UltraChart.Resources.Appearance.PaintElement paintElement1 = new Infragistics.UltraChart.Resources.Appearance.PaintElement();
+            Infragistics.UltraChart.Resources.Appearance.BarChartAppearance barChartAppearance1 = new Infragistics.UltraChart.Resources.Appearance.BarChartAppearance();
+            Infragistics.UltraChart.Resources.Appearance.ChartTextAppearance chartTextAppearance1 = new Infragistics.UltraChart.Resources.Appearance.ChartTextAppearance();
+            Infragistics.UltraChart.Resources.Appearance.GradientEffect gradientEffect1 = new Infragistics.UltraChart.Resources.Appearance.GradientEffect();
+            Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
+            Infragistics.UltraChart.Resources.Appearance.BarChartAppearance barChartAppearance2 = new Infragistics.UltraChart.Resources.Appearance.BarChartAppearance();
+            Infragistics.UltraChart.Resources.Appearance.ChartTextAppearance chartTextAppearance2 = new Infragistics.UltraChart.Resources.Appearance.ChartTextAppearance();
+            Infragistics.UltraChart.Resources.Appearance.GradientEffect gradientEffect2 = new Infragistics.UltraChart.Resources.Appearance.GradientEffect();
+            Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -153,21 +152,21 @@
             // 
             // ultraGroupBox5
             // 
-            appearance73.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            appearance73.BorderColor = System.Drawing.Color.White;
-            appearance73.BorderColor3DBase = System.Drawing.Color.White;
-            appearance73.FontData.BoldAsString = "True";
-            appearance73.ForeColor = System.Drawing.Color.White;
-            this.ultraGroupBox5.Appearance = appearance73;
+            appearance1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance1.BorderColor = System.Drawing.Color.White;
+            appearance1.BorderColor3DBase = System.Drawing.Color.White;
+            appearance1.FontData.BoldAsString = "True";
+            appearance1.ForeColor = System.Drawing.Color.White;
+            this.ultraGroupBox5.Appearance = appearance1;
             this.ultraGroupBox5.BorderStyle = Infragistics.Win.Misc.GroupBoxBorderStyle.Rounded;
             this.ultraGroupBox5.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center;
             this.ultraGroupBox5.Controls.Add(this.ultraChart2);
             this.ultraGroupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraGroupBox5.Font = new System.Drawing.Font("Bookman Old Style", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraGroupBox5.ForeColor = System.Drawing.Color.White;
-            appearance74.BackColor = System.Drawing.Color.White;
-            appearance74.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.ultraGroupBox5.HeaderAppearance = appearance74;
+            appearance2.BackColor = System.Drawing.Color.White;
+            appearance2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.ultraGroupBox5.HeaderAppearance = appearance2;
             this.ultraGroupBox5.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
             this.ultraGroupBox5.Location = new System.Drawing.Point(512, 3);
             this.ultraGroupBox5.Name = "ultraGroupBox5";
@@ -183,9 +182,9 @@
             // ultraChart2
             // 
             this.ultraChart2.Axis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(220)))));
-            paintElement9.ElementType = Infragistics.UltraChart.Shared.Styles.PaintElementType.None;
-            paintElement9.Fill = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(220)))));
-            this.ultraChart2.Axis.PE = paintElement9;
+            paintElement1.ElementType = Infragistics.UltraChart.Shared.Styles.PaintElementType.None;
+            paintElement1.Fill = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(220)))));
+            this.ultraChart2.Axis.PE = paintElement1;
             this.ultraChart2.Axis.X.Labels.Font = new System.Drawing.Font("Verdana", 7F);
             this.ultraChart2.Axis.X.Labels.FontColor = System.Drawing.Color.DimGray;
             this.ultraChart2.Axis.X.Labels.HorizontalAlign = System.Drawing.StringAlignment.Far;
@@ -348,14 +347,14 @@
             this.ultraChart2.Axis.Z2.TickmarkStyle = Infragistics.UltraChart.Shared.Styles.AxisTickStyle.Smart;
             this.ultraChart2.Axis.Z2.Visible = false;
             this.ultraChart2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            chartTextAppearance9.ChartTextFont = new System.Drawing.Font("Arial", 7F);
-            chartTextAppearance9.ClipText = false;
-            chartTextAppearance9.Column = -2;
-            chartTextAppearance9.ItemFormatString = "<DATA_VALUE:00.00>";
-            chartTextAppearance9.Row = -2;
-            chartTextAppearance9.Visible = true;
-            barChartAppearance9.ChartText.Add(chartTextAppearance9);
-            this.ultraChart2.BarChart = barChartAppearance9;
+            chartTextAppearance1.ChartTextFont = new System.Drawing.Font("Arial", 7F);
+            chartTextAppearance1.ClipText = false;
+            chartTextAppearance1.Column = -2;
+            chartTextAppearance1.ItemFormatString = "<DATA_VALUE:00.00>";
+            chartTextAppearance1.Row = -2;
+            chartTextAppearance1.Visible = true;
+            barChartAppearance1.ChartText.Add(chartTextAppearance1);
+            this.ultraChart2.BarChart = barChartAppearance1;
             this.ultraChart2.ColorModel.AlphaLevel = ((byte)(150));
             this.ultraChart2.ColorModel.ColorBegin = System.Drawing.Color.Pink;
             this.ultraChart2.ColorModel.ColorEnd = System.Drawing.Color.DarkRed;
@@ -363,7 +362,8 @@
             this.ultraChart2.ColorModel.Scaling = Infragistics.UltraChart.Shared.Styles.ColorScaling.Increasing;
             this.ultraChart2.DataSource = this.bindingBestItems;
             this.ultraChart2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ultraChart2.Effects.Effects.Add(gradientEffect9);
+            this.ultraChart2.Effects.Effects.Add(gradientEffect1);
+            this.ultraChart2.EmptyChartText = "Data Unavailable.";
             this.ultraChart2.Location = new System.Drawing.Point(3, 45);
             this.ultraChart2.Name = "ultraChart2";
             this.ultraChart2.Size = new System.Drawing.Size(497, 294);
@@ -382,21 +382,21 @@
             // 
             // ultraGroupBox4
             // 
-            appearance75.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            appearance75.BorderColor = System.Drawing.Color.White;
-            appearance75.BorderColor3DBase = System.Drawing.Color.White;
-            appearance75.FontData.BoldAsString = "True";
-            appearance75.ForeColor = System.Drawing.Color.White;
-            this.ultraGroupBox4.Appearance = appearance75;
+            appearance3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance3.BorderColor = System.Drawing.Color.White;
+            appearance3.BorderColor3DBase = System.Drawing.Color.White;
+            appearance3.FontData.BoldAsString = "True";
+            appearance3.ForeColor = System.Drawing.Color.White;
+            this.ultraGroupBox4.Appearance = appearance3;
             this.ultraGroupBox4.BorderStyle = Infragistics.Win.Misc.GroupBoxBorderStyle.Rounded;
             this.ultraGroupBox4.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center;
             this.ultraGroupBox4.Controls.Add(this.ultraChart1);
             this.ultraGroupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraGroupBox4.Font = new System.Drawing.Font("Bookman Old Style", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraGroupBox4.ForeColor = System.Drawing.Color.White;
-            appearance76.BackColor = System.Drawing.Color.White;
-            appearance76.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.ultraGroupBox4.HeaderAppearance = appearance76;
+            appearance4.BackColor = System.Drawing.Color.White;
+            appearance4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.ultraGroupBox4.HeaderAppearance = appearance4;
             this.ultraGroupBox4.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
             this.ultraGroupBox4.Location = new System.Drawing.Point(3, 3);
             this.ultraGroupBox4.Name = "ultraGroupBox4";
@@ -412,9 +412,6 @@
             // ultraChart1
             // 
             this.ultraChart1.Axis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(220)))));
-            paintElement10.ElementType = Infragistics.UltraChart.Shared.Styles.PaintElementType.None;
-            paintElement10.Fill = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(220)))));
-            this.ultraChart1.Axis.PE = paintElement10;
             this.ultraChart1.Axis.X.Labels.Font = new System.Drawing.Font("Verdana", 7F);
             this.ultraChart1.Axis.X.Labels.FontColor = System.Drawing.Color.DimGray;
             this.ultraChart1.Axis.X.Labels.HorizontalAlign = System.Drawing.StringAlignment.Far;
@@ -440,7 +437,7 @@
             this.ultraChart1.Axis.X.MinorGridLines.Color = System.Drawing.Color.LightGray;
             this.ultraChart1.Axis.X.MinorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
             this.ultraChart1.Axis.X.MinorGridLines.Visible = false;
-            this.ultraChart1.Axis.X.TickmarkInterval = 40D;
+            this.ultraChart1.Axis.X.TickmarkInterval = 20D;
             this.ultraChart1.Axis.X.TickmarkStyle = Infragistics.UltraChart.Shared.Styles.AxisTickStyle.Smart;
             this.ultraChart1.Axis.X.Visible = true;
             this.ultraChart1.Axis.X2.Labels.Font = new System.Drawing.Font("Verdana", 7F);
@@ -468,7 +465,7 @@
             this.ultraChart1.Axis.X2.MinorGridLines.Color = System.Drawing.Color.LightGray;
             this.ultraChart1.Axis.X2.MinorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
             this.ultraChart1.Axis.X2.MinorGridLines.Visible = false;
-            this.ultraChart1.Axis.X2.TickmarkInterval = 40D;
+            this.ultraChart1.Axis.X2.TickmarkInterval = 20D;
             this.ultraChart1.Axis.X2.TickmarkStyle = Infragistics.UltraChart.Shared.Styles.AxisTickStyle.Smart;
             this.ultraChart1.Axis.X2.Visible = false;
             this.ultraChart1.Axis.Y.Labels.Font = new System.Drawing.Font("Verdana", 7F);
@@ -577,22 +574,26 @@
             this.ultraChart1.Axis.Z2.TickmarkStyle = Infragistics.UltraChart.Shared.Styles.AxisTickStyle.Smart;
             this.ultraChart1.Axis.Z2.Visible = false;
             this.ultraChart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            chartTextAppearance10.ChartTextFont = new System.Drawing.Font("Arial", 7F);
-            chartTextAppearance10.ClipText = false;
-            chartTextAppearance10.Column = -2;
-            chartTextAppearance10.ItemFormatString = "<DATA_VALUE:00.00>";
-            chartTextAppearance10.Row = -2;
-            chartTextAppearance10.Visible = true;
-            barChartAppearance10.ChartText.Add(chartTextAppearance10);
-            this.ultraChart1.BarChart = barChartAppearance10;
+            chartTextAppearance2.ChartTextFont = new System.Drawing.Font("Arial", 7F);
+            chartTextAppearance2.ClipText = false;
+            chartTextAppearance2.Column = -2;
+            chartTextAppearance2.ItemFormatString = "<DATA_VALUE:00.00>";
+            chartTextAppearance2.Row = -2;
+            chartTextAppearance2.Visible = true;
+            barChartAppearance2.ChartText.Add(chartTextAppearance2);
+            this.ultraChart1.BarChart = barChartAppearance2;
             this.ultraChart1.ColorModel.AlphaLevel = ((byte)(150));
             this.ultraChart1.ColorModel.ColorBegin = System.Drawing.Color.Pink;
             this.ultraChart1.ColorModel.ColorEnd = System.Drawing.Color.DarkRed;
             this.ultraChart1.ColorModel.ModelStyle = Infragistics.UltraChart.Shared.Styles.ColorModels.CustomLinear;
             this.ultraChart1.ColorModel.Scaling = Infragistics.UltraChart.Shared.Styles.ColorScaling.Increasing;
+            this.ultraChart1.Data.EmptyStyle.EnableLineStyle = true;
+            this.ultraChart1.Data.EmptyStyle.EnablePE = true;
+            this.ultraChart1.Data.EmptyStyle.EnablePoint = true;
             this.ultraChart1.DataSource = this.bindingBestSuppliers;
             this.ultraChart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ultraChart1.Effects.Effects.Add(gradientEffect10);
+            this.ultraChart1.Effects.Effects.Add(gradientEffect2);
+            this.ultraChart1.EmptyChartText = "Data Unavailable.";
             this.ultraChart1.Location = new System.Drawing.Point(3, 45);
             this.ultraChart1.Name = "ultraChart1";
             this.ultraChart1.Size = new System.Drawing.Size(497, 294);
@@ -606,6 +607,7 @@
             this.ultraChart1.TitleTop.Font = new System.Drawing.Font("Bookman Old Style", 12F);
             this.ultraChart1.Tooltips.HighlightFillColor = System.Drawing.Color.DimGray;
             this.ultraChart1.Tooltips.HighlightOutlineColor = System.Drawing.Color.DarkGray;
+            this.ultraChart1.Tooltips.TooltipControl = null;
             // 
             // panel2
             // 
@@ -637,12 +639,12 @@
             // 
             // ultraGroupBox3
             // 
-            appearance77.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            appearance77.BorderColor = System.Drawing.Color.White;
-            appearance77.BorderColor3DBase = System.Drawing.Color.White;
-            appearance77.FontData.BoldAsString = "True";
-            appearance77.ForeColor = System.Drawing.Color.White;
-            this.ultraGroupBox3.Appearance = appearance77;
+            appearance5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance5.BorderColor = System.Drawing.Color.White;
+            appearance5.BorderColor3DBase = System.Drawing.Color.White;
+            appearance5.FontData.BoldAsString = "True";
+            appearance5.ForeColor = System.Drawing.Color.White;
+            this.ultraGroupBox3.Appearance = appearance5;
             this.ultraGroupBox3.BorderStyle = Infragistics.Win.Misc.GroupBoxBorderStyle.Rounded;
             this.ultraGroupBox3.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center;
             this.ultraGroupBox3.Controls.Add(this.lblTotalItems);
@@ -650,9 +652,9 @@
             this.ultraGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraGroupBox3.Font = new System.Drawing.Font("Bookman Old Style", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraGroupBox3.ForeColor = System.Drawing.Color.White;
-            appearance79.BackColor = System.Drawing.Color.White;
-            appearance79.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.ultraGroupBox3.HeaderAppearance = appearance79;
+            appearance7.BackColor = System.Drawing.Color.White;
+            appearance7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.ultraGroupBox3.HeaderAppearance = appearance7;
             this.ultraGroupBox3.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
             this.ultraGroupBox3.Location = new System.Drawing.Point(512, 3);
             this.ultraGroupBox3.Name = "ultraGroupBox3";
@@ -662,11 +664,11 @@
             // 
             // lblTotalItems
             // 
-            appearance78.FontData.BoldAsString = "True";
-            appearance78.ForeColor = System.Drawing.Color.White;
-            appearance78.TextHAlignAsString = "Center";
-            appearance78.TextVAlignAsString = "Middle";
-            this.lblTotalItems.Appearance = appearance78;
+            appearance6.FontData.BoldAsString = "True";
+            appearance6.ForeColor = System.Drawing.Color.White;
+            appearance6.TextHAlignAsString = "Center";
+            appearance6.TextVAlignAsString = "Middle";
+            this.lblTotalItems.Appearance = appearance6;
             this.lblTotalItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTotalItems.Font = new System.Drawing.Font("Bookman Old Style", 36F, System.Drawing.FontStyle.Bold);
             this.lblTotalItems.Location = new System.Drawing.Point(3, 45);
@@ -685,12 +687,12 @@
             // 
             // ultraGroupBox2
             // 
-            appearance80.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            appearance80.BorderColor = System.Drawing.Color.White;
-            appearance80.BorderColor3DBase = System.Drawing.Color.White;
-            appearance80.FontData.BoldAsString = "True";
-            appearance80.ForeColor = System.Drawing.Color.White;
-            this.ultraGroupBox2.Appearance = appearance80;
+            appearance8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance8.BorderColor = System.Drawing.Color.White;
+            appearance8.BorderColor3DBase = System.Drawing.Color.White;
+            appearance8.FontData.BoldAsString = "True";
+            appearance8.ForeColor = System.Drawing.Color.White;
+            this.ultraGroupBox2.Appearance = appearance8;
             this.ultraGroupBox2.BorderStyle = Infragistics.Win.Misc.GroupBoxBorderStyle.Rounded;
             this.ultraGroupBox2.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center;
             this.ultraGroupBox2.Controls.Add(this.lblTodayYesterday);
@@ -698,9 +700,9 @@
             this.ultraGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraGroupBox2.Font = new System.Drawing.Font("Bookman Old Style", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraGroupBox2.ForeColor = System.Drawing.Color.White;
-            appearance82.BackColor = System.Drawing.Color.White;
-            appearance82.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.ultraGroupBox2.HeaderAppearance = appearance82;
+            appearance10.BackColor = System.Drawing.Color.White;
+            appearance10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.ultraGroupBox2.HeaderAppearance = appearance10;
             this.ultraGroupBox2.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
             this.ultraGroupBox2.Location = new System.Drawing.Point(3, 177);
             this.ultraGroupBox2.Name = "ultraGroupBox2";
@@ -710,11 +712,11 @@
             // 
             // lblTodayYesterday
             // 
-            appearance81.FontData.BoldAsString = "True";
-            appearance81.ForeColor = System.Drawing.Color.White;
-            appearance81.TextHAlignAsString = "Center";
-            appearance81.TextVAlignAsString = "Middle";
-            this.lblTodayYesterday.Appearance = appearance81;
+            appearance9.FontData.BoldAsString = "True";
+            appearance9.ForeColor = System.Drawing.Color.White;
+            appearance9.TextHAlignAsString = "Center";
+            appearance9.TextVAlignAsString = "Middle";
+            this.lblTodayYesterday.Appearance = appearance9;
             this.lblTodayYesterday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTodayYesterday.Font = new System.Drawing.Font("Bookman Old Style", 36F, System.Drawing.FontStyle.Bold);
             this.lblTodayYesterday.Location = new System.Drawing.Point(3, 45);
@@ -733,12 +735,12 @@
             // 
             // ultraGroupBox1
             // 
-            appearance83.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            appearance83.BorderColor = System.Drawing.Color.White;
-            appearance83.BorderColor3DBase = System.Drawing.Color.White;
-            appearance83.FontData.BoldAsString = "True";
-            appearance83.ForeColor = System.Drawing.Color.White;
-            this.ultraGroupBox1.Appearance = appearance83;
+            appearance11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance11.BorderColor = System.Drawing.Color.White;
+            appearance11.BorderColor3DBase = System.Drawing.Color.White;
+            appearance11.FontData.BoldAsString = "True";
+            appearance11.ForeColor = System.Drawing.Color.White;
+            this.ultraGroupBox1.Appearance = appearance11;
             this.ultraGroupBox1.BorderStyle = Infragistics.Win.Misc.GroupBoxBorderStyle.Rounded;
             this.ultraGroupBox1.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center;
             this.ultraGroupBox1.Controls.Add(this.lblTotalReceipt);
@@ -746,9 +748,9 @@
             this.ultraGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraGroupBox1.Font = new System.Drawing.Font("Bookman Old Style", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraGroupBox1.ForeColor = System.Drawing.Color.White;
-            appearance85.BackColor = System.Drawing.Color.White;
-            appearance85.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.ultraGroupBox1.HeaderAppearance = appearance85;
+            appearance13.BackColor = System.Drawing.Color.White;
+            appearance13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.ultraGroupBox1.HeaderAppearance = appearance13;
             this.ultraGroupBox1.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
             this.ultraGroupBox1.Location = new System.Drawing.Point(512, 177);
             this.ultraGroupBox1.Name = "ultraGroupBox1";
@@ -758,11 +760,11 @@
             // 
             // lblTotalReceipt
             // 
-            appearance84.FontData.BoldAsString = "True";
-            appearance84.ForeColor = System.Drawing.Color.White;
-            appearance84.TextHAlignAsString = "Center";
-            appearance84.TextVAlignAsString = "Middle";
-            this.lblTotalReceipt.Appearance = appearance84;
+            appearance12.FontData.BoldAsString = "True";
+            appearance12.ForeColor = System.Drawing.Color.White;
+            appearance12.TextHAlignAsString = "Center";
+            appearance12.TextVAlignAsString = "Middle";
+            this.lblTotalReceipt.Appearance = appearance12;
             this.lblTotalReceipt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTotalReceipt.Font = new System.Drawing.Font("Bookman Old Style", 36F, System.Drawing.FontStyle.Bold);
             this.lblTotalReceipt.Location = new System.Drawing.Point(3, 45);
@@ -781,12 +783,12 @@
             // 
             // grpTodayFee
             // 
-            appearance86.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            appearance86.BorderColor = System.Drawing.Color.White;
-            appearance86.BorderColor3DBase = System.Drawing.Color.White;
-            appearance86.FontData.BoldAsString = "True";
-            appearance86.ForeColor = System.Drawing.Color.White;
-            this.grpTodayFee.Appearance = appearance86;
+            appearance14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance14.BorderColor = System.Drawing.Color.White;
+            appearance14.BorderColor3DBase = System.Drawing.Color.White;
+            appearance14.FontData.BoldAsString = "True";
+            appearance14.ForeColor = System.Drawing.Color.White;
+            this.grpTodayFee.Appearance = appearance14;
             this.grpTodayFee.BorderStyle = Infragistics.Win.Misc.GroupBoxBorderStyle.Rounded;
             this.grpTodayFee.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center;
             this.grpTodayFee.Controls.Add(this.lblTodaySale);
@@ -794,9 +796,9 @@
             this.grpTodayFee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpTodayFee.Font = new System.Drawing.Font("Bookman Old Style", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpTodayFee.ForeColor = System.Drawing.Color.White;
-            appearance88.BackColor = System.Drawing.Color.White;
-            appearance88.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.grpTodayFee.HeaderAppearance = appearance88;
+            appearance16.BackColor = System.Drawing.Color.White;
+            appearance16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.grpTodayFee.HeaderAppearance = appearance16;
             this.grpTodayFee.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
             this.grpTodayFee.Location = new System.Drawing.Point(3, 3);
             this.grpTodayFee.Name = "grpTodayFee";
@@ -806,11 +808,11 @@
             // 
             // lblTodaySale
             // 
-            appearance87.FontData.BoldAsString = "True";
-            appearance87.ForeColor = System.Drawing.Color.White;
-            appearance87.TextHAlignAsString = "Center";
-            appearance87.TextVAlignAsString = "Middle";
-            this.lblTodaySale.Appearance = appearance87;
+            appearance15.FontData.BoldAsString = "True";
+            appearance15.ForeColor = System.Drawing.Color.White;
+            appearance15.TextHAlignAsString = "Center";
+            appearance15.TextVAlignAsString = "Middle";
+            this.lblTodaySale.Appearance = appearance15;
             this.lblTodaySale.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTodaySale.Font = new System.Drawing.Font("Bookman Old Style", 36F, System.Drawing.FontStyle.Bold);
             this.lblTodaySale.Location = new System.Drawing.Point(3, 45);
@@ -854,11 +856,11 @@
             // 
             // lblDate
             // 
-            appearance89.FontData.BoldAsString = "True";
-            appearance89.ForeColor = System.Drawing.Color.White;
-            appearance89.TextHAlignAsString = "Right";
-            appearance89.TextVAlignAsString = "Middle";
-            this.lblDate.Appearance = appearance89;
+            appearance17.FontData.BoldAsString = "True";
+            appearance17.ForeColor = System.Drawing.Color.White;
+            appearance17.TextHAlignAsString = "Right";
+            appearance17.TextVAlignAsString = "Middle";
+            this.lblDate.Appearance = appearance17;
             this.lblDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDate.Font = new System.Drawing.Font("Bookman Old Style", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.Location = new System.Drawing.Point(512, 3);
@@ -869,11 +871,11 @@
             // 
             // ultraLabel2
             // 
-            appearance90.FontData.BoldAsString = "True";
-            appearance90.ForeColor = System.Drawing.Color.White;
-            appearance90.TextHAlignAsString = "Left";
-            appearance90.TextVAlignAsString = "Middle";
-            this.ultraLabel2.Appearance = appearance90;
+            appearance18.FontData.BoldAsString = "True";
+            appearance18.ForeColor = System.Drawing.Color.White;
+            appearance18.TextHAlignAsString = "Left";
+            appearance18.TextVAlignAsString = "Middle";
+            this.ultraLabel2.Appearance = appearance18;
             this.ultraLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraLabel2.Font = new System.Drawing.Font("Bookman Old Style", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraLabel2.Location = new System.Drawing.Point(3, 3);

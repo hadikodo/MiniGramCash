@@ -84,13 +84,12 @@ namespace MiniGram
             //int day = (end - start).Days - (DateTime.Now - start).Days;
             //MessageBox.Show("Trial Version Will End In " + day + " Days\nPlease Purchase The Full Version.", "Warning!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             currentWidth = panel55.Width;
-
             btnDashboard_Click(null, null);
             //}
         }
 
         private void Init()
-        {        
+        {
             Globals.ConnectionString = Properties.Settings.Default.ConnectionString;
         }
 
@@ -358,19 +357,26 @@ namespace MiniGram
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            if (Globals.isReceiptOpen)
+            try
             {
-                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (Globals.isReceiptOpen)
+                {
+                    MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    refreshColors();
+                    btnDashboard.BackColor = Color.White;
+                    title_lbl.Text = "Dashboard";
+                    main_panel.Controls.Clear();
+                    DashboardUC duc = new DashboardUC();
+                    duc.Dock = DockStyle.Fill;
+                    main_panel.Controls.Add(duc);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                refreshColors();
-                btnDashboard.BackColor = Color.White;
-                title_lbl.Text = "Dashboard";
-                main_panel.Controls.Clear();
-                DashboardUC duc = new DashboardUC();
-                duc.Dock = DockStyle.Fill;
-                main_panel.Controls.Add(duc);
+
             }
         }
     }

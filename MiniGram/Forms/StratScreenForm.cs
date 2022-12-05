@@ -23,7 +23,8 @@ namespace MiniGram.Forms
         {
             Thread thread = new Thread(new ThreadStart(() =>
             {
-                Application.Run(Globals.mainForm);
+
+                    Application.Run(Globals.mainForm);
             }));
             thread.Start();
             timer1.Start();

@@ -35,8 +35,14 @@ namespace MiniGram.Controls
         {
             using (var data = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                bindingBestItems.DataSource = data.sp_getBestItems(DateTime.Today).ToList().OrderBy((aj) => aj.TOTAL);
-                bindingBestSuppliers.DataSource = data.sp_getBestSuppliers(DateTime.Today).ToList().OrderBy((aj) => aj.TOTAL);
+
+                var list1 = data.sp_getBestItems(DateTime.Today).ToList().OrderBy((aj) => aj.TOTAL);
+                var list2 = data.sp_getBestSuppliers(DateTime.Today).ToList().OrderBy((aj) => aj.TOTAL);
+                if(list1.Count() > 0 && list2.Count() > 0 )
+                {
+                    bindingBestItems.DataSource = list1;
+                    bindingBestSuppliers.DataSource = list2;
+                }
                 lblTodaySale.Text = (from aj in data.TBLRECEIPTs where aj.RDATE.Value.Date == DateTime.Today.Date select aj.TOTAL_AMOUNTDollar).ToList().Sum(x => Convert.ToDouble(x)).ToString() + " $";
                 lblTodayYesterday.Text = ((from aj in data.TBLRECEIPTs where aj.RDATE.Value.Date == DateTime.Today.Date select aj.TOTAL_AMOUNTDollar).ToList().Sum(x => Convert.ToDouble(x)) - (from aj in data.TBLRECEIPTs where aj.RDATE.Value.Date == DateTime.Today.AddDays(-1).Date select aj.TOTAL_AMOUNTDollar).ToList().Sum(x => Convert.ToDouble(x))).ToString() + " $";
                 lblTotalReceipt.Text = (from aj in data.TBLRECEIPTs where aj.RDATE.Value.Date == DateTime.Today.Date select aj.RID).ToList().Count().ToString();

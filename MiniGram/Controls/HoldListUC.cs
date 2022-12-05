@@ -111,12 +111,6 @@ namespace MiniGram.Controls
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == Print.Index)
-            {
-                DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType);
-                drrv.receiptID = Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
-                drrv.Show();
-            }
             if(e.ColumnIndex == btnColumnOpen.Index)
             {
                 var receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()) select aj).Single();
@@ -135,11 +129,17 @@ namespace MiniGram.Controls
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ReceiptDetails rd = new ReceiptDetails(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
-            rd.refreshData();
-            rd.ShowDialog();
-            refreshData();
-            search_txt.Text = "";
+            var receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()) select aj).Single();
+            receipt.isHold = false;
+            cnx.SubmitChanges();
+            POSUC pos = new POSUC(receipt);
+            Globals.mainForm.main_panel.Controls.Clear();
+            pos.Dock = DockStyle.Fill;
+            Globals.mainForm.main_panel.Controls.Add(pos);
+            Globals.mainForm.refreshColors();
+            Globals.mainForm.new_receipt_btn.BackColor = Color.White;
+            pos.refreshData("");
+            cnx.sp_deleteHoldReceiptDetailsByRID(receipt.RID);
         }
     }
 }

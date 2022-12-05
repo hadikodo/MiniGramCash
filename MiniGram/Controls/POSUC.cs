@@ -162,139 +162,155 @@ namespace MiniGram.Controls
 
         private void checkout_btn_Click(object sender, EventArgs e)
         {
-            if (receipt_details.Rows.Count == 0)
+            using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                MessageBox.Show("Please Enter At Least One Product!!");
-            }
-            else
-            {
-                string newBarcode = generateNewBarcode();
-                try
+                if (receipt_details.Rows.Count == 0)
                 {
-                    var newReceipt = new TBLRECEIPT();
-                    if (receipt == null)
+                    MessageBox.Show("Please Enter At Least One Product!!");
+                }
+                else
+                {
+                    string newBarcode = generateNewBarcode();
+                    try
                     {
-                        newReceipt.RBARCODE = newBarcode;
-                        newReceipt.RITEM_NB = Int32.Parse(tot_quantity.Text);
-                        newReceipt.TOTAL_AMOUNTDollar = double.Parse(tot_dollar.Text.Split(' ')[0]);
-                        newReceipt.TOTAL_AMOUNTLBP = Int32.Parse(tot_lbp.Text.Split(' ')[0]);
-                        newReceipt.RDATE = DateTime.Now;
-                        data.TBLRECEIPTs.InsertOnSubmit(newReceipt);
-                    }
-                    else
-                    {
-                        var r = (from aj in data.TBLRECEIPTs where aj.RID == receipt.RID select aj).Single();
-                        r.RITEM_NB = Int32.Parse(tot_quantity.Text);
-                        r.TOTAL_AMOUNTDollar = double.Parse(tot_dollar.Text.Split(' ')[0]);
-                        r.TOTAL_AMOUNTLBP = Int32.Parse(tot_lbp.Text.Split(' ')[0]);
-                        r.RDATE = DateTime.Now;
-                        r.isHold= false;
-                        newReceipt = r;
-                    }
-                    data.SubmitChanges();
-                    foreach (DataGridViewRow row in receipt_details.Rows)
-                    {
-                        try
+                        var newReceipt = new TBLRECEIPT();
+                        //newReceipt.RID = NewReceiptNumber;
+                        if (receipt == null)
                         {
-                            var product = data.sp_getProductByName(row.Cells[1].Value.ToString()).ToList();
-                            if (product[0].HasQuantity == true)
+                            newReceipt.RBARCODE = newBarcode;
+                            newReceipt.RITEM_NB = Int32.Parse(tot_quantity.Text);
+                            newReceipt.TOTAL_AMOUNTDollar = double.Parse(tot_dollar.Text.Split(' ')[0]);
+                            newReceipt.TOTAL_AMOUNTLBP = Int32.Parse(tot_lbp.Text.Split(' ')[0]);
+                            newReceipt.RDATE = DateTime.Now;
+                            cnx.TBLRECEIPTs.InsertOnSubmit(newReceipt);
+                            cnx.SubmitChanges();
+                        }
+                        else
+                        {
+                            var r = (from aj in cnx.TBLRECEIPTs where aj.RID == receipt.RID select aj).Single();
+                            r.RITEM_NB = Int32.Parse(tot_quantity.Text);
+                            r.TOTAL_AMOUNTDollar = double.Parse(tot_dollar.Text.Split(' ')[0]);
+                            r.TOTAL_AMOUNTLBP = Int32.Parse(tot_lbp.Text.Split(' ')[0]);
+                            r.RDATE = DateTime.Now;
+                            r.isHold = false;
+                            newReceipt = r;
+                        }
+                        foreach (DataGridViewRow row in receipt_details.Rows)
+                        {
+                            try
                             {
-                                if (Int32.Parse(product[0].QTE.ToString()) < Int32.Parse(row.Cells[3].Value.ToString()))
+                                var product = cnx.sp_getProductByName(row.Cells[1].Value.ToString()).ToList();
+                                if (product[0].HasQuantity == true)
                                 {
-                                    MessageBox.Show("You Have " + product[0].QTE + " Of Product Name : " + product[0].PNAME + "\nPlease Check Your Products !!");
-                                    search_txt.Text = "";
-                                    ActiveControl = search_txt;
-                                    return;
-                                }
-                                else if ((Int32.Parse(product[0].QTE.ToString()) == Int32.Parse(row.Cells[3].Value.ToString())))
-                                {
-                                    TBLPRODUCT prod = (from aj in data.TBLPRODUCTs
-                                                       where aj.PID == product[0].PID
-                                                       select aj).Single();
-                                    prod.QTE = 0;                                   
-                                    var newReceiptDetails = new TBLRECEIPTS_DETAIL();
-                                    newReceiptDetails.RID = newReceipt.RID;
-                                    newReceiptDetails.PID = product[0].PID;
-                                    newReceiptDetails.QTE = Int32.Parse(row.Cells[3].Value.ToString());
-                                    newReceiptDetails.PRICE_Dollar = double.Parse(row.Cells[4].Value.ToString());
-                                    newReceiptDetails.TOTAL_PRICEDollar = double.Parse(row.Cells[7].Value.ToString());
-                                    newReceiptDetails.PRICE_LBP = Int32.Parse(row.Cells[5].Value.ToString());
-                                    newReceiptDetails.TOTAL_PRICELBP = Int32.Parse(row.Cells[6].Value.ToString());
-                                    data.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
+                                    if (Int32.Parse(product[0].QTE.ToString()) < Int32.Parse(row.Cells[3].Value.ToString()))
+                                    {
+                                        MessageBox.Show("You Have " + product[0].QTE + " Of Product Name : " + product[0].PNAME + "\nPlease Check Your Products !!");
+                                        search_txt.Text = "";
+                                        ActiveControl = search_txt;
+                                        return;
+                                    }
+                                    else if ((Int32.Parse(product[0].QTE.ToString()) == Int32.Parse(row.Cells[3].Value.ToString())))
+                                    {
+                                        TBLPRODUCT prod = (from aj in data.TBLPRODUCTs
+                                                           where aj.PID == product[0].PID
+                                                           select aj).Single();
+                                        prod.QTE = 0;
+                                        var newReceiptDetails = new TBLRECEIPTS_DETAIL();
+                                        newReceiptDetails.RID = newReceipt.RID;
+                                        newReceiptDetails.PID = product[0].PID;
+                                        newReceiptDetails.QTE = Int32.Parse(row.Cells[3].Value.ToString());
+                                        newReceiptDetails.PRICE_Dollar = double.Parse(row.Cells[4].Value.ToString());
+                                        newReceiptDetails.TOTAL_PRICEDollar = double.Parse(row.Cells[7].Value.ToString());
+                                        newReceiptDetails.PRICE_LBP = Int32.Parse(row.Cells[5].Value.ToString());
+                                        newReceiptDetails.TOTAL_PRICELBP = Int32.Parse(row.Cells[6].Value.ToString());
+                                        cnx.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
 
+                                    }
+                                    else
+                                    {
+                                        data.sp_UpdateProductQuantity(product[0].PID, product[0].QTE - Int32.Parse(row.Cells[3].Value.ToString()));
+                                        TBLPRODUCT prod = (from aj in cnx.TBLPRODUCTs
+                                                           where aj.PID == product[0].PID
+                                                           select aj).Single();
+                                        prod.QTE = product[0].QTE - Int32.Parse(row.Cells[3].Value.ToString());
+                                        var newReceiptDetails = new TBLRECEIPTS_DETAIL();
+                                        newReceiptDetails.RID = newReceipt.RID;
+                                        newReceiptDetails.PID = product[0].PID;
+                                        newReceiptDetails.QTE = Int32.Parse(row.Cells[3].Value.ToString());
+                                        newReceiptDetails.PRICE_Dollar = double.Parse(row.Cells[4].Value.ToString());
+                                        newReceiptDetails.TOTAL_PRICEDollar = double.Parse(row.Cells[7].Value.ToString());
+                                        newReceiptDetails.PRICE_LBP = Int32.Parse(row.Cells[5].Value.ToString());
+                                        newReceiptDetails.TOTAL_PRICELBP = Int32.Parse(row.Cells[6].Value.ToString());
+                                        cnx.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
+                                    }
                                 }
-                                else
+                                else if (product[0].HasExpiredDate == 1)
                                 {
-                                    data.sp_UpdateProductQuantity(product[0].PID, product[0].QTE - Int32.Parse(row.Cells[3].Value.ToString()));
-                                    TBLPRODUCT prod = (from aj in data.TBLPRODUCTs
-                                                       where aj.PID == product[0].PID
-                                                       select aj).Single();
-                                    prod.QTE = product[0].QTE - Int32.Parse(row.Cells[3].Value.ToString());                                   
-                                    var newReceiptDetails = new TBLRECEIPTS_DETAIL();
-                                    newReceiptDetails.RID = newReceipt.RID;
-                                    newReceiptDetails.PID = product[0].PID;
-                                    newReceiptDetails.QTE = Int32.Parse(row.Cells[3].Value.ToString());
-                                    newReceiptDetails.PRICE_Dollar = double.Parse(row.Cells[4].Value.ToString());
-                                    newReceiptDetails.TOTAL_PRICEDollar = double.Parse(row.Cells[7].Value.ToString());
-                                    newReceiptDetails.PRICE_LBP = Int32.Parse(row.Cells[5].Value.ToString());
-                                    newReceiptDetails.TOTAL_PRICELBP = Int32.Parse(row.Cells[6].Value.ToString());
-                                    data.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
-                                }
-                            }
-                            else if (product[0].HasExpiredDate == 1)
-                            {
 
-                                List<TBLEXPIREDDATE> ExpiredDateList = (from aj in data.TBLEXPIREDDATEs where aj.PID == product[0].PID && aj.ExpiredDate > DateTime.Today select aj).ToList();
-                                int totalQuantity = (from aj in ExpiredDateList where aj.ExpiredDate > DateTime.Today select aj.Qte).Sum(x => Convert.ToInt32(x));
-                                if (totalQuantity < Int32.Parse(row.Cells[3].Value.ToString()))
-                                {
-                                    MessageBox.Show("You Have " + totalQuantity + " Of Product Name : " + product[0].PNAME + "\nPlease Check Your Products !!");
-                                    search_txt.Text = "";
-                                    ActiveControl = search_txt;
-                                    return;
-                                }
-                                else if (totalQuantity == Int32.Parse(row.Cells[3].Value.ToString()))
-                                {
-                                    TBLEXPIREDDATE minExpDate = (from aj in ExpiredDateList orderby aj.ExpiredDate ascending select aj).First();
-                                    TBLPRODUCT prod = (from aj in data.TBLPRODUCTs
-                                                       where aj.PID == product[0].PID
-                                                       select aj).Single();
-                                    prod.QTE = 0;
-                                    data.TBLEXPIREDDATEs.DeleteOnSubmit(minExpDate);
-                                    var newReceiptDetails = new TBLRECEIPTS_DETAIL();
-                                    newReceiptDetails.RID = newReceipt.RID;
-                                    newReceiptDetails.PID = product[0].PID;
-                                    newReceiptDetails.QTE = Int32.Parse(row.Cells[3].Value.ToString());
-                                    newReceiptDetails.PRICE_Dollar = double.Parse(row.Cells[4].Value.ToString());
-                                    newReceiptDetails.TOTAL_PRICEDollar = double.Parse(row.Cells[7].Value.ToString());
-                                    newReceiptDetails.PRICE_LBP = Int32.Parse(row.Cells[5].Value.ToString());
-                                    newReceiptDetails.TOTAL_PRICELBP = Int32.Parse(row.Cells[6].Value.ToString());
-                                    data.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
-
-                                }
-                                else
-                                {
-                                    int tmpqte = Int32.Parse(row.Cells[3].Value.ToString());
-                                    while (tmpqte > 0)
+                                    List<TBLEXPIREDDATE> ExpiredDateList = (from aj in cnx.TBLEXPIREDDATEs where aj.PID == product[0].PID && aj.ExpiredDate > DateTime.Today select aj).ToList();
+                                    int totalQuantity = (from aj in ExpiredDateList where aj.ExpiredDate > DateTime.Today select aj.Qte).Sum(x => Convert.ToInt32(x));
+                                    if (totalQuantity < Int32.Parse(row.Cells[3].Value.ToString()))
+                                    {
+                                        MessageBox.Show("You Have " + totalQuantity + " Of Product Name : " + product[0].PNAME + "\nPlease Check Your Products !!");
+                                        search_txt.Text = "";
+                                        ActiveControl = search_txt;
+                                        return;
+                                    }
+                                    else if (totalQuantity == Int32.Parse(row.Cells[3].Value.ToString()))
                                     {
                                         TBLEXPIREDDATE minExpDate = (from aj in ExpiredDateList orderby aj.ExpiredDate ascending select aj).First();
-                                        if(tmpqte < minExpDate.Qte)
-                                        {
-                                            minExpDate.Qte = minExpDate.Qte - tmpqte;
-                                            tmpqte = tmpqte - minExpDate.Qte;
-                                        }
-                                        else
-                                        {
-                                            tmpqte = tmpqte - minExpDate.Qte;
-                                            minExpDate.Qte = 0;
-                                            ExpiredDateList.Remove(minExpDate);
-                                            data.TBLEXPIREDDATEs.DeleteOnSubmit(minExpDate);
-                                        }
+                                        TBLPRODUCT prod = (from aj in cnx.TBLPRODUCTs
+                                                           where aj.PID == product[0].PID
+                                                           select aj).Single();
+                                        prod.QTE = 0;
+                                        cnx.TBLEXPIREDDATEs.DeleteOnSubmit(minExpDate);
+                                        var newReceiptDetails = new TBLRECEIPTS_DETAIL();
+                                        newReceiptDetails.RID = newReceipt.RID;
+                                        newReceiptDetails.PID = product[0].PID;
+                                        newReceiptDetails.QTE = Int32.Parse(row.Cells[3].Value.ToString());
+                                        newReceiptDetails.PRICE_Dollar = double.Parse(row.Cells[4].Value.ToString());
+                                        newReceiptDetails.TOTAL_PRICEDollar = double.Parse(row.Cells[7].Value.ToString());
+                                        newReceiptDetails.PRICE_LBP = Int32.Parse(row.Cells[5].Value.ToString());
+                                        newReceiptDetails.TOTAL_PRICELBP = Int32.Parse(row.Cells[6].Value.ToString());
+                                        cnx.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
+
                                     }
-                                    TBLPRODUCT prod = (from aj in data.TBLPRODUCTs
-                                                       where aj.PID == product[0].PID
-                                                       select aj).Single();
-                                    prod.QTE = (from aj in ExpiredDateList where aj.ExpiredDate > DateTime.Today select aj.Qte).Sum(x => Convert.ToInt32(x));
+                                    else
+                                    {
+                                        int tmpqte = Int32.Parse(row.Cells[3].Value.ToString());
+                                        while (tmpqte > 0)
+                                        {
+                                            TBLEXPIREDDATE minExpDate = (from aj in ExpiredDateList orderby aj.ExpiredDate ascending select aj).First();
+                                            if (tmpqte < minExpDate.Qte)
+                                            {
+                                                minExpDate.Qte = minExpDate.Qte - tmpqte;
+                                                tmpqte = tmpqte - minExpDate.Qte;
+                                            }
+                                            else
+                                            {
+                                                tmpqte = tmpqte - minExpDate.Qte;
+                                                minExpDate.Qte = 0;
+                                                ExpiredDateList.Remove(minExpDate);
+                                                cnx.TBLEXPIREDDATEs.DeleteOnSubmit(minExpDate);
+                                            }
+                                        }
+                                        TBLPRODUCT prod = (from aj in cnx.TBLPRODUCTs
+                                                           where aj.PID == product[0].PID
+                                                           select aj).Single();
+                                        prod.QTE = (from aj in ExpiredDateList where aj.ExpiredDate > DateTime.Today select aj.Qte).Sum(x => Convert.ToInt32(x));
+                                        var newReceiptDetails = new TBLRECEIPTS_DETAIL();
+                                        newReceiptDetails.RID = newReceipt.RID;
+                                        newReceiptDetails.PID = product[0].PID;
+                                        newReceiptDetails.QTE = Int32.Parse(row.Cells[3].Value.ToString());
+                                        newReceiptDetails.PRICE_Dollar = double.Parse(row.Cells[4].Value.ToString());
+                                        newReceiptDetails.TOTAL_PRICEDollar = double.Parse(row.Cells[7].Value.ToString());
+                                        newReceiptDetails.PRICE_LBP = Int32.Parse(row.Cells[5].Value.ToString());
+                                        newReceiptDetails.TOTAL_PRICELBP = Int32.Parse(row.Cells[6].Value.ToString());
+                                        cnx.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
+                                    }
+                                }
+                                else
+                                {
                                     var newReceiptDetails = new TBLRECEIPTS_DETAIL();
                                     newReceiptDetails.RID = newReceipt.RID;
                                     newReceiptDetails.PID = product[0].PID;
@@ -303,67 +319,58 @@ namespace MiniGram.Controls
                                     newReceiptDetails.TOTAL_PRICEDollar = double.Parse(row.Cells[7].Value.ToString());
                                     newReceiptDetails.PRICE_LBP = Int32.Parse(row.Cells[5].Value.ToString());
                                     newReceiptDetails.TOTAL_PRICELBP = Int32.Parse(row.Cells[6].Value.ToString());
-                                    data.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
+                                    cnx.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
                                 }
                             }
-                            else
-                            {                               
-                                var newReceiptDetails = new TBLRECEIPTS_DETAIL();
-                                newReceiptDetails.RID = newReceipt.RID;
-                                newReceiptDetails.PID = product[0].PID;
-                                newReceiptDetails.QTE = Int32.Parse(row.Cells[3].Value.ToString());
-                                newReceiptDetails.PRICE_Dollar = double.Parse(row.Cells[4].Value.ToString());
-                                newReceiptDetails.TOTAL_PRICEDollar = double.Parse(row.Cells[7].Value.ToString());
-                                newReceiptDetails.PRICE_LBP = Int32.Parse(row.Cells[5].Value.ToString());
-                                newReceiptDetails.TOTAL_PRICELBP = Int32.Parse(row.Cells[6].Value.ToString());
-                                data.TBLRECEIPTS_DETAILs.InsertOnSubmit(newReceiptDetails);
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("An Error Occured When Adding Receipt, Please Call Support !!");
+                                Globals.isReceiptOpen = false;
+                                receipt_details.Rows.Clear();
+                                receipt_id.Text = NewReceiptNumber.ToString();
+                                search_txt.Text = "";
+                                ActiveControl = search_txt;
+                                return;
                             }
+                        }
+
+                        cnx.SubmitChanges();
+                        DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType);
+                        drrv.receiptID = newReceipt.RID;
+                        drrv.ShowDialog();
+                        receipt_details.Rows.Clear();
+                        tot_lbp.Text = "0" + " LBP";
+                        tot_dollar.Text = "0" + " $";
+                        tot_quantity.Text = "0";
+                        try
+                        {
+                            NewReceiptNumber = Int32.Parse(cnx.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString()) + 1;
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("An Error Occured When Adding Receipt, Please Call Support !!");
-                            Globals.isReceiptOpen = false;
-                            receipt_details.Rows.Clear();
-                            receipt_id.Text = NewReceiptNumber.ToString();
-                            search_txt.Text = "";
-                            ActiveControl = search_txt;
-                            return;
+                            NewReceiptNumber = 1;
                         }
-                    }
-                    data.SubmitChanges();
-                    DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType);
-                    drrv.receiptID = newReceipt.RID;
-                    drrv.ShowDialog();
-                    receipt_details.Rows.Clear();
-                    tot_lbp.Text = "0" + " LBP";
-                    tot_dollar.Text = "0" + " $";
-                    tot_quantity.Text = "0";
-                    try
-                    {
-                        NewReceiptNumber = Int32.Parse(data.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString()) + 1;
+                        receipt_id.Text = NewReceiptNumber.ToString();
+                        search_txt.Text = "";
+                        ActiveControl = search_txt;
                     }
                     catch (Exception ex)
                     {
-                        NewReceiptNumber = 1;
+                        Globals.isReceiptOpen = false;
+                        MessageBox.Show("An Error Occured When Adding Receipt, Please Call Support !!");
                     }
-                    receipt_id.Text = NewReceiptNumber.ToString();
-                    search_txt.Text = "";
-                    ActiveControl = search_txt;
                 }
-                catch (Exception ex)
-                {
-                    Globals.isReceiptOpen = false;
-                    MessageBox.Show("An Error Occured When Adding Receipt, Please Call Support !!");
-                }
+                Globals.isReceiptOpen = false;
+                receipt = null;
+                this.Show();
             }
-            Globals.isReceiptOpen = false;
-            receipt = null;
-            this.Show();
         }
 
         private void CleareReceipt()
         {
+            receipt = null;
             POSUC_Load(null, null);
+            receipt_id.Text = NewReceiptNumber.ToString();
             receipt_details.Rows.Clear();
             tot_lbp.Text = "0" + " LBP";
             tot_dollar.Text = "0" + " $";
