@@ -26,17 +26,17 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://app.kt2.co/supertech/MiniGram/</InstallUrl>
-    <UpdateUrl>https://app.kt2.co/supertech/MiniGram/</UpdateUrl>
-    <SupportUrl>https://app.kt2.co/supertech/MiniGram/</SupportUrl>
+    <InstallUrl>https://app.kt1.co/supertech/MiniGram/</InstallUrl>
+    <UpdateUrl>https://app.kt1.co/supertech/MiniGram/</UpdateUrl>
+    <SupportUrl>https://app.kt1.co/supertech/MiniGram/</SupportUrl>
     <TargetCulture>en-US</TargetCulture>
     <ProductName>MiniGram</ProductName>
     <PublisherName>SuperTech Co.</PublisherName>
     <SuiteName>MiniGram</SuiteName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
-    <WebPage>index.html</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
+    <WebPage>index.htm</WebPage>
+    <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
