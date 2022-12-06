@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MiniGramDB">
   <DataContextMoniker Name="/MiniGramDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="f1154128-9bd0-4a72-b79a-f5bf41a97051" absoluteBounds="7.25, 0.5, 2, 1.9631982421875005">
-      <DataClassMoniker Name="/MiniGramDBDataContext/TBLITEM" />
-      <nestedChildShapes>
-        <elementListCompartment Id="8381c27f-55d6-4d84-b994-cbab77737454" absoluteBounds="7.2650000000000006, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="acd98547-7634-4cf5-b5fd-534887ac22f4" absoluteBounds="7.625, 2.875, 2, 1.9631982421875">
       <DataClassMoniker Name="/MiniGramDBDataContext/TBLSUPPLIER" />
       <nestedChildShapes>

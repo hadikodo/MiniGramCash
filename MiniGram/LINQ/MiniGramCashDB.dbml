@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MiniGramCashDB" Class="MiniGramDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-M6L2KRQ;Initial Catalog=MiniGramCashDB;Integrated Security=True" SettingsObjectName="MiniGram.Properties.Settings" SettingsPropertyName="MiniGramCashDBConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.TBLITEMS" Member="TBLITEMs">
-    <Type Name="TBLITEM">
-      <Column Name="IID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="INAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="QTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="UNIT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="ADD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ENABLED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SQLEXPRESS;Initial Catalog=MiniGramCashDB;Integrated Security=True" SettingsObjectName="MiniGram.Properties.Settings" SettingsPropertyName="MiniGramCashDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.TBLSUPPLIERS" Member="TBLSUPPLIERs">
     <Type Name="TBLSUPPLIER">
       <Column Name="SID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
