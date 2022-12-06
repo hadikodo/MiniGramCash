@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="ServerName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">DESKTOP-A846TAN</Value>
+      <Value Profile="(Default)">SQLEXPRESS</Value>
     </Setting>
     <Setting Name="ConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=DESKTOP-M6L2KRQ;Initial Catalog=MiniGramCashDB;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=SQLEXPRESS;Initial Catalog=MiniGramCashDB;Integrated Security=True</Value>
     </Setting>
     <Setting Name="Language" Type="System.String" Scope="User">
       <Value Profile="(Default)">en_local</Value>
@@ -14,10 +14,10 @@
     <Setting Name="MiniGramCashDBConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=DESKTOP-M6L2KRQ;Initial Catalog=MiniGramCashDB;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=SQLEXPRESS;Initial Catalog=MiniGramCashDB;Integrated Security=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-M6L2KRQ;Initial Catalog=MiniGramCashDB;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=SQLEXPRESS;Initial Catalog=MiniGramCashDB;Integrated Security=True</Value>
     </Setting>
     <Setting Name="dollarLBPPrice" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20000</Value>

@@ -25,7 +25,7 @@ namespace MiniGram.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DESKTOP-A846TAN")]
+        [global::System.Configuration.DefaultSettingValueAttribute("SQLEXPRESS")]
         public string ServerName {
             get {
                 return ((string)(this["ServerName"]));
@@ -37,8 +37,7 @@ namespace MiniGram.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-M6L2KRQ;Initial Catalog=MiniGramCashDB;Integrated Security=Tr" +
-            "ue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQLEXPRESS;Initial Catalog=MiniGramCashDB;Integrated Security=True")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
@@ -63,8 +62,7 @@ namespace MiniGram.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-M6L2KRQ;Initial Catalog=MiniGramCashDB;Integrated Security=Tr" +
-            "ue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQLEXPRESS;Initial Catalog=MiniGramCashDB;Integrated Security=True")]
         public string MiniGramCashDBConnectionString {
             get {
                 return ((string)(this["MiniGramCashDBConnectionString"]));

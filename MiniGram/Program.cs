@@ -1,6 +1,9 @@
-﻿using MiniGram.Forms;
+﻿
+using MiniGram.Classes;
+using MiniGram.Forms;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +20,19 @@ namespace MiniGram
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StratScreenForm());
+            using(var conn = new SqlConnection(Globals.ConnectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    Application.Run(new StratScreenForm());
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Please Check The Server Name Then Re-Open The System.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Run(new SettingsForm());
+                }
+            }
         }
     }
 }

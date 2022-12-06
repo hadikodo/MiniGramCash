@@ -96,6 +96,7 @@ namespace MiniGram.Controls
                 {
                     Properties.Settings.Default.ServerName = server_name.Text;
                     Properties.Settings.Default.ServerSecurity = false;
+                    Properties.Settings.Default.ConnectionString = conn;
                     Globals.ConnectionString = conn;
                     Properties.Settings.Default.Save();
                 }
