@@ -36,9 +36,9 @@ namespace MiniGram.Controls
             data = new MiniGramDBDataContext(Globals.ConnectionString);
             if (!Properties.Settings.Default.showListInSale)
             {
-                tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.AutoSize;
-                products_panel.Width= 0;
-
+                tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Absolute;
+                tableLayoutPanel1.ColumnStyles[0].Width = 0;
+                products_panel.Visible = false;
             }
             try
             {
@@ -116,9 +116,10 @@ namespace MiniGram.Controls
             {
                 products_panel.Controls.Clear();
                 table = new TableLayoutPanel();
+                table.Margin = new Padding(0,0,0,0);
                 products_panel.Controls.Add(table);
                 table.Dock = DockStyle.Fill;
-                products_panel.Padding = new Padding(20, 20, 10, 20);
+                products_panel.Padding = new Padding(0, 20, 0, 20);
                 table.ColumnCount = 1;
                 table.RowCount = (Int32.Parse(data.sp_getProductsCount(str).ToList()[0].Product_Number.ToString()) / table.ColumnCount) + 1;
                 products_panel.AutoScrollMinSize = new Size(0, (table.RowCount + 1) * 100);
@@ -399,8 +400,8 @@ namespace MiniGram.Controls
                 button.BackgroundImageLayout = ImageLayout.Zoom;
                 button.CanOverrideStyle = true;
                 button.Cursor = Cursors.Hand;
-                button.FlatStyle = FlatStyle.Flat;
-                button.Font = new Font("Bookman Old Style", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                //button.FlatStyle = FlatStyle.Flat;
+                button.Font = new Font("Bookman Old Style", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 button.ForeColor = Color.White;
                 button.Name = "product" + i.ToString() + j.ToString();
                 button.Size = new Size(products_panel.Width, 75);
@@ -416,13 +417,14 @@ namespace MiniGram.Controls
                 button.Style.PressedForeColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
                 button.TextImageRelation = TextImageRelation.Overlay;
                 button.TextMargin = new Padding(0, 10, 0, 0);
-                button.ThemeName = "Office2016Colorful";
-                button.Margin = new Padding(8, 8, 8, 8);
                 button.Padding = new Padding(50, 0, 0, 0);
                 toolTip1.SetToolTip(button, products[c].ProductName + "  |  " + products[c].SupplierName);
-                button.UseVisualStyleBackColor = false;
                 button.Text = products[c].ProductName;
                 button.TextAlign = ContentAlignment.MiddleLeft;
+                button.Style.HoverBorder = new Pen(Color.White);
+                button.CanApplyTheme= true;
+                button.Style.HoverBorder.Color = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+                button.Style.HoverBorder.Width = 0;
                 button.Click += new EventHandler(add_btn_Click);
                 table.Controls.Add(button, j, i);
             }
