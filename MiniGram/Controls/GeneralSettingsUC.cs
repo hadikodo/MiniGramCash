@@ -37,6 +37,12 @@ namespace MiniGram.Controls
             else
                 checkBoxAdv1.CheckState = CheckState.Unchecked;
 
+            if (Properties.Settings.Default.showListInSale)
+                chkboxShowUnshowList.CheckState = CheckState.Checked;
+            else
+                chkboxShowUnshowList.CheckState = CheckState.Unchecked;
+
+
             Dictionary<int,string> ReceiptSize = new Dictionary<int,string>();
             ReceiptSize.Add(1, "A4 ( 21 x 29.7 cm )");
             ReceiptSize.Add(2, "70 mm");
@@ -90,6 +96,7 @@ namespace MiniGram.Controls
                     }
                 }
             }
+            Properties.Settings.Default.showListInSale = chkboxShowUnshowList.Checked;
             Properties.Settings.Default.ReceiptType = Int32.Parse(cboxReceiptSize.SelectedValue.ToString());
             Properties.Settings.Default.printerName = printer_drp.SelectedItem.ToString();
             Properties.Settings.Default.dollarLBPPrice = Int32.Parse(dollar_price.Text);

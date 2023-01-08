@@ -28,13 +28,18 @@ namespace MiniGram.Controls
         {
             this.receipt = receipt;
             InitializeComponent();
-
         }
 
 
         private void POSUC_Load(object sender, EventArgs e)
         {
             data = new MiniGramDBDataContext(Globals.ConnectionString);
+            if (!Properties.Settings.Default.showListInSale)
+            {
+                tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.AutoSize;
+                products_panel.Width= 0;
+
+            }
             try
             {
                 if (receipt == null)
@@ -52,13 +57,13 @@ namespace MiniGram.Controls
             receipt_id.Text = NewReceiptNumber.ToString();
             ActiveControl = search_txt;
         }
-        
+
         private void getExistingReceipt()
         {
             Globals.isReceiptOpen = true;
             List<int> productListIDs = (from aj in data.TBLHOLDDETAILs where aj.RID == receipt.RID select Int32.Parse(aj.PID.ToString())).ToList();
-            List < TBLPRODUCT > productList = (from aj in data.TBLPRODUCTs where productListIDs.Contains(aj.PID) select aj).ToList();
-            foreach(TBLPRODUCT product in productList)
+            List<TBLPRODUCT> productList = (from aj in data.TBLPRODUCTs where productListIDs.Contains(aj.PID) select aj).ToList();
+            foreach (TBLPRODUCT product in productList)
             {
                 try
                 {
@@ -107,28 +112,31 @@ namespace MiniGram.Controls
 
         public void refreshData(string str)
         {
-            products_panel.Controls.Clear();
-            table = new TableLayoutPanel();
-            products_panel.Controls.Add(table);
-            table.Dock = DockStyle.Fill;
-            products_panel.Padding = new Padding(20, 20, 10, 20);
-            table.ColumnCount = 1;
-            table.RowCount = (Int32.Parse(data.sp_getProductsCount(str).ToList()[0].Product_Number.ToString()) / table.ColumnCount) + 1;
-            products_panel.AutoScrollMinSize = new Size(0, (table.RowCount + 1) * 100);
-            int i = 0, j = 0, c = 0, p = Int32.Parse(data.sp_getProductsCount(str).ToList()[0].Product_Number.ToString());
-            while (i < table.RowCount)
+            if (Properties.Settings.Default.showListInSale)
             {
-                while (j < table.ColumnCount)
+                products_panel.Controls.Clear();
+                table = new TableLayoutPanel();
+                products_panel.Controls.Add(table);
+                table.Dock = DockStyle.Fill;
+                products_panel.Padding = new Padding(20, 20, 10, 20);
+                table.ColumnCount = 1;
+                table.RowCount = (Int32.Parse(data.sp_getProductsCount(str).ToList()[0].Product_Number.ToString()) / table.ColumnCount) + 1;
+                products_panel.AutoScrollMinSize = new Size(0, (table.RowCount + 1) * 100);
+                int i = 0, j = 0, c = 0, p = Int32.Parse(data.sp_getProductsCount(str).ToList()[0].Product_Number.ToString());
+                while (i < table.RowCount)
                 {
-                    if (c < p)
+                    while (j < table.ColumnCount)
                     {
-                        AddNewButton(i, j, c, p, str);
+                        if (c < p)
+                        {
+                            AddNewButton(i, j, c, p, str);
+                        }
+                        c++;
+                        j++;
                     }
-                    c++;
-                    j++;
+                    i++;
+                    j = 0;
                 }
-                i++;
-                j = 0;
             }
             ActiveControl = search_txt;
             Globals.isLoadingFinish = true;
@@ -589,7 +597,64 @@ namespace MiniGram.Controls
             {
                 MessageBox.Show("Please Enter A Valid Barcode Or Name !!");                
             }*/
-            (table.Controls[0] as SfButton).PerformClick();
+            if (Properties.Settings.Default.showListInSale)
+            {
+                (table.Controls[0] as SfButton).PerformClick();
+            }
+            else
+            {
+                if(search_txt.Text != "") {
+                    using (var ax = new MiniGramDBDataContext(Properties.Settings.Default.ConnectionString))
+                    {
+                        try
+                        {
+                            Globals.isReceiptOpen = true;
+                            TBLPRODUCT product = (from aj in ax.TBLPRODUCTs where aj.BARCODE.Trim().ToLower() == search_txt.Text.Trim().ToLower() select aj).SingleOrDefault();
+                            if (product == null)
+                            {
+                                search_txt.Text = "";
+                                MessageBox.Show("This Item Not Exist! Try Again!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return;
+                            }
+                            string pname = product.PNAME;
+                            int pid = data.sp_getProductByName(pname).ToList()[0].PID;
+                            double dollar = data.sp_getProductByName(pname).ToList()[0].PRICE.Value;
+                            string barcode = data.sp_getProductByName(pname).ToList()[0].BARCODE;
+                            string supplier = data.sp_getSupplierByID(data.sp_getProductByName(pname).ToList()[0].SID.Value).ToList()[0].SNAME;
+                            int lbp = Int32.Parse((dollar * double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
+                            bool exist = false;
+                            foreach (DataGridViewRow row in receipt_details.Rows)
+                            {
+                                if (row.Cells[1].Value.Equals(pname))
+                                {
+                                    exist = true;
+                                    row.Cells[2].Value = supplier;
+                                    row.Cells[3].Value = Int32.Parse(row.Cells[3].Value.ToString()) + 1;
+                                    row.Cells[6].Value = Int32.Parse((double.Parse(row.Cells[3].Value.ToString()) * double.Parse(lbp.ToString())).ToString());
+                                    row.Cells[7].Value = double.Parse(row.Cells[3].Value.ToString()) * dollar;
+                                    tot_quantity.Text = getTotalQTE();
+                                    tot_dollar.Text = getTotalDollar() + " $";
+                                    tot_lbp.Text = getTotalLBP() + " LBP";
+                                    break;
+                                }
+                            }
+                            if (!exist)
+                            {
+                                receipt_details.Rows.Add(barcode, pname, supplier, 1, dollar, lbp, lbp, dollar);
+                                tot_quantity.Text = getTotalQTE();
+                                tot_dollar.Text = getTotalDollar() + " $";
+                                tot_lbp.Text = getTotalLBP() + " LBP";
+                            }
+                            search_txt.Text = "";
+                            ActiveControl = search_txt;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error When Adding Items Please Contact Support!!", "Error !!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
             search_txt.Text = "";
             ActiveControl = search_txt;
         }
@@ -630,17 +695,17 @@ namespace MiniGram.Controls
                 if (dialogResult == DialogResult.Yes)
                 {
                     Globals.isReceiptOpen = true;
-                } 
-                else if(dialogResult == DialogResult.No)
+                }
+                else if (dialogResult == DialogResult.No)
                 {
                     Globals.isReceiptOpen = false;
                     CleareReceipt();
                 }
                 else
                 {
-                    
+
                 }
-                
+
             }
             else
             {
@@ -652,7 +717,7 @@ namespace MiniGram.Controls
 
         private void btnHold_Click(object sender, EventArgs e)
         {
-            using(var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+            using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
                 if (MessageBox.Show("Are You Sure You Want To Hold This Receipt ??", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
@@ -701,7 +766,7 @@ namespace MiniGram.Controls
                     }
                     cnx.SubmitChanges();
                     CleareReceipt();
-                    Globals.isReceiptOpen= false;
+                    Globals.isReceiptOpen = false;
                 }
             }
 

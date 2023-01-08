@@ -892,6 +892,7 @@
     <None Include="Resources\printer.png" />
     <None Include="Resources\startScreenVideo.mp4" />
     <None Include="Resources\startScreenVideo.gif" />
+    <None Include="Resources\accept.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
