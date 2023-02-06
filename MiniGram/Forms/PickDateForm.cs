@@ -1,6 +1,4 @@
-﻿using Syncfusion.Olap.MDXQueryParser;
-using Syncfusion.Windows.Shared;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

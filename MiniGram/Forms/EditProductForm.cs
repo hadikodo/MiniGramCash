@@ -1,7 +1,5 @@
 ﻿using MiniGram.Classes;
 using MiniGram.LINQ;
-using Syncfusion.CompoundFile.DocIO.Native;
-using Syncfusion.PivotAnalysis.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

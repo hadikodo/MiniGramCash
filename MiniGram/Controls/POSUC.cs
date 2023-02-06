@@ -1,7 +1,6 @@
 ﻿using MiniGram.Classes;
 using MiniGram.Forms;
 using MiniGram.LINQ;
-using Syncfusion.PMML;
 using Syncfusion.Windows.Forms.Tools;
 using Syncfusion.WinForms.Controls;
 using System;
@@ -342,11 +341,13 @@ namespace MiniGram.Controls
                                 return;
                             }
                         }
-
                         cnx.SubmitChanges();
-                        DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType);
-                        drrv.receiptID = newReceipt.RID;
-                        drrv.ShowDialog();
+                        if (!Properties.Settings.Default.printInCheckout)
+                        {
+                            DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType);
+                            drrv.receiptID = newReceipt.RID;
+                            drrv.ShowDialog();
+                        }
                         receipt_details.Rows.Clear();
                         tot_lbp.Text = "0" + " LBP";
                         tot_dollar.Text = "0" + " $";

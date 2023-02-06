@@ -200,5 +200,17 @@ namespace MiniGram.Properties {
                 this["showListInSale"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool printInCheckout {
+            get {
+                return ((bool)(this["printInCheckout"]));
+            }
+            set {
+                this["printInCheckout"] = value;
+            }
+        }
     }
 }
