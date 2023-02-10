@@ -1,83 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MiniGramDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.625" name="MiniGramDB">
   <DataContextMoniker Name="/MiniGramDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="acd98547-7634-4cf5-b5fd-534887ac22f4" absoluteBounds="7.625, 2.875, 2, 1.9631982421875">
-      <DataClassMoniker Name="/MiniGramDBDataContext/TBLSUPPLIER" />
-      <nestedChildShapes>
-        <elementListCompartment Id="0bd4a5e4-7d21-4123-8975-8e36960492da" absoluteBounds="7.64, 3.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="28fa3b0f-aa44-461f-8627-f3f5d252d16f" absoluteBounds="4.125, 1.25, 2, 2.3478011067708335">
-      <DataClassMoniker Name="/MiniGramDBDataContext/TBLRECEIPTS_DETAIL" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e3bc9fbc-c2f9-4f30-865c-be7508ee6dfe" absoluteBounds="4.14, 1.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="1884a960-bff2-4c35-87a1-3c5b6f1e66ce" absoluteBounds="8.25, 5.625, 2, 1.7708968098958331">
+    <classShape Id="86b9a7d9-f3cf-418e-b03d-f5f71335595b" absoluteBounds="6.25, 5, 2, 1.7708968098958326">
       <DataClassMoniker Name="/MiniGramDBDataContext/TBLEXPIREDDATE" />
       <nestedChildShapes>
-        <elementListCompartment Id="d7d151be-fe1a-4cd4-9436-d635fb53429d" absoluteBounds="8.265, 6.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4302caba-a36c-4ac2-922b-0b238da5cb9d" absoluteBounds="6.265, 5.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2cfff63f-35f6-493c-8728-245c379b8826" absoluteBounds="4.75, 5.125, 2, 2.7324039713541666">
-      <DataClassMoniker Name="/MiniGramDBDataContext/TBLPRODUCT" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f07f0c89-d87f-4ee1-abe5-2257cc1cb309" absoluteBounds="4.765, 5.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(5.4375 : 5.125); (5.4375 : 3.59780110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/MiniGramDBDataContext/TBLPRODUCT/TBLPRODUCT_TBLRECEIPTS_DETAIL" />
-      <nodes>
-        <classShapeMoniker Id="2cfff63f-35f6-493c-8728-245c379b8826" />
-        <classShapeMoniker Id="28fa3b0f-aa44-461f-8627-f3f5d252d16f" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(6.75 : 6.51044840494792); (8.25 : 6.51044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/MiniGramDBDataContext/TBLPRODUCT/TBLPRODUCT_TBLEXPIREDDATE" />
-      <nodes>
-        <classShapeMoniker Id="2cfff63f-35f6-493c-8728-245c379b8826" />
-        <classShapeMoniker Id="1884a960-bff2-4c35-87a1-3c5b6f1e66ce" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(7.625 : 4.24924967447917); (6.46875 : 4.24924967447917); (6.46875 : 5.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/MiniGramDBDataContext/TBLSUPPLIER/TBLSUPPLIER_TBLPRODUCT" />
-      <nodes>
-        <classShapeMoniker Id="acd98547-7634-4cf5-b5fd-534887ac22f4" />
-        <classShapeMoniker Id="2cfff63f-35f6-493c-8728-245c379b8826" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="21f418c9-2b5f-419f-bd2a-a8900c42de80" absoluteBounds="1.375, 1.5, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/MiniGramDBDataContext/TBLRECEIPT" />
-      <nestedChildShapes>
-        <elementListCompartment Id="8ac93374-31c6-4980-a0d6-0554ac37c46b" absoluteBounds="1.3900000000000001, 1.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(3.375 : 2.54890055338542); (4.125 : 2.54890055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/MiniGramDBDataContext/TBLRECEIPT/TBLRECEIPT_TBLRECEIPTS_DETAIL" />
-      <nodes>
-        <classShapeMoniker Id="21f418c9-2b5f-419f-bd2a-a8900c42de80" />
-        <classShapeMoniker Id="28fa3b0f-aa44-461f-8627-f3f5d252d16f" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="ff86e721-0522-4a90-97d4-4536d1562786" absoluteBounds="1.625, 5.5, 2, 2.3478011067708335">
+    <classShape Id="610b19a7-2155-4b11-81a4-aaa22273fdb3" absoluteBounds="6.25, 1.625, 2, 2.347801106770834">
       <DataClassMoniker Name="/MiniGramDBDataContext/TBLHOLDDETAIL" />
       <nestedChildShapes>
-        <elementListCompartment Id="acdac998-aedf-498f-a460-47f8d33b6647" absoluteBounds="1.6400000000000001, 5.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a39fca30-2e49-4cc2-a73a-1a3196b9669a" absoluteBounds="6.265, 2.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 3.65549967447917); (2.5 : 5.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/MiniGramDBDataContext/TBLRECEIPT/TBLRECEIPT_TBLHOLDDETAIL" />
+    <classShape Id="9d3bda76-74e5-4fbf-b7e7-60cda4bc7c7c" absoluteBounds="0.75, 8.375, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/MiniGramDBDataContext/TBLITEM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9ea64d3-7484-4613-af7a-33ab6738e9f4" absoluteBounds="0.765, 8.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bb70a6f4-b05a-48d7-b95d-b429db1023a9" absoluteBounds="3.5, 4.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/MiniGramDBDataContext/TBLPRODUCT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df18d5ea-b109-4828-8c20-9a8653736ded" absoluteBounds="3.515, 4.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a42203b-a3b6-43a4-bef9-8803b9bfb5cd" absoluteBounds="3.5, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/MiniGramDBDataContext/TBLRECEIPT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="041aaf45-1e08-402b-b0ac-c062ffd989fb" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="10a4c93a-e740-4cce-be90-ebc65b339442" absoluteBounds="6.25, 7.625, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/MiniGramDBDataContext/TBLRECEIPTS_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="114ba474-f281-409d-bda0-7d8307cc9fdc" absoluteBounds="6.265, 8.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8be449ab-c044-4328-8dfe-49cfe7ceeca0" absoluteBounds="0.75, 4.875, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/MiniGramDBDataContext/TBLSUPPLIER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e46c3e53-6ac2-435c-90d1-963164c38e28" absoluteBounds="0.765, 5.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 5.88544840494792); (5.85416666666667 : 5.88544840494792 : JumpStart); (6.14583333333333 : 5.88544840494792 : JumpEnd); (6.25 : 5.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MiniGramDBDataContext/TBLPRODUCT/TBLPRODUCT_TBLEXPIREDDATE" />
       <nodes>
-        <classShapeMoniker Id="21f418c9-2b5f-419f-bd2a-a8900c42de80" />
-        <classShapeMoniker Id="ff86e721-0522-4a90-97d4-4536d1562786" />
+        <classShapeMoniker Id="bb70a6f4-b05a-48d7-b95d-b429db1023a9" />
+        <classShapeMoniker Id="86b9a7d9-f3cf-418e-b03d-f5f71335595b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.75 : 6.67390055338542); (3.625 : 6.67390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 4.5); (5.875 : 4.125); (5.875 : 4.34780110677083); (5.87857443490112 : 4.34422667186971 : JumpStart); (5.99642556509888 : 4.22637554167196 : JumpEnd); (6.00357443490112 : 4.21922667186971 : JumpStart); (6.12142556509888 : 4.10137554167196 : JumpEnd); (6.25 : 3.97280110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MiniGramDBDataContext/TBLPRODUCT/TBLPRODUCT_TBLHOLDDETAIL" />
       <nodes>
-        <classShapeMoniker Id="2cfff63f-35f6-493c-8728-245c379b8826" />
-        <classShapeMoniker Id="ff86e721-0522-4a90-97d4-4536d1562786" />
+        <classShapeMoniker Id="bb70a6f4-b05a-48d7-b95d-b429db1023a9" />
+        <classShapeMoniker Id="610b19a7-2155-4b11-81a4-aaa22273fdb3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.26524983723958); (6.25 : 2.26524983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MiniGramDBDataContext/TBLRECEIPT/TBLRECEIPT_TBLHOLDDETAIL" />
+      <nodes>
+        <classShapeMoniker Id="6a42203b-a3b6-43a4-bef9-8803b9bfb5cd" />
+        <classShapeMoniker Id="610b19a7-2155-4b11-81a4-aaa22273fdb3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 7.23240397135417); (4.5 : 8.79890055338542); (5.85416666666667 : 8.79890055338542 : JumpStart); (6.14583333333333 : 8.79890055338542 : JumpEnd); (6.25 : 8.79890055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MiniGramDBDataContext/TBLPRODUCT/TBLPRODUCT_TBLRECEIPTS_DETAIL" />
+      <nodes>
+        <classShapeMoniker Id="bb70a6f4-b05a-48d7-b95d-b429db1023a9" />
+        <classShapeMoniker Id="10a4c93a-e740-4cce-be90-ebc65b339442" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 7.23240397135417); (5.0312525 : 8.18069777669271); (5.85416666666667 : 8.18069777669271 : JumpStart); (6.14583333333333 : 8.18069777669271 : JumpEnd); (6.25 : 8.18069777669271)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MiniGramDBDataContext/TBLPRODUCT/TBLPRODUCT_TBLRECEIPTS_DETAIL1" />
+      <nodes>
+        <classShapeMoniker Id="bb70a6f4-b05a-48d7-b95d-b429db1023a9" />
+        <classShapeMoniker Id="10a4c93a-e740-4cce-be90-ebc65b339442" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.46769230769231 : 2.90549967447917); (5.87857443490112 : 3.31638180168798 : JumpStart); (5.99642556509888 : 3.43423293188574 : JumpEnd); (6.0625 : 3.50030736678686); (6.0625 : 9.41710283007813); (6.25 : 9.41710283007813)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MiniGramDBDataContext/TBLRECEIPT/TBLRECEIPT_TBLRECEIPTS_DETAIL" />
+      <nodes>
+        <classShapeMoniker Id="6a42203b-a3b6-43a4-bef9-8803b9bfb5cd" />
+        <classShapeMoniker Id="10a4c93a-e740-4cce-be90-ebc65b339442" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.80857559755609); (5.9375 : 3.24607559755609); (5.9375 : 9.41710283007813); (6.25 : 9.41710283007813)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MiniGramDBDataContext/TBLRECEIPT/TBLRECEIPT_TBLRECEIPTS_DETAIL1" />
+      <nodes>
+        <classShapeMoniker Id="6a42203b-a3b6-43a4-bef9-8803b9bfb5cd" />
+        <classShapeMoniker Id="10a4c93a-e740-4cce-be90-ebc65b339442" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.85659912109375); (3.5 : 5.85659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MiniGramDBDataContext/TBLSUPPLIER/TBLSUPPLIER_TBLPRODUCT" />
+      <nodes>
+        <classShapeMoniker Id="8be449ab-c044-4328-8dfe-49cfe7ceeca0" />
+        <classShapeMoniker Id="bb70a6f4-b05a-48d7-b95d-b429db1023a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.30329956054688); (3.5 : 5.30329956054688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MiniGramDBDataContext/TBLSUPPLIER/TBLSUPPLIER_TBLPRODUCT1" />
+      <nodes>
+        <classShapeMoniker Id="8be449ab-c044-4328-8dfe-49cfe7ceeca0" />
+        <classShapeMoniker Id="bb70a6f4-b05a-48d7-b95d-b429db1023a9" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

@@ -760,8 +760,8 @@ namespace MiniGram.Controls
                         newHoldDetails.RID = newReceipt.RID;
                         newHoldDetails.PID = product[0].PID;
                         newHoldDetails.QTE = Int32.Parse(row.Cells[3].Value.ToString());
-                        newHoldDetails.PRICE_Dollar = double.Parse(row.Cells[4].Value.ToString());
-                        newHoldDetails.TOTAL_PRICEDollar = double.Parse(row.Cells[7].Value.ToString());
+                        newHoldDetails.PRICE_Dollar = Convert.ToDouble(row.Cells[4].Value.ToString());
+                        newHoldDetails.TOTAL_PRICEDollar = Convert.ToDouble(row.Cells[7].Value.ToString());
                         newHoldDetails.PRICE_LBP = Int32.Parse(row.Cells[5].Value.ToString());
                         newHoldDetails.TOTAL_PRICELBP = Int32.Parse(row.Cells[6].Value.ToString());
                         cnx.TBLHOLDDETAILs.InsertOnSubmit(newHoldDetails);
