@@ -25,7 +25,7 @@ namespace MiniGram
                 try
                 {
                     conn.Open();
-                    Application.Run(new StratScreenForm());
+                    Application.Run(new MainForm());
                 }
                 catch (SqlException)
                 {
