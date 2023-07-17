@@ -40,7 +40,7 @@ namespace MiniGram.Forms
             warning_lable.Visible = false;
             checkBoxAdv2.Checked = false;
             checkBoxAdv1.Checked = false;
-
+            chkboxHasDiscount.Checked = false;
             using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
                 var suppList = cnx.sp_select_suppliers("").ToList();
@@ -54,14 +54,27 @@ namespace MiniGram.Forms
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(productname_txt.Text) || string.IsNullOrEmpty(price_txt.Text))
+            List<LINQ.TBLPRODUCT> products = new List<TBLPRODUCT>();
+            using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+            {
+                products = (from aj in cnx.TBLPRODUCTs where aj.BARCODE == barcode_txt.Text select aj).ToList();
+            }
+            if (products.Count > 0)
+            {
+                MessageBox.Show("This Product is Already Exist !!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+            if (string.IsNullOrEmpty(productname_txt.Text) || barcode_txt.Text.Length < 3 || string.IsNullOrEmpty(sell_price_txt.Text) || string.IsNullOrEmpty(init_price_txt.Text) || string.IsNullOrEmpty(txtSecondaryPrice.Text))
             {
                 warning_lable.Visible = true;
             }
             else
-            {
+            {                
                 if (string.IsNullOrEmpty(barcode_txt.Text))
                     barcode_txt.Text = "0";
+                if (!chkboxHasDiscount.Checked)
+                    txtDiscountPercentage.Text = "0";
                 if (!checkBoxAdv2.Checked)
                 {
                     quantity_txt.Text = "0";
@@ -70,7 +83,7 @@ namespace MiniGram.Forms
                         try
                         {
                             int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
-                            cnx.sp_addNewProduct(productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), Math.Round(Convert.ToDouble(price_txt.Text),2), false,sid, checkBoxAdv1.Checked);
+                            cnx.sp_addNewProduct(productname_txt.Text,barcode_txt.Text, Int32.Parse(quantity_txt.Text), Math.Round(Convert.ToDouble(sell_price_txt.Text),3), false,sid, checkBoxAdv1.Checked,chkboxHasTVA.Checked, (init_price_txt.Text == "") ? 0 : Math.Round(Convert.ToDouble(init_price_txt.Text), 3), Math.Round(Convert.ToDouble(txtSecondaryPrice.Text), 3), Int32.Parse(txtDiscountPercentage.Text.ToString()), chkboxHasDiscount.Checked);
                         }
                         catch (Exception)
                         {
@@ -92,7 +105,7 @@ namespace MiniGram.Forms
                             try
                             {
                                 int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
-                                cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true,sid, checkBoxAdv1.Checked);
+                                cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), Math.Round(Convert.ToDouble(sell_price_txt.Text),3), true,sid, checkBoxAdv1.Checked, chkboxHasTVA.Checked, (init_price_txt.Text == "") ? 0 : Math.Round(Convert.ToDouble(init_price_txt.Text), 3), Math.Round(Convert.ToDouble(txtSecondaryPrice.Text), 3), Int32.Parse(txtDiscountPercentage.Text.ToString()), chkboxHasDiscount.Checked);
                             }
                             catch (Exception)
                             {
@@ -152,7 +165,7 @@ namespace MiniGram.Forms
         private void keyboard_btn_Click(object sender, EventArgs e)
         {
             ProcessStartInfo ps = new ProcessStartInfo();
-            ps.FileName = ((Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\osk.exe"));
+            ps.FileName = @"C:\Windows\System32\osk.exe";
             Process process = new Process();
             process.StartInfo = ps;
             process.Start();
@@ -189,7 +202,7 @@ namespace MiniGram.Forms
         {
             if(MessageBox.Show("Do You Want To Save This Product??","Info",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (string.IsNullOrEmpty(productname_txt.Text) || string.IsNullOrEmpty(price_txt.Text))
+                if (string.IsNullOrEmpty(productname_txt.Text) || barcode_txt.Text.Length < 3 || string.IsNullOrEmpty(sell_price_txt.Text) || string.IsNullOrEmpty(init_price_txt.Text) || string.IsNullOrEmpty(txtSecondaryPrice.Text))
                 {
                     warning_lable.Visible = true;
                 }
@@ -197,6 +210,8 @@ namespace MiniGram.Forms
                 {
                     if (string.IsNullOrEmpty(barcode_txt.Text))
                         barcode_txt.Text = "0";
+                    if (!chkboxHasDiscount.Checked)
+                        txtDiscountPercentage.Text = "0";
                     if (!checkBoxAdv2.Checked)
                     {
                         quantity_txt.Text = "0";
@@ -207,7 +222,7 @@ namespace MiniGram.Forms
                                 try
                                 {
                                     int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
-                                    cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), false, sid, checkBoxAdv1.Checked);
+                                    cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), Math.Round(Convert.ToDouble(sell_price_txt.Text), 3), false, sid, checkBoxAdv1.Checked, chkboxHasTVA.Checked, (init_price_txt.Text == "") ? 0 : Math.Round(Convert.ToDouble(init_price_txt.Text), 3), Math.Round(Convert.ToDouble(txtSecondaryPrice.Text), 3), Int32.Parse(txtDiscountPercentage.Text.ToString()),chkboxHasDiscount.Checked);
                                 }
                                 catch (Exception)
                                 {
@@ -221,7 +236,7 @@ namespace MiniGram.Forms
                                 try
                                 {
                                     sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
-                                    cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, 0, float.Parse(price_txt.Text), false, sid, checkBoxAdv1.Checked);
+                                    cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, 0, Math.Round(Convert.ToDouble(sell_price_txt.Text), 3), false, sid, checkBoxAdv1.Checked, chkboxHasTVA.Checked, (init_price_txt.Text == "") ? 0 : Math.Round(Convert.ToDouble(init_price_txt.Text), 3), Math.Round(Convert.ToDouble(txtSecondaryPrice.Text), 3), Int32.Parse(txtDiscountPercentage.Text.ToString()), chkboxHasDiscount.Checked);
                                 }
                                 catch (Exception)
                                 {
@@ -232,7 +247,7 @@ namespace MiniGram.Forms
                                 frm.ShowDialog();
                                 int productID = Int32.Parse((from aj in cnx.TBLPRODUCTs where aj.BARCODE == barcode_txt.Text select aj.PID).Single().ToString());
                                 int TotalQuantity = (from aj in cnx.TBLEXPIREDDATEs where aj.PID == productID && aj.ExpiredDate > DateTime.Today  select aj.Qte).ToList().Sum(x => Convert.ToInt32(x));
-                                cnx.sp_UpdateProduct(productID, productname_txt.Text, barcode_txt.Text, TotalQuantity, float.Parse(price_txt.Text), false, sid, checkBoxAdv1.Checked);
+                                cnx.sp_UpdateProduct(productID, productname_txt.Text, barcode_txt.Text, TotalQuantity, Math.Round(Convert.ToDouble(sell_price_txt.Text), 3), false, sid, checkBoxAdv1.Checked, chkboxHasTVA.Checked, (init_price_txt.Text == "") ? 0 : Math.Round(Convert.ToDouble(init_price_txt.Text), 3), Math.Round(Convert.ToDouble(txtSecondaryPrice.Text), 3), Int32.Parse(txtDiscountPercentage.Text.ToString()), chkboxHasDiscount.Checked);
                                 this.Close();
                             }
                         }
@@ -248,7 +263,7 @@ namespace MiniGram.Forms
                                 try
                                 {
                                     int sid = cnx.sp_getSIDBySNAME(supp_cbox.SelectedItem.ToString()).ToList()[0].SID;
-                                    cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), float.Parse(price_txt.Text), true, sid, checkBoxAdv1.Checked);
+                                    cnx.sp_addNewProduct(productname_txt.Text, barcode_txt.Text, Int32.Parse(quantity_txt.Text), Math.Round(Convert.ToDouble(sell_price_txt.Text), 3), true, sid, checkBoxAdv1.Checked, chkboxHasTVA.Checked, (init_price_txt.Text == "") ? 0 : Math.Round(Convert.ToDouble(init_price_txt.Text), 3), Math.Round(Convert.ToDouble(txtSecondaryPrice.Text), 3), Int32.Parse(txtDiscountPercentage.Text.ToString()), chkboxHasDiscount.Checked);
                                 }
                                 catch (Exception)
                                 {
@@ -263,6 +278,30 @@ namespace MiniGram.Forms
             else
             {
                 return;
+            }
+        }
+
+        private void chkboxHasTVA_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkboxHasTVA.Checked)
+            {
+                txtTVADesc.Text = Properties.Settings.Default.TVAPercentage.ToString() + "% TVA * Sell Price";
+            }
+            else
+            {
+                txtTVADesc.Text = "";
+            }
+        }
+
+        private void chkboxHasDiscount_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkboxHasDiscount.Checked)
+            {
+                txtDiscountPercentage.Enabled = true;
+            }
+            else
+            {
+                txtDiscountPercentage.Enabled = false;
             }
         }
     }

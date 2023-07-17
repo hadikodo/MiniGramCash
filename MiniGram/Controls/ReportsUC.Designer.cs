@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -110,7 +110,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 78);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1594, 687);
+            this.panel2.Size = new System.Drawing.Size(1914, 999);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -125,7 +125,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 687F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1594, 687);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1914, 999);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // panel3
@@ -134,7 +134,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1588, 681);
+            this.panel3.Size = new System.Drawing.Size(1908, 993);
             this.panel3.TabIndex = 1;
             // 
             // reportMainPanel
@@ -143,7 +143,7 @@
             this.reportMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportMainPanel.Location = new System.Drawing.Point(0, 0);
             this.reportMainPanel.Name = "reportMainPanel";
-            this.reportMainPanel.Size = new System.Drawing.Size(1588, 681);
+            this.reportMainPanel.Size = new System.Drawing.Size(1908, 993);
             this.reportMainPanel.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -158,7 +158,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1600, 768);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1920, 1080);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel1
@@ -167,12 +167,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1594, 69);
+            this.panel1.Size = new System.Drawing.Size(1914, 69);
             this.panel1.TabIndex = 2;
             // 
             // mainTable
             // 
-            this.mainTable.ColumnCount = 11;
+            this.mainTable.ColumnCount = 12;
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
@@ -181,16 +181,17 @@
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.mainTable.Controls.Add(this.btnPrint, 9, 0);
+            this.mainTable.Controls.Add(this.btnPrint, 10, 0);
             this.mainTable.Controls.Add(this.panelHasExpDate, 7, 0);
             this.mainTable.Controls.Add(this.panelHasQte, 6, 0);
             this.mainTable.Controls.Add(this.panelSupplier, 5, 0);
             this.mainTable.Controls.Add(this.panelPName, 4, 0);
             this.mainTable.Controls.Add(this.panelBarcode, 3, 0);
-            this.mainTable.Controls.Add(this.btnRefresh, 10, 0);
+            this.mainTable.Controls.Add(this.btnRefresh, 11, 0);
             this.mainTable.Controls.Add(this.panelToDate, 2, 0);
             this.mainTable.Controls.Add(this.panelFromDate, 1, 0);
             this.mainTable.Controls.Add(this.panel4, 0, 0);
@@ -200,7 +201,7 @@
             this.mainTable.Name = "mainTable";
             this.mainTable.RowCount = 1;
             this.mainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.mainTable.Size = new System.Drawing.Size(1594, 69);
+            this.mainTable.Size = new System.Drawing.Size(1914, 69);
             this.mainTable.TabIndex = 0;
             // 
             // btnPrint
@@ -217,7 +218,7 @@
             this.btnPrint.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPrint.ImageMargin = new System.Windows.Forms.Padding(5);
             this.btnPrint.ImageSize = new System.Drawing.Size(55, 55);
-            this.btnPrint.Location = new System.Drawing.Point(1444, 0);
+            this.btnPrint.Location = new System.Drawing.Point(1764, 0);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(0);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 69);
@@ -269,18 +270,18 @@
             this.chkHasExpDate.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Flat;
             this.chkHasExpDate.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkHasExpDate.Checked = true;
-            appearance1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            appearance1.Cursor = System.Windows.Forms.Cursors.Hand;
-            appearance1.ForeColor = System.Drawing.Color.White;
-            this.chkHasExpDate.CheckedAppearance = appearance1;
+            appearance15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance15.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance15.ForeColor = System.Drawing.Color.White;
+            this.chkHasExpDate.CheckedAppearance = appearance15;
             this.chkHasExpDate.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.chkHasExpDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            appearance2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.chkHasExpDate.HotTrackingAppearance = appearance2;
-            appearance3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            appearance3.Cursor = System.Windows.Forms.Cursors.Hand;
-            appearance3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.chkHasExpDate.IndeterminateAppearance = appearance3;
+            appearance16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.chkHasExpDate.HotTrackingAppearance = appearance16;
+            appearance17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance17.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.chkHasExpDate.IndeterminateAppearance = appearance17;
             this.chkHasExpDate.Location = new System.Drawing.Point(3, 34);
             this.chkHasExpDate.Name = "chkHasExpDate";
             this.chkHasExpDate.Size = new System.Drawing.Size(138, 26);
@@ -330,34 +331,34 @@
             // 
             // chkHasQte
             // 
-            appearance4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            appearance4.Cursor = System.Windows.Forms.Cursors.Hand;
-            appearance4.FontData.SizeInPoints = 30F;
-            appearance4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.chkHasQte.Appearance = appearance4;
+            appearance18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance18.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance18.FontData.SizeInPoints = 30F;
+            appearance18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.chkHasQte.Appearance = appearance18;
             this.chkHasQte.AutoSize = true;
             this.chkHasQte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.chkHasQte.BackColorInternal = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.chkHasQte.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Flat;
             this.chkHasQte.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkHasQte.Checked = true;
-            appearance5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            appearance5.Cursor = System.Windows.Forms.Cursors.Hand;
-            appearance5.FontData.SizeInPoints = 15F;
-            appearance5.ForeColor = System.Drawing.Color.White;
-            this.chkHasQte.CheckedAppearance = appearance5;
+            appearance19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance19.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance19.FontData.SizeInPoints = 15F;
+            appearance19.ForeColor = System.Drawing.Color.White;
+            this.chkHasQte.CheckedAppearance = appearance19;
             this.chkHasQte.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.chkHasQte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkHasQte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chkHasQte.GlyphInfo = Infragistics.Win.UIElementDrawParams.StandardCheckBoxGlyphInfo;
-            appearance6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            appearance6.Cursor = System.Windows.Forms.Cursors.Hand;
-            appearance6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.chkHasQte.HotTrackingAppearance = appearance6;
-            appearance7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            appearance7.Cursor = System.Windows.Forms.Cursors.Hand;
-            appearance7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.chkHasQte.IndeterminateAppearance = appearance7;
+            appearance20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance20.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.chkHasQte.HotTrackingAppearance = appearance20;
+            appearance21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance21.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.chkHasQte.IndeterminateAppearance = appearance21;
             this.chkHasQte.Location = new System.Drawing.Point(3, 34);
             this.chkHasQte.Name = "chkHasQte";
             this.chkHasQte.Size = new System.Drawing.Size(138, 26);
@@ -546,7 +547,7 @@
             this.btnRefresh.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRefresh.ImageMargin = new System.Windows.Forms.Padding(5);
             this.btnRefresh.ImageSize = new System.Drawing.Size(55, 55);
-            this.btnRefresh.Location = new System.Drawing.Point(1519, 0);
+            this.btnRefresh.Location = new System.Drawing.Point(1839, 0);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 69);
@@ -764,7 +765,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ReportsUC";
-            this.Size = new System.Drawing.Size(1600, 768);
+            this.Size = new System.Drawing.Size(1920, 1080);
             this.Load += new System.EventHandler(this.ReportsUC_Load);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

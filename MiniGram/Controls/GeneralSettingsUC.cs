@@ -47,6 +47,11 @@ namespace MiniGram.Controls
             else
                 chkboxDisableReceiptPrnt.CheckState = CheckState.Unchecked;
 
+            if (Properties.Settings.Default.CheckoutExtended)
+                checkBoxEnableExtendedCheckout.CheckState = CheckState.Checked;
+            else
+                checkBoxEnableExtendedCheckout.CheckState = CheckState.Unchecked;
+
 
             Dictionary<int,string> ReceiptSize = new Dictionary<int,string>();
             ReceiptSize.Add(1, "A4 ( 21 x 29.7 cm )");
@@ -66,6 +71,8 @@ namespace MiniGram.Controls
                 }
             }
             dollar_price.Text = Properties.Settings.Default.dollarLBPPrice.ToString();
+            txtTVALBPPrice.Text = Properties.Settings.Default.TVALBPPrice.ToString();
+            txtTVAPercentage.Text = Properties.Settings.Default.TVAPercentage.ToString();
             Properties.Settings.Default.somethingChanged = false;
             Properties.Settings.Default.Save();
         }
@@ -103,9 +110,12 @@ namespace MiniGram.Controls
             }
             Properties.Settings.Default.showListInSale = chkboxShowUnshowList.Checked;
             Properties.Settings.Default.printInCheckout = chkboxDisableReceiptPrnt.Checked;
+            Properties.Settings.Default.CheckoutExtended = checkBoxEnableExtendedCheckout.Checked;
             Properties.Settings.Default.ReceiptType = Int32.Parse(cboxReceiptSize.SelectedValue.ToString());
             Properties.Settings.Default.printerName = printer_drp.SelectedItem.ToString();
             Properties.Settings.Default.dollarLBPPrice = Int32.Parse(dollar_price.Text);
+            Properties.Settings.Default.TVALBPPrice = Int32.Parse(txtTVALBPPrice.Text);
+            Properties.Settings.Default.TVAPercentage = Int32.Parse(txtTVAPercentage.Text);
             Properties.Settings.Default.somethingChanged = false;
             Properties.Settings.Default.Save();
         }
@@ -117,6 +127,23 @@ namespace MiniGram.Controls
         }
 
         private void chkboxDisableReceiptPrnt_CheckStateChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.somethingChanged = true;
+            Properties.Settings.Default.Save();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTVALBPPrice_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.somethingChanged = true;
+            Properties.Settings.Default.Save();
+        }
+
+        private void txtTVAPercentage_TextChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.somethingChanged = true;
             Properties.Settings.Default.Save();

@@ -16,6 +16,8 @@ namespace MiniGram.Controls
 {
     public partial class ProductsUC : UserControl
     {
+
+        private int time = 0;
         
         public ProductsUC()
         {
@@ -42,7 +44,7 @@ namespace MiniGram.Controls
             using(MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
                 cnx.sp_enableProductByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
-                refreshData();
+                refreshData("");
             }
 
         }
@@ -52,32 +54,42 @@ namespace MiniGram.Controls
             using (MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
                 cnx.sp_disableProductByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
-                refreshData();
+                refreshData("");
             }
 
         }
-        public void refreshData()
+        public void refreshData(string str)
         {
+            int enabledProduct = 0;
             using (MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                spselectproductsResultBindingSource.DataSource = cnx.sp_select_products("");
+                spselectproductsResultBindingSource.DataSource = cnx.sp_select_products(str).Take(50).ToList();
                 dataGridView1.Refresh();
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (!row.Cells[7].Value.ToString().Equals("Enabled"))
                     {
                         row.DefaultCellStyle.BackColor = Color.DarkGray;
+                        enabledProduct--;
                     }
+                    if(Int32.Parse(row.Cells[4].Value.ToString()) < 0)
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Red;
+                    }
+                    enabledProduct++;
                 }
             }
-         
+
+            lblCount.Text = enabledProduct.ToString();
+
+
         }
 
         private void addproduct_btn_Click(object sender, EventArgs e)
         {
             AddProductForm apf = new AddProductForm();
             apf.ShowDialog();
-            refreshData();
+            refreshData("");
         }
 
         private void search_btn_Click(object sender, EventArgs e)
@@ -93,7 +105,7 @@ namespace MiniGram.Controls
             {
                 
                 timer1.Start();
-                refreshData();
+                refreshData("");
             }
         }
 
@@ -101,7 +113,7 @@ namespace MiniGram.Controls
         {
             if(!Globals.isSearchVisible)
             {
-                if (search_txt.Width < 500)
+                if (search_txt.Width < 200)
                     search_txt.Width += 50;
                 else
                 {
@@ -125,20 +137,8 @@ namespace MiniGram.Controls
 
         private void search_txt_TextChanged(object sender, EventArgs e)
         {
-            using (MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
-            {
-                try
-                {
-                    spselectproductsResultBindingSource.DataSource = cnx.sp_select_products(search_txt.Text);
-                    dataGridView1.Refresh();
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-            }
-
+                time = 0;
+                timerRefreshDataDelay.Start();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -147,14 +147,14 @@ namespace MiniGram.Controls
             {
                 EditProductForm epf = new EditProductForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
                 epf.ShowDialog();
-                refreshData();
+                refreshData("");
             }
         }
 
         private void keyboard_btn_Click(object sender, EventArgs e)
         {
             ProcessStartInfo ps = new ProcessStartInfo();
-            ps.FileName = ((Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\osk.exe"));
+            ps.FileName = @"C:\Windows\System32\osk.exe";
             Process process = new Process();
             process.StartInfo = ps;
             process.Start();
@@ -165,7 +165,28 @@ namespace MiniGram.Controls
         {
             EditProductForm epf = new EditProductForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
             epf.ShowDialog();
-            refreshData();
+            refreshData("");
+        }
+
+        private void btnDeliveryIn_Click(object sender, EventArgs e)
+        {
+            DeliveryInForm dif = new DeliveryInForm();
+            dif.ShowDialog();
+            refreshData("");
+        }
+
+        private void timerRefreshDataDelay_Tick(object sender, EventArgs e)
+        {
+            if (time >= 2)
+            {
+                refreshData(search_txt.Text);
+                time = 0;
+                timerRefreshDataDelay.Stop();
+            }
+            else
+            {
+                time++;
+            }
         }
     }
 }

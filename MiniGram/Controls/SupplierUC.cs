@@ -137,7 +137,7 @@ namespace MiniGram
         private void keyboard_btn_Click(object sender, EventArgs e)
         {
             ProcessStartInfo ps = new ProcessStartInfo();
-            ps.FileName = ((Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\osk.exe"));
+            ps.FileName = @"C:\Windows\System32\osk.exe";
             Process process = new Process();
             process.StartInfo = ps;
             process.Start();

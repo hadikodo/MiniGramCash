@@ -44,6 +44,8 @@ namespace MiniGram.Controls
             cboxReportType.DataSource = new BindingSource(ReportsDict, null);
             cboxReportType.ValueMember = "Key";
             cboxReportType.DisplayMember = "Value";
+            dtpFrom.Value = DateTime.Today.AddMonths(-1);
+            dtpTo.Value = DateTime.Today;
         }
 
         private void switchControl(Control control)
@@ -169,6 +171,11 @@ namespace MiniGram.Controls
                 MessageBox.Show("Can't Print This Report, Please Contact Support !!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void btnToday_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
