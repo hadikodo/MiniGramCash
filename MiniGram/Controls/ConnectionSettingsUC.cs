@@ -47,6 +47,7 @@ namespace MiniGram.Controls
         public void LoadData()
         {
             server_name.Text = Properties.Settings.Default.ServerName.ToString();
+            txtUserServer.Text = Properties.Settings.Default.UsersServer.ToString();
             if (Properties.Settings.Default.ServerSecurity)
             {
                 checkBoxAdv1.CheckState = CheckState.Checked;
@@ -65,6 +66,24 @@ namespace MiniGram.Controls
                 label1.Visible = false;
                 label3.Visible = false;
             }
+            if (Properties.Settings.Default.UserServerSecurity)
+            {
+                checkBoxAdv2.CheckState = CheckState.Checked;
+                txtUsername2.Visible = true;
+                txtPassword2.Visible = true;
+                label8.Visible = true;
+                label7.Visible = true;
+                txtUsername2.Text = Properties.Settings.Default.UserServerUsername;
+                txtPassword2.Text = Properties.Settings.Default.UserServerPassword;
+            }
+            else
+            {
+                checkBoxAdv2.CheckState = CheckState.Unchecked;
+                txtUsername2.Visible = false;
+                txtPassword2.Visible = false;
+                label8.Visible = false;
+                label7.Visible = false;
+            }
             Properties.Settings.Default.somethingChanged = false;
             Properties.Settings.Default.Save();
         }
@@ -74,7 +93,7 @@ namespace MiniGram.Controls
             string conn;
             if (checkBoxAdv1.Checked)
             {
-               conn = "Data Source=" + server_name.Text + ";Initial Catalog=MiniGramCashDB;User ID=" + username_txt.Text + ";Password=" + password_txt.Text;
+               conn = "Data Source=" + server_name.Text.Replace(@"\\",@"\").ToString()+ ";Initial Catalog=MiniGramCashDB;User ID=" + username_txt.Text + ";Password=" + password_txt.Text;
                 if (testConnection(conn))
                 {
                     Properties.Settings.Default.ServerName = server_name.Text;
@@ -91,10 +110,10 @@ namespace MiniGram.Controls
             }
             else
             {
-               conn = "Data Source=" + server_name.Text + ";Initial Catalog=MiniGramCashDB;Integrated Security=True";
+               conn = "Data Source=" + server_name.Text.Replace(@"\\", @"\").ToString() + ";Initial Catalog=MiniGramCashDB;Integrated Security=True";
                 if (testConnection(conn))
                 {
-                    Properties.Settings.Default.ServerName = server_name.Text;
+                    Properties.Settings.Default.ServerName = server_name.Text.Replace(@"\\", @"\").ToString();
                     Properties.Settings.Default.ServerSecurity = false;
                     Properties.Settings.Default.ConnectionString = conn;
                     Globals.ConnectionString = conn;
@@ -105,6 +124,41 @@ namespace MiniGram.Controls
                     MessageBox.Show("Connection To Server Failed, Please Check Server Information !!", "Error");
                 }
             }
+            //conn = "";
+            //if (checkBoxAdv2.Checked)
+            //{
+            //    conn = "Data Source=" + txtUserServer.Text.Replace(@"\\", @"\").ToString() + ";Initial Catalog=OrganigramSecurity;User ID=" + txtUsername2.Text + ";Password=" + txtPassword2.Text;
+            //    if (testConnection(conn))
+            //    {
+            //        Properties.Settings.Default.UsersServer = txtUserServer.Text;
+            //        Properties.Settings.Default.UserServerUsername = txtUsername2.Text;
+            //        Properties.Settings.Default.UserServerPassword = txtPassword2.Text;
+            //        Properties.Settings.Default.UserServerSecurity = true;
+            //        Properties.Settings.Default.ConnectionStringUsers = conn;
+            //        Globals.ConnectionString = conn;
+            //        Properties.Settings.Default.Save();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Connection To Server Failed, Please Check Server Information !!", "Error");
+            //    }
+            //}
+            //else
+            //{
+            //    conn = "Data Source=" + txtUserServer.Text.Replace(@"\\", @"\").ToString() + ";Initial Catalog=OrganigramSecurity;Integrated Security=True";
+            //    if (testConnection(conn))
+            //    {
+            //        Properties.Settings.Default.UsersServer = txtUserServer.Text.Replace(@"\\", @"\").ToString();
+            //        Properties.Settings.Default.UserServerSecurity = false;
+            //        Properties.Settings.Default.ConnectionStringUsers = conn;
+            //        Globals.ConnectionString = conn;
+            //        Properties.Settings.Default.Save();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Connection To Server Failed, Please Check Server Information !!", "Error");
+            //    }
+            //}
             Properties.Settings.Default.somethingChanged = false;
             Properties.Settings.Default.Save();
         }
@@ -145,6 +199,28 @@ namespace MiniGram.Controls
 
         private void password_txt_TextChanged(object sender, EventArgs e)
         {
+            Properties.Settings.Default.somethingChanged = true;
+            Properties.Settings.Default.Save();
+        }
+
+        private void checkBoxAdv2_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAdv2.Checked)
+            {
+                txtUsername2.Visible = true;
+                txtPassword2.Visible = true;
+                label8.Visible = true;
+                label7.Visible = true;
+                txtUsername2.Text = Properties.Settings.Default.Username;
+                txtPassword2.Text = Properties.Settings.Default.Password;
+            }
+            else
+            {
+                txtUsername2.Visible = false;
+                txtPassword2.Visible = false;
+                label8.Visible = false;
+                label7.Visible = false;
+            }
             Properties.Settings.Default.somethingChanged = true;
             Properties.Settings.Default.Save();
         }

@@ -17,5 +17,6 @@ namespace MiniGram.Classes
         public static bool isLoadingFinish { get; set; }
         public static string ConnectionString { get; set; }
         public static MainForm mainForm { get; set; } = new MainForm();
+        public const decimal DatabaseVersion = 1.00M;
     }
 }

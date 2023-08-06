@@ -63,29 +63,26 @@ namespace MiniGram
 
         private void sett_btn_Click(object sender, EventArgs e)
         {
-            new Thread(() =>
+            PasswordNeedForm psf = new PasswordNeedForm();
+            psf.ShowDialog();
+            if (psf.isPasswordCorrect)
             {
-                SettingsForm sf = new SettingsForm();
-                sf.ShowDialog();
-            }).Start();
+                new Thread(() =>
+                {
+                    SettingsForm sf = new SettingsForm();
+                    sf.ShowDialog();
+                }).Start();
+                
+            }
+            psf.Dispose();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //DateTime start = new DateTime(2022, 6, 10);
-            //DateTime end = new DateTime(2022, 7, 11);
-            //if (DateTime.Now > end || DateTime.Now < start)
-            //{
-            //MessageBox.Show("Trial Version End!\nPlease Purchase The Full Version To Continue.", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //Application.Exit();
-            //}
-            //else
-            //{
-            //int day = (end - start).Days - (DateTime.Now - start).Days;
-            //MessageBox.Show("Trial Version Will End In " + day + " Days\nPlease Purchase The Full Version.", "Warning!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             currentWidth = panel55.Width;
-            btnDashboard_Click(null, null);
-            //}
+            new_receipt_btn_Click(null, null);
+
         }
 
         private void Init()
@@ -137,6 +134,7 @@ namespace MiniGram
             btnAbout.BackColor = Color.FromArgb(0, 63, 63);
             btnHoldList.BackColor = Color.FromArgb(0, 63, 63);
             btnDashboard.BackColor = Color.FromArgb(0, 63, 63);
+            btnCustomer.BackColor = Color.FromArgb(0, 63, 63);
         }
         public bool testConnection(string ConnString)
         {
@@ -160,12 +158,7 @@ namespace MiniGram
 
         private void new_receipt_btn_Click(object sender, EventArgs e)
         {
-            if (Globals.isReceiptOpen)
-            {
-                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
+
                 RunLoadingThread();
                 refreshColors();
                 new_receipt_btn.BackColor = Color.White;
@@ -184,17 +177,12 @@ namespace MiniGram
                     new_receipt_btn_Click(sender, e);
                 }
                 posuc.refreshData("");
-            }
+
         }
 
         private async void receipt_btn_Click(object sender, EventArgs e)
         {
-            if (Globals.isReceiptOpen)
-            {
-                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
+
                 refreshColors();
                 receipt_btn.BackColor = Color.White;
                 title_lbl.Text = "Receipts";
@@ -216,7 +204,7 @@ namespace MiniGram
                 });
                 main_panel.Controls.Add(ruc);
                 ruc.refreshData();
-            }
+
         }
         private void MainForm_MaximizedBoundsChanged(object sender, EventArgs e)
         {
@@ -225,12 +213,7 @@ namespace MiniGram
 
         private async void products_prices_btn_Click(object sender, EventArgs e)
         {
-            if (Globals.isReceiptOpen)
-            {
-                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
+
                 refreshColors();
                 prices_btn.BackColor = Color.White;
                 title_lbl.Text = "Products And Prices";
@@ -251,18 +234,13 @@ namespace MiniGram
                     }
                 });
                 main_panel.Controls.Add(puc);
-                puc.refreshData();
-            }
+                puc.refreshData("");
+
         }
 
         private async void suppliers_btn_Click(object sender, EventArgs e)
         {
-            if (Globals.isReceiptOpen)
-            {
-                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
+
                 refreshColors();
                 suppliers_btn.BackColor = Color.White;
                 title_lbl.Text = "Suppliers";
@@ -284,17 +262,12 @@ namespace MiniGram
                 });
                 main_panel.Controls.Add(iuc);
                 iuc.refreshData();
-            }
+         //   }
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            if (Globals.isReceiptOpen)
-            {
-                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
+
                 refreshColors();
                 btnReports.BackColor = Color.White;
                 title_lbl.Text = "Reports";
@@ -302,17 +275,12 @@ namespace MiniGram
                 ReportsUC ruc = new ReportsUC();
                 ruc.Dock = DockStyle.Fill;
                 main_panel.Controls.Add(ruc);
-            }
+
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            if (Globals.isReceiptOpen)
-            {
-                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
+
                 refreshColors();
                 btnAbout.BackColor = Color.White;
                 title_lbl.Text = "About Us";
@@ -320,17 +288,12 @@ namespace MiniGram
                 AboutUC auc = new AboutUC();
                 auc.Dock = DockStyle.Fill;
                 main_panel.Controls.Add(auc);
-            }
+
         }
 
         private async void btnHoldList_Click(object sender, EventArgs e)
         {
-            if (Globals.isReceiptOpen)
-            {
-                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
+
                 refreshColors();
                 btnHoldList.BackColor = Color.White;
                 title_lbl.Text = "Receipt Waiting List";
@@ -352,7 +315,6 @@ namespace MiniGram
                 });
                 main_panel.Controls.Add(huc);
                 huc.refreshData();
-            }
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -378,6 +340,31 @@ namespace MiniGram
             {
 
             }
+        }
+
+        private async void btnCustomer_Click(object sender, EventArgs e)
+        {
+            refreshColors();
+            btnCustomer.BackColor = Color.White;
+            title_lbl.Text = "Customers";
+            main_panel.Controls.Clear();
+            CustomersUC cuc = new CustomersUC();
+            cuc.Dock = DockStyle.Fill;
+            await Task.Run(() =>
+            {
+                ProgressBarForm pbf = new ProgressBarForm(1);
+                pbf.ShowDialog();
+                if (!testConnection(Globals.ConnectionString))
+                {
+                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                    SettingsForm sf = new SettingsForm();
+                    sf.isConnTest = true;
+                    sf.ShowDialog();
+                    products_prices_btn_Click(sender, e);
+                }
+            });
+            main_panel.Controls.Add(cuc);
+            cuc.refreshData("");
         }
     }
 }

@@ -12,7 +12,7 @@ namespace MiniGram.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.4.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -56,16 +56,6 @@ namespace MiniGram.Properties {
             }
             set {
                 this["Language"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQLEXPRESS;Initial Catalog=MiniGramCashDB;Integrated Security=True")]
-        public string MiniGramCashDBConnectionString {
-            get {
-                return ((string)(this["MiniGramCashDBConnectionString"]));
             }
         }
         
@@ -216,11 +206,160 @@ namespace MiniGram.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQLEXPRESS;Initial Catalog=MiniGramCashDB;Integrated Security=True")]
+        public string MiniGramCashDBConnectionString {
+            get {
+                return ((string)(this["MiniGramCashDBConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-J9C5IKE;Initial Catalog=MiniGramCashDB;Integrated Security=Tr" +
             "ue")]
         public string MiniGramCashDBConnectionString1 {
             get {
                 return ((string)(this["MiniGramCashDBConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL4\\SQL2008;Initial Catalog=MiniGramCashDB;Integrated Security=True")]
+        public string MiniGramCashDBConnectionString2 {
+            get {
+                return ((string)(this["MiniGramCashDBConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20000")]
+        public int TVALBPPrice {
+            get {
+                return ((int)(this["TVALBPPrice"]));
+            }
+            set {
+                this["TVALBPPrice"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("11")]
+        public int TVAPercentage {
+            get {
+                return ((int)(this["TVAPercentage"]));
+            }
+            set {
+                this["TVAPercentage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql\\sql2008;Initial Catalog=OrganigramSecurity;Integrated Security=Tr" +
+            "ue")]
+        public string OrganigramSecurityConnectionString {
+            get {
+                return ((string)(this["OrganigramSecurityConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("SQLEXPRESS")]
+        public string UsersServer {
+            get {
+                return ((string)(this["UsersServer"]));
+            }
+            set {
+                this["UsersServer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql4\\sql2008;Initial Catalog=MiniGramCashDB;Integrated Security=True")]
+        public string ConnectionStringUsers {
+            get {
+                return ((string)(this["ConnectionStringUsers"]));
+            }
+            set {
+                this["ConnectionStringUsers"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UserServerSecurity {
+            get {
+                return ((bool)(this["UserServerSecurity"]));
+            }
+            set {
+                this["UserServerSecurity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("sa")]
+        public string UserServerUsername {
+            get {
+                return ((string)(this["UserServerUsername"]));
+            }
+            set {
+                this["UserServerUsername"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("12345678")]
+        public string UserServerPassword {
+            get {
+                return ((string)(this["UserServerPassword"]));
+            }
+            set {
+                this["UserServerPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CheckoutExtended {
+            get {
+                return ((bool)(this["CheckoutExtended"]));
+            }
+            set {
+                this["CheckoutExtended"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql4\\sql2008;Initial Catalog=MiniGramCashDB;Integrated Security=True")]
+        public string MiniGramCashDBConnectionString3 {
+            get {
+                return ((string)(this["MiniGramCashDBConnectionString3"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20000")]
+        public int BuyDollarLBPPrice {
+            get {
+                return ((int)(this["BuyDollarLBPPrice"]));
+            }
+            set {
+                this["BuyDollarLBPPrice"] = value;
             }
         }
     }

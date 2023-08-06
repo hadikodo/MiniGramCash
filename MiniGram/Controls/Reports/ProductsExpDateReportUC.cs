@@ -23,7 +23,7 @@ namespace MiniGram.Controls.Reports
         {
             using(var data = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                spgetAllExpiredDateProductsResultBindingSource.DataSource = data.sp_getAllExpiredDateProducts().ToList();
+                sp_getAllExpiredDateProductsResultBindingSource.DataSource = data.sp_getAllExpiredDateProducts().ToList();
                 reportViewer1.RefreshReport();
             }
         }

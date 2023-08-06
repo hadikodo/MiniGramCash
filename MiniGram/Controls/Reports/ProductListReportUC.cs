@@ -37,7 +37,7 @@ namespace MiniGram.Controls.Reports
         {
             using(var data = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                spgetProductListResultBindingSource.DataSource = (from aj in data.sp_getProductList()
+                sp_getProductListResultBindingSource.DataSource = (from aj in data.sp_getProductList()
                                                                   where (barcode == null || aj.BARCODE.ToLower().Trim().Contains(barcode.ToLower().Trim())) &&
                                                                         (pname == null || aj.PNAME.ToLower().Trim().Contains(pname.ToLower().Trim())) &&
                                                                         (supplier == null || aj.SNAME.ToLower().Trim().Contains(supplier.ToLower().Trim())) &&

@@ -33,7 +33,7 @@ namespace MiniGram.Forms
 
         private void exit_btn_Click(object sender, EventArgs e)
         {
-            if(isConnTest)
+            if (isConnTest)
                 csuc.Save();
             else
                 this.Close();
@@ -44,7 +44,11 @@ namespace MiniGram.Forms
             if (isConnTest)
                 connection_btn_Click(connection_btn, e);
             else
+            {
                 general_btn_Click(general_btn, e);
+                csuc.LoadData();
+            }
+
         }
 
         private void general_btn_Click(object sender, EventArgs e)
@@ -84,7 +88,7 @@ namespace MiniGram.Forms
                 {
                     gsuc.Save();
                 }
-                else if(dialogResult == DialogResult.No)
+                else if (dialogResult == DialogResult.No)
                 {
                     Properties.Settings.Default.somethingChanged = false;
                     Properties.Settings.Default.Save();
@@ -103,15 +107,20 @@ namespace MiniGram.Forms
 
         private void save_btn_Click(object sender, EventArgs e)
         {
-            gsuc.Save();
-            csuc.Save();
+            if(main_panel.Controls[0].GetType() == csuc.GetType())
+            {
+                csuc.Save();
+            }
+            else
+                gsuc.Save();
+
             this.Close();
         }
 
         private void keyboard_btn_Click(object sender, EventArgs e)
         {
             ProcessStartInfo ps = new ProcessStartInfo();
-            ps.FileName = ((Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\osk.exe"));
+            ps.FileName = @"C:\Windows\System32\osk.exe";
             Process process = new Process();
             process.StartInfo = ps;
             process.Start();

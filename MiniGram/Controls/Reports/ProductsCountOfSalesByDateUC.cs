@@ -31,7 +31,7 @@ namespace MiniGram.Controls.Reports
         {
             using (var data = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                spgetSalesProductCountByDateResultBindingSource.DataSource = data.sp_getSalesProductCountByDate(from, to).ToList();
+                sp_getSalesProductCountByDateResultBindingSource.DataSource = data.sp_getSalesProductCountByDate(from, to).ToList();
                 reportViewer1.RefreshReport();
             }
 

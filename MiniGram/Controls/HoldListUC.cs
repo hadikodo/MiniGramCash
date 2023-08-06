@@ -63,7 +63,7 @@ namespace MiniGram.Controls
         private void keyboard_btn_Click(object sender, EventArgs e)
         {
             ProcessStartInfo ps = new ProcessStartInfo();
-            ps.FileName = ((Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\osk.exe"));
+            ps.FileName = @"C:\Windows\System32\osk.exe";
             Process process = new Process();
             process.StartInfo = ps;
             process.Start();
@@ -116,30 +116,40 @@ namespace MiniGram.Controls
                 var receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()) select aj).Single();
                 receipt.isHold = false;
                 cnx.SubmitChanges();
-                POSUC pos = new POSUC(receipt);                
                 Globals.mainForm.main_panel.Controls.Clear();
+                Globals.mainForm.refreshColors();
+                Globals.mainForm.new_receipt_btn.BackColor = Color.White;
+                POSUC pos = new POSUC(receipt);                           
                 pos.Dock = DockStyle.Fill;
                 Globals.mainForm.main_panel.Controls.Add(pos);
-                Globals.mainForm.refreshColors();
-                Globals.mainForm.new_receipt_btn.BackColor= Color.White;
                 pos.refreshData("");
                 cnx.sp_deleteHoldReceiptDetailsByRID(receipt.RID);
+            }
+            else if(e.ColumnIndex == PrintColumn.Index)
+            {
+                int RID = Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                TBLRECEIPT receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == RID select aj).SingleOrDefault();
+                double? finaldollar = receipt.TOTAL_AMOUNTDollar - receipt.TotalDiscount + receipt.TotalTVA;
+                int? finalLBP = Int32.Parse((finaldollar * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
+                DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, receipt.ReceiptTypeID, receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
+                drrv.receiptID = RID;
+                drrv.Show();
             }
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()) select aj).Single();
-            receipt.isHold = false;
-            cnx.SubmitChanges();
-            POSUC pos = new POSUC(receipt);
-            Globals.mainForm.main_panel.Controls.Clear();
-            pos.Dock = DockStyle.Fill;
-            Globals.mainForm.main_panel.Controls.Add(pos);
-            Globals.mainForm.refreshColors();
-            Globals.mainForm.new_receipt_btn.BackColor = Color.White;
-            pos.refreshData("");
-            cnx.sp_deleteHoldReceiptDetailsByRID(receipt.RID);
+            //var receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()) select aj).Single();
+            //receipt.isHold = false;
+            //cnx.SubmitChanges();
+            //POSUC pos = new POSUC(receipt);
+            //Globals.mainForm.main_panel.Controls.Clear();
+            //pos.Dock = DockStyle.Fill;
+            //Globals.mainForm.main_panel.Controls.Add(pos);
+            //Globals.mainForm.refreshColors();
+            //Globals.mainForm.new_receipt_btn.BackColor = Color.White;
+            //pos.refreshData("");
+            //cnx.sp_deleteHoldReceiptDetailsByRID(receipt.RID);
         }
     }
 }

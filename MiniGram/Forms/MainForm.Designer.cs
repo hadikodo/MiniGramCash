@@ -51,6 +51,7 @@
             this.parentBarItem1 = new Syncfusion.Windows.Forms.Tools.XPMenus.ParentBarItem();
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnCustomer = new Syncfusion.WinForms.Controls.SfButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gradientPanel1)).BeginInit();
             this.gradientPanel1.SuspendLayout();
@@ -148,6 +149,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.panel55.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.panel55.Controls.Add(this.btnCustomer);
             this.panel55.Controls.Add(this.btnDashboard);
             this.panel55.Controls.Add(this.btnHoldList);
             this.panel55.Controls.Add(this.btnAbout);
@@ -243,7 +245,7 @@
             this.btnAbout.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAbout.ImageMargin = new System.Windows.Forms.Padding(5);
             this.btnAbout.ImageSize = new System.Drawing.Size(55, 55);
-            this.btnAbout.Location = new System.Drawing.Point(525, 0);
+            this.btnAbout.Location = new System.Drawing.Point(600, 0);
             this.btnAbout.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(75, 75);
@@ -276,7 +278,7 @@
             this.btnReports.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnReports.ImageMargin = new System.Windows.Forms.Padding(5);
             this.btnReports.ImageSize = new System.Drawing.Size(55, 55);
-            this.btnReports.Location = new System.Drawing.Point(450, 0);
+            this.btnReports.Location = new System.Drawing.Point(525, 0);
             this.btnReports.Margin = new System.Windows.Forms.Padding(0);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(75, 75);
@@ -309,7 +311,7 @@
             this.suppliers_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.suppliers_btn.ImageMargin = new System.Windows.Forms.Padding(5);
             this.suppliers_btn.ImageSize = new System.Drawing.Size(65, 65);
-            this.suppliers_btn.Location = new System.Drawing.Point(300, 0);
+            this.suppliers_btn.Location = new System.Drawing.Point(375, 0);
             this.suppliers_btn.Margin = new System.Windows.Forms.Padding(0);
             this.suppliers_btn.Name = "suppliers_btn";
             this.suppliers_btn.Size = new System.Drawing.Size(75, 75);
@@ -510,7 +512,7 @@
             this.prices_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.prices_btn.ImageMargin = new System.Windows.Forms.Padding(5);
             this.prices_btn.ImageSize = new System.Drawing.Size(55, 55);
-            this.prices_btn.Location = new System.Drawing.Point(375, 0);
+            this.prices_btn.Location = new System.Drawing.Point(450, 0);
             this.prices_btn.Margin = new System.Windows.Forms.Padding(0);
             this.prices_btn.Name = "prices_btn";
             this.prices_btn.Size = new System.Drawing.Size(75, 75);
@@ -563,6 +565,39 @@
             this.animationTimer.Interval = 1;
             this.animationTimer.Tick += new System.EventHandler(this.animationTimer_Tick);
             // 
+            // btnCustomer
+            // 
+            this.btnCustomer.AccessibleName = "Button";
+            this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCustomer.CanOverrideStyle = true;
+            this.btnCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomer.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnCustomer.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCustomer.ImageMargin = new System.Windows.Forms.Padding(5);
+            this.btnCustomer.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnCustomer.Location = new System.Drawing.Point(300, 0);
+            this.btnCustomer.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Size = new System.Drawing.Size(75, 75);
+            this.btnCustomer.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnCustomer.Style.FocusedBackColor = System.Drawing.Color.Transparent;
+            this.btnCustomer.Style.FocusedForeColor = System.Drawing.Color.Transparent;
+            this.btnCustomer.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnCustomer.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnCustomer.Style.HoverForeColor = System.Drawing.Color.White;
+            this.btnCustomer.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.btnCustomer.Style.Image = global::MiniGram.Properties.Resources.customer;
+            this.btnCustomer.Style.PressedBackColor = System.Drawing.Color.White;
+            this.btnCustomer.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnCustomer.TabIndex = 21;
+            this.btnCustomer.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.btnCustomer, "Customers");
+            this.btnCustomer.UseVisualStyleBackColor = false;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -611,6 +646,7 @@
         public Syncfusion.WinForms.Controls.SfButton btnAbout;
         public Syncfusion.WinForms.Controls.SfButton btnHoldList;
         public Syncfusion.WinForms.Controls.SfButton btnDashboard;
+        public Syncfusion.WinForms.Controls.SfButton btnCustomer;
     }
 }
 

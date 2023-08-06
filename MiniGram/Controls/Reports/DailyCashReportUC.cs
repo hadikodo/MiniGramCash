@@ -31,7 +31,7 @@ namespace MiniGram.Controls.Reports
         {
             using (var data = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                spgetDailyCashByDateResultBindingSource.DataSource = data.sp_getDailyCashByDate(from,to).ToList();
+                sp_getDailyCashByDateResultBindingSource.DataSource = data.sp_getDailyCashByDate(from,to).ToList();
                 reportViewer1.RefreshReport();
             }
         }

@@ -30,27 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.spgetDailyCashByDateResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.spgetDailyCashByDateResultBindingSource)).BeginInit();
+            this.sp_getDailyCashByDateResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.sp_getDailyCashByDateResultBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // spgetDailyCashByDateResultBindingSource
-            // 
-            this.spgetDailyCashByDateResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_getDailyCashByDateResult);
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.spgetDailyCashByDateResultBindingSource;
+            reportDataSource1.Value = this.sp_getDailyCashByDateResultBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "MiniGram.Reports.rptDailyCashByDate.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "MiniGram.Forms.Reports.RDLC.rptDailyCashByDate.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1024, 768);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // sp_getDailyCashByDateResultBindingSource
+            // 
+            this.sp_getDailyCashByDateResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_getDailyCashByDateResult);
             // 
             // DailyCashReportUC
             // 
@@ -61,13 +61,13 @@
             this.Name = "DailyCashReportUC";
             this.Size = new System.Drawing.Size(1024, 768);
             this.Load += new System.EventHandler(this.DailyCashReportUC_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.spgetDailyCashByDateResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_getDailyCashByDateResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource spgetDailyCashByDateResultBindingSource;
         public Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource sp_getDailyCashByDateResultBindingSource;
     }
 }
