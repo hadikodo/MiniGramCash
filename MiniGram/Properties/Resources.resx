@@ -124,6 +124,24 @@
   <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Bookman_Old_Style" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bookman Old Style.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bookman_old_style_fett_kursiv" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bookman old style fett kursiv.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BOOKOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BOOKOS.TTF;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BOOKOSB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BOOKOSB.TTF;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BOOKOSBI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BOOKOSBI.TTF;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BOOKOSI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BOOKOSI.TTF;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="boxes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boxes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

@@ -24,7 +24,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Left>2.43039cm</Left>
+        <Left>2.44532cm</Left>
         <Height>1.71152cm</Height>
         <Width>15.14172cm</Width>
         <Style>
@@ -37,9 +37,8 @@
       </Textbox>
       <Line Name="Line1">
         <Top>2.33742cm</Top>
-        <Left>0.39347cm</Left>
         <Height>0cm</Height>
-        <Width>19.21556cm</Width>
+        <Width>20.03236cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -224,7 +223,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>2.5cm</Size>
+                <Size>3.29359cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox1">
                     <CanGrow>true</CanGrow>
@@ -278,7 +277,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>2.5cm</Size>
+                <Size>3.29359cm</Size>
                 <CellContents>
                   <Textbox Name="BARCODE">
                     <CanGrow>true</CanGrow>
@@ -320,9 +319,8 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>3.15294cm</Top>
-        <Left>0.39345cm</Left>
         <Height>1.59688cm</Height>
-        <Width>19.21558cm</Width>
+        <Width>20.00917cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -335,10 +333,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2.31825in</Height>
+    <Height>1.95367in</Height>
     <Style />
   </Body>
-  <Width>7.88143in</Width>
+  <Width>7.88676in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

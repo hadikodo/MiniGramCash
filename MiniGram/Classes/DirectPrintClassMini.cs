@@ -25,6 +25,7 @@ namespace MiniGram.Classes
             dataSet.ReadXml(@"..\..\data.xml");
             return dataSet.Tables[0];
         }
+        
         // Routine to provide to the report renderer, in order to
         //    save an image for each page of the report.
         private Stream CreateStream(string name,
@@ -41,12 +42,12 @@ namespace MiniGram.Classes
             string deviceInfo =
               @"<DeviceInfo>
                 <OutputFormat>EMF</OutputFormat>
-                <PageWidth>7cm</PageWidth>
-                <PageHeight>7cm</PageHeight>
-                <MarginTop>0.4cm</MarginTop>
-                <MarginLeft>0.4cm</MarginLeft>
-                <MarginRight>0.4cm</MarginRight>
-                <MarginBottom>0.4cm</MarginBottom>
+                <PageWidth>8cm</PageWidth>
+                <PageHeight>29.7cm</PageHeight>
+                <MarginTop>0cm</MarginTop>
+                <MarginLeft>0cm</MarginLeft>
+                <MarginRight>0cm</MarginRight>
+                <MarginBottom>0cm</MarginBottom>
             </DeviceInfo>";
             Warning[] warnings;
             m_streams = new List<Stream>();

@@ -110,7 +110,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 78);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1594, 687);
+            this.panel2.Size = new System.Drawing.Size(1914, 999);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -124,8 +124,8 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 687F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1594, 687);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 999F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1914, 999);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // panel3
@@ -134,7 +134,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1588, 681);
+            this.panel3.Size = new System.Drawing.Size(1908, 993);
             this.panel3.TabIndex = 1;
             // 
             // reportMainPanel
@@ -143,7 +143,7 @@
             this.reportMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportMainPanel.Location = new System.Drawing.Point(0, 0);
             this.reportMainPanel.Name = "reportMainPanel";
-            this.reportMainPanel.Size = new System.Drawing.Size(1588, 681);
+            this.reportMainPanel.Size = new System.Drawing.Size(1908, 993);
             this.reportMainPanel.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -158,7 +158,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1600, 768);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1920, 1080);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel1
@@ -167,12 +167,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1594, 69);
+            this.panel1.Size = new System.Drawing.Size(1914, 69);
             this.panel1.TabIndex = 2;
             // 
             // mainTable
             // 
-            this.mainTable.ColumnCount = 11;
+            this.mainTable.ColumnCount = 12;
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
@@ -181,16 +181,17 @@
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.mainTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.mainTable.Controls.Add(this.btnPrint, 9, 0);
+            this.mainTable.Controls.Add(this.btnPrint, 10, 0);
             this.mainTable.Controls.Add(this.panelHasExpDate, 7, 0);
             this.mainTable.Controls.Add(this.panelHasQte, 6, 0);
             this.mainTable.Controls.Add(this.panelSupplier, 5, 0);
             this.mainTable.Controls.Add(this.panelPName, 4, 0);
             this.mainTable.Controls.Add(this.panelBarcode, 3, 0);
-            this.mainTable.Controls.Add(this.btnRefresh, 10, 0);
+            this.mainTable.Controls.Add(this.btnRefresh, 11, 0);
             this.mainTable.Controls.Add(this.panelToDate, 2, 0);
             this.mainTable.Controls.Add(this.panelFromDate, 1, 0);
             this.mainTable.Controls.Add(this.panel4, 0, 0);
@@ -200,7 +201,7 @@
             this.mainTable.Name = "mainTable";
             this.mainTable.RowCount = 1;
             this.mainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.mainTable.Size = new System.Drawing.Size(1594, 69);
+            this.mainTable.Size = new System.Drawing.Size(1914, 69);
             this.mainTable.TabIndex = 0;
             // 
             // btnPrint
@@ -217,7 +218,7 @@
             this.btnPrint.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPrint.ImageMargin = new System.Windows.Forms.Padding(5);
             this.btnPrint.ImageSize = new System.Drawing.Size(55, 55);
-            this.btnPrint.Location = new System.Drawing.Point(1444, 0);
+            this.btnPrint.Location = new System.Drawing.Point(1764, 0);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(0);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 69);
@@ -546,7 +547,7 @@
             this.btnRefresh.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRefresh.ImageMargin = new System.Windows.Forms.Padding(5);
             this.btnRefresh.ImageSize = new System.Drawing.Size(55, 55);
-            this.btnRefresh.Location = new System.Drawing.Point(1519, 0);
+            this.btnRefresh.Location = new System.Drawing.Point(1839, 0);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 69);
@@ -764,7 +765,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ReportsUC";
-            this.Size = new System.Drawing.Size(1600, 768);
+            this.Size = new System.Drawing.Size(1920, 1080);
             this.Load += new System.EventHandler(this.ReportsUC_Load);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

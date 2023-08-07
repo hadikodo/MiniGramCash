@@ -30,28 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.spgetProductListResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.spgetProductListResultBindingSource)).BeginInit();
+            this.sp_getProductListResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.sp_getProductListResultBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // spgetProductListResultBindingSource
-            // 
-            this.spgetProductListResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_getProductListResult);
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.spgetProductListResultBindingSource;
+            reportDataSource1.Value = this.sp_getProductListResultBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "MiniGram.Reports.rptProductsList.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "MiniGram.Forms.Reports.RDLC.rptProductsList.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1024, 768);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            // 
+            // sp_getProductListResultBindingSource
+            // 
+            this.sp_getProductListResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_getProductListResult);
             // 
             // ProductListReportUC
             // 
@@ -61,13 +61,13 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "ProductListReportUC";
             this.Size = new System.Drawing.Size(1024, 768);
-            ((System.ComponentModel.ISupportInitialize)(this.spgetProductListResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_getProductListResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource spgetProductListResultBindingSource;
         public Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource sp_getProductListResultBindingSource;
     }
 }

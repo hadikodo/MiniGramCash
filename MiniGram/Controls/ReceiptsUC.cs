@@ -17,6 +17,8 @@ namespace MiniGram.Controls
     public partial class ReceiptsUC : UserControl
     {
         private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
+        private int time = 0;
+
         public ReceiptsUC()
         {
             InitializeComponent();
@@ -29,6 +31,19 @@ namespace MiniGram.Controls
                 handleparam.ExStyle = 0x02000000;
                 return handleparam;
             }
+        }
+
+        private void refreshCbox()
+        {
+            Dictionary<int, string> dicRType = new Dictionary<int, string>();
+            dicRType.Add(1, "Sale");
+            dicRType.Add(2, "Return");
+            dicRType.Add(3, "Delivery In");
+
+            cboxReceiptsType.DataSource = new BindingSource(dicRType, null);
+            cboxReceiptsType.ValueMember = "Key";
+            cboxReceiptsType.DisplayMember = "Value";
+            cboxReceiptsType.SelectedValue = 1;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -61,37 +76,47 @@ namespace MiniGram.Controls
         {
             search_txt.Visible = false;
             Globals.isSearchVisible = false;
+            refreshCbox();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == Print.Index)
             {
-                DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType);
-                drrv.receiptID = Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
-                drrv.Show();
+                int RID = Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+
+                if (cboxReceiptsType.SelectedValue.ToString() == "1" || cboxReceiptsType.SelectedValue.ToString() == "2")
+                {
+                    TBLRECEIPT receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == RID select aj).SingleOrDefault();
+                    double? finaldollar = receipt.TOTAL_AMOUNTDollar - receipt.TotalDiscount + receipt.TotalTVA;
+                    int? finalLBP = Int32.Parse((finaldollar * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
+                    DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, receipt.ReceiptTypeID, receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
+                    drrv.receiptID = RID;
+                    drrv.Show();
+                }
             }
             if (e.ColumnIndex == ShowMore.Index)
             {
-                ReceiptDetails rd = new ReceiptDetails(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
-                rd.refreshData();
-                rd.ShowDialog();
-                refreshData();
+                if (cboxReceiptsType.SelectedValue.ToString() == "1" || cboxReceiptsType.SelectedValue.ToString() == "2")
+                {
+                    ReceiptDetails rd = new ReceiptDetails(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                    rd.refreshData();
+                    rd.ShowDialog();
+                }
+                else if (cboxReceiptsType.SelectedValue.ToString() == "4")
+                {
+
+                }
+
+                refreshData("");
                 search_txt.Text = "";
             }
         }
 
         private void search_txt_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts(search_txt.Text).Where((aj)=> !aj.isHold);
-                dataGridView1.Refresh();
-            }
-            catch (Exception ex)
-            {
-
-            }
+            time = 0;
+            timerRefreshDataDelay.Start();
         }
 
         private void search_btn_Click(object sender, EventArgs e)
@@ -107,19 +132,34 @@ namespace MiniGram.Controls
             {
 
                 timer1.Start();
-                refreshData();
+                refreshData("");
             }
         }
-        public void refreshData()
+        public void refreshData(String str)
         {
-            spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts("").Where((aj) => !aj.isHold);
-            dataGridView1.Refresh();
+            if (cboxReceiptsType.SelectedValue.ToString() == "1" || cboxReceiptsType.SelectedValue.ToString() == "2")
+            {
+                spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts(str).Where((aj) => !aj.isHold && aj.ReceiptTypeID.ToString() == cboxReceiptsType.SelectedValue.ToString());
+                dataGridView2.Visible = false;
+                dataGridView1.Visible = true;
+                dataGridView1.Dock = DockStyle.Fill;
+                dataGridView1.Refresh();
+            }
+            else if (cboxReceiptsType.SelectedValue.ToString() == "3")
+            {
+                spselectDeliveryReceiptsResultBindingSource.DataSource = cnx.sp_selectDeliveryReceipts(str).Where((aj) => aj.ReceiptTypeID.ToString() == cboxReceiptsType.SelectedValue.ToString());
+                dataGridView1.Visible = false;
+                dataGridView2.Visible = true;
+                dataGridView2.Dock = DockStyle.Fill;
+                dataGridView2.Refresh();
+            }
+
         }
 
         private void keyboard_btn_Click(object sender, EventArgs e)
         {
             ProcessStartInfo ps = new ProcessStartInfo();
-            ps.FileName = ((Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\osk.exe"));
+            ps.FileName = @"C:\Windows\System32\osk.exe";
             Process process = new Process();
             process.StartInfo = ps;
             process.Start();
@@ -131,7 +171,7 @@ namespace MiniGram.Controls
             ReceiptDetails rd = new ReceiptDetails(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
             rd.refreshData();
             rd.ShowDialog();
-            refreshData();
+            refreshData("");
             search_txt.Text = "";
         }
 
@@ -178,6 +218,64 @@ namespace MiniGram.Controls
         private void spselectReceiptsResultBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboxReceiptsType_SelectedValueChanged(object sender, EventArgs e)
+        {
+            refreshData("");
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == Print.Index)
+            {
+                int RID = Int32.Parse(dataGridView2.SelectedRows[0].Cells[0].Value.ToString());
+
+                if (cboxReceiptsType.SelectedValue.ToString() == "3" || cboxReceiptsType.SelectedValue.ToString() == "5")
+                {
+                    TBLDELIVERY_RECEIPT receipt = (from aj in cnx.TBLDELIVERY_RECEIPTs where aj.ID == RID select aj).SingleOrDefault();
+                    double? finaldollar = receipt.TotalDollar - receipt.TotalDiscount + receipt.TotalTVA;
+                    int? finalLBP = Int32.Parse((finaldollar * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
+                    DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, Int32.Parse(receipt.ReceiptTypeID.ToString()), receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
+                    drrv.receiptID = RID;
+                    drrv.Show();
+                }
+            }
+            if (e.ColumnIndex == ShowMore.Index)
+            {
+                if (cboxReceiptsType.SelectedValue.ToString() == "3" || cboxReceiptsType.SelectedValue.ToString() == "5")
+                {
+                    DeliveryReceiptDetailsForm rd = new DeliveryReceiptDetailsForm(Int32.Parse(dataGridView2.SelectedRows[0].Cells[0].Value.ToString()));
+                    rd.refreshData();
+                    rd.ShowDialog();
+                }
+
+                refreshData("");
+                search_txt.Text = "";
+            }
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DeliveryReceiptDetailsForm rd = new DeliveryReceiptDetailsForm(Int32.Parse(dataGridView2.SelectedRows[0].Cells[0].Value.ToString()));
+            rd.refreshData();
+            rd.ShowDialog();
+            refreshData("");
+            search_txt.Text = "";
+        }
+
+        private void timerRefreshDataDelay_Tick(object sender, EventArgs e)
+        {
+            if (time >= 2)
+            {
+                refreshData(search_txt.Text);
+                time = 0;
+                timerRefreshDataDelay.Stop();
+            }
+            else
+            {
+                time++;
+            }
         }
     }
 }

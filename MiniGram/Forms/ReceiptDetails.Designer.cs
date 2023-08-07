@@ -37,18 +37,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceiptDetails));
             this.exit_btn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.logo_img = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dollarPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lBPPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDolarPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalLBPPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spselectReceiptsDetailsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.print_btn = new System.Windows.Forms.Button();
@@ -58,6 +51,13 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalLBP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dollarPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lBPPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDolarPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalLBPPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.logo_img)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -76,7 +76,7 @@
             this.exit_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.exit_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit_btn.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit_btn.ForeColor = System.Drawing.Color.White;
             this.exit_btn.Location = new System.Drawing.Point(982, 12);
             this.exit_btn.Name = "exit_btn";
@@ -87,17 +87,17 @@
             this.exit_btn.UseVisualStyleBackColor = false;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(93, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(472, 66);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Receipt Details";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Bookman Old Style", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(93, 21);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(462, 66);
+            this.lblTitle.TabIndex = 11;
+            this.lblTitle.Text = "Invoice Details";
             // 
             // logo_img
             // 
@@ -150,7 +150,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
@@ -186,7 +186,7 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -197,76 +197,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(994, 449);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.FillWeight = 41.03215F;
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product Name";
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.productNameDataGridViewTextBoxColumn.Width = 189;
-            // 
-            // SupplierName
-            // 
-            this.SupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.SupplierName.DataPropertyName = "SupplierName";
-            this.SupplierName.FillWeight = 15F;
-            this.SupplierName.HeaderText = "Supplier Name";
-            this.SupplierName.Name = "SupplierName";
-            this.SupplierName.ReadOnly = true;
-            this.SupplierName.Width = 194;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.FillWeight = 16.41286F;
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.quantityDataGridViewTextBoxColumn.Width = 133;
-            // 
-            // dollarPriceDataGridViewTextBoxColumn
-            // 
-            this.dollarPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dollarPriceDataGridViewTextBoxColumn.DataPropertyName = "DollarPrice";
-            this.dollarPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
-            this.dollarPriceDataGridViewTextBoxColumn.HeaderText = "Price $";
-            this.dollarPriceDataGridViewTextBoxColumn.Name = "dollarPriceDataGridViewTextBoxColumn";
-            this.dollarPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dollarPriceDataGridViewTextBoxColumn.Width = 112;
-            // 
-            // lBPPriceDataGridViewTextBoxColumn
-            // 
-            this.lBPPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.lBPPriceDataGridViewTextBoxColumn.DataPropertyName = "LBPPrice";
-            this.lBPPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
-            this.lBPPriceDataGridViewTextBoxColumn.HeaderText = "Price LBP";
-            this.lBPPriceDataGridViewTextBoxColumn.Name = "lBPPriceDataGridViewTextBoxColumn";
-            this.lBPPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lBPPriceDataGridViewTextBoxColumn.Width = 141;
-            // 
-            // totalDolarPriceDataGridViewTextBoxColumn
-            // 
-            this.totalDolarPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.totalDolarPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalDolarPrice";
-            this.totalDolarPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
-            this.totalDolarPriceDataGridViewTextBoxColumn.HeaderText = "Total $";
-            this.totalDolarPriceDataGridViewTextBoxColumn.Name = "totalDolarPriceDataGridViewTextBoxColumn";
-            this.totalDolarPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.totalDolarPriceDataGridViewTextBoxColumn.Width = 113;
-            // 
-            // totalLBPPriceDataGridViewTextBoxColumn
-            // 
-            this.totalLBPPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.totalLBPPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalLBPPrice";
-            this.totalLBPPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
-            this.totalLBPPriceDataGridViewTextBoxColumn.HeaderText = "Total LBP";
-            this.totalLBPPriceDataGridViewTextBoxColumn.Name = "totalLBPPriceDataGridViewTextBoxColumn";
-            this.totalLBPPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.totalLBPPriceDataGridViewTextBoxColumn.Width = 142;
             // 
             // spselectReceiptsDetailsResultBindingSource
             // 
@@ -313,7 +243,7 @@
             this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
@@ -346,7 +276,7 @@
             this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
@@ -393,6 +323,69 @@
             this.TotalLBP.Name = "TotalLBP";
             this.TotalLBP.ReadOnly = true;
             // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.FillWeight = 40F;
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product Name";
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SupplierName.DataPropertyName = "SupplierName";
+            this.SupplierName.FillWeight = 20F;
+            this.SupplierName.HeaderText = "Supplier Name";
+            this.SupplierName.Name = "SupplierName";
+            this.SupplierName.ReadOnly = true;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.FillWeight = 16.41286F;
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dollarPriceDataGridViewTextBoxColumn
+            // 
+            this.dollarPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dollarPriceDataGridViewTextBoxColumn.DataPropertyName = "DollarPrice";
+            this.dollarPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
+            this.dollarPriceDataGridViewTextBoxColumn.HeaderText = "Price $";
+            this.dollarPriceDataGridViewTextBoxColumn.Name = "dollarPriceDataGridViewTextBoxColumn";
+            this.dollarPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lBPPriceDataGridViewTextBoxColumn
+            // 
+            this.lBPPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lBPPriceDataGridViewTextBoxColumn.DataPropertyName = "LBPPrice";
+            this.lBPPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
+            this.lBPPriceDataGridViewTextBoxColumn.HeaderText = "Price LBP";
+            this.lBPPriceDataGridViewTextBoxColumn.Name = "lBPPriceDataGridViewTextBoxColumn";
+            this.lBPPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalDolarPriceDataGridViewTextBoxColumn
+            // 
+            this.totalDolarPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.totalDolarPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalDolarPrice";
+            this.totalDolarPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
+            this.totalDolarPriceDataGridViewTextBoxColumn.HeaderText = "Total $";
+            this.totalDolarPriceDataGridViewTextBoxColumn.Name = "totalDolarPriceDataGridViewTextBoxColumn";
+            this.totalDolarPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalLBPPriceDataGridViewTextBoxColumn
+            // 
+            this.totalLBPPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.totalLBPPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalLBPPrice";
+            this.totalLBPPriceDataGridViewTextBoxColumn.FillWeight = 16.41286F;
+            this.totalLBPPriceDataGridViewTextBoxColumn.HeaderText = "Total LBP";
+            this.totalLBPPriceDataGridViewTextBoxColumn.Name = "totalLBPPriceDataGridViewTextBoxColumn";
+            this.totalLBPPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // ReceiptDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,7 +394,7 @@
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.exit_btn);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.logo_img);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -424,7 +417,7 @@
         #endregion
 
         private System.Windows.Forms.Button exit_btn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox logo_img;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button print_btn;
@@ -433,6 +426,11 @@
         private System.Windows.Forms.BindingSource spselectReceiptsDetailsResultBindingSource;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Barcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalQte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotDollar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalLBP;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
@@ -440,10 +438,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lBPPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDolarPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalLBPPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Barcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalQte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotDollar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalLBP;
     }
 }

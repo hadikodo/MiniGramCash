@@ -15,10 +15,10 @@
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>\\DESKTOP-J9C5IKE\c%24\SuperTech Company\MiniGram\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\mainserver\publish\MiniGram\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
+    <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -26,18 +26,18 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://app.kt1.co/supertech/MiniGram/</InstallUrl>
-    <UpdateUrl>http://app.kt1.co/supertech/MiniGram/</UpdateUrl>
+    <InstallUrl>\\mainserver\publish\MiniGram\</InstallUrl>
+    <UpdateUrl>\\mainserver\publish\MiniGram\</UpdateUrl>
     <SupportUrl>http://app.kt1.co/supertech/MiniGram/</SupportUrl>
     <TargetCulture>en-US</TargetCulture>
     <ProductName>MiniGram</ProductName>
     <PublisherName>SuperTech Co.</PublisherName>
     <SuiteName>MiniGram</SuiteName>
-    <MinimumRequiredVersion>1.0.0.2</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.59</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>60</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -87,7 +87,7 @@
     <OutputPath>bin\x86\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
@@ -101,6 +101,10 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Infragistics4.Shared.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
@@ -108,7 +112,9 @@
     <Reference Include="Infragistics4.Win.DataVisualization.Barcode.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.DataVisualization.Shared.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Win.DataVisualization.UltraDataChart.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics4.Win.Misc.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Misc.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\2021.1\Windows Forms\CLR4.0\Bin\Infragistics4.Win.Misc.v21.1.dll</HintPath>
+    </Reference>
     <Reference Include="Infragistics4.Win.Portable.Core.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Win.UltraWinChart.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinEditors.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
@@ -139,15 +145,314 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Syncfusion.Core.WinForms, Version=20.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Grid.Base, Version=20.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
-    <Reference Include="Syncfusion.Grid.Windows, Version=20.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
-    <Reference Include="Syncfusion.SfInput.WinForms, Version=20.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Shared.Base, Version=20.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
-    <Reference Include="Syncfusion.Shared.Windows, Version=20.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
-    <Reference Include="Syncfusion.SpellChecker.Base, Version=20.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
-    <Reference Include="Syncfusion.Tools.Base, Version=20.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
-    <Reference Include="Syncfusion.Tools.Windows, Version=20.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.BulletGraph.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.BulletGraph.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Calculate.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Calculate.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Calculate.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Calculate.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Chart.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Chart.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Chart.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Chart.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.WinForms, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Core.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Data.WinForms, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Data.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DataSource.WinForms, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.DataSource.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Diagram.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Diagram.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Diagram.Utility.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Diagram.Utility.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Diagram.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Diagram.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DICOM.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.DICOM.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocIO.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.DocIO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocIO.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.DocIO.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocToPDFConverter.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.DocToPDFConverter.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Edit.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Edit.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.ExcelChartToImageConverter.WPF, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.ExcelChartToImageConverter.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.ExcelToPDFConverter.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.ExcelToPDFConverter.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Gauge.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Gauge.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Grid.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Grouping.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Grid.Grouping.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Grouping.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Grid.Grouping.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Grouping.Windows.XmlSerializers, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Grid.Grouping.Windows.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Grid.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Windows.XmlSerializers, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Grid.Windows.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.GridCommon.WinForms, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.GridCommon.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.GridConverter.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.GridConverter.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.GridHelperClasses.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.GridHelperClasses.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grouping.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Grouping.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grouping.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Grouping.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.HighContrastTheme.WinForms, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.HighContrastTheme.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.HtmlConverter.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.HtmlConverter.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.HTMLUI.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.HTMLUI.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.HTMLUI.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.HTMLUI.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Linq.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Linq.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Maps.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Maps.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.MIME.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.MIME.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Office2016Theme.WinForms, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Office2016Theme.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Office2019Theme.WinForms, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Office2019Theme.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.OfficeChart.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.OfficeChart.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.OfficeChartToImageConverter.WPF, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.OfficeChartToImageConverter.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Olap.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Olap.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Pdf.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.PdfViewer.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.PdfViewer.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.PivotAnalysis.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.PivotAnalysis.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.PivotAnalysis.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.PivotAnalysis.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.PivotChart.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.PivotChart.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.PivotConverter.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.PivotConverter.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.PMML.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.PMML.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Presentation.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Presentation.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.PresentationToPdfConverter.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.PresentationToPdfConverter.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.ProjIO.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.ProjIO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Schedule.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Schedule.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Schedule.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Schedule.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Scripting.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Scripting.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Scripting.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Scripting.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfBarcode.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.SfBarcode.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.WPF, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.SfChart.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGrid.WinForms, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.SfDataGrid.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGridConverter.WinForms, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.SfDataGridConverter.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfInput.WinForms, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.SfInput.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.WinForms, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.SfListView.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSmithChart.WinForms, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.SfSmithChart.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Shared.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.WPF, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Shared.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SpellChecker.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.SpellChecker.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Spreadsheet.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Spreadsheet.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SpreadsheetHelper.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.SpreadsheetHelper.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Tools.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.Tools.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.TreeMap.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.TreeMap.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.XlsIO.Base, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.XlsIO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.XlsIO.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.XlsIO.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
@@ -268,6 +573,12 @@
     <Compile Include="Forms\AddProductForm.Designer.cs">
       <DependentUpon>AddProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BatchNumberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BatchNumberForm.Designer.cs">
+      <DependentUpon>BatchNumberForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ChangeQuantityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,10 +591,22 @@
     <Compile Include="Forms\DeleteForm.Designer.cs">
       <DependentUpon>DeleteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DirectReceiptReportViewer.cs">
+    <Compile Include="Forms\DeliveryInForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DirectReceiptReportViewer.Designer.cs">
+    <Compile Include="Forms\DeliveryInForm.Designer.cs">
+      <DependentUpon>DeliveryInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeliveryReceiptDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeliveryReceiptDetailsForm.Designer.cs">
+      <DependentUpon>DeliveryReceiptDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\DirectReceiptReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\DirectReceiptReportViewer.Designer.cs">
       <DependentUpon>DirectReceiptReportViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EditSupplierForm.cs">
@@ -304,11 +627,23 @@
     <Compile Include="Forms\ExpiredDateForm.Designer.cs">
       <DependentUpon>ExpiredDateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ExtendedCheckoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExtendedCheckoutForm.Designer.cs">
+      <DependentUpon>ExtendedCheckoutForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PasswordNeedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PasswordNeedForm.Designer.cs">
+      <DependentUpon>PasswordNeedForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PickDateForm.cs">
       <SubType>Form</SubType>
@@ -338,6 +673,17 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MiniGramCashDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="LINQ\OrganigramDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrganigramDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="MiniGramFlex\Forms\MainFormFlex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MiniGramFlex\Forms\MainFormFlex.Designer.cs">
+      <DependentUpon>MainFormFlex.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -403,13 +749,22 @@
     <EmbeddedResource Include="Forms\AddProductForm.resx">
       <DependentUpon>AddProductForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BatchNumberForm.resx">
+      <DependentUpon>BatchNumberForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeQuantityForm.resx">
       <DependentUpon>ChangeQuantityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeleteForm.resx">
       <DependentUpon>DeleteForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DirectReceiptReportViewer.resx">
+    <EmbeddedResource Include="Forms\DeliveryInForm.resx">
+      <DependentUpon>DeliveryInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeliveryReceiptDetailsForm.resx">
+      <DependentUpon>DeliveryReceiptDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\DirectReceiptReportViewer.resx">
       <DependentUpon>DirectReceiptReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditSupplierForm.resx">
@@ -421,8 +776,14 @@
     <EmbeddedResource Include="Forms\ExpiredDateForm.resx">
       <DependentUpon>ExpiredDateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExtendedCheckoutForm.resx">
+      <DependentUpon>ExtendedCheckoutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PasswordNeedForm.resx">
+      <DependentUpon>PasswordNeedForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PickDateForm.resx">
       <DependentUpon>PickDateForm.cs</DependentUpon>
@@ -433,6 +794,9 @@
     <EmbeddedResource Include="Forms\ReceiptDetails.resx">
       <DependentUpon>ReceiptDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\RDLC\DirectReceiptReport.rdlc" />
+    <EmbeddedResource Include="Forms\Reports\RDLC\DirectReceiptReportMini.rdlc" />
+    <EmbeddedResource Include="Forms\Reports\RDLC\rptProductsList.rdlc" />
     <EmbeddedResource Include="Languages\en_local.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>en_local.Designer.cs</LastGenOutput>
@@ -444,13 +808,23 @@
     <EmbeddedResource Include="Controls\SupplierUC.resx">
       <DependentUpon>SupplierUC.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Fonts\bookman old style fett kursiv.ttf" />
+    <None Include="Fonts\Bookman Old Style.ttf" />
+    <None Include="Fonts\BOOKOS.TTF" />
+    <None Include="Fonts\BOOKOSB.TTF" />
+    <None Include="Fonts\BOOKOSBI.TTF" />
+    <None Include="Fonts\BOOKOSI.TTF" />
+    <None Include="LINQ\OrganigramDB.dbml.layout">
+      <DependentUpon>OrganigramDB.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="MiniGramFlex\Forms\MainFormFlex.resx">
+      <DependentUpon>MainFormFlex.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Reports\DirectReceiptReport.rdlc" />
-    <EmbeddedResource Include="Reports\DirectReceiptReportMini.rdlc" />
-    <EmbeddedResource Include="Reports\rptDailyCashByDate.rdlc" />
-    <EmbeddedResource Include="Reports\rptProductsExpiredDate.rdlc" />
-    <EmbeddedResource Include="Reports\rptProductsList.rdlc" />
-    <EmbeddedResource Include="Reports\rptSalesProductCountByDate.rdlc" />
+    <EmbeddedResource Include="Forms\Reports\RDLC\rptDailyCashByDate.rdlc" />
+    <EmbeddedResource Include="Forms\Reports\RDLC\rptDeliveryIn.rdlc" />
+    <EmbeddedResource Include="Forms\Reports\RDLC\rptProductsExpiredDate.rdlc" />
+    <EmbeddedResource Include="Forms\Reports\RDLC\rptSalesProductCountByDate.rdlc" />
     <None Include="LINQ\MiniGramCashDB.dbml.layout">
       <DependentUpon>MiniGramCashDB.dbml</DependentUpon>
     </None>
@@ -472,6 +846,11 @@
       <LastGenOutput>MiniGramCashDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="LINQ\OrganigramDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>OrganigramDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_getAllExpiredDateProductsResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_getDailyCashByDateResult.datasource" />
@@ -479,14 +858,20 @@
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_getSalesProductCountByDateResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectAllCustomersResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectAllSuppliersResult.datasource" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectDeliveryReceiptsDetailsResult.datasource" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectDeliveryReceiptsResult.datasource" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectReceiptsDetailsForReportMiniResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectReceiptsDetailsResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_selectReceiptsResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_itemResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_productsResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_suppliersResult.datasource" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.TBLDELIVERY_RECEIPT.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TblExpiredDate.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TBLEXPIREDDATE1.datasource" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.TBLPRODUCT.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TBLRECEIPTS_DETAIL.datasource" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.TBLSUPPLIER.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -504,6 +889,12 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\bookman old style fett kursiv.ttf" />
+    <None Include="Resources\Bookman Old Style.ttf" />
+    <None Include="Resources\BOOKOS.TTF" />
+    <None Include="Resources\BOOKOSB.TTF" />
+    <None Include="Resources\BOOKOSBI.TTF" />
+    <None Include="Resources\BOOKOSI.TTF" />
     <None Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -622,6 +1013,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MiniGramFlex\Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
