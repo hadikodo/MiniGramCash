@@ -616,6 +616,12 @@
     <Compile Include="Forms\ChangeQuantityForm.Designer.cs">
       <DependentUpon>ChangeQuantityForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ChooseCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChooseCustomerForm.Designer.cs">
+      <DependentUpon>ChooseCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DeleteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -789,6 +795,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeQuantityForm.resx">
       <DependentUpon>ChangeQuantityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChooseCustomerForm.resx">
+      <DependentUpon>ChooseCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeleteForm.resx">
       <DependentUpon>DeleteForm.cs</DependentUpon>

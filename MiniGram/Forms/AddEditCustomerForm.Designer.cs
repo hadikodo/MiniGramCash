@@ -42,6 +42,9 @@
             this.btnAddAddresses = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvAddresses = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tBLCUSTOMERSADDRESSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnEditSelectedAddress = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtEmail = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
@@ -50,18 +53,15 @@
             this.exit_btn = new System.Windows.Forms.Button();
             this.logo_img = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tBLCUSTOMERSADDRESSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.chkboxIsVIP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFullName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNumber)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddresses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLCUSTOMERSADDRESSBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_img)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBLCUSTOMERSADDRESSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // keyboard_btn
@@ -166,7 +166,7 @@
             // txtFullName
             // 
             this.txtFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtFullName.BeforeTouchSize = new System.Drawing.Size(34, 40);
+            this.txtFullName.BeforeTouchSize = new System.Drawing.Size(374, 39);
             this.txtFullName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFullName.CanOverrideStyle = true;
@@ -198,7 +198,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtPhoneNumber.BeforeTouchSize = new System.Drawing.Size(34, 40);
+            this.txtPhoneNumber.BeforeTouchSize = new System.Drawing.Size(374, 39);
             this.txtPhoneNumber.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhoneNumber.CanOverrideStyle = true;
@@ -319,6 +319,32 @@
             this.dgvAddresses.Size = new System.Drawing.Size(759, 266);
             this.dgvAddresses.TabIndex = 42;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // ColumnAddress
+            // 
+            this.ColumnAddress.DataPropertyName = "AddressDescription";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.ColumnAddress.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColumnAddress.HeaderText = "Addresses";
+            this.ColumnAddress.Name = "ColumnAddress";
+            this.ColumnAddress.ReadOnly = true;
+            // 
+            // tBLCUSTOMERSADDRESSBindingSource
+            // 
+            this.tBLCUSTOMERSADDRESSBindingSource.DataSource = typeof(MiniGram.LINQ.TBLCUSTOMERS_ADDRESS);
+            // 
             // btnEditSelectedAddress
             // 
             this.btnEditSelectedAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -371,7 +397,7 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtEmail.BeforeTouchSize = new System.Drawing.Size(34, 40);
+            this.txtEmail.BeforeTouchSize = new System.Drawing.Size(374, 39);
             this.txtEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.CanOverrideStyle = true;
@@ -464,32 +490,6 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "New Customer";
             // 
-            // tBLCUSTOMERSADDRESSBindingSource
-            // 
-            this.tBLCUSTOMERSADDRESSBindingSource.DataSource = typeof(MiniGram.LINQ.TBLCUSTOMERS_ADDRESS);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // ColumnAddress
-            // 
-            this.ColumnAddress.DataPropertyName = "AddressDescription";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.ColumnAddress.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColumnAddress.HeaderText = "Addresses";
-            this.ColumnAddress.Name = "ColumnAddress";
-            this.ColumnAddress.ReadOnly = true;
-            // 
             // AddEditCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,11 +512,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNumber)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddresses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLCUSTOMERSADDRESSBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_img)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBLCUSTOMERSADDRESSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
