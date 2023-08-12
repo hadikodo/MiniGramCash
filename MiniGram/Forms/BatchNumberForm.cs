@@ -29,9 +29,6 @@ namespace MiniGram.Forms
 
         private void BatchNumberForm_Load(object sender, EventArgs e)
         {
-            if (form.cardNumber != "")
-                this.Close();
-            ActiveControl = txtBatchNumber;
         }
 
         private void accept_btn_Click(object sender, EventArgs e)

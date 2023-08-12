@@ -72,7 +72,7 @@ namespace MiniGram
                     SettingsForm sf = new SettingsForm();
                     sf.ShowDialog();
                 }).Start();
-                
+
             }
             psf.Dispose();
         }
@@ -159,51 +159,51 @@ namespace MiniGram
         private void new_receipt_btn_Click(object sender, EventArgs e)
         {
 
-                RunLoadingThread();
-                refreshColors();
-                new_receipt_btn.BackColor = Color.White;
-                title_lbl.Text = "New Receipt";
-                main_panel.Controls.Clear();
-                POSUC posuc = new POSUC(null);
-                posuc.Dock = DockStyle.Fill;
-                main_panel.Controls.Add(posuc);
+            RunLoadingThread();
+            refreshColors();
+            new_receipt_btn.BackColor = Color.White;
+            title_lbl.Text = "New Receipt";
+            main_panel.Controls.Clear();
+            POSUC posuc = new POSUC(null);
+            posuc.Dock = DockStyle.Fill;
+            main_panel.Controls.Add(posuc);
 
-                if (!testConnection(Globals.ConnectionString))
-                {
-                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
-                    SettingsForm sf = new SettingsForm();
-                    sf.isConnTest = true;
-                    sf.ShowDialog();
-                    new_receipt_btn_Click(sender, e);
-                }
-                posuc.refreshData("");
+            if (!testConnection(Globals.ConnectionString))
+            {
+                MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                SettingsForm sf = new SettingsForm();
+                sf.isConnTest = true;
+                sf.ShowDialog();
+                new_receipt_btn_Click(sender, e);
+            }
+            posuc.refreshData("");
 
         }
 
         private async void receipt_btn_Click(object sender, EventArgs e)
         {
 
-                refreshColors();
-                receipt_btn.BackColor = Color.White;
-                title_lbl.Text = "Receipts";
-                main_panel.Controls.Clear();
-                ReceiptsUC ruc = new ReceiptsUC();
-                ruc.Dock = DockStyle.Fill;
-                await Task.Run(() =>
+            refreshColors();
+            receipt_btn.BackColor = Color.White;
+            title_lbl.Text = "Receipts";
+            main_panel.Controls.Clear();
+            ReceiptsUC ruc = new ReceiptsUC();
+            ruc.Dock = DockStyle.Fill;
+            await Task.Run(() =>
+            {
+                ProgressBarForm pbf = new ProgressBarForm(1);
+                pbf.ShowDialog();
+                if (!testConnection(Globals.ConnectionString))
                 {
-                    ProgressBarForm pbf = new ProgressBarForm(1);
-                    pbf.ShowDialog();
-                    if (!testConnection(Globals.ConnectionString))
-                    {
-                        MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
-                        SettingsForm sf = new SettingsForm();
-                        sf.isConnTest = true;
-                        sf.ShowDialog();
-                        receipt_btn_Click(sender, e);
-                    }
-                });
-                main_panel.Controls.Add(ruc);
-                ruc.refreshData();
+                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                    SettingsForm sf = new SettingsForm();
+                    sf.isConnTest = true;
+                    sf.ShowDialog();
+                    receipt_btn_Click(sender, e);
+                }
+            });
+            main_panel.Controls.Add(ruc);
+            ruc.refreshData("");
 
         }
         private void MainForm_MaximizedBoundsChanged(object sender, EventArgs e)
@@ -214,132 +214,119 @@ namespace MiniGram
         private async void products_prices_btn_Click(object sender, EventArgs e)
         {
 
-                refreshColors();
-                prices_btn.BackColor = Color.White;
-                title_lbl.Text = "Products And Prices";
-                main_panel.Controls.Clear();
-                ProductsUC puc = new ProductsUC();
-                puc.Dock = DockStyle.Fill;
-                await Task.Run(() =>
+            refreshColors();
+            prices_btn.BackColor = Color.White;
+            title_lbl.Text = "Products And Prices";
+            main_panel.Controls.Clear();
+            ProductsUC puc = new ProductsUC();
+            puc.Dock = DockStyle.Fill;
+            await Task.Run(() =>
+            {
+                ProgressBarForm pbf = new ProgressBarForm(1);
+                pbf.ShowDialog();
+                if (!testConnection(Globals.ConnectionString))
                 {
-                    ProgressBarForm pbf = new ProgressBarForm(1);
-                    pbf.ShowDialog();
-                    if (!testConnection(Globals.ConnectionString))
-                    {
-                        MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
-                        SettingsForm sf = new SettingsForm();
-                        sf.isConnTest = true;
-                        sf.ShowDialog();
-                        products_prices_btn_Click(sender, e);
-                    }
-                });
-                main_panel.Controls.Add(puc);
-                puc.refreshData("");
+                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                    SettingsForm sf = new SettingsForm();
+                    sf.isConnTest = true;
+                    sf.ShowDialog();
+                    products_prices_btn_Click(sender, e);
+                }
+            });
+            main_panel.Controls.Add(puc);
+            puc.refreshData("");
 
         }
 
         private async void suppliers_btn_Click(object sender, EventArgs e)
         {
 
-                refreshColors();
-                suppliers_btn.BackColor = Color.White;
-                title_lbl.Text = "Suppliers";
-                main_panel.Controls.Clear();
-                SupplierUC iuc = new SupplierUC();
-                iuc.Dock = DockStyle.Fill;
-                await Task.Run(() =>
+            refreshColors();
+            suppliers_btn.BackColor = Color.White;
+            title_lbl.Text = "Suppliers";
+            main_panel.Controls.Clear();
+            SupplierUC iuc = new SupplierUC();
+            iuc.Dock = DockStyle.Fill;
+            await Task.Run(() =>
+            {
+                ProgressBarForm pbf = new ProgressBarForm(1);
+                pbf.ShowDialog();
+                if (!testConnection(Globals.ConnectionString))
                 {
-                    ProgressBarForm pbf = new ProgressBarForm(1);
-                    pbf.ShowDialog();
-                    if (!testConnection(Globals.ConnectionString))
-                    {
-                        MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
-                        SettingsForm sf = new SettingsForm();
-                        sf.isConnTest = true;
-                        sf.ShowDialog();
-                        suppliers_btn_Click(sender, e);
-                    }
-                });
-                main_panel.Controls.Add(iuc);
-                iuc.refreshData();
-         //   }
+                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                    SettingsForm sf = new SettingsForm();
+                    sf.isConnTest = true;
+                    sf.ShowDialog();
+                    suppliers_btn_Click(sender, e);
+                }
+            });
+            main_panel.Controls.Add(iuc);
+            iuc.refreshData();
+            //   }
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
 
-                refreshColors();
-                btnReports.BackColor = Color.White;
-                title_lbl.Text = "Reports";
-                main_panel.Controls.Clear();
-                ReportsUC ruc = new ReportsUC();
-                ruc.Dock = DockStyle.Fill;
-                main_panel.Controls.Add(ruc);
+            refreshColors();
+            btnReports.BackColor = Color.White;
+            title_lbl.Text = "Reports";
+            main_panel.Controls.Clear();
+            ReportsUC ruc = new ReportsUC();
+            ruc.Dock = DockStyle.Fill;
+            main_panel.Controls.Add(ruc);
 
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
 
-                refreshColors();
-                btnAbout.BackColor = Color.White;
-                title_lbl.Text = "About Us";
-                main_panel.Controls.Clear();
-                AboutUC auc = new AboutUC();
-                auc.Dock = DockStyle.Fill;
-                main_panel.Controls.Add(auc);
+            refreshColors();
+            btnAbout.BackColor = Color.White;
+            title_lbl.Text = "About Us";
+            main_panel.Controls.Clear();
+            AboutUC auc = new AboutUC();
+            auc.Dock = DockStyle.Fill;
+            main_panel.Controls.Add(auc);
 
         }
 
         private async void btnHoldList_Click(object sender, EventArgs e)
         {
 
-                refreshColors();
-                btnHoldList.BackColor = Color.White;
-                title_lbl.Text = "Receipt Waiting List";
-                main_panel.Controls.Clear();
-                HoldListUC huc = new HoldListUC();
-                huc.Dock = DockStyle.Fill;
-                await Task.Run(() =>
+            refreshColors();
+            btnHoldList.BackColor = Color.White;
+            title_lbl.Text = "Receipt Waiting List";
+            main_panel.Controls.Clear();
+            HoldListUC huc = new HoldListUC();
+            huc.Dock = DockStyle.Fill;
+            await Task.Run(() =>
+            {
+                ProgressBarForm pbf = new ProgressBarForm(1);
+                pbf.ShowDialog();
+                if (!testConnection(Globals.ConnectionString))
                 {
-                    ProgressBarForm pbf = new ProgressBarForm(1);
-                    pbf.ShowDialog();
-                    if (!testConnection(Globals.ConnectionString))
-                    {
-                        MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
-                        SettingsForm sf = new SettingsForm();
-                        sf.isConnTest = true;
-                        sf.ShowDialog();
-                        btnHoldList_Click(sender, e);
-                    }
-                });
-                main_panel.Controls.Add(huc);
-                huc.refreshData();
+                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                    SettingsForm sf = new SettingsForm();
+                    sf.isConnTest = true;
+                    sf.ShowDialog();
+                    btnHoldList_Click(sender, e);
+                }
+            });
+            main_panel.Controls.Add(huc);
+            huc.refreshData();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (Globals.isReceiptOpen)
-                {
-                    MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    refreshColors();
-                    btnDashboard.BackColor = Color.White;
-                    title_lbl.Text = "Dashboard";
-                    main_panel.Controls.Clear();
-                    DashboardUC duc = new DashboardUC();
-                    duc.Dock = DockStyle.Fill;
-                    main_panel.Controls.Add(duc);
-                }
-            }
-            catch (Exception ex)
-            {
 
-            }
+            refreshColors();
+            btnDashboard.BackColor = Color.White;
+            title_lbl.Text = "Dashboard";
+            main_panel.Controls.Clear();
+            DashboardUC duc = new DashboardUC();
+            duc.Dock = DockStyle.Fill;
+            main_panel.Controls.Add(duc);
         }
 
         private async void btnCustomer_Click(object sender, EventArgs e)

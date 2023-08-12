@@ -1392,7 +1392,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!Barcode.Value</Value>
+                    <Value>="*"+Fields!Barcode.Value+"*"</Value>
                     <Style>
                       <FontFamily>Free 3 of 9 Extended</FontFamily>
                       <FontSize>60pt</FontSize>

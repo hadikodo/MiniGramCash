@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Syncfusion.Windows.Forms.TabBar;
 
 namespace MiniGram.Controls
 {
@@ -24,12 +25,12 @@ namespace MiniGram.Controls
         private int NewReceiptNumber;
         private string selectedProductName = "";
         private TBLRECEIPT receipt;
-        public string cardNumber = "";
         private int receiptType = 1;
         private int receiptSwitcherValue = 1;
         private bool isErrorAppear = false;
         private int time = 0;
         private int inputQte = 1;
+        private TBLCUSTOMER customer = null;
 
         public POSUC(TBLRECEIPT receipt)
         {
@@ -92,8 +93,18 @@ namespace MiniGram.Controls
             Globals.isReceiptOpen = true;
             List<int> productListIDs = (from aj in data.TBLHOLDDETAILs where aj.RID == receipt.RID select Int32.Parse(aj.PID.ToString())).ToList();
             List<TBLPRODUCT> productList = (from aj in data.TBLPRODUCTs where productListIDs.Contains(aj.PID) select aj).ToList();
-            cardNumber = (from aj in data.TBLRECEIPTs where aj.RID == receipt.RID select aj.EmpCardNumber).ToList()[0];
-            cboxDiscount.CheckState = !String.IsNullOrEmpty(cardNumber) ? CheckState.Checked : CheckState.Unchecked;
+            int? customerID = (from aj in data.TBLRECEIPTs where aj.RID == receipt.RID select aj.CustomerID).SingleOrDefault();
+            if(customerID != 0 )
+            {
+                customer = (from aj in data.TBLCUSTOMERs where aj.ID == customerID select aj).SingleOrDefault();
+                if (customer.isVIP)
+                    cboxDiscount.CheckState = CheckState.Checked;
+                else if (!customer.isVIP)
+                    cboxDiscount.CheckState = CheckState.Unchecked;
+                else
+                    cboxDiscount.CheckState = CheckState.Indeterminate;
+            }
+
             foreach (TBLPRODUCT product in productList)
             {
                 try
@@ -258,6 +269,10 @@ namespace MiniGram.Controls
                     try
                     {
                         var newReceipt = new TBLRECEIPT();
+                        int CustomerID = 0;
+                        if (customer != null)
+                            CustomerID = customer.ID;
+
                         //newReceipt.RID = NewReceiptNumber;
                         if (receipt == null)
                         {
@@ -274,6 +289,7 @@ namespace MiniGram.Controls
                             newReceipt.restLBP = restLBP;
                             newReceipt.restDollar = restDollar;
                             newReceipt.TotalProfit = getTotalReceiptProfit();
+                            newReceipt.CustomerID = CustomerID;
                             cnx.TBLRECEIPTs.InsertOnSubmit(newReceipt);
                             cnx.SubmitChanges();
                         }
@@ -289,6 +305,7 @@ namespace MiniGram.Controls
                             r.TotalDiscount = TotalDiscount;
                             r.ReceiptTypeID = receiptType;
                             r.TotalProfit = getTotalReceiptProfit();
+                            r.CustomerID = CustomerID;
                             newReceipt = r;
                         }
                         foreach (DataGridViewRow row in receipt_details.Rows)
@@ -443,7 +460,7 @@ namespace MiniGram.Controls
                         tot_final_price_lbp.Text = "0" + " LBP";
                         cboxDiscount.CheckState = CheckState.Unchecked;
                         lblDiscount.Text = "Normal Price";
-                        cardNumber = "";
+                        customer = null;
                         try
                         {
                             NewReceiptNumber = Int32.Parse(cnx.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString()) + 1;
@@ -483,7 +500,7 @@ namespace MiniGram.Controls
             tot_final_price_lbp.Text = "0" + " LBP";
             cboxDiscount.CheckState = CheckState.Unchecked;
             lblDiscount.Text = "Normal Price";
-            cardNumber = "";
+            customer = null;
         }
 
 
@@ -1068,6 +1085,10 @@ namespace MiniGram.Controls
                         NewReceiptNumber = receipt.RID;
                     }
                     var newReceipt = new TBLRECEIPT();
+
+                    int CustomerID = 0;
+                    if (customer != null)
+                        CustomerID = customer.ID;
                     if (receipt == null)
                     {
                         newReceipt.RBARCODE = newBarcode;
@@ -1078,9 +1099,9 @@ namespace MiniGram.Controls
                         newReceipt.isHold = true;
                         newReceipt.TotalTVA = Double.Parse(getTotalTVA());
                         newReceipt.TotalDiscount = TotalDiscount;
-                        newReceipt.EmpCardNumber = cardNumber;
                         newReceipt.ReceiptTypeID = 4;
                         newReceipt.TotalProfit = getTotalReceiptProfit();
+                        newReceipt.CustomerID = CustomerID;
                         cnx.TBLRECEIPTs.InsertOnSubmit(newReceipt);
                         cnx.SubmitChanges();
                     }
@@ -1093,9 +1114,9 @@ namespace MiniGram.Controls
                         r.TotalTVA = Double.Parse(getTotalTVA());
                         r.isHold = true;
                         r.TotalDiscount = TotalDiscount;
-                        r.EmpCardNumber = cardNumber;
                         r.ReceiptTypeID = 4;
                         r.TotalProfit = getTotalReceiptProfit();
+                        r.CustomerID = CustomerID;
                         receiptType = 4;
                         newReceipt = r;
                     }
@@ -1277,11 +1298,6 @@ namespace MiniGram.Controls
             }
         }
 
-        private void cboxDiscount_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnExtCheckOut_Click(object sender, EventArgs e)
         {
 
@@ -1290,16 +1306,6 @@ namespace MiniGram.Controls
             if (cboxDiscount.CheckState == CheckState.Checked)
                 TotalDiscount = Double.Parse(getTotalDiscount());
 
-            ExtendedCheckoutForm ecf = new ExtendedCheckoutForm(getFinalPriceDollar(TotalDiscount), getFinalPriceLBP(TotalDiscount));
-            ecf.ShowDialog();
-            if (ecf.canceled)
-            {
-                return;
-            }
-            restDollar = Math.Round(ecf.restDollar, 3);
-            restLBP = ecf.restLBP;
-            customerDollar = Math.Round(ecf.customerDollar, 3);
-            customerLBP = ecf.customerLBP;
 
             using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
@@ -1309,10 +1315,26 @@ namespace MiniGram.Controls
                 }
                 else
                 {
+
+                    ExtendedCheckoutForm ecf = new ExtendedCheckoutForm(getFinalPriceDollar(TotalDiscount), getFinalPriceLBP(TotalDiscount));
+                    ecf.ShowDialog();
+                    if (ecf.canceled)
+                    {
+                        return;
+                    }
+                    restDollar = Math.Round(ecf.restDollar, 3);
+                    restLBP = ecf.restLBP;
+                    customerDollar = Math.Round(ecf.customerDollar, 3);
+                    customerLBP = ecf.customerLBP;
+                    
                     string newBarcode = generateNewBarcode();
                     try
                     {
                         var newReceipt = new TBLRECEIPT();
+
+                        int CustomerID = 0;
+                        if (customer != null)
+                            CustomerID = customer.ID;
                         //newReceipt.RID = NewReceiptNumber;
                         if (receipt == null)
                         {
@@ -1329,6 +1351,7 @@ namespace MiniGram.Controls
                             newReceipt.restLBP = restLBP;
                             newReceipt.restDollar = restDollar;
                             newReceipt.TotalProfit = getTotalReceiptProfit();
+                            newReceipt.CustomerID = CustomerID;
                             cnx.TBLRECEIPTs.InsertOnSubmit(newReceipt);
                             cnx.SubmitChanges();
                         }
@@ -1344,6 +1367,7 @@ namespace MiniGram.Controls
                             r.TotalDiscount = TotalDiscount;
                             r.ReceiptTypeID = receiptType;
                             r.TotalProfit = getTotalReceiptProfit();
+                            r.CustomerID = CustomerID;
                             newReceipt = r;
                         }
                         foreach (DataGridViewRow row in receipt_details.Rows)
@@ -1501,7 +1525,7 @@ namespace MiniGram.Controls
                         tot_final_price_lbp.Text = "0" + " LBP";
                         cboxDiscount.CheckState = CheckState.Unchecked;
                         lblDiscount.Text = "Discount";
-                        cardNumber = "";
+                        customer = null;
                         try
                         {
                             NewReceiptNumber = Int32.Parse(cnx.sp_getLastReceiptID().ToList()[0].MAX_RID.ToString()) + 1;
@@ -1533,20 +1557,47 @@ namespace MiniGram.Controls
             if (value == CheckState.Checked)
             {
                 updateDiscountPrices(value);
-                lblDiscount.Text = "VIP Price";
+
+                if(customer != null)
+                    lblDiscount.Text = "VIP Price (" + customer.FullName + ")";
+                else
+                    lblDiscount.Text = "VIP Price";
             }
             else if (value == CheckState.Indeterminate)
             {
                 updateDiscountPrices(value);
-                lblDiscount.Text = "% Discount";
+                if (customer != null)
+                    lblDiscount.Text = "% Discount (" + customer.FullName + ")";
+                else
+                    lblDiscount.Text = "% Discount";
+
             }
             else if (value == CheckState.Unchecked)
             {
                 updateDiscountPrices(value);
-                lblDiscount.Text = "Normal Price";
+                if (customer != null)
+                    lblDiscount.Text = "Normal Price (" + customer.FullName + ")";
+                else
+                    lblDiscount.Text = "Normal Price";
             }
 
             ActiveControl = search_txt;
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            ChooseCustomerForm ccf = new ChooseCustomerForm();
+            ccf.ShowDialog();
+            customer = ccf.customer;
+
+            if (customer == null) return;
+
+            if (customer.isVIP)
+                cboxDiscount.CheckState = CheckState.Checked;
+            else if (!customer.isVIP)
+                cboxDiscount.CheckState = CheckState.Unchecked;
+            else
+                cboxDiscount.CheckState = CheckState.Indeterminate;
         }
     }
 }

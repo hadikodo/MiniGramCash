@@ -20,6 +20,7 @@ namespace MiniGram.Forms
         protected int sizeType;
         protected int typeID;
         protected String type, TotalDiscount, TotalTVA, FinalLBPPrice, FinalDollarPrice;
+        protected int? customerID;
 
         public DirectReceiptReportViewer(int sizeType, int ReceiptType, String TotalDiscount, String TotalTVA, String FinalLBPPrice, String FinalDollarPrice)
         {
@@ -37,7 +38,12 @@ namespace MiniGram.Forms
         {
             if (typeID == 1 || typeID == 2 || typeID == 4)
             {
-                
+                customerID = (from aj in data.TBLRECEIPTs where aj.RID == receiptID select aj.CustomerID).SingleOrDefault();
+                TBLCUSTOMER customer = new TBLCUSTOMER();
+                customer.FullName = "";
+                if(customerID!= null)
+                    customer = (from aj in data.TBLCUSTOMERs where aj.ID == customerID select aj).SingleOrDefault();
+
                 if (sizeType == 1)
                 {
 
@@ -48,6 +54,7 @@ namespace MiniGram.Forms
                     parameters.Add(new ReportParameter("FinalLBPPrice", FinalLBPPrice));
                     parameters.Add(new ReportParameter("FinalDollarPrice", FinalDollarPrice));
                     parameters.Add(new ReportParameter("ReceiptType", type));
+                    parameters.Add(new ReportParameter("CustomerName", customer.FullName));
                     reportViewerA4.LocalReport.SetParameters(parameters);
                     this.reportViewerA4.RefreshReport();
                     DirectPrintClass dpc = new DirectPrintClass();
@@ -63,6 +70,7 @@ namespace MiniGram.Forms
                     parameters.Add(new ReportParameter("FinalLBPPrice", FinalLBPPrice));
                     parameters.Add(new ReportParameter("FinalDollarPrice", FinalDollarPrice));
                     parameters.Add(new ReportParameter("ReceiptType", type));
+                    parameters.Add(new ReportParameter("CustomerName", customer.FullName));
                     reportViewerMini.LocalReport.SetParameters(parameters);
                     this.reportViewerMini.RefreshReport();
                     DirectPrintClassMini dpc = new DirectPrintClassMini();
@@ -71,7 +79,7 @@ namespace MiniGram.Forms
             }
             else if (typeID == 3 || typeID == 5)
             {
-                sp_selectDeliveryReceiptsDetailsResultBindingSource.DataSource = data.sp_selectDeliveryReceiptsDetails(receiptID).ToList();
+                spselectDeliveryReceiptsDetailsResultBindingSource.DataSource = data.sp_selectDeliveryReceiptsDetails(receiptID).ToList();
                 if (sizeType == 1)
                 {
                     

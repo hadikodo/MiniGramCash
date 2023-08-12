@@ -17,6 +17,10 @@ namespace MiniGram.Controls
     public partial class ReceiptsUC : UserControl
     {
         private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
+
+        private int time = 0;
+
+
         public ReceiptsUC()
         {
             InitializeComponent();
@@ -106,21 +110,15 @@ namespace MiniGram.Controls
 
                 }
 
-                refreshData();
+                refreshData("");
                 search_txt.Text = "";
             }
         }
 
         private void search_txt_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                refreshData();
-            }
-            catch (Exception ex)
-            {
-
-            }
+            time = 0;
+            timerRefreshDataDelay.Start();
         }
 
         private void search_btn_Click(object sender, EventArgs e)
@@ -136,14 +134,14 @@ namespace MiniGram.Controls
             {
 
                 timer1.Start();
-                refreshData();
+                refreshData("");
             }
         }
-        public void refreshData()
+        public void refreshData(string str)
         {
             if (cboxReceiptsType.SelectedValue.ToString() == "1" || cboxReceiptsType.SelectedValue.ToString() == "2")
             {
-                spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts("").Where((aj) => !aj.isHold && aj.ReceiptTypeID.ToString() == cboxReceiptsType.SelectedValue.ToString());
+                spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts(str).Where((aj) => !aj.isHold && aj.ReceiptTypeID.ToString() == cboxReceiptsType.SelectedValue.ToString());
                 dataGridView2.Visible = false;
                 dataGridView1.Visible = true;
                 dataGridView1.Dock = DockStyle.Fill;
@@ -151,7 +149,7 @@ namespace MiniGram.Controls
             }
             else if (cboxReceiptsType.SelectedValue.ToString() == "3")
             {
-                spselectDeliveryReceiptsResultBindingSource.DataSource = cnx.sp_selectDeliveryReceipts("").Where((aj) => aj.ReceiptTypeID.ToString() == cboxReceiptsType.SelectedValue.ToString());
+                spselectDeliveryReceiptsResultBindingSource.DataSource = cnx.sp_selectDeliveryReceipts(str).Where((aj) => aj.ReceiptTypeID.ToString() == cboxReceiptsType.SelectedValue.ToString());
                 dataGridView1.Visible = false;
                 dataGridView2.Visible = true;
                 dataGridView2.Dock = DockStyle.Fill;
@@ -175,7 +173,7 @@ namespace MiniGram.Controls
             ReceiptDetails rd = new ReceiptDetails(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
             rd.refreshData();
             rd.ShowDialog();
-            refreshData();
+            refreshData("");
             search_txt.Text = "";
         }
 
@@ -226,7 +224,7 @@ namespace MiniGram.Controls
 
         private void cboxReceiptsType_SelectedValueChanged(object sender, EventArgs e)
         {
-            refreshData();
+            refreshData("");
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -254,7 +252,7 @@ namespace MiniGram.Controls
                     rd.ShowDialog();
                 }
 
-                refreshData();
+                refreshData("");
                 search_txt.Text = "";
             }
         }
@@ -264,8 +262,22 @@ namespace MiniGram.Controls
             DeliveryReceiptDetailsForm rd = new DeliveryReceiptDetailsForm(Int32.Parse(dataGridView2.SelectedRows[0].Cells[0].Value.ToString()));
             rd.refreshData();
             rd.ShowDialog();
-            refreshData();
+            refreshData("");
             search_txt.Text = "";
+        }
+
+        private void timerRefreshDataDelay_Tick(object sender, EventArgs e)
+        {
+            if (time >= 2)
+            {
+                refreshData(search_txt.Text);
+                time = 0;
+                timerRefreshDataDelay.Stop();
+            }
+            else
+            {
+                time++;
+            }
         }
     }
 }

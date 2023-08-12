@@ -33,11 +33,11 @@
     <ProductName>MiniGram</ProductName>
     <PublisherName>SuperTech Co.</PublisherName>
     <SuiteName>MiniGram</SuiteName>
-    <MinimumRequiredVersion>1.5.0.1</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.5.0.4</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.5.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -841,6 +841,7 @@
     <EmbeddedResource Include="Forms\Reports\RDLC\DirectReceiptReport.rdlc" />
     <EmbeddedResource Include="Forms\Reports\RDLC\DirectReceiptReportMini.rdlc" />
     <EmbeddedResource Include="Forms\Reports\RDLC\rptDailyCashByDate.rdlc" />
+    <EmbeddedResource Include="Forms\Reports\RDLC\rptDeliveryInNew.rdlc" />
     <EmbeddedResource Include="Forms\Reports\RDLC\rptProductsList.rdlc" />
     <EmbeddedResource Include="Languages\en_local.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -902,6 +903,7 @@
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_itemResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_productsResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_suppliersResult.datasource" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.TBLCUSTOMER.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TBLCUSTOMERS_ADDRESS.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TBLDELIVERY_RECEIPT.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TblExpiredDate.datasource" />

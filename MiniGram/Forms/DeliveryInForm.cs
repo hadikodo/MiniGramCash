@@ -110,16 +110,16 @@ namespace MiniGram.Forms
                 LINQ.TBLDELIVERY_RECEIPTS_DETAIL product = new LINQ.TBLDELIVERY_RECEIPTS_DETAIL();
 
                 
-                product.PID = Int32.Parse(cboxProductBarcode.SelectedValue.ToString());
-                using(var ax = new LINQ.MiniGramDBDataContext(Classes.Globals.ConnectionString))
-                {
-                    LINQ.TBLPRODUCT realProduct = (from aj in ax.TBLPRODUCTs where aj.PID == product.PID select aj).SingleOrDefault();
-                    if(realProduct.QTE > 0)
-                    {
-                        MessageBox.Show("You Can't add this product to your stock, Please check if this product is already out of stock!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                }
+                //product.PID = Int32.Parse(cboxProductBarcode.SelectedValue.ToString());
+                //using(var ax = new LINQ.MiniGramDBDataContext(Classes.Globals.ConnectionString))
+                //{
+                //    LINQ.TBLPRODUCT realProduct = (from aj in ax.TBLPRODUCTs where aj.PID == product.PID select aj).SingleOrDefault();
+                //    if(realProduct.QTE > 0)
+                //    {
+                //        MessageBox.Show("You Can't add this product to your stock, Please check if this product is already out of stock!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //        return;
+                //    }
+                //}
 
                 dgvProducts.Rows.Add(cboxProductBarcode.Text, cboxProductName.Text, txtQte.Text, txtCost.Text, txtSellPrice.Text, txtEmpPrice.Text, chkboxHasExpDate.Checked ? txtExpDate.Text : "", chkboxDiscount.Checked ? Int32.Parse(txtDiscount.Text) : 0, chkboxTVA.Checked);
                 product.Quantity = Int32.Parse(txtQte.Text);
