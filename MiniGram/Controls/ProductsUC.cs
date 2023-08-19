@@ -63,7 +63,9 @@ namespace MiniGram.Controls
             int enabledProduct = 0;
             using (MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                spselectproductsResultBindingSource.DataSource = cnx.sp_select_products(str).Take(50).ToList();
+                var data = cnx.sp_select_products(str).ToList();
+                lblCount.Text = (from aj in data where aj.Status == "Enabled" select aj).Count().ToString();
+                spselectproductsResultBindingSource.DataSource = (from aj in data select aj).Take(300).ToList();
                 dataGridView1.Refresh();
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
@@ -72,15 +74,13 @@ namespace MiniGram.Controls
                         row.DefaultCellStyle.BackColor = Color.DarkGray;
                         enabledProduct--;
                     }
-                    if(Int32.Parse(row.Cells[4].Value.ToString()) < 0)
+                    if(row.Cells[4].Value == null || Int32.Parse(row.Cells[4].Value.ToString()) < 0)
                     {
                         row.DefaultCellStyle.BackColor = Color.Red;
                     }
                     enabledProduct++;
                 }
             }
-
-            lblCount.Text = enabledProduct.ToString();
 
 
         }

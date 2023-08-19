@@ -74,7 +74,7 @@
             // search_txt
             // 
             this.search_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.search_txt.BeforeTouchSize = new System.Drawing.Size(34, 30);
+            this.search_txt.BeforeTouchSize = new System.Drawing.Size(44, 30);
             this.search_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.search_txt.CanOverrideStyle = true;
@@ -84,11 +84,12 @@
             this.search_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.search_txt.Location = new System.Drawing.Point(603, 3);
+            this.search_txt.Location = new System.Drawing.Point(802, 4);
+            this.search_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.search_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_txt.MinimumSize = new System.Drawing.Size(34, 30);
+            this.search_txt.MinimumSize = new System.Drawing.Size(44, 30);
             this.search_txt.Name = "search_txt";
-            this.search_txt.Size = new System.Drawing.Size(34, 30);
+            this.search_txt.Size = new System.Drawing.Size(44, 30);
             this.search_txt.TabIndex = 16;
             this.search_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.search_txt.ThemeName = "Default";
@@ -120,11 +121,11 @@
             this.search_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.search_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.search_btn.ImageSize = new System.Drawing.Size(35, 35);
-            this.search_btn.Location = new System.Drawing.Point(500, 0);
+            this.search_btn.Location = new System.Drawing.Point(665, 0);
             this.search_btn.Margin = new System.Windows.Forms.Padding(0);
             this.search_btn.Name = "search_btn";
             this.search_btn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.search_btn.Size = new System.Drawing.Size(100, 69);
+            this.search_btn.Size = new System.Drawing.Size(133, 84);
             this.search_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -160,11 +161,11 @@
             this.disablecus_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.disablecus_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.disablecus_btn.ImageSize = new System.Drawing.Size(35, 35);
-            this.disablecus_btn.Location = new System.Drawing.Point(300, 0);
+            this.disablecus_btn.Location = new System.Drawing.Point(399, 0);
             this.disablecus_btn.Margin = new System.Windows.Forms.Padding(0);
             this.disablecus_btn.Name = "disablecus_btn";
             this.disablecus_btn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.disablecus_btn.Size = new System.Drawing.Size(100, 69);
+            this.disablecus_btn.Size = new System.Drawing.Size(133, 84);
             this.disablecus_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.disablecus_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.disablecus_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -200,11 +201,11 @@
             this.enablecus_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.enablecus_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.enablecus_btn.ImageSize = new System.Drawing.Size(35, 35);
-            this.enablecus_btn.Location = new System.Drawing.Point(200, 0);
+            this.enablecus_btn.Location = new System.Drawing.Point(266, 0);
             this.enablecus_btn.Margin = new System.Windows.Forms.Padding(0);
             this.enablecus_btn.Name = "enablecus_btn";
             this.enablecus_btn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.enablecus_btn.Size = new System.Drawing.Size(100, 69);
+            this.enablecus_btn.Size = new System.Drawing.Size(133, 84);
             this.enablecus_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.enablecus_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.enablecus_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -244,7 +245,7 @@
             this.addproduct_btn.Margin = new System.Windows.Forms.Padding(0);
             this.addproduct_btn.Name = "addproduct_btn";
             this.addproduct_btn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.addproduct_btn.Size = new System.Drawing.Size(100, 69);
+            this.addproduct_btn.Size = new System.Drawing.Size(133, 84);
             this.addproduct_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.addproduct_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.addproduct_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -280,10 +281,10 @@
             this.keyboard_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.keyboard_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.keyboard_btn.ImageSize = new System.Drawing.Size(45, 45);
-            this.keyboard_btn.Location = new System.Drawing.Point(400, 0);
+            this.keyboard_btn.Location = new System.Drawing.Point(532, 0);
             this.keyboard_btn.Margin = new System.Windows.Forms.Padding(0);
             this.keyboard_btn.Name = "keyboard_btn";
-            this.keyboard_btn.Size = new System.Drawing.Size(100, 69);
+            this.keyboard_btn.Size = new System.Drawing.Size(133, 84);
             this.keyboard_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.keyboard_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.keyboard_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -317,11 +318,11 @@
             this.btnDeliveryIn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDeliveryIn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.btnDeliveryIn.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnDeliveryIn.Location = new System.Drawing.Point(100, 0);
+            this.btnDeliveryIn.Location = new System.Drawing.Point(133, 0);
             this.btnDeliveryIn.Margin = new System.Windows.Forms.Padding(0);
             this.btnDeliveryIn.Name = "btnDeliveryIn";
             this.btnDeliveryIn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.btnDeliveryIn.Size = new System.Drawing.Size(100, 69);
+            this.btnDeliveryIn.Size = new System.Drawing.Size(133, 84);
             this.btnDeliveryIn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.btnDeliveryIn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.btnDeliveryIn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -345,14 +346,14 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 8;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tableLayoutPanel2.Controls.Add(this.btnDeliveryIn, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.keyboard_btn, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.search_btn, 5, 0);
@@ -367,7 +368,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1018, 69);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1357, 84);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // lblCount
@@ -376,9 +377,10 @@
             this.lblCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblCount.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount.ForeColor = System.Drawing.Color.White;
-            this.lblCount.Location = new System.Drawing.Point(921, 0);
+            this.lblCount.Location = new System.Drawing.Point(1228, 0);
+            this.lblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(94, 69);
+            this.lblCount.Size = new System.Drawing.Size(125, 84);
             this.lblCount.TabIndex = 24;
             this.lblCount.Text = "@count";
             this.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -387,18 +389,20 @@
             // 
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1018, 69);
+            this.panel1.Size = new System.Drawing.Size(1357, 84);
             this.panel1.TabIndex = 2;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Location = new System.Drawing.Point(4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1012, 681);
+            this.panel3.Size = new System.Drawing.Size(1349, 837);
             this.panel3.TabIndex = 1;
             // 
             // dataGridView1
@@ -443,6 +447,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 10;
@@ -457,7 +462,7 @@
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1012, 681);
+            this.dataGridView1.Size = new System.Drawing.Size(1349, 837);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -466,6 +471,7 @@
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -473,6 +479,7 @@
             // 
             this.barcodeDataGridViewTextBoxColumn.DataPropertyName = "Barcode";
             this.barcodeDataGridViewTextBoxColumn.HeaderText = "Barcode";
+            this.barcodeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.barcodeDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
             this.barcodeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -480,6 +487,7 @@
             // 
             this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
             this.productNameDataGridViewTextBoxColumn.HeaderText = "Product Name";
+            this.productNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
             this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -487,6 +495,7 @@
             // 
             this.supplierNameDataGridViewTextBoxColumn.DataPropertyName = "SupplierName";
             this.supplierNameDataGridViewTextBoxColumn.HeaderText = "Supplier Name";
+            this.supplierNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.supplierNameDataGridViewTextBoxColumn.Name = "supplierNameDataGridViewTextBoxColumn";
             this.supplierNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -494,6 +503,7 @@
             // 
             this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
             this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -501,6 +511,7 @@
             // 
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -508,6 +519,7 @@
             // 
             this.addedDateDataGridViewTextBoxColumn.DataPropertyName = "AddedDate";
             this.addedDateDataGridViewTextBoxColumn.HeaderText = "Added Date";
+            this.addedDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.addedDateDataGridViewTextBoxColumn.Name = "addedDateDataGridViewTextBoxColumn";
             this.addedDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -515,6 +527,7 @@
             // 
             this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
             this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -523,6 +536,7 @@
             this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Edit.HeaderText = "";
+            this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
             this.Edit.ReadOnly = true;
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -545,17 +559,18 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 687F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1018, 687);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 846F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1357, 845);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.tableLayoutPanel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 78);
+            this.panel2.Location = new System.Drawing.Point(4, 96);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1018, 687);
+            this.panel2.Size = new System.Drawing.Size(1357, 845);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -566,11 +581,12 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.797797F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.2022F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 768);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1365, 945);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // timer1
@@ -585,12 +601,13 @@
             // 
             // ProductsUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProductsUC";
-            this.Size = new System.Drawing.Size(1024, 768);
+            this.Size = new System.Drawing.Size(1365, 945);
             this.Load += new System.EventHandler(this.CustomersUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.search_txt)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);

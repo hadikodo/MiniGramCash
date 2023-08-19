@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Syncfusion.Windows.Forms.TabBar;
@@ -447,9 +448,20 @@ namespace MiniGram.Controls
                         cnx.SubmitChanges();
                         if (!Properties.Settings.Default.printInCheckout)
                         {
-                            DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, receiptType, getTotalDiscount(), getTotalTVA(), getFinalPriceLBP(Double.Parse(getTotalDiscount())).ToString(), getFinalPriceDollar(Double.Parse(getTotalDiscount())).ToString());
-                            drrv.receiptID = newReceipt.RID;
-                            drrv.ShowDialog();
+                            int receiptTypeID = Properties.Settings.Default.ReceiptType;
+                            int receiptNumber = receiptType;
+                            string totalDiscount = getTotalDiscount();
+                            string totalTVA = getTotalTVA();
+                            string totalPriceLBP = getFinalPriceLBP(Double.Parse(getTotalDiscount())).ToString();
+                            string totalPriceDollar = getFinalPriceDollar(Double.Parse(getTotalDiscount())).ToString();
+                            Thread tr = new Thread(() =>
+                            {
+                                DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(receiptTypeID, receiptNumber, totalDiscount, totalTVA, totalPriceLBP, totalPriceDollar);
+                                drrv.receiptID = newReceipt.RID;
+                                drrv.Print();
+                                Thread.CurrentThread.Abort();
+                            });
+                            tr.Start();
                         }
                         receipt_details.Rows.Clear();
                         tot_discount.Text = "0" + " $";
@@ -755,7 +767,7 @@ namespace MiniGram.Controls
                 {
                     string pname = row.Cells[1].Value.ToString();
                     double dollar = double.Parse(data.sp_getProductByName(pname).ToList()[0].PRICE.Value.ToString());
-                    double secondaryPrice = data.sp_getProductByName(pname).ToList()[0].SecondaryPrice.Value * receiptSwitcherValue;
+                    double secondaryPrice = data.sp_getProductByName(pname).ToList()[0].SecondaryPrice.Value;
                     double tva = data.sp_getProductByName(pname).ToList()[0].HasTVA ? (secondaryPrice * Double.Parse(Properties.Settings.Default.TVAPercentage.ToString()) / 100) : 0;
                     double discount = 0;
                     double? cost = data.sp_getProductByName(pname).ToList()[0].InitPrice;
@@ -1141,9 +1153,20 @@ namespace MiniGram.Controls
                     receiptType = 4;
                     if (!Properties.Settings.Default.printInCheckout)
                     {
-                        DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, receiptType, getTotalDiscount(), getTotalTVA(), getFinalPriceLBP(Double.Parse(getTotalDiscount())).ToString(), getFinalPriceDollar(Double.Parse(getTotalDiscount())).ToString());
-                        drrv.receiptID = newReceipt.RID;
-                        drrv.ShowDialog();
+                        int receiptTypeID = Properties.Settings.Default.ReceiptType;
+                        int receiptNumber = receiptType;
+                        string totalDiscount = getTotalDiscount();
+                        string totalTVA = getTotalTVA();
+                        string totalPriceLBP = getFinalPriceLBP(Double.Parse(getTotalDiscount())).ToString();
+                        string totalPriceDollar = getFinalPriceDollar(Double.Parse(getTotalDiscount())).ToString();
+                        Thread tr = new Thread(() =>
+                        {
+                            DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(receiptTypeID, receiptNumber, totalDiscount, totalTVA, totalPriceLBP, totalPriceDollar);
+                            drrv.receiptID = newReceipt.RID;
+                            drrv.Print();
+                            Thread.CurrentThread.Abort();
+                        });
+                        tr.Start();
                     }
                     CleareReceipt();
                     Globals.isReceiptOpen = false;
@@ -1512,9 +1535,20 @@ namespace MiniGram.Controls
                         cnx.SubmitChanges();
                         if (!Properties.Settings.Default.printInCheckout)
                         {
-                            DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, receiptType, getTotalDiscount(), getTotalTVA(), getFinalPriceLBP(Double.Parse(getTotalDiscount())).ToString(), getFinalPriceDollar(Double.Parse(getTotalDiscount())).ToString());
-                            drrv.receiptID = newReceipt.RID;
-                            drrv.ShowDialog();
+                            int receiptTypeID = Properties.Settings.Default.ReceiptType;
+                            int receiptNumber = receiptType;
+                            string totalDiscount = getTotalDiscount();
+                            string totalTVA = getTotalTVA();
+                            string totalPriceLBP = getFinalPriceLBP(Double.Parse(getTotalDiscount())).ToString();
+                            string totalPriceDollar = getFinalPriceDollar(Double.Parse(getTotalDiscount())).ToString();
+                            Thread tr = new Thread(() =>
+                            {
+                                DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(receiptTypeID, receiptNumber, totalDiscount, totalTVA, totalPriceLBP, totalPriceDollar);
+                                drrv.receiptID = newReceipt.RID;
+                                drrv.Print();
+                                Thread.CurrentThread.Abort();
+                            });
+                            tr.Start();
                         }
                         receipt_details.Rows.Clear();
                         tot_discount.Text = "0" + " $";

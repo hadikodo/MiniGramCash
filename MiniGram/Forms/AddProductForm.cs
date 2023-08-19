@@ -49,6 +49,7 @@ namespace MiniGram.Forms
                     supp_cbox.Items.Add(supp.SupplierName);
                 }
             }
+            ActiveControl = productname_txt;
             //supp_cbox.SelectedIndex = 0;
         }
 
@@ -160,6 +161,7 @@ namespace MiniGram.Forms
             {
                 e.Handled = false;
             }
+
         }
 
         private void keyboard_btn_Click(object sender, EventArgs e)
@@ -302,6 +304,54 @@ namespace MiniGram.Forms
             else
             {
                 txtDiscountPercentage.Enabled = false;
+            }
+        }
+
+        private void productname_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Down)
+            {
+                this.ProcessTabKey(true);
+            }
+        }
+
+        private void barcode_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                this.ProcessTabKey(true);
+            }
+        }
+
+        private void supp_cbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                this.ProcessTabKey(true);
+            }
+        }
+
+        private void sell_price_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                this.ProcessTabKey(true);
+            }
+        }
+
+        private void txtSecondaryPrice_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                this.ProcessTabKey(true);
+            }
+        }
+
+        private void init_price_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                this.ProcessTabKey(true);
             }
         }
     }
