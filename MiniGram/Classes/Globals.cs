@@ -16,7 +16,11 @@ namespace MiniGram.Classes
         public static bool isReceiptOpen { get; set; } = false;
         public static bool isLoadingFinish { get; set; }
         public static string ConnectionString { get; set; }
+        public static string AppVersion { get; set; }
         public static MainForm mainForm { get; set; } = new MainForm();
+
+
+
         public const decimal DatabaseVersion = 1.00M;
     }
 }

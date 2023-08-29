@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.products_panel = new System.Windows.Forms.Panel();
             this.search_panel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddCustomPrice = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnCustomers = new Syncfusion.WinForms.Controls.SfButton();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.lblDiscount = new System.Windows.Forms.Label();
             this.cboxDiscount = new System.Windows.Forms.CheckBox();
@@ -85,11 +86,12 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.btnExtCheckOut = new Syncfusion.WinForms.Controls.SfButton();
             this.checkout_btn = new Syncfusion.WinForms.Controls.SfButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.products_panel = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timerRefreshDataDelay = new System.Windows.Forms.Timer(this.components);
             this.timerRefreshInputQte = new System.Windows.Forms.Timer(this.components);
             this.spselectReceiptsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnCustomers = new Syncfusion.WinForms.Controls.SfButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.search_panel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -103,6 +105,7 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spselectReceiptsResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,33 +114,20 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel1.Controls.Add(this.products_panel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.search_panel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.receipt_panel, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.total_panel, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 768);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1365, 945);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // products_panel
-            // 
-            this.products_panel.AutoScroll = true;
-            this.products_panel.AutoScrollMinSize = new System.Drawing.Size(0, 20000);
-            this.products_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.products_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.products_panel.Location = new System.Drawing.Point(0, 80);
-            this.products_panel.Margin = new System.Windows.Forms.Padding(0);
-            this.products_panel.Name = "products_panel";
-            this.tableLayoutPanel1.SetRowSpan(this.products_panel, 2);
-            this.products_panel.Size = new System.Drawing.Size(307, 688);
-            this.products_panel.TabIndex = 0;
             // 
             // search_panel
             // 
@@ -145,52 +135,131 @@
             this.tableLayoutPanel1.SetColumnSpan(this.search_panel, 2);
             this.search_panel.Controls.Add(this.tableLayoutPanel2);
             this.search_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.search_panel.Location = new System.Drawing.Point(3, 3);
+            this.search_panel.Location = new System.Drawing.Point(4, 4);
+            this.search_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.search_panel.Name = "search_panel";
-            this.search_panel.Size = new System.Drawing.Size(1018, 74);
+            this.search_panel.Size = new System.Drawing.Size(1357, 90);
             this.search_panel.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 7;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Controls.Add(this.btnCustomers, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 1, 0);
+            this.tableLayoutPanel2.ColumnCount = 8;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.06012F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.316632F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.04008F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.316632F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.316632F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.316632F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.316632F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.316632F));
+            this.tableLayoutPanel2.Controls.Add(this.btnAddCustomPrice, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnCustomers, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnSwitch, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnHold, 4, 0);
-            this.tableLayoutPanel2.Controls.Add(this.delete_btn, 6, 0);
-            this.tableLayoutPanel2.Controls.Add(this.change_quantity_btn, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnSwitch, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnHold, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.delete_btn, 7, 0);
+            this.tableLayoutPanel2.Controls.Add(this.change_quantity_btn, 6, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1018, 74);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1357, 90);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // btnAddCustomPrice
+            // 
+            this.btnAddCustomPrice.AccessibleName = "Button";
+            this.btnAddCustomPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnAddCustomPrice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddCustomPrice.CanOverrideStyle = true;
+            this.btnAddCustomPrice.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCustomPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddCustomPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCustomPrice.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCustomPrice.ForeColor = System.Drawing.Color.White;
+            this.btnAddCustomPrice.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddCustomPrice.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.btnAddCustomPrice.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnAddCustomPrice.Location = new System.Drawing.Point(411, 4);
+            this.btnAddCustomPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddCustomPrice.Name = "btnAddCustomPrice";
+            this.btnAddCustomPrice.Size = new System.Drawing.Size(104, 82);
+            this.btnAddCustomPrice.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnAddCustomPrice.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnAddCustomPrice.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnAddCustomPrice.Style.ForeColor = System.Drawing.Color.White;
+            this.btnAddCustomPrice.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.btnAddCustomPrice.Style.HoverForeColor = System.Drawing.Color.White;
+            this.btnAddCustomPrice.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.btnAddCustomPrice.Style.Image = global::MiniGram.Properties.Resources.price_tag__1_;
+            this.btnAddCustomPrice.Style.PressedBackColor = System.Drawing.Color.White;
+            this.btnAddCustomPrice.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnAddCustomPrice.TabIndex = 26;
+            this.btnAddCustomPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddCustomPrice.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.btnAddCustomPrice.TextMargin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btnAddCustomPrice.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.btnAddCustomPrice, "Add a custom price to the receipt if you need add some no priced items.");
+            this.btnAddCustomPrice.UseVisualStyleBackColor = false;
+            this.btnAddCustomPrice.Visible = false;
+            this.btnAddCustomPrice.Click += new System.EventHandler(this.btnAddCustomPrice_Click);
+            // 
+            // btnCustomers
+            // 
+            this.btnCustomers.AccessibleName = "Button";
+            this.btnCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnCustomers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCustomers.CanOverrideStyle = true;
+            this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomers.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomers.ForeColor = System.Drawing.Color.White;
+            this.btnCustomers.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCustomers.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.btnCustomers.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnCustomers.Location = new System.Drawing.Point(794, 4);
+            this.btnCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Size = new System.Drawing.Size(104, 82);
+            this.btnCustomers.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnCustomers.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnCustomers.Style.FocusedForeColor = System.Drawing.Color.White;
+            this.btnCustomers.Style.ForeColor = System.Drawing.Color.White;
+            this.btnCustomers.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.btnCustomers.Style.HoverForeColor = System.Drawing.Color.White;
+            this.btnCustomers.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.btnCustomers.Style.Image = global::MiniGram.Properties.Resources.customer;
+            this.btnCustomers.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.btnCustomers.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnCustomers.TabIndex = 25;
+            this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.btnCustomers.TextMargin = new System.Windows.Forms.Padding(0);
+            this.btnCustomers.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.btnCustomers, "Choose Customer For This Receipt.");
+            this.btnCustomers.UseVisualStyleBackColor = true;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel6.Controls.Add(this.lblDiscount, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.cboxDiscount, 0, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(305, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(519, 0);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(203, 74);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(271, 90);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // lblDiscount
@@ -199,9 +268,10 @@
             this.lblDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDiscount.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscount.ForeColor = System.Drawing.Color.White;
-            this.lblDiscount.Location = new System.Drawing.Point(3, 0);
+            this.lblDiscount.Location = new System.Drawing.Point(4, 0);
+            this.lblDiscount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(197, 37);
+            this.lblDiscount.Size = new System.Drawing.Size(263, 45);
             this.lblDiscount.TabIndex = 26;
             this.lblDiscount.Text = "Normal Price";
             this.lblDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -212,9 +282,10 @@
             this.cboxDiscount.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cboxDiscount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboxDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboxDiscount.Location = new System.Drawing.Point(3, 40);
+            this.cboxDiscount.Location = new System.Drawing.Point(4, 49);
+            this.cboxDiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboxDiscount.Name = "cboxDiscount";
-            this.cboxDiscount.Size = new System.Drawing.Size(197, 31);
+            this.cboxDiscount.Size = new System.Drawing.Size(263, 37);
             this.cboxDiscount.TabIndex = 27;
             this.cboxDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cboxDiscount.ThreeState = true;
@@ -232,9 +303,9 @@
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(305, 74);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(407, 90);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // lblReceiptType
@@ -243,9 +314,10 @@
             this.lblReceiptType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblReceiptType.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReceiptType.ForeColor = System.Drawing.Color.White;
-            this.lblReceiptType.Location = new System.Drawing.Point(3, 0);
+            this.lblReceiptType.Location = new System.Drawing.Point(4, 0);
+            this.lblReceiptType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReceiptType.Name = "lblReceiptType";
-            this.lblReceiptType.Size = new System.Drawing.Size(299, 30);
+            this.lblReceiptType.Size = new System.Drawing.Size(399, 37);
             this.lblReceiptType.TabIndex = 18;
             this.lblReceiptType.Text = "Sale Receipt";
             this.lblReceiptType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -254,23 +326,24 @@
             // 
             this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel8.Controls.Add(this.search_txt, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.keyboard_btn, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.add_btn, 2, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 33);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(4, 41);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(299, 38);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(399, 45);
             this.tableLayoutPanel8.TabIndex = 19;
             // 
             // search_txt
             // 
             this.search_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.search_txt.BeforeTouchSize = new System.Drawing.Size(219, 30);
+            this.search_txt.BeforeTouchSize = new System.Drawing.Size(293, 30);
             this.search_txt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.search_txt.CanOverrideStyle = true;
@@ -280,12 +353,12 @@
             this.search_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.search_txt.Location = new System.Drawing.Point(0, 8);
+            this.search_txt.Location = new System.Drawing.Point(0, 15);
             this.search_txt.Margin = new System.Windows.Forms.Padding(0);
             this.search_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_txt.MinimumSize = new System.Drawing.Size(34, 30);
+            this.search_txt.MinimumSize = new System.Drawing.Size(44, 30);
             this.search_txt.Name = "search_txt";
-            this.search_txt.Size = new System.Drawing.Size(219, 30);
+            this.search_txt.Size = new System.Drawing.Size(293, 30);
             this.search_txt.TabIndex = 17;
             this.search_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.search_txt.ThemeName = "Default";
@@ -317,9 +390,10 @@
             this.keyboard_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.keyboard_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.keyboard_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.keyboard_btn.Location = new System.Drawing.Point(222, 3);
+            this.keyboard_btn.Location = new System.Drawing.Point(297, 4);
+            this.keyboard_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.keyboard_btn.Name = "keyboard_btn";
-            this.keyboard_btn.Size = new System.Drawing.Size(34, 32);
+            this.keyboard_btn.Size = new System.Drawing.Size(45, 37);
             this.keyboard_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.keyboard_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.keyboard_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -353,9 +427,10 @@
             this.add_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.add_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.add_btn.ImageSize = new System.Drawing.Size(40, 40);
-            this.add_btn.Location = new System.Drawing.Point(262, 3);
+            this.add_btn.Location = new System.Drawing.Point(350, 4);
+            this.add_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(34, 32);
+            this.add_btn.Size = new System.Drawing.Size(45, 37);
             this.add_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.add_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.add_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -388,9 +463,10 @@
             this.btnSwitch.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSwitch.ImageMargin = new System.Windows.Forms.Padding(0);
             this.btnSwitch.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSwitch.Location = new System.Drawing.Point(612, 3);
+            this.btnSwitch.Location = new System.Drawing.Point(906, 4);
+            this.btnSwitch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSwitch.Name = "btnSwitch";
-            this.btnSwitch.Size = new System.Drawing.Size(95, 68);
+            this.btnSwitch.Size = new System.Drawing.Size(104, 82);
             this.btnSwitch.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.btnSwitch.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.btnSwitch.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -424,9 +500,10 @@
             this.btnHold.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnHold.ImageMargin = new System.Windows.Forms.Padding(0);
             this.btnHold.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnHold.Location = new System.Drawing.Point(713, 3);
+            this.btnHold.Location = new System.Drawing.Point(1018, 4);
+            this.btnHold.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHold.Name = "btnHold";
-            this.btnHold.Size = new System.Drawing.Size(95, 68);
+            this.btnHold.Size = new System.Drawing.Size(104, 82);
             this.btnHold.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.btnHold.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.btnHold.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -460,9 +537,10 @@
             this.delete_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.delete_btn.ImageMargin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.delete_btn.ImageSize = new System.Drawing.Size(50, 50);
-            this.delete_btn.Location = new System.Drawing.Point(915, 3);
+            this.delete_btn.Location = new System.Drawing.Point(1242, 4);
+            this.delete_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(100, 68);
+            this.delete_btn.Size = new System.Drawing.Size(111, 82);
             this.delete_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.delete_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.delete_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -496,9 +574,10 @@
             this.change_quantity_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.change_quantity_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.change_quantity_btn.ImageSize = new System.Drawing.Size(50, 50);
-            this.change_quantity_btn.Location = new System.Drawing.Point(814, 3);
+            this.change_quantity_btn.Location = new System.Drawing.Point(1130, 4);
+            this.change_quantity_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.change_quantity_btn.Name = "change_quantity_btn";
-            this.change_quantity_btn.Size = new System.Drawing.Size(95, 68);
+            this.change_quantity_btn.Size = new System.Drawing.Size(104, 82);
             this.change_quantity_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.change_quantity_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.change_quantity_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -523,9 +602,10 @@
             this.receipt_panel.BackColor = System.Drawing.Color.White;
             this.receipt_panel.Controls.Add(this.receipt_details);
             this.receipt_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.receipt_panel.Location = new System.Drawing.Point(310, 83);
+            this.receipt_panel.Location = new System.Drawing.Point(413, 102);
+            this.receipt_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.receipt_panel.Name = "receipt_panel";
-            this.receipt_panel.Size = new System.Drawing.Size(711, 406);
+            this.receipt_panel.Size = new System.Drawing.Size(948, 500);
             this.receipt_panel.TabIndex = 2;
             // 
             // receipt_details
@@ -536,14 +616,14 @@
             this.receipt_details.AllowUserToResizeRows = false;
             this.receipt_details.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.receipt_details.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.receipt_details.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.receipt_details.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.receipt_details.ColumnHeadersHeight = 40;
             this.receipt_details.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.receipt_details.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -560,34 +640,35 @@
             this.SecondPrice,
             this.TotalProfit});
             this.receipt_details.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.receipt_details.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.receipt_details.DefaultCellStyle = dataGridViewCellStyle4;
             this.receipt_details.Dock = System.Windows.Forms.DockStyle.Fill;
             this.receipt_details.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.receipt_details.Location = new System.Drawing.Point(0, 0);
+            this.receipt_details.Margin = new System.Windows.Forms.Padding(0);
             this.receipt_details.MultiSelect = false;
             this.receipt_details.Name = "receipt_details";
             this.receipt_details.ReadOnly = true;
             this.receipt_details.RowHeadersVisible = false;
             this.receipt_details.RowHeadersWidth = 10;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.receipt_details.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.receipt_details.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.receipt_details.RowTemplate.Height = 35;
             this.receipt_details.RowTemplate.ReadOnly = true;
             this.receipt_details.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.receipt_details.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.receipt_details.Size = new System.Drawing.Size(711, 406);
+            this.receipt_details.Size = new System.Drawing.Size(948, 500);
             this.receipt_details.TabIndex = 1;
             // 
             // Barcode
@@ -595,6 +676,7 @@
             this.Barcode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Barcode.FillWeight = 10F;
             this.Barcode.HeaderText = "Barcode";
+            this.Barcode.MinimumWidth = 6;
             this.Barcode.Name = "Barcode";
             this.Barcode.ReadOnly = true;
             // 
@@ -603,6 +685,7 @@
             this.PNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PNAME.FillWeight = 23F;
             this.PNAME.HeaderText = "Name";
+            this.PNAME.MinimumWidth = 6;
             this.PNAME.Name = "PNAME";
             this.PNAME.ReadOnly = true;
             // 
@@ -611,6 +694,7 @@
             this.SupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SupplierName.FillWeight = 20F;
             this.SupplierName.HeaderText = "Supplier Name";
+            this.SupplierName.MinimumWidth = 6;
             this.SupplierName.Name = "SupplierName";
             this.SupplierName.ReadOnly = true;
             this.SupplierName.Visible = false;
@@ -620,6 +704,7 @@
             this.QTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.QTE.FillWeight = 6F;
             this.QTE.HeaderText = "Items";
+            this.QTE.MinimumWidth = 6;
             this.QTE.Name = "QTE";
             this.QTE.ReadOnly = true;
             // 
@@ -628,26 +713,29 @@
             this.DollarPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DollarPrice.FillWeight = 8F;
             this.DollarPrice.HeaderText = "Dollar";
+            this.DollarPrice.MinimumWidth = 6;
             this.DollarPrice.Name = "DollarPrice";
             this.DollarPrice.ReadOnly = true;
             // 
             // LBPPrice
             // 
             this.LBPPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Format = "#,0;-#,0";
-            this.LBPPrice.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Format = "#,0;-#,0";
+            this.LBPPrice.DefaultCellStyle = dataGridViewCellStyle2;
             this.LBPPrice.FillWeight = 10F;
             this.LBPPrice.HeaderText = "LBP";
+            this.LBPPrice.MinimumWidth = 6;
             this.LBPPrice.Name = "LBPPrice";
             this.LBPPrice.ReadOnly = true;
             // 
             // TotalLBP
             // 
             this.TotalLBP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Format = "#,0;-#,0";
-            this.TotalLBP.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Format = "#,0;-#,0";
+            this.TotalLBP.DefaultCellStyle = dataGridViewCellStyle3;
             this.TotalLBP.FillWeight = 10F;
             this.TotalLBP.HeaderText = "Tot. LBP";
+            this.TotalLBP.MinimumWidth = 6;
             this.TotalLBP.Name = "TotalLBP";
             this.TotalLBP.ReadOnly = true;
             // 
@@ -656,6 +744,7 @@
             this.TotalDollar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TotalDollar.FillWeight = 8F;
             this.TotalDollar.HeaderText = "Tot. $";
+            this.TotalDollar.MinimumWidth = 6;
             this.TotalDollar.Name = "TotalDollar";
             this.TotalDollar.ReadOnly = true;
             // 
@@ -672,12 +761,14 @@
             this.TotalDiscount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TotalDiscount.FillWeight = 8F;
             this.TotalDiscount.HeaderText = "Tot. % $";
+            this.TotalDiscount.MinimumWidth = 6;
             this.TotalDiscount.Name = "TotalDiscount";
             this.TotalDiscount.ReadOnly = true;
             // 
             // SecondPrice
             // 
             this.SecondPrice.HeaderText = "Second Price";
+            this.SecondPrice.MinimumWidth = 6;
             this.SecondPrice.Name = "SecondPrice";
             this.SecondPrice.ReadOnly = true;
             this.SecondPrice.Visible = false;
@@ -685,6 +776,7 @@
             // TotalProfit
             // 
             this.TotalProfit.HeaderText = "Tot. Profit";
+            this.TotalProfit.MinimumWidth = 6;
             this.TotalProfit.Name = "TotalProfit";
             this.TotalProfit.ReadOnly = true;
             this.TotalProfit.Visible = false;
@@ -694,24 +786,26 @@
             this.total_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.total_panel.Controls.Add(this.tableLayoutPanel5);
             this.total_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.total_panel.Location = new System.Drawing.Point(310, 495);
+            this.total_panel.Location = new System.Drawing.Point(413, 610);
+            this.total_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.total_panel.Name = "total_panel";
-            this.total_panel.Size = new System.Drawing.Size(711, 270);
+            this.total_panel.Size = new System.Drawing.Size(948, 331);
             this.total_panel.TabIndex = 3;
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel7, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(711, 270);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(948, 331);
             this.tableLayoutPanel5.TabIndex = 32;
             // 
             // tableLayoutPanel3
@@ -734,7 +828,8 @@
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 7;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
@@ -744,7 +839,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(605, 264);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(807, 323);
             this.tableLayoutPanel3.TabIndex = 31;
             // 
             // tot_final_price_lbp
@@ -755,10 +850,11 @@
             this.tot_final_price_lbp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tot_final_price_lbp.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_final_price_lbp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_final_price_lbp.Location = new System.Drawing.Point(305, 222);
+            this.tot_final_price_lbp.Location = new System.Drawing.Point(407, 276);
+            this.tot_final_price_lbp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tot_final_price_lbp.Name = "tot_final_price_lbp";
-            this.tot_final_price_lbp.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.tot_final_price_lbp.Size = new System.Drawing.Size(297, 42);
+            this.tot_final_price_lbp.Padding = new System.Windows.Forms.Padding(67, 0, 0, 0);
+            this.tot_final_price_lbp.Size = new System.Drawing.Size(396, 47);
             this.tot_final_price_lbp.TabIndex = 36;
             this.tot_final_price_lbp.Text = "0 LBP";
             this.tot_final_price_lbp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -770,10 +866,11 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(3, 222);
+            this.label7.Location = new System.Drawing.Point(4, 276);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label7.Size = new System.Drawing.Size(296, 42);
+            this.label7.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.label7.Size = new System.Drawing.Size(395, 47);
             this.label7.TabIndex = 35;
             this.label7.Text = "Total Net LBP  : ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -786,10 +883,11 @@
             this.tot_final_price_dolar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tot_final_price_dolar.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_final_price_dolar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_final_price_dolar.Location = new System.Drawing.Point(305, 185);
+            this.tot_final_price_dolar.Location = new System.Drawing.Point(407, 230);
+            this.tot_final_price_dolar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tot_final_price_dolar.Name = "tot_final_price_dolar";
-            this.tot_final_price_dolar.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.tot_final_price_dolar.Size = new System.Drawing.Size(297, 37);
+            this.tot_final_price_dolar.Padding = new System.Windows.Forms.Padding(67, 0, 0, 0);
+            this.tot_final_price_dolar.Size = new System.Drawing.Size(396, 46);
             this.tot_final_price_dolar.TabIndex = 34;
             this.tot_final_price_dolar.Text = "0 $";
             this.tot_final_price_dolar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -801,10 +899,11 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 185);
+            this.label5.Location = new System.Drawing.Point(4, 230);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label5.Size = new System.Drawing.Size(296, 37);
+            this.label5.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.label5.Size = new System.Drawing.Size(395, 46);
             this.label5.TabIndex = 33;
             this.label5.Text = "Total Net $  : ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -817,10 +916,11 @@
             this.tot_tva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tot_tva.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_tva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_tva.Location = new System.Drawing.Point(305, 148);
+            this.tot_tva.Location = new System.Drawing.Point(407, 184);
+            this.tot_tva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tot_tva.Name = "tot_tva";
-            this.tot_tva.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.tot_tva.Size = new System.Drawing.Size(297, 37);
+            this.tot_tva.Padding = new System.Windows.Forms.Padding(67, 0, 0, 0);
+            this.tot_tva.Size = new System.Drawing.Size(396, 46);
             this.tot_tva.TabIndex = 32;
             this.tot_tva.Text = "0 $";
             this.tot_tva.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -832,10 +932,11 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 148);
+            this.label4.Location = new System.Drawing.Point(4, 184);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label4.Size = new System.Drawing.Size(296, 37);
+            this.label4.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.label4.Size = new System.Drawing.Size(395, 46);
             this.label4.TabIndex = 31;
             this.label4.Text = "Total TVA  $ : ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -847,10 +948,11 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 111);
+            this.label1.Location = new System.Drawing.Point(4, 138);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(296, 37);
+            this.label1.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.label1.Size = new System.Drawing.Size(395, 46);
             this.label1.TabIndex = 24;
             this.label1.Text = "Total Discount Price $ : ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -863,10 +965,11 @@
             this.receipt_id.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.receipt_id.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receipt_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.receipt_id.Location = new System.Drawing.Point(305, 0);
+            this.receipt_id.Location = new System.Drawing.Point(407, 0);
+            this.receipt_id.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.receipt_id.Name = "receipt_id";
-            this.receipt_id.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.receipt_id.Size = new System.Drawing.Size(297, 37);
+            this.receipt_id.Padding = new System.Windows.Forms.Padding(67, 0, 0, 0);
+            this.receipt_id.Size = new System.Drawing.Size(396, 46);
             this.receipt_id.TabIndex = 27;
             this.receipt_id.Text = "0";
             this.receipt_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -879,10 +982,11 @@
             this.tot_quantity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tot_quantity.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_quantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_quantity.Location = new System.Drawing.Point(305, 37);
+            this.tot_quantity.Location = new System.Drawing.Point(407, 46);
+            this.tot_quantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tot_quantity.Name = "tot_quantity";
-            this.tot_quantity.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.tot_quantity.Size = new System.Drawing.Size(297, 37);
+            this.tot_quantity.Padding = new System.Windows.Forms.Padding(67, 0, 0, 0);
+            this.tot_quantity.Size = new System.Drawing.Size(396, 46);
             this.tot_quantity.TabIndex = 28;
             this.tot_quantity.Text = "0";
             this.tot_quantity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -895,10 +999,11 @@
             this.tot_net_dollar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tot_net_dollar.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_net_dollar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_net_dollar.Location = new System.Drawing.Point(305, 74);
+            this.tot_net_dollar.Location = new System.Drawing.Point(407, 92);
+            this.tot_net_dollar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tot_net_dollar.Name = "tot_net_dollar";
-            this.tot_net_dollar.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.tot_net_dollar.Size = new System.Drawing.Size(297, 37);
+            this.tot_net_dollar.Padding = new System.Windows.Forms.Padding(67, 0, 0, 0);
+            this.tot_net_dollar.Size = new System.Drawing.Size(396, 46);
             this.tot_net_dollar.TabIndex = 29;
             this.tot_net_dollar.Text = "0 $";
             this.tot_net_dollar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -911,10 +1016,11 @@
             this.tot_discount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tot_discount.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_discount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_discount.Location = new System.Drawing.Point(305, 111);
+            this.tot_discount.Location = new System.Drawing.Point(407, 138);
+            this.tot_discount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tot_discount.Name = "tot_discount";
-            this.tot_discount.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.tot_discount.Size = new System.Drawing.Size(297, 37);
+            this.tot_discount.Padding = new System.Windows.Forms.Padding(67, 0, 0, 0);
+            this.tot_discount.Size = new System.Drawing.Size(396, 46);
             this.tot_discount.TabIndex = 30;
             this.tot_discount.Text = "0 $";
             this.tot_discount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -926,10 +1032,11 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 74);
+            this.label6.Location = new System.Drawing.Point(4, 92);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label6.Size = new System.Drawing.Size(296, 37);
+            this.label6.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.label6.Size = new System.Drawing.Size(395, 46);
             this.label6.TabIndex = 23;
             this.label6.Text = "Total Price $ : ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -941,10 +1048,11 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 37);
+            this.label2.Location = new System.Drawing.Point(4, 46);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label2.Size = new System.Drawing.Size(296, 37);
+            this.label2.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.label2.Size = new System.Drawing.Size(395, 46);
             this.label2.TabIndex = 25;
             this.label2.Text = "Total Items : ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -956,10 +1064,11 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(4, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label3.Size = new System.Drawing.Size(296, 37);
+            this.label3.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.label3.Size = new System.Drawing.Size(395, 46);
             this.label3.TabIndex = 26;
             this.label3.Text = "Receipt ID : ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -971,12 +1080,13 @@
             this.tableLayoutPanel7.Controls.Add(this.btnExtCheckOut, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.checkout_btn, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(614, 3);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(819, 4);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(94, 264);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(125, 323);
             this.tableLayoutPanel7.TabIndex = 32;
             // 
             // btnExtCheckOut
@@ -993,9 +1103,10 @@
             this.btnExtCheckOut.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExtCheckOut.ImageMargin = new System.Windows.Forms.Padding(0);
             this.btnExtCheckOut.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnExtCheckOut.Location = new System.Drawing.Point(3, 187);
+            this.btnExtCheckOut.Location = new System.Drawing.Point(4, 230);
+            this.btnExtCheckOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExtCheckOut.Name = "btnExtCheckOut";
-            this.btnExtCheckOut.Size = new System.Drawing.Size(88, 74);
+            this.btnExtCheckOut.Size = new System.Drawing.Size(117, 89);
             this.btnExtCheckOut.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.btnExtCheckOut.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.btnExtCheckOut.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -1028,9 +1139,10 @@
             this.checkout_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.checkout_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.checkout_btn.ImageSize = new System.Drawing.Size(50, 50);
-            this.checkout_btn.Location = new System.Drawing.Point(3, 3);
+            this.checkout_btn.Location = new System.Drawing.Point(4, 4);
+            this.checkout_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkout_btn.Name = "checkout_btn";
-            this.checkout_btn.Size = new System.Drawing.Size(88, 178);
+            this.checkout_btn.Size = new System.Drawing.Size(117, 218);
             this.checkout_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.checkout_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.checkout_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -1048,6 +1160,29 @@
             this.toolTip1.SetToolTip(this.checkout_btn, "CHECKOUT");
             this.checkout_btn.UseVisualStyleBackColor = false;
             this.checkout_btn.Click += new System.EventHandler(this.checkout_btn_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.products_panel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 98);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.tableLayoutPanel1.SetRowSpan(this.panel1, 2);
+            this.panel1.Size = new System.Drawing.Size(409, 847);
+            this.panel1.TabIndex = 4;
+            // 
+            // products_panel
+            // 
+            this.products_panel.AutoScroll = true;
+            this.products_panel.AutoScrollMinSize = new System.Drawing.Size(0, 20000);
+            this.products_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.products_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.products_panel.Location = new System.Drawing.Point(0, 0);
+            this.products_panel.Margin = new System.Windows.Forms.Padding(0);
+            this.products_panel.Name = "products_panel";
+            this.products_panel.Size = new System.Drawing.Size(409, 847);
+            this.products_panel.TabIndex = 0;
             // 
             // toolTip1
             // 
@@ -1067,51 +1202,15 @@
             // 
             this.spselectReceiptsResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_selectReceiptsResult);
             // 
-            // btnCustomers
-            // 
-            this.btnCustomers.AccessibleName = "Button";
-            this.btnCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnCustomers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCustomers.CanOverrideStyle = true;
-            this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomers.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomers.ForeColor = System.Drawing.Color.White;
-            this.btnCustomers.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCustomers.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.btnCustomers.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnCustomers.Location = new System.Drawing.Point(511, 3);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(95, 68);
-            this.btnCustomers.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnCustomers.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.btnCustomers.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnCustomers.Style.ForeColor = System.Drawing.Color.White;
-            this.btnCustomers.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.btnCustomers.Style.HoverForeColor = System.Drawing.Color.White;
-            this.btnCustomers.Style.HoverImageForeColor = System.Drawing.Color.Empty;
-            this.btnCustomers.Style.Image = global::MiniGram.Properties.Resources.customer;
-            this.btnCustomers.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
-            this.btnCustomers.Style.PressedForeColor = System.Drawing.Color.White;
-            this.btnCustomers.TabIndex = 25;
-            this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.btnCustomers.TextMargin = new System.Windows.Forms.Padding(0);
-            this.btnCustomers.ThemeName = "Office2016Colorful";
-            this.toolTip1.SetToolTip(this.btnCustomers, "Choose Customer For This Receipt.");
-            this.btnCustomers.UseVisualStyleBackColor = true;
-            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
-            // 
             // POSUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "POSUC";
-            this.Size = new System.Drawing.Size(1024, 768);
+            this.Size = new System.Drawing.Size(1365, 945);
             this.Load += new System.EventHandler(this.POSUC_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.POSUC_KeyUp);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1131,6 +1230,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spselectReceiptsResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1194,5 +1294,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalProfit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private Syncfusion.WinForms.Controls.SfButton btnCustomers;
+        private System.Windows.Forms.Panel panel1;
+        private Syncfusion.WinForms.Controls.SfButton btnAddCustomPrice;
     }
 }

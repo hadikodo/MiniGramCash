@@ -1,4 +1,5 @@
-﻿using MiniGram.Classes;
+﻿using Infragistics.Win.UltraWinGrid;
+using MiniGram.Classes;
 using MiniGram.Forms;
 using MiniGram.LINQ;
 using System;
@@ -43,7 +44,7 @@ namespace MiniGram.Controls
         {
             using(MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                cnx.sp_enableProductByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                cnx.sp_enableProductByID(Int32.Parse(ultraGridProducts.ActiveRow.Cells[0].Value.ToString()));
                 refreshData("");
             }
 
@@ -53,7 +54,7 @@ namespace MiniGram.Controls
         {
             using (MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                cnx.sp_disableProductByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                cnx.sp_disableProductByID(Int32.Parse(ultraGridProducts.ActiveRow.Cells[0].Value.ToString()));
                 refreshData("");
             }
 
@@ -64,19 +65,20 @@ namespace MiniGram.Controls
             using (MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
                 var data = cnx.sp_select_products(str).ToList();
-                lblCount.Text = (from aj in data where aj.Status == "Enabled" select aj).Count().ToString();
-                spselectproductsResultBindingSource.DataSource = (from aj in data select aj).Take(300).ToList();
-                dataGridView1.Refresh();
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                lblCount.Text = data.Count().ToString();
+                bindingSource1.DataSource = data.ToList().Take(500);
+                foreach (UltraGridRow row in ultraGridProducts.Rows)
                 {
                     if (!row.Cells[7].Value.ToString().Equals("Enabled"))
                     {
-                        row.DefaultCellStyle.BackColor = Color.DarkGray;
+                        row.CellAppearance.BackColor = Color.DarkGray;
+                        row.Appearance.BackColor = Color.DarkGray;
                         enabledProduct--;
                     }
-                    if(row.Cells[4].Value == null || Int32.Parse(row.Cells[4].Value.ToString()) < 0)
+                    if (row.Cells[4].Value == null || Int32.Parse(row.Cells[4].Value.ToString()) < 0)
                     {
-                        row.DefaultCellStyle.BackColor = Color.Red;
+                        row.CellAppearance.BackColor = Color.Red;
+                        row.Appearance.BackColor = Color.Red;
                     }
                     enabledProduct++;
                 }
@@ -143,12 +145,7 @@ namespace MiniGram.Controls
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 8)
-            {
-                EditProductForm epf = new EditProductForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
-                epf.ShowDialog();
-                refreshData("");
-            }
+
         }
 
         private void keyboard_btn_Click(object sender, EventArgs e)
@@ -163,9 +160,7 @@ namespace MiniGram.Controls
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            EditProductForm epf = new EditProductForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
-            epf.ShowDialog();
-            refreshData("");
+
         }
 
         private void btnDeliveryIn_Click(object sender, EventArgs e)
@@ -187,6 +182,21 @@ namespace MiniGram.Controls
             {
                 time++;
             }
+        }
+
+        private void ultraGridProducts_ClickCellButton(object sender, CellEventArgs e)
+        {
+
+                EditProductForm epf = new EditProductForm(Convert.ToInt32(ultraGridProducts.ActiveRow.Cells[0].Value.ToString()));
+                epf.ShowDialog();
+                refreshData("");
+        }
+
+        private void ultraGridProducts_DoubleClickRow(object sender, DoubleClickRowEventArgs e)
+        {
+            EditProductForm epf = new EditProductForm(Convert.ToInt32(ultraGridProducts.ActiveRow.Cells[0].Value.ToString()));
+            epf.ShowDialog();
+            refreshData("");
         }
     }
 }

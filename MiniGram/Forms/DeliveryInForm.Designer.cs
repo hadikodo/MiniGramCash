@@ -142,9 +142,10 @@ namespace MiniGram.Forms
             this.gradientPanelExt1.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.gradientPanelExt1.InnerBorderThickness = 5F;
             this.gradientPanelExt1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanelExt1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gradientPanelExt1.Name = "gradientPanelExt1";
-            this.gradientPanelExt1.Padding = new System.Windows.Forms.Padding(12);
-            this.gradientPanelExt1.Size = new System.Drawing.Size(1024, 768);
+            this.gradientPanelExt1.Padding = new System.Windows.Forms.Padding(16, 15, 16, 15);
+            this.gradientPanelExt1.Size = new System.Drawing.Size(1365, 945);
             this.gradientPanelExt1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -157,17 +158,17 @@ namespace MiniGram.Forms
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 15);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 92F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 744);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1333, 915);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel7
@@ -189,7 +190,8 @@ namespace MiniGram.Forms
             this.tableLayoutPanel7.Controls.Add(this.label18, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.label19, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 547);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(4, 672);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 6;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -198,8 +200,8 @@ namespace MiniGram.Forms
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(994, 144);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1325, 177);
             this.tableLayoutPanel7.TabIndex = 32;
             // 
             // tot_final_price_lbp
@@ -210,10 +212,11 @@ namespace MiniGram.Forms
             this.tot_final_price_lbp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tot_final_price_lbp.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_final_price_lbp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_final_price_lbp.Location = new System.Drawing.Point(500, 120);
+            this.tot_final_price_lbp.Location = new System.Drawing.Point(666, 145);
+            this.tot_final_price_lbp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tot_final_price_lbp.Name = "tot_final_price_lbp";
-            this.tot_final_price_lbp.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.tot_final_price_lbp.Size = new System.Drawing.Size(491, 24);
+            this.tot_final_price_lbp.Padding = new System.Windows.Forms.Padding(67, 0, 0, 0);
+            this.tot_final_price_lbp.Size = new System.Drawing.Size(655, 32);
             this.tot_final_price_lbp.TabIndex = 36;
             this.tot_final_price_lbp.Text = "0 LBP";
             this.tot_final_price_lbp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -225,10 +228,11 @@ namespace MiniGram.Forms
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(3, 120);
+            this.label14.Location = new System.Drawing.Point(4, 145);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label14.Size = new System.Drawing.Size(491, 24);
+            this.label14.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.label14.Size = new System.Drawing.Size(654, 32);
             this.label14.TabIndex = 35;
             this.label14.Text = "Total Net LBP  : ";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -241,10 +245,11 @@ namespace MiniGram.Forms
             this.tot_final_price_dolar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tot_final_price_dolar.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_final_price_dolar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_final_price_dolar.Location = new System.Drawing.Point(500, 96);
+            this.tot_final_price_dolar.Location = new System.Drawing.Point(666, 116);
+            this.tot_final_price_dolar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tot_final_price_dolar.Name = "tot_final_price_dolar";
-            this.tot_final_price_dolar.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.tot_final_price_dolar.Size = new System.Drawing.Size(491, 24);
+            this.tot_final_price_dolar.Padding = new System.Windows.Forms.Padding(67, 0, 0, 0);
+            this.tot_final_price_dolar.Size = new System.Drawing.Size(655, 29);
             this.tot_final_price_dolar.TabIndex = 34;
             this.tot_final_price_dolar.Text = "0 $";
             this.tot_final_price_dolar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,10 +261,11 @@ namespace MiniGram.Forms
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(3, 96);
+            this.label15.Location = new System.Drawing.Point(4, 116);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label15.Size = new System.Drawing.Size(491, 24);
+            this.label15.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.label15.Size = new System.Drawing.Size(654, 29);
             this.label15.TabIndex = 33;
             this.label15.Text = "Total Net $  : ";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -272,10 +278,11 @@ namespace MiniGram.Forms
             this.tot_tva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tot_tva.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_tva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_tva.Location = new System.Drawing.Point(500, 72);
+            this.tot_tva.Location = new System.Drawing.Point(666, 87);
+            this.tot_tva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tot_tva.Name = "tot_tva";
-            this.tot_tva.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.tot_tva.Size = new System.Drawing.Size(491, 24);
+            this.tot_tva.Padding = new System.Windows.Forms.Padding(67, 0, 0, 0);
+            this.tot_tva.Size = new System.Drawing.Size(655, 29);
             this.tot_tva.TabIndex = 32;
             this.tot_tva.Text = "0 $";
             this.tot_tva.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -287,10 +294,11 @@ namespace MiniGram.Forms
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(3, 72);
+            this.label16.Location = new System.Drawing.Point(4, 87);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label16.Size = new System.Drawing.Size(491, 24);
+            this.label16.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.label16.Size = new System.Drawing.Size(654, 29);
             this.label16.TabIndex = 31;
             this.label16.Text = "Total TVA  $ : ";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -302,10 +310,11 @@ namespace MiniGram.Forms
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(3, 48);
+            this.label17.Location = new System.Drawing.Point(4, 58);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label17.Size = new System.Drawing.Size(491, 24);
+            this.label17.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.label17.Size = new System.Drawing.Size(654, 29);
             this.label17.TabIndex = 24;
             this.label17.Text = "Total Discount Price $ : ";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -318,10 +327,11 @@ namespace MiniGram.Forms
             this.tot_quantity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tot_quantity.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_quantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_quantity.Location = new System.Drawing.Point(500, 0);
+            this.tot_quantity.Location = new System.Drawing.Point(666, 0);
+            this.tot_quantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tot_quantity.Name = "tot_quantity";
-            this.tot_quantity.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.tot_quantity.Size = new System.Drawing.Size(491, 24);
+            this.tot_quantity.Padding = new System.Windows.Forms.Padding(67, 0, 0, 0);
+            this.tot_quantity.Size = new System.Drawing.Size(655, 29);
             this.tot_quantity.TabIndex = 28;
             this.tot_quantity.Text = "0";
             this.tot_quantity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -334,10 +344,11 @@ namespace MiniGram.Forms
             this.tot_net_dollar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tot_net_dollar.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_net_dollar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_net_dollar.Location = new System.Drawing.Point(500, 24);
+            this.tot_net_dollar.Location = new System.Drawing.Point(666, 29);
+            this.tot_net_dollar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tot_net_dollar.Name = "tot_net_dollar";
-            this.tot_net_dollar.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.tot_net_dollar.Size = new System.Drawing.Size(491, 24);
+            this.tot_net_dollar.Padding = new System.Windows.Forms.Padding(67, 0, 0, 0);
+            this.tot_net_dollar.Size = new System.Drawing.Size(655, 29);
             this.tot_net_dollar.TabIndex = 29;
             this.tot_net_dollar.Text = "0 $";
             this.tot_net_dollar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -350,10 +361,11 @@ namespace MiniGram.Forms
             this.tot_discount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tot_discount.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tot_discount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.tot_discount.Location = new System.Drawing.Point(500, 48);
+            this.tot_discount.Location = new System.Drawing.Point(666, 58);
+            this.tot_discount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tot_discount.Name = "tot_discount";
-            this.tot_discount.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.tot_discount.Size = new System.Drawing.Size(491, 24);
+            this.tot_discount.Padding = new System.Windows.Forms.Padding(67, 0, 0, 0);
+            this.tot_discount.Size = new System.Drawing.Size(655, 29);
             this.tot_discount.TabIndex = 30;
             this.tot_discount.Text = "0 $";
             this.tot_discount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -365,10 +377,11 @@ namespace MiniGram.Forms
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(3, 24);
+            this.label18.Location = new System.Drawing.Point(4, 29);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label18.Size = new System.Drawing.Size(491, 24);
+            this.label18.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.label18.Size = new System.Drawing.Size(654, 29);
             this.label18.TabIndex = 23;
             this.label18.Text = "Total Price $ : ";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -380,10 +393,11 @@ namespace MiniGram.Forms
             this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label19.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(3, 0);
+            this.label19.Location = new System.Drawing.Point(4, 0);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label19.Size = new System.Drawing.Size(491, 24);
+            this.label19.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.label19.Size = new System.Drawing.Size(654, 29);
             this.label19.TabIndex = 25;
             this.label19.Text = "Total Items : ";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -392,8 +406,8 @@ namespace MiniGram.Forms
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel2.Controls.Add(this.keyboard_btn, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.exit_btn, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
@@ -403,7 +417,7 @@ namespace MiniGram.Forms
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1000, 40);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1333, 49);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // keyboard_btn
@@ -420,9 +434,10 @@ namespace MiniGram.Forms
             this.keyboard_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.keyboard_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.keyboard_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.keyboard_btn.Location = new System.Drawing.Point(923, 3);
+            this.keyboard_btn.Location = new System.Drawing.Point(1231, 4);
+            this.keyboard_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.keyboard_btn.Name = "keyboard_btn";
-            this.keyboard_btn.Size = new System.Drawing.Size(34, 34);
+            this.keyboard_btn.Size = new System.Drawing.Size(45, 41);
             this.keyboard_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.keyboard_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.keyboard_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -451,9 +466,10 @@ namespace MiniGram.Forms
             this.exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit_btn.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit_btn.ForeColor = System.Drawing.Color.White;
-            this.exit_btn.Location = new System.Drawing.Point(963, 3);
+            this.exit_btn.Location = new System.Drawing.Point(1284, 4);
+            this.exit_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.exit_btn.Name = "exit_btn";
-            this.exit_btn.Size = new System.Drawing.Size(34, 34);
+            this.exit_btn.Size = new System.Drawing.Size(45, 41);
             this.exit_btn.TabIndex = 7;
             this.exit_btn.Text = "X";
             this.exit_btn.UseVisualStyleBackColor = false;
@@ -466,10 +482,10 @@ namespace MiniGram.Forms
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Margin = new System.Windows.Forms.Padding(3);
+            this.label1.Location = new System.Drawing.Point(4, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(914, 34);
+            this.label1.Size = new System.Drawing.Size(1219, 41);
             this.label1.TabIndex = 26;
             this.label1.Text = "New Delivery In Receipt";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -479,19 +495,20 @@ namespace MiniGram.Forms
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 43);
+            this.panel1.Location = new System.Drawing.Point(4, 53);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(994, 69);
+            this.panel1.Size = new System.Drawing.Size(1325, 84);
             this.panel1.TabIndex = 1;
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 6;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.Controls.Add(this.label6, 4, 0);
             this.tableLayoutPanel3.Controls.Add(this.label5, 2, 0);
@@ -505,11 +522,12 @@ namespace MiniGram.Forms
             this.tableLayoutPanel3.Controls.Add(this.label4, 2, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(994, 69);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1325, 84);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // label6
@@ -518,9 +536,10 @@ namespace MiniGram.Forms
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(665, 0);
+            this.label6.Location = new System.Drawing.Point(886, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 34);
+            this.label6.Size = new System.Drawing.Size(152, 42);
             this.label6.TabIndex = 12;
             this.label6.Text = "Date :";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -531,9 +550,10 @@ namespace MiniGram.Forms
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(334, 0);
+            this.label5.Location = new System.Drawing.Point(445, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 34);
+            this.label5.Size = new System.Drawing.Size(152, 42);
             this.label5.TabIndex = 11;
             this.label5.Text = "Barcode :";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -541,7 +561,7 @@ namespace MiniGram.Forms
             // txtReceiptID
             // 
             this.txtReceiptID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtReceiptID.BeforeTouchSize = new System.Drawing.Size(47, 30);
+            this.txtReceiptID.BeforeTouchSize = new System.Drawing.Size(64, 30);
             this.txtReceiptID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtReceiptID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReceiptID.CanOverrideStyle = true;
@@ -552,11 +572,12 @@ namespace MiniGram.Forms
             this.txtReceiptID.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtReceiptID.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReceiptID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtReceiptID.Location = new System.Drawing.Point(123, 3);
+            this.txtReceiptID.Location = new System.Drawing.Point(164, 4);
+            this.txtReceiptID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtReceiptID.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtReceiptID.MinimumSize = new System.Drawing.Size(34, 30);
+            this.txtReceiptID.MinimumSize = new System.Drawing.Size(44, 30);
             this.txtReceiptID.Name = "txtReceiptID";
-            this.txtReceiptID.Size = new System.Drawing.Size(205, 30);
+            this.txtReceiptID.Size = new System.Drawing.Size(273, 30);
             this.txtReceiptID.TabIndex = 1;
             this.txtReceiptID.Text = "-";
             this.txtReceiptID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -575,7 +596,7 @@ namespace MiniGram.Forms
             // txtReceiptBarcode
             // 
             this.txtReceiptBarcode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtReceiptBarcode.BeforeTouchSize = new System.Drawing.Size(47, 30);
+            this.txtReceiptBarcode.BeforeTouchSize = new System.Drawing.Size(64, 30);
             this.txtReceiptBarcode.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtReceiptBarcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReceiptBarcode.CanOverrideStyle = true;
@@ -586,11 +607,12 @@ namespace MiniGram.Forms
             this.txtReceiptBarcode.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtReceiptBarcode.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReceiptBarcode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtReceiptBarcode.Location = new System.Drawing.Point(454, 3);
+            this.txtReceiptBarcode.Location = new System.Drawing.Point(605, 4);
+            this.txtReceiptBarcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtReceiptBarcode.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtReceiptBarcode.MinimumSize = new System.Drawing.Size(34, 30);
+            this.txtReceiptBarcode.MinimumSize = new System.Drawing.Size(44, 30);
             this.txtReceiptBarcode.Name = "txtReceiptBarcode";
-            this.txtReceiptBarcode.Size = new System.Drawing.Size(205, 30);
+            this.txtReceiptBarcode.Size = new System.Drawing.Size(273, 30);
             this.txtReceiptBarcode.TabIndex = 2;
             this.txtReceiptBarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtReceiptBarcode.ThemeName = "Default";
@@ -608,7 +630,7 @@ namespace MiniGram.Forms
             // txtReceiptDate
             // 
             this.txtReceiptDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtReceiptDate.BeforeTouchSize = new System.Drawing.Size(47, 30);
+            this.txtReceiptDate.BeforeTouchSize = new System.Drawing.Size(64, 30);
             this.txtReceiptDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtReceiptDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReceiptDate.CanOverrideStyle = true;
@@ -619,11 +641,12 @@ namespace MiniGram.Forms
             this.txtReceiptDate.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtReceiptDate.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReceiptDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtReceiptDate.Location = new System.Drawing.Point(785, 3);
+            this.txtReceiptDate.Location = new System.Drawing.Point(1046, 4);
+            this.txtReceiptDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtReceiptDate.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtReceiptDate.MinimumSize = new System.Drawing.Size(34, 30);
+            this.txtReceiptDate.MinimumSize = new System.Drawing.Size(44, 30);
             this.txtReceiptDate.Name = "txtReceiptDate";
-            this.txtReceiptDate.Size = new System.Drawing.Size(206, 30);
+            this.txtReceiptDate.Size = new System.Drawing.Size(275, 30);
             this.txtReceiptDate.TabIndex = 3;
             this.txtReceiptDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtReceiptDate.ThemeName = "Default";
@@ -641,7 +664,7 @@ namespace MiniGram.Forms
             // txtRefID
             // 
             this.txtRefID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtRefID.BeforeTouchSize = new System.Drawing.Size(47, 30);
+            this.txtRefID.BeforeTouchSize = new System.Drawing.Size(64, 30);
             this.txtRefID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtRefID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRefID.CanOverrideStyle = true;
@@ -651,11 +674,12 @@ namespace MiniGram.Forms
             this.txtRefID.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtRefID.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRefID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtRefID.Location = new System.Drawing.Point(123, 37);
+            this.txtRefID.Location = new System.Drawing.Point(164, 46);
+            this.txtRefID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRefID.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtRefID.MinimumSize = new System.Drawing.Size(34, 30);
+            this.txtRefID.MinimumSize = new System.Drawing.Size(44, 30);
             this.txtRefID.Name = "txtRefID";
-            this.txtRefID.Size = new System.Drawing.Size(205, 30);
+            this.txtRefID.Size = new System.Drawing.Size(273, 30);
             this.txtRefID.TabIndex = 4;
             this.txtRefID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRefID.ThemeName = "Default";
@@ -681,9 +705,10 @@ namespace MiniGram.Forms
             this.cboxSupplier.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.cboxSupplier.FormattingEnabled = true;
-            this.cboxSupplier.Location = new System.Drawing.Point(454, 37);
+            this.cboxSupplier.Location = new System.Drawing.Point(605, 46);
+            this.cboxSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboxSupplier.Name = "cboxSupplier";
-            this.cboxSupplier.Size = new System.Drawing.Size(205, 27);
+            this.cboxSupplier.Size = new System.Drawing.Size(273, 27);
             this.cboxSupplier.TabIndex = 7;
             this.cboxSupplier.ValueMember = "SID";
             this.cboxSupplier.SelectedIndexChanged += new System.EventHandler(this.cboxSupplier_SelectedIndexChanged);
@@ -698,9 +723,10 @@ namespace MiniGram.Forms
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Location = new System.Drawing.Point(4, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 34);
+            this.label2.Size = new System.Drawing.Size(152, 42);
             this.label2.TabIndex = 8;
             this.label2.Text = "ID :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -711,9 +737,10 @@ namespace MiniGram.Forms
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 34);
+            this.label3.Location = new System.Drawing.Point(4, 42);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 35);
+            this.label3.Size = new System.Drawing.Size(152, 42);
             this.label3.TabIndex = 9;
             this.label3.Text = "Ref. ID :*";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -724,9 +751,10 @@ namespace MiniGram.Forms
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(334, 34);
+            this.label4.Location = new System.Drawing.Point(445, 42);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 35);
+            this.label4.Size = new System.Drawing.Size(152, 42);
             this.label4.TabIndex = 10;
             this.label4.Text = "Supplier :*";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -736,9 +764,10 @@ namespace MiniGram.Forms
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 697);
+            this.panel2.Location = new System.Drawing.Point(4, 857);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(994, 44);
+            this.panel2.Size = new System.Drawing.Size(1325, 54);
             this.panel2.TabIndex = 3;
             // 
             // btnSave
@@ -756,7 +785,7 @@ namespace MiniGram.Forms
             this.btnSave.Location = new System.Drawing.Point(0, 0);
             this.btnSave.Margin = new System.Windows.Forms.Padding(0);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(994, 44);
+            this.btnSave.Size = new System.Drawing.Size(1325, 54);
             this.btnSave.TabIndex = 17;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -767,9 +796,10 @@ namespace MiniGram.Forms
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.panel3.Controls.Add(this.tableLayoutPanel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 118);
+            this.panel3.Location = new System.Drawing.Point(4, 145);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(994, 423);
+            this.panel3.Size = new System.Drawing.Size(1325, 519);
             this.panel3.TabIndex = 4;
             // 
             // tableLayoutPanel4
@@ -780,11 +810,12 @@ namespace MiniGram.Forms
             this.tableLayoutPanel4.Controls.Add(this.dgvProducts, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(994, 423);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1325, 519);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -823,19 +854,20 @@ namespace MiniGram.Forms
             this.tableLayoutPanel5.Controls.Add(this.cboxProductName, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.chkboxHasExpDate, 7, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(988, 64);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1317, 78);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // txtDiscount
             // 
             this.txtDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtDiscount.BeforeTouchSize = new System.Drawing.Size(47, 30);
+            this.txtDiscount.BeforeTouchSize = new System.Drawing.Size(64, 30);
             this.txtDiscount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtDiscount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDiscount.CanOverrideStyle = true;
@@ -846,12 +878,12 @@ namespace MiniGram.Forms
             this.txtDiscount.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtDiscount.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtDiscount.Location = new System.Drawing.Point(833, 33);
+            this.txtDiscount.Location = new System.Drawing.Point(1114, 40);
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(0);
             this.txtDiscount.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtDiscount.MinimumSize = new System.Drawing.Size(34, 30);
+            this.txtDiscount.MinimumSize = new System.Drawing.Size(44, 30);
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(47, 30);
+            this.txtDiscount.Size = new System.Drawing.Size(64, 30);
             this.txtDiscount.TabIndex = 27;
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDiscount.ThemeName = "Default";
@@ -876,9 +908,10 @@ namespace MiniGram.Forms
             this.chkboxDiscount.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.chkboxDiscount.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkboxDiscount.ForeColor = System.Drawing.Color.White;
-            this.chkboxDiscount.Location = new System.Drawing.Point(836, 6);
+            this.chkboxDiscount.Location = new System.Drawing.Point(1118, 7);
+            this.chkboxDiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkboxDiscount.Name = "chkboxDiscount";
-            this.chkboxDiscount.Size = new System.Drawing.Size(41, 21);
+            this.chkboxDiscount.Size = new System.Drawing.Size(56, 26);
             this.chkboxDiscount.TabIndex = 26;
             this.chkboxDiscount.Text = "%";
             this.chkboxDiscount.UseVisualStyleBackColor = true;
@@ -890,9 +923,10 @@ namespace MiniGram.Forms
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(886, 3);
+            this.label13.Location = new System.Drawing.Point(1185, 3);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 27);
+            this.label13.Size = new System.Drawing.Size(56, 34);
             this.label13.TabIndex = 25;
             this.label13.Text = "TVA";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -908,9 +942,10 @@ namespace MiniGram.Forms
             this.chkboxTVA.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.chkboxTVA.Font = new System.Drawing.Font("Bookman Old Style", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkboxTVA.ForeColor = System.Drawing.Color.White;
-            this.chkboxTVA.Location = new System.Drawing.Point(886, 36);
+            this.chkboxTVA.Location = new System.Drawing.Point(1185, 44);
+            this.chkboxTVA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkboxTVA.Name = "chkboxTVA";
-            this.chkboxTVA.Size = new System.Drawing.Size(41, 22);
+            this.chkboxTVA.Size = new System.Drawing.Size(56, 27);
             this.chkboxTVA.TabIndex = 24;
             this.chkboxTVA.UseVisualStyleBackColor = true;
             // 
@@ -926,10 +961,10 @@ namespace MiniGram.Forms
             this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddProduct.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddProduct.ForeColor = System.Drawing.Color.White;
-            this.btnAddProduct.Location = new System.Drawing.Point(380, 33);
+            this.btnAddProduct.Location = new System.Drawing.Point(508, 40);
             this.btnAddProduct.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(47, 28);
+            this.btnAddProduct.Size = new System.Drawing.Size(64, 35);
             this.btnAddProduct.TabIndex = 23;
             this.btnAddProduct.Text = "+";
             this.btnAddProduct.UseVisualStyleBackColor = false;
@@ -939,19 +974,20 @@ namespace MiniGram.Forms
             // 
             this.label12.AutoSize = true;
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Bookman Old Style", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Bookman Old Style", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(650, 3);
+            this.label12.Location = new System.Drawing.Point(869, 3);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 27);
+            this.label12.Size = new System.Drawing.Size(107, 34);
             this.label12.TabIndex = 22;
-            this.label12.Text = "Emp. Price ($)*";
+            this.label12.Text = "2nd Price ($)*";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtEmpPrice
             // 
             this.txtEmpPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtEmpPrice.BeforeTouchSize = new System.Drawing.Size(47, 30);
+            this.txtEmpPrice.BeforeTouchSize = new System.Drawing.Size(64, 30);
             this.txtEmpPrice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtEmpPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmpPrice.CanOverrideStyle = true;
@@ -961,12 +997,12 @@ namespace MiniGram.Forms
             this.txtEmpPrice.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtEmpPrice.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtEmpPrice.Location = new System.Drawing.Point(647, 33);
+            this.txtEmpPrice.Location = new System.Drawing.Point(865, 40);
             this.txtEmpPrice.Margin = new System.Windows.Forms.Padding(0);
             this.txtEmpPrice.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtEmpPrice.MinimumSize = new System.Drawing.Size(34, 30);
+            this.txtEmpPrice.MinimumSize = new System.Drawing.Size(44, 30);
             this.txtEmpPrice.Name = "txtEmpPrice";
-            this.txtEmpPrice.Size = new System.Drawing.Size(85, 30);
+            this.txtEmpPrice.Size = new System.Drawing.Size(115, 30);
             this.txtEmpPrice.TabIndex = 21;
             this.txtEmpPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEmpPrice.ThemeName = "Default";
@@ -987,9 +1023,10 @@ namespace MiniGram.Forms
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Bookman Old Style", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(552, 3);
+            this.label11.Location = new System.Drawing.Point(738, 3);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(89, 27);
+            this.label11.Size = new System.Drawing.Size(120, 34);
             this.label11.TabIndex = 20;
             this.label11.Text = "Sell Price ($)*";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -997,7 +1034,7 @@ namespace MiniGram.Forms
             // txtSellPrice
             // 
             this.txtSellPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtSellPrice.BeforeTouchSize = new System.Drawing.Size(47, 30);
+            this.txtSellPrice.BeforeTouchSize = new System.Drawing.Size(64, 30);
             this.txtSellPrice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtSellPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSellPrice.CanOverrideStyle = true;
@@ -1007,12 +1044,12 @@ namespace MiniGram.Forms
             this.txtSellPrice.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtSellPrice.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSellPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtSellPrice.Location = new System.Drawing.Point(549, 33);
+            this.txtSellPrice.Location = new System.Drawing.Point(734, 40);
             this.txtSellPrice.Margin = new System.Windows.Forms.Padding(0);
             this.txtSellPrice.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtSellPrice.MinimumSize = new System.Drawing.Size(34, 30);
+            this.txtSellPrice.MinimumSize = new System.Drawing.Size(44, 30);
             this.txtSellPrice.Name = "txtSellPrice";
-            this.txtSellPrice.Size = new System.Drawing.Size(95, 30);
+            this.txtSellPrice.Size = new System.Drawing.Size(128, 30);
             this.txtSellPrice.TabIndex = 19;
             this.txtSellPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSellPrice.ThemeName = "Default";
@@ -1033,9 +1070,10 @@ namespace MiniGram.Forms
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Bookman Old Style", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(483, 3);
+            this.label10.Location = new System.Drawing.Point(646, 3);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 27);
+            this.label10.Size = new System.Drawing.Size(81, 34);
             this.label10.TabIndex = 18;
             this.label10.Text = "Cost ($)*";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1043,7 +1081,7 @@ namespace MiniGram.Forms
             // txtCost
             // 
             this.txtCost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtCost.BeforeTouchSize = new System.Drawing.Size(47, 30);
+            this.txtCost.BeforeTouchSize = new System.Drawing.Size(64, 30);
             this.txtCost.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCost.CanOverrideStyle = true;
@@ -1053,12 +1091,12 @@ namespace MiniGram.Forms
             this.txtCost.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtCost.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtCost.Location = new System.Drawing.Point(480, 33);
+            this.txtCost.Location = new System.Drawing.Point(642, 40);
             this.txtCost.Margin = new System.Windows.Forms.Padding(0);
             this.txtCost.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtCost.MinimumSize = new System.Drawing.Size(34, 30);
+            this.txtCost.MinimumSize = new System.Drawing.Size(44, 30);
             this.txtCost.Name = "txtCost";
-            this.txtCost.Size = new System.Drawing.Size(66, 30);
+            this.txtCost.Size = new System.Drawing.Size(89, 30);
             this.txtCost.TabIndex = 17;
             this.txtCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCost.ThemeName = "Default";
@@ -1085,11 +1123,11 @@ namespace MiniGram.Forms
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Bookman Old Style", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(933, 3);
+            this.btnAdd.Location = new System.Drawing.Point(1248, 3);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
             this.btnAdd.Name = "btnAdd";
             this.tableLayoutPanel5.SetRowSpan(this.btnAdd, 2);
-            this.btnAdd.Size = new System.Drawing.Size(52, 58);
+            this.btnAdd.Size = new System.Drawing.Size(66, 72);
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -1098,7 +1136,7 @@ namespace MiniGram.Forms
             // txtExpDate
             // 
             this.txtExpDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtExpDate.BeforeTouchSize = new System.Drawing.Size(47, 30);
+            this.txtExpDate.BeforeTouchSize = new System.Drawing.Size(64, 30);
             this.txtExpDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtExpDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtExpDate.CanOverrideStyle = true;
@@ -1109,12 +1147,12 @@ namespace MiniGram.Forms
             this.txtExpDate.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtExpDate.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtExpDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtExpDate.Location = new System.Drawing.Point(735, 33);
+            this.txtExpDate.Location = new System.Drawing.Point(983, 40);
             this.txtExpDate.Margin = new System.Windows.Forms.Padding(0);
             this.txtExpDate.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtExpDate.MinimumSize = new System.Drawing.Size(34, 30);
+            this.txtExpDate.MinimumSize = new System.Drawing.Size(44, 30);
             this.txtExpDate.Name = "txtExpDate";
-            this.txtExpDate.Size = new System.Drawing.Size(95, 30);
+            this.txtExpDate.Size = new System.Drawing.Size(128, 30);
             this.txtExpDate.TabIndex = 15;
             this.txtExpDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtExpDate.ThemeName = "Default";
@@ -1135,9 +1173,10 @@ namespace MiniGram.Forms
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Bookman Old Style", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(433, 3);
+            this.label9.Location = new System.Drawing.Point(579, 3);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 27);
+            this.label9.Size = new System.Drawing.Size(56, 34);
             this.label9.TabIndex = 13;
             this.label9.Text = "Qte.*";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1145,7 +1184,7 @@ namespace MiniGram.Forms
             // txtQte
             // 
             this.txtQte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtQte.BeforeTouchSize = new System.Drawing.Size(47, 30);
+            this.txtQte.BeforeTouchSize = new System.Drawing.Size(64, 30);
             this.txtQte.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtQte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQte.CanOverrideStyle = true;
@@ -1155,12 +1194,12 @@ namespace MiniGram.Forms
             this.txtQte.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtQte.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtQte.Location = new System.Drawing.Point(430, 33);
+            this.txtQte.Location = new System.Drawing.Point(575, 40);
             this.txtQte.Margin = new System.Windows.Forms.Padding(0);
             this.txtQte.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txtQte.MinimumSize = new System.Drawing.Size(34, 30);
+            this.txtQte.MinimumSize = new System.Drawing.Size(44, 30);
             this.txtQte.Name = "txtQte";
-            this.txtQte.Size = new System.Drawing.Size(47, 30);
+            this.txtQte.Size = new System.Drawing.Size(64, 30);
             this.txtQte.TabIndex = 12;
             this.txtQte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtQte.ThemeName = "Default";
@@ -1181,9 +1220,10 @@ namespace MiniGram.Forms
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(6, 3);
+            this.label8.Location = new System.Drawing.Point(7, 3);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(127, 27);
+            this.label8.Size = new System.Drawing.Size(171, 34);
             this.label8.TabIndex = 11;
             this.label8.Text = "Barcode*";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1199,10 +1239,10 @@ namespace MiniGram.Forms
             this.cboxProductBarcode.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxProductBarcode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.cboxProductBarcode.FormattingEnabled = true;
-            this.cboxProductBarcode.Location = new System.Drawing.Point(3, 33);
+            this.cboxProductBarcode.Location = new System.Drawing.Point(3, 40);
             this.cboxProductBarcode.Margin = new System.Windows.Forms.Padding(0);
             this.cboxProductBarcode.Name = "cboxProductBarcode";
-            this.cboxProductBarcode.Size = new System.Drawing.Size(133, 24);
+            this.cboxProductBarcode.Size = new System.Drawing.Size(179, 24);
             this.cboxProductBarcode.TabIndex = 10;
             this.cboxProductBarcode.ValueMember = "PID";
             // 
@@ -1217,9 +1257,10 @@ namespace MiniGram.Forms
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(142, 3);
+            this.label7.Location = new System.Drawing.Point(189, 3);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(282, 27);
+            this.label7.Size = new System.Drawing.Size(379, 34);
             this.label7.TabIndex = 9;
             this.label7.Text = "Product Name*";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1235,10 +1276,10 @@ namespace MiniGram.Forms
             this.cboxProductName.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxProductName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.cboxProductName.FormattingEnabled = true;
-            this.cboxProductName.Location = new System.Drawing.Point(139, 33);
+            this.cboxProductName.Location = new System.Drawing.Point(185, 40);
             this.cboxProductName.Margin = new System.Windows.Forms.Padding(0);
             this.cboxProductName.Name = "cboxProductName";
-            this.cboxProductName.Size = new System.Drawing.Size(238, 24);
+            this.cboxProductName.Size = new System.Drawing.Size(320, 24);
             this.cboxProductName.TabIndex = 8;
             this.cboxProductName.ValueMember = "PID";
             // 
@@ -1252,9 +1293,10 @@ namespace MiniGram.Forms
             this.chkboxHasExpDate.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.chkboxHasExpDate.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkboxHasExpDate.ForeColor = System.Drawing.Color.White;
-            this.chkboxHasExpDate.Location = new System.Drawing.Point(738, 6);
+            this.chkboxHasExpDate.Location = new System.Drawing.Point(987, 7);
+            this.chkboxHasExpDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkboxHasExpDate.Name = "chkboxHasExpDate";
-            this.chkboxHasExpDate.Size = new System.Drawing.Size(89, 21);
+            this.chkboxHasExpDate.Size = new System.Drawing.Size(120, 26);
             this.chkboxHasExpDate.TabIndex = 14;
             this.chkboxHasExpDate.Text = "Exp. Date";
             this.chkboxHasExpDate.UseVisualStyleBackColor = true;
@@ -1292,7 +1334,8 @@ namespace MiniGram.Forms
             this.dgvProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProducts.EnableHeadersVisualStyles = false;
             this.dgvProducts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.dgvProducts.Location = new System.Drawing.Point(3, 73);
+            this.dgvProducts.Location = new System.Drawing.Point(4, 90);
+            this.dgvProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
             this.dgvProducts.RowHeadersVisible = false;
@@ -1304,7 +1347,7 @@ namespace MiniGram.Forms
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgvProducts.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProducts.Size = new System.Drawing.Size(988, 347);
+            this.dgvProducts.Size = new System.Drawing.Size(1317, 425);
             this.dgvProducts.TabIndex = 2;
             this.dgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellContentClick);
             // 
@@ -1403,12 +1446,13 @@ namespace MiniGram.Forms
             // 
             // DeliveryInForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.ClientSize = new System.Drawing.Size(1365, 945);
             this.Controls.Add(this.gradientPanelExt1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DeliveryInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeliveryInForm";

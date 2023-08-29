@@ -33,11 +33,11 @@
     <ProductName>MiniGram</ProductName>
     <PublisherName>SuperTech Co.</PublisherName>
     <SuiteName>MiniGram</SuiteName>
-    <MinimumRequiredVersion>1.5.0.13</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.5.0.19</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationRevision>20</ApplicationRevision>
     <ApplicationVersion>1.5.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -103,8 +103,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>MiniGram.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -124,6 +123,7 @@
     </Reference>
     <Reference Include="Infragistics4.Win.Portable.Core.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Win.UltraWinChart.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinDataSource.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinEditors.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinExplorerBar.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Win.UltraWinGrid.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
@@ -622,6 +622,12 @@
     <Compile Include="Forms\ChooseCustomerForm.Designer.cs">
       <DependentUpon>ChooseCustomerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CustomProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomProductForm.Designer.cs">
+      <DependentUpon>CustomProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DeleteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -705,6 +711,12 @@
     </Compile>
     <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateInfoForm.Designer.cs">
+      <DependentUpon>UpdateInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LINQ\MiniGramCashDB.designer.cs">
       <AutoGen>True</AutoGen>
@@ -799,6 +811,9 @@
     <EmbeddedResource Include="Forms\ChooseCustomerForm.resx">
       <DependentUpon>ChooseCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomProductForm.resx">
+      <DependentUpon>CustomProductForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeleteForm.resx">
       <DependentUpon>DeleteForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -843,6 +858,9 @@
     <EmbeddedResource Include="Forms\Reports\RDLC\rptDailyCashByDate.rdlc" />
     <EmbeddedResource Include="Forms\Reports\RDLC\rptDeliveryInNew.rdlc" />
     <EmbeddedResource Include="Forms\Reports\RDLC\rptProductsList.rdlc" />
+    <EmbeddedResource Include="Forms\UpdateInfoForm.resx">
+      <DependentUpon>UpdateInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Languages\en_local.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>en_local.Designer.cs</LastGenOutput>
@@ -1039,6 +1057,10 @@
     <None Include="Resources\refresh.png" />
     <None Include="Resources\printer.png" />
     <None Include="Resources\accept.png" />
+    <None Include="Resources\price-tag %281%29.png" />
+    <None Include="Resources\price.png" />
+    <None Include="Resources\price-tag.png" />
+    <None Include="Resources\UpdateGif.gif" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

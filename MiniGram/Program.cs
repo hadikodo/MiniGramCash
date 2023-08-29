@@ -2,11 +2,15 @@
 using MiniGram.Classes;
 using MiniGram.Forms;
 using MiniGram.LINQ;
+using Syncfusion.PresentationToPdfConverter;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Deployment.Application;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,15 +19,6 @@ namespace MiniGram
 {
     internal static class Program
     {
-        ///// <summary>
-        ///// The main entry point for the application.
-        ///// </summary>
-        //[DllImport("gdi32.dll",EntryPoint ="AddFontResourceW",SetLastError =true)]
-        //public static extern int AddFontResource([In][MarshalAs(UnmanagedType.LPWStr)] string lpFileName);
-
-        //[DllImport("gdi32.dll", EntryPoint = "RemoveFontResourceW", SetLastError = true)]
-        //public static extern int RemoveFontResource([In][MarshalAs(UnmanagedType.LPWStr)] string lpFileName);
-
         [STAThread]
         static void Main()
         {
@@ -55,8 +50,19 @@ namespace MiniGram
                             ax.SubmitChanges();
                         }
                     }
-                   conn.Close();
+                    conn.Close();
+
+
+                    if (ApplicationDeployment.IsNetworkDeployed)
+                    {
+                        Globals.AppVersion = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+                    }
+                    else
+                    {
+                        Globals.AppVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                    }
                     Application.Run(Globals.mainForm);
+
                 }
                 catch (SqlException)
                 {

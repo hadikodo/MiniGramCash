@@ -29,9 +29,40 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("sp_select_productsResult", -1);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("ID");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Barcode");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("ProductName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("SupplierName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn5 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Quantity");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn6 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Price");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn7 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("AddedDate");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn8 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Status");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn9 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("InitPrice");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn10 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("SecondaryPrice");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn11 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("HasTVA");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn12 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("DiscountPercentage");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("HasDiscount");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn14 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("ShowMore", 0);
+            Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.search_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.search_btn = new Syncfusion.WinForms.Controls.SfButton();
@@ -44,17 +75,8 @@
             this.lblCount = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplierNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.spselectproductsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ultraGridProducts = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -64,8 +86,8 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spselectproductsResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraGridProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -85,7 +107,7 @@
             this.search_txt.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.search_txt.Location = new System.Drawing.Point(802, 4);
-            this.search_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.search_txt.Margin = new System.Windows.Forms.Padding(4);
             this.search_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.MinimumSize = new System.Drawing.Size(44, 30);
             this.search_txt.Name = "search_txt";
@@ -390,163 +412,271 @@
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1357, 84);
             this.panel1.TabIndex = 2;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.ultraGridProducts);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(4, 4);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1349, 837);
             this.panel3.TabIndex = 1;
             // 
-            // dataGridView1
+            // ultraGridProducts
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 40;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.barcodeDataGridViewTextBoxColumn,
-            this.productNameDataGridViewTextBoxColumn,
-            this.supplierNameDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.addedDateDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.Edit});
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridView1.DataSource = this.spselectproductsResultBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 10;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.RowTemplate.Height = 35;
-            this.dataGridView1.RowTemplate.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1349, 837);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.ultraGridProducts.DataSource = this.bindingSource1;
+            appearance1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance1.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            this.ultraGridProducts.DisplayLayout.Appearance = appearance1;
+            this.ultraGridProducts.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
+            ultraGridColumn1.Header.VisiblePosition = 0;
+            ultraGridColumn1.Hidden = true;
+            ultraGridColumn1.Width = 59;
+            ultraGridColumn2.AutoSizeMode = Infragistics.Win.UltraWinGrid.ColumnAutoSizeMode.None;
+            ultraGridColumn2.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
+            ultraGridColumn2.Header.VisiblePosition = 1;
+            ultraGridColumn2.MaxWidth = 180;
+            ultraGridColumn2.MinWidth = 180;
+            ultraGridColumn2.Width = 180;
+            ultraGridColumn3.AutoEditMode = Infragistics.Win.DefaultableBoolean.False;
+            ultraGridColumn3.AutoSizeEdit = Infragistics.Win.DefaultableBoolean.False;
+            ultraGridColumn3.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
+            ultraGridColumn3.Header.Caption = "Name";
+            ultraGridColumn3.Header.VisiblePosition = 2;
+            ultraGridColumn3.Width = 337;
+            ultraGridColumn4.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
+            ultraGridColumn4.Header.Caption = "Supplier";
+            ultraGridColumn4.Header.VisiblePosition = 3;
+            ultraGridColumn4.MaxWidth = 180;
+            ultraGridColumn4.MinWidth = 180;
+            ultraGridColumn4.Width = 180;
+            ultraGridColumn5.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
+            ultraGridColumn5.Header.VisiblePosition = 4;
+            ultraGridColumn5.MaxWidth = 100;
+            ultraGridColumn5.MinWidth = 100;
+            ultraGridColumn5.Width = 100;
+            ultraGridColumn6.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
+            ultraGridColumn6.Header.VisiblePosition = 5;
+            ultraGridColumn6.MaxWidth = 100;
+            ultraGridColumn6.MinWidth = 100;
+            ultraGridColumn6.Width = 100;
+            ultraGridColumn7.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
+            ultraGridColumn7.Header.Caption = "Added Date";
+            ultraGridColumn7.Header.VisiblePosition = 6;
+            ultraGridColumn7.MaxWidth = 180;
+            ultraGridColumn7.MinWidth = 180;
+            ultraGridColumn7.Width = 180;
+            ultraGridColumn8.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
+            ultraGridColumn8.Header.VisiblePosition = 7;
+            ultraGridColumn8.MaxWidth = 150;
+            ultraGridColumn8.MinWidth = 150;
+            ultraGridColumn8.Width = 150;
+            ultraGridColumn9.Header.VisiblePosition = 8;
+            ultraGridColumn9.Hidden = true;
+            ultraGridColumn9.Width = 84;
+            ultraGridColumn10.Header.VisiblePosition = 9;
+            ultraGridColumn10.Hidden = true;
+            ultraGridColumn10.Width = 138;
+            ultraGridColumn11.Header.VisiblePosition = 10;
+            ultraGridColumn11.Hidden = true;
+            ultraGridColumn11.Width = 97;
+            ultraGridColumn12.Header.VisiblePosition = 11;
+            ultraGridColumn12.Hidden = true;
+            ultraGridColumn12.Width = 202;
+            ultraGridColumn13.Header.VisiblePosition = 12;
+            ultraGridColumn13.Hidden = true;
+            ultraGridColumn13.Width = 167;
+            ultraGridColumn14.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
+            appearance2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance2.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance2.BorderColor = System.Drawing.Color.White;
+            appearance2.BorderColor2 = System.Drawing.Color.White;
+            appearance2.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance2.ForeColor = System.Drawing.Color.White;
+            appearance2.TextHAlignAsString = "Center";
+            appearance2.TextVAlignAsString = "Middle";
+            ultraGridColumn14.CellAppearance = appearance2;
+            appearance3.BorderColor = System.Drawing.Color.White;
+            appearance3.BorderColor2 = System.Drawing.Color.White;
+            ultraGridColumn14.CellButtonAppearance = appearance3;
+            ultraGridColumn14.Header.Caption = "";
+            ultraGridColumn14.Header.VisiblePosition = 13;
+            ultraGridColumn14.MaxWidth = 120;
+            ultraGridColumn14.MinWidth = 120;
+            ultraGridColumn14.NullText = "Show More";
+            ultraGridColumn14.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Button;
+            ultraGridColumn14.Width = 120;
+            ultraGridBand1.Columns.AddRange(new object[] {
+            ultraGridColumn1,
+            ultraGridColumn2,
+            ultraGridColumn3,
+            ultraGridColumn4,
+            ultraGridColumn5,
+            ultraGridColumn6,
+            ultraGridColumn7,
+            ultraGridColumn8,
+            ultraGridColumn9,
+            ultraGridColumn10,
+            ultraGridColumn11,
+            ultraGridColumn12,
+            ultraGridColumn13,
+            ultraGridColumn14});
+            this.ultraGridProducts.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
+            this.ultraGridProducts.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            this.ultraGridProducts.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
+            appearance4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance4.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance4.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance4.BorderColor = System.Drawing.SystemColors.Window;
+            this.ultraGridProducts.DisplayLayout.GroupByBox.Appearance = appearance4;
+            appearance5.ForeColor = System.Drawing.SystemColors.Control;
+            this.ultraGridProducts.DisplayLayout.GroupByBox.BandLabelAppearance = appearance5;
+            this.ultraGridProducts.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            appearance6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance6.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance6.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance6.ForeColor = System.Drawing.SystemColors.Control;
+            this.ultraGridProducts.DisplayLayout.GroupByBox.PromptAppearance = appearance6;
+            this.ultraGridProducts.DisplayLayout.InterBandSpacing = 10;
+            this.ultraGridProducts.DisplayLayout.MaxColScrollRegions = 1;
+            this.ultraGridProducts.DisplayLayout.MaxRowScrollRegions = 1;
+            appearance7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance7.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance7.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance7.BorderColor3DBase = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance7.Cursor = System.Windows.Forms.Cursors.Hand;
+            appearance7.FontData.BoldAsString = "True";
+            appearance7.FontData.Name = "Bookman Old Style";
+            appearance7.FontData.SizeInPoints = 10F;
+            appearance7.ForeColor = System.Drawing.Color.White;
+            appearance7.TextHAlignAsString = "Center";
+            appearance7.TextVAlignAsString = "Middle";
+            this.ultraGridProducts.DisplayLayout.Override.ActiveCellAppearance = appearance7;
+            appearance8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance8.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance8.FontData.BoldAsString = "True";
+            appearance8.FontData.Name = "Bookman Old Style";
+            appearance8.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.ultraGridProducts.DisplayLayout.Override.ActiveRowAppearance = appearance8;
+            appearance9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance9.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance9.BorderColor3DBase = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.ultraGridProducts.DisplayLayout.Override.AddRowCellAppearance = appearance9;
+            this.ultraGridProducts.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
+            this.ultraGridProducts.DisplayLayout.Override.AllowColMoving = Infragistics.Win.UltraWinGrid.AllowColMoving.NotAllowed;
+            this.ultraGridProducts.DisplayLayout.Override.AllowColSizing = Infragistics.Win.UltraWinGrid.AllowColSizing.None;
+            this.ultraGridProducts.DisplayLayout.Override.AllowColSwapping = Infragistics.Win.UltraWinGrid.AllowColSwapping.NotAllowed;
+            this.ultraGridProducts.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
+            this.ultraGridProducts.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.False;
+            this.ultraGridProducts.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
+            this.ultraGridProducts.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.None;
+            this.ultraGridProducts.DisplayLayout.Override.BorderStyleHeader = Infragistics.Win.UIElementBorderStyle.Solid;
+            this.ultraGridProducts.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
+            appearance10.BackColor = System.Drawing.Color.Transparent;
+            appearance10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.ultraGridProducts.DisplayLayout.Override.CardAreaAppearance = appearance10;
+            appearance11.BackColor = System.Drawing.Color.White;
+            appearance11.BackColor2 = System.Drawing.Color.White;
+            appearance11.BackGradientAlignment = Infragistics.Win.GradientAlignment.Client;
+            appearance11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance11.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance11.BorderColor3DBase = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance11.FontData.BoldAsString = "True";
+            appearance11.FontData.ItalicAsString = "False";
+            appearance11.FontData.Name = "Bookman Old Style";
+            appearance11.FontData.SizeInPoints = 10F;
+            appearance11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance11.TextHAlignAsString = "Center";
+            appearance11.TextVAlignAsString = "Middle";
+            this.ultraGridProducts.DisplayLayout.Override.CellAppearance = appearance11;
+            appearance12.BorderColor = System.Drawing.Color.White;
+            appearance12.BorderColor2 = System.Drawing.Color.White;
+            this.ultraGridProducts.DisplayLayout.Override.CellButtonAppearance = appearance12;
+            this.ultraGridProducts.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
+            this.ultraGridProducts.DisplayLayout.Override.CellPadding = 0;
+            this.ultraGridProducts.DisplayLayout.Override.CellSpacing = 3;
+            this.ultraGridProducts.DisplayLayout.Override.FixedRowIndicator = Infragistics.Win.UltraWinGrid.FixedRowIndicator.None;
+            appearance13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance13.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            appearance13.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
+            appearance13.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance13.BorderColor = System.Drawing.SystemColors.Window;
+            this.ultraGridProducts.DisplayLayout.Override.GroupByRowAppearance = appearance13;
+            appearance14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance14.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance14.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance14.BorderColor3DBase = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance14.FontData.BoldAsString = "True";
+            appearance14.FontData.Name = "Bookman Old Style";
+            appearance14.FontData.SizeInPoints = 13F;
+            appearance14.ForeColor = System.Drawing.Color.White;
+            appearance14.TextHAlignAsString = "Center";
+            appearance14.TextVAlignAsString = "Middle";
+            appearance14.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
+            this.ultraGridProducts.DisplayLayout.Override.HeaderAppearance = appearance14;
+            this.ultraGridProducts.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortSingle;
+            this.ultraGridProducts.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
+            appearance15.BackColor = System.Drawing.Color.White;
+            appearance15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance15.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance15.BorderColor3DBase = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ultraGridProducts.DisplayLayout.Override.RowAppearance = appearance15;
+            appearance16.BackColor = System.Drawing.Color.ForestGreen;
+            this.ultraGridProducts.DisplayLayout.Override.RowSelectorAppearance = appearance16;
+            this.ultraGridProducts.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
+            this.ultraGridProducts.DisplayLayout.Override.RowSelectorWidth = 10;
+            this.ultraGridProducts.DisplayLayout.Override.RowSizing = Infragistics.Win.UltraWinGrid.RowSizing.Fixed;
+            this.ultraGridProducts.DisplayLayout.Override.RowSpacingAfter = 3;
+            this.ultraGridProducts.DisplayLayout.Override.RowSpacingBefore = 2;
+            appearance17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance17.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance17.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance17.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance17.BorderColor3DBase = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.ultraGridProducts.DisplayLayout.Override.SelectedCellAppearance = appearance17;
+            appearance18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance18.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            appearance18.BackGradientStyle = Infragistics.Win.GradientStyle.None;
+            appearance18.FontData.BoldAsString = "True";
+            appearance18.FontData.Name = "Bookman Old Style";
+            appearance18.FontData.SizeInPoints = 12F;
+            appearance18.TextHAlignAsString = "Center";
+            appearance18.TextVAlignAsString = "Middle";
+            this.ultraGridProducts.DisplayLayout.Override.SelectedRowAppearance = appearance18;
+            this.ultraGridProducts.DisplayLayout.Override.SelectTypeCell = Infragistics.Win.UltraWinGrid.SelectType.None;
+            this.ultraGridProducts.DisplayLayout.Override.SelectTypeCol = Infragistics.Win.UltraWinGrid.SelectType.None;
+            this.ultraGridProducts.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Single;
+            appearance19.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ultraGridProducts.DisplayLayout.Override.TemplateAddRowAppearance = appearance19;
+            this.ultraGridProducts.DisplayLayout.Override.TipStyleScroll = Infragistics.Win.UltraWinGrid.TipStyle.Show;
+            this.ultraGridProducts.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.None;
+            this.ultraGridProducts.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.ultraGridProducts.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.ultraGridProducts.DisplayLayout.SelectionOverlayBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.ultraGridProducts.DisplayLayout.SelectionOverlayColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
+            this.ultraGridProducts.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
+            this.ultraGridProducts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ultraGridProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ultraGridProducts.Location = new System.Drawing.Point(0, 0);
+            this.ultraGridProducts.Name = "ultraGridProducts";
+            this.ultraGridProducts.Size = new System.Drawing.Size(1349, 837);
+            this.ultraGridProducts.TabIndex = 0;
+            this.ultraGridProducts.Text = "ultraGrid1";
+            this.ultraGridProducts.ClickCellButton += new Infragistics.Win.UltraWinGrid.CellEventHandler(this.ultraGridProducts_ClickCellButton);
+            this.ultraGridProducts.DoubleClickRow += new Infragistics.Win.UltraWinGrid.DoubleClickRowEventHandler(this.ultraGridProducts_DoubleClickRow);
             // 
-            // iDDataGridViewTextBoxColumn
+            // bindingSource1
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // barcodeDataGridViewTextBoxColumn
-            // 
-            this.barcodeDataGridViewTextBoxColumn.DataPropertyName = "Barcode";
-            this.barcodeDataGridViewTextBoxColumn.HeaderText = "Barcode";
-            this.barcodeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.barcodeDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
-            this.barcodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product Name";
-            this.productNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // supplierNameDataGridViewTextBoxColumn
-            // 
-            this.supplierNameDataGridViewTextBoxColumn.DataPropertyName = "SupplierName";
-            this.supplierNameDataGridViewTextBoxColumn.HeaderText = "Supplier Name";
-            this.supplierNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.supplierNameDataGridViewTextBoxColumn.Name = "supplierNameDataGridViewTextBoxColumn";
-            this.supplierNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addedDateDataGridViewTextBoxColumn
-            // 
-            this.addedDateDataGridViewTextBoxColumn.DataPropertyName = "AddedDate";
-            this.addedDateDataGridViewTextBoxColumn.HeaderText = "Added Date";
-            this.addedDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.addedDateDataGridViewTextBoxColumn.Name = "addedDateDataGridViewTextBoxColumn";
-            this.addedDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Edit.HeaderText = "";
-            this.Edit.MinimumWidth = 6;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Edit.Text = "Edit";
-            this.Edit.ToolTipText = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // spselectproductsResultBindingSource
-            // 
-            this.spselectproductsResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_select_productsResult);
+            this.bindingSource1.DataSource = typeof(MiniGram.LINQ.sp_select_productsResult);
             // 
             // tableLayoutPanel3
             // 
@@ -559,7 +689,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 846F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 845F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1357, 845);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
@@ -568,7 +698,7 @@
             this.panel2.Controls.Add(this.tableLayoutPanel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(4, 96);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1357, 845);
             this.panel2.TabIndex = 1;
@@ -581,7 +711,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.797797F));
@@ -605,7 +735,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductsUC";
             this.Size = new System.Drawing.Size(1365, 945);
             this.Load += new System.EventHandler(this.CustomersUC_Load);
@@ -614,8 +744,8 @@
             this.tableLayoutPanel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spselectproductsResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraGridProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -632,7 +762,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -647,18 +776,11 @@
         private Syncfusion.Windows.Forms.Tools.TextBoxExt search_txt;
         private System.Windows.Forms.Timer timer1;
         private Syncfusion.WinForms.Controls.SfButton keyboard_btn;
-        private System.Windows.Forms.BindingSource spselectproductsResultBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplierNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addedDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private Syncfusion.WinForms.Controls.SfButton btnDeliveryIn;
         private System.Windows.Forms.Timer timerRefreshDataDelay;
         private System.Windows.Forms.Label lblCount;
+        private Infragistics.Win.UltraWinGrid.UltraGrid ultraGridProducts;
+        private System.Windows.Forms.BindingSource spselectproductsResultBindingSource;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
