@@ -461,6 +461,7 @@ namespace MiniGram.Controls
                                 drrv.Print();
                                 Thread.CurrentThread.Abort();
                             });
+                            tr.Priority = ThreadPriority.Highest;
                             tr.Start();
                         }
                         receipt_details.Rows.Clear();

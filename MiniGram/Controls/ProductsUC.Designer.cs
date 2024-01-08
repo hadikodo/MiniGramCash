@@ -106,10 +106,9 @@
             this.search_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_txt.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.search_txt.Location = new System.Drawing.Point(802, 4);
-            this.search_txt.Margin = new System.Windows.Forms.Padding(4);
+            this.search_txt.Location = new System.Drawing.Point(603, 3);
             this.search_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.search_txt.MinimumSize = new System.Drawing.Size(44, 30);
+            this.search_txt.MinimumSize = new System.Drawing.Size(34, 30);
             this.search_txt.Name = "search_txt";
             this.search_txt.Size = new System.Drawing.Size(44, 30);
             this.search_txt.TabIndex = 16;
@@ -143,11 +142,11 @@
             this.search_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.search_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.search_btn.ImageSize = new System.Drawing.Size(35, 35);
-            this.search_btn.Location = new System.Drawing.Point(665, 0);
+            this.search_btn.Location = new System.Drawing.Point(500, 0);
             this.search_btn.Margin = new System.Windows.Forms.Padding(0);
             this.search_btn.Name = "search_btn";
             this.search_btn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.search_btn.Size = new System.Drawing.Size(133, 84);
+            this.search_btn.Size = new System.Drawing.Size(100, 69);
             this.search_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.search_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -183,11 +182,11 @@
             this.disablecus_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.disablecus_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.disablecus_btn.ImageSize = new System.Drawing.Size(35, 35);
-            this.disablecus_btn.Location = new System.Drawing.Point(399, 0);
+            this.disablecus_btn.Location = new System.Drawing.Point(300, 0);
             this.disablecus_btn.Margin = new System.Windows.Forms.Padding(0);
             this.disablecus_btn.Name = "disablecus_btn";
             this.disablecus_btn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.disablecus_btn.Size = new System.Drawing.Size(133, 84);
+            this.disablecus_btn.Size = new System.Drawing.Size(100, 69);
             this.disablecus_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.disablecus_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.disablecus_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -223,11 +222,11 @@
             this.enablecus_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.enablecus_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.enablecus_btn.ImageSize = new System.Drawing.Size(35, 35);
-            this.enablecus_btn.Location = new System.Drawing.Point(266, 0);
+            this.enablecus_btn.Location = new System.Drawing.Point(200, 0);
             this.enablecus_btn.Margin = new System.Windows.Forms.Padding(0);
             this.enablecus_btn.Name = "enablecus_btn";
             this.enablecus_btn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.enablecus_btn.Size = new System.Drawing.Size(133, 84);
+            this.enablecus_btn.Size = new System.Drawing.Size(100, 69);
             this.enablecus_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.enablecus_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.enablecus_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -267,7 +266,7 @@
             this.addproduct_btn.Margin = new System.Windows.Forms.Padding(0);
             this.addproduct_btn.Name = "addproduct_btn";
             this.addproduct_btn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.addproduct_btn.Size = new System.Drawing.Size(133, 84);
+            this.addproduct_btn.Size = new System.Drawing.Size(100, 69);
             this.addproduct_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.addproduct_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.addproduct_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -303,10 +302,10 @@
             this.keyboard_btn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.keyboard_btn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.keyboard_btn.ImageSize = new System.Drawing.Size(45, 45);
-            this.keyboard_btn.Location = new System.Drawing.Point(532, 0);
+            this.keyboard_btn.Location = new System.Drawing.Point(400, 0);
             this.keyboard_btn.Margin = new System.Windows.Forms.Padding(0);
             this.keyboard_btn.Name = "keyboard_btn";
-            this.keyboard_btn.Size = new System.Drawing.Size(133, 84);
+            this.keyboard_btn.Size = new System.Drawing.Size(100, 69);
             this.keyboard_btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.keyboard_btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.keyboard_btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -340,11 +339,11 @@
             this.btnDeliveryIn.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDeliveryIn.ImageMargin = new System.Windows.Forms.Padding(0);
             this.btnDeliveryIn.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnDeliveryIn.Location = new System.Drawing.Point(133, 0);
+            this.btnDeliveryIn.Location = new System.Drawing.Point(100, 0);
             this.btnDeliveryIn.Margin = new System.Windows.Forms.Padding(0);
             this.btnDeliveryIn.Name = "btnDeliveryIn";
             this.btnDeliveryIn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.btnDeliveryIn.Size = new System.Drawing.Size(133, 84);
+            this.btnDeliveryIn.Size = new System.Drawing.Size(100, 69);
             this.btnDeliveryIn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.btnDeliveryIn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.btnDeliveryIn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -368,14 +367,14 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 8;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel2.Controls.Add(this.btnDeliveryIn, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.keyboard_btn, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.search_btn, 5, 0);
@@ -390,7 +389,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1357, 84);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1018, 69);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // lblCount
@@ -399,10 +398,9 @@
             this.lblCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblCount.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount.ForeColor = System.Drawing.Color.White;
-            this.lblCount.Location = new System.Drawing.Point(1228, 0);
-            this.lblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCount.Location = new System.Drawing.Point(921, 0);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(125, 84);
+            this.lblCount.Size = new System.Drawing.Size(94, 69);
             this.lblCount.TabIndex = 24;
             this.lblCount.Text = "@count";
             this.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -411,20 +409,18 @@
             // 
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1357, 84);
+            this.panel1.Size = new System.Drawing.Size(1018, 69);
             this.panel1.TabIndex = 2;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.ultraGridProducts);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(4, 4);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1349, 837);
+            this.panel3.Size = new System.Drawing.Size(1012, 681);
             this.panel3.TabIndex = 1;
             // 
             // ultraGridProducts
@@ -437,60 +433,73 @@
             this.ultraGridProducts.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
             ultraGridColumn1.Header.VisiblePosition = 0;
             ultraGridColumn1.Hidden = true;
+            ultraGridColumn1.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
             ultraGridColumn1.Width = 59;
             ultraGridColumn2.AutoSizeMode = Infragistics.Win.UltraWinGrid.ColumnAutoSizeMode.None;
             ultraGridColumn2.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             ultraGridColumn2.Header.VisiblePosition = 1;
             ultraGridColumn2.MaxWidth = 180;
             ultraGridColumn2.MinWidth = 180;
+            ultraGridColumn2.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
             ultraGridColumn2.Width = 180;
             ultraGridColumn3.AutoEditMode = Infragistics.Win.DefaultableBoolean.False;
             ultraGridColumn3.AutoSizeEdit = Infragistics.Win.DefaultableBoolean.False;
             ultraGridColumn3.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             ultraGridColumn3.Header.Caption = "Name";
             ultraGridColumn3.Header.VisiblePosition = 2;
-            ultraGridColumn3.Width = 337;
+            ultraGridColumn3.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
+            ultraGridColumn3.Width = 14;
             ultraGridColumn4.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             ultraGridColumn4.Header.Caption = "Supplier";
             ultraGridColumn4.Header.VisiblePosition = 3;
             ultraGridColumn4.MaxWidth = 180;
             ultraGridColumn4.MinWidth = 180;
+            ultraGridColumn4.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
             ultraGridColumn4.Width = 180;
             ultraGridColumn5.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             ultraGridColumn5.Header.VisiblePosition = 4;
             ultraGridColumn5.MaxWidth = 100;
             ultraGridColumn5.MinWidth = 100;
+            ultraGridColumn5.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
             ultraGridColumn5.Width = 100;
             ultraGridColumn6.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             ultraGridColumn6.Header.VisiblePosition = 5;
             ultraGridColumn6.MaxWidth = 100;
             ultraGridColumn6.MinWidth = 100;
+            ultraGridColumn6.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
             ultraGridColumn6.Width = 100;
             ultraGridColumn7.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             ultraGridColumn7.Header.Caption = "Added Date";
             ultraGridColumn7.Header.VisiblePosition = 6;
             ultraGridColumn7.MaxWidth = 180;
             ultraGridColumn7.MinWidth = 180;
+            ultraGridColumn7.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
             ultraGridColumn7.Width = 180;
             ultraGridColumn8.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             ultraGridColumn8.Header.VisiblePosition = 7;
             ultraGridColumn8.MaxWidth = 150;
             ultraGridColumn8.MinWidth = 150;
+            ultraGridColumn8.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
             ultraGridColumn8.Width = 150;
             ultraGridColumn9.Header.VisiblePosition = 8;
             ultraGridColumn9.Hidden = true;
+            ultraGridColumn9.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
             ultraGridColumn9.Width = 84;
             ultraGridColumn10.Header.VisiblePosition = 9;
             ultraGridColumn10.Hidden = true;
+            ultraGridColumn10.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
             ultraGridColumn10.Width = 138;
             ultraGridColumn11.Header.VisiblePosition = 10;
             ultraGridColumn11.Hidden = true;
+            ultraGridColumn11.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
             ultraGridColumn11.Width = 97;
             ultraGridColumn12.Header.VisiblePosition = 11;
             ultraGridColumn12.Hidden = true;
+            ultraGridColumn12.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
             ultraGridColumn12.Width = 202;
             ultraGridColumn13.Header.VisiblePosition = 12;
             ultraGridColumn13.Hidden = true;
+            ultraGridColumn13.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
             ultraGridColumn13.Width = 167;
             ultraGridColumn14.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             appearance2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -509,6 +518,7 @@
             ultraGridColumn14.Header.VisiblePosition = 13;
             ultraGridColumn14.MaxWidth = 120;
             ultraGridColumn14.MinWidth = 120;
+            ultraGridColumn14.Nullable = Infragistics.Win.UltraWinGrid.Nullable.EmptyString;
             ultraGridColumn14.NullText = "Show More";
             ultraGridColumn14.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Button;
             ultraGridColumn14.Width = 120;
@@ -667,8 +677,9 @@
             this.ultraGridProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraGridProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraGridProducts.Location = new System.Drawing.Point(0, 0);
+            this.ultraGridProducts.Margin = new System.Windows.Forms.Padding(2);
             this.ultraGridProducts.Name = "ultraGridProducts";
-            this.ultraGridProducts.Size = new System.Drawing.Size(1349, 837);
+            this.ultraGridProducts.Size = new System.Drawing.Size(1012, 681);
             this.ultraGridProducts.TabIndex = 0;
             this.ultraGridProducts.Text = "ultraGrid1";
             this.ultraGridProducts.ClickCellButton += new Infragistics.Win.UltraWinGrid.CellEventHandler(this.ultraGridProducts_ClickCellButton);
@@ -689,18 +700,17 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 845F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1357, 845);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 687F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1018, 687);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.tableLayoutPanel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(4, 96);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(3, 78);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1357, 845);
+            this.panel2.Size = new System.Drawing.Size(1018, 687);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -711,12 +721,11 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.797797F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.2022F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1365, 945);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 768);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // timer1
@@ -731,13 +740,12 @@
             // 
             // ProductsUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductsUC";
-            this.Size = new System.Drawing.Size(1365, 945);
+            this.Size = new System.Drawing.Size(1024, 768);
             this.Load += new System.EventHandler(this.CustomersUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.search_txt)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);

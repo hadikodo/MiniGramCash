@@ -82,7 +82,7 @@ namespace MiniGram
 
             currentWidth = panel55.Width;
             new_receipt_btn_Click(null, null);
-            if (Properties.Settings.Default.AppVersion.ToString() != Globals.AppVersion || true)
+            if (Properties.Settings.Default.AppVersion.ToString() != Globals.AppVersion)
             {
                 UpdateInfoForm uif = new UpdateInfoForm(Globals.AppVersion);
                 uif.ShowDialog();

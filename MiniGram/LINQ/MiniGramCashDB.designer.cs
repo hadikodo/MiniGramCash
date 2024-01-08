@@ -464,25 +464,11 @@ namespace MiniGram.LINQ
 			return ((ISingleResult<sp_getProductsCountResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_selectDeliveryReceiptsDetails")]
-		public ISingleResult<sp_selectDeliveryReceiptsDetailsResult> sp_selectDeliveryReceiptsDetails([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
-			return ((ISingleResult<sp_selectDeliveryReceiptsDetailsResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_selectDeliveryReceipts")]
 		public ISingleResult<sp_selectDeliveryReceiptsResult> sp_selectDeliveryReceipts([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string str)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), str);
 			return ((ISingleResult<sp_selectDeliveryReceiptsResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_selectReceiptsDetails")]
-		public ISingleResult<sp_selectReceiptsDetailsResult> sp_selectReceiptsDetails([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
-			return ((ISingleResult<sp_selectReceiptsDetailsResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_getProductList")]
@@ -518,6 +504,20 @@ namespace MiniGram.LINQ
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fromDate, toDate);
 			return ((ISingleResult<sp_getDailyCashByDateResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_selectDeliveryReceiptsDetails")]
+		public ISingleResult<sp_selectDeliveryReceiptsDetailsResult> sp_selectDeliveryReceiptsDetails([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<sp_selectDeliveryReceiptsDetailsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_selectReceiptsDetails")]
+		public ISingleResult<sp_selectReceiptsDetailsResult> sp_selectReceiptsDetails([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<sp_selectReceiptsDetailsResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -6220,302 +6220,6 @@ namespace MiniGram.LINQ
 		}
 	}
 	
-	public partial class sp_selectDeliveryReceiptsDetailsResult
-	{
-		
-		private string _Barcode;
-		
-		private string _RefID;
-		
-		private int _RID;
-		
-		private string _ProductName;
-		
-		private int _PID;
-		
-		private string _SupplierName;
-		
-		private System.Nullable<int> _Quantity;
-		
-		private System.Nullable<double> _SellPrice;
-		
-		private System.Nullable<double> _SecondaryPrice;
-		
-		private System.Nullable<int> _Discount;
-		
-		private System.Nullable<double> _Cost;
-		
-		private System.Nullable<int> _TotalQuantity;
-		
-		private System.Nullable<double> _TotalDiscount;
-		
-		private System.Nullable<int> _TotalLBP;
-		
-		private System.Nullable<double> _TotalDollar;
-		
-		private System.Nullable<double> _TotalTVA;
-		
-		public sp_selectDeliveryReceiptsDetailsResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Barcode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Barcode
-		{
-			get
-			{
-				return this._Barcode;
-			}
-			set
-			{
-				if ((this._Barcode != value))
-				{
-					this._Barcode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RefID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string RefID
-		{
-			get
-			{
-				return this._RefID;
-			}
-			set
-			{
-				if ((this._RefID != value))
-				{
-					this._RefID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RID", DbType="Int NOT NULL")]
-		public int RID
-		{
-			get
-			{
-				return this._RID;
-			}
-			set
-			{
-				if ((this._RID != value))
-				{
-					this._RID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", DbType="NVarChar(100)")]
-		public string ProductName
-		{
-			get
-			{
-				return this._ProductName;
-			}
-			set
-			{
-				if ((this._ProductName != value))
-				{
-					this._ProductName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PID", DbType="Int NOT NULL")]
-		public int PID
-		{
-			get
-			{
-				return this._PID;
-			}
-			set
-			{
-				if ((this._PID != value))
-				{
-					this._PID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierName", DbType="NVarChar(50)")]
-		public string SupplierName
-		{
-			get
-			{
-				return this._SupplierName;
-			}
-			set
-			{
-				if ((this._SupplierName != value))
-				{
-					this._SupplierName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
-		public System.Nullable<int> Quantity
-		{
-			get
-			{
-				return this._Quantity;
-			}
-			set
-			{
-				if ((this._Quantity != value))
-				{
-					this._Quantity = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SellPrice", DbType="Float")]
-		public System.Nullable<double> SellPrice
-		{
-			get
-			{
-				return this._SellPrice;
-			}
-			set
-			{
-				if ((this._SellPrice != value))
-				{
-					this._SellPrice = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecondaryPrice", DbType="Float")]
-		public System.Nullable<double> SecondaryPrice
-		{
-			get
-			{
-				return this._SecondaryPrice;
-			}
-			set
-			{
-				if ((this._SecondaryPrice != value))
-				{
-					this._SecondaryPrice = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discount", DbType="Int")]
-		public System.Nullable<int> Discount
-		{
-			get
-			{
-				return this._Discount;
-			}
-			set
-			{
-				if ((this._Discount != value))
-				{
-					this._Discount = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cost", DbType="Float")]
-		public System.Nullable<double> Cost
-		{
-			get
-			{
-				return this._Cost;
-			}
-			set
-			{
-				if ((this._Cost != value))
-				{
-					this._Cost = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalQuantity", DbType="Int")]
-		public System.Nullable<int> TotalQuantity
-		{
-			get
-			{
-				return this._TotalQuantity;
-			}
-			set
-			{
-				if ((this._TotalQuantity != value))
-				{
-					this._TotalQuantity = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalDiscount", DbType="Float")]
-		public System.Nullable<double> TotalDiscount
-		{
-			get
-			{
-				return this._TotalDiscount;
-			}
-			set
-			{
-				if ((this._TotalDiscount != value))
-				{
-					this._TotalDiscount = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalLBP", DbType="Int")]
-		public System.Nullable<int> TotalLBP
-		{
-			get
-			{
-				return this._TotalLBP;
-			}
-			set
-			{
-				if ((this._TotalLBP != value))
-				{
-					this._TotalLBP = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalDollar", DbType="Float")]
-		public System.Nullable<double> TotalDollar
-		{
-			get
-			{
-				return this._TotalDollar;
-			}
-			set
-			{
-				if ((this._TotalDollar != value))
-				{
-					this._TotalDollar = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalTVA", DbType="Float")]
-		public System.Nullable<double> TotalTVA
-		{
-			get
-			{
-				return this._TotalTVA;
-			}
-			set
-			{
-				if ((this._TotalTVA != value))
-				{
-					this._TotalTVA = value;
-				}
-			}
-		}
-	}
-	
 	public partial class sp_selectDeliveryReceiptsResult
 	{
 		
@@ -6681,212 +6385,6 @@ namespace MiniGram.LINQ
 				if ((this._Date != value))
 				{
 					this._Date = value;
-				}
-			}
-		}
-	}
-	
-	public partial class sp_selectReceiptsDetailsResult
-	{
-		
-		private string _Barcode;
-		
-		private System.Nullable<int> _RID;
-		
-		private string _ProductName;
-		
-		private string _SupplierName;
-		
-		private System.Nullable<int> _Quantity;
-		
-		private System.Nullable<double> _DollarPrice;
-		
-		private System.Nullable<int> _LBPPrice;
-		
-		private System.Nullable<double> _TotalDolarPrice;
-		
-		private System.Nullable<int> _TotalLBPPrice;
-		
-		private System.Nullable<double> _TotalTVA;
-		
-		private System.Nullable<double> _TotalDiscount;
-		
-		public sp_selectReceiptsDetailsResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Barcode", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Barcode
-		{
-			get
-			{
-				return this._Barcode;
-			}
-			set
-			{
-				if ((this._Barcode != value))
-				{
-					this._Barcode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RID", DbType="Int")]
-		public System.Nullable<int> RID
-		{
-			get
-			{
-				return this._RID;
-			}
-			set
-			{
-				if ((this._RID != value))
-				{
-					this._RID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", DbType="NVarChar(100)")]
-		public string ProductName
-		{
-			get
-			{
-				return this._ProductName;
-			}
-			set
-			{
-				if ((this._ProductName != value))
-				{
-					this._ProductName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierName", DbType="NVarChar(50)")]
-		public string SupplierName
-		{
-			get
-			{
-				return this._SupplierName;
-			}
-			set
-			{
-				if ((this._SupplierName != value))
-				{
-					this._SupplierName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
-		public System.Nullable<int> Quantity
-		{
-			get
-			{
-				return this._Quantity;
-			}
-			set
-			{
-				if ((this._Quantity != value))
-				{
-					this._Quantity = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DollarPrice", DbType="Float")]
-		public System.Nullable<double> DollarPrice
-		{
-			get
-			{
-				return this._DollarPrice;
-			}
-			set
-			{
-				if ((this._DollarPrice != value))
-				{
-					this._DollarPrice = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LBPPrice", DbType="Int")]
-		public System.Nullable<int> LBPPrice
-		{
-			get
-			{
-				return this._LBPPrice;
-			}
-			set
-			{
-				if ((this._LBPPrice != value))
-				{
-					this._LBPPrice = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalDolarPrice", DbType="Float")]
-		public System.Nullable<double> TotalDolarPrice
-		{
-			get
-			{
-				return this._TotalDolarPrice;
-			}
-			set
-			{
-				if ((this._TotalDolarPrice != value))
-				{
-					this._TotalDolarPrice = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalLBPPrice", DbType="Int")]
-		public System.Nullable<int> TotalLBPPrice
-		{
-			get
-			{
-				return this._TotalLBPPrice;
-			}
-			set
-			{
-				if ((this._TotalLBPPrice != value))
-				{
-					this._TotalLBPPrice = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalTVA", DbType="Float")]
-		public System.Nullable<double> TotalTVA
-		{
-			get
-			{
-				return this._TotalTVA;
-			}
-			set
-			{
-				if ((this._TotalTVA != value))
-				{
-					this._TotalTVA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalDiscount", DbType="Float")]
-		public System.Nullable<double> TotalDiscount
-		{
-			get
-			{
-				return this._TotalDiscount;
-			}
-			set
-			{
-				if ((this._TotalDiscount != value))
-				{
-					this._TotalDiscount = value;
 				}
 			}
 		}
@@ -7397,6 +6895,508 @@ namespace MiniGram.LINQ
 				if ((this._TotalProfit != value))
 				{
 					this._TotalProfit = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_selectDeliveryReceiptsDetailsResult
+	{
+		
+		private string _Barcode;
+		
+		private string _RefID;
+		
+		private int _RID;
+		
+		private string _ProductName;
+		
+		private int _PID;
+		
+		private string _SupplierName;
+		
+		private System.Nullable<int> _Quantity;
+		
+		private System.Nullable<double> _SellPrice;
+		
+		private System.Nullable<double> _SecondaryPrice;
+		
+		private System.Nullable<int> _Discount;
+		
+		private System.Nullable<double> _Cost;
+		
+		private System.Nullable<int> _TotalQuantity;
+		
+		private System.Nullable<double> _TotalDiscount;
+		
+		private System.Nullable<int> _TotalLBP;
+		
+		private System.Nullable<double> _TotalDollar;
+		
+		private System.Nullable<double> _TotalTVA;
+		
+		public sp_selectDeliveryReceiptsDetailsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Barcode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Barcode
+		{
+			get
+			{
+				return this._Barcode;
+			}
+			set
+			{
+				if ((this._Barcode != value))
+				{
+					this._Barcode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RefID", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string RefID
+		{
+			get
+			{
+				return this._RefID;
+			}
+			set
+			{
+				if ((this._RefID != value))
+				{
+					this._RefID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RID", DbType="Int NOT NULL")]
+		public int RID
+		{
+			get
+			{
+				return this._RID;
+			}
+			set
+			{
+				if ((this._RID != value))
+				{
+					this._RID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", DbType="NVarChar(100)")]
+		public string ProductName
+		{
+			get
+			{
+				return this._ProductName;
+			}
+			set
+			{
+				if ((this._ProductName != value))
+				{
+					this._ProductName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PID", DbType="Int NOT NULL")]
+		public int PID
+		{
+			get
+			{
+				return this._PID;
+			}
+			set
+			{
+				if ((this._PID != value))
+				{
+					this._PID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierName", DbType="NVarChar(50)")]
+		public string SupplierName
+		{
+			get
+			{
+				return this._SupplierName;
+			}
+			set
+			{
+				if ((this._SupplierName != value))
+				{
+					this._SupplierName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SellPrice", DbType="Float")]
+		public System.Nullable<double> SellPrice
+		{
+			get
+			{
+				return this._SellPrice;
+			}
+			set
+			{
+				if ((this._SellPrice != value))
+				{
+					this._SellPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecondaryPrice", DbType="Float")]
+		public System.Nullable<double> SecondaryPrice
+		{
+			get
+			{
+				return this._SecondaryPrice;
+			}
+			set
+			{
+				if ((this._SecondaryPrice != value))
+				{
+					this._SecondaryPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discount", DbType="Int")]
+		public System.Nullable<int> Discount
+		{
+			get
+			{
+				return this._Discount;
+			}
+			set
+			{
+				if ((this._Discount != value))
+				{
+					this._Discount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cost", DbType="Float")]
+		public System.Nullable<double> Cost
+		{
+			get
+			{
+				return this._Cost;
+			}
+			set
+			{
+				if ((this._Cost != value))
+				{
+					this._Cost = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalQuantity", DbType="Int")]
+		public System.Nullable<int> TotalQuantity
+		{
+			get
+			{
+				return this._TotalQuantity;
+			}
+			set
+			{
+				if ((this._TotalQuantity != value))
+				{
+					this._TotalQuantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalDiscount", DbType="Float")]
+		public System.Nullable<double> TotalDiscount
+		{
+			get
+			{
+				return this._TotalDiscount;
+			}
+			set
+			{
+				if ((this._TotalDiscount != value))
+				{
+					this._TotalDiscount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalLBP", DbType="Int")]
+		public System.Nullable<int> TotalLBP
+		{
+			get
+			{
+				return this._TotalLBP;
+			}
+			set
+			{
+				if ((this._TotalLBP != value))
+				{
+					this._TotalLBP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalDollar", DbType="Float")]
+		public System.Nullable<double> TotalDollar
+		{
+			get
+			{
+				return this._TotalDollar;
+			}
+			set
+			{
+				if ((this._TotalDollar != value))
+				{
+					this._TotalDollar = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalTVA", DbType="Float")]
+		public System.Nullable<double> TotalTVA
+		{
+			get
+			{
+				return this._TotalTVA;
+			}
+			set
+			{
+				if ((this._TotalTVA != value))
+				{
+					this._TotalTVA = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_selectReceiptsDetailsResult
+	{
+		
+		private string _Barcode;
+		
+		private System.Nullable<int> _RID;
+		
+		private string _ProductName;
+		
+		private string _SupplierName;
+		
+		private System.Nullable<int> _Quantity;
+		
+		private System.Nullable<double> _DollarPrice;
+		
+		private System.Nullable<int> _LBPPrice;
+		
+		private System.Nullable<double> _TotalDolarPrice;
+		
+		private System.Nullable<int> _TotalLBPPrice;
+		
+		private System.Nullable<double> _TotalTVA;
+		
+		private System.Nullable<double> _TotalDiscount;
+		
+		public sp_selectReceiptsDetailsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Barcode", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Barcode
+		{
+			get
+			{
+				return this._Barcode;
+			}
+			set
+			{
+				if ((this._Barcode != value))
+				{
+					this._Barcode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RID", DbType="Int")]
+		public System.Nullable<int> RID
+		{
+			get
+			{
+				return this._RID;
+			}
+			set
+			{
+				if ((this._RID != value))
+				{
+					this._RID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", DbType="NVarChar(100)")]
+		public string ProductName
+		{
+			get
+			{
+				return this._ProductName;
+			}
+			set
+			{
+				if ((this._ProductName != value))
+				{
+					this._ProductName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierName", DbType="NVarChar(50)")]
+		public string SupplierName
+		{
+			get
+			{
+				return this._SupplierName;
+			}
+			set
+			{
+				if ((this._SupplierName != value))
+				{
+					this._SupplierName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DollarPrice", DbType="Float")]
+		public System.Nullable<double> DollarPrice
+		{
+			get
+			{
+				return this._DollarPrice;
+			}
+			set
+			{
+				if ((this._DollarPrice != value))
+				{
+					this._DollarPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LBPPrice", DbType="Int")]
+		public System.Nullable<int> LBPPrice
+		{
+			get
+			{
+				return this._LBPPrice;
+			}
+			set
+			{
+				if ((this._LBPPrice != value))
+				{
+					this._LBPPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalDolarPrice", DbType="Float")]
+		public System.Nullable<double> TotalDolarPrice
+		{
+			get
+			{
+				return this._TotalDolarPrice;
+			}
+			set
+			{
+				if ((this._TotalDolarPrice != value))
+				{
+					this._TotalDolarPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalLBPPrice", DbType="Int")]
+		public System.Nullable<int> TotalLBPPrice
+		{
+			get
+			{
+				return this._TotalLBPPrice;
+			}
+			set
+			{
+				if ((this._TotalLBPPrice != value))
+				{
+					this._TotalLBPPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalTVA", DbType="Float")]
+		public System.Nullable<double> TotalTVA
+		{
+			get
+			{
+				return this._TotalTVA;
+			}
+			set
+			{
+				if ((this._TotalTVA != value))
+				{
+					this._TotalTVA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalDiscount", DbType="Float")]
+		public System.Nullable<double> TotalDiscount
+		{
+			get
+			{
+				return this._TotalDiscount;
+			}
+			set
+			{
+				if ((this._TotalDiscount != value))
+				{
+					this._TotalDiscount = value;
 				}
 			}
 		}

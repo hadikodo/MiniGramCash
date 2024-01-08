@@ -64,23 +64,29 @@ namespace MiniGram.Controls
             int enabledProduct = 0;
             using (MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                var data = cnx.sp_select_products(str).ToList();
-                lblCount.Text = data.Count().ToString();
-                bindingSource1.DataSource = data.ToList().Take(500);
-                foreach (UltraGridRow row in ultraGridProducts.Rows)
+                try
                 {
-                    if (!row.Cells[7].Value.ToString().Equals("Enabled"))
+                    var data = cnx.sp_select_products(str).ToList();
+                    lblCount.Text = data.Count().ToString();
+                    bindingSource1.DataSource = data.ToList().Take(500);
+                    foreach (UltraGridRow row in ultraGridProducts.Rows)
                     {
-                        row.CellAppearance.BackColor = Color.DarkGray;
-                        row.Appearance.BackColor = Color.DarkGray;
-                        enabledProduct--;
+                        if (row.Cells[7].Value != null && !row.Cells[7].Value.ToString().Equals("Enabled"))
+                        {
+                            row.CellAppearance.BackColor = Color.DarkGray;
+                            row.Appearance.BackColor = Color.DarkGray;
+                            enabledProduct--;
+                        }
+                        if (row.Cells[4].Value == null || Int32.Parse(row.Cells[4].Value.ToString()) < 0)
+                        {
+                            row.CellAppearance.BackColor = Color.Red;
+                            row.Appearance.BackColor = Color.Red;
+                        }
+                        enabledProduct++;
                     }
-                    if (row.Cells[4].Value == null || Int32.Parse(row.Cells[4].Value.ToString()) < 0)
-                    {
-                        row.CellAppearance.BackColor = Color.Red;
-                        row.Appearance.BackColor = Color.Red;
-                    }
-                    enabledProduct++;
+                }catch(Exception ex)
+                {
+
                 }
             }
 
@@ -99,7 +105,6 @@ namespace MiniGram.Controls
             if(!Globals.isSearchVisible)
             {
                 search_txt.Visible = true;
-
                 this.ActiveControl = search_txt;
                 timer1.Start();
             }
@@ -186,10 +191,16 @@ namespace MiniGram.Controls
 
         private void ultraGridProducts_ClickCellButton(object sender, CellEventArgs e)
         {
-
+            try
+            {
                 EditProductForm epf = new EditProductForm(Convert.ToInt32(ultraGridProducts.ActiveRow.Cells[0].Value.ToString()));
                 epf.ShowDialog();
                 refreshData("");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error Show Info !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ultraGridProducts_DoubleClickRow(object sender, DoubleClickRowEventArgs e)

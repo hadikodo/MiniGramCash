@@ -61,6 +61,16 @@ namespace MiniGram
                     {
                         Globals.AppVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
                     }
+
+                    //if (DateTime.Today > Convert.ToDateTime("2024-01-14") || DateTime.Today < Convert.ToDateTime("2023-12-14"))
+                    //{
+                    //    MessageBox.Show("The Trial Version Is End. Please Call Support!!","Trial Version!!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    //    Environment.Exit(0);
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("This Is A Trial Version. Valid Until 14/01/2024", "Trial Version!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //}
                     Application.Run(Globals.mainForm);
 
                 }

@@ -33,24 +33,14 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DirectReceiptReportViewer));
-            this.sp_selectReceiptsDetailsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.spselectReceiptsDetailsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewerA4 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportViewerMini = new Microsoft.Reporting.WinForms.ReportViewer();
             this.deliveryInReportViewerA4 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewerMini = new Microsoft.Reporting.WinForms.ReportViewer();
             this.spselectDeliveryReceiptsDetailsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.sp_selectReceiptsDetailsResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spselectReceiptsDetailsResultBindingSource)).BeginInit();
+            this.sp_selectReceiptsDetailsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.spselectDeliveryReceiptsDetailsResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_selectReceiptsDetailsResultBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // sp_selectReceiptsDetailsResultBindingSource
-            // 
-            this.sp_selectReceiptsDetailsResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_selectReceiptsDetailsResult);
-            // 
-            // spselectReceiptsDetailsResultBindingSource
-            // 
-            this.spselectReceiptsDetailsResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_selectReceiptsDetailsResult);
             // 
             // reportViewerA4
             // 
@@ -64,23 +54,11 @@
             this.reportViewerA4.Size = new System.Drawing.Size(308, 246);
             this.reportViewerA4.TabIndex = 4;
             // 
-            // reportViewerMini
-            // 
-            reportDataSource2.Name = "DataSet2";
-            reportDataSource2.Value = this.sp_selectReceiptsDetailsResultBindingSource;
-            this.reportViewerMini.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewerMini.LocalReport.ReportEmbeddedResource = "MiniGram.Forms.Reports.RDLC.DirectReceiptReportMini.rdlc";
-            this.reportViewerMini.Location = new System.Drawing.Point(378, 21);
-            this.reportViewerMini.Name = "reportViewerMini";
-            this.reportViewerMini.ServerReport.BearerToken = null;
-            this.reportViewerMini.Size = new System.Drawing.Size(308, 246);
-            this.reportViewerMini.TabIndex = 5;
-            // 
             // deliveryInReportViewerA4
             // 
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.spselectDeliveryReceiptsDetailsResultBindingSource;
-            this.deliveryInReportViewerA4.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.spselectDeliveryReceiptsDetailsResultBindingSource;
+            this.deliveryInReportViewerA4.LocalReport.DataSources.Add(reportDataSource2);
             this.deliveryInReportViewerA4.LocalReport.ReportEmbeddedResource = "MiniGram.Forms.Reports.RDLC.rptDeliveryInNew.rdlc";
             this.deliveryInReportViewerA4.Location = new System.Drawing.Point(256, 290);
             this.deliveryInReportViewerA4.Name = "deliveryInReportViewerA4";
@@ -88,35 +66,49 @@
             this.deliveryInReportViewerA4.Size = new System.Drawing.Size(396, 246);
             this.deliveryInReportViewerA4.TabIndex = 6;
             // 
+            // reportViewerMini
+            // 
+            reportDataSource3.Name = "DataSet2";
+            reportDataSource3.Value = this.sp_selectReceiptsDetailsResultBindingSource;
+            this.reportViewerMini.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewerMini.LocalReport.ReportEmbeddedResource = "MiniGram.Forms.Reports.RDLC.DirectReceiptReportMini.rdlc";
+            this.reportViewerMini.Location = new System.Drawing.Point(380, 12);
+            this.reportViewerMini.Name = "reportViewerMini";
+            this.reportViewerMini.ServerReport.BearerToken = null;
+            this.reportViewerMini.Size = new System.Drawing.Size(319, 246);
+            this.reportViewerMini.TabIndex = 7;
+            // 
             // spselectDeliveryReceiptsDetailsResultBindingSource
             // 
             this.spselectDeliveryReceiptsDetailsResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_selectDeliveryReceiptsDetailsResult);
+            // 
+            // sp_selectReceiptsDetailsResultBindingSource
+            // 
+            this.sp_selectReceiptsDetailsResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_selectReceiptsDetailsResult);
             // 
             // DirectReceiptReportViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 567);
-            this.Controls.Add(this.deliveryInReportViewerA4);
             this.Controls.Add(this.reportViewerMini);
+            this.Controls.Add(this.deliveryInReportViewerA4);
             this.Controls.Add(this.reportViewerA4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DirectReceiptReportViewer";
             this.Text = "DirectReceiptReportViewer";
             this.Load += new System.EventHandler(this.DirectReceiptReportViewer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sp_selectReceiptsDetailsResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spselectReceiptsDetailsResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spselectDeliveryReceiptsDetailsResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_selectReceiptsDetailsResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource spselectReceiptsDetailsResultBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerA4;
-        private System.Windows.Forms.BindingSource sp_selectReceiptsDetailsResultBindingSource;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewerMini;
         private Microsoft.Reporting.WinForms.ReportViewer deliveryInReportViewerA4;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerMini;
         private System.Windows.Forms.BindingSource spselectDeliveryReceiptsDetailsResultBindingSource;
+        private System.Windows.Forms.BindingSource sp_selectReceiptsDetailsResultBindingSource;
     }
 }

@@ -136,7 +136,7 @@
         <classShapeMoniker Id="ce61c5a8-0767-489c-a3c2-53ba3c914c94" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.375 : 7.72156514746094); (12.46875 : 7.72156514746094); (12.46875 : 8.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.375 : 7.72156514746094); (9.05729166666667 : 7.72156514746094 : JumpStart); (9.22395833333333 : 7.72156514746094 : JumpEnd); (12.46875 : 7.72156514746094); (12.46875 : 8.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MiniGramDBDataContext/TBLPRODUCT/TBLPRODUCT_TBLHOLDDETAIL" />
       <nodes>
         <classShapeMoniker Id="9d48d4e3-7e0c-423e-aca3-0f65d07c9cd1" />

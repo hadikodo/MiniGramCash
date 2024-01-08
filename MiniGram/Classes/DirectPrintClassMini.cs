@@ -41,8 +41,8 @@ namespace MiniGram.Classes
             string deviceInfo =
               @"<DeviceInfo>
                 <OutputFormat>EMF</OutputFormat>
-                <PageWidth>7cm</PageWidth>
-                <PageHeight>7cm</PageHeight>
+                <PageWidth>8cm</PageWidth>
+                <PageHeight>29.7cm</PageHeight>
                 <MarginTop>0.4cm</MarginTop>
                 <MarginLeft>0.4cm</MarginLeft>
                 <MarginRight>0.4cm</MarginRight>

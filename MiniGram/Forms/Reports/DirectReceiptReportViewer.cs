@@ -68,7 +68,7 @@ namespace MiniGram.Forms
                 }
                 else if (sizeType == 2)
                 {
-                    spselectReceiptsDetailsResultBindingSource.DataSource = rptData;
+                    sp_selectReceiptsDetailsResultBindingSource.DataSource = rptData;
                     ReportParameterCollection parameters = new ReportParameterCollection();
                     parameters.Add(new ReportParameter("TotalDiscount", TotalDiscount));
                     parameters.Add(new ReportParameter("TotalTVA", TotalTVA));
@@ -123,6 +123,7 @@ namespace MiniGram.Forms
         private void DirectReceiptReportViewer_Load(object sender, EventArgs e)
         {
 
+            this.reportViewerMini.RefreshReport();
         }
     }
 }
