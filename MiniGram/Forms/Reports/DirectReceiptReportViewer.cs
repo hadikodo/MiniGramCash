@@ -33,16 +33,20 @@ namespace MiniGram.Forms
             InitializeComponent();
         }
 
-        private void Print()
+        public void Print()
         {
-            if (typeID == 1 || typeID == 2 || typeID == 4)
+            if (typeID == 1 || typeID == 2 || typeID == 4 || typeID == 6)
             {
                 
                 if (sizeType == 1)
                 {
+                    List<sp_selectReceiptsDetailsResult> rptData = new List<sp_selectReceiptsDetailsResult>();
 
-                    sp_selectReceiptsDetailsResultBindingSource.DataSource = data.sp_selectReceiptsDetails(receiptID).ToList();
-                    
+                    using(var dataReal = new MiniGramDBDataContext(Globals.ConnectionString))
+                    {
+                        rptData = (from aj in dataReal.sp_selectReceiptsDetails(receiptID) select aj).ToList();
+                    }
+                    sp_selectReceiptsDetailsResultBindingSource.DataSource = rptData;
                     ReportParameterCollection parameters = new ReportParameterCollection();
                     parameters.Add(new ReportParameter("TotalDiscount", TotalDiscount));
                     parameters.Add(new ReportParameter("TotalTVA", TotalTVA));
@@ -50,15 +54,20 @@ namespace MiniGram.Forms
                     parameters.Add(new ReportParameter("FinalDollarPrice", FinalDollarPrice));
                     parameters.Add(new ReportParameter("ReceiptType", type));
                     reportViewerA4.LocalReport.SetParameters(parameters);
-                    this.reportViewerA4.RefreshReport();
+                    reportViewerA4.RefreshReport();
                     DirectPrintClass dpc = new DirectPrintClass();
                     dpc.Run(reportViewerA4.LocalReport);
 
                 }
                 else if (sizeType == 2)
                 {
-                    sp_selectReceiptsDetailsForReportMiniResultBindingSource.DataSource = data.sp_selectReceiptsDetailsForReportMini(receiptID).ToList();
-                    
+                    List<sp_selectReceiptsDetailsForReportMiniResult> rptData = new List<sp_selectReceiptsDetailsForReportMiniResult>();
+
+                    using (var dataReal = new MiniGramDBDataContext(Globals.ConnectionString))
+                    {
+                        rptData = (from aj in dataReal.sp_selectReceiptsDetailsForReportMini(receiptID) select aj).ToList();
+                    }
+                    sp_selectReceiptsDetailsForReportMiniResultBindingSource.DataSource = rptData;
                     ReportParameterCollection parameters = new ReportParameterCollection();
                     parameters.Add(new ReportParameter("TotalDiscount", TotalDiscount));
                     parameters.Add(new ReportParameter("TotalTVA", TotalTVA));
@@ -66,17 +75,21 @@ namespace MiniGram.Forms
                     parameters.Add(new ReportParameter("FinalDollarPrice", FinalDollarPrice));
                     parameters.Add(new ReportParameter("ReceiptType", type));
                     reportViewerMini.LocalReport.SetParameters(parameters);
-                    this.reportViewerMini.RefreshReport();
+                    reportViewerMini.RefreshReport();
                     DirectPrintClassMini dpc = new DirectPrintClassMini();
                     dpc.Run(reportViewerMini.LocalReport);
                 }
             }
             else if (typeID == 3 || typeID == 5)
             {
-                sp_selectDeliveryReceiptsDetailsResultBindingSource.DataSource = data.sp_selectDeliveryReceiptsDetails(receiptID).ToList();
+                List<sp_selectDeliveryReceiptsDetailsResult> rptData = new List<sp_selectDeliveryReceiptsDetailsResult>();
+                using (var dataReal = new MiniGramDBDataContext(Globals.ConnectionString))
+                {
+                    rptData = (from aj in dataReal.sp_selectDeliveryReceiptsDetails(receiptID) select aj).ToList();
+                }
+                sp_selectDeliveryReceiptsDetailsResultBindingSource.DataSource = rptData;
                 if (sizeType == 1)
                 {
-                    
                     ReportParameterCollection parameters = new ReportParameterCollection();
                     parameters.Add(new ReportParameter("TotalDiscount", TotalDiscount));
                     parameters.Add(new ReportParameter("TotalTVA", TotalTVA));
@@ -84,13 +97,12 @@ namespace MiniGram.Forms
                     parameters.Add(new ReportParameter("FinalDollarPrice", FinalDollarPrice));
                     parameters.Add(new ReportParameter("ReceiptType", type));
                     deliveryInReportViewerA4.LocalReport.SetParameters(parameters);
-                    this.deliveryInReportViewerA4.RefreshReport();
+                    deliveryInReportViewerA4.RefreshReport();
                     DirectPrintClass dpc = new DirectPrintClass();
                     dpc.Run(deliveryInReportViewerA4.LocalReport);
                 }
                 else if (sizeType == 2)
                 {
-                    
 
                     ReportParameterCollection parameters = new ReportParameterCollection();
                     parameters.Add(new ReportParameter("TotalDiscount", TotalDiscount));
@@ -99,7 +111,7 @@ namespace MiniGram.Forms
                     parameters.Add(new ReportParameter("FinalDollarPrice", FinalDollarPrice));
                     parameters.Add(new ReportParameter("ReceiptType", type));
                     deliveryInReportViewerA4.LocalReport.SetParameters(parameters);
-                    this.deliveryInReportViewerA4.RefreshReport();
+                    deliveryInReportViewerA4.RefreshReport();
                     DirectPrintClassMini dpc = new DirectPrintClassMini();
                     dpc.Run(deliveryInReportViewerA4.LocalReport);
                 }
@@ -110,7 +122,6 @@ namespace MiniGram.Forms
 
         private void DirectReceiptReportViewer_Load(object sender, EventArgs e)
         {
-            Print();
         }
     }
 }

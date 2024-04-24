@@ -45,12 +45,12 @@ namespace MiniGram.Forms
             {
                 if (itemNB > 0)
                 {
-                    Globals.deleteNB = Int32.Parse(item_number.Text);
+                    Globals.newQteNb = Int32.Parse(item_number.Text);
                     this.Close();
                 }
                 else
                 {
-                    Globals.deleteNB = itemNB;
+                    Globals.newQteNb = itemNB;
                     MessageBox.Show("Please Enter A Valid Number !!");
                     ActiveControl = item_number;
                 }

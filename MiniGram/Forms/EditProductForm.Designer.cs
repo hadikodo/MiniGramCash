@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProductForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.warning_lable = new System.Windows.Forms.Label();
             this.save_btn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cboxCurrencies = new System.Windows.Forms.ComboBox();
+            this.tBLCURRENCyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label8 = new System.Windows.Forms.Label();
             this.txtSecondaryPrice = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblEmpPrice = new System.Windows.Forms.Label();
             this.txtDiscountPercentage = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.chkboxHasDiscount = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.btnExpiredDate = new System.Windows.Forms.Button();
@@ -43,27 +47,30 @@
             this.productname_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.label6 = new System.Windows.Forms.Label();
             this.supp_cbox = new System.Windows.Forms.ComboBox();
+            this.tBLSUPPLIERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.barcode_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.sell_price_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblSellPrice = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.chkboxHasQte = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.quantity_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.chkboxHasTVA = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.textTVADesc = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.init_price_txt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblCost = new System.Windows.Forms.Label();
             this.exit_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.logo_img = new System.Windows.Forms.PictureBox();
             this.keyboard_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLCURRENCyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSecondaryPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscountPercentage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkboxHasDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkboxHasExpDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productname_txt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLSUPPLIERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barcode_txt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sell_price_txt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkboxHasQte)).BeginInit();
@@ -94,7 +101,7 @@
             this.warning_lable.BackColor = System.Drawing.Color.Transparent;
             this.warning_lable.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.warning_lable.ForeColor = System.Drawing.Color.Red;
-            this.warning_lable.Location = new System.Drawing.Point(5, 558);
+            this.warning_lable.Location = new System.Drawing.Point(5, 570);
             this.warning_lable.Name = "warning_lable";
             this.warning_lable.Size = new System.Drawing.Size(759, 32);
             this.warning_lable.TabIndex = 19;
@@ -125,31 +132,34 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.txtSecondaryPrice, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtDiscountPercentage, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.chkboxHasDiscount, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.btnExpiredDate, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.chkboxHasExpDate, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.cboxCurrencies, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtSecondaryPrice, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lblEmpPrice, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtDiscountPercentage, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.chkboxHasDiscount, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.btnExpiredDate, 1, 12);
+            this.tableLayoutPanel1.Controls.Add(this.chkboxHasExpDate, 0, 12);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.productname_txt, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.supp_cbox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.barcode_txt, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.sell_price_txt, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.sell_price_txt, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lblSellPrice, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.chkboxHasQte, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.quantity_txt, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.chkboxHasTVA, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.textTVADesc, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.init_price_txt, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.chkboxHasQte, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.quantity_txt, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.chkboxHasTVA, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.textTVADesc, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.init_price_txt, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblCost, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 12;
+            this.tableLayoutPanel1.RowCount = 13;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
@@ -163,8 +173,42 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(759, 524);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(759, 554);
             this.tableLayoutPanel1.TabIndex = 40;
+            // 
+            // cboxCurrencies
+            // 
+            this.cboxCurrencies.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboxCurrencies.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboxCurrencies.DataSource = this.tBLCURRENCyBindingSource;
+            this.cboxCurrencies.DisplayMember = "CurrencyName";
+            this.cboxCurrencies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboxCurrencies.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxCurrencies.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.cboxCurrencies.FormattingEnabled = true;
+            this.cboxCurrencies.Location = new System.Drawing.Point(382, 153);
+            this.cboxCurrencies.Name = "cboxCurrencies";
+            this.cboxCurrencies.Size = new System.Drawing.Size(374, 36);
+            this.cboxCurrencies.TabIndex = 44;
+            this.cboxCurrencies.ValueMember = "ID";
+            this.cboxCurrencies.SelectionChangeCommitted += new System.EventHandler(this.cboxCurrencies_SelectionChangeCommitted);
+            // 
+            // tBLCURRENCyBindingSource
+            // 
+            this.tBLCURRENCyBindingSource.DataSource = typeof(MiniGram.LINQ.TBLCURRENCy);
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.label8.Location = new System.Drawing.Point(3, 150);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(373, 50);
+            this.label8.TabIndex = 43;
+            this.label8.Text = "⫸ Currency :";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtSecondaryPrice
             // 
@@ -179,12 +223,12 @@
             this.txtSecondaryPrice.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtSecondaryPrice.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSecondaryPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtSecondaryPrice.Location = new System.Drawing.Point(382, 203);
+            this.txtSecondaryPrice.Location = new System.Drawing.Point(382, 253);
             this.txtSecondaryPrice.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtSecondaryPrice.MinimumSize = new System.Drawing.Size(34, 30);
             this.txtSecondaryPrice.Name = "txtSecondaryPrice";
             this.txtSecondaryPrice.Size = new System.Drawing.Size(374, 40);
-            this.txtSecondaryPrice.TabIndex = 39;
+            this.txtSecondaryPrice.TabIndex = 4;
             this.txtSecondaryPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSecondaryPrice.ThemeName = "Default";
             this.txtSecondaryPrice.ThemeStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -193,20 +237,21 @@
             this.txtSecondaryPrice.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtSecondaryPrice.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.txtSecondaryPrice.UseBorderColorOnFocus = true;
+            this.txtSecondaryPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSecondaryPrice_KeyDown);
             // 
-            // label4
+            // lblEmpPrice
             // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label4.Location = new System.Drawing.Point(0, 200);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(379, 50);
-            this.label4.TabIndex = 38;
-            this.label4.Text = "⫸ Employee Price ( $ ) :";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblEmpPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmpPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblEmpPrice.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.lblEmpPrice.Location = new System.Drawing.Point(0, 250);
+            this.lblEmpPrice.Margin = new System.Windows.Forms.Padding(0);
+            this.lblEmpPrice.Name = "lblEmpPrice";
+            this.lblEmpPrice.Size = new System.Drawing.Size(379, 50);
+            this.lblEmpPrice.TabIndex = 38;
+            this.lblEmpPrice.Text = "⫸ Employee Price ( $ ) :";
+            this.lblEmpPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtDiscountPercentage
             // 
@@ -221,7 +266,7 @@
             this.txtDiscountPercentage.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtDiscountPercentage.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiscountPercentage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtDiscountPercentage.Location = new System.Drawing.Point(382, 327);
+            this.txtDiscountPercentage.Location = new System.Drawing.Point(382, 357);
             this.txtDiscountPercentage.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtDiscountPercentage.MinimumSize = new System.Drawing.Size(34, 30);
             this.txtDiscountPercentage.Name = "txtDiscountPercentage";
@@ -250,7 +295,7 @@
             this.chkboxHasDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.chkboxHasDiscount.ImageCheckBox = true;
             this.chkboxHasDiscount.ImageCheckBoxSize = new System.Drawing.Size(30, 30);
-            this.chkboxHasDiscount.Location = new System.Drawing.Point(3, 327);
+            this.chkboxHasDiscount.Location = new System.Drawing.Point(3, 357);
             this.chkboxHasDiscount.MetroColor = System.Drawing.Color.Transparent;
             this.chkboxHasDiscount.Name = "chkboxHasDiscount";
             this.chkboxHasDiscount.Size = new System.Drawing.Size(373, 44);
@@ -281,7 +326,7 @@
             this.btnExpiredDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExpiredDate.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExpiredDate.ForeColor = System.Drawing.Color.White;
-            this.btnExpiredDate.Location = new System.Drawing.Point(382, 477);
+            this.btnExpiredDate.Location = new System.Drawing.Point(382, 507);
             this.btnExpiredDate.Name = "btnExpiredDate";
             this.btnExpiredDate.Size = new System.Drawing.Size(374, 44);
             this.btnExpiredDate.TabIndex = 28;
@@ -303,7 +348,7 @@
             this.chkboxHasExpDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.chkboxHasExpDate.ImageCheckBox = true;
             this.chkboxHasExpDate.ImageCheckBoxSize = new System.Drawing.Size(30, 30);
-            this.chkboxHasExpDate.Location = new System.Drawing.Point(3, 477);
+            this.chkboxHasExpDate.Location = new System.Drawing.Point(3, 507);
             this.chkboxHasExpDate.MetroColor = System.Drawing.Color.Transparent;
             this.chkboxHasExpDate.Name = "chkboxHasExpDate";
             this.chkboxHasExpDate.Size = new System.Drawing.Size(373, 44);
@@ -367,6 +412,7 @@
             this.productname_txt.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.productname_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.productname_txt.UseBorderColorOnFocus = true;
+            this.productname_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.productname_txt_KeyDown);
             // 
             // label6
             // 
@@ -386,6 +432,8 @@
             // 
             this.supp_cbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.supp_cbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.supp_cbox.DataSource = this.tBLSUPPLIERBindingSource;
+            this.supp_cbox.DisplayMember = "SNAME";
             this.supp_cbox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.supp_cbox.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supp_cbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -393,7 +441,13 @@
             this.supp_cbox.Location = new System.Drawing.Point(382, 103);
             this.supp_cbox.Name = "supp_cbox";
             this.supp_cbox.Size = new System.Drawing.Size(374, 36);
-            this.supp_cbox.TabIndex = 27;
+            this.supp_cbox.TabIndex = 2;
+            this.supp_cbox.ValueMember = "SID";
+            this.supp_cbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.supp_cbox_KeyDown);
+            // 
+            // tBLSUPPLIERBindingSource
+            // 
+            this.tBLSUPPLIERBindingSource.DataSource = typeof(MiniGram.LINQ.TBLSUPPLIER);
             // 
             // barcode_txt
             // 
@@ -413,7 +467,7 @@
             this.barcode_txt.MinimumSize = new System.Drawing.Size(34, 30);
             this.barcode_txt.Name = "barcode_txt";
             this.barcode_txt.Size = new System.Drawing.Size(374, 40);
-            this.barcode_txt.TabIndex = 22;
+            this.barcode_txt.TabIndex = 1;
             this.barcode_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.barcode_txt.ThemeName = "Default";
             this.barcode_txt.ThemeStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -426,6 +480,7 @@
             this.barcode_txt.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.barcode_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.barcode_txt.UseBorderColorOnFocus = true;
+            this.barcode_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.barcode_txt_KeyDown);
             // 
             // sell_price_txt
             // 
@@ -440,12 +495,12 @@
             this.sell_price_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.sell_price_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sell_price_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.sell_price_txt.Location = new System.Drawing.Point(382, 153);
+            this.sell_price_txt.Location = new System.Drawing.Point(382, 303);
             this.sell_price_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.sell_price_txt.MinimumSize = new System.Drawing.Size(34, 30);
             this.sell_price_txt.Name = "sell_price_txt";
             this.sell_price_txt.Size = new System.Drawing.Size(374, 40);
-            this.sell_price_txt.TabIndex = 10;
+            this.sell_price_txt.TabIndex = 3;
             this.sell_price_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.sell_price_txt.ThemeName = "Default";
             this.sell_price_txt.ThemeStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -454,21 +509,22 @@
             this.sell_price_txt.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.sell_price_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.sell_price_txt.UseBorderColorOnFocus = true;
+            this.sell_price_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.sell_price_txt_KeyDown);
             this.sell_price_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.price_txt_KeyPress);
             // 
-            // label5
+            // lblSellPrice
             // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label5.Location = new System.Drawing.Point(0, 150);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(379, 50);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "⫸ Sell Price ( $ ) :";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSellPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblSellPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSellPrice.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSellPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.lblSellPrice.Location = new System.Drawing.Point(0, 300);
+            this.lblSellPrice.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSellPrice.Name = "lblSellPrice";
+            this.lblSellPrice.Size = new System.Drawing.Size(379, 50);
+            this.lblSellPrice.TabIndex = 14;
+            this.lblSellPrice.Text = "⫸ Sell Price ( $ ) :";
+            this.lblSellPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
             // 
@@ -497,7 +553,7 @@
             this.chkboxHasQte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.chkboxHasQte.ImageCheckBox = true;
             this.chkboxHasQte.ImageCheckBoxSize = new System.Drawing.Size(30, 30);
-            this.chkboxHasQte.Location = new System.Drawing.Point(3, 427);
+            this.chkboxHasQte.Location = new System.Drawing.Point(3, 457);
             this.chkboxHasQte.MetroColor = System.Drawing.Color.Transparent;
             this.chkboxHasQte.Name = "chkboxHasQte";
             this.chkboxHasQte.Size = new System.Drawing.Size(373, 44);
@@ -529,7 +585,7 @@
             this.quantity_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.quantity_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantity_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.quantity_txt.Location = new System.Drawing.Point(382, 427);
+            this.quantity_txt.Location = new System.Drawing.Point(382, 457);
             this.quantity_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.quantity_txt.MinimumSize = new System.Drawing.Size(34, 30);
             this.quantity_txt.Name = "quantity_txt";
@@ -559,7 +615,7 @@
             this.chkboxHasTVA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.chkboxHasTVA.ImageCheckBox = true;
             this.chkboxHasTVA.ImageCheckBoxSize = new System.Drawing.Size(30, 30);
-            this.chkboxHasTVA.Location = new System.Drawing.Point(3, 377);
+            this.chkboxHasTVA.Location = new System.Drawing.Point(3, 407);
             this.chkboxHasTVA.MetroColor = System.Drawing.Color.Transparent;
             this.chkboxHasTVA.Name = "chkboxHasTVA";
             this.chkboxHasTVA.Size = new System.Drawing.Size(373, 44);
@@ -591,7 +647,7 @@
             this.textTVADesc.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.textTVADesc.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textTVADesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textTVADesc.Location = new System.Drawing.Point(382, 377);
+            this.textTVADesc.Location = new System.Drawing.Point(382, 407);
             this.textTVADesc.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.textTVADesc.MinimumSize = new System.Drawing.Size(34, 30);
             this.textTVADesc.Name = "textTVADesc";
@@ -619,12 +675,12 @@
             this.init_price_txt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.init_price_txt.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.init_price_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.init_price_txt.Location = new System.Drawing.Point(382, 253);
+            this.init_price_txt.Location = new System.Drawing.Point(382, 203);
             this.init_price_txt.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.init_price_txt.MinimumSize = new System.Drawing.Size(34, 30);
             this.init_price_txt.Name = "init_price_txt";
             this.init_price_txt.Size = new System.Drawing.Size(374, 40);
-            this.init_price_txt.TabIndex = 34;
+            this.init_price_txt.TabIndex = 5;
             this.init_price_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.init_price_txt.ThemeName = "Default";
             this.init_price_txt.ThemeStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -633,20 +689,21 @@
             this.init_price_txt.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.init_price_txt.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.init_price_txt.UseBorderColorOnFocus = true;
+            this.init_price_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.init_price_txt_KeyDown);
             // 
-            // label3
+            // lblCost
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.label3.Location = new System.Drawing.Point(0, 250);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(379, 50);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "⫸ Cost ( $ ) :";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCost.BackColor = System.Drawing.Color.Transparent;
+            this.lblCost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCost.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.lblCost.Location = new System.Drawing.Point(0, 200);
+            this.lblCost.Margin = new System.Windows.Forms.Padding(0);
+            this.lblCost.Name = "lblCost";
+            this.lblCost.Size = new System.Drawing.Size(379, 50);
+            this.lblCost.TabIndex = 35;
+            this.lblCost.Text = "⫸ Cost ( $ ) :";
+            this.lblCost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // exit_btn
             // 
@@ -745,11 +802,13 @@
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLCURRENCyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSecondaryPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiscountPercentage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkboxHasDiscount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkboxHasExpDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productname_txt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLSUPPLIERBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barcode_txt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sell_price_txt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkboxHasQte)).EndInit();
@@ -768,7 +827,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label warning_lable;
         private System.Windows.Forms.Button save_btn;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblSellPrice;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt sell_price_txt;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt quantity_txt;
         private System.Windows.Forms.Label label2;
@@ -788,10 +847,14 @@
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chkboxHasTVA;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt textTVADesc;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt init_price_txt;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCost;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtDiscountPercentage;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chkboxHasDiscount;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtSecondaryPrice;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblEmpPrice;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cboxCurrencies;
+        private System.Windows.Forms.BindingSource tBLCURRENCyBindingSource;
+        private System.Windows.Forms.BindingSource tBLSUPPLIERBindingSource;
     }
 }

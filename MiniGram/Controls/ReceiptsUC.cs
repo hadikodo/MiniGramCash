@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -38,7 +39,7 @@ namespace MiniGram.Controls
             Dictionary<int, string> dicRType = new Dictionary<int, string>();
             dicRType.Add(1, "Sale");
             dicRType.Add(2, "Return");
-            dicRType.Add(3, "Delivery In");
+            dicRType.Add(6, "Junk");
 
             cboxReceiptsType.DataSource = new BindingSource(dicRType, null);
             cboxReceiptsType.ValueMember = "Key";
@@ -85,14 +86,21 @@ namespace MiniGram.Controls
             {
                 int RID = Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
 
-                if (cboxReceiptsType.SelectedValue.ToString() == "1" || cboxReceiptsType.SelectedValue.ToString() == "2")
+                if (cboxReceiptsType.SelectedValue.ToString() == "1" || cboxReceiptsType.SelectedValue.ToString() == "2" || cboxReceiptsType.SelectedValue.ToString() == "6")
                 {
                     TBLRECEIPT receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == RID select aj).SingleOrDefault();
-                    double? finaldollar = receipt.TOTAL_AMOUNTDollar - receipt.TotalDiscount + receipt.TotalTVA;
-                    int? finalLBP = Int32.Parse((finaldollar * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
-                    DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, receipt.ReceiptTypeID, receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
-                    drrv.receiptID = RID;
-                    drrv.Show();
+                    //double? finaldollar = receipt.TOTAL_AMOUNTDollar - receipt.TotalDiscount + receipt.TotalTVA;
+                    int? finalLBP = receipt.TOTAL_AMOUNTLBP;
+                    double? finaldollar = Math.Round(Double.Parse(finalLBP.ToString()) / Double.Parse(Properties.Settings.Default.BuyDollarLBPPrice.ToString()),3);
+
+                    Thread tr = new Thread(() =>
+                    {
+                        DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, receipt.ReceiptTypeID, receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
+                        drrv.receiptID = RID;
+                        drrv.Print();
+                        Thread.CurrentThread.Abort();
+                    });
+                    tr.Start();
                 }
             }
             if (e.ColumnIndex == ShowMore.Index)
@@ -137,21 +145,12 @@ namespace MiniGram.Controls
         }
         public void refreshData(String str)
         {
-            if (cboxReceiptsType.SelectedValue.ToString() == "1" || cboxReceiptsType.SelectedValue.ToString() == "2")
+            if (cboxReceiptsType.SelectedValue.ToString() == "1" || cboxReceiptsType.SelectedValue.ToString() == "2" || cboxReceiptsType.SelectedValue.ToString() == "6")
             {
                 spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts(str).Where((aj) => !aj.isHold && aj.ReceiptTypeID.ToString() == cboxReceiptsType.SelectedValue.ToString());
-                dataGridView2.Visible = false;
                 dataGridView1.Visible = true;
                 dataGridView1.Dock = DockStyle.Fill;
                 dataGridView1.Refresh();
-            }
-            else if (cboxReceiptsType.SelectedValue.ToString() == "3")
-            {
-                spselectDeliveryReceiptsResultBindingSource.DataSource = cnx.sp_selectDeliveryReceipts(str).Where((aj) => aj.ReceiptTypeID.ToString() == cboxReceiptsType.SelectedValue.ToString());
-                dataGridView1.Visible = false;
-                dataGridView2.Visible = true;
-                dataGridView2.Dock = DockStyle.Fill;
-                dataGridView2.Refresh();
             }
 
         }
@@ -223,45 +222,6 @@ namespace MiniGram.Controls
         private void cboxReceiptsType_SelectedValueChanged(object sender, EventArgs e)
         {
             refreshData("");
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == Print.Index)
-            {
-                int RID = Int32.Parse(dataGridView2.SelectedRows[0].Cells[0].Value.ToString());
-
-                if (cboxReceiptsType.SelectedValue.ToString() == "3" || cboxReceiptsType.SelectedValue.ToString() == "5")
-                {
-                    TBLDELIVERY_RECEIPT receipt = (from aj in cnx.TBLDELIVERY_RECEIPTs where aj.ID == RID select aj).SingleOrDefault();
-                    double? finaldollar = receipt.TotalDollar - receipt.TotalDiscount + receipt.TotalTVA;
-                    int? finalLBP = Int32.Parse((finaldollar * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
-                    DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, Int32.Parse(receipt.ReceiptTypeID.ToString()), receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
-                    drrv.receiptID = RID;
-                    drrv.Show();
-                }
-            }
-            if (e.ColumnIndex == ShowMore.Index)
-            {
-                if (cboxReceiptsType.SelectedValue.ToString() == "3" || cboxReceiptsType.SelectedValue.ToString() == "5")
-                {
-                    DeliveryReceiptDetailsForm rd = new DeliveryReceiptDetailsForm(Int32.Parse(dataGridView2.SelectedRows[0].Cells[0].Value.ToString()));
-                    rd.refreshData();
-                    rd.ShowDialog();
-                }
-
-                refreshData("");
-                search_txt.Text = "";
-            }
-        }
-
-        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DeliveryReceiptDetailsForm rd = new DeliveryReceiptDetailsForm(Int32.Parse(dataGridView2.SelectedRows[0].Cells[0].Value.ToString()));
-            rd.refreshData();
-            rd.ShowDialog();
-            refreshData("");
-            search_txt.Text = "";
         }
 
         private void timerRefreshDataDelay_Tick(object sender, EventArgs e)

@@ -43,8 +43,14 @@ namespace MiniGram
             }
         }
 
+        private void InitPermissions()
+        {
+
+        }
+
         private void SuppliersUC_Load(object sender, EventArgs e)
         {
+            InitPermissions();
             Globals.isSearchVisible = false;
             search_txt.Visible = false;
         }
@@ -146,9 +152,10 @@ namespace MiniGram
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            EditSupplierForm eif = new EditSupplierForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
-            eif.ShowDialog();
-            refreshData();
+
+                EditSupplierForm eif = new EditSupplierForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                eif.ShowDialog();
+                refreshData();
         }
     }
 }

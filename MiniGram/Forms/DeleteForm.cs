@@ -35,12 +35,12 @@ namespace MiniGram.Forms
             else {
                 if (Int32.Parse(item_number.Text) <= itemNB)
                 {
-                    Globals.deleteNB = Int32.Parse(item_number.Text);
+                    Globals.newQteNb = Int32.Parse(item_number.Text);
                     this.Close();
                 }
                 else
                 {
-                    Globals.deleteNB = itemNB;
+                    Globals.newQteNb = itemNB;
                     this.Close();
                 }
             }
@@ -64,7 +64,7 @@ namespace MiniGram.Forms
 
         private void sfButton1_Click(object sender, EventArgs e)
         {
-            Globals.deleteNB = 0;
+            Globals.newQteNb = 0;
             this.Close();
         }
 

@@ -32,10 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.gradientPanel1 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.title_lbl = new System.Windows.Forms.Label();
             this.menu_toggle_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.panel55 = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            this.btnDeliveryInList = new Syncfusion.WinForms.Controls.SfButton();
             this.btnDashboard = new Syncfusion.WinForms.Controls.SfButton();
             this.btnHoldList = new Syncfusion.WinForms.Controls.SfButton();
             this.btnAbout = new Syncfusion.WinForms.Controls.SfButton();
@@ -77,7 +77,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gradientPanel1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.Controls.Add(this.title_lbl);
             this.gradientPanel1.Controls.Add(this.menu_toggle_btn);
             this.gradientPanel1.Controls.Add(this.panel55);
@@ -86,17 +85,6 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(1333, 744);
             this.gradientPanel1.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(575, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 38);
-            this.label1.TabIndex = 9;
             // 
             // title_lbl
             // 
@@ -148,6 +136,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.panel55.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.panel55.Controls.Add(this.btnDeliveryInList);
             this.panel55.Controls.Add(this.btnDashboard);
             this.panel55.Controls.Add(this.btnHoldList);
             this.panel55.Controls.Add(this.btnAbout);
@@ -163,6 +152,39 @@
             this.panel55.Name = "panel55";
             this.panel55.Size = new System.Drawing.Size(1224, 75);
             this.panel55.TabIndex = 8;
+            // 
+            // btnDeliveryInList
+            // 
+            this.btnDeliveryInList.AccessibleName = "Button";
+            this.btnDeliveryInList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnDeliveryInList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDeliveryInList.CanOverrideStyle = true;
+            this.btnDeliveryInList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeliveryInList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeliveryInList.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeliveryInList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnDeliveryInList.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDeliveryInList.ImageMargin = new System.Windows.Forms.Padding(5);
+            this.btnDeliveryInList.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnDeliveryInList.Location = new System.Drawing.Point(450, 0);
+            this.btnDeliveryInList.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDeliveryInList.Name = "btnDeliveryInList";
+            this.btnDeliveryInList.Size = new System.Drawing.Size(75, 75);
+            this.btnDeliveryInList.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnDeliveryInList.Style.FocusedBackColor = System.Drawing.Color.Transparent;
+            this.btnDeliveryInList.Style.FocusedForeColor = System.Drawing.Color.Transparent;
+            this.btnDeliveryInList.Style.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.btnDeliveryInList.Style.HoverBackColor = System.Drawing.Color.White;
+            this.btnDeliveryInList.Style.HoverForeColor = System.Drawing.Color.White;
+            this.btnDeliveryInList.Style.HoverImageForeColor = System.Drawing.Color.Empty;
+            this.btnDeliveryInList.Style.Image = global::MiniGram.Properties.Resources.now_in_stock;
+            this.btnDeliveryInList.Style.PressedBackColor = System.Drawing.Color.White;
+            this.btnDeliveryInList.Style.PressedForeColor = System.Drawing.Color.White;
+            this.btnDeliveryInList.TabIndex = 21;
+            this.btnDeliveryInList.ThemeName = "Office2016Colorful";
+            this.toolTip1.SetToolTip(this.btnDeliveryInList, "DeliveryIn");
+            this.btnDeliveryInList.UseVisualStyleBackColor = false;
+            this.btnDeliveryInList.Click += new System.EventHandler(this.btnDeliveryInList_Click);
             // 
             // btnDashboard
             // 
@@ -243,7 +265,7 @@
             this.btnAbout.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAbout.ImageMargin = new System.Windows.Forms.Padding(5);
             this.btnAbout.ImageSize = new System.Drawing.Size(55, 55);
-            this.btnAbout.Location = new System.Drawing.Point(525, 0);
+            this.btnAbout.Location = new System.Drawing.Point(600, 0);
             this.btnAbout.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(75, 75);
@@ -276,7 +298,7 @@
             this.btnReports.ImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnReports.ImageMargin = new System.Windows.Forms.Padding(5);
             this.btnReports.ImageSize = new System.Drawing.Size(55, 55);
-            this.btnReports.Location = new System.Drawing.Point(450, 0);
+            this.btnReports.Location = new System.Drawing.Point(525, 0);
             this.btnReports.Margin = new System.Windows.Forms.Padding(0);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(75, 75);
@@ -574,6 +596,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MiniGram";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MaximizedBoundsChanged += new System.EventHandler(this.MainForm_MaximizedBoundsChanged);
@@ -601,7 +624,6 @@
         private Syncfusion.WinForms.Controls.SfButton minimize_btn;
         private System.Windows.Forms.Label title_lbl;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label label1;
         public Syncfusion.Windows.Forms.Tools.GradientPanelExt main_panel;
         public Syncfusion.WinForms.Controls.SfButton prices_btn;
         public Syncfusion.WinForms.Controls.SfButton new_receipt_btn;
@@ -611,6 +633,7 @@
         public Syncfusion.WinForms.Controls.SfButton btnAbout;
         public Syncfusion.WinForms.Controls.SfButton btnHoldList;
         public Syncfusion.WinForms.Controls.SfButton btnDashboard;
+        public Syncfusion.WinForms.Controls.SfButton btnDeliveryInList;
     }
 }
 

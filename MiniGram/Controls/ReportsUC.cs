@@ -163,7 +163,7 @@ namespace MiniGram.Controls
         {
             try
             {
-                DirectPrintClass dpc = new DirectPrintClass();
+                DirectPrintClassLandscape dpc = new DirectPrintClassLandscape();
                 dpc.Run(report);
             }
             catch(Exception ex)

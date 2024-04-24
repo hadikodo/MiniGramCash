@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sp_getSalesProductCountByDateResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.sp_getSalesProductCountByDateResultBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // sp_getSalesProductCountByDateResultBindingSource
+            // 
+            this.sp_getSalesProductCountByDateResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_getSalesProductCountByDateResult);
             // 
             // reportViewer1
             // 
@@ -47,10 +51,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1024, 768);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // sp_getSalesProductCountByDateResultBindingSource
-            // 
-            this.sp_getSalesProductCountByDateResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_getSalesProductCountByDateResult);
             // 
             // ProductsCountOfSalesByDateUC
             // 

@@ -251,7 +251,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel4.Controls.Add(this.label5, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.printer_drp, 2, 2);
             this.tableLayoutPanel4.Controls.Add(this.cboxReceiptSize, 2, 1);
@@ -293,7 +293,7 @@
             this.printer_drp.Margin = new System.Windows.Forms.Padding(0);
             this.printer_drp.MaxDropDownItems = 50;
             this.printer_drp.Name = "printer_drp";
-            this.printer_drp.Size = new System.Drawing.Size(527, 32);
+            this.printer_drp.Size = new System.Drawing.Size(525, 32);
             this.printer_drp.TabIndex = 1;
             // 
             // cboxReceiptSize
@@ -309,7 +309,7 @@
             this.cboxReceiptSize.Margin = new System.Windows.Forms.Padding(0);
             this.cboxReceiptSize.MaxDropDownItems = 50;
             this.cboxReceiptSize.Name = "cboxReceiptSize";
-            this.cboxReceiptSize.Size = new System.Drawing.Size(527, 32);
+            this.cboxReceiptSize.Size = new System.Drawing.Size(525, 32);
             this.cboxReceiptSize.TabIndex = 4;
             // 
             // label1

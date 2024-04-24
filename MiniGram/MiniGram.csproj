@@ -15,10 +15,10 @@
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\mainserver\publish\MiniGram\</PublishUrl>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>\\localhost\C%24\Supertech\MiniGram\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Unc</InstallFrom>
+    <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -26,19 +26,19 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\mainserver\publish\MiniGram\</InstallUrl>
-    <UpdateUrl>\\mainserver\publish\MiniGram\</UpdateUrl>
-    <SupportUrl>http://app.kt1.co/supertech/MiniGram/</SupportUrl>
+    <InstallUrl>http://app.kt1.co/supertech/MiniGramRelease2024/</InstallUrl>
+    <UpdateUrl>http://app.kt1.co/supertech/MiniGramRelease2024/</UpdateUrl>
+    <SupportUrl>http://app.kt1.co/supertech/MiniGram2024/</SupportUrl>
     <TargetCulture>en-US</TargetCulture>
     <ProductName>MiniGram</ProductName>
     <PublisherName>SuperTech Co.</PublisherName>
     <SuiteName>MiniGram</SuiteName>
-    <MinimumRequiredVersion>1.0.0.59</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.7.0.6</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>60</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>1.7.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -53,6 +53,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -100,32 +101,33 @@
     <PlatformTarget>x86</PlatformTarget>
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="Infragistics4.Shared.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
-    <Reference Include="Infragistics4.Win.AppStylistSupport.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics4.Win.DataVisualization.Barcode.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics4.Win.DataVisualization.Shared.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
-    <Reference Include="Infragistics4.Win.DataVisualization.UltraDataChart.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics4.Win.Misc.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
-      <HintPath>C:\Program Files (x86)\Infragistics\2021.1\Windows Forms\CLR4.0\Bin\Infragistics4.Win.Misc.v21.1.dll</HintPath>
+    <Reference Include="Infragistics4.Win.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinTree.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinToolbars.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinTabControl.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinLiveTileView.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinListView.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinExplorerBar.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinChart.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Portable.Core.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Misc.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Infragistics\2023.1\Windows Forms\CLR4.0\Bin\Infragistics4.Win.Misc.v23.1.dll</HintPath>
     </Reference>
-    <Reference Include="Infragistics4.Win.Portable.Core.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
-    <Reference Include="Infragistics4.Win.UltraWinChart.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics4.Win.UltraWinEditors.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics4.Win.UltraWinExplorerBar.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
-    <Reference Include="Infragistics4.Win.UltraWinGrid.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics4.Win.UltraWinListView.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics4.Win.UltraWinLiveTileView.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
-    <Reference Include="Infragistics4.Win.UltraWinTabControl.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
-    <Reference Include="Infragistics4.Win.UltraWinToolbars.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
-    <Reference Include="Infragistics4.Win.UltraWinTree.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
-    <Reference Include="Infragistics4.Win.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.DataVisualization.UltraDataChart.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.DataVisualization.Shared.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.DataVisualization.Barcode.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.AppStylistSupport.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Shared.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -145,6 +147,9 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Syncfusion.BulletGraph.Windows, Version=21.1460.35.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\Windows\21.1.35\Assemblies\4.6\Syncfusion.BulletGraph.Windows.dll</HintPath>
@@ -478,6 +483,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DirectPrintClass.cs" />
+    <Compile Include="Classes\DirectPrintClassLandscape.cs" />
     <Compile Include="Classes\DirectPrintClassMini.cs" />
     <Compile Include="Classes\ElipseClass.cs">
       <SubType>Component</SubType>
@@ -500,6 +506,12 @@
     </Compile>
     <Compile Include="Controls\DashboardUC.Designer.cs">
       <DependentUpon>DashboardUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DeliveryInUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DeliveryInUC.Designer.cs">
+      <DependentUpon>DeliveryInUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\GeneralSettingsUC.cs">
       <SubType>UserControl</SubType>
@@ -572,12 +584,6 @@
     </Compile>
     <Compile Include="Forms\AddProductForm.Designer.cs">
       <DependentUpon>AddProductForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\BatchNumberForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\BatchNumberForm.Designer.cs">
-      <DependentUpon>BatchNumberForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ChangeQuantityForm.cs">
       <SubType>Form</SubType>
@@ -674,11 +680,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MiniGramCashDB.dbml</DependentUpon>
     </Compile>
-    <Compile Include="LINQ\OrganigramDB.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OrganigramDB.dbml</DependentUpon>
-    </Compile>
     <Compile Include="MiniGramFlex\Forms\MainFormFlex.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -712,6 +713,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DashboardUC.resx">
       <DependentUpon>DashboardUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DeliveryInUC.resx">
+      <DependentUpon>DeliveryInUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\GeneralSettingsUC.resx">
       <DependentUpon>GeneralSettingsUC.cs</DependentUpon>
@@ -748,9 +752,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddProductForm.resx">
       <DependentUpon>AddProductForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BatchNumberForm.resx">
-      <DependentUpon>BatchNumberForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeQuantityForm.resx">
       <DependentUpon>ChangeQuantityForm.cs</DependentUpon>
@@ -796,6 +797,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\RDLC\DirectReceiptReport.rdlc" />
     <EmbeddedResource Include="Forms\Reports\RDLC\DirectReceiptReportMini.rdlc" />
+    <EmbeddedResource Include="Forms\Reports\RDLC\rptDeliveryInNew.rdlc" />
     <EmbeddedResource Include="Forms\Reports\RDLC\rptProductsList.rdlc" />
     <EmbeddedResource Include="Languages\en_local.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -814,9 +816,6 @@
     <None Include="Fonts\BOOKOSB.TTF" />
     <None Include="Fonts\BOOKOSBI.TTF" />
     <None Include="Fonts\BOOKOSI.TTF" />
-    <None Include="LINQ\OrganigramDB.dbml.layout">
-      <DependentUpon>OrganigramDB.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="MiniGramFlex\Forms\MainFormFlex.resx">
       <DependentUpon>MainFormFlex.cs</DependentUpon>
     </EmbeddedResource>
@@ -832,7 +831,7 @@
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -844,11 +843,6 @@
     <None Include="LINQ\MiniGramCashDB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>MiniGramCashDB.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LINQ\OrganigramDB.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>OrganigramDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -866,11 +860,13 @@
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_itemResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_productsResult.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.sp_select_suppliersResult.datasource" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.TBLCURRENCy.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TBLDELIVERY_RECEIPT.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TblExpiredDate.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TBLEXPIREDDATE1.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TBLPRODUCT.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TBLRECEIPTS_DETAIL.datasource" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.TBLSTATUS.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TBLSUPPLIER.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -1000,6 +996,13 @@
     <None Include="Resources\refresh.png" />
     <None Include="Resources\printer.png" />
     <None Include="Resources\accept.png" />
+    <None Include="Resources\now-in-stock.png" />
+    <None Include="Resources\stock.png" />
+    <None Include="Resources\in-stock.png" />
+    <None Include="Resources\just-in-time.png" />
+    <None Include="Resources\lifo.png" />
+    <None Include="Resources\paper-shredder.png" />
+    <Content Include="Scripts\MiniGramDBScript.sql" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1017,5 +1020,6 @@
   <ItemGroup>
     <Folder Include="MiniGramFlex\Controls\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

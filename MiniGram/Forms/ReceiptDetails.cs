@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,10 +28,16 @@ namespace MiniGram.Forms
         {
             TBLRECEIPT receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == receiptID select aj).SingleOrDefault();
             double? finaldollar = receipt.TOTAL_AMOUNTDollar - receipt.TotalDiscount + receipt.TotalTVA;
-            int? finalLBP = Int32.Parse((finaldollar * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
-            DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, receipt.ReceiptTypeID, receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
-            drrv.receiptID = receiptID;
-            drrv.Show();
+            int? finalLBP = receipt.TOTAL_AMOUNTLBP;
+            finaldollar =Math.Round(Double.Parse(finalLBP.ToString()) / Double.Parse(Properties.Settings.Default.BuyDollarLBPPrice.ToString()),3);
+            Thread tr = new Thread(() =>
+            {
+                DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, receipt.ReceiptTypeID, receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
+                drrv.receiptID = receiptID;
+                drrv.Print();
+                Thread.CurrentThread.Abort();
+            });
+            tr.Start();
         }
 
         private void ReceiptDetails_Load(object sender, EventArgs e)
