@@ -46,11 +46,7 @@ namespace MiniGram
         }
         private void exit_btn_Click(object sender, EventArgs e)
         {
-            if (Globals.isReceiptOpen)
-            {
-                MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
+            if (MessageBox.Show("Are You Sure You Want To Exit MiniGram ??", "Warning!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -301,12 +297,7 @@ namespace MiniGram
         {
             try
             {
-                if (Globals.isReceiptOpen)
-                {
-                    MessageBox.Show("Please Finish Your Current Receipt First!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
+
                     refreshColors();
                     btnDashboard.BackColor = Color.White;
                     title_lbl.Text = "Dashboard";
@@ -314,7 +305,7 @@ namespace MiniGram
                     DashboardUC duc = new DashboardUC();
                     duc.Dock = DockStyle.Fill;
                     main_panel.Controls.Add(duc);
-                }
+                
             }
             catch (Exception ex)
             {

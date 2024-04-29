@@ -54,21 +54,6 @@
             this.add_btn = new Syncfusion.WinForms.Controls.SfButton();
             this.receipt_panel = new System.Windows.Forms.Panel();
             this.receipt_details = new System.Windows.Forms.DataGridView();
-            this.Barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SecondPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Currency = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DollarPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LBPPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalLBP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalTVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CurrencyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_panel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -93,6 +78,21 @@
             this.timerRefreshDataDelay = new System.Windows.Forms.Timer(this.components);
             this.timerRefreshInputQte = new System.Windows.Forms.Timer(this.components);
             this.spselectReceiptsResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LBPPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SecondPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Currency = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DollarPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalLBP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalDollar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalTVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrencyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.search_panel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -578,11 +578,11 @@
             this.SupplierName,
             this.QTE,
             this.UnitPrice,
+            this.LBPPrice,
             this.TotalPrice,
             this.SecondPrice,
             this.Currency,
             this.DollarPrice,
-            this.LBPPrice,
             this.TotalLBP,
             this.TotalDollar,
             this.TotalTVA,
@@ -618,135 +618,6 @@
             this.receipt_details.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.receipt_details.Size = new System.Drawing.Size(711, 406);
             this.receipt_details.TabIndex = 1;
-            // 
-            // Barcode
-            // 
-            this.Barcode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Barcode.HeaderText = "Barcode";
-            this.Barcode.Name = "Barcode";
-            this.Barcode.ReadOnly = true;
-            this.Barcode.Visible = false;
-            this.Barcode.Width = 120;
-            // 
-            // PNAME
-            // 
-            this.PNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PNAME.HeaderText = "Name";
-            this.PNAME.Name = "PNAME";
-            this.PNAME.ReadOnly = true;
-            // 
-            // SupplierName
-            // 
-            this.SupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SupplierName.FillWeight = 20F;
-            this.SupplierName.HeaderText = "Supplier Name";
-            this.SupplierName.Name = "SupplierName";
-            this.SupplierName.ReadOnly = true;
-            this.SupplierName.Visible = false;
-            // 
-            // QTE
-            // 
-            this.QTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.QTE.HeaderText = "Qte.";
-            this.QTE.Name = "QTE";
-            this.QTE.ReadOnly = true;
-            this.QTE.Width = 60;
-            // 
-            // UnitPrice
-            // 
-            this.UnitPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.UnitPrice.HeaderText = "Unit Price";
-            this.UnitPrice.Name = "UnitPrice";
-            this.UnitPrice.ReadOnly = true;
-            this.UnitPrice.Width = 120;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.TotalPrice.HeaderText = "Total Price";
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
-            this.TotalPrice.Width = 120;
-            // 
-            // SecondPrice
-            // 
-            this.SecondPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.SecondPrice.HeaderText = "Emp. Price";
-            this.SecondPrice.Name = "SecondPrice";
-            this.SecondPrice.ReadOnly = true;
-            this.SecondPrice.Width = 120;
-            // 
-            // Currency
-            // 
-            this.Currency.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Currency.HeaderText = "Curr.";
-            this.Currency.Name = "Currency";
-            this.Currency.ReadOnly = true;
-            this.Currency.Width = 60;
-            // 
-            // DollarPrice
-            // 
-            this.DollarPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DollarPrice.FillWeight = 8F;
-            this.DollarPrice.HeaderText = "Dollar";
-            this.DollarPrice.Name = "DollarPrice";
-            this.DollarPrice.ReadOnly = true;
-            this.DollarPrice.Visible = false;
-            // 
-            // LBPPrice
-            // 
-            this.LBPPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Format = "#,0;-#,0";
-            this.LBPPrice.DefaultCellStyle = dataGridViewCellStyle2;
-            this.LBPPrice.FillWeight = 10F;
-            this.LBPPrice.HeaderText = "LBP";
-            this.LBPPrice.Name = "LBPPrice";
-            this.LBPPrice.ReadOnly = true;
-            this.LBPPrice.Visible = false;
-            // 
-            // TotalLBP
-            // 
-            this.TotalLBP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Format = "#,0;-#,0";
-            this.TotalLBP.DefaultCellStyle = dataGridViewCellStyle3;
-            this.TotalLBP.FillWeight = 10F;
-            this.TotalLBP.HeaderText = "Tot. LBP";
-            this.TotalLBP.Name = "TotalLBP";
-            this.TotalLBP.ReadOnly = true;
-            this.TotalLBP.Visible = false;
-            // 
-            // TotalDollar
-            // 
-            this.TotalDollar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TotalDollar.FillWeight = 8F;
-            this.TotalDollar.HeaderText = "Tot. $";
-            this.TotalDollar.Name = "TotalDollar";
-            this.TotalDollar.ReadOnly = true;
-            this.TotalDollar.Visible = false;
-            // 
-            // TotalTVA
-            // 
-            this.TotalTVA.HeaderText = "Tot. TVA $";
-            this.TotalTVA.MinimumWidth = 200;
-            this.TotalTVA.Name = "TotalTVA";
-            this.TotalTVA.ReadOnly = true;
-            this.TotalTVA.Visible = false;
-            // 
-            // TotalDiscount
-            // 
-            this.TotalDiscount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TotalDiscount.FillWeight = 8F;
-            this.TotalDiscount.HeaderText = "Tot. % $";
-            this.TotalDiscount.Name = "TotalDiscount";
-            this.TotalDiscount.ReadOnly = true;
-            this.TotalDiscount.Visible = false;
-            // 
-            // CurrencyID
-            // 
-            this.CurrencyID.HeaderText = "CurrencyID";
-            this.CurrencyID.Name = "CurrencyID";
-            this.CurrencyID.ReadOnly = true;
-            this.CurrencyID.Visible = false;
             // 
             // total_panel
             // 
@@ -1127,6 +998,134 @@
             // 
             this.spselectReceiptsResultBindingSource.DataSource = typeof(MiniGram.LINQ.sp_selectReceiptsResult);
             // 
+            // Barcode
+            // 
+            this.Barcode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Barcode.HeaderText = "Barcode";
+            this.Barcode.Name = "Barcode";
+            this.Barcode.ReadOnly = true;
+            this.Barcode.Visible = false;
+            this.Barcode.Width = 120;
+            // 
+            // PNAME
+            // 
+            this.PNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PNAME.HeaderText = "Name";
+            this.PNAME.Name = "PNAME";
+            this.PNAME.ReadOnly = true;
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SupplierName.FillWeight = 20F;
+            this.SupplierName.HeaderText = "Supplier Name";
+            this.SupplierName.Name = "SupplierName";
+            this.SupplierName.ReadOnly = true;
+            this.SupplierName.Visible = false;
+            // 
+            // QTE
+            // 
+            this.QTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.QTE.HeaderText = "Qte.";
+            this.QTE.Name = "QTE";
+            this.QTE.ReadOnly = true;
+            this.QTE.Width = 60;
+            // 
+            // UnitPrice
+            // 
+            this.UnitPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.UnitPrice.HeaderText = "Unit Price";
+            this.UnitPrice.Name = "UnitPrice";
+            this.UnitPrice.ReadOnly = true;
+            this.UnitPrice.Width = 120;
+            // 
+            // LBPPrice
+            // 
+            this.LBPPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle2.Format = "#,0;-#,0";
+            this.LBPPrice.DefaultCellStyle = dataGridViewCellStyle2;
+            this.LBPPrice.HeaderText = "LBP";
+            this.LBPPrice.Name = "LBPPrice";
+            this.LBPPrice.ReadOnly = true;
+            this.LBPPrice.Width = 120;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.TotalPrice.HeaderText = "Total Price";
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            this.TotalPrice.Width = 120;
+            // 
+            // SecondPrice
+            // 
+            this.SecondPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.SecondPrice.HeaderText = "Emp. Price";
+            this.SecondPrice.Name = "SecondPrice";
+            this.SecondPrice.ReadOnly = true;
+            this.SecondPrice.Width = 120;
+            // 
+            // Currency
+            // 
+            this.Currency.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Currency.HeaderText = "Curr.";
+            this.Currency.Name = "Currency";
+            this.Currency.ReadOnly = true;
+            this.Currency.Width = 60;
+            // 
+            // DollarPrice
+            // 
+            this.DollarPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DollarPrice.FillWeight = 8F;
+            this.DollarPrice.HeaderText = "Dollar";
+            this.DollarPrice.Name = "DollarPrice";
+            this.DollarPrice.ReadOnly = true;
+            this.DollarPrice.Visible = false;
+            // 
+            // TotalLBP
+            // 
+            this.TotalLBP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Format = "#,0;-#,0";
+            this.TotalLBP.DefaultCellStyle = dataGridViewCellStyle3;
+            this.TotalLBP.FillWeight = 10F;
+            this.TotalLBP.HeaderText = "Tot. LBP";
+            this.TotalLBP.Name = "TotalLBP";
+            this.TotalLBP.ReadOnly = true;
+            this.TotalLBP.Visible = false;
+            // 
+            // TotalDollar
+            // 
+            this.TotalDollar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TotalDollar.FillWeight = 8F;
+            this.TotalDollar.HeaderText = "Tot. $";
+            this.TotalDollar.Name = "TotalDollar";
+            this.TotalDollar.ReadOnly = true;
+            this.TotalDollar.Visible = false;
+            // 
+            // TotalTVA
+            // 
+            this.TotalTVA.HeaderText = "Tot. TVA $";
+            this.TotalTVA.MinimumWidth = 200;
+            this.TotalTVA.Name = "TotalTVA";
+            this.TotalTVA.ReadOnly = true;
+            this.TotalTVA.Visible = false;
+            // 
+            // TotalDiscount
+            // 
+            this.TotalDiscount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TotalDiscount.FillWeight = 8F;
+            this.TotalDiscount.HeaderText = "Tot. % $";
+            this.TotalDiscount.Name = "TotalDiscount";
+            this.TotalDiscount.ReadOnly = true;
+            this.TotalDiscount.Visible = false;
+            // 
+            // CurrencyID
+            // 
+            this.CurrencyID.HeaderText = "CurrencyID";
+            this.CurrencyID.Name = "CurrencyID";
+            this.CurrencyID.ReadOnly = true;
+            this.CurrencyID.Visible = false;
+            // 
             // POSUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1208,11 +1207,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
         private System.Windows.Forms.DataGridViewTextBoxColumn QTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LBPPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn SecondPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Currency;
         private System.Windows.Forms.DataGridViewTextBoxColumn DollarPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LBPPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalLBP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalDollar;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalTVA;

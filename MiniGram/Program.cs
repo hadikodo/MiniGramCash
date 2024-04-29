@@ -28,37 +28,37 @@ namespace MiniGram
 
 
 
-            Thread thread = new Thread(async () =>
-            {
-                try
-                {
-                    string timeServerUrl = "http://worldclockapi.com/api/json/utc/now"; // You can replace this URL with any time server URL
+            //Thread thread = new Thread(async () =>
+            //{
+            //    try
+            //    {
+            //        string timeServerUrl = "http://worldclockapi.com/api/json/utc/now"; // You can replace this URL with any time server URL
 
-                    using (HttpClient client = new HttpClient())
-                    {
-                        HttpResponseMessage response = await client.GetAsync(timeServerUrl);
+            //        using (HttpClient client = new HttpClient())
+            //        {
+            //            HttpResponseMessage response = await client.GetAsync(timeServerUrl);
 
-                        if (response.IsSuccessStatusCode)
-                        {
-                            string jsonString = await response.Content.ReadAsStringAsync();
-                            dynamic result = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonString);
-                            string currentTime = result.currentDateTime;
+            //            if (response.IsSuccessStatusCode)
+            //            {
+            //                string jsonString = await response.Content.ReadAsStringAsync();
+            //                dynamic result = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonString);
+            //                string currentTime = result.currentDateTime;
 
-                            DateTime internetTime = DateTime.Parse(currentTime);
+            //                DateTime internetTime = DateTime.Parse(currentTime);
 
-                            SetSystemTime(internetTime);
+            //                SetSystemTime(internetTime);
 
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("An error occurred: " + ex.Message);
-                }
-                Thread.CurrentThread.Abort();
+            //            }
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine("An error occurred: " + ex.Message);
+            //    }
+            //    Thread.CurrentThread.Abort();
 
-            });
-            thread.Start();
+            //});
+            //thread.Start();
 
             using (var conn = new SqlConnection(Globals.ConnectionString))
             {
