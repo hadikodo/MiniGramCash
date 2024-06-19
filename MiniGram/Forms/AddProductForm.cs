@@ -60,7 +60,7 @@ namespace MiniGram.Forms
             List<LINQ.TBLPRODUCT> products = new List<TBLPRODUCT>();
             using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                products = (from aj in cnx.TBLPRODUCTs where aj.BARCODE == barcode_txt.Text select aj).ToList();
+                products = (from aj in cnx.TBLPRODUCTs where aj.ENABLED == true && ( aj.BARCODE == barcode_txt.Text ) select aj).ToList();
             }
             if (products.Count > 0)
             {

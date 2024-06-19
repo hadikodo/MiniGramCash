@@ -17,7 +17,7 @@ namespace MiniGram.Controls
 {
     public partial class ReceiptsUC : UserControl
     {
-        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
+        //private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
         private int time = 0;
 
         public ReceiptsUC()
@@ -88,19 +88,22 @@ namespace MiniGram.Controls
 
                 if (cboxReceiptsType.SelectedValue.ToString() == "1" || cboxReceiptsType.SelectedValue.ToString() == "2" || cboxReceiptsType.SelectedValue.ToString() == "6")
                 {
-                    TBLRECEIPT receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == RID select aj).SingleOrDefault();
-                    //double? finaldollar = receipt.TOTAL_AMOUNTDollar - receipt.TotalDiscount + receipt.TotalTVA;
-                    int? finalLBP = receipt.TOTAL_AMOUNTLBP;
-                    double? finaldollar = Math.Round(Double.Parse(finalLBP.ToString()) / Double.Parse(Properties.Settings.Default.BuyDollarLBPPrice.ToString()),3);
-
-                    Thread tr = new Thread(() =>
+                    using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
                     {
-                        DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, receipt.ReceiptTypeID, receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
-                        drrv.receiptID = RID;
-                        drrv.Print();
-                        Thread.CurrentThread.Abort();
-                    });
-                    tr.Start();
+                        TBLRECEIPT receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == RID select aj).SingleOrDefault();
+                        //double? finaldollar = receipt.TOTAL_AMOUNTDollar - receipt.TotalDiscount + receipt.TotalTVA;
+                        int? finalLBP = receipt.TOTAL_AMOUNTLBP;
+                        double? finaldollar = Math.Round(Double.Parse(finalLBP.ToString()) / Double.Parse(Properties.Settings.Default.BuyDollarLBPPrice.ToString()), 3);
+
+                        Thread tr = new Thread(() =>
+                        {
+                            DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, receipt.ReceiptTypeID, receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
+                            drrv.receiptID = RID;
+                            drrv.Print();
+                            Thread.CurrentThread.Abort();
+                        });
+                        tr.Start();
+                    }
                 }
             }
             if (e.ColumnIndex == ShowMore.Index)
@@ -147,7 +150,8 @@ namespace MiniGram.Controls
         {
             if (cboxReceiptsType.SelectedValue.ToString() == "1" || cboxReceiptsType.SelectedValue.ToString() == "2" || cboxReceiptsType.SelectedValue.ToString() == "6")
             {
-                spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts(str).Where((aj) => !aj.isHold && aj.ReceiptTypeID.ToString() == cboxReceiptsType.SelectedValue.ToString());
+                using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString)) 
+                    spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts(str).Where((aj) => !aj.isHold && aj.ReceiptTypeID.ToString() == cboxReceiptsType.SelectedValue.ToString());
                 dataGridView1.Visible = true;
                 dataGridView1.Dock = DockStyle.Fill;
                 dataGridView1.Refresh();

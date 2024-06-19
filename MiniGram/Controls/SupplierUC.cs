@@ -16,7 +16,7 @@ namespace MiniGram
 {
     public partial class SupplierUC : UserControl
     {
-        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
+       // private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
         public SupplierUC()
         {
             InitializeComponent();
@@ -32,7 +32,8 @@ namespace MiniGram
         }
         public void refreshData()
         {
-            spselectsuppliersResultBindingSource.DataSource = cnx.sp_select_suppliers("");
+            using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+                spselectsuppliersResultBindingSource.DataSource = cnx.sp_select_suppliers("");
             dataGridView1.Refresh();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
@@ -64,13 +65,15 @@ namespace MiniGram
 
         private void enable_btn_Click(object sender, EventArgs e)
         {
-            cnx.sp_enableSupplierByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+                cnx.sp_enableSupplierByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
             refreshData();
         }
 
         private void disable_btn_Click(object sender, EventArgs e)
         {
-            cnx.sp_disableSupplierByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+                cnx.sp_disableSupplierByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
             refreshData();
         }
 
@@ -121,7 +124,8 @@ namespace MiniGram
         {
             try
             {
-                spselectsuppliersResultBindingSource.DataSource = cnx.sp_select_suppliers(search_txt.Text);
+                using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+                    spselectsuppliersResultBindingSource.DataSource = cnx.sp_select_suppliers(search_txt.Text);
                 dataGridView1.Refresh();
             }
             catch (Exception ex)

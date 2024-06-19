@@ -15,7 +15,7 @@ namespace MiniGram.Forms
 {
     public partial class DirectReceiptReportViewer : Form
     {
-        private MiniGramDBDataContext data = new MiniGramDBDataContext(Globals.ConnectionString);
+        //private MiniGramDBDataContext data = new MiniGramDBDataContext(Globals.ConnectionString);
         public int receiptID;
         protected int sizeType;
         protected int typeID;
@@ -29,7 +29,8 @@ namespace MiniGram.Forms
             this.FinalLBPPrice = FinalLBPPrice;
             this.FinalDollarPrice = FinalDollarPrice;
             this.typeID = ReceiptType;
-            this.type = (from aj in data.TBLRECEIPTTYPEs where aj.ID == ReceiptType select aj.TypeName).ToList()[0];
+            using (var data = new MiniGramDBDataContext(Globals.ConnectionString))
+                this.type = (from aj in data.TBLRECEIPTTYPEs where aj.ID == ReceiptType select aj.TypeName).ToList()[0];
             InitializeComponent();
         }
 

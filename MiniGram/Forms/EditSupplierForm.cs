@@ -16,7 +16,7 @@ namespace MiniGram.Forms
     public partial class EditSupplierForm : Form
     {
         private int SupplierID;
-        private MiniGramDBDataContext data = new MiniGramDBDataContext(Globals.ConnectionString);
+       // private MiniGramDBDataContext data = new MiniGramDBDataContext(Globals.ConnectionString);
         public EditSupplierForm(int SID)
         {
             InitializeComponent();
@@ -26,14 +26,17 @@ namespace MiniGram.Forms
         private void EditItemForm_Load(object sender, EventArgs e)
         {
             warning_lable.Visible = false;
-            var supp = (from i in data.TBLSUPPLIERs
-                        where i.SID == SupplierID
-                        select i).ToList();
-            if (supp != null)
+            using (var data = new MiniGramDBDataContext(Globals.ConnectionString))
             {
-                suppname_txt.Text = supp[0].SNAME;
-                email_txt.Text = supp[0].SEMAIL;
-                phone_txt.Text = supp[0].SPHONE;
+                var supp = (from i in data.TBLSUPPLIERs
+                            where i.SID == SupplierID
+                            select i).ToList();
+                if (supp != null)
+                {
+                    suppname_txt.Text = supp[0].SNAME;
+                    email_txt.Text = supp[0].SEMAIL;
+                    phone_txt.Text = supp[0].SPHONE;
+                }
             }
         }
 

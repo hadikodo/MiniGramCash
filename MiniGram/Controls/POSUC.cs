@@ -96,7 +96,7 @@ namespace MiniGram.Controls
                     {
                         double discount = 0;
                         var holdItem = (from aj in data.TBLHOLDDETAILs where aj.PID == product.PID && aj.RID == receipt.RID select aj).Single();
-                        string pname = product.PNAME;
+                        int productID = product.PID;
 
                         //int ExistingRowQTE = (from aj in receipt_details.Rows.Cast<DataGridViewRow>() where aj.Cells["PNAME"].Value.ToString() == pname select int.Parse(aj.Cells["QTE"].Value.ToString())).SingleOrDefault();
                         int ExistingRowQTE = int.Parse(holdItem.QTE.ToString());
@@ -126,7 +126,7 @@ namespace MiniGram.Controls
                             }
                             else
                             {
-                                MessageBox.Show("Your Stock in in Negative, This item is out of Stock, Please Check Your Stock Quantity of Product Name : " + pname + " .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Your Stock in in Negative, This item is out of Stock, Please Check Your Stock Quantity of Product Name : " + product.PNAME + " .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
                         }
@@ -148,7 +148,7 @@ namespace MiniGram.Controls
                         {
                             foreach (DataGridViewRow row in receipt_details.Rows)
                             {
-                                if (row.Cells["PNAME"].Value.Equals(pname))
+                                if (row.Cells["Barcode"].Value.Equals(product.BARCODE))
                                 {
                                     exist = true;
                                     row.Cells["SupplierName"].Value = supplier;
@@ -174,7 +174,7 @@ namespace MiniGram.Controls
                             }
                             if (!exist)
                             {
-                                receipt_details.Rows.Add(barcode, pname, supplier, 1, unitprice, Globals.LBPRounding(lbp), unitprice, secondaryPrice, currency.CurrencyName, dollar, Globals.LBPRounding(lbp), dollar, tva, discount, product.CurrencyID);
+                                receipt_details.Rows.Add(barcode, product.PNAME, supplier, 1, unitprice, Globals.LBPRounding(lbp), unitprice, secondaryPrice, currency.CurrencyName, dollar, Globals.LBPRounding(lbp), dollar, tva, discount, product.CurrencyID);
                                 tot_quantity.Text = getTotalQTE();
                                 tot_net_dollar.Text = getTotalPrice() + " $";
                                 tot_tva.Text = (Double.Parse(getTotalTVA())).ToString() + " $";
@@ -213,11 +213,11 @@ namespace MiniGram.Controls
                     table.Dock = DockStyle.Fill;
                     products_panel.Padding = new Padding(0, 20, 0, 20);
                     table.ColumnCount = 1;
-                    table.RowCount = 101; //(int.Parse(data.sp_getProductsCount(str).ToList()[0].Product_Number.ToString()) / table.ColumnCount) + 1;
+                    table.RowCount = (products.Count / table.ColumnCount) + 1;
                     products_panel.AutoScrollMinSize = new Size(0, (table.RowCount + 1) * 100);
-                    int i = 0, j = 0, c = 0, p = 50;
-                    //if (p > 100)
-                    //    p = 100;
+                    int i = 0, j = 0, c = 0, p = products.Count;
+                    if (p > 50)
+                        p = 50;
 
                     while (i < table.RowCount)
                     {
@@ -324,7 +324,7 @@ namespace MiniGram.Controls
                         {
                             try
                             {
-                                var product = cnx.sp_getProductByName(row.Cells["PNAME"].Value.ToString()).ToList();
+                                var product = (from aj in cnx.TBLPRODUCTs where aj.ENABLED == true && aj.BARCODE == row.Cells["Barcode"].Value.ToString() select aj).ToList();
                                 if (product[0].HasQuantity == true)
                                 {
 
@@ -573,7 +573,7 @@ namespace MiniGram.Controls
                         lblDiscount.Text = "Employee Discount";
                         Globals.draftStockTempQte.Clear();
                         cardNumber = "";
-                        Properties.Settings.Default.BuyDollarLBPPrice = Properties.Settings.Default.dollarLBPPrice;
+                        Properties.Settings.Default.BuyDollarLBPPrice = Properties.Settings.Default.BuyDollarLBPPrice;
                         Properties.Settings.Default.dollarLBPPrice = Properties.Settings.Default.dollarLBPPrice;
                         Properties.Settings.Default.Save();
                         try
@@ -616,7 +616,7 @@ namespace MiniGram.Controls
             cboxDiscount.CheckState = CheckState.Unchecked;
             lblDiscount.Text = "Employee Discount";
             cardNumber = "";
-            Properties.Settings.Default.BuyDollarLBPPrice = Properties.Settings.Default.dollarLBPPrice;
+            Properties.Settings.Default.BuyDollarLBPPrice = Properties.Settings.Default.BuyDollarLBPPrice;
             Properties.Settings.Default.dollarLBPPrice = Properties.Settings.Default.dollarLBPPrice;
             Properties.Settings.Default.Save();
             Globals.draftStockTempQte.Clear();
@@ -660,6 +660,7 @@ namespace MiniGram.Controls
                 button.CanApplyTheme = true;
                 button.Style.HoverBorder.Color = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
                 button.Style.HoverBorder.Width = 0;
+                button.Tag = products[c].ID;
                 button.Click += new EventHandler(add_btn_Click);
                 table.Controls.Add(button, j, i);
             }
@@ -740,11 +741,11 @@ namespace MiniGram.Controls
                 using (var data = new MiniGramDBDataContext(Globals.ConnectionString))
                 {
                     Globals.isReceiptOpen = true;
-                    string pname = (sender as SfButton).Text.Split('|')[0];
+                    int productID = int.Parse((sender as SfButton).Tag.ToString());
 
-                    TBLPRODUCT product = (from aj in data.TBLPRODUCTs where aj.ENABLED == true && aj.PNAME == pname select aj).SingleOrDefault();
+                    TBLPRODUCT product = (from aj in data.TBLPRODUCTs where aj.ENABLED == true && aj.PID == productID select aj).SingleOrDefault();
 
-                    int ExistingRowQTE = (from aj in receipt_details.Rows.Cast<DataGridViewRow>() where aj.Cells["PNAME"].Value.ToString() == pname select int.Parse(aj.Cells["QTE"].Value.ToString())).SingleOrDefault();
+                    int ExistingRowQTE = (from aj in receipt_details.Rows.Cast<DataGridViewRow>() where aj.Cells["Barcode"].Value.ToString() == product.BARCODE select int.Parse(aj.Cells["QTE"].Value.ToString())).SingleOrDefault();
                     if (!Globals.draftStockTempQte.ContainsKey(product.PID))
                         Globals.draftStockTempQte.Add(product.PID, 0);
                     int productCurrencyID = product.CurrencyID;
@@ -785,7 +786,7 @@ namespace MiniGram.Controls
                             }
                             else
                             {
-                                MessageBox.Show("Your Stock in in Negative, This item is out of Stock, Please Check Your Stock Quantity of Product Name : " + pname + " .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Your Stock in in Negative, This item is out of Stock, Please Check Your Stock Quantity of Product Name : " + product.PNAME + " .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
                         }
@@ -834,7 +835,7 @@ namespace MiniGram.Controls
                     bool exist = false;
                     foreach (DataGridViewRow row in receipt_details.Rows)
                     {
-                        if (row.Cells["PNAME"].Value.Equals(pname))
+                        if (row.Cells["Barcode"].Value.Equals(product.BARCODE))
                         {
                             exist = true;
                             row.Cells["SupplierName"].Value = supplier;
@@ -863,7 +864,7 @@ namespace MiniGram.Controls
                     }
                     if (!exist)
                     {
-                        receipt_details.Rows.Add(barcode, pname, supplier, inputQte, currency.ID == 1 ? Globals.LBPRounding(unitprice) : unitprice, Globals.LBPRounding(lbp), currency.ID == 1 ? Globals.LBPRounding(unitprice) : unitprice, currency.ID == 1 ? Globals.LBPRounding(secondaryPrice) : secondaryPrice, currency.CurrencyName, dollar, Globals.LBPRounding(lbp), dollar, tva, discount, currency.ID);
+                        receipt_details.Rows.Add(barcode, product.PNAME, supplier, inputQte, currency.ID == 1 ? Globals.LBPRounding(unitprice) : unitprice, Globals.LBPRounding(lbp), currency.ID == 1 ? Globals.LBPRounding(unitprice) : unitprice, currency.ID == 1 ? Globals.LBPRounding(secondaryPrice) : secondaryPrice, currency.CurrencyName, dollar, Globals.LBPRounding(lbp), dollar, tva, discount, currency.ID);
                         tot_quantity.Text = getTotalQTE();
                         tot_net_dollar.Text = getTotalPrice() + " $";
                         tot_discount.Text = getTotalLBP() + " LBP";
@@ -900,9 +901,7 @@ namespace MiniGram.Controls
                     Globals.newQteNb = 0;
                     ChangeQuantityForm cqf = new ChangeQuantityForm(int.Parse(receipt_details.SelectedRows[0].Cells["QTE"].Value.ToString()));
                     cqf.ShowDialog();
-
-                    string pname = receipt_details.SelectedRows[0].Cells["PNAME"].Value.ToString();
-                    TBLPRODUCT product = (from aj in data.TBLPRODUCTs where aj.ENABLED == true && aj.PNAME == pname select aj).SingleOrDefault();
+                    TBLPRODUCT product = (from aj in data.TBLPRODUCTs where aj.ENABLED == true && aj.BARCODE == receipt_details.SelectedRows[0].Cells["Barcode"].Value.ToString() select aj).SingleOrDefault();
                     int productCurrencyID = product.CurrencyID;
                     TBLCURRENCy currency = (from aj in data.TBLCURRENCies where aj.ID == productCurrencyID select aj).SingleOrDefault();
                     double unitprice = product.PRICE.Value * receiptSwitcherValue;
@@ -941,7 +940,7 @@ namespace MiniGram.Controls
                             }
                             else
                             {
-                                MessageBox.Show("Your Stock in in Negative, This item is out of Stock, Please Check Your Stock Quantity of Product Name : " + pname + " .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Your Stock in in Negative, This item is out of Stock, Please Check Your Stock Quantity of Product Name : " + product.PNAME + " .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
                         }
@@ -1021,13 +1020,14 @@ namespace MiniGram.Controls
                 {
                     foreach (DataGridViewRow row in receipt_details.Rows)
                     {
-                        string pname = row.Cells["PNAME"].Value.ToString();
+                        string barcode = row.Cells["Barcode"].Value.ToString();
+                        TBLPRODUCT product = (from aj in data.TBLPRODUCTs where aj.ENABLED == true && aj.BARCODE == barcode select aj).SingleOrDefault();
                         int productCurrency = int.Parse(row.Cells["CurrencyID"].Value.ToString());
                         TBLCURRENCy currency = (from aj in data.TBLCURRENCies where aj.ID == productCurrency select aj).SingleOrDefault();
                         double dollar = Math.Round(productCurrency == 2 ? Double.Parse(row.Cells["DollarPrice"].Value.ToString()) : Double.Parse(row.Cells["LBPPrice"].Value.ToString()) / Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()), 3);
                         double secondaryPrice = Double.Parse(row.Cells["SecondPrice"].Value.ToString());
                         double secondaryPriceDollar = Math.Round(productCurrency == 2 ? secondaryPrice : Double.Parse(secondaryPrice.ToString()) / Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()), 3);
-                        double tva = data.sp_getProductByName(pname).ToList()[0].HasTVA ? (secondaryPriceDollar * Double.Parse(Properties.Settings.Default.TVAPercentage.ToString()) / 100) : 0;
+                        double tva = product.HasTVA ? (secondaryPriceDollar * Double.Parse(Properties.Settings.Default.TVAPercentage.ToString()) / 100) : 0;
                         double unitprice = Double.Parse(row.Cells["UnitPrice"].Value.ToString());
                         double discount = 0;
                         if (discountSelection == CheckState.Unchecked)
@@ -1040,7 +1040,7 @@ namespace MiniGram.Controls
                         }
                         else if (discountSelection == CheckState.Indeterminate)
                         {
-                            discount = Math.Round(data.sp_getProductByName(pname).ToList()[0].DiscountPercentage == null ? 0 : Double.Parse((dollar * Double.Parse(data.sp_getProductByName(pname).ToList()[0].DiscountPercentage.ToString())).ToString()) / 100, 3);
+                            discount = Math.Round(product.DiscountPercentage == null ? 0 : Double.Parse((dollar * Double.Parse(product.DiscountPercentage.ToString())).ToString()) / 100, 3);
                         }
                         row.Cells["SecondPrice"].Value = secondaryPrice;
                         row.Cells["TotalDiscount"].Value = discount;
@@ -1075,9 +1075,9 @@ namespace MiniGram.Controls
                     Globals.newQteNb = 0;
                     DeleteForm df = new DeleteForm(int.Parse(receipt_details.SelectedRows[0].Cells["QTE"].Value.ToString()));
                     df.ShowDialog();
-                    string pname = receipt_details.SelectedRows[0].Cells["PNAME"].Value.ToString();
-                    TBLPRODUCT product = (from aj in data.TBLPRODUCTs where aj.ENABLED == true && aj.PNAME == pname select aj).SingleOrDefault();
-                    int ExistingRowQTE = (from aj in receipt_details.Rows.Cast<DataGridViewRow>() where aj.Cells["PNAME"].Value.ToString() == pname select int.Parse(aj.Cells["QTE"].Value.ToString())).SingleOrDefault();
+                    string barcode = receipt_details.SelectedRows[0].Cells["Barcode"].Value.ToString();
+                    TBLPRODUCT product = (from aj in data.TBLPRODUCTs where aj.ENABLED == true && aj.BARCODE == barcode select aj).SingleOrDefault();
+                    int ExistingRowQTE = (from aj in receipt_details.Rows.Cast<DataGridViewRow>() where aj.Cells["Barcode"].Value.ToString() == barcode select int.Parse(aj.Cells["QTE"].Value.ToString())).SingleOrDefault();
                     if (Globals.newQteNb != 0)
                     {
                         int productCurrencyID = product.CurrencyID;
@@ -1086,74 +1086,74 @@ namespace MiniGram.Controls
                         double secondaryPrice = product.SecondaryPrice.Value * receiptSwitcherValue;
                         double secondaryPriceDollar = Math.Round(product.CurrencyID == 2 ? secondaryPrice : Double.Parse(secondaryPrice.ToString()) / Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()), 3);
                         double unitprice = product.PRICE.Value * receiptSwitcherValue;
-                        List<TBLDELIVERY_RECEIPTS_DETAIL> HeldCurrentProductStock = (from aj in data.TBLDELIVERY_RECEIPTS_DETAILs join az in data.TBLDELIVERY_RECEIPTs on aj.RID equals az.ID where aj.PID == product.PID && aj.isInSale == false && az.StatusID >= 2 && az.ReceiptDate.Value.Date <= DateTime.Today.Date && aj.Quantity + (product.QTE <= 0 ? 0 : product.QTE) >= (aj.inStockQuantity + ExistingRowQTE - Globals.newQteNb) orderby aj.dateCreated ascending select aj).ToList();
-                        if (ExistingRowQTE - Globals.newQteNb > 0)
-                        {
+                        //List<TBLDELIVERY_RECEIPTS_DETAIL> HeldCurrentProductStock = (from aj in data.TBLDELIVERY_RECEIPTS_DETAILs join az in data.TBLDELIVERY_RECEIPTs on aj.RID equals az.ID where aj.PID == product.PID && aj.isInSale == false && az.StatusID >= 2 && az.ReceiptDate.Value.Date <= DateTime.Today.Date && aj.Quantity + (product.QTE <= 0 ? 0 : product.QTE) >= (aj.inStockQuantity + ExistingRowQTE - Globals.newQteNb) orderby aj.dateCreated ascending select aj).ToList();
+                        //if (ExistingRowQTE - Globals.newQteNb > 0)
+                        //{
 
-                            if (receiptSwitcherValue == 1)
-                            {
-                                if (product.HasQuantity == true && ExistingRowQTE + Globals.newQteNb > product.QTE)
-                                {
-                                    if (HeldCurrentProductStock.Count > 0)
-                                    {
-                                        int HoldProductCurrencyID = (from aj in data.TBLDELIVERY_RECEIPTs where aj.ID == HeldCurrentProductStock[0].RID select int.Parse(aj.CurrencyID.ToString())).SingleOrDefault();
-                                        double holdProductPrice = Double.Parse(HeldCurrentProductStock[0].SellPrice.ToString()) * receiptSwitcherValue;
-                                        double holdProductDollarPrice = Math.Round((HoldProductCurrencyID == 1 ? holdProductPrice / Int64.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()) : holdProductPrice), 3);
-                                        double holdProductSecondaryPrice = Double.Parse(HeldCurrentProductStock[0].SecondaryPrice.ToString()) * receiptSwitcherValue;
-                                        double holdProductSecondaryPriceDollar = Math.Round((HoldProductCurrencyID == 1 ? holdProductSecondaryPrice / Int64.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()) : holdProductSecondaryPrice), 3);
-                                        dollar = Math.Max(holdProductDollarPrice, dollar);
-                                        secondaryPriceDollar = dollar == holdProductDollarPrice ? holdProductSecondaryPriceDollar : secondaryPriceDollar;
-                                        secondaryPrice = dollar == holdProductDollarPrice ? holdProductSecondaryPrice : secondaryPrice;
-                                        productCurrencyID = dollar == holdProductDollarPrice ? HoldProductCurrencyID : productCurrencyID;
-                                        if (HoldProductCurrencyID == currency.ID)
-                                        {
-                                            unitprice = Math.Round(product.CurrencyID == 2 ? Math.Max(holdProductDollarPrice, unitprice) : Double.Parse((Math.Max(holdProductPrice, unitprice)).ToString()), 3);
-                                            currency = (from aj in data.TBLCURRENCies where aj.ID == productCurrencyID select aj).SingleOrDefault();
-                                        }
-                                        else
-                                        {
-                                            unitprice = Math.Round(product.CurrencyID == 2 ? Math.Max(holdProductPrice, unitprice * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())) : Double.Parse((Math.Max(holdProductPrice, unitprice)).ToString()), 3);
-                                            currency = (from aj in data.TBLCURRENCies where aj.ID == productCurrencyID select aj).SingleOrDefault();
-                                        }
+                        //    if (receiptSwitcherValue == 1)
+                        //    {
+                        //        //if (product.HasQuantity == true && ExistingRowQTE + Globals.newQteNb > product.QTE)
+                        //        //{
+                        //        //    if (HeldCurrentProductStock.Count > 0)
+                        //        //    {
+                        //        //        int HoldProductCurrencyID = (from aj in data.TBLDELIVERY_RECEIPTs where aj.ID == HeldCurrentProductStock[0].RID select int.Parse(aj.CurrencyID.ToString())).SingleOrDefault();
+                        //        //        double holdProductPrice = Double.Parse(HeldCurrentProductStock[0].SellPrice.ToString()) * receiptSwitcherValue;
+                        //        //        double holdProductDollarPrice = Math.Round((HoldProductCurrencyID == 1 ? holdProductPrice / Int64.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()) : holdProductPrice), 3);
+                        //        //        double holdProductSecondaryPrice = Double.Parse(HeldCurrentProductStock[0].SecondaryPrice.ToString()) * receiptSwitcherValue;
+                        //        //        double holdProductSecondaryPriceDollar = Math.Round((HoldProductCurrencyID == 1 ? holdProductSecondaryPrice / Int64.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()) : holdProductSecondaryPrice), 3);
+                        //        //        dollar = Math.Max(holdProductDollarPrice, dollar);
+                        //        //        secondaryPriceDollar = dollar == holdProductDollarPrice ? holdProductSecondaryPriceDollar : secondaryPriceDollar;
+                        //        //        secondaryPrice = dollar == holdProductDollarPrice ? holdProductSecondaryPrice : secondaryPrice;
+                        //        //        productCurrencyID = dollar == holdProductDollarPrice ? HoldProductCurrencyID : productCurrencyID;
+                        //        //        if (HoldProductCurrencyID == currency.ID)
+                        //        //        {
+                        //        //            unitprice = Math.Round(product.CurrencyID == 2 ? Math.Max(holdProductDollarPrice, unitprice) : Double.Parse((Math.Max(holdProductPrice, unitprice)).ToString()), 3);
+                        //        //            currency = (from aj in data.TBLCURRENCies where aj.ID == productCurrencyID select aj).SingleOrDefault();
+                        //        //        }
+                        //        //        else
+                        //        //        {
+                        //        //            unitprice = Math.Round(product.CurrencyID == 2 ? Math.Max(holdProductPrice, unitprice * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())) : Double.Parse((Math.Max(holdProductPrice, unitprice)).ToString()), 3);
+                        //        //            currency = (from aj in data.TBLCURRENCies where aj.ID == productCurrencyID select aj).SingleOrDefault();
+                        //        //        }
 
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Your Stock in in Negative, This item is out of Stock, Please Check Your Stock Quantity of Product Name : " + pname + " .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                        return;
-                                    }
-                                }
-                                Globals.draftStockTempQte[product.PID] = Globals.newQteNb * receiptSwitcherValue;
-                            }
-                            else if (receiptSwitcherValue == -1)
-                            {
-                                if (HeldCurrentProductStock.Count > 0)
-                                {
-                                    int HoldProductCurrencyID = (from aj in data.TBLDELIVERY_RECEIPTs where aj.ID == HeldCurrentProductStock[0].RID select int.Parse(aj.CurrencyID.ToString())).SingleOrDefault();
-                                    double holdProductPrice = Double.Parse(HeldCurrentProductStock[0].SellPrice.ToString()) * receiptSwitcherValue;
-                                    double holdProductDollarPrice = Math.Round((HoldProductCurrencyID == 1 ? holdProductPrice / Int64.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()) : holdProductPrice), 3);
-                                    double holdProductSecondaryPrice = Double.Parse(HeldCurrentProductStock[0].SecondaryPrice.ToString()) * receiptSwitcherValue;
-                                    double holdProductSecondaryPriceDollar = Math.Round((HoldProductCurrencyID == 1 ? holdProductSecondaryPrice / Int64.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()) : holdProductSecondaryPrice), 3);
-                                    dollar = Math.Max(holdProductDollarPrice, dollar);
-                                    secondaryPriceDollar = dollar == holdProductDollarPrice ? holdProductSecondaryPriceDollar : secondaryPriceDollar;
-                                    secondaryPrice = dollar == holdProductDollarPrice ? holdProductSecondaryPrice : secondaryPrice;
-                                    productCurrencyID = dollar == holdProductDollarPrice ? HoldProductCurrencyID : productCurrencyID;
-                                    if (HoldProductCurrencyID == currency.ID)
-                                    {
-                                        unitprice = Math.Round(product.CurrencyID == 2 ? Math.Max(holdProductDollarPrice, unitprice) : Double.Parse((Math.Max(holdProductPrice, unitprice)).ToString()), 3);
-                                        currency = (from aj in data.TBLCURRENCies where aj.ID == productCurrencyID select aj).SingleOrDefault();
-                                    }
-                                    else
-                                    {
-                                        unitprice = Math.Round(product.CurrencyID == 2 ? Math.Max(holdProductPrice, unitprice * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())) : Double.Parse((Math.Max(holdProductPrice, unitprice)).ToString()), 3);
-                                        currency = (from aj in data.TBLCURRENCies where aj.ID == productCurrencyID select aj).SingleOrDefault();
-                                    }
+                        //        //    }
+                        //        //    else
+                        //        //    {
+                        //        //        MessageBox.Show("Your Stock in in Negative, This item is out of Stock, Please Check Your Stock Quantity of Product Name : " + pname + " .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //        //        return;
+                        //        //    }
+                        //        //}
+                        //        Globals.draftStockTempQte[product.PID] = Globals.newQteNb * receiptSwitcherValue;
+                        //    }
+                        //    else if (receiptSwitcherValue == -1)
+                        //    {
+                        //        //if (HeldCurrentProductStock.Count > 0)
+                        //        //{
+                        //        //    int HoldProductCurrencyID = (from aj in data.TBLDELIVERY_RECEIPTs where aj.ID == HeldCurrentProductStock[0].RID select int.Parse(aj.CurrencyID.ToString())).SingleOrDefault();
+                        //        //    double holdProductPrice = Double.Parse(HeldCurrentProductStock[0].SellPrice.ToString()) * receiptSwitcherValue;
+                        //        //    double holdProductDollarPrice = Math.Round((HoldProductCurrencyID == 1 ? holdProductPrice / Int64.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()) : holdProductPrice), 3);
+                        //        //    double holdProductSecondaryPrice = Double.Parse(HeldCurrentProductStock[0].SecondaryPrice.ToString()) * receiptSwitcherValue;
+                        //        //    double holdProductSecondaryPriceDollar = Math.Round((HoldProductCurrencyID == 1 ? holdProductSecondaryPrice / Int64.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()) : holdProductSecondaryPrice), 3);
+                        //        //    dollar = Math.Max(holdProductDollarPrice, dollar);
+                        //        //    secondaryPriceDollar = dollar == holdProductDollarPrice ? holdProductSecondaryPriceDollar : secondaryPriceDollar;
+                        //        //    secondaryPrice = dollar == holdProductDollarPrice ? holdProductSecondaryPrice : secondaryPrice;
+                        //        //    productCurrencyID = dollar == holdProductDollarPrice ? HoldProductCurrencyID : productCurrencyID;
+                        //        //    if (HoldProductCurrencyID == currency.ID)
+                        //        //    {
+                        //        //        unitprice = Math.Round(product.CurrencyID == 2 ? Math.Max(holdProductDollarPrice, unitprice) : Double.Parse((Math.Max(holdProductPrice, unitprice)).ToString()), 3);
+                        //        //        currency = (from aj in data.TBLCURRENCies where aj.ID == productCurrencyID select aj).SingleOrDefault();
+                        //        //    }
+                        //        //    else
+                        //        //    {
+                        //        //        unitprice = Math.Round(product.CurrencyID == 2 ? Math.Max(holdProductPrice, unitprice * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())) : Double.Parse((Math.Max(holdProductPrice, unitprice)).ToString()), 3);
+                        //        //        currency = (from aj in data.TBLCURRENCies where aj.ID == productCurrencyID select aj).SingleOrDefault();
+                        //        //    }
 
-                                }
-                                Globals.draftStockTempQte[product.PID] = Globals.newQteNb * receiptSwitcherValue;
-                            }
-                        }
-                        else if (ExistingRowQTE - Globals.newQteNb == 0)
+                        //        //}
+                        //        Globals.draftStockTempQte[product.PID] = Globals.newQteNb * receiptSwitcherValue;
+                        //    }
+                        //}
+                        if (ExistingRowQTE - Globals.newQteNb == 0)
                         {
                             receipt_details.Rows.RemoveAt(receipt_details.SelectedRows[0].Index);
                             Globals.draftStockTempQte[product.PID] = 0;
@@ -1253,8 +1253,7 @@ namespace MiniGram.Controls
                             }
                             if (!Globals.draftStockTempQte.Keys.Contains(product.PID))
                                 Globals.draftStockTempQte.Add(product.PID, 0);
-                            string pname = product.PNAME;
-                            int ExistingRowQTE = (from aj in receipt_details.Rows.Cast<DataGridViewRow>() where aj.Cells["PNAME"].Value.ToString() == pname select int.Parse(aj.Cells["QTE"].Value.ToString())).SingleOrDefault();
+                            int ExistingRowQTE = (from aj in receipt_details.Rows.Cast<DataGridViewRow>() where aj.Cells["Barcode"].Value.ToString() == product.BARCODE select int.Parse(aj.Cells["QTE"].Value.ToString())).SingleOrDefault();
 
                             int productCurrencyID = product.CurrencyID;
                             TBLCURRENCy currency = (from aj in data.TBLCURRENCies where aj.ID == productCurrencyID select aj).SingleOrDefault();
@@ -1295,7 +1294,7 @@ namespace MiniGram.Controls
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Your Stock in in Negative, This item is out of Stock, Please Check Your Stock Quantity of Product Name : " + pname + " .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Your Stock in in Negative, This item is out of Stock, Please Check Your Stock Quantity of Product Name : " + product.PNAME + " .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -1344,7 +1343,7 @@ namespace MiniGram.Controls
                             bool exist = false;
                             foreach (DataGridViewRow row in receipt_details.Rows)
                             {
-                                if (row.Cells["PNAME"].Value.Equals(pname))
+                                if (row.Cells["Barcode"].Value.Equals(product.BARCODE))
                                 {
                                     exist = true;
                                     row.Cells["SupplierName"].Value = supplier;
@@ -1376,7 +1375,7 @@ namespace MiniGram.Controls
                             }
                             if (!exist)
                             {
-                                receipt_details.Rows.Add(barcode, pname, supplier, inputQte, currency.ID == 1 ? Globals.LBPRounding(unitprice) : unitprice, Globals.LBPRounding(lbp), currency.ID == 1 ? Globals.LBPRounding(unitprice) : unitprice, currency.ID == 1 ? Globals.LBPRounding(secondaryPrice) : secondaryPrice, currency.CurrencyName, dollar, Globals.LBPRounding(lbp), dollar, tva, discount, currency.ID);
+                                receipt_details.Rows.Add(barcode, product.PNAME, supplier, inputQte, currency.ID == 1 ? Globals.LBPRounding(unitprice) : unitprice, Globals.LBPRounding(lbp), currency.ID == 1 ? Globals.LBPRounding(unitprice) : unitprice, currency.ID == 1 ? Globals.LBPRounding(secondaryPrice) : secondaryPrice, currency.CurrencyName, dollar, Globals.LBPRounding(lbp), dollar, tva, discount, currency.ID);
                                 tot_quantity.Text = getTotalQTE();
                                 tot_net_dollar.Text = getTotalPrice() + " $";
                                 tot_discount.Text = getTotalLBP() + " LBP";
@@ -1547,7 +1546,7 @@ namespace MiniGram.Controls
                     }
                     foreach (DataGridViewRow row in receipt_details.Rows)
                     {
-                        var product = data.sp_getProductByName(row.Cells["PNAME"].Value.ToString()).ToList();
+                        var product = (from aj in data.TBLPRODUCTs where aj.ENABLED == true && aj.BARCODE == row.Cells["Barcode"].Value.ToString() select aj).ToList();
                         var newHoldDetails = new TBLHOLDDETAIL();
                         newHoldDetails.RID = newReceipt.RID;
                         newHoldDetails.PID = product[0].PID;
@@ -1654,14 +1653,14 @@ namespace MiniGram.Controls
             {
                 using (var data = new MiniGramDBDataContext(Globals.ConnectionString))
                 {
-                    string pname = row.Cells["PNAME"].Value.ToString();
+                    string barcode = row.Cells["Barcode"].Value.ToString();
 
-                    TBLPRODUCT product = (from aj in data.TBLPRODUCTs where aj.ENABLED == true && aj.PNAME == pname select aj).SingleOrDefault();
+                    TBLPRODUCT product = (from aj in data.TBLPRODUCTs where aj.ENABLED == true && aj.BARCODE == barcode select aj).SingleOrDefault();
 
-                    int ExistingRowQTE = (from aj in receipt_details.Rows.Cast<DataGridViewRow>() where aj.Cells["PNAME"].Value.ToString() == pname select int.Parse(aj.Cells["QTE"].Value.ToString())).SingleOrDefault();
+                    int ExistingRowQTE = (from aj in receipt_details.Rows.Cast<DataGridViewRow>() where aj.Cells["Barcode"].Value.ToString() == barcode select int.Parse(aj.Cells["QTE"].Value.ToString())).SingleOrDefault();
                     if (ExistingRowQTE > product.QTE && product.QTE >= 0 && receiptSwitcherValue == 1)
                     {
-                        MessageBox.Show("Your Stock in in Negative, This item is out of Stock, Please Check Your Stock Quantity of Product Name : " + pname + " .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Your Stock in in Negative, This item is out of Stock, Please Check Your Stock Quantity of Product Name : " + product.BARCODE + " .", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         lblReceiptType.Text = "Return Receipt";
                         lblReceiptType.BackColor = Color.Red;
                         lblReceiptType.ForeColor = Color.White;
@@ -1830,7 +1829,7 @@ namespace MiniGram.Controls
                     try
                     {
                         var newReceipt = new TBLRECEIPT();
-                        //newReceipt.RID = NewReceiptNumber;
+                        //newReceipt.RID = NewReceiptNumbe;
                         if (receipt == null)
                         {
                             newReceipt.RBARCODE = newBarcode;
@@ -1869,7 +1868,7 @@ namespace MiniGram.Controls
                         {
                             try
                             {
-                                var product = cnx.sp_getProductByName(row.Cells["PNAME"].Value.ToString()).ToList();
+                                var product = (from aj in cnx.TBLPRODUCTs where aj.ENABLED == true && aj.BARCODE == row.Cells["Barcode"].Value.ToString() select aj).ToList();
                                 if (product[0].HasQuantity == true)
                                 {
 
@@ -1931,13 +1930,6 @@ namespace MiniGram.Controls
 
                                     List<TBLEXPIREDDATE> ExpiredDateList = (from aj in cnx.TBLEXPIREDDATEs where aj.PID == product[0].PID && aj.ExpiredDate > DateTime.Today select aj).ToList();
                                     int totalQuantity = (from aj in ExpiredDateList where aj.ExpiredDate > DateTime.Today select aj.Qte).Sum(x => int.Parse(x.ToString()));
-                                    //if (totalQuantity < int.Parse(row.Cells["QTE"].Value.ToString()))
-                                    //{
-                                    //    MessageBox.Show("You Have " + totalQuantity + " Of Product Name : " + product[0].PNAME + "\nPlease Check Your Products !!");
-                                    //    search_txt.Text = "";
-                                    //    ActiveControl = search_txt;
-                                    //    return;
-                                    //}
                                     if (totalQuantity == int.Parse(row.Cells["QTE"].Value.ToString()))
                                     {
                                         TBLEXPIREDDATE minExpDate = (from aj in ExpiredDateList orderby aj.ExpiredDate ascending select aj).First();
@@ -2112,7 +2104,7 @@ namespace MiniGram.Controls
                         lblDiscount.Text = "Employee Discount";
                         Globals.draftStockTempQte.Clear();
                         cardNumber = "";
-                        Properties.Settings.Default.BuyDollarLBPPrice = Properties.Settings.Default.dollarLBPPrice;
+                        Properties.Settings.Default.BuyDollarLBPPrice = Properties.Settings.Default.BuyDollarLBPPrice;
                         Properties.Settings.Default.dollarLBPPrice = Properties.Settings.Default.dollarLBPPrice;
                         Properties.Settings.Default.Save();
                         try

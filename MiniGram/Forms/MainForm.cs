@@ -146,7 +146,7 @@ namespace MiniGram
 
         private void new_receipt_btn_Click(object sender, EventArgs e)
         {
-                RunLoadingThread();
+                //RunLoadingThread();
                 refreshColors();
                 new_receipt_btn.BackColor = Color.White;
                 title_lbl.Text = "New Receipt";

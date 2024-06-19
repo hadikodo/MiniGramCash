@@ -16,7 +16,7 @@ namespace MiniGram.Controls
 {
     public partial class HoldListUC : UserControl
     {
-        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
+        //private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
         public HoldListUC()
         {
             InitializeComponent();
@@ -56,7 +56,8 @@ namespace MiniGram.Controls
 
         public void refreshData()
         {
-            spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts("").Where((aj) => aj.isHold);
+            using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString)) 
+                spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts("").Where((aj) => aj.isHold);
             dataGridView1.Refresh();
         }
 
@@ -74,7 +75,8 @@ namespace MiniGram.Controls
         {
             try
             {
-                spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts(search_txt.Text).Where((aj) => aj.isHold);
+                using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+                    spselectReceiptsResultBindingSource.DataSource = cnx.sp_selectReceipts(search_txt.Text).Where((aj) => aj.isHold);
                 dataGridView1.Refresh();
             }
             catch (Exception ex)
@@ -113,27 +115,33 @@ namespace MiniGram.Controls
         {
             if(e.ColumnIndex == btnColumnOpen.Index)
             {
-                var receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()) select aj).Single();
-                receipt.isHold = false;
-                cnx.SubmitChanges();
-                Globals.mainForm.main_panel.Controls.Clear();
-                Globals.mainForm.refreshColors();
-                Globals.mainForm.new_receipt_btn.BackColor = Color.White;
-                POSUC pos = new POSUC(receipt);                           
-                pos.Dock = DockStyle.Fill;
-                Globals.mainForm.main_panel.Controls.Add(pos);
-                pos.refreshData("");
-                cnx.sp_deleteHoldReceiptDetailsByRID(receipt.RID);
+                using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+                {
+                    var receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()) select aj).Single();
+                    receipt.isHold = false;
+                    cnx.SubmitChanges();
+                    Globals.mainForm.main_panel.Controls.Clear();
+                    Globals.mainForm.refreshColors();
+                    Globals.mainForm.new_receipt_btn.BackColor = Color.White;
+                    POSUC pos = new POSUC(receipt);
+                    pos.Dock = DockStyle.Fill;
+                    Globals.mainForm.main_panel.Controls.Add(pos);
+                    pos.refreshData("");
+                    cnx.sp_deleteHoldReceiptDetailsByRID(receipt.RID);
+                }
             }
             else if(e.ColumnIndex == PrintColumn.Index)
             {
-                int RID = Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
-                TBLRECEIPT receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == RID select aj).SingleOrDefault();
-                double? finaldollar = receipt.TOTAL_AMOUNTDollar - receipt.TotalDiscount + receipt.TotalTVA;
-                int? finalLBP = Int32.Parse((finaldollar * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
-                DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, receipt.ReceiptTypeID, receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
-                drrv.receiptID = RID;
-                drrv.Show();
+                using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
+                {
+                    int RID = Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                    TBLRECEIPT receipt = (from aj in cnx.TBLRECEIPTs where aj.RID == RID select aj).SingleOrDefault();
+                    double? finaldollar = receipt.TOTAL_AMOUNTDollar - receipt.TotalDiscount + receipt.TotalTVA;
+                    int? finalLBP = Int32.Parse((finaldollar * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
+                    DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, receipt.ReceiptTypeID, receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
+                    drrv.receiptID = RID;
+                    drrv.Show();
+                }
             }
         }
 

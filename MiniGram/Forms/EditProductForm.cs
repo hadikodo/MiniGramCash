@@ -39,8 +39,9 @@ namespace MiniGram.Forms
                 }
                 using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
                 {
+                    TBLPRODUCT product = new TBLPRODUCT();
 
-                    TBLPRODUCT product = (from aj in cnx.TBLPRODUCTs where aj.PID == productID select aj).SingleOrDefault();
+                    product = (from aj in cnx.TBLPRODUCTs where aj.PID == productID select aj).SingleOrDefault();
 
                     if (!chkboxHasExpDate.Checked)
                     {
