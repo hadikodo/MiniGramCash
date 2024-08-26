@@ -382,5 +382,28 @@ namespace MiniGram.Properties {
                 return ((string)(this["RHHStaticDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SUPERTECH-SOLUT;Initial Catalog=MiniGramCashDB;Integrated Security=Tr" +
+            "ue;TrustServerCertificate=True")]
+        public string MiniGramCashDBConnectionString4 {
+            get {
+                return ((string)(this["MiniGramCashDBConnectionString4"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1.7")]
+        public double DBVersion {
+            get {
+                return ((double)(this["DBVersion"]));
+            }
+            set {
+                this["DBVersion"] = value;
+            }
+        }
     }
 }

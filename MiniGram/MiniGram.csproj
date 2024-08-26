@@ -33,12 +33,12 @@
     <ProductName>MiniGram</ProductName>
     <PublisherName>SuperTech Co.</PublisherName>
     <SuiteName>MiniGram</SuiteName>
-    <MinimumRequiredVersion>1.7.0.15</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.8.0.3</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>16</ApplicationRevision>
-    <ApplicationVersion>1.7.0.%2a</ApplicationVersion>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.8.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -573,17 +573,17 @@
     <Compile Include="Controls\Reports\ProductsExpDateReportUC.Designer.cs">
       <DependentUpon>ProductsExpDateReportUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddEditProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditProductForm.Designer.cs">
+      <DependentUpon>AddEditProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddSuppForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AddSuppForm.Designer.cs">
       <DependentUpon>AddSuppForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\AddProductForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AddProductForm.Designer.cs">
-      <DependentUpon>AddProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ChangeQuantityForm.cs">
       <SubType>Form</SubType>
@@ -609,6 +609,12 @@
     <Compile Include="Forms\DeliveryReceiptDetailsForm.Designer.cs">
       <DependentUpon>DeliveryReceiptDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WeightInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WeightInputForm.Designer.cs">
+      <DependentUpon>WeightInputForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reports\DirectReceiptReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -620,12 +626,6 @@
     </Compile>
     <Compile Include="Forms\EditSupplierForm.Designer.cs">
       <DependentUpon>EditSupplierForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\EditProductForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\EditProductForm.Designer.cs">
-      <DependentUpon>EditProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ExpiredDateForm.cs">
       <SubType>Form</SubType>
@@ -747,11 +747,11 @@
     <EmbeddedResource Include="Controls\Reports\ProductsExpDateReportUC.resx">
       <DependentUpon>ProductsExpDateReportUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEditProductForm.resx">
+      <DependentUpon>AddEditProductForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddSuppForm.resx">
       <DependentUpon>AddSuppForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddProductForm.resx">
-      <DependentUpon>AddProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeQuantityForm.resx">
       <DependentUpon>ChangeQuantityForm.cs</DependentUpon>
@@ -765,14 +765,14 @@
     <EmbeddedResource Include="Forms\DeliveryReceiptDetailsForm.resx">
       <DependentUpon>DeliveryReceiptDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WeightInputForm.resx">
+      <DependentUpon>WeightInputForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\DirectReceiptReportViewer.resx">
       <DependentUpon>DirectReceiptReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditSupplierForm.resx">
       <DependentUpon>EditSupplierForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditProductForm.resx">
-      <DependentUpon>EditProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExpiredDateForm.resx">
       <DependentUpon>ExpiredDateForm.cs</DependentUpon>
@@ -868,6 +868,7 @@
     <None Include="Properties\DataSources\MiniGram.LINQ.TBLRECEIPTS_DETAIL.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TBLSTATUS.datasource" />
     <None Include="Properties\DataSources\MiniGram.LINQ.TBLSUPPLIER.datasource" />
+    <None Include="Properties\DataSources\MiniGram.LINQ.TBLUNIT.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -72,7 +72,7 @@ namespace MiniGram.LINQ
     #endregion
 		
 		public MiniGramDBDataContext() : 
-				base(global::MiniGram.Properties.Settings.Default.MiniGramCashDBConnectionString2, mappingSource)
+				base(global::MiniGram.Properties.Settings.Default.MiniGramCashDBConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -3265,6 +3265,14 @@ namespace MiniGram.LINQ
 		
 		private System.Nullable<int> _UnitID;
 		
+		private bool _hasSellProfitPercentage;
+		
+		private System.Nullable<int> _SellProfitPercentage;
+		
+		private bool _hasEmpProfitPercentage;
+		
+		private System.Nullable<int> _EmpProfitPercentage;
+		
 		private EntitySet<TBLEXPIREDDATE> _TBLEXPIREDDATEs;
 		
 		private EntitySet<TBLRECEIPTS_DETAIL> _TBLRECEIPTS_DETAILs;
@@ -3317,6 +3325,14 @@ namespace MiniGram.LINQ
     partial void OnHasUnitChanged();
     partial void OnUnitIDChanging(System.Nullable<int> value);
     partial void OnUnitIDChanged();
+    partial void OnhasSellProfitPercentageChanging(bool value);
+    partial void OnhasSellProfitPercentageChanged();
+    partial void OnSellProfitPercentageChanging(System.Nullable<int> value);
+    partial void OnSellProfitPercentageChanged();
+    partial void OnhasEmpProfitPercentageChanging(bool value);
+    partial void OnhasEmpProfitPercentageChanged();
+    partial void OnEmpProfitPercentageChanging(System.Nullable<int> value);
+    partial void OnEmpProfitPercentageChanged();
     #endregion
 		
 		public TBLPRODUCT()
@@ -3350,7 +3366,7 @@ namespace MiniGram.LINQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PNAME", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PNAME", DbType="NVarChar(MAX)")]
 		public string PNAME
 		{
 			get
@@ -3694,6 +3710,86 @@ namespace MiniGram.LINQ
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hasSellProfitPercentage", DbType="Bit NOT NULL")]
+		public bool hasSellProfitPercentage
+		{
+			get
+			{
+				return this._hasSellProfitPercentage;
+			}
+			set
+			{
+				if ((this._hasSellProfitPercentage != value))
+				{
+					this.OnhasSellProfitPercentageChanging(value);
+					this.SendPropertyChanging();
+					this._hasSellProfitPercentage = value;
+					this.SendPropertyChanged("hasSellProfitPercentage");
+					this.OnhasSellProfitPercentageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SellProfitPercentage", DbType="Int")]
+		public System.Nullable<int> SellProfitPercentage
+		{
+			get
+			{
+				return this._SellProfitPercentage;
+			}
+			set
+			{
+				if ((this._SellProfitPercentage != value))
+				{
+					this.OnSellProfitPercentageChanging(value);
+					this.SendPropertyChanging();
+					this._SellProfitPercentage = value;
+					this.SendPropertyChanged("SellProfitPercentage");
+					this.OnSellProfitPercentageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hasEmpProfitPercentage", DbType="Bit NOT NULL")]
+		public bool hasEmpProfitPercentage
+		{
+			get
+			{
+				return this._hasEmpProfitPercentage;
+			}
+			set
+			{
+				if ((this._hasEmpProfitPercentage != value))
+				{
+					this.OnhasEmpProfitPercentageChanging(value);
+					this.SendPropertyChanging();
+					this._hasEmpProfitPercentage = value;
+					this.SendPropertyChanged("hasEmpProfitPercentage");
+					this.OnhasEmpProfitPercentageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpProfitPercentage", DbType="Int")]
+		public System.Nullable<int> EmpProfitPercentage
+		{
+			get
+			{
+				return this._EmpProfitPercentage;
+			}
+			set
+			{
+				if ((this._EmpProfitPercentage != value))
+				{
+					this.OnEmpProfitPercentageChanging(value);
+					this.SendPropertyChanging();
+					this._EmpProfitPercentage = value;
+					this.SendPropertyChanged("EmpProfitPercentage");
+					this.OnEmpProfitPercentageChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TBLPRODUCT_TBLEXPIREDDATE", Storage="_TBLEXPIREDDATEs", ThisKey="PID", OtherKey="PID")]
 		public EntitySet<TBLEXPIREDDATE> TBLEXPIREDDATEs
 		{
@@ -3919,6 +4015,14 @@ namespace MiniGram.LINQ
 		
 		private int _inStockQuantity;
 		
+		private bool _hasSellProfitPercentage;
+		
+		private System.Nullable<int> _SellProfitPercentage;
+		
+		private bool _hasEmpProfitPercentage;
+		
+		private System.Nullable<int> _EmpProfitPercentage;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3953,6 +4057,14 @@ namespace MiniGram.LINQ
     partial void OndateCreatedChanged();
     partial void OninStockQuantityChanging(int value);
     partial void OninStockQuantityChanged();
+    partial void OnhasSellProfitPercentageChanging(bool value);
+    partial void OnhasSellProfitPercentageChanged();
+    partial void OnSellProfitPercentageChanging(System.Nullable<int> value);
+    partial void OnSellProfitPercentageChanged();
+    partial void OnhasEmpProfitPercentageChanging(bool value);
+    partial void OnhasEmpProfitPercentageChanged();
+    partial void OnEmpProfitPercentageChanging(System.Nullable<int> value);
+    partial void OnEmpProfitPercentageChanged();
     #endregion
 		
 		public TBLDELIVERY_RECEIPTS_DETAIL()
@@ -4256,6 +4368,86 @@ namespace MiniGram.LINQ
 					this._inStockQuantity = value;
 					this.SendPropertyChanged("inStockQuantity");
 					this.OninStockQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hasSellProfitPercentage", DbType="Bit NOT NULL")]
+		public bool hasSellProfitPercentage
+		{
+			get
+			{
+				return this._hasSellProfitPercentage;
+			}
+			set
+			{
+				if ((this._hasSellProfitPercentage != value))
+				{
+					this.OnhasSellProfitPercentageChanging(value);
+					this.SendPropertyChanging();
+					this._hasSellProfitPercentage = value;
+					this.SendPropertyChanged("hasSellProfitPercentage");
+					this.OnhasSellProfitPercentageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SellProfitPercentage", DbType="Int")]
+		public System.Nullable<int> SellProfitPercentage
+		{
+			get
+			{
+				return this._SellProfitPercentage;
+			}
+			set
+			{
+				if ((this._SellProfitPercentage != value))
+				{
+					this.OnSellProfitPercentageChanging(value);
+					this.SendPropertyChanging();
+					this._SellProfitPercentage = value;
+					this.SendPropertyChanged("SellProfitPercentage");
+					this.OnSellProfitPercentageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hasEmpProfitPercentage", DbType="Bit NOT NULL")]
+		public bool hasEmpProfitPercentage
+		{
+			get
+			{
+				return this._hasEmpProfitPercentage;
+			}
+			set
+			{
+				if ((this._hasEmpProfitPercentage != value))
+				{
+					this.OnhasEmpProfitPercentageChanging(value);
+					this.SendPropertyChanging();
+					this._hasEmpProfitPercentage = value;
+					this.SendPropertyChanged("hasEmpProfitPercentage");
+					this.OnhasEmpProfitPercentageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpProfitPercentage", DbType="Int")]
+		public System.Nullable<int> EmpProfitPercentage
+		{
+			get
+			{
+				return this._EmpProfitPercentage;
+			}
+			set
+			{
+				if ((this._EmpProfitPercentage != value))
+				{
+					this.OnEmpProfitPercentageChanging(value);
+					this.SendPropertyChanging();
+					this._EmpProfitPercentage = value;
+					this.SendPropertyChanged("EmpProfitPercentage");
+					this.OnEmpProfitPercentageChanged();
 				}
 			}
 		}

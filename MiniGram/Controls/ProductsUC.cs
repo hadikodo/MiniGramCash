@@ -90,7 +90,7 @@ namespace MiniGram.Controls
 
         private void addproduct_btn_Click(object sender, EventArgs e)
         {
-            AddProductForm apf = new AddProductForm();
+            AddEditProductForm apf = new AddEditProductForm(0);
             apf.ShowDialog();
             refreshData("");
         }
@@ -148,8 +148,9 @@ namespace MiniGram.Controls
         {
             if (e.ColumnIndex == 8)
             {
-                EditProductForm epf = new EditProductForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                AddEditProductForm epf = new AddEditProductForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
                 epf.ShowDialog();
+                //refreshData("");
             }
         }
 
@@ -165,8 +166,8 @@ namespace MiniGram.Controls
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-                EditProductForm epf = new EditProductForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
-                epf.ShowDialog();
+            AddEditProductForm epf = new AddEditProductForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            epf.ShowDialog();
         }
 
         private void timerRefreshDataDelay_Tick(object sender, EventArgs e)

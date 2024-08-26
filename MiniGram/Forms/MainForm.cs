@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web.UI.Design;
 using System.Windows.Forms;
 
 namespace MiniGram
@@ -20,6 +21,8 @@ namespace MiniGram
         private Boolean isOpened = true;
         private int currentWidth;
         private ProgressBar progressBar;
+        private double RequiredDBVersion = 1.8;
+        
         public MainForm()
         {
             Init();
@@ -74,9 +77,13 @@ namespace MiniGram
         }
 
         private void Init()
-        {
+        {            
+            if (Globals.DBVersion < RequiredDBVersion)
+                Globals.UpdateDatabase(RequiredDBVersion);
+
             Globals.ConnectionString = Properties.Settings.Default.ConnectionString;
             Properties.Settings.Default.Save();
+
         }
 
         private void sfButton1_Click(object sender, EventArgs e)
@@ -197,27 +204,27 @@ namespace MiniGram
 
         private async void products_prices_btn_Click(object sender, EventArgs e)
         {
-                refreshColors();
-                prices_btn.BackColor = Color.White;
-                title_lbl.Text = "Products And Prices";
-                main_panel.Controls.Clear();
-                ProductsUC puc = new ProductsUC();
-                puc.Dock = DockStyle.Fill;
-                await Task.Run(() =>
+            refreshColors();
+            prices_btn.BackColor = Color.White;
+            title_lbl.Text = "Products And Prices";
+            main_panel.Controls.Clear();
+            ProductsUC puc = new ProductsUC();
+            puc.Dock = DockStyle.Fill;
+            await Task.Run(() =>
+            {
+                ProgressBarForm pbf = new ProgressBarForm(1);
+                pbf.ShowDialog();
+                if (!testConnection(Globals.ConnectionString))
                 {
-                    ProgressBarForm pbf = new ProgressBarForm(1);
-                    pbf.ShowDialog();
-                    if (!testConnection(Globals.ConnectionString))
-                    {
-                        MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
-                        SettingsForm sf = new SettingsForm();
-                        sf.isConnTest = true;
-                        sf.ShowDialog();
-                        products_prices_btn_Click(sender, e);
-                    }
-                });
-                main_panel.Controls.Add(puc);
-                puc.refreshData("");
+                    MessageBox.Show("Connection Error!!\nPlease Check The Settings.");
+                    SettingsForm sf = new SettingsForm();
+                    sf.isConnTest = true;
+                    sf.ShowDialog();
+                    products_prices_btn_Click(sender, e);
+                }
+            });
+            main_panel.Controls.Add(puc);
+            puc.refreshData("");
         }
 
         private async void suppliers_btn_Click(object sender, EventArgs e)

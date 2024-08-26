@@ -17,7 +17,7 @@ namespace MiniGram.Forms
     {
 
         private int receiptID;
-        //private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
+        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
 
         public DeliveryReceiptDetailsForm( int id)
         {
@@ -33,24 +33,18 @@ namespace MiniGram.Forms
 
         public void refreshData()
         {
-            using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
-            {
-                spselectDeliveryReceiptsDetailsResultBindingSource.DataSource = cnx.sp_selectDeliveryReceiptsDetails(receiptID).ToList();
-                tBLDELIVERYRECEIPTBindingSource.DataSource = (from aj in cnx.TBLDELIVERY_RECEIPTs where aj.ID == receiptID select aj).ToList();
-            }
+            spselectDeliveryReceiptsDetailsResultBindingSource.DataSource = cnx.sp_selectDeliveryReceiptsDetails(receiptID).ToList();
+            tBLDELIVERYRECEIPTBindingSource.DataSource = (from aj in cnx.TBLDELIVERY_RECEIPTs where aj.ID == receiptID select aj).ToList();
         }
 
         private void print_btn_Click(object sender, EventArgs e)
         {
-            using (var cnx = new MiniGramDBDataContext(Globals.ConnectionString))
-            {
-                TBLDELIVERY_RECEIPT receipt = (from aj in cnx.TBLDELIVERY_RECEIPTs where aj.ID == receiptID select aj).SingleOrDefault();
-                double? finaldollar = receipt.TotalDollar - receipt.TotalDiscount + receipt.TotalTVA;
-                int? finalLBP = Int32.Parse((finaldollar * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
-                DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, Int32.Parse(receipt.ReceiptTypeID.ToString()), receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
-                drrv.receiptID = receiptID;
-                drrv.Show();
-            }
+            TBLDELIVERY_RECEIPT receipt = (from aj in cnx.TBLDELIVERY_RECEIPTs where aj.ID == receiptID select aj).SingleOrDefault();
+            double? finaldollar = receipt.TotalDollar - receipt.TotalDiscount + receipt.TotalTVA;
+            int? finalLBP = Int32.Parse((finaldollar * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString())).ToString());
+            DirectReceiptReportViewer drrv = new DirectReceiptReportViewer(Properties.Settings.Default.ReceiptType, Int32.Parse(receipt.ReceiptTypeID.ToString()), receipt.TotalDiscount.ToString(), receipt.TotalTVA.ToString(), finalLBP.ToString(), finaldollar.ToString());
+            drrv.receiptID = receiptID;
+            drrv.Show();
         }
 
         private void exit_btn_Click(object sender, EventArgs e)

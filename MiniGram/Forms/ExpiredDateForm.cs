@@ -14,22 +14,47 @@ namespace MiniGram.Forms
 {
     public partial class ExpiredDateForm : Form
     {
-        private string productTitle;
         private int pid;
-        public ExpiredDateForm(string title,int pid)
+        private TBLPRODUCT product = new TBLPRODUCT();
+        public List<TBLEXPIREDDATE> expDateList;
+
+        public ExpiredDateForm(int pid, List<TBLEXPIREDDATE> expDateList)
         {
-            productTitle= title;
             this.pid = pid;
+            this.expDateList = expDateList;
+
             InitializeComponent();
         }
 
         private void ExpiredDateForm_Load(object sender, EventArgs e)
         {
-            lblProductTitle.Text = productTitle;
+            Init();
+        }
+
+        private void Init()
+        {
+            product = LoadProduct(pid);
+            lblProductTitle.Text = product.PNAME;
+
             if (pid != 0)
             {
                 refreshData();
             }
+        }
+
+        private TBLPRODUCT LoadProduct(int pid)
+        {
+            TBLPRODUCT product = new TBLPRODUCT();
+
+            if (pid == 0)
+                return product;
+
+            using(var ax = new MiniGramDBDataContext(Globals.ConnectionString))
+            {
+                product = (from aj in ax.TBLPRODUCTs where aj.PID == pid select aj).SingleOrDefault();
+            }
+
+            return product;
         }
 
         private void refreshData()
@@ -38,9 +63,10 @@ namespace MiniGram.Forms
             {
                 tBLEXPIREDDATEBindingSource.DataSource = (from aj in ax.TBLEXPIREDDATEs where aj.PID == pid select aj).ToList();
             }
+
             foreach(DataGridViewRow row in dgvExpiredDates.Rows)
             {
-                if (DateTime.Parse(row.Cells[0].Value.ToString()) <= DateTime.Today)
+                if (DateTime.Parse(row.Cells[0].Value.ToString()).Date <= DateTime.Today.Date)
                 {
                     row.DefaultCellStyle.BackColor = Color.Red;
                     row.DefaultCellStyle.ForeColor = Color.White;
@@ -57,37 +83,9 @@ namespace MiniGram.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var frm = new PickDateForm();
+            PickDateForm frm = new PickDateForm(product.PID,null);
             frm.ShowDialog();
-            if (frm.selectedDate != null && frm.qte != null)
-            {
-                using (var ax = new MiniGramDBDataContext(Globals.ConnectionString))
-                {
-                    var ExpList = (from aj in ax.TBLEXPIREDDATEs where aj.PID == pid select aj.ExpiredDate).ToList();
-
-                    if (ExpList.Contains(frm.selectedDate.Value.Date))
-                    {
-                        TBLEXPIREDDATE currExpDate = (from aj in ax.TBLEXPIREDDATEs where aj.PID == pid && aj.ExpiredDate == frm.selectedDate.Value.Date select aj).Single();
-                        currExpDate.Qte = currExpDate.Qte + Int32.Parse(frm.qte.ToString());
-                    }
-                    else
-                    {
-                        TBLEXPIREDDATE newExpDate = new TBLEXPIREDDATE();
-                        newExpDate.ExpiredDate = frm.selectedDate;
-                        newExpDate.Qte = (int)frm.qte;
-                        newExpDate.dateCreated = DateTime.Now;
-                        newExpDate.PID = pid;
-                        ax.TBLEXPIREDDATEs.InsertOnSubmit(newExpDate);
-                    }
-                    ax.SubmitChanges();
-                }
-                refreshData();
-            }
-            else
-            {
-                MessageBox.Show("Some Information is Missing!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            refreshData();
         }
 
         private void dgvExpiredDates_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -102,10 +100,18 @@ namespace MiniGram.Forms
                         var expd = (from aj in data.TBLEXPIREDDATEs where aj.ID == selected.ID select aj).Single();
                         data.TBLEXPIREDDATEs.DeleteOnSubmit(expd);
                         data.SubmitChanges();
-                        refreshData();
                     }
+                    refreshData();
                 }
             }
+        }
+
+        private void dgvExpiredDates_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TBLEXPIREDDATE selectedExpDate = (TBLEXPIREDDATE)tBLEXPIREDDATEBindingSource.Current;
+            PickDateForm frm = new PickDateForm(product.PID, selectedExpDate);
+            frm.ShowDialog();
+            refreshData();
         }
     }
 }

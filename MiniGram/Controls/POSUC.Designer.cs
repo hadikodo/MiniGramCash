@@ -1063,6 +1063,7 @@
             this.SecondPrice.HeaderText = "Emp. Price";
             this.SecondPrice.Name = "SecondPrice";
             this.SecondPrice.ReadOnly = true;
+            this.SecondPrice.Visible = false;
             this.SecondPrice.Width = 120;
             // 
             // Currency

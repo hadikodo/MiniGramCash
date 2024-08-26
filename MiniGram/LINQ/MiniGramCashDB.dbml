@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MiniGramCashDB" Class="MiniGramDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SQL4\SQL2008;Initial Catalog=MiniGramCashDB;Integrated Security=True" SettingsObjectName="MiniGram.Properties.Settings" SettingsPropertyName="MiniGramCashDBConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SUPERTECH-SOLUT;Initial Catalog=MiniGramCashDB;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="MiniGram.Properties.Settings" SettingsPropertyName="MiniGramCashDBConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.TBLEXPIREDDATES" Member="TBLEXPIREDDATEs">
     <Type Name="TBLEXPIREDDATE">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -137,7 +137,7 @@
   <Table Name="dbo.TBLPRODUCTS" Member="TBLPRODUCTs">
     <Type Name="TBLPRODUCT">
       <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="QTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ADD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -154,6 +154,10 @@
       <Column Name="CurrencyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="HasUnit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="UnitID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hasSellProfitPercentage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SellProfitPercentage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hasEmpProfitPercentage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EmpProfitPercentage" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="TBLPRODUCT_TBLEXPIREDDATE" Member="TBLEXPIREDDATEs" ThisKey="PID" OtherKey="PID" Type="TBLEXPIREDDATE" />
       <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL" Member="TBLRECEIPTS_DETAILs" ThisKey="PID" OtherKey="PID" Type="TBLRECEIPTS_DETAIL" />
       <Association Name="TBLPRODUCT_TBLRECEIPTS_DETAIL1" Member="TBLRECEIPTS_DETAILs1" ThisKey="PID" OtherKey="PID" Type="TBLRECEIPTS_DETAIL" />
@@ -179,6 +183,10 @@
       <Column Name="isInSale" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="dateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inStockQuantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hasSellProfitPercentage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SellProfitPercentage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hasEmpProfitPercentage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EmpProfitPercentage" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.sp_addNewItem" Method="sp_addNewItem">

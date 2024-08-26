@@ -28,49 +28,9 @@ namespace MiniGram.Forms
             InitializeComponent();
         }
 
-        private void InitButtonsPermissions()
-        {
-            switch (StatusID)
-            {
-                case 1:
-                    TableLayoutPanelAddEdit.Visible = true;
-                    btnAction.Visible = ReceiptID != 0;
-                    btnSave.Visible = true;
-                    btnAction.Text = "Send To Accounting";
-                    txtReceiptDate.Enabled = true;
-                    txtRefID.Enabled = true;
-                    cboxSupplier.Enabled = true;
-                    cboxCurrency.Enabled = true;
-                    ColumnRemove.Visible = true;
-                    break;
-                case 3:
-                    TableLayoutPanelAddEdit.Visible = false;
-                    btnAction.Text = "Approve";
-                    btnAction.Visible = true;
-                    btnSave.Visible = false;
-                    txtRefID.Enabled = false;
-                    txtReceiptDate.Enabled = false;
-                    cboxSupplier.Enabled = false;
-                    cboxCurrency.Enabled = false;
-                    ColumnRemove.Visible = false;
-                    break;
-                case 4:
-                    TableLayoutPanelAddEdit.Visible = false;
-                    btnAction.Text = "Print";
-                    btnAction.Visible = true;
-                    btnSave.Visible = false;
-                    txtReceiptDate.Enabled = false;
-                    txtRefID.Enabled = false;
-                    cboxSupplier.Enabled = false;
-                    cboxCurrency.Enabled = false;
-                    ColumnRemove.Visible = false;
-                    break;
-            }
-        }
-
         private void DeliveryInForm_Load(object sender, EventArgs e)
         {
-            InitButtonsPermissions();
+            //InitButtonsPermissions();
             refreshCbox();
             if (ReceiptID != 0)
             {
@@ -96,7 +56,15 @@ namespace MiniGram.Forms
                 foreach (TBLDELIVERY_RECEIPTS_DETAIL item in productList)
                 {
                     TBLPRODUCT product = (from aj in ax.TBLPRODUCTs where aj.PID == item.PID select aj).SingleOrDefault();
-                    dgvProducts.Rows.Add(product.BARCODE, product.PNAME, item.Quantity,item.inStockQuantity, item.Cost, item.SellPrice, item.SecondaryPrice, item.HasExpDate ? item.ExpDate.ToString() : "", item.HasDiscount ? Int32.Parse(item.Discount.ToString()) : 0, item.HasTVA);
+                    dgvProducts.Rows.Add(product.BARCODE,
+                        product.PNAME,
+                        item.inStockQuantity,
+                        item.Quantity,
+                        item.Cost,
+                        item.hasSellProfitPercentage ? item.SellProfitPercentage.ToString() : "",
+                        item.SellPrice,
+                        item.hasEmpProfitPercentage ? item.EmpProfitPercentage.ToString() : "",
+                        item.SecondaryPrice);
                 }
                 cboxCurrency.SelectedValue = receipt.CurrencyID;
                 txtRefID.Text = receipt.RefID;
@@ -149,38 +117,9 @@ namespace MiniGram.Forms
             process.Start();
         }
 
-        private void chkboxHasExpDate_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkboxHasExpDate.Checked)
-            {
-                txtQte.Enabled = false;
-                PickDateForm frm = new PickDateForm();
-                frm.ShowDialog();
-                if (frm.selectedDate != null && frm.qte != null)
-                {
-                    txtQte.Text = frm.qte.ToString();
-                    txtExpDate.Text = frm.selectedDate.Value.ToShortDateString();
-                }
-                else
-                {
-                    MessageBox.Show("Some Information is Missing!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    chkboxHasExpDate.Checked = false;
-                    return;
-                }
-                frm.Dispose();
-            }
-            else
-            {
-                txtQte.Enabled = true;
-                txtQte.Text = "";
-                txtExpDate.Text = "";
-            }
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtQte.Text) || (chkboxHasExpDate.Checked && string.IsNullOrEmpty(txtExpDate.Text)) || string.IsNullOrEmpty(txtCost.Text) || string.IsNullOrEmpty(txtEmpPrice.Text) || string.IsNullOrEmpty(txtSellPrice.Text) || (chkboxDiscount.Checked && string.IsNullOrEmpty(txtDiscount.Text)))
+            if (string.IsNullOrEmpty(txtQte.Text) || string.IsNullOrEmpty(txtCost.Text) || (checkBoxHasProfitPercentage.Checked && string.IsNullOrEmpty(txtSellProfitPercentage.Text)) || (checkBoxEmpProfitPercentage.Checked && string.IsNullOrEmpty(txtEmpProfitPercentage.Text)) || string.IsNullOrEmpty(txtEmpPrice.Text) || string.IsNullOrEmpty(txtSellPrice.Text))
             {
                 MessageBox.Show("Some Information is Missing!!", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -188,33 +127,29 @@ namespace MiniGram.Forms
             else
             {
                 LINQ.TBLDELIVERY_RECEIPTS_DETAIL product = new LINQ.TBLDELIVERY_RECEIPTS_DETAIL();
-
-
                 product.PID = Int32.Parse(cboxProductBarcode.SelectedValue.ToString());
-
-                dgvProducts.Rows.Add(cboxProductBarcode.Text, cboxProductName.Text, txtQte.Text,0, txtCost.Text, txtSellPrice.Text, txtEmpPrice.Text, chkboxHasExpDate.Checked ? txtExpDate.Text : "", chkboxDiscount.Checked ? Int32.Parse(txtDiscount.Text) : 0, chkboxTVA.Checked);
+                dgvProducts.Rows.Add(cboxProductBarcode.Text, cboxProductName.Text,0, txtQte.Text, txtCost.Text, checkBoxHasProfitPercentage.Checked ? txtSellProfitPercentage.Text : "",txtSellPrice.Text,checkBoxEmpProfitPercentage.Checked ? txtEmpProfitPercentage.Text : "", txtEmpPrice.Text);
                 product.Quantity = Int32.Parse(txtQte.Text);
                 product.Cost = Double.Parse(txtCost.Text);
                 product.SellPrice = Double.Parse(txtSellPrice.Text);
                 product.SecondaryPrice = Double.Parse(txtEmpPrice.Text);
-                product.HasDiscount = chkboxDiscount.Checked;
-                product.Discount = chkboxDiscount.Checked ? Int32.Parse(txtDiscount.Text) : 0;
-                product.HasExpDate = chkboxHasExpDate.Checked;
-                product.ExpDate = chkboxHasExpDate.Checked ? DateTime.Parse(txtExpDate.Text) : DateTime.Now;
-                product.HasTVA = chkboxTVA.Checked;
+                product.HasDiscount = false;
+                product.Discount = 0;
+                product.HasExpDate = false;
+                product.HasTVA = false;
                 product.isInSale = false;
+                product.hasSellProfitPercentage = checkBoxHasProfitPercentage.Checked;
+                product.hasEmpProfitPercentage = checkBoxEmpProfitPercentage.Checked;
+                product.EmpProfitPercentage = checkBoxEmpProfitPercentage.Checked ? int.Parse(txtEmpProfitPercentage.Text) : 0;
+                product.SellProfitPercentage = checkBoxHasProfitPercentage.Checked ? int.Parse(txtSellProfitPercentage.Text) : 0;
 
                 refreshTotals();
 
                 productList.Add(product);
-                chkboxHasExpDate.Checked = false;
-                chkboxTVA.Checked = false;
-                chkboxDiscount.Checked = false;
                 txtQte.Text = "";
                 txtCost.Text = "";
                 txtSellPrice.Text = "";
                 txtEmpPrice.Text = "";
-
             }
 
         }
@@ -240,12 +175,12 @@ namespace MiniGram.Forms
                 dReceipt.RefID = txtRefID.Text;
                 dReceipt.SupplierID = (int)cboxSupplier.SelectedValue;
                 dReceipt.TotalQuantity = getTotalQte();
-                dReceipt.TotalDiscount = getTotalDiscount();
-                dReceipt.TotalDollar = getTotalDollar();
+                dReceipt.TotalDiscount = 0;
+                dReceipt.TotalDollar = getNetPriceDollar();
                 dReceipt.TotalLBP = Int32.Parse(Math.Round(getNetPriceDollar() * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()), 0).ToString());
-                dReceipt.TotalTVA = getTotalTVA();
+                dReceipt.TotalTVA = 0;
                 dReceipt.CurrencyID = Int32.Parse(cboxCurrency.SelectedValue.ToString());
-                dReceipt.UserID = 0;
+                //dReceipt.UserID = Globals.LoggedInUserID;
                 dReceipt.StatusID = StatusID;
                 dReceipt.ReceiptDate = DateTime.Parse(txtReceiptDate.Text).Date;
                 if (ReceiptID == 0)
@@ -261,6 +196,7 @@ namespace MiniGram.Forms
                 {
                     product.RID = dReceipt.ID;
                     product.dateCreated = dReceipt.ReceiptDate;
+                    UpdateProductPriceInfo(product.PID, product, dReceipt.CurrencyID);
                 }
 
                 ax.TBLDELIVERY_RECEIPTS_DETAILs.InsertAllOnSubmit(productList);
@@ -271,6 +207,30 @@ namespace MiniGram.Forms
                 MessageBox.Show("This Receipt Has Been Saved.", "Info!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             isSavePressed = true;
             btnAction.Visible = true;
+        }
+
+        private void UpdateProductPriceInfo(int pid,TBLDELIVERY_RECEIPTS_DETAIL drd,int? receiptCurrencyID)
+        {
+            if (pid != 0)
+            {
+                using (var ax = new MiniGramDBDataContext(Globals.ConnectionString))
+                {
+                    TBLPRODUCT product = (from aj in ax.TBLPRODUCTs where aj.PID == pid select aj).SingleOrDefault();
+
+                    if(!Globals.ComparePrices(product.InitPrice,product.CurrencyID,drd.Cost,receiptCurrencyID))
+                    {
+                        product.InitPrice = drd.Cost;
+                        product.SecondaryPrice = drd.SecondaryPrice;
+                        product.PRICE = drd.SellPrice;
+                        product.hasEmpProfitPercentage = drd.hasEmpProfitPercentage;
+                        product.hasSellProfitPercentage = drd.hasSellProfitPercentage;
+                        product.SellProfitPercentage = drd.SellProfitPercentage;
+                        product.EmpProfitPercentage = drd.EmpProfitPercentage;
+                        product.CurrencyID = (int)receiptCurrencyID;
+                    }
+                    ax.SubmitChanges();
+                }
+            }
         }
 
         private int getTotalQte()
@@ -284,7 +244,8 @@ namespace MiniGram.Forms
             return totqte;
         }
 
-        private double getTotalDollar()
+
+        private double getNetPriceDollar()
         {
             double totdollar = 0;
             foreach (DataGridViewRow row in dgvProducts.Rows)
@@ -294,45 +255,6 @@ namespace MiniGram.Forms
 
             return totdollar;
         }
-        private double getTotalDiscount()
-        {
-            double totdiscount = 0;
-            foreach (DataGridViewRow row in dgvProducts.Rows)
-            {
-                totdiscount += Int32.Parse(cboxCurrency.SelectedValue.ToString()) == 2 ? Math.Round(Double.Parse(row.Cells["AddedQuantity"].Value.ToString()) * (Double.Parse(row.Cells["ColumnCost"].Value.ToString()) * Double.Parse(row.Cells["ColumnDiscount"].Value.ToString())) / 100, 3) : Math.Round((Double.Parse(row.Cells["AddedQuantity"].Value.ToString()) * (Double.Parse(row.Cells["ColumnCost"].Value.ToString()) * Double.Parse(row.Cells["ColumnDiscount"].Value.ToString())) / 100) / Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()), 3);
-            }
-
-            return totdiscount;
-        }
-
-        private double getTotalTVA()
-        {
-            double tottva = 0;
-            foreach (DataGridViewRow row in dgvProducts.Rows)
-            {
-                if (bool.Parse(row.Cells["ColumnTVA"].Value.ToString()) == true)
-                {
-                    tottva += Int32.Parse(cboxCurrency.SelectedValue.ToString()) == 2 ? Math.Round(Double.Parse(row.Cells["AddedQuantity"].Value.ToString()) * (Double.Parse(row.Cells["ColumnCost"].Value.ToString()) * 11) / 100, 3) : Math.Round((Double.Parse(row.Cells["AddedQuantity"].Value.ToString()) * (Double.Parse(row.Cells["ColumnCost"].Value.ToString()) * 11) / 100) / Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()), 3);
-                }
-
-            }
-
-            return tottva;
-        }
-
-        private double getNetPriceDollar()
-        {
-            return (getTotalDollar() - getTotalDiscount() + getTotalTVA());
-        }
-
-        //private double getTotalPrice()
-        //{
-        //    double totalprice = 0;
-        //    foreach(DataGridViewRow row in dgvProducts.Rows)
-        //    {
-        //        totalprice += cboxCurrency.SelectedValue == 2 ? Double.Parse(row.Cells["TotalPrice"].Value.ToString()) : Double.Parse(row.Cells["TotalPrice"].Value.ToString()) * 
-        //    }
-        //}
 
         private void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -350,7 +272,7 @@ namespace MiniGram.Forms
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            AddProductForm apf = new AddProductForm();
+            AddEditProductForm apf = new AddEditProductForm(0);
             apf.ShowDialog();
             refreshCbox();
         }
@@ -358,24 +280,8 @@ namespace MiniGram.Forms
         private void refreshTotals()
         {
             tot_quantity.Text = getTotalQte().ToString();
-            tot_net_dollar.Text = getTotalDollar().ToString() + " $";
-            tot_discount.Text = getTotalDiscount().ToString() + " $";
-            tot_tva.Text = getTotalTVA().ToString() + " $";
             tot_final_price_dolar.Text = getNetPriceDollar().ToString() + " $";
             tot_final_price_lbp.Text = (Math.Round(getNetPriceDollar() * Double.Parse(Properties.Settings.Default.dollarLBPPrice.ToString()), 0)).ToString("#,0;-#,0") + " LBP";
-        }
-
-        private void chkboxDiscount_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkboxDiscount.Checked)
-            {
-                txtDiscount.Enabled = true;
-            }
-            else
-            {
-                txtDiscount.Enabled = false;
-            }
-            txtDiscount.Text = "";
         }
 
         private void btnAction_Click(object sender, EventArgs e)
@@ -404,8 +310,8 @@ namespace MiniGram.Forms
                         {
                             dReceipt.StatusID = 2;
                             int receiptTypeID = 1;
-                            string totalDiscount = getTotalDiscount().ToString();
-                            string totalTVA = getTotalTVA().ToString();
+                            string totalDiscount = "0";
+                            string totalTVA = "0";
                             string finalPriceLBP = dReceipt.TotalLBP.ToString();
                             string finalPriceDollar = getNetPriceDollar().ToString();
 
@@ -444,6 +350,10 @@ namespace MiniGram.Forms
                                     prod.SecondaryPrice = product.SecondaryPrice;
                                     prod.PRICE = product.SellPrice;
                                     prod.CurrencyID = Int32.Parse(cboxCurrency.SelectedValue.ToString());
+                                    prod.hasSellProfitPercentage = product.hasSellProfitPercentage;
+                                    prod.hasEmpProfitPercentage = product.hasEmpProfitPercentage;
+                                    prod.EmpProfitPercentage = product.EmpProfitPercentage;
+                                    prod.SellProfitPercentage = product.SellProfitPercentage;
 
                                 }
                                 else if (prod.HasExpiredDate == 1)
@@ -465,6 +375,10 @@ namespace MiniGram.Forms
                                     prod.SecondaryPrice = product.SecondaryPrice;
                                     prod.PRICE = product.SellPrice;
                                     prod.CurrencyID = Int32.Parse(cboxCurrency.SelectedValue.ToString());
+                                    prod.hasSellProfitPercentage = product.hasSellProfitPercentage;
+                                    prod.hasEmpProfitPercentage = product.hasEmpProfitPercentage;
+                                    prod.EmpProfitPercentage = product.EmpProfitPercentage;
+                                    prod.SellProfitPercentage = product.SellProfitPercentage;
                                 }
                             }
                             dReceipt.StatusID = 4;
@@ -473,8 +387,8 @@ namespace MiniGram.Forms
                         break;
                     case 4:
                         int receiptTypeID2 = 1;
-                        string totalDiscount2 = getTotalDiscount().ToString();
-                        string totalTVA2 = getTotalTVA().ToString();
+                        string totalDiscount2 = "0";
+                        string totalTVA2 = "0";
                         string finalPriceLBP2 = dReceipt.TotalLBP.ToString();
                         string finalPriceDollar2 = getNetPriceDollar().ToString();
 
@@ -514,9 +428,6 @@ namespace MiniGram.Forms
                     txtCost.Text = product.InitPrice.ToString();
                     txtSellPrice.Text = product.PRICE.ToString();
                     txtEmpPrice.Text = product.SecondaryPrice.ToString();
-                    chkboxDiscount.Checked = product.HasDiscount;
-                    chkboxTVA.Checked = product.HasTVA;
-                    txtDiscount.Text = chkboxDiscount.Checked ? product.DiscountPercentage.ToString() : "";
                 }
             }
         }
@@ -532,11 +443,66 @@ namespace MiniGram.Forms
                     txtCost.Text = product.InitPrice.ToString();
                     txtSellPrice.Text = product.PRICE.ToString();
                     txtEmpPrice.Text = product.SecondaryPrice.ToString();
-                    chkboxDiscount.Checked = product.HasDiscount;
-                    chkboxTVA.Checked = product.HasTVA;
-                    txtDiscount.Text = chkboxDiscount.Checked ? product.DiscountPercentage.ToString() : "";
                 }
             }
+        }
+
+        private void checkBoxHasProfitPercentage_CheckedChanged(object sender, EventArgs e)
+        {
+            txtSellProfitPercentage.Enabled = checkBoxHasProfitPercentage.Checked;
+            txtSellPrice.Enabled = !checkBoxHasProfitPercentage.Checked;
+        }
+
+        private void checkBoxEmpProfitPercentage_CheckedChanged(object sender, EventArgs e)
+        {
+            txtEmpProfitPercentage.Enabled = checkBoxEmpProfitPercentage.Checked;
+            txtEmpPrice.Enabled = !checkBoxEmpProfitPercentage.Checked;
+        }
+
+        private void txtSellProfitPercentage_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                bool isNumeric = Decimal.TryParse(txtSellProfitPercentage.Text, out _);
+                if (isNumeric && (Decimal.Parse(txtSellProfitPercentage.Text) >= 0 || Decimal.Parse(txtSellProfitPercentage.Text) <= 100))
+                {
+                    txtSellPrice.Text = (Decimal.Parse(txtCost.Text) + Decimal.Parse(txtCost.Text) * Decimal.Parse(txtSellProfitPercentage.Text)/100).ToString();
+                }
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        private void txtEmpProfitPercentage_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                bool isNumeric = Decimal.TryParse(txtEmpProfitPercentage.Text, out _);
+                if (isNumeric && (Decimal.Parse(txtEmpProfitPercentage.Text) >= 0 || Decimal.Parse(txtEmpProfitPercentage.Text) <= 100))
+                {
+                    txtEmpPrice.Text = (Decimal.Parse(txtCost.Text) + Decimal.Parse(txtCost.Text) * Decimal.Parse(txtEmpProfitPercentage.Text)/100).ToString();
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void txtCost_TextChanged(object sender, EventArgs e)
+        {
+            bool isNumeric = Decimal.TryParse(txtCost.Text, out _);
+            if (!isNumeric)
+            {
+                txtCost.Text = "";
+                return;
+            }
+
+            txtEmpPrice.Text = checkBoxEmpProfitPercentage.Checked ? (Double.Parse(txtCost.Text) * (!string.IsNullOrEmpty(txtEmpProfitPercentage.Text) ? Double.Parse(txtEmpProfitPercentage.Text) : 100) / 100).ToString() : txtEmpPrice.Text;
+            txtSellPrice.Text = checkBoxHasProfitPercentage.Checked ? (Double.Parse(txtCost.Text) * (!string.IsNullOrEmpty(txtSellProfitPercentage.Text) ? Double.Parse(txtSellProfitPercentage.Text) : 100) / 100).ToString() : txtSellPrice.Text;
         }
 
         private void cboxSupplier_SelectedIndexChanged(object sender, EventArgs e)

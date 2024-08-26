@@ -133,7 +133,7 @@
             this.txtQte.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtQte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQte.CanOverrideStyle = true;
-            this.txtQte.CornerRadius = 5;
+            this.txtQte.CornerRadius = 2;
             this.txtQte.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtQte.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtQte.Font = new System.Drawing.Font("Bookman Old Style", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -156,6 +156,7 @@
             this.txtQte.ThemeStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txtQte.ThemeStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(125)))));
             this.txtQte.UseBorderColorOnFocus = true;
+            this.txtQte.TextChanged += new System.EventHandler(this.txtQte_TextChanged);
             // 
             // PickDateForm
             // 

@@ -65,8 +65,6 @@ namespace MiniGram.Controls
             panelBarcode.Visible = false;
             panelPName.Visible = false;
             panelSupplier.Visible = false;
-            panelHasQte.Visible = false;
-            panelHasExpDate.Visible = false;
         }
 
 
@@ -104,27 +102,12 @@ namespace MiniGram.Controls
             else if (cboxReportType.SelectedValue.Equals(4))
             {
 
-                int? hasExpDate = null;
-                bool? hasQte = null;
-
-                if (chkHasExpDate.CheckState == CheckState.Checked)
-                    hasExpDate = 1;
-                else if(chkHasExpDate.CheckState == CheckState.Unchecked)
-                    hasExpDate = 0;
-
-                if (chkHasQte.CheckState == CheckState.Checked)
-                    hasQte = true; 
-                else if (chkHasQte.CheckState == CheckState.Unchecked)
-                    hasQte = false;
-
-                ProductListReportUC productList = new ProductListReportUC(txtBarcode.Text, txtPName.Text, txtSupplier.Text, hasQte, hasExpDate);
+                ProductListReportUC productList = new ProductListReportUC(txtBarcode.Text, txtPName.Text, txtSupplier.Text, null, null);
                 productList.Dock = DockStyle.Fill;
                 switchControl(productList);
                 panelBarcode.Visible = true;
                 panelPName.Visible = true;
                 panelSupplier.Visible = true;
-                panelHasQte.Visible = true;
-                panelHasExpDate.Visible = true;
                 report = productList.reportViewer1.LocalReport;
             }
         }
@@ -174,6 +157,21 @@ namespace MiniGram.Controls
         }
 
         private void btnToday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpTo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpFrom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportMainPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
