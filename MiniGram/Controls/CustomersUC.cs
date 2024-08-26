@@ -1,8 +1,11 @@
-﻿using MiniGram.LINQ;
+﻿using MiniGram.Classes;
+using MiniGram.Forms;
+using MiniGram.LINQ;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,44 +16,133 @@ namespace MiniGram.Controls
 {
     public partial class CustomersUC : UserControl
     {
-        private MiniGramDBDataContext cnx = new MiniGramDBDataContext();
+        private MiniGramDBDataContext cnx = new MiniGramDBDataContext(Globals.ConnectionString);
+
         public CustomersUC()
         {
             InitializeComponent();
         }
-
-        private void addcustomer_btn_Click(object sender, EventArgs e)
+        protected override CreateParams CreateParams
         {
-
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle |= 0x02000000;
+                return handleparam;
+            }
         }
 
         private void CustomersUC_Load(object sender, EventArgs e)
         {
-
+            Globals.isSearchVisible = false;
+            search_txt.Visible = false;
         }
 
-        private void enable_btn_Click(object sender, EventArgs e)
+        public void refreshData(string str)
         {
-            cnx.sp_enableCustomerByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
-            refreshData();
+            spselectAllCustomersResultBindingSource.DataSource = cnx.sp_selectAllCustomers(str);
+            dataGridView1.Refresh();
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.Cells[5].Value.ToString().Equals("Enabled"))
+                {
+                    row.DefaultCellStyle.BackColor = Color.DarkGray;
+                }
+            }
         }
 
         private void disable_btn_Click(object sender, EventArgs e)
         {
             cnx.sp_disableCustomerByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
-            refreshData();
+            refreshData("");
         }
-        public void refreshData()
+
+        private void enable_btn_Click(object sender, EventArgs e)
         {
-            spselectAllCustomersResultBindingSource.DataSource = cnx.sp_selectAllCustomers();
-            dataGridView1.Refresh();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            cnx.sp_enableCustomerByID(Int32.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            refreshData("");
+        }
+
+        private void addcustomer_btn_Click(object sender, EventArgs e)
+        {
+            AddEditCustomerForm aecf = new AddEditCustomerForm(0);
+            aecf.ShowDialog();
+            refreshData("");
+        }
+
+        private void keyboard_btn_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo ps = new ProcessStartInfo();
+            ps.FileName = @"C:\Windows\System32\osk.exe";
+            Process process = new Process();
+            process.StartInfo = ps;
+            process.Start();
+            search_btn_Click(search_btn, e);
+        }
+
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+            if (!Globals.isSearchVisible)
             {
-                if (!(bool)cnx.fc_checkCustomerEnabledByID(Int32.Parse(row.Cells[0].Value.ToString())))
+                search_txt.Visible = true;
+
+                this.ActiveControl = search_txt;
+                timer1.Start();
+            }
+            else
+            {
+
+                timer1.Start();
+                refreshData("");
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == ColumnShowMore.Index)
+            {
+                AddEditCustomerForm aecf = new AddEditCustomerForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                aecf.ShowDialog();
+                refreshData("");
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AddEditCustomerForm aecf = new AddEditCustomerForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            aecf.ShowDialog();
+            refreshData("");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (!Globals.isSearchVisible)
+            {
+                if (search_txt.Width < 500)
+                    search_txt.Width += 50;
+                else
                 {
-                    row.DefaultCellStyle.BackColor = Color.DarkGray;
+                    Globals.isSearchVisible = true;
+                    timer1.Stop();
                 }
             }
+            else
+            {
+                if (search_txt.Width > 50)
+                    search_txt.Width -= 50;
+                else
+                {
+                    search_txt.Text = "";
+                    search_txt.Visible = false;
+                    Globals.isSearchVisible = false;
+                    timer1.Stop();
+                }
+            }
+        }
+
+        private void search_txt_TextChanged(object sender, EventArgs e)
+        {
+            refreshData(search_txt.Text);
         }
     }
 }
